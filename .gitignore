@@ -398,3 +398,6 @@ FodyWeavers.xsd
 /deps/vtk-build
 /deps/dcmtk-install
 /deps/dcmtk-build
+/deps/vtk-install
+/deps/vtk-dicom-build
+/deps/vtk-dicom-install
