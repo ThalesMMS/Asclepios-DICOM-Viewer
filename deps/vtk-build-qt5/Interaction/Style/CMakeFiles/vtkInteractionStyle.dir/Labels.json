@@ -1,0 +1,130 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleDrawPolygon.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleFlight.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleImage.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleJoystickActor.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleJoystickCamera.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleMultiTouchCamera.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleRubberBand2D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleRubberBand3D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleRubberBandPick.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleRubberBandZoom.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleTerrain.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleTrackballActor.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleTrackballCamera.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleTrackball.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleUnicam.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleUser.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleSwitch.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkParallelCoordinatesInteractorStyle.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Interaction/Style/vtkInteractionStyleObjectFactory.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleDrawPolygon.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleFlight.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleImage.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleJoystickActor.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleJoystickCamera.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleMultiTouchCamera.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleRubberBand2D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleRubberBand3D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleRubberBandPick.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleRubberBandZoom.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleTerrain.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleTrackballActor.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleTrackballCamera.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleTrackball.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleUnicam.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleUser.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleSwitch.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkParallelCoordinatesInteractorStyle.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Interaction/Style/vtkInteractionStyleObjectFactory.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Interaction/Style/vtkInteractionStyleModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkInteractionStyle"
+		],
+		"name" : "vtkInteractionStyle"
+	}
+}

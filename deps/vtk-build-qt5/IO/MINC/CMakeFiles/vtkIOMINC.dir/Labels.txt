@@ -1,0 +1,23 @@
+# Target labels
+ vtkIOMINC
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMINCImageAttributes.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMINCImageReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMINCImageWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMNIObjectReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMNIObjectWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMNITagPointReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMNITagPointWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMNITransformReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMNITransformWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMINC.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMINCImageAttributes.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMINCImageReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMINCImageWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMNIObjectReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMNIObjectWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMNITagPointReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMNITagPointWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMNITransformReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/MINC/vtkMNITransformWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/MINC/vtkIOMINCModule.h

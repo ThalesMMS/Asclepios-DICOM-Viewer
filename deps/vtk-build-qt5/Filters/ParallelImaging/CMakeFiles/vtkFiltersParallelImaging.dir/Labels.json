@@ -1,0 +1,52 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/ParallelImaging/vtkPComputeHistogram2DOutliers.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/ParallelImaging/vtkPExtractHistogram2D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/ParallelImaging/vtkPPairwiseExtractHistogram2D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/ParallelImaging/vtkExtractPiece.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/ParallelImaging/vtkMemoryLimitImageDataStreamer.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/ParallelImaging/vtkTransmitImageDataPiece.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/ParallelImaging/vtkPComputeHistogram2DOutliers.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/ParallelImaging/vtkPExtractHistogram2D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/ParallelImaging/vtkPPairwiseExtractHistogram2D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/ParallelImaging/vtkExtractPiece.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/ParallelImaging/vtkMemoryLimitImageDataStreamer.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/ParallelImaging/vtkTransmitImageDataPiece.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Filters/ParallelImaging/vtkFiltersParallelImagingModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkFiltersParallelImaging"
+		],
+		"name" : "vtkFiltersParallelImaging"
+	}
+}

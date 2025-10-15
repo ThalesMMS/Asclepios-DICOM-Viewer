@@ -1,0 +1,16 @@
+# Target labels
+ vtkViewsCore
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Core/vtkConvertSelectionDomain.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Core/vtkDataRepresentation.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Core/vtkEmptyRepresentation.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Core/vtkRenderViewBase.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Core/vtkView.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Core/vtkViewTheme.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Core/vtkConvertSelectionDomain.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Core/vtkDataRepresentation.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Core/vtkEmptyRepresentation.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Core/vtkRenderViewBase.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Core/vtkView.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Core/vtkViewTheme.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Views/Core/vtkViewsCoreModule.h

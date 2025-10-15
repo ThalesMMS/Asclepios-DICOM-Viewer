@@ -1,0 +1,47 @@
+<VTKFile type="PolyData" version="1.0" byte_order="LittleEndian" header_type="UInt64" compressor="vtkLZ4DataCompressor">
+  <PolyData>
+    <Piece NumberOfPoints="9" NumberOfVerts="1" NumberOfLines="0" NumberOfStrips="0" NumberOfPolys="0">
+      <PointData>
+      </PointData>
+      <CellData>
+      </CellData>
+      <Points>
+        <DataArray type="Float32" Name="Points" NumberOfComponents="3" format="binary" RangeMin="0" RangeMax="0">
+          AQAAAAAAAAAAgAAAAAAAAGwAAAAAAAAACwAAAAAAAAA=HwABAFNQAAAAAAA=
+        </DataArray>
+      </Points>
+      <Verts>
+        <DataArray type="Int64" Name="connectivity" format="binary" RangeMin="0" RangeMax="8">
+          AQAAAAAAAAAAgAAAAAAAAEgAAAAAAAAAKQAAAAAAAAA=EwABABMBCAATAggAEwMIABMECAATBQgAEwYIABMHCACACAAAAAAAAAA=
+        </DataArray>
+        <DataArray type="Int64" Name="offsets" format="binary" RangeMin="9" RangeMax="9">
+          AQAAAAAAAAAAgAAAAAAAAAgAAAAAAAAACQAAAAAAAAA=gAkAAAAAAAAA
+        </DataArray>
+      </Verts>
+      <Lines>
+        <DataArray type="Int64" Name="connectivity" format="binary" RangeMin="0" RangeMax="8">
+          AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA
+        </DataArray>
+        <DataArray type="Int64" Name="offsets" format="binary" RangeMin="9" RangeMax="9">
+          AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA
+        </DataArray>
+      </Lines>
+      <Strips>
+        <DataArray type="Int64" Name="connectivity" format="binary" RangeMin="0" RangeMax="8">
+          AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA
+        </DataArray>
+        <DataArray type="Int64" Name="offsets" format="binary" RangeMin="9" RangeMax="9">
+          AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA
+        </DataArray>
+      </Strips>
+      <Polys>
+        <DataArray type="Int64" Name="connectivity" format="binary" RangeMin="0" RangeMax="8">
+          AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA
+        </DataArray>
+        <DataArray type="Int64" Name="offsets" format="binary" RangeMin="9" RangeMax="9">
+          AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA
+        </DataArray>
+      </Polys>
+    </Piece>
+  </PolyData>
+</VTKFile>

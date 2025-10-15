@@ -1,0 +1,7 @@
+# CMake generation dependency list for this directory.
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkhdf5.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtknetcdf.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkzlib.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkModuleInfo.cmake.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/exodusII/CMakeLists.txt
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/exodusII/module.cmake

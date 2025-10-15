@@ -1,0 +1,112 @@
+# CMake generated Testfile for 
+# Source directory: D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx
+# Build directory: D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/Exodus/Testing/Cxx
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+if(CTEST_CONFIGURATION_TYPE MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test(vtkIOExodusCxx-TestExodusAttributes "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/Debug/vtkIOExodusCxxTests.exe" "TestExodusAttributes" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing")
+  set_tests_properties(vtkIOExodusCxx-TestExodusAttributes PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkIOExodus" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;18;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test(vtkIOExodusCxx-TestExodusAttributes "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/Release/vtkIOExodusCxxTests.exe" "TestExodusAttributes" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing")
+  set_tests_properties(vtkIOExodusCxx-TestExodusAttributes PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkIOExodus" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;18;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test(vtkIOExodusCxx-TestExodusAttributes "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/MinSizeRel/vtkIOExodusCxxTests.exe" "TestExodusAttributes" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing")
+  set_tests_properties(vtkIOExodusCxx-TestExodusAttributes PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkIOExodus" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;18;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test(vtkIOExodusCxx-TestExodusAttributes "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/RelWithDebInfo/vtkIOExodusCxxTests.exe" "TestExodusAttributes" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing")
+  set_tests_properties(vtkIOExodusCxx-TestExodusAttributes PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkIOExodus" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;18;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+else()
+  add_test(vtkIOExodusCxx-TestExodusAttributes NOT_AVAILABLE)
+endif()
+if(CTEST_CONFIGURATION_TYPE MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test(vtkIOExodusCxx-TestExodusIgnoreFileTime "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/Debug/vtkIOExodusCxxTests.exe" "TestExodusIgnoreFileTime" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing")
+  set_tests_properties(vtkIOExodusCxx-TestExodusIgnoreFileTime PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkIOExodus" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;18;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test(vtkIOExodusCxx-TestExodusIgnoreFileTime "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/Release/vtkIOExodusCxxTests.exe" "TestExodusIgnoreFileTime" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing")
+  set_tests_properties(vtkIOExodusCxx-TestExodusIgnoreFileTime PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkIOExodus" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;18;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test(vtkIOExodusCxx-TestExodusIgnoreFileTime "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/MinSizeRel/vtkIOExodusCxxTests.exe" "TestExodusIgnoreFileTime" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing")
+  set_tests_properties(vtkIOExodusCxx-TestExodusIgnoreFileTime PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkIOExodus" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;18;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test(vtkIOExodusCxx-TestExodusIgnoreFileTime "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/RelWithDebInfo/vtkIOExodusCxxTests.exe" "TestExodusIgnoreFileTime" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing")
+  set_tests_properties(vtkIOExodusCxx-TestExodusIgnoreFileTime PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkIOExodus" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;18;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+else()
+  add_test(vtkIOExodusCxx-TestExodusIgnoreFileTime NOT_AVAILABLE)
+endif()
+if(CTEST_CONFIGURATION_TYPE MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test(vtkIOExodusCxx-TestExodusSideSets "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/Debug/vtkIOExodusCxxTests.exe" "TestExodusSideSets" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing")
+  set_tests_properties(vtkIOExodusCxx-TestExodusSideSets PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkIOExodus" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;18;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test(vtkIOExodusCxx-TestExodusSideSets "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/Release/vtkIOExodusCxxTests.exe" "TestExodusSideSets" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing")
+  set_tests_properties(vtkIOExodusCxx-TestExodusSideSets PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkIOExodus" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;18;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test(vtkIOExodusCxx-TestExodusSideSets "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/MinSizeRel/vtkIOExodusCxxTests.exe" "TestExodusSideSets" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing")
+  set_tests_properties(vtkIOExodusCxx-TestExodusSideSets PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkIOExodus" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;18;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test(vtkIOExodusCxx-TestExodusSideSets "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/RelWithDebInfo/vtkIOExodusCxxTests.exe" "TestExodusSideSets" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing")
+  set_tests_properties(vtkIOExodusCxx-TestExodusSideSets PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkIOExodus" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;18;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+else()
+  add_test(vtkIOExodusCxx-TestExodusSideSets NOT_AVAILABLE)
+endif()
+if(CTEST_CONFIGURATION_TYPE MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test(vtkIOExodusCxx-TestMultiBlockExodusWrite "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/Debug/vtkIOExodusCxxTests.exe" "TestMultiBlockExodusWrite" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary" "-V" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/IO/Exodus/Testing/Data/Baseline/TestMultiBlockExodusWrite.png")
+  set_tests_properties(vtkIOExodusCxx-TestMultiBlockExodusWrite PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkIOExodus" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;18;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test(vtkIOExodusCxx-TestMultiBlockExodusWrite "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/Release/vtkIOExodusCxxTests.exe" "TestMultiBlockExodusWrite" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary" "-V" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/IO/Exodus/Testing/Data/Baseline/TestMultiBlockExodusWrite.png")
+  set_tests_properties(vtkIOExodusCxx-TestMultiBlockExodusWrite PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkIOExodus" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;18;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test(vtkIOExodusCxx-TestMultiBlockExodusWrite "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/MinSizeRel/vtkIOExodusCxxTests.exe" "TestMultiBlockExodusWrite" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary" "-V" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/IO/Exodus/Testing/Data/Baseline/TestMultiBlockExodusWrite.png")
+  set_tests_properties(vtkIOExodusCxx-TestMultiBlockExodusWrite PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkIOExodus" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;18;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test(vtkIOExodusCxx-TestMultiBlockExodusWrite "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/RelWithDebInfo/vtkIOExodusCxxTests.exe" "TestMultiBlockExodusWrite" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary" "-V" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/IO/Exodus/Testing/Data/Baseline/TestMultiBlockExodusWrite.png")
+  set_tests_properties(vtkIOExodusCxx-TestMultiBlockExodusWrite PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkIOExodus" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;18;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+else()
+  add_test(vtkIOExodusCxx-TestMultiBlockExodusWrite NOT_AVAILABLE)
+endif()
+if(CTEST_CONFIGURATION_TYPE MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test(vtkIOExodusCxx-Tetra15 "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/Debug/vtkIOExodusCxxTests.exe" "TestExodusTetra15" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-V" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/IO/Exodus/Testing/Data/Baseline/TestExodusTetra15.png" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/Testing/Data/tetra15.g")
+  set_tests_properties(vtkIOExodusCxx-Tetra15 PROPERTIES  _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;33;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test(vtkIOExodusCxx-Tetra15 "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/Release/vtkIOExodusCxxTests.exe" "TestExodusTetra15" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-V" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/IO/Exodus/Testing/Data/Baseline/TestExodusTetra15.png" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/Testing/Data/tetra15.g")
+  set_tests_properties(vtkIOExodusCxx-Tetra15 PROPERTIES  _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;33;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test(vtkIOExodusCxx-Tetra15 "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/MinSizeRel/vtkIOExodusCxxTests.exe" "TestExodusTetra15" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-V" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/IO/Exodus/Testing/Data/Baseline/TestExodusTetra15.png" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/Testing/Data/tetra15.g")
+  set_tests_properties(vtkIOExodusCxx-Tetra15 PROPERTIES  _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;33;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test(vtkIOExodusCxx-Tetra15 "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/RelWithDebInfo/vtkIOExodusCxxTests.exe" "TestExodusTetra15" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-V" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/IO/Exodus/Testing/Data/Baseline/TestExodusTetra15.png" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/Testing/Data/tetra15.g")
+  set_tests_properties(vtkIOExodusCxx-Tetra15 PROPERTIES  _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;33;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+else()
+  add_test(vtkIOExodusCxx-Tetra15 NOT_AVAILABLE)
+endif()
+if(CTEST_CONFIGURATION_TYPE MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test(vtkIOExodusCxx-Wedge21 "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/Debug/vtkIOExodusCxxTests.exe" "TestExodusWedge21" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-V" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/IO/Exodus/Testing/Data/Baseline/TestExodusWedge21.png" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/Testing/Data/wedge21.g")
+  set_tests_properties(vtkIOExodusCxx-Wedge21 PROPERTIES  _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;42;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test(vtkIOExodusCxx-Wedge21 "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/Release/vtkIOExodusCxxTests.exe" "TestExodusWedge21" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-V" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/IO/Exodus/Testing/Data/Baseline/TestExodusWedge21.png" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/Testing/Data/wedge21.g")
+  set_tests_properties(vtkIOExodusCxx-Wedge21 PROPERTIES  _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;42;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test(vtkIOExodusCxx-Wedge21 "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/MinSizeRel/vtkIOExodusCxxTests.exe" "TestExodusWedge21" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-V" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/IO/Exodus/Testing/Data/Baseline/TestExodusWedge21.png" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/Testing/Data/wedge21.g")
+  set_tests_properties(vtkIOExodusCxx-Wedge21 PROPERTIES  _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;42;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test(vtkIOExodusCxx-Wedge21 "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/RelWithDebInfo/vtkIOExodusCxxTests.exe" "TestExodusWedge21" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-V" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/IO/Exodus/Testing/Data/Baseline/TestExodusWedge21.png" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/Testing/Data/wedge21.g")
+  set_tests_properties(vtkIOExodusCxx-Wedge21 PROPERTIES  _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;42;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/Testing/Cxx/CMakeLists.txt;0;")
+else()
+  add_test(vtkIOExodusCxx-Wedge21 NOT_AVAILABLE)
+endif()

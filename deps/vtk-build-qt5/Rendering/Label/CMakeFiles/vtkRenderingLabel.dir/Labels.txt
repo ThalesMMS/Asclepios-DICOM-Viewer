@@ -1,0 +1,30 @@
+# Target labels
+ vtkRenderingLabel
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabeledDataMapper.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabeledTreeMapDataMapper.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabelHierarchyAlgorithm.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabelHierarchyCompositeIterator.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabelHierarchy.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabelHierarchyIterator.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabelPlacementMapper.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabelPlacer.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabelRenderStrategy.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabelSizeCalculator.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkFreeTypeLabelRenderStrategy.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkDynamic2DLabelMapper.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkPointSetToLabelHierarchy.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabeledDataMapper.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabeledTreeMapDataMapper.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabelHierarchyAlgorithm.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabelHierarchyCompositeIterator.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabelHierarchy.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabelHierarchyIterator.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabelPlacementMapper.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabelPlacer.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabelRenderStrategy.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkLabelSizeCalculator.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkFreeTypeLabelRenderStrategy.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkDynamic2DLabelMapper.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Label/vtkPointSetToLabelHierarchy.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/Label/vtkRenderingLabelModule.h

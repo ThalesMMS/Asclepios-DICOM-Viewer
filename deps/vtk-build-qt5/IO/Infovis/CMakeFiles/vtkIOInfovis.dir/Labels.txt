@@ -1,0 +1,36 @@
+# Target labels
+ vtkIOInfovis
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkBiomTableReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkChacoGraphReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkDelimitedTextReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkDIMACSGraphReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkDIMACSGraphWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkFixedWidthTextReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkISIReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkMultiNewickTreeReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkNewickTreeReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkNewickTreeWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkPhyloXMLTreeReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkPhyloXMLTreeWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkRISReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkTulipReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkXGMLReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkXMLTreeReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkBiomTableReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkChacoGraphReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkDelimitedTextReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkDIMACSGraphReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkDIMACSGraphWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkFixedWidthTextReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkISIReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkMultiNewickTreeReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkNewickTreeReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkNewickTreeWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkPhyloXMLTreeReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkPhyloXMLTreeWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkRISReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkTulipReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkXGMLReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkXMLTreeReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/Infovis/vtkIOInfovisModule.h

@@ -1,0 +1,83 @@
+	    SUMMARY OF THE HDF5 CONFIGURATION
+	    =================================
+
+General Information:
+-------------------
+                   HDF5 Version: 1.10.1
+                  Configured on: 2025-10-15
+                  Configured by: Visual Studio 17 2022
+                    Host system: Windows-10.0.26100
+              Uname information: Windows
+                       Byte sex: little-endian
+             Installation point: D:/Asclepios-DICOM-Viewer/deps/vtk-install-qt5-debug
+
+Compiling Options:
+------------------
+                     Build Mode: 
+              Debugging Symbols: 
+                        Asserts: 
+                      Profiling: 
+             Optimization Level: 
+
+Linking Options:
+----------------
+                      Libraries: 
+  Statically Linked Executables: OFF
+                        LDFLAGS: /machine:x64 
+                     H5_LDFLAGS: 
+                     AM_LDFLAGS: 
+                Extra libraries: 
+                       Archiver: C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/lib.exe
+                         Ranlib: :
+
+Languages:
+----------
+                              C: yes
+                     C Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe 19.44.35217.0
+                       CPPFLAGS: 
+                    H5_CPPFLAGS: 
+                    AM_CPPFLAGS: 
+                         CFLAGS: /DWIN32 /D_WINDOWS   /W0
+                      H5_CFLAGS: 
+                      AM_CFLAGS: 
+               Shared C Library: OFF
+               Static C Library: YES
+
+                        Fortran: 
+               Fortran Compiler:  
+                  Fortran Flags: 
+               H5 Fortran Flags: 
+               AM Fortran Flags: 
+         Shared Fortran Library: OFF
+         Static Fortran Library: YES
+
+                            C++: 
+                   C++ Compiler: C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe 19.44.35217.0
+                      C++ Flags: /DWIN32 /D_WINDOWS /GR /EHsc   /W0
+                   H5 C++ Flags: 
+                   AM C++ Flags: 
+             Shared C++ Library: OFF
+             Static C++ Library: YES
+
+                            JAVA: 
+                   JAVA Compiler:  
+
+Features:
+---------
+                  Parallel HDF5: OFF
+             High-level library: ON
+                   Threadsafety: OFF
+            Default API mapping: v110
+ With deprecated public symbols: OFF
+         I/O filters (external):  DEFLATE
+                            MPE: 
+                     Direct VFD: 
+                        dmalloc: 
+ Packages w/ extra debug output: 
+                    API Tracing: OFF
+           Using memory checker: OFF
+Memory allocation sanity checks: OFF
+            Metadata trace file: 
+         Function Stack Tracing: OFF
+      Strict File Format Checks: OFF
+   Optimization Instrumentation: 

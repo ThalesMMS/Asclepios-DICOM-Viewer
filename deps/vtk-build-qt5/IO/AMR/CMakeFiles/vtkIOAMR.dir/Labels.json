@@ -1,0 +1,76 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRBaseParticlesReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRBaseReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRDataSetCache.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMREnzoParticlesReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMREnzoReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMREnzoReaderInternal.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMReXParticlesReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRFlashParticlesReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRFlashReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRFlashReaderInternal.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRBaseParticlesReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRBaseReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRDataSetCache.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMREnzoParticlesReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMREnzoReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMREnzoReaderInternal.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMReXParticlesReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRFlashParticlesReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRFlashReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRFlashReaderInternal.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/AMR/vtkIOAMRModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkIOAMR"
+		],
+		"name" : "vtkIOAMR"
+	}
+}

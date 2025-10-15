@@ -1,0 +1,154 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkCompositeDataGeometryFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkGeometryFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkHierarchicalDataSetGeometryFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkImageDataGeometryFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkImageDataToUniformGrid.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkLinearToQuadraticCellsFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkProjectSphereFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkRectilinearGridGeometryFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkStructuredGridGeometryFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkStructuredPointsGeometryFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkUnstructuredGridGeometryFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkDataSetSurfaceFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkDataSetRegionSurfaceFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkAbstractGridConnectivity.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkDataSetGhostGenerator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkRectilinearGridPartitioner.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkStructuredAMRNeighbor.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkStructuredAMRGridConnectivity.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkStructuredGridConnectivity.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkStructuredGridGhostDataGenerator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkStructuredGridPartitioner.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkStructuredNeighbor.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkUniformGridGhostDataGenerator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkCompositeDataGeometryFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkGeometryFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkHierarchicalDataSetGeometryFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkImageDataGeometryFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkImageDataToUniformGrid.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkLinearToQuadraticCellsFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkProjectSphereFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkRectilinearGridGeometryFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkStructuredGridGeometryFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkStructuredPointsGeometryFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkUnstructuredGridGeometryFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkDataSetSurfaceFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkDataSetRegionSurfaceFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkAbstractGridConnectivity.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkDataSetGhostGenerator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkRectilinearGridPartitioner.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkStructuredAMRNeighbor.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkStructuredAMRGridConnectivity.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkStructuredGridConnectivity.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkStructuredGridGhostDataGenerator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkStructuredGridPartitioner.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkStructuredNeighbor.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Geometry/vtkUniformGridGhostDataGenerator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Filters/Geometry/vtkFiltersGeometryModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkFiltersGeometry"
+		],
+		"name" : "vtkFiltersGeometry"
+	}
+}

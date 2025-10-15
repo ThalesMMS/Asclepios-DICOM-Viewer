@@ -1,0 +1,268 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkExtractVOI.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageAppendComponents.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageBlend.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageCacheFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageCast.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageChangeInformation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageClip.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageConstantPad.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageDataStreamer.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageDecomposeFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageDifference.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageExtractComponents.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageFlip.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageIterateFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageMagnify.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageMapToColors.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageMask.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageMirrorPad.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImagePadFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImagePermute.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImagePointDataIterator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImagePointIterator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageResample.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageReslice.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageResliceToColors.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageShiftScale.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageShrink3D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageStencilIterator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageThreshold.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageTranslateExtent.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageWrapPad.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkRTAnalyticSource.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageResize.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageBSplineCoefficients.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageStencilData.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageStencilAlgorithm.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkAbstractImageInterpolator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageBSplineInternals.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageBSplineInterpolator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageSincInterpolator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageInterpolator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageStencilSource.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkExtractVOI.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageAppendComponents.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageBlend.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageCacheFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageCast.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageChangeInformation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageClip.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageConstantPad.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageDataStreamer.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageDecomposeFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageDifference.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageExtractComponents.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageFlip.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageIterateFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageMagnify.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageMapToColors.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageMask.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageMirrorPad.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImagePadFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImagePermute.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImagePointDataIterator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImagePointIterator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageResample.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageReslice.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageResliceToColors.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageShiftScale.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageShrink3D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageStencilIterator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageThreshold.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageTranslateExtent.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageWrapPad.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkRTAnalyticSource.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageResize.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageBSplineCoefficients.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageStencilData.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageStencilAlgorithm.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkAbstractImageInterpolator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageBSplineInternals.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageBSplineInterpolator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageSincInterpolator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageInterpolator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Core/vtkImageStencilSource.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Imaging/Core/vtkImagingCoreModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkImagingCore"
+		],
+		"name" : "vtkImagingCore"
+	}
+}

@@ -1,0 +1,30 @@
+mtllib obj_multitexture.mtl
+v 0.0 0.0 0.0
+v 1.0 0.0 0.0
+v 2.0 0.0 0.0
+v 2.0 1.0 0.0
+v 1.0 1.0 0.0
+v 0.0 1.0 0.0
+v 3.0 0.0 0.0
+v 3.0 1.0 0.0
+# first square texture
+vt 0.5 0.5
+vt 1.0 0.5
+vt 1.0 1.0
+vt 0.5 1.0
+# second square texture
+vt 0.0 0.5
+vt 0.5 0.5
+vt 0.5 1.0
+vt 0.0 1.0
+#third square texture
+vt 0.0 0.0
+vt 0.5 0.0
+vt 0.5 0.5
+vt 0.0 0.5
+usemtl texture_0
+f 1/1 2/2 5/3 6/4
+usemtl texture_1
+f 2/5 3/6 4/7 5/8
+usemtl texture_0
+f 3/9 7/10 8/11 4/12

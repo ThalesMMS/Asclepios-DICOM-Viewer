@@ -1,0 +1,214 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QFilterTreeProxyModel.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QVTKApplication.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QVTKInteractorAdapter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QVTKInteractor.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/vtkEventQtSlotConnect.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/vtkQtAbstractModelAdapter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/vtkQtAnnotationLayersModelAdapter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/vtkQtConnection.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/vtkQtDebugLeaksModel.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/vtkQtDebugLeaksView.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/vtkQtTableModelAdapter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/vtkQtTreeModelAdapter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QVTKOpenGLNativeWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QVTKOpenGLWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QVTKOpenGLWindow.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QVTKPaintEngine.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QVTKPaintEngine.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QVTKWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/GUISupport/Qt/moc_QFilterTreeProxyModel.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/GUISupport/Qt/moc_QVTKApplication.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/GUISupport/Qt/moc_QVTKInteractorAdapter.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/GUISupport/Qt/moc_QVTKInteractorInternal.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/GUISupport/Qt/moc_vtkQtAbstractModelAdapter.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/GUISupport/Qt/moc_vtkQtAnnotationLayersModelAdapter.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/GUISupport/Qt/moc_vtkQtConnection.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/GUISupport/Qt/moc_vtkQtDebugLeaksModel.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/GUISupport/Qt/moc_vtkQtDebugLeaksView.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/GUISupport/Qt/moc_vtkQtTableModelAdapter.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/GUISupport/Qt/moc_vtkQtTreeModelAdapter.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/GUISupport/Qt/moc_QVTKOpenGLNativeWidget.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/GUISupport/Qt/moc_QVTKOpenGLWidget.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/GUISupport/Qt/moc_QVTKOpenGLWindow.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/GUISupport/Qt/moc_QVTKWidget.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QVTKWin32Header.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/vtkEventQtSlotConnect.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QVTKInteractor.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QFilterTreeProxyModel.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QVTKApplication.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QVTKInteractorAdapter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QVTKInteractorInternal.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/vtkQtAbstractModelAdapter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/vtkQtAnnotationLayersModelAdapter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/vtkQtConnection.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/vtkQtDebugLeaksModel.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/vtkQtDebugLeaksView.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/vtkQtTableModelAdapter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/vtkQtTreeModelAdapter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QVTKOpenGLNativeWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QVTKOpenGLWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QVTKOpenGLWindow.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/Qt/QVTKWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/GUISupport/Qt/vtkGUISupportQtModule.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/d7c2608c521095d7a1e41ef894c7ea90/moc_QFilterTreeProxyModel.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/d7c2608c521095d7a1e41ef894c7ea90/moc_QVTKApplication.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/d7c2608c521095d7a1e41ef894c7ea90/moc_QVTKInteractorAdapter.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/d7c2608c521095d7a1e41ef894c7ea90/moc_QVTKInteractorInternal.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/d7c2608c521095d7a1e41ef894c7ea90/moc_vtkQtAbstractModelAdapter.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/d7c2608c521095d7a1e41ef894c7ea90/moc_vtkQtAnnotationLayersModelAdapter.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/d7c2608c521095d7a1e41ef894c7ea90/moc_vtkQtConnection.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/d7c2608c521095d7a1e41ef894c7ea90/moc_vtkQtDebugLeaksModel.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/d7c2608c521095d7a1e41ef894c7ea90/moc_vtkQtDebugLeaksView.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/d7c2608c521095d7a1e41ef894c7ea90/moc_vtkQtTableModelAdapter.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/d7c2608c521095d7a1e41ef894c7ea90/moc_vtkQtTreeModelAdapter.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/d7c2608c521095d7a1e41ef894c7ea90/moc_QVTKOpenGLNativeWidget.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/d7c2608c521095d7a1e41ef894c7ea90/moc_QVTKOpenGLWidget.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/d7c2608c521095d7a1e41ef894c7ea90/moc_QVTKOpenGLWindow.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/d7c2608c521095d7a1e41ef894c7ea90/moc_QVTKWidget.cpp.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkGUISupportQt"
+		],
+		"name" : "vtkGUISupportQt"
+	}
+}

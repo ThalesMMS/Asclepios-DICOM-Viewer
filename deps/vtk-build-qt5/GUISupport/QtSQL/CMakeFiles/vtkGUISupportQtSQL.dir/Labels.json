@@ -1,0 +1,34 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/QtSQL/vtkQtSQLDatabase.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/QtSQL/vtkQtSQLQuery.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/QtSQL/vtkQtTimePointUtility.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/QtSQL/vtkQtSQLDatabase.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/QtSQL/vtkQtSQLQuery.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/QtSQL/vtkQtTimePointUtility.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/GUISupport/QtSQL/vtkGUISupportQtSQLModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkGUISupportQtSQL"
+		],
+		"name" : "vtkGUISupportQtSQL"
+	}
+}

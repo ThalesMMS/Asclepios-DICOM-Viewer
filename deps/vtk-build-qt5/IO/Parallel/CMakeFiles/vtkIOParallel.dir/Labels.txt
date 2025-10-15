@@ -1,0 +1,24 @@
+# Target labels
+ vtkIOParallel
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkEnSightWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkMultiBlockPLOT3DReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkMultiBlockPLOT3DReaderInternals.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkPlot3DMetaReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkPChacoReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkPDataSetReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkPDataSetWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkPImageWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkPOpenFOAMReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkPSLACReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkEnSightWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkMultiBlockPLOT3DReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkMultiBlockPLOT3DReaderInternals.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkPlot3DMetaReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkPChacoReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkPDataSetReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkPDataSetWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkPImageWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkPOpenFOAMReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Parallel/vtkPSLACReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/Parallel/vtkIOParallelModule.h

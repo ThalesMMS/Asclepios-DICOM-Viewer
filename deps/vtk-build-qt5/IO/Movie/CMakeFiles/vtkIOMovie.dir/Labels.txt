@@ -1,0 +1,11 @@
+# Target labels
+ vtkIOMovie
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Movie/vtkGenericMovieWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Movie/vtkOggTheoraWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Movie/vtkAVIWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/Movie/vtkIOMovieConfigure.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Movie/vtkGenericMovieWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Movie/vtkOggTheoraWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Movie/vtkAVIWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/Movie/vtkIOMovieModule.h

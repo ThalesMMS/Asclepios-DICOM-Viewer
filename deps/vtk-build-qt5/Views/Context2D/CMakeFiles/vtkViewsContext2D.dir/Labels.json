@@ -1,0 +1,28 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Context2D/vtkContextView.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Context2D/vtkContextInteractorStyle.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Context2D/vtkContextView.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Context2D/vtkContextInteractorStyle.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Views/Context2D/vtkViewsContext2DModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkViewsContext2D"
+		],
+		"name" : "vtkViewsContext2D"
+	}
+}

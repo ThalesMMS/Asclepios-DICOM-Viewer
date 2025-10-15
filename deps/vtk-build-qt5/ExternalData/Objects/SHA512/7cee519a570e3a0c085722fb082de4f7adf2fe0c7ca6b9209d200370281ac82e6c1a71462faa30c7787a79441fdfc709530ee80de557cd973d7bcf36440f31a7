@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<VTKFile type="HyperTreeGrid" version="0.1" byte_order="LittleEndian" header_type="UInt32" compressor="vtkZLibDataCompressor">
+  <HyperTreeGrid Dimension="3" BranchFactor="2" TransposedRootIndexing="0" GridSize="1 1 1" GridOrigin="0 0 0" GridScale="1 1 1">
+    <Coordinates>
+      <DataArray type="Float64" Name="XCoordinates" NumberOfTuples="2" format="appended" RangeMin="0" RangeMax="1">
+        0 1
+      </DataArray>
+      <DataArray type="Float64" Name="YCoordinates" NumberOfTuples="2" format="appended" RangeMin="0" RangeMax="1">
+        0 1
+      </DataArray>
+      <DataArray type="Float64" Name="ZCoordinates" NumberOfTuples="2" format="appended" RangeMin="0" RangeMax="1">
+        0 1
+      </DataArray>
+    </Coordinates>
+    <Topology>
+      <DataArray type="Bit" Name="Descriptor" NumberOfTuples="9" format="appended" RangeMin="0" RangeMax="1">
+        1 0 0 0 0 0
+        0 0 0
+      </DataArray>
+    </Topology>
+    <PointData Scalars="Depth">
+      <DataArray type="Float64" Name="Depth" format="appended" RangeMin="0" RangeMax="1">
+        0 1 1 1 1 1
+        1 1 1
+      </DataArray>
+    </PointData>
+  </HyperTreeGrid>
+</VTKFile>

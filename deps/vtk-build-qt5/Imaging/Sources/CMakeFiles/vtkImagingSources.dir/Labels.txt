@@ -1,0 +1,18 @@
+# Target labels
+ vtkImagingSources
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Sources/vtkImageCanvasSource2D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Sources/vtkImageEllipsoidSource.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Sources/vtkImageGaussianSource.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Sources/vtkImageGridSource.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Sources/vtkImageMandelbrotSource.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Sources/vtkImageNoiseSource.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Sources/vtkImageSinusoidSource.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Sources/vtkImageCanvasSource2D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Sources/vtkImageEllipsoidSource.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Sources/vtkImageGaussianSource.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Sources/vtkImageGridSource.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Sources/vtkImageMandelbrotSource.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Sources/vtkImageNoiseSource.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Sources/vtkImageSinusoidSource.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Imaging/Sources/vtkImagingSourcesModule.h

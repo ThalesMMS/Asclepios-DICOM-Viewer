@@ -1,0 +1,280 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkArcParallelEdgeStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkAreaLayout.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkAreaLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkAssignCoordinates.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkAssignCoordinatesLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkAttributeClustering2DLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkBoxLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkCirclePackFrontChainLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkCirclePackLayout.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkCirclePackLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkCirclePackToPolyData.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkCircularLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkClustering2DLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkCommunity2DLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkConeLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkConstrained2DLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkCosmicTreeLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkEdgeLayout.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkEdgeLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkFast2DLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkForceDirectedLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkGeoEdgeStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkGeoMath.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkGraphLayout.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkGraphLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkIncrementalForceLayout.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkPassThroughEdgeStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkPassThroughLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkPerturbCoincidentVertices.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkRandomLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkSimple2DLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkSimple3DCirclesStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkSliceAndDiceLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkSpanTreeLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkSplineGraphEdges.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkSquarifyLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkStackedTreeLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkTreeLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkTreeMapLayout.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkTreeMapLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkTreeMapToPolyData.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkTreeOrbitLayoutStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkTreeRingToPolyData.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkKCoreLayout.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkArcParallelEdgeStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkAreaLayout.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkAreaLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkAssignCoordinates.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkAssignCoordinatesLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkAttributeClustering2DLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkBoxLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkCirclePackFrontChainLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkCirclePackLayout.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkCirclePackLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkCirclePackToPolyData.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkCircularLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkClustering2DLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkCommunity2DLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkConeLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkConstrained2DLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkCosmicTreeLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkEdgeLayout.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkEdgeLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkFast2DLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkForceDirectedLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkGeoEdgeStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkGeoMath.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkGraphLayout.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkGraphLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkIncrementalForceLayout.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkPassThroughEdgeStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkPassThroughLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkPerturbCoincidentVertices.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkRandomLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkSimple2DLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkSimple3DCirclesStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkSliceAndDiceLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkSpanTreeLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkSplineGraphEdges.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkSquarifyLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkStackedTreeLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkTreeLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkTreeMapLayout.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkTreeMapLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkTreeMapToPolyData.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkTreeOrbitLayoutStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkTreeRingToPolyData.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Infovis/Layout/vtkKCoreLayout.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Infovis/Layout/vtkInfovisLayoutModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkInfovisLayout"
+		],
+		"name" : "vtkInfovisLayout"
+	}
+}

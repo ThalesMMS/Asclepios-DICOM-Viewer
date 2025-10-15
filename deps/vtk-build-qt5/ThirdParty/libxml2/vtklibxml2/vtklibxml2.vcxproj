@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{359D27AB-5D77-32B3-8B22-DBC1847B369C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>vtklibxml2</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">vtklibxml2.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">vtklibxml2-8.2</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">vtklibxml2.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">vtklibxml2-8.2</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">vtklibxml2.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">vtklibxml2-8.2</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">vtklibxml2.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">vtklibxml2-8.2</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2\vtklibxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;HAVE_CONFIG_H;_GNU_SOURCE;PIC;_REENTRANT;HAVE_WIN32_THREADS;LIBXML_STATIC;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;HAVE_CONFIG_H;_GNU_SOURCE;PIC;_REENTRANT;HAVE_WIN32_THREADS;LIBXML_STATIC;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2\vtklibxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2\vtklibxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2\vtklibxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;HAVE_CONFIG_H;_GNU_SOURCE;PIC;_REENTRANT;HAVE_WIN32_THREADS;LIBXML_STATIC;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;HAVE_CONFIG_H;_GNU_SOURCE;PIC;_REENTRANT;HAVE_WIN32_THREADS;LIBXML_STATIC;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2\vtklibxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2\vtklibxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2\vtklibxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;HAVE_CONFIG_H;_GNU_SOURCE;PIC;_REENTRANT;HAVE_WIN32_THREADS;LIBXML_STATIC;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;HAVE_CONFIG_H;_GNU_SOURCE;PIC;_REENTRANT;HAVE_WIN32_THREADS;LIBXML_STATIC;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2\vtklibxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2\vtklibxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2\vtklibxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;HAVE_CONFIG_H;_GNU_SOURCE;PIC;_REENTRANT;HAVE_WIN32_THREADS;LIBXML_STATIC;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;HAVE_CONFIG_H;_GNU_SOURCE;PIC;_REENTRANT;HAVE_WIN32_THREADS;LIBXML_STATIC;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2\vtklibxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2\vtklibxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libxml2/vtklibxml2/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/libxml2/vtklibxml2/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckSymbolExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindThreads.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\config_cmake.h.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\DOCBparser.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\HTMLparser.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\HTMLtree.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\SAX.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\SAX2.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\c14n.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\catalog.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\chvalid.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\debugXML.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\dict.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\encoding.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\entities.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\globals.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\hash.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\list.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\nanoftp.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\nanohttp.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\parser.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\parserInternals.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\pattern.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\relaxng.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\schemasInternals.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\schematron.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\threads.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\tree.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\uri.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\valid.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\vtk_libxml2_mangle.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xinclude.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xlink.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlIO.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlautomata.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlerror.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlexports.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlmemory.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlmodule.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlreader.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlregexp.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlsave.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlschemas.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlschemastypes.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlstring.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlunicode.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlversion.h.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlwriter.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xpath.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xpathInternals.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xpointer.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\libxml2PlatformTests.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2\vtklibxml2\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libxml2/vtklibxml2/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/libxml2/vtklibxml2/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckSymbolExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindThreads.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\config_cmake.h.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\DOCBparser.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\HTMLparser.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\HTMLtree.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\SAX.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\SAX2.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\c14n.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\catalog.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\chvalid.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\debugXML.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\dict.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\encoding.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\entities.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\globals.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\hash.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\list.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\nanoftp.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\nanohttp.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\parser.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\parserInternals.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\pattern.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\relaxng.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\schemasInternals.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\schematron.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\threads.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\tree.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\uri.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\valid.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\vtk_libxml2_mangle.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xinclude.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xlink.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlIO.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlautomata.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlerror.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlexports.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlmemory.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlmodule.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlreader.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlregexp.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlsave.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlschemas.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlschemastypes.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlstring.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlunicode.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlversion.h.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlwriter.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xpath.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xpathInternals.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xpointer.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\libxml2PlatformTests.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2\vtklibxml2\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libxml2/vtklibxml2/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/libxml2/vtklibxml2/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckSymbolExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindThreads.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\config_cmake.h.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\DOCBparser.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\HTMLparser.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\HTMLtree.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\SAX.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\SAX2.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\c14n.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\catalog.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\chvalid.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\debugXML.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\dict.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\encoding.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\entities.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\globals.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\hash.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\list.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\nanoftp.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\nanohttp.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\parser.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\parserInternals.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\pattern.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\relaxng.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\schemasInternals.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\schematron.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\threads.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\tree.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\uri.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\valid.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\vtk_libxml2_mangle.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xinclude.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xlink.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlIO.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlautomata.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlerror.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlexports.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlmemory.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlmodule.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlreader.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlregexp.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlsave.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlschemas.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlschemastypes.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlstring.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlunicode.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlversion.h.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlwriter.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xpath.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xpathInternals.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xpointer.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\libxml2PlatformTests.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2\vtklibxml2\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libxml2/vtklibxml2/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/libxml2/vtklibxml2/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckSymbolExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindThreads.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\config_cmake.h.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\DOCBparser.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\HTMLparser.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\HTMLtree.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\SAX.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\SAX2.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\c14n.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\catalog.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\chvalid.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\debugXML.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\dict.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\encoding.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\entities.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\globals.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\hash.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\list.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\nanoftp.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\nanohttp.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\parser.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\parserInternals.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\pattern.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\relaxng.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\schemasInternals.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\schematron.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\threads.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\tree.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\uri.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\valid.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\vtk_libxml2_mangle.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xinclude.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xlink.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlIO.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlautomata.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlerror.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlexports.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlmemory.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlmodule.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlreader.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlregexp.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlsave.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlschemas.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlschemastypes.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlstring.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlunicode.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlversion.h.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xmlwriter.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xpath.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xpathInternals.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\include\libxml\xpointer.h;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\libxml2PlatformTests.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2\vtklibxml2\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\DOCBparser.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\HTMLparser.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\HTMLtree.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\SAX.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\SAX2.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\c14n.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\catalog.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\chvalid.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\debugXML.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\dict.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\encoding.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\entities.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\error.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\globals.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\hash.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\legacy.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\list.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\nanoftp.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\nanohttp.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\parser.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\parserInternals.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\pattern.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\relaxng.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\schematron.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\threads.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\tree.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\uri.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\valid.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\xinclude.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\xlink.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\xmlIO.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\xmlmemory.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\xmlmodule.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\xmlreader.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\xmlregexp.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\xmlsave.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\xmlschemas.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\xmlschemastypes.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\xmlstring.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\xmlunicode.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\xmlwriter.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\xpath.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\vtklibxml2\xpointer.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ZERO_CHECK.vcxproj">
+      <Project>{CB3CEBE8-D3FC-3706-83B0-652E45C69461}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib\vtkzlib\vtkzlib.vcxproj">
+      <Project>{342F70EC-5F35-3320-9822-A570989F1860}</Project>
+      <Name>vtkzlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

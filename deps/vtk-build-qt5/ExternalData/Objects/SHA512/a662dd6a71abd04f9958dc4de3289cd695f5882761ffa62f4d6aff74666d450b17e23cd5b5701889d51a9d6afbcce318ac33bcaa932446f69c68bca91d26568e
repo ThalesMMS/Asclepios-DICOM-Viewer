@@ -1,0 +1,48 @@
+===============================================================================
+ MFIx Job Information
+===============================================================================
+number of MPI processes: 8
+
+
+===============================================================================
+ Build Information
+===============================================================================
+build date:    2018-01-26 09:43:37.024969
+build machine: Linux cori08 4.4.74-92.38-default #1 SMP Tue Sep 12 19:43:46 UTC 2017 (545c055) x86_64 x86_64 x86_64 GNU/Linux
+build dir:     /global/u2/a/almgren/GitCode/mfix/build/mfix/src
+AMReX dir:     /global/homes/a/almgren/GitCode/mfix/build/amrex/installdir
+
+COMP:          Intel
+COMP version:  18.0.0.20170811
+FCOMP:         Intel
+FCOMP version: 18.0.0.20170811
+
+MFIX git hash: 17.07-638-ga1542fa-dirty
+
+
+===============================================================================
+ Grid Information
+===============================================================================
+ level: 0
+   number of boxes = 8
+   maximum zones   = 40 40 40 
+
+
+
+===============================================================================
+ Inputs File Parameters
+===============================================================================
+amr.n_cell = 40 40 40
+amr.max_grid_size_x = 20
+amr.max_grid_size_y = 20
+amr.max_grid_size_z = 20
+fabarray.mfiter_tile_size = 20 20 20
+particles.tile_size = 20 20 20
+amr.max_level = 0
+amr.plot_int = 5
+amr.check_int = -1
+geometry.coord_sys = 0
+geometry.is_periodic = 1 1 1
+geometry.prob_lo = 0. 0. 0.
+geometry.prob_hi = 0.008 0.008 0.008
+amr.blocking_factor = 1

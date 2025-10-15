@@ -1,0 +1,10 @@
+# Target labels
+ vtkogg
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/ogg/vtkogg/src/bitwise.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/ogg/vtkogg/src/framing.c
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/ogg/vtkogg/include/ogg/config_types.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/ogg/vtkogg/include/ogg/ogg.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/ogg/vtkogg/include/ogg/os_types.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/ogg/vtkogg/include/ogg/vtk_ogg_mangle.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/ogg/vtkogg/include/ogg/vtkogg_export.h

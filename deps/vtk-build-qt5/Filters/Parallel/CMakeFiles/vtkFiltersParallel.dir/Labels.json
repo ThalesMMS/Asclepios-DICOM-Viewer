@@ -1,0 +1,274 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkAggregateDataSetFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkAngularPeriodicFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkCollectGraph.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkCollectPolyData.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkCollectTable.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkCutMaterial.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkDuplicatePolyData.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkExtractCTHPart.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkExtractPolyDataPiece.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkExtractUnstructuredGridPiece.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkExtractUserDefinedPiece.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkIntegrateAttributes.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPassThroughFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPCellDataToPointData.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPeriodicFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPExtractDataArraysOverTime.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPExtractSelectedArraysOverTime.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPieceRequestFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPieceScalars.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPipelineSize.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPKdTree.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPLinearExtrusionFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPMaskPoints.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPOutlineCornerFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPOutlineFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPOutlineFilterInternals.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPPolyDataNormals.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPProbeFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPProjectSphereFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPReflectionFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPResampleFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkProcessIdScalars.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPSphereSource.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPYoungsMaterialInterface.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkRectilinearGridOutlineFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkRemoveGhosts.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkTransmitPolyDataPiece.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkTransmitRectilinearGridPiece.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkTransmitStructuredDataPiece.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkTransmitStructuredGridPiece.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkTransmitUnstructuredGridPiece.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkUnstructuredGridGhostCellsGenerator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPExtractArraysOverTime.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkAggregateDataSetFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkAngularPeriodicFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkCollectGraph.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkCollectPolyData.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkCollectTable.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkCutMaterial.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkDuplicatePolyData.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkExtractCTHPart.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkExtractPolyDataPiece.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkExtractUnstructuredGridPiece.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkExtractUserDefinedPiece.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkIntegrateAttributes.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPassThroughFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPCellDataToPointData.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPeriodicFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPExtractDataArraysOverTime.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPExtractSelectedArraysOverTime.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPieceRequestFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPieceScalars.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPipelineSize.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPKdTree.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPLinearExtrusionFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPMaskPoints.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPOutlineCornerFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPOutlineFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPOutlineFilterInternals.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPPolyDataNormals.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPProbeFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPProjectSphereFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPReflectionFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPResampleFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkProcessIdScalars.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPSphereSource.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPYoungsMaterialInterface.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkRectilinearGridOutlineFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkRemoveGhosts.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkTransmitPolyDataPiece.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkTransmitRectilinearGridPiece.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkTransmitStructuredDataPiece.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkTransmitStructuredGridPiece.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkTransmitUnstructuredGridPiece.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkUnstructuredGridGhostCellsGenerator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/vtkPExtractArraysOverTime.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Filters/Parallel/vtkFiltersParallelModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkFiltersParallel"
+		],
+		"name" : "vtkFiltersParallel"
+	}
+}

@@ -1,0 +1,10 @@
+# Target labels
+ vtkFiltersSelection
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Selection/vtkKdTreeSelector.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Selection/vtkLinearSelector.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Selection/vtkCellDistanceSelector.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Selection/vtkKdTreeSelector.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Selection/vtkLinearSelector.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Selection/vtkCellDistanceSelector.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Filters/Selection/vtkFiltersSelectionModule.h

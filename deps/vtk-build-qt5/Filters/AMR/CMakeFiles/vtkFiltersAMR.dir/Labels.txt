@@ -1,0 +1,18 @@
+# Target labels
+ vtkFiltersAMR
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/AMR/vtkAMRCutPlane.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/AMR/vtkAMRGaussianPulseSource.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/AMR/vtkAMRResampleFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/AMR/vtkAMRSliceFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/AMR/vtkAMRToMultiBlockFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/AMR/vtkImageToAMR.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/AMR/vtkParallelAMRUtilities.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/AMR/vtkAMRCutPlane.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/AMR/vtkAMRGaussianPulseSource.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/AMR/vtkAMRResampleFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/AMR/vtkAMRSliceFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/AMR/vtkAMRToMultiBlockFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/AMR/vtkImageToAMR.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/AMR/vtkParallelAMRUtilities.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Filters/AMR/vtkFiltersAMRModule.h

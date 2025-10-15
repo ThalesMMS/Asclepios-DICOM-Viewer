@@ -1,0 +1,112 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkBiomTableReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkChacoGraphReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkDelimitedTextReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkDIMACSGraphReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkDIMACSGraphWriter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkFixedWidthTextReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkISIReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkMultiNewickTreeReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkNewickTreeReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkNewickTreeWriter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkPhyloXMLTreeReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkPhyloXMLTreeWriter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkRISReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkTulipReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkXGMLReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkXMLTreeReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkBiomTableReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkChacoGraphReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkDelimitedTextReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkDIMACSGraphReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkDIMACSGraphWriter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkFixedWidthTextReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkISIReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkMultiNewickTreeReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkNewickTreeReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkNewickTreeWriter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkPhyloXMLTreeReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkPhyloXMLTreeWriter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkRISReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkTulipReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkXGMLReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Infovis/vtkXMLTreeReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/Infovis/vtkIOInfovisModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkIOInfovis"
+		],
+		"name" : "vtkIOInfovis"
+	}
+}

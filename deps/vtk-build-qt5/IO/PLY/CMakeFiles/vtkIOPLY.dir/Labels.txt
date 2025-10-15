@@ -1,0 +1,10 @@
+# Target labels
+ vtkIOPLY
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/PLY/vtkPLY.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/PLY/vtkPLYReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/PLY/vtkPLYWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/PLY/vtkPLY.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/PLY/vtkPLYReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/PLY/vtkPLYWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/PLY/vtkIOPLYModule.h

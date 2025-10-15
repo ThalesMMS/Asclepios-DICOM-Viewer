@@ -1,0 +1,6 @@
+# CMake generation dependency list for this directory.
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkogg.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkModuleInfo.cmake.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/CMakeLists.txt
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/module.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtk_theora.h.in

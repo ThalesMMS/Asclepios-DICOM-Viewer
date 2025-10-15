@@ -1,0 +1,802 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkRenderingOpenGL2ObjectFactory.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkCameraPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkClearRGBPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkClearZPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkCompositePolyDataMapper2.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkDefaultPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkDepthOfFieldPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkDepthImageProcessingPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkDepthPeelingPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkDualDepthPeelingPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkEDLShading.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkFramebufferPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkGaussianBlurPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkGenericOpenGLRenderWindow.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkHiddenLineRemovalPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkImageProcessingPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkLightingMapPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkLightsPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpaquePass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLActor.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLBillboardTextActor3D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLBufferObject.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLCamera.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLFXAAFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLFramebufferObject.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLGL2PSHelper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLGlyph3DHelper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLGlyph3DMapper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLHardwareSelector.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLHelper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLImageAlgorithmHelper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLImageMapper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLImageSliceMapper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLIndexBufferObject.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLInstanceCulling.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLLabeledContourMapper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLLight.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLPointGaussianMapper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLPolyDataMapper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLPolyDataMapper2D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLProperty.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLQuadHelper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLRenderPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLRenderTimer.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLRenderTimerLog.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLRenderUtilities.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLRenderWindow.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLRenderer.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLShaderCache.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLSkybox.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLSphereMapper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLState.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLStickMapper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLTextActor.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLTextActor3D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLTextMapper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLTexture.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLVertexArrayObject.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLVertexBufferObject.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLVertexBufferObjectCache.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLVertexBufferObjectGroup.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOrderIndependentTranslucentPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOverlayPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkPanoramicProjectionPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkPixelBufferObject.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkPointFillPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkRenderPassCollection.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkRenderStepsPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkRenderbuffer.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkSSAAPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkSequencePass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkShader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkShaderProgram.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkShadowMapBakerPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkShadowMapPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkSimpleMotionBlurPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkSobelGradientMagnitudePass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkTextureObject.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkTextureUnitManager.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkToneMappingPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkTransformFeedback.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkTranslucentPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkValuePass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkVolumetricPass.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkDataTransferHelper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkDepthOfFieldPassFS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkDepthPeelingPassFinalFS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkDepthPeelingPassIntermediateFS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkEDLBilateralFilterFS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkEDLComposeFS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkEDLShadeFS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkFXAAFilterFS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkGaussianBlurPassFS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkGaussianBlurPassVS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkGlyph3DVS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkOrderIndependentTranslucentPassFinalFS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkPointGaussianVS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkPointGaussianGS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkPointFillPassFS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkPolyData2DFS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkPolyData2DVS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkPolyDataFS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkPolyDataVS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkPolyDataWideLineGS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkSSAAPassFS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkSimpleMotionBlurPassFS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkSobelGradientMagnitudePass1FS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkSobelGradientMagnitudePass2FS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkSphereMapperGS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkStickMapperGS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkTextureObjectFS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkTextureObjectVS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkDummyGPUInfoList.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkWin32RenderWindowInteractor.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkWin32OpenGLRenderWindow.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGL.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkStateStorage.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkTDxConfigure.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkOpenGLError.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkRenderingOpenGLConfigure.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkRenderingOpenGL2ObjectFactory.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkCameraPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkClearRGBPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkClearZPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkCompositePolyDataMapper2.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkDefaultPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkDepthOfFieldPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkDepthImageProcessingPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkDepthPeelingPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkDualDepthPeelingPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkEDLShading.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkFramebufferPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkGaussianBlurPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkGenericOpenGLRenderWindow.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkHiddenLineRemovalPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkImageProcessingPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkLightingMapPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkLightsPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpaquePass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLActor.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLBillboardTextActor3D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLBufferObject.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLCamera.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLFXAAFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLFramebufferObject.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLGL2PSHelper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLGlyph3DHelper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLGlyph3DMapper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLHardwareSelector.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLHelper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLImageAlgorithmHelper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLImageMapper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLImageSliceMapper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLIndexBufferObject.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLInstanceCulling.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLLabeledContourMapper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLLight.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLPointGaussianMapper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLPolyDataMapper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLPolyDataMapper2D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLProperty.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLQuadHelper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLRenderPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLRenderTimer.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLRenderTimerLog.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLRenderUtilities.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLRenderWindow.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLRenderer.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLShaderCache.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLSkybox.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLSphereMapper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLState.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLStickMapper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLTextActor.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLTextActor3D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLTextMapper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLTexture.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLVertexArrayObject.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLVertexBufferObject.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLVertexBufferObjectCache.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOpenGLVertexBufferObjectGroup.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOrderIndependentTranslucentPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkOverlayPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkPanoramicProjectionPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkPixelBufferObject.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkPointFillPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkRenderPassCollection.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkRenderStepsPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkRenderbuffer.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkSSAAPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkSequencePass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkShader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkShaderProgram.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkShadowMapBakerPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkShadowMapPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkSimpleMotionBlurPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkSobelGradientMagnitudePass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkTextureObject.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkTextureUnitManager.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkToneMappingPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkTransformFeedback.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkTranslucentPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkValuePass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkVolumetricPass.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkDataTransferHelper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkDepthOfFieldPassFS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkDepthPeelingPassFinalFS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkDepthPeelingPassIntermediateFS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkEDLBilateralFilterFS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkEDLComposeFS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkEDLShadeFS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkFXAAFilterFS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkGaussianBlurPassFS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkGaussianBlurPassVS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkGlyph3DVS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkOrderIndependentTranslucentPassFinalFS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkPointGaussianVS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkPointGaussianGS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkPointFillPassFS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkPolyData2DFS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkPolyData2DVS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkPolyDataFS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkPolyDataVS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkPolyDataWideLineGS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkSSAAPassFS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkSimpleMotionBlurPassFS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkSobelGradientMagnitudePass1FS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkSobelGradientMagnitudePass2FS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkSphereMapperGS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkStickMapperGS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkTextureObjectFS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkTextureObjectVS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkDummyGPUInfoList.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkWin32RenderWindowInteractor.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/OpenGL2/vtkWin32OpenGLRenderWindow.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/OpenGL2/vtkRenderingOpenGL2Module.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkDepthOfFieldPassFS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkDepthPeelingPassFinalFS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkDepthPeelingPassIntermediateFS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkEDLBilateralFilterFS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkEDLComposeFS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkEDLShadeFS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkFXAAFilterFS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkGaussianBlurPassFS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkGaussianBlurPassVS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkGlyph3DVS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkOrderIndependentTranslucentPassFinalFS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkPointGaussianVS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkPointGaussianGS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkPointFillPassFS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkPolyData2DFS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkPolyData2DVS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkPolyDataFS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkPolyDataVS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkPolyDataWideLineGS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkSSAAPassFS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkSimpleMotionBlurPassFS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkSobelGradientMagnitudePass1FS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkSobelGradientMagnitudePass2FS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkSphereMapperGS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkStickMapperGS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkTextureObjectFS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/8f915bcf96803b04515049bd41b380e1/vtkTextureObjectVS.h.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkRenderingOpenGL2"
+		],
+		"name" : "vtkRenderingOpenGL2"
+	}
+}

@@ -1,0 +1,18 @@
+<VTKFile type="PUnstructuredGrid" version="1.0" byte_order="LittleEndian" header_type="UInt64" compressor="vtkZLibDataCompressor">
+  <PUnstructuredGrid GhostLevel="1">
+    <PPointData GlobalIds="___D3___GlobalNodeIds">
+      <PDataArray type="Int64" Name="___D3___GlobalNodeIds"/>
+      <PDataArray type="UInt8" Name="vtkGhostType"/>
+      <PDataArray type="Int64" Name="vtkOriginalPointIds"/>
+    </PPointData>
+    <PCellData>
+      <PDataArray type="UInt8" Name="vtkGhostType"/>
+      <PDataArray type="Int64" Name="vtkOriginalCellIds"/>
+    </PCellData>
+    <PPoints>
+      <PDataArray type="Float32" Name="Points" NumberOfComponents="3"/>
+    </PPoints>
+    <Piece Source="quadratic_tets_with_ghost_cells_0.vtu"/>
+    <Piece Source="quadratic_tets_with_ghost_cells_1.vtu"/>
+  </PUnstructuredGrid>
+</VTKFile>

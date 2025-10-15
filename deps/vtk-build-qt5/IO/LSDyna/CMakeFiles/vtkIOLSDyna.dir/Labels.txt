@@ -1,0 +1,16 @@
+# Target labels
+ vtkIOLSDyna
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/LSDyna/vtkLSDynaPart.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/LSDyna/vtkLSDynaPartCollection.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/LSDyna/vtkLSDynaReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/LSDyna/vtkLSDynaSummaryParser.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/LSDyna/LSDynaMetaData.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/LSDyna/LSDynaFamily.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/LSDyna/vtkLSDynaPart.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/LSDyna/vtkLSDynaPartCollection.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/LSDyna/vtkLSDynaReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/LSDyna/vtkLSDynaSummaryParser.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/LSDyna/LSDynaMetaData.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/LSDyna/LSDynaFamily.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/LSDyna/vtkIOLSDynaModule.h

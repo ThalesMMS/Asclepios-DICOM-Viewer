@@ -1,0 +1,76 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridAxisClip.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridAxisCut.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridAxisReflection.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridCellCenters.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridContour.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridDepthLimiter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridGeometry.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridPlaneCutter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridThreshold.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridToUnstructuredGrid.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridAxisClip.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridAxisCut.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridAxisReflection.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridCellCenters.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridContour.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridDepthLimiter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridGeometry.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridPlaneCutter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridThreshold.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/HyperTree/vtkHyperTreeGridToUnstructuredGrid.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Filters/HyperTree/vtkFiltersHyperTreeModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkFiltersHyperTree"
+		],
+		"name" : "vtkFiltersHyperTree"
+	}
+}

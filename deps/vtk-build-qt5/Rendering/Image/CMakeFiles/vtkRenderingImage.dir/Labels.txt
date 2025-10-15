@@ -1,0 +1,12 @@
+# Target labels
+ vtkRenderingImage
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Image/vtkDepthImageToPointCloud.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Image/vtkImageResliceMapper.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Image/vtkImageSliceCollection.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Image/vtkImageStack.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Image/vtkDepthImageToPointCloud.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Image/vtkImageResliceMapper.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Image/vtkImageSliceCollection.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Image/vtkImageStack.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/Image/vtkRenderingImageModule.h

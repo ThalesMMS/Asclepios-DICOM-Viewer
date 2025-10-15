@@ -1,0 +1,166 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkCardinalSpline.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkKochanekSpline.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricBoy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricConicSpiral.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricCrossCap.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricDini.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricEllipsoid.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricEnneper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricFigure8Klein.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricFunction.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricKlein.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricMobius.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricRandomHills.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricRoman.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricSpline.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricSuperEllipsoid.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricSuperToroid.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricTorus.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricKuen.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricPseudosphere.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricBohemianDome.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricHenneberg.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricCatalanMinimal.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricBour.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricPluckerConoid.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkCardinalSpline.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkKochanekSpline.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricBoy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricConicSpiral.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricCrossCap.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricDini.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricEllipsoid.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricEnneper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricFigure8Klein.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricFunction.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricKlein.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricMobius.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricRandomHills.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricRoman.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricSpline.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricSuperEllipsoid.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricSuperToroid.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricTorus.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricKuen.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricPseudosphere.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricBohemianDome.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricHenneberg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricCatalanMinimal.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricBour.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Common/ComputationalGeometry/vtkParametricPluckerConoid.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Common/ComputationalGeometry/vtkCommonComputationalGeometryModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkCommonComputationalGeometry"
+		],
+		"name" : "vtkCommonComputationalGeometry"
+	}
+}

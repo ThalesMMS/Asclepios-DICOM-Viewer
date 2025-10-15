@@ -1,0 +1,28 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ExportOpenGL2/vtkOpenGLGL2PSExporter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/ExportOpenGL2/vtkIOExportOpenGL2ObjectFactory.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ExportOpenGL2/vtkOpenGLGL2PSExporter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/ExportOpenGL2/vtkIOExportOpenGL2ObjectFactory.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/ExportOpenGL2/vtkIOExportOpenGL2Module.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkIOExportOpenGL2"
+		],
+		"name" : "vtkIOExportOpenGL2"
+	}
+}

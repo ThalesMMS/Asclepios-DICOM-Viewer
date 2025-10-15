@@ -1,0 +1,11 @@
+# CMake generation dependency list for this directory.
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckIncludeFile.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckIncludeFileCXX.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckIncludeFiles.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckSymbolExists.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckTypeSize.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/TestBigEndian.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/netcdf/vtknetcdf/CMakeLists.txt
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/netcdf/vtknetcdf/config.h.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/netcdf/vtknetcdf/include/netcdf_meta.h.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/netcdf/vtknetcdf/vtk_netcdf_config.h.in

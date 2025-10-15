@@ -1,0 +1,40 @@
+# Target labels
+ vtkIOExport
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkExporter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkGL2PSExporter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkIVExporter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkOBJExporter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkOOGLExporter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkPOVExporter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkRIBExporter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkRIBLight.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkRIBProperty.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkSVGContextDevice2D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkSVGExporter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkSingleVTPExporter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkVRMLExporter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkX3D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkX3DExporter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkX3DExporterFIWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkX3DExporterWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkX3DExporterXMLWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkExporter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkGL2PSExporter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkIVExporter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkOBJExporter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkOOGLExporter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkPOVExporter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkRIBExporter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkRIBLight.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkRIBProperty.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkSVGContextDevice2D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkSVGExporter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkSingleVTPExporter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkVRMLExporter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkX3D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkX3DExporter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkX3DExporterFIWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkX3DExporterWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Export/vtkX3DExporterXMLWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/Export/vtkIOExportModule.h

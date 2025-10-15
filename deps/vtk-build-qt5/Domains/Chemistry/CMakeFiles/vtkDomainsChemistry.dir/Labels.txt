@@ -1,0 +1,39 @@
+# Target labels
+ vtkDomainsChemistry
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkBlueObeliskData.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkBlueObeliskDataInternal.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkBlueObeliskDataParser.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkCMLMoleculeReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkGaussianCubeReader2.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkMoleculeMapper.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkMoleculeToAtomBallFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkMoleculeToBondStickFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkMoleculeToLinesFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkMoleculeToPolyDataFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkPeriodicTable.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkPointSetToMoleculeFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkProgrammableElectronicData.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkProteinRibbonFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkSimpleBondPerceiver.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkVASPAnimationReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkVASPTessellationReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkXYZMolReader2.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkBlueObeliskData.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkBlueObeliskDataParser.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkCMLMoleculeReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkGaussianCubeReader2.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkMoleculeMapper.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkMoleculeToAtomBallFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkMoleculeToBondStickFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkMoleculeToLinesFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkMoleculeToPolyDataFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkPeriodicTable.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkPointSetToMoleculeFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkProgrammableElectronicData.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkProteinRibbonFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkSimpleBondPerceiver.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkVASPAnimationReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkVASPTessellationReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/Chemistry/vtkXYZMolReader2.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Domains/Chemistry/vtkDomainsChemistryModule.h

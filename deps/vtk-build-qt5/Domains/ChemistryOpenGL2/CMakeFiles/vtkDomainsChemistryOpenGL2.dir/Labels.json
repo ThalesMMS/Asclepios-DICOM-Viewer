@@ -1,0 +1,28 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/ChemistryOpenGL2/vtkOpenGLMoleculeMapper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Domains/ChemistryOpenGL2/vtkDomainsChemistryOpenGL2ObjectFactory.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/ChemistryOpenGL2/vtkOpenGLMoleculeMapper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Domains/ChemistryOpenGL2/vtkDomainsChemistryOpenGL2ObjectFactory.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Domains/ChemistryOpenGL2/vtkDomainsChemistryOpenGL2Module.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkDomainsChemistryOpenGL2"
+		],
+		"name" : "vtkDomainsChemistryOpenGL2"
+	}
+}

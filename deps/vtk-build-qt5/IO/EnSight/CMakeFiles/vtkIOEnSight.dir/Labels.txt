@@ -1,0 +1,18 @@
+# Target labels
+ vtkIOEnSight
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/EnSight/vtkEnSight6BinaryReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/EnSight/vtkEnSight6Reader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/EnSight/vtkEnSightGoldBinaryReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/EnSight/vtkEnSightGoldReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/EnSight/vtkEnSightMasterServerReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/EnSight/vtkEnSightReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/EnSight/vtkGenericEnSightReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/EnSight/vtkEnSight6BinaryReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/EnSight/vtkEnSight6Reader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/EnSight/vtkEnSightGoldBinaryReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/EnSight/vtkEnSightGoldReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/EnSight/vtkEnSightMasterServerReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/EnSight/vtkEnSightReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/EnSight/vtkGenericEnSightReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/EnSight/vtkIOEnSightModule.h

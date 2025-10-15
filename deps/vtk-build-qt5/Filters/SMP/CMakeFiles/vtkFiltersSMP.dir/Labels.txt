@@ -1,0 +1,20 @@
+# Target labels
+ vtkFiltersSMP
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/SMP/vtkSMPContourGrid.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/SMP/vtkSMPMergePoints.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/SMP/vtkSMPMergePolyDataHelper.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/SMP/vtkSMPContourGridManyPieces.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/SMP/vtkThreadedSynchronizedTemplates3D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/SMP/vtkThreadedSynchronizedTemplatesCutter3D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/SMP/vtkSMPTransform.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/SMP/vtkSMPWarpVector.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/SMP/vtkSMPContourGrid.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/SMP/vtkSMPMergePoints.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/SMP/vtkSMPMergePolyDataHelper.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/SMP/vtkSMPContourGridManyPieces.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/SMP/vtkThreadedSynchronizedTemplates3D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/SMP/vtkThreadedSynchronizedTemplatesCutter3D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/SMP/vtkSMPTransform.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/SMP/vtkSMPWarpVector.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Filters/SMP/vtkFiltersSMPModule.h

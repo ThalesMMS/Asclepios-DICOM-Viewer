@@ -1,0 +1,22 @@
+# Target labels
+ vtkImagingFourier
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Fourier/vtkImageButterworthHighPass.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Fourier/vtkImageButterworthLowPass.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Fourier/vtkImageFFT.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Fourier/vtkImageFourierCenter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Fourier/vtkImageFourierFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Fourier/vtkImageIdealHighPass.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Fourier/vtkImageIdealLowPass.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Fourier/vtkImageRFFT.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Fourier/vtkTableFFT.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Fourier/vtkImageButterworthHighPass.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Fourier/vtkImageButterworthLowPass.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Fourier/vtkImageFFT.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Fourier/vtkImageFourierCenter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Fourier/vtkImageFourierFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Fourier/vtkImageIdealHighPass.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Fourier/vtkImageIdealLowPass.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Fourier/vtkImageRFFT.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Fourier/vtkTableFFT.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Imaging/Fourier/vtkImagingFourierModule.h

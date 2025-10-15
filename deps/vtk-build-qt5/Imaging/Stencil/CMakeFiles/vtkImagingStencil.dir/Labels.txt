@@ -1,0 +1,18 @@
+# Target labels
+ vtkImagingStencil
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Stencil/vtkImageStencil.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Stencil/vtkImageStencilToImage.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Stencil/vtkImageToImageStencil.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Stencil/vtkImplicitFunctionToImageStencil.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Stencil/vtkLassoStencilSource.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Stencil/vtkPolyDataToImageStencil.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Stencil/vtkROIStencilSource.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Stencil/vtkImageStencil.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Stencil/vtkImageStencilToImage.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Stencil/vtkImageToImageStencil.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Stencil/vtkImplicitFunctionToImageStencil.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Stencil/vtkLassoStencilSource.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Stencil/vtkPolyDataToImageStencil.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Stencil/vtkROIStencilSource.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Imaging/Stencil/vtkImagingStencilModule.h

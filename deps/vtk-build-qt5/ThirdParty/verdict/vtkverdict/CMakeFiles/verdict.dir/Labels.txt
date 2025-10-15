@@ -1,0 +1,13 @@
+# Target labels
+ vtkverdict
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/V_EdgeMetric.cpp
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/V_GaussIntegration.cpp
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/V_HexMetric.cpp
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/V_KnifeMetric.cpp
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/V_PyramidMetric.cpp
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/V_QuadMetric.cpp
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/V_TetMetric.cpp
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/V_TriMetric.cpp
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/VerdictVector.cpp
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/V_WedgeMetric.cpp

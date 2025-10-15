@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{78728410-DC60-3DE2-8DA4-08C25138D280}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>vtkIOTecplotTableCxxTests</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">vtkIOTecplotTableCxxTests.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">vtkIOTecplotTableCxxTests</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">vtkIOTecplotTableCxxTests.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">vtkIOTecplotTableCxxTests</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">vtkIOTecplotTableCxxTests.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">vtkIOTecplotTableCxxTests</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">vtkIOTecplotTableCxxTests.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">vtkIOTecplotTableCxxTests</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4\lib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Testing\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4\lib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Testing\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4\lib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Testing\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\..\..\lib\Debug\vtkIOTecplotTable-8.2.lib;..\..\..\..\lib\Debug\vtkCommonCore-8.2.lib;..\..\..\..\lib\Debug\vtksys-8.2.lib;..\..\..\..\lib\Debug\vtkCommonDataModel-8.2.lib;..\..\..\..\lib\Debug\vtkCommonMath-8.2.lib;..\..\..\..\lib\Debug\vtkCommonMisc-8.2.lib;..\..\..\..\lib\Debug\vtkCommonSystem-8.2.lib;..\..\..\..\lib\Debug\vtkCommonTransforms-8.2.lib;..\..\..\..\lib\Debug\vtkCommonExecutionModel-8.2.lib;..\..\..\..\lib\Debug\vtkIOCore-8.2.lib;..\..\..\..\lib\Debug\vtkdoubleconversion-8.2.lib;..\..\..\..\lib\Debug\vtklz4-8.2.lib;..\..\..\..\lib\Debug\vtklzma-8.2.lib;..\..\..\..\lib\Debug\vtkzlib-8.2.lib;..\..\..\..\lib\Debug\vtkCommonExecutionModel-8.2.lib;..\..\..\..\lib\Debug\vtkCommonDataModel-8.2.lib;..\..\..\..\lib\Debug\vtkCommonTransforms-8.2.lib;..\..\..\..\lib\Debug\vtkCommonMisc-8.2.lib;..\..\..\..\lib\Debug\vtkCommonMath-8.2.lib;..\..\..\..\lib\Debug\vtkCommonSystem-8.2.lib;..\..\..\..\lib\Debug\vtkCommonCore-8.2.lib;..\..\..\..\lib\Debug\vtksys-8.2.lib;ws2_32.lib;Psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/Debug/vtkIOTecplotTableCxxTests.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/Debug/vtkIOTecplotTableCxxTests.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4\lib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Testing\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4\lib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Testing\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4\lib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Testing\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\..\..\lib\Release\vtkIOTecplotTable-8.2.lib;..\..\..\..\lib\Release\vtkCommonCore-8.2.lib;..\..\..\..\lib\Release\vtksys-8.2.lib;..\..\..\..\lib\Release\vtkCommonDataModel-8.2.lib;..\..\..\..\lib\Release\vtkCommonMath-8.2.lib;..\..\..\..\lib\Release\vtkCommonMisc-8.2.lib;..\..\..\..\lib\Release\vtkCommonSystem-8.2.lib;..\..\..\..\lib\Release\vtkCommonTransforms-8.2.lib;..\..\..\..\lib\Release\vtkCommonExecutionModel-8.2.lib;..\..\..\..\lib\Release\vtkIOCore-8.2.lib;..\..\..\..\lib\Release\vtkdoubleconversion-8.2.lib;..\..\..\..\lib\Release\vtklz4-8.2.lib;..\..\..\..\lib\Release\vtklzma-8.2.lib;..\..\..\..\lib\Release\vtkzlib-8.2.lib;..\..\..\..\lib\Release\vtkCommonExecutionModel-8.2.lib;..\..\..\..\lib\Release\vtkCommonDataModel-8.2.lib;..\..\..\..\lib\Release\vtkCommonTransforms-8.2.lib;..\..\..\..\lib\Release\vtkCommonMisc-8.2.lib;..\..\..\..\lib\Release\vtkCommonMath-8.2.lib;..\..\..\..\lib\Release\vtkCommonSystem-8.2.lib;..\..\..\..\lib\Release\vtkCommonCore-8.2.lib;..\..\..\..\lib\Release\vtksys-8.2.lib;ws2_32.lib;Psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/Release/vtkIOTecplotTableCxxTests.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/Release/vtkIOTecplotTableCxxTests.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4\lib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Testing\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4\lib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Testing\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4\lib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Testing\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\..\..\lib\MinSizeRel\vtkIOTecplotTable-8.2.lib;..\..\..\..\lib\MinSizeRel\vtkCommonCore-8.2.lib;..\..\..\..\lib\MinSizeRel\vtksys-8.2.lib;..\..\..\..\lib\MinSizeRel\vtkCommonDataModel-8.2.lib;..\..\..\..\lib\MinSizeRel\vtkCommonMath-8.2.lib;..\..\..\..\lib\MinSizeRel\vtkCommonMisc-8.2.lib;..\..\..\..\lib\MinSizeRel\vtkCommonSystem-8.2.lib;..\..\..\..\lib\MinSizeRel\vtkCommonTransforms-8.2.lib;..\..\..\..\lib\MinSizeRel\vtkCommonExecutionModel-8.2.lib;..\..\..\..\lib\MinSizeRel\vtkIOCore-8.2.lib;..\..\..\..\lib\MinSizeRel\vtkdoubleconversion-8.2.lib;..\..\..\..\lib\MinSizeRel\vtklz4-8.2.lib;..\..\..\..\lib\MinSizeRel\vtklzma-8.2.lib;..\..\..\..\lib\MinSizeRel\vtkzlib-8.2.lib;..\..\..\..\lib\MinSizeRel\vtkCommonExecutionModel-8.2.lib;..\..\..\..\lib\MinSizeRel\vtkCommonDataModel-8.2.lib;..\..\..\..\lib\MinSizeRel\vtkCommonTransforms-8.2.lib;..\..\..\..\lib\MinSizeRel\vtkCommonMisc-8.2.lib;..\..\..\..\lib\MinSizeRel\vtkCommonMath-8.2.lib;..\..\..\..\lib\MinSizeRel\vtkCommonSystem-8.2.lib;..\..\..\..\lib\MinSizeRel\vtkCommonCore-8.2.lib;..\..\..\..\lib\MinSizeRel\vtksys-8.2.lib;ws2_32.lib;Psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/MinSizeRel/vtkIOTecplotTableCxxTests.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/MinSizeRel/vtkIOTecplotTableCxxTests.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4\lib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Testing\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4\lib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Testing\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4\lib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Testing\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\..\..\lib\RelWithDebInfo\vtkIOTecplotTable-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtkCommonCore-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtksys-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtkCommonDataModel-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtkCommonMath-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtkCommonMisc-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtkCommonSystem-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtkCommonTransforms-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtkCommonExecutionModel-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtkIOCore-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtkdoubleconversion-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtklz4-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtklzma-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtkzlib-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtkCommonExecutionModel-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtkCommonDataModel-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtkCommonTransforms-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtkCommonMisc-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtkCommonMath-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtkCommonSystem-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtkCommonCore-8.2.lib;..\..\..\..\lib\RelWithDebInfo\vtksys-8.2.lib;ws2_32.lib;Psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/RelWithDebInfo/vtkIOTecplotTableCxxTests.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/RelWithDebInfo/vtkIOTecplotTableCxxTests.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable\Testing\Cxx\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/IO/TecplotTable/Testing/Cxx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/TecplotTable/Testing/Cxx/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Templates\TestDriver.cxx.in;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonDataModel.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonExecutionModel.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonMath.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonMisc.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonSystem.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonTransforms.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkIOCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkIOTecplotTable.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkTestingCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkdoubleconversion.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkkwiml.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtklz4.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtklzma.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtksys.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkutf8.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkzlib.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable\module.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable\Testing\Cxx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/IO/TecplotTable/Testing/Cxx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/TecplotTable/Testing/Cxx/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Templates\TestDriver.cxx.in;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonDataModel.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonExecutionModel.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonMath.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonMisc.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonSystem.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonTransforms.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkIOCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkIOTecplotTable.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkTestingCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkdoubleconversion.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkkwiml.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtklz4.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtklzma.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtksys.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkutf8.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkzlib.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable\module.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable\Testing\Cxx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/IO/TecplotTable/Testing/Cxx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/TecplotTable/Testing/Cxx/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Templates\TestDriver.cxx.in;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonDataModel.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonExecutionModel.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonMath.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonMisc.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonSystem.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonTransforms.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkIOCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkIOTecplotTable.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkTestingCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkdoubleconversion.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkkwiml.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtklz4.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtklzma.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtksys.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkutf8.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkzlib.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable\module.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable\Testing\Cxx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/IO/TecplotTable/Testing/Cxx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/TecplotTable/Testing/Cxx/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Templates\TestDriver.cxx.in;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonDataModel.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonExecutionModel.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonMath.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonMisc.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonSystem.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonTransforms.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkIOCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkIOTecplotTable.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkTestingCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkdoubleconversion.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkkwiml.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtklz4.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtklzma.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtksys.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkutf8.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkzlib.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable\module.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable\Testing\Cxx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable\Testing\Cxx\vtkIOTecplotTableCxxTests.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable\Testing\Cxx\TestTecplotTableReader.cxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ZERO_CHECK.vcxproj">
+      <Project>{CB3CEBE8-D3FC-3706-83B0-652E45C69461}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core\vtkCommonCore.vcxproj">
+      <Project>{0813AC50-5742-391F-BCAA-0CA45ACC8EC1}</Project>
+      <Name>vtkCommonCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel\vtkCommonDataModel.vcxproj">
+      <Project>{DE04E99B-0156-39F9-9522-11FEAF6BB697}</Project>
+      <Name>vtkCommonDataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel\vtkCommonExecutionModel.vcxproj">
+      <Project>{3C0CF2CA-93C8-37D6-BE96-C7AE892D0014}</Project>
+      <Name>vtkCommonExecutionModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math\vtkCommonMath.vcxproj">
+      <Project>{35C7861D-7CF6-3B28-8B3A-75A41E759A06}</Project>
+      <Name>vtkCommonMath</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc\vtkCommonMisc.vcxproj">
+      <Project>{5CCB42B8-75CD-33C7-B57B-77D85779A44F}</Project>
+      <Name>vtkCommonMisc</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System\vtkCommonSystem.vcxproj">
+      <Project>{40362FE2-03ED-3548-B645-BB70543CD248}</Project>
+      <Name>vtkCommonSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms\vtkCommonTransforms.vcxproj">
+      <Project>{1107639F-582A-3769-8C14-6D21E67C6DC0}</Project>
+      <Name>vtkCommonTransforms</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Core\vtkIOCore.vcxproj">
+      <Project>{04DC7D1B-9699-3A6E-8F81-AF6C5C6142EB}</Project>
+      <Name>vtkIOCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable\vtkIOTecplotTable.vcxproj">
+      <Project>{A25BB40F-C571-3A2A-AFAF-9C4BFC8B914A}</Project>
+      <Name>vtkIOTecplotTable</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion\vtkdoubleconversion\vtkdoubleconversion.vcxproj">
+      <Project>{ECF01E45-7F1D-36DD-82C2-67177F8A48F9}</Project>
+      <Name>vtkdoubleconversion</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4\vtklz4\vtklz4.vcxproj">
+      <Project>{25B32F93-A9F2-31AA-A8C1-1199051C3791}</Project>
+      <Name>vtklz4</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lzma\vtklzma\vtklzma.vcxproj">
+      <Project>{2A34C65C-38E2-38DD-9563-8002CA87F8A6}</Project>
+      <Name>vtklzma</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys\vtksys\vtksys.vcxproj">
+      <Project>{F5E45E60-7B5D-3AAC-BE34-651E9BF023BE}</Project>
+      <Name>vtksys</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib\vtkzlib\vtkzlib.vcxproj">
+      <Project>{342F70EC-5F35-3320-9822-A570989F1860}</Project>
+      <Name>vtkzlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

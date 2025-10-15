@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\HyperTree\Testing\Cxx\vtkFiltersHyperTreeCxxTests.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2D.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DAxisClipBox.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DAxisClipEllipse.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DAxisClipPlanes.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DAxisReflectionXCenter.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DAxisReflectionXCenterMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DAxisReflectionYCenter.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DAxisReflectionYCenterMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DIJK.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DCellCenters.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DCellCentersMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DContour.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DContourMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DDepthLimiter.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DDepthLimiterMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DInterfaceMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DMaterialIJK.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DThreshold.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DThresholdMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DVector.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DVectorAxisReflectionXCenter.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary2DVectorAxisReflectionYCenter.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary3DContour.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinary3DGeometry.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinaryClipPlanes.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinaryEllipseMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridBinaryHyperbolicParaboloidMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary2D.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary2DMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary2DMaterialBits.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary2DFullMaterialBits.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary2DBiMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DAxisClipBox.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DAxisClipCylinder.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DAxisClipPlanes.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DAxisCut.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DAxisCutMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DAxisReflectionXCenter.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DAxisReflectionXCenterMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DAxisReflectionYZCenter.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DAxisReflectionYZCenterMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DCellCenters.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DCellCentersMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DContour.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DContourMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DClip.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DDualContour.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DDualContourMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DGeometry.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DGeometryMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DGeometryMaterialBits.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DGeometryLargeMaterialBits.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DPlaneCutter.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DPlaneCutterDual.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DThreshold.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DThresholdMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DUnstructured.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernary3DUnstructuredMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernaryHyperbola.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernarySphereMaterial.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\TestHyperTreeGridTernarySphereMaterialReflections.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\Testing\Cxx\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{C27CBADC-6C25-3DD6-8CDE-F0BE157D446C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

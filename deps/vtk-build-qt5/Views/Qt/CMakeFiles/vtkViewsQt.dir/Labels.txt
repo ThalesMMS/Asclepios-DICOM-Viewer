@@ -1,0 +1,30 @@
+# Target labels
+ vtkViewsQt
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtAnnotationView.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtListView.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtRecordView.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtTableRepresentation.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtTableView.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtTreeView.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtView.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Views/Qt/moc_vtkQtAnnotationView.cpp
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Views/Qt/moc_vtkQtListView.cpp
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Views/Qt/moc_vtkQtRecordView.cpp
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Views/Qt/moc_vtkQtTableView.cpp
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Views/Qt/moc_vtkQtTreeView.cpp
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Views/Qt/moc_vtkQtView.cpp
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtAnnotationView.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtListView.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtRecordView.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtTableRepresentation.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtTableView.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtTreeView.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtView.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Views/Qt/vtkViewsQtModule.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/7917aa9c854bb9edfd769510723808e5/moc_vtkQtAnnotationView.cpp.rule
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/7917aa9c854bb9edfd769510723808e5/moc_vtkQtListView.cpp.rule
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/7917aa9c854bb9edfd769510723808e5/moc_vtkQtRecordView.cpp.rule
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/7917aa9c854bb9edfd769510723808e5/moc_vtkQtTableView.cpp.rule
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/7917aa9c854bb9edfd769510723808e5/moc_vtkQtTreeView.cpp.rule
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/7917aa9c854bb9edfd769510723808e5/moc_vtkQtView.cpp.rule

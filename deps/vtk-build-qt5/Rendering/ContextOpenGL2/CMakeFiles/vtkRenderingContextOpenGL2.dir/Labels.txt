@@ -1,0 +1,16 @@
+# Target labels
+ vtkRenderingContextOpenGL2
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/ContextOpenGL2/vtkOpenGLContextActor.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/ContextOpenGL2/vtkOpenGLContextBufferId.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/ContextOpenGL2/vtkOpenGLContextDevice2D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/ContextOpenGL2/vtkOpenGLContextDevice3D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/ContextOpenGL2/vtkOpenGLPropItem.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/ContextOpenGL2/vtkRenderingContextOpenGL2ObjectFactory.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/ContextOpenGL2/vtkOpenGLContextActor.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/ContextOpenGL2/vtkOpenGLContextBufferId.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/ContextOpenGL2/vtkOpenGLContextDevice2D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/ContextOpenGL2/vtkOpenGLContextDevice3D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/ContextOpenGL2/vtkOpenGLPropItem.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/ContextOpenGL2/vtkRenderingContextOpenGL2ObjectFactory.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/ContextOpenGL2/vtkRenderingContextOpenGL2Module.h

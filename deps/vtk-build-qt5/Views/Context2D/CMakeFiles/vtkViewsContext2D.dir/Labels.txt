@@ -1,0 +1,8 @@
+# Target labels
+ vtkViewsContext2D
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Context2D/vtkContextView.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Context2D/vtkContextInteractorStyle.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Context2D/vtkContextView.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Context2D/vtkContextInteractorStyle.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Views/Context2D/vtkViewsContext2DModule.h

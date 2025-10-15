@@ -1,0 +1,5 @@
+# CMake generation dependency list for this directory.
+D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkModuleInfo.cmake.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/sqlite/CMakeLists.txt
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/sqlite/module.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/sqlite/vtk_sqlite.h.in

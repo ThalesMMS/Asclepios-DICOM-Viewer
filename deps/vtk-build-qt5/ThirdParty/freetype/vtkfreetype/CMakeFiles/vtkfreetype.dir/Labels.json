@@ -1,0 +1,91 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/base/ftbase.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/base/ftbbox.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/base/ftbitmap.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/base/ftglyph.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/base/ftinit.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/base/ftmm.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/bdf/bdf.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/cache/ftcache.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/cff/cff.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/cid/type1cid.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/gzip/ftgzip.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/lzw/ftlzw.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/pcf/pcf.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/pfr/pfr.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/psaux/psaux.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/pshinter/pshinter.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/psnames/psmodule.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/raster/raster.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/sfnt/sfnt.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/smooth/smooth.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/truetype/truetype.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/type1/type1.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/type42/type42.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/winfonts/winfnt.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/builds/win32/ftdebug.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/base/ftsystem.c"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkfreetype"
+		],
+		"name" : "vtkfreetype"
+	}
+}

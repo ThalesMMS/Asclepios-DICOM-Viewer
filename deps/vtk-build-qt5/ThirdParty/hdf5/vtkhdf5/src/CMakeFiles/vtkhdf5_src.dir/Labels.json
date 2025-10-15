@@ -1,0 +1,1249 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5checksum.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5dbg.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5system.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5timer.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5trace.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5A.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Abtree2.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Adense.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Adeprec.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Aint.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Atest.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5AC.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5ACdbg.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5AClog.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5ACmpio.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5ACproxy_entry.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5B.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Bcache.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Bdbg.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5B2.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5B2cache.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5B2dbg.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5B2hdr.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5B2int.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5B2internal.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5B2leaf.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5B2stat.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5B2test.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5C.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Cdbg.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Cepoch.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Cimage.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Clog.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Cmpio.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Cprefetched.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Cquery.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ctag.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ctest.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5CS.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5D.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dbtree.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dbtree2.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dchunk.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dcompact.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dcontig.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ddbg.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ddeprec.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dearray.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Defl.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dfarray.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dfill.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dint.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dio.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dlayout.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dmpio.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dnone.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Doh.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dscatgath.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dselect.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dsingle.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dtest.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dvirtual.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5E.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Edeprec.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Eint.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5EA.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5EAcache.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5EAdbg.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5EAdblkpage.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5EAdblock.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5EAhdr.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5EAiblock.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5EAint.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5EAsblock.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5EAstat.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5EAtest.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5F.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Faccum.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Fcwfs.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Fdbg.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Fdeprec.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Fefc.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ffake.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Fint.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Fio.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Fmount.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Fmpi.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Fquery.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Fsfile.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Fspace.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Fsuper.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Fsuper_cache.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ftest.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FA.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FAcache.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FAdbg.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FAdblkpage.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FAdblock.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FAhdr.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FAint.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FAstat.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FAtest.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FD.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDcore.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDdirect.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDfamily.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDint.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDlog.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDmpi.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDmpio.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDmulti.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDsec2.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDspace.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDstdio.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDtest.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDwindows.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FL.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FO.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FS.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FScache.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FSdbg.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FSint.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FSsection.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FSstat.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FStest.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5G.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Gbtree2.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Gcache.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Gcompact.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Gdense.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Gdeprec.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Gent.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Gint.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Glink.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Gloc.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Gname.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Gnode.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Gobj.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Goh.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Groot.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Gstab.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Gtest.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Gtraverse.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HF.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HFbtree2.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HFcache.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HFdbg.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HFdblock.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HFdtable.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HFhdr.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HFhuge.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HFiblock.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HFiter.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HFman.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HFsection.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HFspace.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HFstat.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HFtest.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HFtiny.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HG.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HGcache.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HGdbg.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HGquery.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HL.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HLcache.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HLdbg.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HLdblk.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HLint.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HLprfx.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HP.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5I.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Itest.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5L.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Lexternal.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5MF.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5MFaggr.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5MFdbg.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5MFsection.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5MM.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5MP.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5MPtest.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5O.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Oainfo.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Oalloc.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Oattr.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Oattribute.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Obogus.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Obtreek.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ocache.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ocache_image.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ochunk.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ocont.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ocopy.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Odbg.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Odrvinfo.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Odtype.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Oefl.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ofill.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Oflush.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ofsinfo.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Oginfo.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Olayout.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Olinfo.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Olink.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Omessage.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Omtime.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Oname.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Onull.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Opline.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Orefcount.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Osdspace.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Oshared.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Oshmesg.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ostab.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Otest.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ounknown.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5P.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Pacpl.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Pdapl.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Pdcpl.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Pdeprec.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Pdxpl.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Pencdec.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Pfapl.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Pfcpl.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Pfmpl.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Pgcpl.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Pint.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Plapl.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Plcpl.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Pocpl.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Pocpypl.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Pstrcpl.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ptest.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5PB.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5PL.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5R.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Rdeprec.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5UC.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5RS.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5S.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Sall.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Sdbg.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Shyper.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Smpio.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Snone.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Spoint.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Sselect.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Stest.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5SL.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5SM.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5SMbtree2.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5SMcache.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5SMmessage.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5SMtest.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5ST.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5T.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tarray.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tbit.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tcommit.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tcompound.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tconv.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tcset.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tdbg.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tdeprec.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tenum.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tfields.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tfixed.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tfloat.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tnative.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Toffset.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Toh.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Topaque.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Torder.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tpad.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tprecis.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tstrpad.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tvisit.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tvlen.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5TS.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5VM.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5WB.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Z.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Zdeflate.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Zfletcher32.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Znbit.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Zscaleoffset.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Zshuffle.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Zszip.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ztrans.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/hdf5/vtkhdf5/H5Tinit.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/hdf5/vtkhdf5/H5lib_settings.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/hdf5.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5api_adpt.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5public.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/vtk_hdf5_mangle.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Apkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Apublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5ACpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5ACpublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Bpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Bpublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5B2pkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5B2public.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Cpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Cpublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dpublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Epkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Epublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5EApkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Fpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Fpublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FApkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDcore.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDdirect.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDfamily.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDlog.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDmpi.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDmpio.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDmulti.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDpublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDsec2.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDstdio.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDwindows.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FSpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FSpublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Gpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Gpublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HFpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HFpublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HGpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HGpublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HLpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HLpublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ipkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ipublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Lpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Lpublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5MMpublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5MPpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Opkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Opublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Oshared.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ppkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Ppublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5PBpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5PLextern.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5PLpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5PLpublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Rpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Rpublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Spkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Spublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5SMpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tpublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Zpkg.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Zpublic.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5private.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Aprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5ACprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5B2private.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Bprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Cprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5CSprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Dprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Eprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5EAprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FAprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FDprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Fprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FLprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FOprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5MFprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5MMprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5FSprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Gprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HFprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HGprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HLprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5HPprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Iprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Lprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5MPprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Oprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Pprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5PBprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5PLprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5UCprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Rprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5RSprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5SLprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5SMprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Sprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5STprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Tprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5TSprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5VMprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5WBprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Zprivate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5win32defs.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Edefin.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Einit.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Epubgen.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5Eterm.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5version.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/hdf5/vtkhdf5/src/H5overflow.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/1ea8aab4e4eeeefcef86410cae8f315b/H5Tinit.c.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/1ea8aab4e4eeeefcef86410cae8f315b/H5lib_settings.c.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkhdf5"
+		],
+		"name" : "vtkhdf5_src"
+	}
+}

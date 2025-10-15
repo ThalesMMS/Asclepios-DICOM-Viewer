@@ -1,0 +1,42 @@
+# Target labels
+ vtkRenderingVolumeOpenGL2
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkMultiBlockVolumeMapper.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLGPUVolumeRayCastMapper.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLProjectedTetrahedraMapper.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLRayCastImageDisplayHelper.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkSmartVolumeMapper.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkVolumeTexture.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkVolumeInputHelper.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLVolumeRGBTable.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLVolumeOpacityTable.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLVolumeGradientOpacityTable.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLTransferFunction2D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLUniforms.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/raycasterfs.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/raycastervs.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/vtkglProjectedTetrahedraVS.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/vtkglProjectedTetrahedraFS.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/vtkRenderingVolumeOpenGL2ObjectFactory.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkMultiBlockVolumeMapper.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLGPUVolumeRayCastMapper.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLProjectedTetrahedraMapper.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLRayCastImageDisplayHelper.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkSmartVolumeMapper.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkVolumeTexture.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkVolumeInputHelper.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLVolumeRGBTable.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLVolumeOpacityTable.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLVolumeGradientOpacityTable.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLTransferFunction2D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLUniforms.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/raycasterfs.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/raycastervs.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/vtkglProjectedTetrahedraVS.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/vtkglProjectedTetrahedraFS.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/vtkRenderingVolumeOpenGL2ObjectFactory.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/vtkRenderingVolumeOpenGL2Module.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/9ef6ea003c6ad5b3d6b7df2129494331/raycasterfs.h.rule
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/9ef6ea003c6ad5b3d6b7df2129494331/raycastervs.h.rule
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/9ef6ea003c6ad5b3d6b7df2129494331/vtkglProjectedTetrahedraVS.h.rule
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/9ef6ea003c6ad5b3d6b7df2129494331/vtkglProjectedTetrahedraFS.h.rule

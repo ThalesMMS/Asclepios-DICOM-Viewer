@@ -1,0 +1,14 @@
+# Target labels
+ vtkRenderingQt
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Qt/vtkQImageToImageSource.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Qt/vtkQtInitialization.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Qt/vtkQtLabelRenderStrategy.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Qt/vtkQtStringToImage.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Qt/vtkQtTreeRingLabelMapper.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Qt/vtkQImageToImageSource.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Qt/vtkQtInitialization.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Qt/vtkQtLabelRenderStrategy.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Qt/vtkQtStringToImage.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Qt/vtkQtTreeRingLabelMapper.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/Qt/vtkRenderingQtModule.h

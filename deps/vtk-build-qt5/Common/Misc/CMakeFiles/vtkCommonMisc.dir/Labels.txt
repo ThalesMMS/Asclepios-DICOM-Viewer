@@ -1,0 +1,16 @@
+# Target labels
+ vtkCommonMisc
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Misc/vtkContourValues.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Misc/vtkErrorCode.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Misc/vtkFunctionParser.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Misc/vtkHeap.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Misc/vtkPolygonBuilder.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Misc/vtkResourceFileLocator.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Misc/vtkContourValues.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Misc/vtkErrorCode.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Misc/vtkFunctionParser.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Misc/vtkHeap.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Misc/vtkPolygonBuilder.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Misc/vtkResourceFileLocator.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Common/Misc/vtkCommonMiscModule.h

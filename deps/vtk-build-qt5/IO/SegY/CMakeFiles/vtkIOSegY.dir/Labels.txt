@@ -1,0 +1,12 @@
+# Target labels
+ vtkIOSegY
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SegY/vtkSegYReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SegY/vtkSegYIOUtils.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SegY/vtkSegYReaderInternal.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SegY/vtkSegYTraceReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SegY/vtkSegYReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SegY/vtkSegYIOUtils.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SegY/vtkSegYReaderInternal.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SegY/vtkSegYTraceReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/SegY/vtkIOSegYModule.h

@@ -1,0 +1,22 @@
+# Target labels
+ vtkFiltersGeneric
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Generic/vtkGenericClip.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Generic/vtkGenericContourFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Generic/vtkGenericCutter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Generic/vtkGenericDataSetTessellator.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Generic/vtkGenericGeometryFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Generic/vtkGenericGlyph3DFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Generic/vtkGenericOutlineFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Generic/vtkGenericProbeFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Generic/vtkGenericStreamTracer.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Generic/vtkGenericClip.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Generic/vtkGenericContourFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Generic/vtkGenericCutter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Generic/vtkGenericDataSetTessellator.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Generic/vtkGenericGeometryFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Generic/vtkGenericGlyph3DFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Generic/vtkGenericOutlineFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Generic/vtkGenericProbeFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Generic/vtkGenericStreamTracer.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Filters/Generic/vtkFiltersGenericModule.h

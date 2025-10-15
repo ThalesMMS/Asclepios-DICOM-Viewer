@@ -1,0 +1,76 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageHSIToRGB.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageHSVToRGB.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageYIQToRGB.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageLuminance.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageMapToRGBA.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageMapToWindowLevelColors.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageQuantizeRGBToIndex.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageRGBToHSI.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageRGBToHSV.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageRGBToYIQ.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageHSIToRGB.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageHSVToRGB.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageYIQToRGB.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageLuminance.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageMapToRGBA.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageMapToWindowLevelColors.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageQuantizeRGBToIndex.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageRGBToHSI.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageRGBToHSV.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageRGBToYIQ.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Imaging/Color/vtkImagingColorModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkImagingColor"
+		],
+		"name" : "vtkImagingColor"
+	}
+}

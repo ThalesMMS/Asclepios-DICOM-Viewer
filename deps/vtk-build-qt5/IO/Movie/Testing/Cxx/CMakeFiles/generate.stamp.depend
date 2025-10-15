@@ -1,0 +1,20 @@
+# CMake generation dependency list for this directory.
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Templates/TestDriver.cxx.in
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkCommonCore.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkCommonDataModel.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkCommonExecutionModel.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkCommonMath.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkCommonMisc.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkCommonSystem.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkCommonTransforms.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkIOMovie.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkImagingCore.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkImagingSources.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkTestingCore.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkkwiml.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkogg.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtksys.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtktheora.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkutf8.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Movie/Testing/Cxx/CMakeLists.txt
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Movie/module.cmake

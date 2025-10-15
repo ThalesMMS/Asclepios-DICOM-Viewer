@@ -1,0 +1,91 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/adler32.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/compress.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/crc32.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/deflate.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/gzclose.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/gzlib.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/gzread.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/gzwrite.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/inflate.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/infback.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/inftrees.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/inffast.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/trees.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/uncompr.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/zutil.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/zlib/vtkzlib/zconf.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/zlib.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/crc32.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/deflate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/gzguts.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/inffast.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/inffixed.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/inflate.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/inftrees.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/trees.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib/vtkzlib/zutil.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkzlib"
+		],
+		"name" : "vtkzlib"
+	}
+}

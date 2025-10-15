@@ -1,0 +1,4 @@
+# CMake generation dependency list for this directory.
+D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkGhostscript.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingGL2PS.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ExportOpenGL2/Testing/Cxx/CMakeLists.txt

@@ -1,0 +1,130 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkMultiBlockVolumeMapper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLGPUVolumeRayCastMapper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLProjectedTetrahedraMapper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLRayCastImageDisplayHelper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkSmartVolumeMapper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkVolumeTexture.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkVolumeInputHelper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLVolumeRGBTable.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLVolumeOpacityTable.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLVolumeGradientOpacityTable.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLTransferFunction2D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLUniforms.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/raycasterfs.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/raycastervs.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/vtkglProjectedTetrahedraVS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/vtkglProjectedTetrahedraFS.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/vtkRenderingVolumeOpenGL2ObjectFactory.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkMultiBlockVolumeMapper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLGPUVolumeRayCastMapper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLProjectedTetrahedraMapper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLRayCastImageDisplayHelper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkSmartVolumeMapper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkVolumeTexture.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkVolumeInputHelper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLVolumeRGBTable.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLVolumeOpacityTable.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLVolumeGradientOpacityTable.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLTransferFunction2D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/VolumeOpenGL2/vtkOpenGLUniforms.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/raycasterfs.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/raycastervs.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/vtkglProjectedTetrahedraVS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/vtkglProjectedTetrahedraFS.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/vtkRenderingVolumeOpenGL2ObjectFactory.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/VolumeOpenGL2/vtkRenderingVolumeOpenGL2Module.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/9ef6ea003c6ad5b3d6b7df2129494331/raycasterfs.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/9ef6ea003c6ad5b3d6b7df2129494331/raycastervs.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/9ef6ea003c6ad5b3d6b7df2129494331/vtkglProjectedTetrahedraVS.h.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/9ef6ea003c6ad5b3d6b7df2129494331/vtkglProjectedTetrahedraFS.h.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkRenderingVolumeOpenGL2"
+		],
+		"name" : "vtkRenderingVolumeOpenGL2"
+	}
+}

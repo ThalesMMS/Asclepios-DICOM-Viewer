@@ -1,0 +1,8 @@
+# Target labels
+ vtkIOVideo
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Video/vtkVideoSource.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Video/vtkWin32VideoSource.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Video/vtkVideoSource.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Video/vtkWin32VideoSource.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/Video/vtkIOVideoModule.h

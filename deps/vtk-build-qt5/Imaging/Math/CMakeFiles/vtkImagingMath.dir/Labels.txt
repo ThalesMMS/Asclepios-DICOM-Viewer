@@ -1,0 +1,20 @@
+# Target labels
+ vtkImagingMath
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Math/vtkImageDivergence.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Math/vtkImageDotProduct.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Math/vtkImageLogarithmicScale.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Math/vtkImageLogic.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Math/vtkImageMagnitude.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Math/vtkImageMaskBits.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Math/vtkImageMathematics.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Math/vtkImageWeightedSum.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Math/vtkImageDivergence.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Math/vtkImageDotProduct.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Math/vtkImageLogarithmicScale.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Math/vtkImageLogic.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Math/vtkImageMagnitude.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Math/vtkImageMaskBits.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Math/vtkImageMathematics.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Math/vtkImageWeightedSum.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Imaging/Math/vtkImagingMathModule.h

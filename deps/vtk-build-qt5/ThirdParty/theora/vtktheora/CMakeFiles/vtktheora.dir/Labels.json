@@ -1,0 +1,106 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/analyze.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/encapiwrapper.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/encfrag.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/encinfo.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/encode.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/enquant.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/fdct.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/huffenc.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/mathops.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/mcenc.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/rate.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/tokenize.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/bitpack.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/decapiwrapper.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/decinfo.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/decode.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/dequant.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/huffdec.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/info.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/apiwrapper.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/fragment.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/idct.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/internal.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/quant.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/lib/state.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/include/theora/codec.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/include/theora/theora.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/include/theora/theoradec.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/include/theora/theoraenc.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/theora/vtktheora/include/theora/vtk_theora_mangle.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/theora/vtktheora/include/vtktheora_export.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtktheora"
+		],
+		"name" : "vtktheora"
+	}
+}

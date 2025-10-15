@@ -1,0 +1,38 @@
+# Target labels
+ vtkFiltersStatistics
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkAutoCorrelativeStatistics.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkBivariateLinearTableThreshold.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkComputeQuartiles.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkContingencyStatistics.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkCorrelativeStatistics.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkDescriptiveStatistics.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkHighestDensityRegionsStatistics.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkExtractFunctionalBagPlot.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkKMeansDistanceFunctorCalculator.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkKMeansDistanceFunctor.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkKMeansStatistics.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkMultiCorrelativeStatistics.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkOrderStatistics.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkPCAStatistics.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkStatisticsAlgorithm.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkStrahlerMetric.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkStreamingStatistics.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkAutoCorrelativeStatistics.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkBivariateLinearTableThreshold.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkComputeQuartiles.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkContingencyStatistics.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkCorrelativeStatistics.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkDescriptiveStatistics.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkHighestDensityRegionsStatistics.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkExtractFunctionalBagPlot.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkKMeansDistanceFunctorCalculator.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkKMeansDistanceFunctor.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkKMeansStatistics.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkMultiCorrelativeStatistics.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkOrderStatistics.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkPCAStatistics.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkStatisticsAlgorithm.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkStrahlerMetric.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Statistics/vtkStreamingStatistics.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Filters/Statistics/vtkFiltersStatisticsModule.h

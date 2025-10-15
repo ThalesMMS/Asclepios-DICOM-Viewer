@@ -1,0 +1,7 @@
+# CMake generation dependency list for this directory.
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDependentOption.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkModuleInfo.cmake.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/jsoncpp/CMakeLists.txt
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/jsoncpp/module.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/jsoncpp/vtk_jsoncpp.h.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/jsoncpp/vtk_jsoncpp_fwd.h.in

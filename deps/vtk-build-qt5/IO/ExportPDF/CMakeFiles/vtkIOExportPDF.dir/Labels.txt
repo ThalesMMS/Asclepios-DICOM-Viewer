@@ -1,0 +1,10 @@
+# Target labels
+ vtkIOExportPDF
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ExportPDF/vtkPDFContextDevice2D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ExportPDF/vtkPDFExporter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/ExportPDF/vtkIOExportPDFObjectFactory.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ExportPDF/vtkPDFContextDevice2D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ExportPDF/vtkPDFExporter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/ExportPDF/vtkIOExportPDFObjectFactory.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/ExportPDF/vtkIOExportPDFModule.h

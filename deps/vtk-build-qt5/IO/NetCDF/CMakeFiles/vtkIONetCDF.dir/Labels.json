@@ -1,0 +1,58 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkMPASReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkNetCDFCAMReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkNetCDFCFReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkNetCDFPOPReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkNetCDFReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkSLACParticleReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkSLACReader.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkMPASReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkNetCDFCAMReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkNetCDFCFReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkNetCDFPOPReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkNetCDFReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkSLACParticleReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkSLACReader.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/NetCDF/vtkIONetCDFModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkIONetCDF"
+		],
+		"name" : "vtkIONetCDF"
+	}
+}

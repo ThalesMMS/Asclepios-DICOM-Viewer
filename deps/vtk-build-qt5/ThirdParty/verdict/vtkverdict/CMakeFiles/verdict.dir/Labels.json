@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/V_EdgeMetric.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/V_GaussIntegration.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/V_HexMetric.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/V_KnifeMetric.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/V_PyramidMetric.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/V_QuadMetric.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/V_TetMetric.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/V_TriMetric.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/VerdictVector.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/verdict/vtkverdict/V_WedgeMetric.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkverdict"
+		],
+		"name" : "verdict"
+	}
+}

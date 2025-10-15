@@ -1,0 +1,18 @@
+# Target labels
+ vtkIONetCDF
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkMPASReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkNetCDFCAMReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkNetCDFCFReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkNetCDFPOPReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkNetCDFReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkSLACParticleReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkSLACReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkMPASReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkNetCDFCAMReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkNetCDFCFReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkNetCDFPOPReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkNetCDFReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkSLACParticleReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/NetCDF/vtkSLACReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/NetCDF/vtkIONetCDFModule.h

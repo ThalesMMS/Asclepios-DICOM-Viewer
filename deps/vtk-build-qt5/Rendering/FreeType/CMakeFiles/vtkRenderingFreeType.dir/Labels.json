@@ -1,0 +1,100 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkFreeTypeStringToImage.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkFreeTypeTools.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkMathTextFreeTypeTextRenderer.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkMathTextUtilities.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkTextRendererStringToImage.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkScaledTextActor.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkVectorText.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/FreeType/vtkRenderingFreeTypeObjectFactory.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_arial_bold.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_arial_bold_italic.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_arial.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_arial_italic.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_courier_bold.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_courier_bold_italic.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_courier.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_courier_italic.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_times_bold.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_times_bold_italic.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_times.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_times_italic.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkFreeTypeStringToImage.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkFreeTypeTools.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkMathTextFreeTypeTextRenderer.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkMathTextUtilities.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkTextRendererStringToImage.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkScaledTextActor.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkVectorText.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/FreeType/vtkRenderingFreeTypeObjectFactory.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/FreeType/vtkRenderingFreeTypeModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkRenderingFreeType"
+		],
+		"name" : "vtkRenderingFreeType"
+	}
+}

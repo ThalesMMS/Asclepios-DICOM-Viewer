@@ -1,0 +1,20 @@
+# Target labels
+ vtkFiltersTexture
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Texture/vtkTextureMapToCylinder.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Texture/vtkTextureMapToPlane.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Texture/vtkTextureMapToSphere.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Texture/vtkImplicitTextureCoords.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Texture/vtkThresholdTextureCoords.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Texture/vtkTransformTextureCoords.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Texture/vtkTriangularTCoords.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Texture/vtkScalarsToTextureFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Texture/vtkTextureMapToCylinder.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Texture/vtkTextureMapToPlane.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Texture/vtkTextureMapToSphere.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Texture/vtkImplicitTextureCoords.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Texture/vtkThresholdTextureCoords.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Texture/vtkTransformTextureCoords.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Texture/vtkTriangularTCoords.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Texture/vtkScalarsToTextureFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Filters/Texture/vtkFiltersTextureModule.h

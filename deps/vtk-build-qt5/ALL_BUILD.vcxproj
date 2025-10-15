@@ -1,0 +1,1002 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DBD253C0-94A2-3DD1-91D6-B57C7B17F041}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeCInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeDependentOption.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeParseArguments.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeRCInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CTest.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CTestTargets.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CTestUseLaunchers.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCXXCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCXXSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFileCXX.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckTypeSize.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Compiler\MSVC-C.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Compiler\MSVC.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\DartConfiguration.tcl.in;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\ExternalData.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\ExternalData_config.cmake.in;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPythonInterp.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindThreads.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\GNUInstallDirs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Internal\CheckCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Internal\CheckFlagCommonConfig.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows-MSVC-C.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\VTKCompatibility.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\3.30.5\CMakeCCompiler.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\3.30.5\CMakeCXXCompiler.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\3.30.5\CMakeRCCompiler.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\3.30.5\CMakeSystem.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Accelerators\Vtkm\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\CTestCustom.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\CheckCXXSourceRuns.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\TopologicalSort.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\VTKConfig.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\VTKGenerateExportHeader.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkBackends.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkBuildPath.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCompilerChecks.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCompilerDynamicAnalysisFlags.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCompilerExtraFlags.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCompilerPlatformFlags.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCrossCompiling.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkDirectories.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkDownload.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkEncodeString.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkExternalData.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkGroups.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkInitializeBuildType.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkLegacyData.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkMobileDevices.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleAPI.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleMacros.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleTop.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkSupportMacros.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkTargetLinkLibrariesWithDynamicLookup.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkTesting.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkThirdParty.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkThreads.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkVersion.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkWrapHierarchy.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkWrapSettings.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkWrapping.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CTestConfig.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Charts\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Color\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ComputationalGeometry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Domains\Chemistry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Domains\ChemistryOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Domains\Microscopy\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Domains\ParallelChemistry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\AMR\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Extraction\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\FlowPaths\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\General\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Generic\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Geometry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Hybrid\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Imaging\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Modeling\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\OpenTurns\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Parallel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelDIY2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelFlowPaths\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelGeometry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelImaging\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelMPI\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelStatistics\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelVerdict\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Points\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Programmable\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Python\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ReebGraph\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\SMP\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Selection\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Sources\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Statistics\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Texture\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Topology\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Verdict\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\MFC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\Qt\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtOpenGL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtSQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtWebkit\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Geovis\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Geovis\GDAL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ADIOS\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\AMR\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Asynchronous\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\CityGML\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\EnSight\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Exodus\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Export\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ExportOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ExportPDF\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\FFMPEG\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\GDAL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\GeoJSON\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Geometry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Image\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Import\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Infovis\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\LAS\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\LSDyna\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Legacy\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MINC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MPIImage\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MPIParallel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MotionFX\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Movie\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MySQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\NetCDF\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ODBC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\PDAL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\PLY\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelExodus\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelLSDyna\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelNetCDF\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelXML\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelXdmf3\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\PostgreSQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\SQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\SegY\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TRUCHAS\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\VPIC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\VeraOut\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Video\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\XML\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\XMLParser\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Xdmf2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Xdmf3\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Color\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Fourier\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\General\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Hybrid\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Math\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Morphological\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\OpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Sources\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Statistics\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Stencil\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Infovis\Boost\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Infovis\BoostGraphAlgorithms\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Infovis\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Infovis\Layout\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Interaction\Image\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Interaction\Style\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Interaction\Widgets\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\MPI\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\MPI4Py\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Context2D\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\ContextOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\External\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\FreeType\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\FreeTypeFontConfig\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\GL2PSOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Image\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\LICOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\LOD\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Label\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Matplotlib\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\OSPRay\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\OpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\OpenVR\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\OptiX\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Parallel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\ParallelLIC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\PythonContext2D\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Qt\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\SceneGraph\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Tk\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Volume\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\VolumeAMR\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\VolumeOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\GenericBridge\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\IOSQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Rendering\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\TclTk\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\VPIC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\diy2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\eigen\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\exodusII\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\expat\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\freetype\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\gl2ps\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\glew\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\jpeg\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\jsoncpp\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libharu\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\mpi4py\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\ogg\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\pegtl\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\png\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\pugixml\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\sqlite\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\theora\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\tiff\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\verdict\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\vtkm\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\xdmf2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\xdmf3\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zfp\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\Benchmarks\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\DICOMParser\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\EncodeString\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\MetaIO\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\Python\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\PythonInterpreter\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Context2D\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Geovis\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Infovis\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Qt\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Web\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Web\Python\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Web\WebGLExporter\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Wrapping\Java\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Wrapping\PythonCore\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Wrapping\Tools\module.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeCInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeDependentOption.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeParseArguments.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeRCInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CTest.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CTestTargets.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CTestUseLaunchers.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCXXCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCXXSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFileCXX.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckTypeSize.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Compiler\MSVC-C.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Compiler\MSVC.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\DartConfiguration.tcl.in;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\ExternalData.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\ExternalData_config.cmake.in;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPythonInterp.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindThreads.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\GNUInstallDirs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Internal\CheckCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Internal\CheckFlagCommonConfig.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows-MSVC-C.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\VTKCompatibility.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\3.30.5\CMakeCCompiler.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\3.30.5\CMakeCXXCompiler.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\3.30.5\CMakeRCCompiler.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\3.30.5\CMakeSystem.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Accelerators\Vtkm\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\CTestCustom.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\CheckCXXSourceRuns.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\TopologicalSort.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\VTKConfig.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\VTKGenerateExportHeader.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkBackends.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkBuildPath.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCompilerChecks.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCompilerDynamicAnalysisFlags.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCompilerExtraFlags.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCompilerPlatformFlags.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCrossCompiling.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkDirectories.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkDownload.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkEncodeString.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkExternalData.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkGroups.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkInitializeBuildType.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkLegacyData.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkMobileDevices.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleAPI.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleMacros.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleTop.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkSupportMacros.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkTargetLinkLibrariesWithDynamicLookup.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkTesting.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkThirdParty.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkThreads.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkVersion.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkWrapHierarchy.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkWrapSettings.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkWrapping.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CTestConfig.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Charts\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Color\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ComputationalGeometry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Domains\Chemistry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Domains\ChemistryOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Domains\Microscopy\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Domains\ParallelChemistry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\AMR\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Extraction\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\FlowPaths\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\General\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Generic\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Geometry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Hybrid\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Imaging\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Modeling\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\OpenTurns\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Parallel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelDIY2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelFlowPaths\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelGeometry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelImaging\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelMPI\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelStatistics\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelVerdict\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Points\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Programmable\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Python\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ReebGraph\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\SMP\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Selection\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Sources\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Statistics\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Texture\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Topology\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Verdict\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\MFC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\Qt\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtOpenGL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtSQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtWebkit\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Geovis\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Geovis\GDAL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ADIOS\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\AMR\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Asynchronous\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\CityGML\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\EnSight\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Exodus\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Export\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ExportOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ExportPDF\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\FFMPEG\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\GDAL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\GeoJSON\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Geometry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Image\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Import\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Infovis\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\LAS\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\LSDyna\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Legacy\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MINC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MPIImage\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MPIParallel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MotionFX\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Movie\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MySQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\NetCDF\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ODBC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\PDAL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\PLY\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelExodus\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelLSDyna\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelNetCDF\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelXML\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelXdmf3\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\PostgreSQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\SQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\SegY\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TRUCHAS\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\VPIC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\VeraOut\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Video\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\XML\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\XMLParser\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Xdmf2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Xdmf3\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Color\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Fourier\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\General\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Hybrid\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Math\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Morphological\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\OpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Sources\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Statistics\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Stencil\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Infovis\Boost\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Infovis\BoostGraphAlgorithms\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Infovis\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Infovis\Layout\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Interaction\Image\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Interaction\Style\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Interaction\Widgets\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\MPI\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\MPI4Py\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Context2D\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\ContextOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\External\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\FreeType\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\FreeTypeFontConfig\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\GL2PSOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Image\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\LICOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\LOD\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Label\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Matplotlib\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\OSPRay\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\OpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\OpenVR\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\OptiX\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Parallel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\ParallelLIC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\PythonContext2D\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Qt\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\SceneGraph\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Tk\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Volume\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\VolumeAMR\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\VolumeOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\GenericBridge\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\IOSQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Rendering\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\TclTk\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\VPIC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\diy2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\eigen\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\exodusII\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\expat\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\freetype\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\gl2ps\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\glew\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\jpeg\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\jsoncpp\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libharu\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\mpi4py\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\ogg\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\pegtl\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\png\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\pugixml\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\sqlite\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\theora\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\tiff\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\verdict\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\vtkm\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\xdmf2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\xdmf3\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zfp\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\Benchmarks\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\DICOMParser\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\EncodeString\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\MetaIO\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\Python\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\PythonInterpreter\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Context2D\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Geovis\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Infovis\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Qt\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Web\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Web\Python\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Web\WebGLExporter\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Wrapping\Java\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Wrapping\PythonCore\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Wrapping\Tools\module.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeCInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeDependentOption.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeParseArguments.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeRCInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CTest.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CTestTargets.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CTestUseLaunchers.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCXXCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCXXSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFileCXX.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckTypeSize.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Compiler\MSVC-C.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Compiler\MSVC.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\DartConfiguration.tcl.in;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\ExternalData.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\ExternalData_config.cmake.in;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPythonInterp.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindThreads.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\GNUInstallDirs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Internal\CheckCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Internal\CheckFlagCommonConfig.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows-MSVC-C.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\VTKCompatibility.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\3.30.5\CMakeCCompiler.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\3.30.5\CMakeCXXCompiler.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\3.30.5\CMakeRCCompiler.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\3.30.5\CMakeSystem.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Accelerators\Vtkm\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\CTestCustom.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\CheckCXXSourceRuns.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\TopologicalSort.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\VTKConfig.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\VTKGenerateExportHeader.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkBackends.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkBuildPath.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCompilerChecks.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCompilerDynamicAnalysisFlags.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCompilerExtraFlags.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCompilerPlatformFlags.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCrossCompiling.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkDirectories.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkDownload.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkEncodeString.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkExternalData.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkGroups.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkInitializeBuildType.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkLegacyData.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkMobileDevices.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleAPI.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleMacros.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleTop.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkSupportMacros.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkTargetLinkLibrariesWithDynamicLookup.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkTesting.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkThirdParty.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkThreads.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkVersion.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkWrapHierarchy.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkWrapSettings.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkWrapping.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CTestConfig.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Charts\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Color\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ComputationalGeometry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Domains\Chemistry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Domains\ChemistryOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Domains\Microscopy\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Domains\ParallelChemistry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\AMR\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Extraction\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\FlowPaths\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\General\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Generic\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Geometry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Hybrid\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Imaging\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Modeling\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\OpenTurns\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Parallel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelDIY2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelFlowPaths\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelGeometry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelImaging\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelMPI\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelStatistics\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelVerdict\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Points\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Programmable\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Python\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ReebGraph\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\SMP\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Selection\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Sources\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Statistics\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Texture\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Topology\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Verdict\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\MFC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\Qt\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtOpenGL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtSQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtWebkit\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Geovis\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Geovis\GDAL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ADIOS\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\AMR\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Asynchronous\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\CityGML\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\EnSight\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Exodus\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Export\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ExportOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ExportPDF\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\FFMPEG\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\GDAL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\GeoJSON\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Geometry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Image\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Import\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Infovis\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\LAS\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\LSDyna\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Legacy\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MINC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MPIImage\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MPIParallel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MotionFX\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Movie\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MySQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\NetCDF\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ODBC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\PDAL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\PLY\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelExodus\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelLSDyna\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelNetCDF\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelXML\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelXdmf3\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\PostgreSQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\SQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\SegY\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TRUCHAS\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\VPIC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\VeraOut\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Video\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\XML\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\XMLParser\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Xdmf2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Xdmf3\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Color\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Fourier\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\General\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Hybrid\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Math\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Morphological\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\OpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Sources\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Statistics\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Stencil\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Infovis\Boost\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Infovis\BoostGraphAlgorithms\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Infovis\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Infovis\Layout\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Interaction\Image\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Interaction\Style\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Interaction\Widgets\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\MPI\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\MPI4Py\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Context2D\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\ContextOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\External\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\FreeType\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\FreeTypeFontConfig\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\GL2PSOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Image\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\LICOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\LOD\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Label\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Matplotlib\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\OSPRay\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\OpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\OpenVR\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\OptiX\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Parallel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\ParallelLIC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\PythonContext2D\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Qt\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\SceneGraph\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Tk\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Volume\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\VolumeAMR\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\VolumeOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\GenericBridge\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\IOSQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Rendering\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\TclTk\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\VPIC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\diy2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\eigen\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\exodusII\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\expat\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\freetype\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\gl2ps\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\glew\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\jpeg\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\jsoncpp\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libharu\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\mpi4py\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\ogg\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\pegtl\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\png\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\pugixml\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\sqlite\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\theora\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\tiff\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\verdict\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\vtkm\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\xdmf2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\xdmf3\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zfp\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\Benchmarks\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\DICOMParser\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\EncodeString\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\MetaIO\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\Python\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\PythonInterpreter\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Context2D\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Geovis\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Infovis\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Qt\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Web\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Web\Python\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Web\WebGLExporter\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Wrapping\Java\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Wrapping\PythonCore\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Wrapping\Tools\module.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeCInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeCheckCompilerFlagCommonPatterns.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeDependentOption.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeParseArguments.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeRCInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CTest.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CTestTargets.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CTestUseLaunchers.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCXXCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCXXSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFileCXX.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckTypeSize.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Compiler\MSVC-C.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Compiler\MSVC.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\DartConfiguration.tcl.in;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\ExternalData.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\ExternalData_config.cmake.in;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPythonInterp.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindThreads.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\GNUInstallDirs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Internal\CheckCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Internal\CheckFlagCommonConfig.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows-MSVC-C.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\Windows.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\VTKCompatibility.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\3.30.5\CMakeCCompiler.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\3.30.5\CMakeCXXCompiler.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\3.30.5\CMakeRCCompiler.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\3.30.5\CMakeSystem.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Accelerators\Vtkm\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\CTestCustom.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\CheckCXXSourceRuns.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\TopologicalSort.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\VTKConfig.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\VTKGenerateExportHeader.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkBackends.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkBuildPath.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCompilerChecks.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCompilerDynamicAnalysisFlags.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCompilerExtraFlags.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCompilerPlatformFlags.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkCrossCompiling.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkDirectories.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkDownload.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkEncodeString.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkExternalData.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkGroups.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkInitializeBuildType.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkLegacyData.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkMobileDevices.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleAPI.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleMacros.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleTop.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkSupportMacros.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkTargetLinkLibrariesWithDynamicLookup.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkTesting.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkThirdParty.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkThreads.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkVersion.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkWrapHierarchy.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkWrapSettings.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkWrapping.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CTestConfig.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Charts\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Color\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ComputationalGeometry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Domains\Chemistry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Domains\ChemistryOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Domains\Microscopy\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Domains\ParallelChemistry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\AMR\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Extraction\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\FlowPaths\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\General\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Generic\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Geometry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Hybrid\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\HyperTree\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Imaging\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Modeling\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\OpenTurns\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Parallel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelDIY2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelFlowPaths\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelGeometry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelImaging\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelMPI\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelStatistics\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ParallelVerdict\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Points\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Programmable\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Python\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\ReebGraph\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\SMP\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Selection\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Sources\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Statistics\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Texture\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Topology\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Verdict\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\MFC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\Qt\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtOpenGL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtSQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtWebkit\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Geovis\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Geovis\GDAL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ADIOS\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\AMR\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Asynchronous\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\CityGML\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\EnSight\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Exodus\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Export\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ExportOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ExportPDF\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\FFMPEG\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\GDAL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\GeoJSON\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Geometry\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Image\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Import\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Infovis\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\LAS\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\LSDyna\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Legacy\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MINC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MPIImage\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MPIParallel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MotionFX\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Movie\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\MySQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\NetCDF\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ODBC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\PDAL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\PLY\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelExodus\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelLSDyna\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelNetCDF\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelXML\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\ParallelXdmf3\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\PostgreSQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\SQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\SegY\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TRUCHAS\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\TecplotTable\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\VPIC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\VeraOut\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Video\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\XML\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\XMLParser\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Xdmf2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Xdmf3\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Color\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Fourier\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\General\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Hybrid\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Math\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Morphological\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\OpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Sources\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Statistics\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Imaging\Stencil\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Infovis\Boost\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Infovis\BoostGraphAlgorithms\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Infovis\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Infovis\Layout\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Interaction\Image\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Interaction\Style\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Interaction\Widgets\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\MPI\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\MPI4Py\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Context2D\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\ContextOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\External\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\FreeType\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\FreeTypeFontConfig\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\GL2PSOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Image\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\LICOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\LOD\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Label\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Matplotlib\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\OSPRay\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\OpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\OpenVR\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\OptiX\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Parallel\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\ParallelLIC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\PythonContext2D\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Qt\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\SceneGraph\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Tk\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Volume\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\VolumeAMR\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\VolumeOpenGL2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\GenericBridge\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\IOSQL\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Testing\Rendering\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\TclTk\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\VPIC\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\diy2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\eigen\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\exodusII\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\expat\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\freetype\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\gl2ps\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\glew\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\jpeg\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\jsoncpp\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libharu\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libxml2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\mpi4py\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\ogg\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\pegtl\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\png\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\pugixml\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\sqlite\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\theora\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\tiff\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\verdict\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\vtkm\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\xdmf2\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\xdmf3\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zfp\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\Benchmarks\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\DICOMParser\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\EncodeString\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\MetaIO\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\Python\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\PythonInterpreter\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Context2D\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Geovis\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Infovis\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Views\Qt\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Web\Core\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Web\Python\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Web\WebGLExporter\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Wrapping\Java\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Wrapping\PythonCore\module.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\Wrapping\Tools\module.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ZERO_CHECK.vcxproj">
+      <Project>{CB3CEBE8-D3FC-3706-83B0-652E45C69461}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\src\H5detect.vcxproj">
+      <Project>{86430B38-80A2-3C4A-88F4-446739B8CF23}</Project>
+      <Name>H5detect</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\src\H5make_libsettings.vcxproj">
+      <Project>{520402B3-1C59-3D54-99CC-119B705AC06D}</Project>
+      <Name>H5make_libsettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\XML\Testing\Cxx\TestXMLCInterface.vcxproj">
+      <Project>{C5C7652A-2F11-3122-873C-B42B5CF2F9BC}</Project>
+      <Name>TestXMLCInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\VTKData.vcxproj">
+      <Project>{D64C2B83-CDCD-369F-BD65-62150E3C5096}</Project>
+      <Name>VTKData</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML\vtkkwiml\test\kwiml_test.vcxproj">
+      <Project>{64BD81CC-AE30-3022-83E9-765F839CC344}</Project>
+      <Name>kwiml_test</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\verdict\vtkverdict\verdict.vcxproj">
+      <Project>{7672BA47-2143-3BA5-BB38-72507C88E07F}</Project>
+      <Name>verdict</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Charts\Core\vtkChartsCore.vcxproj">
+      <Project>{58257AFD-7845-3143-892A-BFC8000C912A}</Project>
+      <Name>vtkChartsCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Charts\Core\Testing\Cxx\vtkChartsCoreCxxTests.vcxproj">
+      <Project>{12112F8F-7961-3889-AA6E-960D6A6753AA}</Project>
+      <Name>vtkChartsCoreCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Color\vtkCommonColor.vcxproj">
+      <Project>{34F14E20-ED06-31D1-851C-C0B1B7AAFFAB}</Project>
+      <Name>vtkCommonColor</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Color\Testing\Cxx\vtkCommonColorCxxTests.vcxproj">
+      <Project>{625472B8-48F9-3658-BA5E-3372EFABF670}</Project>
+      <Name>vtkCommonColorCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ComputationalGeometry\vtkCommonComputationalGeometry.vcxproj">
+      <Project>{18AFF291-A3BF-3A78-8D0E-9533913A72FC}</Project>
+      <Name>vtkCommonComputationalGeometry</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ComputationalGeometry\Testing\Cxx\vtkCommonComputationalGeometryCxxTests.vcxproj">
+      <Project>{1B50E121-79F9-37FA-8ADB-CC2A48F885DB}</Project>
+      <Name>vtkCommonComputationalGeometryCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core\vtkCommonCore.vcxproj">
+      <Project>{0813AC50-5742-391F-BCAA-0CA45ACC8EC1}</Project>
+      <Name>vtkCommonCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core\Testing\Cxx\vtkCommonCoreCxxTests.vcxproj">
+      <Project>{9F51794A-DC9C-3CAA-BCA6-E3294DFC1B22}</Project>
+      <Name>vtkCommonCoreCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel\vtkCommonDataModel.vcxproj">
+      <Project>{DE04E99B-0156-39F9-9522-11FEAF6BB697}</Project>
+      <Name>vtkCommonDataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel\Testing\Cxx\vtkCommonDataModelCxxTests.vcxproj">
+      <Project>{A7200E30-E997-32D8-82D1-404D23E81B73}</Project>
+      <Name>vtkCommonDataModelCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel\vtkCommonExecutionModel.vcxproj">
+      <Project>{3C0CF2CA-93C8-37D6-BE96-C7AE892D0014}</Project>
+      <Name>vtkCommonExecutionModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel\Testing\Cxx\vtkCommonExecutionModelCxxTests.vcxproj">
+      <Project>{6A86D400-1C04-3414-A828-2CC327D0A9C7}</Project>
+      <Name>vtkCommonExecutionModelCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math\vtkCommonMath.vcxproj">
+      <Project>{35C7861D-7CF6-3B28-8B3A-75A41E759A06}</Project>
+      <Name>vtkCommonMath</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math\Testing\Cxx\vtkCommonMathCxxTests.vcxproj">
+      <Project>{056B536A-4575-3D2B-97D7-6CC677A4D511}</Project>
+      <Name>vtkCommonMathCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc\vtkCommonMisc.vcxproj">
+      <Project>{5CCB42B8-75CD-33C7-B57B-77D85779A44F}</Project>
+      <Name>vtkCommonMisc</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc\Testing\Cxx\vtkCommonMiscCxxTests.vcxproj">
+      <Project>{44813885-6926-36E7-8362-7FEDB947DE56}</Project>
+      <Name>vtkCommonMiscCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System\vtkCommonSystem.vcxproj">
+      <Project>{40362FE2-03ED-3548-B645-BB70543CD248}</Project>
+      <Name>vtkCommonSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System\Testing\Cxx\vtkCommonSystemCxxTests.vcxproj">
+      <Project>{E6480625-E524-3F93-9967-B5F7485CF087}</Project>
+      <Name>vtkCommonSystemCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms\vtkCommonTransforms.vcxproj">
+      <Project>{1107639F-582A-3769-8C14-6D21E67C6DC0}</Project>
+      <Name>vtkCommonTransforms</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms\Testing\Cxx\vtkCommonTransformsCxxTests.vcxproj">
+      <Project>{76D41C61-CE0A-36D4-96BF-5F5AB8CF3007}</Project>
+      <Name>vtkCommonTransformsCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\DICOMParser\vtkDICOMParser.vcxproj">
+      <Project>{16A7B27B-F192-3031-9C07-2B834E1E1462}</Project>
+      <Name>vtkDICOMParser</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Domains\Chemistry\vtkDomainsChemistry.vcxproj">
+      <Project>{9CA6A8A8-BAD5-3334-AEAE-CE1B5C7B34CE}</Project>
+      <Name>vtkDomainsChemistry</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Domains\Chemistry\Testing\Cxx\vtkDomainsChemistryCxxTests.vcxproj">
+      <Project>{A731D25C-549B-36C8-B474-184B7DD5805D}</Project>
+      <Name>vtkDomainsChemistryCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Domains\ChemistryOpenGL2\vtkDomainsChemistryOpenGL2.vcxproj">
+      <Project>{25FADC18-6528-3D3D-B823-A3E89E940EF6}</Project>
+      <Name>vtkDomainsChemistryOpenGL2</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Domains\ChemistryOpenGL2\Testing\Cxx\vtkDomainsChemistryOpenGL2CxxTests.vcxproj">
+      <Project>{6EB3F893-CA75-382B-BC50-DB77AB049FBC}</Project>
+      <Name>vtkDomainsChemistryOpenGL2CxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\AMR\vtkFiltersAMR.vcxproj">
+      <Project>{51F3B890-FCF0-307E-8FB6-776B0456D1F2}</Project>
+      <Name>vtkFiltersAMR</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\AMR\Testing\Cxx\vtkFiltersAMRCxxTests.vcxproj">
+      <Project>{C7BEBA2D-9376-3DBB-843F-3FC62A685D1B}</Project>
+      <Name>vtkFiltersAMRCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Core\vtkFiltersCore.vcxproj">
+      <Project>{90BC696F-CAF9-32AB-BDA8-193D221585C1}</Project>
+      <Name>vtkFiltersCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Core\Testing\Cxx\vtkFiltersCoreCxxTests.vcxproj">
+      <Project>{0C35C1A8-9E65-33A0-B2A4-AD9099FB349B}</Project>
+      <Name>vtkFiltersCoreCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Extraction\vtkFiltersExtraction.vcxproj">
+      <Project>{898C5E45-AA59-3FD1-9E30-5067C1D64498}</Project>
+      <Name>vtkFiltersExtraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Extraction\Testing\Cxx\vtkFiltersExtractionCxxTests.vcxproj">
+      <Project>{D7B874DF-5C98-3B8E-98AF-CAC6E32A939F}</Project>
+      <Name>vtkFiltersExtractionCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\FlowPaths\vtkFiltersFlowPaths.vcxproj">
+      <Project>{252946B1-94E9-3F22-9710-E2A7527179A3}</Project>
+      <Name>vtkFiltersFlowPaths</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\FlowPaths\Testing\Cxx\vtkFiltersFlowPathsCxxTests.vcxproj">
+      <Project>{26BED3BE-82F6-34BB-A1F0-BB0FC6D6CDDB}</Project>
+      <Name>vtkFiltersFlowPathsCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\General\vtkFiltersGeneral.vcxproj">
+      <Project>{1360DB5E-B6BF-33C7-9A41-76B7A8211682}</Project>
+      <Name>vtkFiltersGeneral</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\General\Testing\Cxx\vtkFiltersGeneralCxxTests.vcxproj">
+      <Project>{6C64A81C-6794-39EC-8DFE-2E61F86B43A9}</Project>
+      <Name>vtkFiltersGeneralCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Generic\vtkFiltersGeneric.vcxproj">
+      <Project>{1D393C50-0091-36F1-8DFA-C8371634BF35}</Project>
+      <Name>vtkFiltersGeneric</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Generic\Testing\Cxx\vtkFiltersGenericCxxTests.vcxproj">
+      <Project>{EA2BFF3A-7840-3A75-AB0B-2779DAAE1205}</Project>
+      <Name>vtkFiltersGenericCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Geometry\vtkFiltersGeometry.vcxproj">
+      <Project>{5BD5024F-08F3-3D5F-85CE-AFA17C983130}</Project>
+      <Name>vtkFiltersGeometry</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Geometry\Testing\Cxx\vtkFiltersGeometryCxxTests.vcxproj">
+      <Project>{C96487F5-3B91-3DCB-B72E-8E4C6152FD5F}</Project>
+      <Name>vtkFiltersGeometryCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Hybrid\vtkFiltersHybrid.vcxproj">
+      <Project>{82AC4FE0-3E70-31D2-930D-57646612CDB7}</Project>
+      <Name>vtkFiltersHybrid</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Hybrid\Testing\Cxx\vtkFiltersHybridCxxTests.vcxproj">
+      <Project>{11BC0819-DAE5-35BC-8258-691A0A72F8B3}</Project>
+      <Name>vtkFiltersHybridCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\HyperTree\vtkFiltersHyperTree.vcxproj">
+      <Project>{8ECEA523-56A2-3A36-B6C9-48320951AF43}</Project>
+      <Name>vtkFiltersHyperTree</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\HyperTree\Testing\Cxx\vtkFiltersHyperTreeCxxTests.vcxproj">
+      <Project>{61F8CAD8-D49F-3F65-A31C-EB5AB70F91FB}</Project>
+      <Name>vtkFiltersHyperTreeCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Imaging\vtkFiltersImaging.vcxproj">
+      <Project>{4354F6E3-E7CC-3535-A40F-DB8975B0DAEB}</Project>
+      <Name>vtkFiltersImaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Modeling\vtkFiltersModeling.vcxproj">
+      <Project>{A0C16F45-F997-3C63-AF61-E661D350D9A8}</Project>
+      <Name>vtkFiltersModeling</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Modeling\Testing\Cxx\vtkFiltersModelingCxxTests.vcxproj">
+      <Project>{55139382-2409-31E2-A9E9-55780FA9AC5B}</Project>
+      <Name>vtkFiltersModelingCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Parallel\vtkFiltersParallel.vcxproj">
+      <Project>{84341020-680F-3259-8516-A4EFAA108385}</Project>
+      <Name>vtkFiltersParallel</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\ParallelImaging\vtkFiltersParallelImaging.vcxproj">
+      <Project>{46163DD4-1C91-3168-8B5A-7E372A07A383}</Project>
+      <Name>vtkFiltersParallelImaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Points\vtkFiltersPoints.vcxproj">
+      <Project>{3252898D-D38D-3F28-9AEE-ACA635E8844F}</Project>
+      <Name>vtkFiltersPoints</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Points\Testing\Cxx\vtkFiltersPointsCxxTests.vcxproj">
+      <Project>{90806E16-FA3A-3220-80AF-75D244DD70DB}</Project>
+      <Name>vtkFiltersPointsCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Programmable\vtkFiltersProgrammable.vcxproj">
+      <Project>{8CAAB094-6F82-3969-9B70-EFB33838D281}</Project>
+      <Name>vtkFiltersProgrammable</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Programmable\Testing\Cxx\vtkFiltersProgrammableCxxTests.vcxproj">
+      <Project>{30C1B499-90DD-34C0-BB40-4E118AD9139F}</Project>
+      <Name>vtkFiltersProgrammableCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\SMP\vtkFiltersSMP.vcxproj">
+      <Project>{AFA9F8BF-0A6C-340C-AFEE-A90D523CFAB3}</Project>
+      <Name>vtkFiltersSMP</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\SMP\Testing\Cxx\vtkFiltersSMPCxxTests.vcxproj">
+      <Project>{4B3A7AF5-4797-3E72-BDD9-6075B460EF8C}</Project>
+      <Name>vtkFiltersSMPCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Selection\vtkFiltersSelection.vcxproj">
+      <Project>{FE13F23F-FE31-33D6-98B0-25B5898B9B1A}</Project>
+      <Name>vtkFiltersSelection</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Selection\Testing\Cxx\vtkFiltersSelectionCxxTests.vcxproj">
+      <Project>{18EEA965-911A-3E5D-BCE7-6138EB298C88}</Project>
+      <Name>vtkFiltersSelectionCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Sources\vtkFiltersSources.vcxproj">
+      <Project>{9C31BF77-73F1-3F0D-828A-21598AEF3065}</Project>
+      <Name>vtkFiltersSources</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Sources\Testing\Cxx\vtkFiltersSourcesCxxTests.vcxproj">
+      <Project>{B1D75EB5-6EF3-3931-98F2-F8D28FF6278D}</Project>
+      <Name>vtkFiltersSourcesCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Statistics\vtkFiltersStatistics.vcxproj">
+      <Project>{E0EE7767-1BD5-3F15-B88D-134DDEFA777A}</Project>
+      <Name>vtkFiltersStatistics</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Statistics\Testing\Cxx\vtkFiltersStatisticsCxxTests.vcxproj">
+      <Project>{A9692C5A-78CA-314E-967D-0F141E754F96}</Project>
+      <Name>vtkFiltersStatisticsCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Texture\vtkFiltersTexture.vcxproj">
+      <Project>{D4E1AAD0-1510-3DE6-A53C-0FAE4D409011}</Project>
+      <Name>vtkFiltersTexture</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Texture\Testing\Cxx\vtkFiltersTextureCxxTests.vcxproj">
+      <Project>{21BE66B1-5B62-36E7-B251-FF15CE7B50BD}</Project>
+      <Name>vtkFiltersTextureCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Topology\vtkFiltersTopology.vcxproj">
+      <Project>{DD68A86E-8AE8-3A83-AA50-4F3A4447CF98}</Project>
+      <Name>vtkFiltersTopology</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Topology\Testing\Cxx\vtkFiltersTopologyCxxTests.vcxproj">
+      <Project>{B6BA47B6-42A2-3EB2-9424-4C3B97D7E7BF}</Project>
+      <Name>vtkFiltersTopologyCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Verdict\vtkFiltersVerdict.vcxproj">
+      <Project>{C58EC605-0EE0-3031-B0A4-2864CD9A4080}</Project>
+      <Name>vtkFiltersVerdict</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Verdict\Testing\Cxx\vtkFiltersVerdictCxxTests.vcxproj">
+      <Project>{08640536-00A1-3025-BBD4-78BA71856B1C}</Project>
+      <Name>vtkFiltersVerdictCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\GUISupport\Qt\vtkGUISupportQt.vcxproj">
+      <Project>{49381C6F-E8F5-3398-98BD-5CEF50854032}</Project>
+      <Name>vtkGUISupportQt</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\GUISupport\Qt\Testing\Cxx\vtkGUISupportQtCxxTests.vcxproj">
+      <Project>{C0979567-D86D-3EEB-A975-83AF77911814}</Project>
+      <Name>vtkGUISupportQtCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\GUISupport\QtSQL\vtkGUISupportQtSQL.vcxproj">
+      <Project>{74230F3A-566C-3E7A-B40A-C205F5012FA8}</Project>
+      <Name>vtkGUISupportQtSQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\GUISupport\QtSQL\Testing\Cxx\vtkGUISupportQtSQLCxxTests.vcxproj">
+      <Project>{2EA783DD-DFAA-3F79-B81A-86E46540246E}</Project>
+      <Name>vtkGUISupportQtSQLCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Geovis\Core\vtkGeovisCore.vcxproj">
+      <Project>{35F78D20-A0DF-3236-9C78-D90C1164F3D1}</Project>
+      <Name>vtkGeovisCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\AMR\vtkIOAMR.vcxproj">
+      <Project>{3D9771CB-951A-331D-A3B1-07598C85B31F}</Project>
+      <Name>vtkIOAMR</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\AMR\Testing\Cxx\vtkIOAMRCxxTests.vcxproj">
+      <Project>{70C434E1-2AC6-3922-BBF3-5BF2086DFFDD}</Project>
+      <Name>vtkIOAMRCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Asynchronous\vtkIOAsynchronous.vcxproj">
+      <Project>{83212C55-EA0A-31CF-8EB7-976C48CCD801}</Project>
+      <Name>vtkIOAsynchronous</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\CityGML\vtkIOCityGML.vcxproj">
+      <Project>{78D79EAB-377B-38DB-BA1C-12D858875D2D}</Project>
+      <Name>vtkIOCityGML</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\CityGML\Testing\Cxx\vtkIOCityGMLCxxTests.vcxproj">
+      <Project>{02D5133A-FDA0-3CA3-9F42-B04437A542C6}</Project>
+      <Name>vtkIOCityGMLCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Core\vtkIOCore.vcxproj">
+      <Project>{04DC7D1B-9699-3A6E-8F81-AF6C5C6142EB}</Project>
+      <Name>vtkIOCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Core\Testing\Cxx\vtkIOCoreCxxTests.vcxproj">
+      <Project>{4BB6EC8A-EC5B-356F-A901-374DE21BF4D5}</Project>
+      <Name>vtkIOCoreCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\EnSight\vtkIOEnSight.vcxproj">
+      <Project>{BBDCEE4C-14D7-36F7-8777-7AADDD2114C5}</Project>
+      <Name>vtkIOEnSight</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Exodus\vtkIOExodus.vcxproj">
+      <Project>{6FAFD8F7-62F5-3E5E-BEC5-A2AFC64C0EA8}</Project>
+      <Name>vtkIOExodus</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Exodus\Testing\Cxx\vtkIOExodusCxxTests.vcxproj">
+      <Project>{D80BAB1C-5127-3F6E-B27B-F95C9DF95B9C}</Project>
+      <Name>vtkIOExodusCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Export\vtkIOExport.vcxproj">
+      <Project>{88193405-366A-3630-B70C-3D5FB515C7C1}</Project>
+      <Name>vtkIOExport</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Export\Testing\Cxx\vtkIOExportCxxTests.vcxproj">
+      <Project>{148D4DBF-7ED0-3B8F-ADBD-E9B8F007281A}</Project>
+      <Name>vtkIOExportCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\ExportOpenGL2\vtkIOExportOpenGL2.vcxproj">
+      <Project>{ABE350AF-E836-3B0C-9691-6201D4F219AC}</Project>
+      <Name>vtkIOExportOpenGL2</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\ExportPDF\vtkIOExportPDF.vcxproj">
+      <Project>{6783A0DB-71CD-346C-929D-2A3D7E9DBC06}</Project>
+      <Name>vtkIOExportPDF</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Geometry\vtkIOGeometry.vcxproj">
+      <Project>{709DE5A5-7C5B-3741-8288-1DA2245EF891}</Project>
+      <Name>vtkIOGeometry</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Geometry\Testing\Cxx\vtkIOGeometryCxxTests.vcxproj">
+      <Project>{3DFBAA0B-636F-3F08-BAB1-E3FC94CE0DBD}</Project>
+      <Name>vtkIOGeometryCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Image\vtkIOImage.vcxproj">
+      <Project>{97ED48CA-B441-3AAE-9815-CB06429AD264}</Project>
+      <Name>vtkIOImage</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Image\Testing\Cxx\vtkIOImageCxxTests.vcxproj">
+      <Project>{1FA44BAF-5609-3B12-B153-D5D9F3E00C16}</Project>
+      <Name>vtkIOImageCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Import\vtkIOImport.vcxproj">
+      <Project>{07D6A881-E3FF-329F-84E7-8CE5E209DBAD}</Project>
+      <Name>vtkIOImport</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Import\Testing\Cxx\vtkIOImportCxxTests.vcxproj">
+      <Project>{8A8E0EE8-DCE9-3688-84CE-67E0B8E24E36}</Project>
+      <Name>vtkIOImportCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Infovis\vtkIOInfovis.vcxproj">
+      <Project>{E00114F1-E174-36CE-A72F-29CE7E76BF32}</Project>
+      <Name>vtkIOInfovis</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Infovis\Testing\Cxx\vtkIOInfovisCxxTests.vcxproj">
+      <Project>{A08C49AE-3608-395D-BA0D-41782F6BC3BE}</Project>
+      <Name>vtkIOInfovisCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\LSDyna\vtkIOLSDyna.vcxproj">
+      <Project>{60BC1902-DE95-3AB1-A7E7-DAE376F06F77}</Project>
+      <Name>vtkIOLSDyna</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Legacy\vtkIOLegacy.vcxproj">
+      <Project>{C1B3C597-5A0D-3082-BA72-B33E8FCE6199}</Project>
+      <Name>vtkIOLegacy</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Legacy\Testing\Cxx\vtkIOLegacyCxxTests.vcxproj">
+      <Project>{C5F8AAAC-8222-32C3-9D97-CA760D82E002}</Project>
+      <Name>vtkIOLegacyCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\MINC\vtkIOMINC.vcxproj">
+      <Project>{B9516180-0E8B-3622-9FDD-49F5B2FDC360}</Project>
+      <Name>vtkIOMINC</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Movie\vtkIOMovie.vcxproj">
+      <Project>{5DFAF506-3F67-392D-920F-CAC11B2BC740}</Project>
+      <Name>vtkIOMovie</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Movie\Testing\Cxx\vtkIOMovieCxxTests.vcxproj">
+      <Project>{3462D8E7-C312-3D5E-B35E-D67B78F3479E}</Project>
+      <Name>vtkIOMovieCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\NetCDF\vtkIONetCDF.vcxproj">
+      <Project>{D9C8CCAE-187A-3E5B-B8D5-8AC2A8F3A1AE}</Project>
+      <Name>vtkIONetCDF</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\PLY\vtkIOPLY.vcxproj">
+      <Project>{413C3578-60DA-390A-B59F-1449EB97DAA2}</Project>
+      <Name>vtkIOPLY</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\PLY\Testing\Cxx\vtkIOPLYCxxTests.vcxproj">
+      <Project>{9F28ADF1-9BEC-35E4-8A80-092382341EFD}</Project>
+      <Name>vtkIOPLYCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Parallel\vtkIOParallel.vcxproj">
+      <Project>{19A0CDB8-5280-3009-B13E-F4BD405F5ADA}</Project>
+      <Name>vtkIOParallel</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\ParallelXML\vtkIOParallelXML.vcxproj">
+      <Project>{63E17629-1238-3200-83EB-E5842AED2A8B}</Project>
+      <Name>vtkIOParallelXML</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\SQL\vtkIOSQL.vcxproj">
+      <Project>{65569AF7-522A-383E-BA96-BB85778048FB}</Project>
+      <Name>vtkIOSQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\SQL\Testing\Cxx\vtkIOSQLCxxTests.vcxproj">
+      <Project>{48D0ED55-B6DE-37AF-857E-62F2F904A41F}</Project>
+      <Name>vtkIOSQLCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\SegY\vtkIOSegY.vcxproj">
+      <Project>{E95C1E8A-EB54-359C-A548-873BD8E08FD2}</Project>
+      <Name>vtkIOSegY</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\SegY\Testing\Cxx\vtkIOSegYCxxTests.vcxproj">
+      <Project>{9456209B-E840-3A8C-AF13-B7779858FC6D}</Project>
+      <Name>vtkIOSegYCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable\vtkIOTecplotTable.vcxproj">
+      <Project>{A25BB40F-C571-3A2A-AFAF-9C4BFC8B914A}</Project>
+      <Name>vtkIOTecplotTable</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\TecplotTable\Testing\Cxx\vtkIOTecplotTableCxxTests.vcxproj">
+      <Project>{78728410-DC60-3DE2-8DA4-08C25138D280}</Project>
+      <Name>vtkIOTecplotTableCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\VeraOut\vtkIOVeraOut.vcxproj">
+      <Project>{B404FA60-23DE-3D10-9539-88A124FF0CCB}</Project>
+      <Name>vtkIOVeraOut</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\Video\vtkIOVideo.vcxproj">
+      <Project>{8E0581B8-CEEA-30AE-A087-1C3AA3C434CF}</Project>
+      <Name>vtkIOVideo</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\XML\vtkIOXML.vcxproj">
+      <Project>{52315EF8-D1C9-3954-A112-3DA0B5BD455B}</Project>
+      <Name>vtkIOXML</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\XML\Testing\Cxx\vtkIOXMLCxxTests.vcxproj">
+      <Project>{8FEE56B5-A7D8-36C9-BB35-B893445A1C49}</Project>
+      <Name>vtkIOXMLCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\IO\XMLParser\vtkIOXMLParser.vcxproj">
+      <Project>{00FEA228-E340-3CE7-978D-F0D88D3B7139}</Project>
+      <Name>vtkIOXMLParser</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Imaging\Color\vtkImagingColor.vcxproj">
+      <Project>{64B6D07E-D960-3BF2-9CAE-23E78BD827AB}</Project>
+      <Name>vtkImagingColor</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Imaging\Color\Testing\Cxx\vtkImagingColorCxxTests.vcxproj">
+      <Project>{08D067C4-8BFA-3425-B3A5-7907C4106D7C}</Project>
+      <Name>vtkImagingColorCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Imaging\Core\vtkImagingCore.vcxproj">
+      <Project>{B27C0468-09D5-3D1A-BE62-7D20958D5174}</Project>
+      <Name>vtkImagingCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Imaging\Core\Testing\Cxx\vtkImagingCoreCxxTests.vcxproj">
+      <Project>{8513C449-DAB3-3D8C-8ECB-0C9559EAEFC3}</Project>
+      <Name>vtkImagingCoreCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Imaging\Fourier\vtkImagingFourier.vcxproj">
+      <Project>{7C23415B-FAF7-3F51-8C59-914347B98272}</Project>
+      <Name>vtkImagingFourier</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Imaging\General\vtkImagingGeneral.vcxproj">
+      <Project>{2FAFE226-F941-3DFB-BE66-CBE64854FE87}</Project>
+      <Name>vtkImagingGeneral</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Imaging\Hybrid\vtkImagingHybrid.vcxproj">
+      <Project>{298217E0-902C-30F1-9F07-3F4E0D2B65E6}</Project>
+      <Name>vtkImagingHybrid</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Imaging\Hybrid\Testing\Cxx\vtkImagingHybridCxxTests.vcxproj">
+      <Project>{4D819F42-66F0-32ED-B70F-C1ACC452766D}</Project>
+      <Name>vtkImagingHybridCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Imaging\Math\vtkImagingMath.vcxproj">
+      <Project>{31ACB149-2D78-38E9-AD85-9F8CDF2E0C33}</Project>
+      <Name>vtkImagingMath</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Imaging\Morphological\vtkImagingMorphological.vcxproj">
+      <Project>{16CE39FC-C90F-3F55-BCEA-72788662ED1E}</Project>
+      <Name>vtkImagingMorphological</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Imaging\Morphological\Testing\Cxx\vtkImagingMorphologicalCxxTests.vcxproj">
+      <Project>{2666767A-ED8E-3CC0-AF17-16716A911E1C}</Project>
+      <Name>vtkImagingMorphologicalCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Imaging\Sources\vtkImagingSources.vcxproj">
+      <Project>{D69F16E7-D293-3A79-9A24-F7FE2200DD06}</Project>
+      <Name>vtkImagingSources</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Imaging\Statistics\vtkImagingStatistics.vcxproj">
+      <Project>{9FFCD646-4323-3308-974E-0151878C8698}</Project>
+      <Name>vtkImagingStatistics</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Imaging\Stencil\vtkImagingStencil.vcxproj">
+      <Project>{4C86CC80-F378-367E-91B1-A4ECFE72DAA9}</Project>
+      <Name>vtkImagingStencil</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Infovis\Core\vtkInfovisCore.vcxproj">
+      <Project>{2C1324EE-C985-3622-BBC4-1509EEDA58FF}</Project>
+      <Name>vtkInfovisCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Infovis\Core\Testing\Cxx\vtkInfovisCoreCxxTests.vcxproj">
+      <Project>{F47BEA5D-F088-3DB3-AD81-2D835D41DAC3}</Project>
+      <Name>vtkInfovisCoreCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Infovis\Layout\vtkInfovisLayout.vcxproj">
+      <Project>{C0D173AB-0FF1-3D87-8A81-FB08E36B4BD6}</Project>
+      <Name>vtkInfovisLayout</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Infovis\Layout\Testing\Cxx\vtkInfovisLayoutCxxTests.vcxproj">
+      <Project>{C2DE6EB6-A715-3FE2-B04D-DAE0478A3108}</Project>
+      <Name>vtkInfovisLayoutCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Interaction\Image\vtkInteractionImage.vcxproj">
+      <Project>{46A076CD-D7EA-3518-AA15-804ECE99F04E}</Project>
+      <Name>vtkInteractionImage</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Interaction\Style\vtkInteractionStyle.vcxproj">
+      <Project>{AC6A6A7D-C009-3D92-BCD2-B00FC479F6DC}</Project>
+      <Name>vtkInteractionStyle</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Interaction\Widgets\vtkInteractionWidgets.vcxproj">
+      <Project>{2C3BAF13-CC7D-3ED1-AEA6-C93CFBCBD6E2}</Project>
+      <Name>vtkInteractionWidgets</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Interaction\Widgets\Testing\Cxx\vtkInteractionWidgetsCxxTests.vcxproj">
+      <Project>{908EAD92-43B5-37EC-A67F-73722B887193}</Project>
+      <Name>vtkInteractionWidgetsCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Parallel\Core\vtkParallelCore.vcxproj">
+      <Project>{56B3AB58-0E7F-3CBA-9D0F-6B6ABBC2F02C}</Project>
+      <Name>vtkParallelCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Parallel\Core\Testing\Cxx\vtkParallelCore-TestSocketCommunicator.vcxproj">
+      <Project>{73558A4F-860E-3EF9-B797-AF4E18A00EB4}</Project>
+      <Name>vtkParallelCore-TestSocketCommunicator</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Parallel\Core\Testing\Cxx\vtkParallelCoreCxxTests.vcxproj">
+      <Project>{46F8288F-DA3D-3A79-B106-3C0507129FCA}</Project>
+      <Name>vtkParallelCoreCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\OpenGL2\vtkProbeOpenGLVersion.vcxproj">
+      <Project>{C75C8DA2-E22A-3753-930C-9027E95E60D4}</Project>
+      <Name>vtkProbeOpenGLVersion</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Annotation\vtkRenderingAnnotation.vcxproj">
+      <Project>{835C8609-AE1B-3B9F-83F6-B40009EF52C9}</Project>
+      <Name>vtkRenderingAnnotation</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Annotation\Testing\Cxx\vtkRenderingAnnotationCxxTests.vcxproj">
+      <Project>{D8546E07-DD18-35E3-BDBF-1F0C4BC5C23C}</Project>
+      <Name>vtkRenderingAnnotationCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Context2D\vtkRenderingContext2D.vcxproj">
+      <Project>{4805E6CF-2A72-37C7-B6AC-CCB00A5BB6F8}</Project>
+      <Name>vtkRenderingContext2D</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Context2D\Testing\Cxx\vtkRenderingContext2DCxxTests.vcxproj">
+      <Project>{468C1A5E-EC58-3D34-A1F7-7EFEF5665864}</Project>
+      <Name>vtkRenderingContext2DCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\ContextOpenGL2\vtkRenderingContextOpenGL2.vcxproj">
+      <Project>{018A60A0-DF6F-30D9-96FA-E2CA7DBA401A}</Project>
+      <Name>vtkRenderingContextOpenGL2</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core\vtkRenderingCore.vcxproj">
+      <Project>{BA44572E-7F10-306E-9DD6-7B528A2DC1A6}</Project>
+      <Name>vtkRenderingCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core\Testing\Cxx\vtkRenderingCoreCxxTests.vcxproj">
+      <Project>{C6530969-1CAA-3618-98E4-1DECEEC0B2B1}</Project>
+      <Name>vtkRenderingCoreCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\FreeType\vtkRenderingFreeType.vcxproj">
+      <Project>{96591281-2BED-30B2-8420-6C57CCD2F9FA}</Project>
+      <Name>vtkRenderingFreeType</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\FreeType\Testing\Cxx\vtkRenderingFreeTypeCxxTests.vcxproj">
+      <Project>{C4131F5D-2363-374D-919B-54BB2E011ACC}</Project>
+      <Name>vtkRenderingFreeTypeCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\GL2PSOpenGL2\vtkRenderingGL2PSOpenGL2.vcxproj">
+      <Project>{D62C8E78-624B-3FC7-B36A-2356915A8A04}</Project>
+      <Name>vtkRenderingGL2PSOpenGL2</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\GL2PSOpenGL2\Testing\Cxx\vtkRenderingGL2PSOpenGL2CxxTests.vcxproj">
+      <Project>{DCB80CA0-26D0-360D-A2B0-241EF340B663}</Project>
+      <Name>vtkRenderingGL2PSOpenGL2CxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Image\vtkRenderingImage.vcxproj">
+      <Project>{7822A267-DA98-3872-A4DA-7CC12AB1C9C5}</Project>
+      <Name>vtkRenderingImage</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Image\Testing\Cxx\vtkRenderingImageCxxTests.vcxproj">
+      <Project>{369934F1-BFE2-3CCB-AC5C-BD85674C15E2}</Project>
+      <Name>vtkRenderingImageCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\LOD\vtkRenderingLOD.vcxproj">
+      <Project>{C78E00FF-1C4D-3CF4-8DF0-35DF798CD8DC}</Project>
+      <Name>vtkRenderingLOD</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\LOD\Testing\Cxx\vtkRenderingLODCxxTests.vcxproj">
+      <Project>{4A21A34F-7B68-3679-ADA4-BF564F3EF0EE}</Project>
+      <Name>vtkRenderingLODCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Label\vtkRenderingLabel.vcxproj">
+      <Project>{99593DCC-F9C0-3ACC-B524-9F0227AD6B25}</Project>
+      <Name>vtkRenderingLabel</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Label\Testing\Cxx\vtkRenderingLabelCxxTests.vcxproj">
+      <Project>{EC6453FA-0AB3-302E-B5A6-80EBD3395DB3}</Project>
+      <Name>vtkRenderingLabelCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\OpenGL2\vtkRenderingOpenGL2.vcxproj">
+      <Project>{66C9071D-FD13-389F-8539-4A98C77FF6E4}</Project>
+      <Name>vtkRenderingOpenGL2</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\OpenGL2\Testing\Cxx\vtkRenderingOpenGL2CxxTests.vcxproj">
+      <Project>{B079EAAD-025A-39BC-916E-35B7D290F8A1}</Project>
+      <Name>vtkRenderingOpenGL2CxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Qt\vtkRenderingQt.vcxproj">
+      <Project>{83B98619-B9B0-36B9-9B21-1A95B38A9530}</Project>
+      <Name>vtkRenderingQt</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Volume\vtkRenderingVolume.vcxproj">
+      <Project>{64D5CDA0-523A-35AE-8843-D7F0BD271981}</Project>
+      <Name>vtkRenderingVolume</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Volume\Testing\Cxx\vtkRenderingVolumeCxxTests.vcxproj">
+      <Project>{6DAC882C-18D7-3A75-9DCE-94C23983B345}</Project>
+      <Name>vtkRenderingVolumeCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\VolumeOpenGL2\vtkRenderingVolumeOpenGL2.vcxproj">
+      <Project>{781EDDF4-CA32-33E3-B413-7170F96EA751}</Project>
+      <Name>vtkRenderingVolumeOpenGL2</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\VolumeOpenGL2\Testing\Cxx\vtkRenderingVolumeOpenGL2CxxTests.vcxproj">
+      <Project>{8C63C710-0562-392C-9E2F-647B13D0B5C8}</Project>
+      <Name>vtkRenderingVolumeOpenGL2CxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\OpenGL2\vtkTestOpenGLVersion.vcxproj">
+      <Project>{B30D81E4-B62C-3951-8778-77BC3DB698BC}</Project>
+      <Name>vtkTestOpenGLVersion</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Testing\GenericBridge\vtkTestingGenericBridge.vcxproj">
+      <Project>{E89C8D4A-0571-38CE-9201-0C08DCD5978C}</Project>
+      <Name>vtkTestingGenericBridge</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Testing\IOSQL\vtkTestingIOSQL.vcxproj">
+      <Project>{FBDB2D44-BE26-37BE-91C0-744BCF38585E}</Project>
+      <Name>vtkTestingIOSQL</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Testing\Rendering\vtkTestingRendering.vcxproj">
+      <Project>{DC7FD0AD-7821-37BE-A5DB-996D2206DA72}</Project>
+      <Name>vtkTestingRendering</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Views\Context2D\vtkViewsContext2D.vcxproj">
+      <Project>{2CDD9062-DCC9-3768-9C67-E1983D6F798F}</Project>
+      <Name>vtkViewsContext2D</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Views\Core\vtkViewsCore.vcxproj">
+      <Project>{B717ACF5-D472-36F7-8A30-123E99ED5CF7}</Project>
+      <Name>vtkViewsCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Views\Infovis\vtkViewsInfovis.vcxproj">
+      <Project>{2913AC6C-A1F4-34AF-9846-F7ACFEA727DE}</Project>
+      <Name>vtkViewsInfovis</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Views\Infovis\Testing\Cxx\vtkViewsInfovisCxxTests.vcxproj">
+      <Project>{E1F00344-5BE5-30A3-AC88-0E589E25E5A6}</Project>
+      <Name>vtkViewsInfovisCxxTests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Views\Qt\vtkViewsQt.vcxproj">
+      <Project>{4AC718A5-1F55-3F0F-B461-C1E348571B09}</Project>
+      <Name>vtkViewsQt</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\doubleconversion\vtkdoubleconversion\vtkdoubleconversion.vcxproj">
+      <Project>{ECF01E45-7F1D-36DD-82C2-67177F8A48F9}</Project>
+      <Name>vtkdoubleconversion</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\exodusII\vtkexodusII\vtkexodusII.vcxproj">
+      <Project>{ABA9C54B-E0A0-34FE-9826-FBFE83CBB4C8}</Project>
+      <Name>vtkexodusII</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\expat\vtkexpat\vtkexpat.vcxproj">
+      <Project>{6C7CFF34-B348-34D6-AD94-C23942FF64F4}</Project>
+      <Name>vtkexpat</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\freetype\vtkfreetype\vtkfreetype.vcxproj">
+      <Project>{FDF1DE2D-C8F1-3AAD-8FDB-52459F478216}</Project>
+      <Name>vtkfreetype</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\gl2ps\vtkgl2ps\vtkgl2ps.vcxproj">
+      <Project>{97BDBBB2-79A3-3988-8A06-91F5731BAF97}</Project>
+      <Name>vtkgl2ps</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\glew\vtkglew\vtkglew.vcxproj">
+      <Project>{673CCE65-4AB4-352F-B674-C78A15EB1043}</Project>
+      <Name>vtkglew</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\hl\src\vtkhdf5_hl_src.vcxproj">
+      <Project>{EF381C4C-A7E1-3F56-8C1B-96FA69842FB7}</Project>
+      <Name>vtkhdf5_hl_src</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\src\vtkhdf5_src.vcxproj">
+      <Project>{F31E3BC5-751D-3ABF-AC6F-D8262D46DEEC}</Project>
+      <Name>vtkhdf5_src</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\jpeg\vtkjpeg\vtkjpeg.vcxproj">
+      <Project>{E78D6836-F367-3946-837F-6C32683719C6}</Project>
+      <Name>vtkjpeg</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\jsoncpp\vtkjsoncpp\vtkjsoncpp.vcxproj">
+      <Project>{4B3107E6-C022-3212-BE04-C1CAB47FFAC8}</Project>
+      <Name>vtkjsoncpp</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libharu\vtklibharu\src\vtklibharu.vcxproj">
+      <Project>{FF857F41-9381-3B5C-86FA-C55E4187F4A4}</Project>
+      <Name>vtklibharu</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src\vtklibproj.vcxproj">
+      <Project>{03EC6CE2-D10A-3817-8304-11F5113B3CBF}</Project>
+      <Name>vtklibproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libxml2\vtklibxml2\vtklibxml2.vcxproj">
+      <Project>{359D27AB-5D77-32B3-8B22-DBC1847B369C}</Project>
+      <Name>vtklibxml2</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lz4\vtklz4\vtklz4.vcxproj">
+      <Project>{25B32F93-A9F2-31AA-A8C1-1199051C3791}</Project>
+      <Name>vtklz4</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\lzma\vtklzma\vtklzma.vcxproj">
+      <Project>{2A34C65C-38E2-38DD-9563-8002CA87F8A6}</Project>
+      <Name>vtklzma</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\MetaIO\vtkmetaio\vtkmetaio.vcxproj">
+      <Project>{1F727C86-39EF-3825-9EFE-612A081D1C63}</Project>
+      <Name>vtkmetaio</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\vtknetcdf.vcxproj">
+      <Project>{CB2C2E30-179B-3DB2-8FA9-8137A21A0727}</Project>
+      <Name>vtknetcdf</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\ogg\vtkogg\vtkogg.vcxproj">
+      <Project>{255DE2FC-D4FF-311F-94D4-E519EAE3A67C}</Project>
+      <Name>vtkogg</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\png\vtkpng\vtkpng.vcxproj">
+      <Project>{1AA5C6E2-896E-3205-8243-CFC0114CAD76}</Project>
+      <Name>vtkpng</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\pugixml\vtkpugixml\vtkpugixml.vcxproj">
+      <Project>{9F79118D-B03E-3938-93FC-35CD895A2881}</Project>
+      <Name>vtkpugixml</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\sqlite\vtksqlite\vtksqlite.vcxproj">
+      <Project>{211559E6-E2AE-38D5-9E9C-0DEBBDFF975F}</Project>
+      <Name>vtksqlite</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys\vtksys\vtksys.vcxproj">
+      <Project>{F5E45E60-7B5D-3AAC-BE34-651E9BF023BE}</Project>
+      <Name>vtksys</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\theora\vtktheora\vtktheora.vcxproj">
+      <Project>{2D028541-D34E-30BA-A5D6-BF181D937433}</Project>
+      <Name>vtktheora</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\tiff\vtktiff\libtiff\vtktiff.vcxproj">
+      <Project>{0D755599-8929-3381-AD7E-9C63BF0E6B76}</Project>
+      <Name>vtktiff</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib\vtkzlib\vtkzlib.vcxproj">
+      <Project>{342F70EC-5F35-3320-9822-A570989F1860}</Project>
+      <Name>vtkzlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

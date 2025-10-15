@@ -1,0 +1,100 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkBooleanTexture.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkCheckerboardSplatter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkFastSplatter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkGaussianSplatter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkImageCursor3D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkImageRectilinearWipe.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkImageToPoints.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkPointLoad.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkSampleFunction.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkShepardMethod.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkSliceCubes.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkSurfaceReconstructionFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkTriangularTexture.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkVoxelModeller.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkBooleanTexture.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkCheckerboardSplatter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkFastSplatter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkGaussianSplatter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkImageCursor3D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkImageRectilinearWipe.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkImageToPoints.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkPointLoad.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkSampleFunction.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkShepardMethod.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkSliceCubes.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkSurfaceReconstructionFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkTriangularTexture.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Hybrid/vtkVoxelModeller.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Imaging/Hybrid/vtkImagingHybridModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkImagingHybrid"
+		],
+		"name" : "vtkImagingHybrid"
+	}
+}

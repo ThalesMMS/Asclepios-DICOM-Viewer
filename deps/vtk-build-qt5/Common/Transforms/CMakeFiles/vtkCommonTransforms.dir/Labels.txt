@@ -1,0 +1,36 @@
+# Target labels
+ vtkCommonTransforms
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkAbstractTransform.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkCylindricalTransform.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkGeneralTransform.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkHomogeneousTransform.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkIdentityTransform.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkLinearTransform.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkMatrixToHomogeneousTransform.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkMatrixToLinearTransform.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkPerspectiveTransform.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkSphericalTransform.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkThinPlateSplineTransform.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkTransform2D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkTransformCollection.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkTransform.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkWarpTransform.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkLandmarkTransform.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkAbstractTransform.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkCylindricalTransform.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkGeneralTransform.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkHomogeneousTransform.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkIdentityTransform.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkLinearTransform.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkMatrixToHomogeneousTransform.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkMatrixToLinearTransform.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkPerspectiveTransform.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkSphericalTransform.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkThinPlateSplineTransform.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkTransform2D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkTransformCollection.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkTransform.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkWarpTransform.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Transforms/vtkLandmarkTransform.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Common/Transforms/vtkCommonTransformsModule.h

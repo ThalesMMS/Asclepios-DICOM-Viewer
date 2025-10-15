@@ -1,0 +1,6 @@
+# Target labels
+ vtkIOAsynchronous
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Asynchronous/vtkThreadedImageWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Asynchronous/vtkThreadedImageWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/Asynchronous/vtkIOAsynchronousModule.h

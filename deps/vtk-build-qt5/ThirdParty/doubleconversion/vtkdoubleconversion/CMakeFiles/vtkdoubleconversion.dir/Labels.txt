@@ -1,0 +1,20 @@
+# Target labels
+ vtkdoubleconversion
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/bignum.cc
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/bignum-dtoa.cc
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/cached-powers.cc
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/diy-fp.cc
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/double-conversion.cc
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/fast-dtoa.cc
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/fixed-dtoa.cc
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/strtod.cc
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/bignum.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/cached-powers.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/diy-fp.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/double-conversion.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/fast-dtoa.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/fixed-dtoa.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/ieee.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/strtod.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/utils.h

@@ -1,0 +1,42 @@
+# Target labels
+ vtkInteractionStyle
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleDrawPolygon.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleFlight.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleImage.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleJoystickActor.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleJoystickCamera.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleMultiTouchCamera.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleRubberBand2D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleRubberBand3D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleRubberBandPick.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleRubberBandZoom.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleTerrain.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleTrackballActor.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleTrackballCamera.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleTrackball.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleUnicam.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleUser.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleSwitch.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkParallelCoordinatesInteractorStyle.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Interaction/Style/vtkInteractionStyleObjectFactory.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleDrawPolygon.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleFlight.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleImage.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleJoystickActor.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleJoystickCamera.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleMultiTouchCamera.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleRubberBand2D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleRubberBand3D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleRubberBandPick.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleRubberBandZoom.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleTerrain.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleTrackballActor.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleTrackballCamera.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleTrackball.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleUnicam.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleUser.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkInteractorStyleSwitch.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Style/vtkParallelCoordinatesInteractorStyle.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Interaction/Style/vtkInteractionStyleObjectFactory.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Interaction/Style/vtkInteractionStyleModule.h

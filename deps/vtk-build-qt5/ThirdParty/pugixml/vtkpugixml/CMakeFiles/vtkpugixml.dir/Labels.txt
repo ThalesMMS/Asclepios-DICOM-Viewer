@@ -1,0 +1,7 @@
+# Target labels
+ vtkpugixml
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/pugixml/vtkpugixml/src/pugixml.cpp
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/pugixml/vtkpugixml/src/pugixml.hpp
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/pugixml/vtkpugixml/pugiconfig.hpp
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/pugixml/vtkpugixml/src/vtk_pugixml_mangle.h

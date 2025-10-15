@@ -1,0 +1,8 @@
+# CMake generation dependency list for this directory.
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCCompilerFlag.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCXXCompilerFlag.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCompilerFlag.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckSourceCompiles.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GenerateExportHeader.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/exportheader.cmake.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/sqlite/vtksqlite/CMakeLists.txt

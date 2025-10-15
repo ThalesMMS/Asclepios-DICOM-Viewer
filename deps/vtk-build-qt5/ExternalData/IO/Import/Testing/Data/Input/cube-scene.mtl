@@ -1,0 +1,14 @@
+newmtl solidcolor
+Ka 0.2 0.2 0.2
+Kd 0.9 0.9 0.9
+Ks 0 0 0
+illum 2
+Ns 20
+
+newmtl imagetexture
+Ka 0.1 0.1 0.1
+Kd 0.9 0.9 0.9
+Ks 0.9 0.9 0.9
+illum 6
+Ns 4
+map_Kd noise.png

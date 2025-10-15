@@ -1,0 +1,22 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/IOSQL/DatabaseSchemaWith2Tables.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/IOSQL/DatabaseSchemaWith2Tables.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/IOSQL/vtkTestingIOSQLModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkTestingIOSQL"
+		],
+		"name" : "vtkTestingIOSQL"
+	}
+}

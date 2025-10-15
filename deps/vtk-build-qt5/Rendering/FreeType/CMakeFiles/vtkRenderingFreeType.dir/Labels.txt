@@ -1,0 +1,32 @@
+# Target labels
+ vtkRenderingFreeType
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkFreeTypeStringToImage.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkFreeTypeTools.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkMathTextFreeTypeTextRenderer.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkMathTextUtilities.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkTextRendererStringToImage.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkScaledTextActor.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkVectorText.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/FreeType/vtkRenderingFreeTypeObjectFactory.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_arial_bold.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_arial_bold_italic.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_arial.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_arial_italic.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_courier_bold.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_courier_bold_italic.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_courier.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_courier_italic.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_times_bold.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_times_bold_italic.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_times.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/fonts/face_times_italic.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkFreeTypeStringToImage.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkFreeTypeTools.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkMathTextFreeTypeTextRenderer.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkMathTextUtilities.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkTextRendererStringToImage.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkScaledTextActor.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/FreeType/vtkVectorText.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/FreeType/vtkRenderingFreeTypeObjectFactory.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/FreeType/vtkRenderingFreeTypeModule.h

@@ -1,0 +1,112 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaTypes.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaUtils.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaArrow.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaBlob.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaCommand.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaCommand.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaContour.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaContour.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaDTITube.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaEllipse.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaGroup.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaGaussian.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaImage.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaImageUtils.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaLandmark.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaLine.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaMesh.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaMesh.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaObject.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaOutput.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaOutput.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaScene.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaSurface.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaTube.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaVesselTube.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaTransform.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaTubeGraph.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaForm.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaForm.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaArray.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaArray.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaFEMObject.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaFEMObject.cxx"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkMetaIO"
+		],
+		"name" : "vtkmetaio"
+	}
+}

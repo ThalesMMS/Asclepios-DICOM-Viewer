@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CF0C9F52-DDDF-3A85-ABAF-D61582229CA6}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>dicomfind</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">dicomfind.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">dicomfind</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">dicomfind.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">dicomfind</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">dicomfind.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">dicomfind</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">dicomfind.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">dicomfind</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\include\vtk-8.2;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\DicomCli;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\DicomCli;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2);vtkIOExport_INCLUDE="D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/CMakeFiles/vtkIOExport_AUTOINIT_vtkIOExportOpenGL2_vtkIOExportPDF.h";vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2);vtkRenderingCore_INCLUDE="D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/CMakeFiles/vtkRenderingCore_AUTOINIT_vtkInteractionStyle_vtkRenderingFreeType_vtkRenderingOpenGL2.h";vtkRenderingOpenGL2_AUTOINIT=1(vtkRenderingGL2PSOpenGL2);vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2);_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2);vtkIOExport_INCLUDE=\"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/CMakeFiles/vtkIOExport_AUTOINIT_vtkIOExportOpenGL2_vtkIOExportPDF.h\";vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2);vtkRenderingCore_INCLUDE=\"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/CMakeFiles/vtkRenderingCore_AUTOINIT_vtkInteractionStyle_vtkRenderingFreeType_vtkRenderingOpenGL2.h\";vtkRenderingOpenGL2_AUTOINIT=1(vtkRenderingGL2PSOpenGL2);vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2);_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\include\vtk-8.2;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\DicomCli;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\DicomCli;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\include\vtk-8.2;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\DicomCli;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\DicomCli;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\lib\Debug\vtkDICOM-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonMisc-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonDataModel-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkImagingCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkIOCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkIOImage-8.2.lib;..\lib\Debug\dicomcli.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkImagingStatistics-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonSystem-8.2.lib;..\lib\Debug\vtkDICOM-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkIOCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtklz4-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtklzma-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkdoubleconversion-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkIOImage-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkDICOMParser-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkmetaio-8.2.lib;comctl32.lib;wsock32.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkpng-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtktiff-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkjpeg-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkzlib-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkImagingCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonExecutionModel-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonDataModel-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonMisc-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonTransforms-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonMath-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonSystem-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtksys-8.2.lib;ws2_32.lib;Psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/lib/Debug/dicomfind.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/bin/Debug/dicomfind.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\include\vtk-8.2;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\DicomCli;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\DicomCli;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2);vtkIOExport_INCLUDE="D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/CMakeFiles/vtkIOExport_AUTOINIT_vtkIOExportOpenGL2_vtkIOExportPDF.h";vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2);vtkRenderingCore_INCLUDE="D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/CMakeFiles/vtkRenderingCore_AUTOINIT_vtkInteractionStyle_vtkRenderingFreeType_vtkRenderingOpenGL2.h";vtkRenderingOpenGL2_AUTOINIT=1(vtkRenderingGL2PSOpenGL2);vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2);_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2);vtkIOExport_INCLUDE=\"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/CMakeFiles/vtkIOExport_AUTOINIT_vtkIOExportOpenGL2_vtkIOExportPDF.h\";vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2);vtkRenderingCore_INCLUDE=\"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/CMakeFiles/vtkRenderingCore_AUTOINIT_vtkInteractionStyle_vtkRenderingFreeType_vtkRenderingOpenGL2.h\";vtkRenderingOpenGL2_AUTOINIT=1(vtkRenderingGL2PSOpenGL2);vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2);_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\include\vtk-8.2;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\DicomCli;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\DicomCli;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\include\vtk-8.2;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\DicomCli;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\DicomCli;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\lib\Release\vtkDICOM-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonMisc-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonDataModel-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkImagingCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkIOCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkIOImage-8.2.lib;..\lib\Release\dicomcli.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkImagingStatistics-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonSystem-8.2.lib;..\lib\Release\vtkDICOM-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkIOCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtklz4-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtklzma-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkdoubleconversion-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkIOImage-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkDICOMParser-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkmetaio-8.2.lib;comctl32.lib;wsock32.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkpng-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtktiff-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkjpeg-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkzlib-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkImagingCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonExecutionModel-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonDataModel-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonMisc-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonTransforms-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonMath-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonSystem-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtksys-8.2.lib;ws2_32.lib;Psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/lib/Release/dicomfind.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/bin/Release/dicomfind.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\include\vtk-8.2;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\DicomCli;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\DicomCli;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2);vtkIOExport_INCLUDE="D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/CMakeFiles/vtkIOExport_AUTOINIT_vtkIOExportOpenGL2_vtkIOExportPDF.h";vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2);vtkRenderingCore_INCLUDE="D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/CMakeFiles/vtkRenderingCore_AUTOINIT_vtkInteractionStyle_vtkRenderingFreeType_vtkRenderingOpenGL2.h";vtkRenderingOpenGL2_AUTOINIT=1(vtkRenderingGL2PSOpenGL2);vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2);_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2);vtkIOExport_INCLUDE=\"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/CMakeFiles/vtkIOExport_AUTOINIT_vtkIOExportOpenGL2_vtkIOExportPDF.h\";vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2);vtkRenderingCore_INCLUDE=\"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/CMakeFiles/vtkRenderingCore_AUTOINIT_vtkInteractionStyle_vtkRenderingFreeType_vtkRenderingOpenGL2.h\";vtkRenderingOpenGL2_AUTOINIT=1(vtkRenderingGL2PSOpenGL2);vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2);_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\include\vtk-8.2;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\DicomCli;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\DicomCli;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\include\vtk-8.2;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\DicomCli;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\DicomCli;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\lib\MinSizeRel\vtkDICOM-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonMisc-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonDataModel-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkImagingCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkIOCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkIOImage-8.2.lib;..\lib\MinSizeRel\dicomcli.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkImagingStatistics-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonSystem-8.2.lib;..\lib\MinSizeRel\vtkDICOM-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkIOCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtklz4-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtklzma-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkdoubleconversion-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkIOImage-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkDICOMParser-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkmetaio-8.2.lib;comctl32.lib;wsock32.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkpng-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtktiff-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkjpeg-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkzlib-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkImagingCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonExecutionModel-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonDataModel-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonMisc-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonTransforms-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonMath-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonSystem-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtksys-8.2.lib;ws2_32.lib;Psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/lib/MinSizeRel/dicomfind.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/bin/MinSizeRel/dicomfind.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\include\vtk-8.2;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\DicomCli;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\DicomCli;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2);vtkIOExport_INCLUDE="D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/CMakeFiles/vtkIOExport_AUTOINIT_vtkIOExportOpenGL2_vtkIOExportPDF.h";vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2);vtkRenderingCore_INCLUDE="D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/CMakeFiles/vtkRenderingCore_AUTOINIT_vtkInteractionStyle_vtkRenderingFreeType_vtkRenderingOpenGL2.h";vtkRenderingOpenGL2_AUTOINIT=1(vtkRenderingGL2PSOpenGL2);vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2);_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;vtkDomainsChemistry_AUTOINIT=1(vtkDomainsChemistryOpenGL2);vtkIOExport_INCLUDE=\"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/CMakeFiles/vtkIOExport_AUTOINIT_vtkIOExportOpenGL2_vtkIOExportPDF.h\";vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2);vtkRenderingCore_INCLUDE=\"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/CMakeFiles/vtkRenderingCore_AUTOINIT_vtkInteractionStyle_vtkRenderingFreeType_vtkRenderingOpenGL2.h\";vtkRenderingOpenGL2_AUTOINIT=1(vtkRenderingGL2PSOpenGL2);vtkRenderingVolume_AUTOINIT=1(vtkRenderingVolumeOpenGL2);_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\include\vtk-8.2;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\DicomCli;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\DicomCli;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\include\vtk-8.2;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\Source;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\DicomCli;D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\DicomCli;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\lib\RelWithDebInfo\vtkDICOM-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonMisc-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonDataModel-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkImagingCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkIOCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkIOImage-8.2.lib;..\lib\RelWithDebInfo\dicomcli.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkImagingStatistics-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonSystem-8.2.lib;..\lib\RelWithDebInfo\vtkDICOM-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkIOCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtklz4-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtklzma-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkdoubleconversion-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkIOImage-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkDICOMParser-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkmetaio-8.2.lib;comctl32.lib;wsock32.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkpng-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtktiff-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkjpeg-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkzlib-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkImagingCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonExecutionModel-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonDataModel-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonMisc-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonTransforms-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonMath-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonSystem-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtkCommonCore-8.2.lib;D:\Asclepios-DICOM-Viewer\deps\vtk-install-qt5-debug\lib\vtksys-8.2.lib;ws2_32.lib;Psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/lib/RelWithDebInfo/dicomfind.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/bin/RelWithDebInfo/dicomfind.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\Programs\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk-dicom/Programs/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk-dicom -BD:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/Programs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\Programs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk-dicom/Programs/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk-dicom -BD:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/Programs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\Programs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk-dicom/Programs/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk-dicom -BD:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/Programs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\Programs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk-dicom/Programs/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk-dicom -BD:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build-debug/Programs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\Programs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk-dicom\Programs\dicomfind.cxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\ZERO_CHECK.vcxproj">
+      <Project>{5A35207E-04CA-388F-B361-9CE184792607}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\DicomCli\dicomcli.vcxproj">
+      <Project>{DDC7920F-859A-3F29-9BB1-23502AA17582}</Project>
+      <Name>dicomcli</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-dicom-build-debug\Source\vtkDICOM.vcxproj">
+      <Project>{46BB5440-A040-3E51-BFD9-C7C9469FB88F}</Project>
+      <Name>vtkDICOM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

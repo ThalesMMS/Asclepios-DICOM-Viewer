@@ -1,0 +1,8 @@
+# Target labels
+ vtkRenderingGL2PSOpenGL2
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/GL2PSOpenGL2/vtkOpenGLGL2PSHelperImpl.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/GL2PSOpenGL2/vtkRenderingGL2PSOpenGL2ObjectFactory.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/GL2PSOpenGL2/vtkOpenGLGL2PSHelperImpl.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/GL2PSOpenGL2/vtkRenderingGL2PSOpenGL2ObjectFactory.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/GL2PSOpenGL2/vtkRenderingGL2PSOpenGL2Module.h

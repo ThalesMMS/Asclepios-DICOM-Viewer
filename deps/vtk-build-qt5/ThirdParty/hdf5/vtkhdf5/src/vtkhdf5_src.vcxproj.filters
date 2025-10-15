@@ -1,0 +1,1383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5.c">
+      <Filter>H5</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5checksum.c">
+      <Filter>H5</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5dbg.c">
+      <Filter>H5</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5system.c">
+      <Filter>H5</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5timer.c">
+      <Filter>H5</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5trace.c">
+      <Filter>H5</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5A.c">
+      <Filter>H5A</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Abtree2.c">
+      <Filter>H5A</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Adense.c">
+      <Filter>H5A</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Adeprec.c">
+      <Filter>H5A</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Aint.c">
+      <Filter>H5A</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Atest.c">
+      <Filter>H5A</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5AC.c">
+      <Filter>H5AC</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5ACdbg.c">
+      <Filter>H5AC</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5AClog.c">
+      <Filter>H5AC</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5ACmpio.c">
+      <Filter>H5AC</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5ACproxy_entry.c">
+      <Filter>H5AC</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5B.c">
+      <Filter>H5B</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Bcache.c">
+      <Filter>H5B</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Bdbg.c">
+      <Filter>H5B</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5B2.c">
+      <Filter>H5B2</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5B2cache.c">
+      <Filter>H5B2</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5B2dbg.c">
+      <Filter>H5B2</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5B2hdr.c">
+      <Filter>H5B2</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5B2int.c">
+      <Filter>H5B2</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5B2internal.c">
+      <Filter>H5B2</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5B2leaf.c">
+      <Filter>H5B2</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5B2stat.c">
+      <Filter>H5B2</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5B2test.c">
+      <Filter>H5B2</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5C.c">
+      <Filter>H5C</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Cdbg.c">
+      <Filter>H5C</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Cepoch.c">
+      <Filter>H5C</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Cimage.c">
+      <Filter>H5C</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Clog.c">
+      <Filter>H5C</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Cmpio.c">
+      <Filter>H5C</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Cprefetched.c">
+      <Filter>H5C</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Cquery.c">
+      <Filter>H5C</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ctag.c">
+      <Filter>H5C</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ctest.c">
+      <Filter>H5C</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5CS.c">
+      <Filter>H5CS</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5D.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dbtree.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dbtree2.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dchunk.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dcompact.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dcontig.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ddbg.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ddeprec.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dearray.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Defl.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dfarray.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dfill.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dint.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dio.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dlayout.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dmpio.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dnone.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Doh.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dscatgath.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dselect.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dsingle.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dtest.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dvirtual.c">
+      <Filter>H5D</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5E.c">
+      <Filter>H5E</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Edeprec.c">
+      <Filter>H5E</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Eint.c">
+      <Filter>H5E</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5EA.c">
+      <Filter>H5EA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5EAcache.c">
+      <Filter>H5EA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5EAdbg.c">
+      <Filter>H5EA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5EAdblkpage.c">
+      <Filter>H5EA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5EAdblock.c">
+      <Filter>H5EA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5EAhdr.c">
+      <Filter>H5EA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5EAiblock.c">
+      <Filter>H5EA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5EAint.c">
+      <Filter>H5EA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5EAsblock.c">
+      <Filter>H5EA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5EAstat.c">
+      <Filter>H5EA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5EAtest.c">
+      <Filter>H5EA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5F.c">
+      <Filter>H5F</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Faccum.c">
+      <Filter>H5F</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Fcwfs.c">
+      <Filter>H5F</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Fdbg.c">
+      <Filter>H5F</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Fdeprec.c">
+      <Filter>H5F</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Fefc.c">
+      <Filter>H5F</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ffake.c">
+      <Filter>H5F</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Fint.c">
+      <Filter>H5F</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Fio.c">
+      <Filter>H5F</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Fmount.c">
+      <Filter>H5F</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Fmpi.c">
+      <Filter>H5F</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Fquery.c">
+      <Filter>H5F</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Fsfile.c">
+      <Filter>H5F</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Fspace.c">
+      <Filter>H5F</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Fsuper.c">
+      <Filter>H5F</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Fsuper_cache.c">
+      <Filter>H5F</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ftest.c">
+      <Filter>H5F</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FA.c">
+      <Filter>H5FA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FAcache.c">
+      <Filter>H5FA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FAdbg.c">
+      <Filter>H5FA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FAdblkpage.c">
+      <Filter>H5FA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FAdblock.c">
+      <Filter>H5FA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FAhdr.c">
+      <Filter>H5FA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FAint.c">
+      <Filter>H5FA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FAstat.c">
+      <Filter>H5FA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FAtest.c">
+      <Filter>H5FA</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FD.c">
+      <Filter>H5FD</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDcore.c">
+      <Filter>H5FD</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDdirect.c">
+      <Filter>H5FD</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDfamily.c">
+      <Filter>H5FD</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDint.c">
+      <Filter>H5FD</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDlog.c">
+      <Filter>H5FD</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDmpi.c">
+      <Filter>H5FD</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDmpio.c">
+      <Filter>H5FD</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDmulti.c">
+      <Filter>H5FD</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDsec2.c">
+      <Filter>H5FD</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDspace.c">
+      <Filter>H5FD</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDstdio.c">
+      <Filter>H5FD</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDtest.c">
+      <Filter>H5FD</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDwindows.c">
+      <Filter>H5FD</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FL.c">
+      <Filter>H5FL</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FO.c">
+      <Filter>H5FO</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FS.c">
+      <Filter>H5FS</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FScache.c">
+      <Filter>H5FS</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FSdbg.c">
+      <Filter>H5FS</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FSint.c">
+      <Filter>H5FS</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FSsection.c">
+      <Filter>H5FS</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FSstat.c">
+      <Filter>H5FS</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FStest.c">
+      <Filter>H5FS</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5G.c">
+      <Filter>H5G</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Gbtree2.c">
+      <Filter>H5G</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Gcache.c">
+      <Filter>H5G</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Gcompact.c">
+      <Filter>H5G</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Gdense.c">
+      <Filter>H5G</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Gdeprec.c">
+      <Filter>H5G</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Gent.c">
+      <Filter>H5G</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Gint.c">
+      <Filter>H5G</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Glink.c">
+      <Filter>H5G</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Gloc.c">
+      <Filter>H5G</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Gname.c">
+      <Filter>H5G</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Gnode.c">
+      <Filter>H5G</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Gobj.c">
+      <Filter>H5G</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Goh.c">
+      <Filter>H5G</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Groot.c">
+      <Filter>H5G</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Gstab.c">
+      <Filter>H5G</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Gtest.c">
+      <Filter>H5G</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Gtraverse.c">
+      <Filter>H5G</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HF.c">
+      <Filter>H5HF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HFbtree2.c">
+      <Filter>H5HF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HFcache.c">
+      <Filter>H5HF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HFdbg.c">
+      <Filter>H5HF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HFdblock.c">
+      <Filter>H5HF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HFdtable.c">
+      <Filter>H5HF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HFhdr.c">
+      <Filter>H5HF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HFhuge.c">
+      <Filter>H5HF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HFiblock.c">
+      <Filter>H5HF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HFiter.c">
+      <Filter>H5HF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HFman.c">
+      <Filter>H5HF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HFsection.c">
+      <Filter>H5HF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HFspace.c">
+      <Filter>H5HF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HFstat.c">
+      <Filter>H5HF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HFtest.c">
+      <Filter>H5HF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HFtiny.c">
+      <Filter>H5HF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HG.c">
+      <Filter>H5HG</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HGcache.c">
+      <Filter>H5HG</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HGdbg.c">
+      <Filter>H5HG</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HGquery.c">
+      <Filter>H5HG</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HL.c">
+      <Filter>H5HL</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HLcache.c">
+      <Filter>H5HL</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HLdbg.c">
+      <Filter>H5HL</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HLdblk.c">
+      <Filter>H5HL</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HLint.c">
+      <Filter>H5HL</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HLprfx.c">
+      <Filter>H5HL</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HP.c">
+      <Filter>H5HP</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5I.c">
+      <Filter>H5I</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Itest.c">
+      <Filter>H5I</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5L.c">
+      <Filter>H5L</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Lexternal.c">
+      <Filter>H5L</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5MF.c">
+      <Filter>H5MF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5MFaggr.c">
+      <Filter>H5MF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5MFdbg.c">
+      <Filter>H5MF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5MFsection.c">
+      <Filter>H5MF</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5MM.c">
+      <Filter>H5MM</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5MP.c">
+      <Filter>H5MP</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5MPtest.c">
+      <Filter>H5MP</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5O.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Oainfo.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Oalloc.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Oattr.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Oattribute.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Obogus.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Obtreek.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ocache.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ocache_image.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ochunk.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ocont.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ocopy.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Odbg.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Odrvinfo.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Odtype.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Oefl.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ofill.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Oflush.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ofsinfo.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Oginfo.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Olayout.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Olinfo.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Olink.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Omessage.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Omtime.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Oname.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Onull.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Opline.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Orefcount.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Osdspace.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Oshared.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Oshmesg.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ostab.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Otest.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ounknown.c">
+      <Filter>H5O</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5P.c">
+      <Filter>H5P</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Pacpl.c">
+      <Filter>H5P</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Pdapl.c">
+      <Filter>H5P</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Pdcpl.c">
+      <Filter>H5P</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Pdeprec.c">
+      <Filter>H5P</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Pdxpl.c">
+      <Filter>H5P</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Pencdec.c">
+      <Filter>H5P</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Pfapl.c">
+      <Filter>H5P</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Pfcpl.c">
+      <Filter>H5P</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Pfmpl.c">
+      <Filter>H5P</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Pgcpl.c">
+      <Filter>H5P</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Pint.c">
+      <Filter>H5P</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Plapl.c">
+      <Filter>H5P</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Plcpl.c">
+      <Filter>H5P</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Pocpl.c">
+      <Filter>H5P</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Pocpypl.c">
+      <Filter>H5P</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Pstrcpl.c">
+      <Filter>H5P</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ptest.c">
+      <Filter>H5P</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5PB.c">
+      <Filter>H5PB</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5PL.c">
+      <Filter>H5PL</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5R.c">
+      <Filter>H5R</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Rdeprec.c">
+      <Filter>H5R</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5UC.c">
+      <Filter>H5UC</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5RS.c">
+      <Filter>H5RS</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5S.c">
+      <Filter>H5S</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Sall.c">
+      <Filter>H5S</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Sdbg.c">
+      <Filter>H5S</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Shyper.c">
+      <Filter>H5S</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Smpio.c">
+      <Filter>H5S</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Snone.c">
+      <Filter>H5S</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Spoint.c">
+      <Filter>H5S</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Sselect.c">
+      <Filter>H5S</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Stest.c">
+      <Filter>H5S</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5SL.c">
+      <Filter>H5SL</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5SM.c">
+      <Filter>H5SM</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5SMbtree2.c">
+      <Filter>H5SM</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5SMcache.c">
+      <Filter>H5SM</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5SMmessage.c">
+      <Filter>H5SM</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5SMtest.c">
+      <Filter>H5SM</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5ST.c">
+      <Filter>H5ST</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5T.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tarray.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tbit.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tcommit.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tcompound.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tconv.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tcset.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tdbg.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tdeprec.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tenum.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tfields.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tfixed.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tfloat.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tnative.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Toffset.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Toh.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Topaque.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Torder.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tpad.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tprecis.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tstrpad.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tvisit.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tvlen.c">
+      <Filter>H5T</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5TS.c">
+      <Filter>H5TS</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5VM.c">
+      <Filter>H5VM</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5WB.c">
+      <Filter>H5WB</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Z.c">
+      <Filter>H5Z</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Zdeflate.c">
+      <Filter>H5Z</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Zfletcher32.c">
+      <Filter>H5Z</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Znbit.c">
+      <Filter>H5Z</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Zscaleoffset.c">
+      <Filter>H5Z</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Zshuffle.c">
+      <Filter>H5Z</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Zszip.c">
+      <Filter>H5Z</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ztrans.c">
+      <Filter>H5Z</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\H5Tinit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\H5lib_settings.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\hdf5.h">
+      <Filter>H5</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5api_adpt.h">
+      <Filter>H5</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5public.h">
+      <Filter>H5</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\vtk_hdf5_mangle.h">
+      <Filter>H5</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Apkg.h">
+      <Filter>H5A</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Apublic.h">
+      <Filter>H5A</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5ACpkg.h">
+      <Filter>H5AC</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5ACpublic.h">
+      <Filter>H5AC</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Bpkg.h">
+      <Filter>H5B</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Bpublic.h">
+      <Filter>H5B</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5B2pkg.h">
+      <Filter>H5B2</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5B2public.h">
+      <Filter>H5B2</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Cpkg.h">
+      <Filter>H5C</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Cpublic.h">
+      <Filter>H5C</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dpkg.h">
+      <Filter>H5D</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dpublic.h">
+      <Filter>H5D</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Epkg.h">
+      <Filter>H5E</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Epublic.h">
+      <Filter>H5E</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5EApkg.h">
+      <Filter>H5EA</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Fpkg.h">
+      <Filter>H5F</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Fpublic.h">
+      <Filter>H5F</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FApkg.h">
+      <Filter>H5FA</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDcore.h">
+      <Filter>H5FD</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDdirect.h">
+      <Filter>H5FD</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDfamily.h">
+      <Filter>H5FD</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDlog.h">
+      <Filter>H5FD</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDmpi.h">
+      <Filter>H5FD</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDmpio.h">
+      <Filter>H5FD</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDmulti.h">
+      <Filter>H5FD</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDpkg.h">
+      <Filter>H5FD</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDpublic.h">
+      <Filter>H5FD</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDsec2.h">
+      <Filter>H5FD</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDstdio.h">
+      <Filter>H5FD</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDwindows.h">
+      <Filter>H5FD</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FSpkg.h">
+      <Filter>H5FS</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FSpublic.h">
+      <Filter>H5FS</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Gpkg.h">
+      <Filter>H5G</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Gpublic.h">
+      <Filter>H5G</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HFpkg.h">
+      <Filter>H5HF</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HFpublic.h">
+      <Filter>H5HF</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HGpkg.h">
+      <Filter>H5HG</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HGpublic.h">
+      <Filter>H5HG</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HLpkg.h">
+      <Filter>H5HL</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HLpublic.h">
+      <Filter>H5HL</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ipkg.h">
+      <Filter>H5I</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ipublic.h">
+      <Filter>H5I</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Lpkg.h">
+      <Filter>H5L</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Lpublic.h">
+      <Filter>H5L</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5MMpublic.h">
+      <Filter>H5MM</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5MPpkg.h">
+      <Filter>H5MP</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Opkg.h">
+      <Filter>H5O</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Opublic.h">
+      <Filter>H5O</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Oshared.h">
+      <Filter>H5O</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ppkg.h">
+      <Filter>H5P</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Ppublic.h">
+      <Filter>H5P</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5PBpkg.h">
+      <Filter>H5PB</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5PLextern.h">
+      <Filter>H5PL</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5PLpkg.h">
+      <Filter>H5PL</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5PLpublic.h">
+      <Filter>H5PL</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Rpkg.h">
+      <Filter>H5R</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Rpublic.h">
+      <Filter>H5R</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Spkg.h">
+      <Filter>H5S</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Spublic.h">
+      <Filter>H5S</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5SMpkg.h">
+      <Filter>H5SM</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tpkg.h">
+      <Filter>H5T</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tpublic.h">
+      <Filter>H5T</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Zpkg.h">
+      <Filter>H5Z</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Zpublic.h">
+      <Filter>H5Z</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5private.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Aprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5ACprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5B2private.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Bprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Cprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5CSprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Dprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Eprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5EAprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FAprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FDprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Fprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FLprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FOprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5MFprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5MMprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5FSprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Gprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HFprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HGprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HLprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5HPprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Iprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Lprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5MPprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Oprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Pprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5PBprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5PLprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5UCprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Rprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5RSprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5SLprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5SMprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Sprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5STprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Tprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5TSprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5VMprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5WBprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Zprivate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5win32defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Edefin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Einit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Epubgen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5Eterm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\H5overflow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\1ea8aab4e4eeeefcef86410cae8f315b\H5Tinit.c.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\CMakeFiles\1ea8aab4e4eeeefcef86410cae8f315b\H5lib_settings.c.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{2293FD69-7378-37CC-AAFA-9D3B3B166BB9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5">
+      <UniqueIdentifier>{38F4CFE5-24C0-3F8D-88D9-C8F8B739DC94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5A">
+      <UniqueIdentifier>{1CB902C2-8D1E-3FED-86D7-9B84AEF3511D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5AC">
+      <UniqueIdentifier>{822EB534-9244-378D-A143-170F901028DB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5B">
+      <UniqueIdentifier>{FBDA6BE0-2CB0-33A9-A2B9-EA3719FC6B00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5B2">
+      <UniqueIdentifier>{7409FCEC-E6AA-3101-AFFD-895D6EA76509}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5C">
+      <UniqueIdentifier>{505CF27C-7C6B-36AA-BA56-E47EC496F87D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5CS">
+      <UniqueIdentifier>{FDB67FA1-EDC0-3357-85DC-13FF58229EDC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5D">
+      <UniqueIdentifier>{DF1E3FBF-B213-37A1-A2F9-5B48301E7DA8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5E">
+      <UniqueIdentifier>{F52E7B8F-CEDF-3140-B900-63A48D5F21A7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5EA">
+      <UniqueIdentifier>{B235C929-00FF-3A00-BC09-F7C8655B7331}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5F">
+      <UniqueIdentifier>{A4BA25D3-FDC5-37C5-BE5A-69F6FEFFEB39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5FA">
+      <UniqueIdentifier>{F06B9BBB-C8EE-37A9-91CD-A752063C3B48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5FD">
+      <UniqueIdentifier>{FBA46270-A0AC-3B72-8907-F2BE63F4C6B1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5FL">
+      <UniqueIdentifier>{2EA7EFC7-8C13-342B-845B-086727B2DFE9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5FO">
+      <UniqueIdentifier>{44006D11-0E70-37B2-A10B-5D043AB7C7A1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5FS">
+      <UniqueIdentifier>{E7F0C7DA-C770-3ED7-84DE-D36CBCB2BA2F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5G">
+      <UniqueIdentifier>{D91844CC-D182-3ECC-82C5-A700E1F11AFD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5HF">
+      <UniqueIdentifier>{1B2778F6-53A6-37E1-A8EB-72BFA1858C51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5HG">
+      <UniqueIdentifier>{75F71649-068A-3B3A-A396-4D71F9D7159F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5HL">
+      <UniqueIdentifier>{B08384D7-387E-3E2C-B381-620AF5EA4FCD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5HP">
+      <UniqueIdentifier>{1172EE3F-4E4B-336E-8D61-507F5A7AFECB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5I">
+      <UniqueIdentifier>{1BE93303-99C2-32A2-8900-1730C1058D9D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5L">
+      <UniqueIdentifier>{29D3B087-8E71-3656-AF53-08DC4F79BE47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5MF">
+      <UniqueIdentifier>{9EC09178-5779-35DF-99C2-31AF96EA55D0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5MM">
+      <UniqueIdentifier>{9457F047-50B0-3332-8CC0-64A669F6F456}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5MP">
+      <UniqueIdentifier>{C458B88E-A2CB-380D-B4E5-E23AA6961853}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5O">
+      <UniqueIdentifier>{70709B68-443B-384B-995B-6EE5422FB681}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5P">
+      <UniqueIdentifier>{1A4306F1-8A5F-35EB-B676-0312C245355E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5PB">
+      <UniqueIdentifier>{22B3F677-EAC6-3E98-A55C-E2C15F773E93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5PL">
+      <UniqueIdentifier>{9FBBF8A5-A297-3B15-8DE2-F9D597CEFDC5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5R">
+      <UniqueIdentifier>{3F5B9263-9883-3B94-9FF6-36CBD2A48B25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5RS">
+      <UniqueIdentifier>{F0738E38-54D8-30BC-8911-B60BC2CDC10D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5S">
+      <UniqueIdentifier>{A3C029B8-9537-3AD2-AC1C-FCA7A27F9F7F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5SL">
+      <UniqueIdentifier>{94CACB65-56EF-3489-A607-84D866F00C2D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5SM">
+      <UniqueIdentifier>{11144852-36E2-3DBC-ABF2-3AEF573EC6B0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5ST">
+      <UniqueIdentifier>{D65D11AB-9591-3D5B-BEBD-CADF4E329134}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5T">
+      <UniqueIdentifier>{DAA969F7-A305-309E-B908-D9F209E9BA57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5TS">
+      <UniqueIdentifier>{BE0D2848-E75C-39B7-94EC-4A00E9315CEA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5UC">
+      <UniqueIdentifier>{5FE4C355-8C19-37B5-A608-58A0BA56FBD4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5VM">
+      <UniqueIdentifier>{7EB2F466-4E2D-35CF-BC2A-A1F1ADEE70FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5WB">
+      <UniqueIdentifier>{B36C2BA9-9C17-3310-9412-34B07FE6F5F1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="H5Z">
+      <UniqueIdentifier>{F393E968-44B1-3982-8C20-67DA68D3FA8E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{B3D50C5F-1711-3853-A369-0A4349A52EBA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{C27CBADC-6C25-3DD6-8CDE-F0BE157D446C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,7 @@
+# Target labels
+ vtkjsoncpp
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/jsoncpp/vtkjsoncpp/jsoncpp.cpp
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/jsoncpp/vtkjsoncpp/json/json-forwards.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/jsoncpp/vtkjsoncpp/json/json.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/jsoncpp/vtkjsoncpp/json/vtkjsoncpp_config.h

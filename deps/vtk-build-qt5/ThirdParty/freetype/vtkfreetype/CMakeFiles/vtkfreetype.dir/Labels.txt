@@ -1,0 +1,29 @@
+# Target labels
+ vtkfreetype
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/base/ftbase.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/base/ftbbox.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/base/ftbitmap.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/base/ftglyph.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/base/ftinit.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/base/ftmm.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/bdf/bdf.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/cache/ftcache.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/cff/cff.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/cid/type1cid.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/gzip/ftgzip.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/lzw/ftlzw.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/pcf/pcf.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/pfr/pfr.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/psaux/psaux.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/pshinter/pshinter.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/psnames/psmodule.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/raster/raster.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/sfnt/sfnt.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/smooth/smooth.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/truetype/truetype.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/type1/type1.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/type42/type42.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/winfonts/winfnt.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/builds/win32/ftdebug.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/freetype/vtkfreetype/src/base/ftsystem.c

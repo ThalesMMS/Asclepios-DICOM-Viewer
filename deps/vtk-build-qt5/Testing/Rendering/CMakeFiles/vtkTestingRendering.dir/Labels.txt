@@ -1,0 +1,12 @@
+# Target labels
+ vtkTestingRendering
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/Rendering/vtkMultiBaselineRegressionTest.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/Rendering/vtkRegressionTestImage.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/Rendering/vtkTesting.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/Rendering/vtkTestingInteractor.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/Rendering/vtkTestingObjectFactory.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/Rendering/vtkTesting.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/Rendering/vtkTestingInteractor.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/Rendering/vtkTestingObjectFactory.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Rendering/vtkTestingRenderingModule.h

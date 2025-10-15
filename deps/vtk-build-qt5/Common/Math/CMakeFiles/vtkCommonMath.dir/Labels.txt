@@ -1,0 +1,27 @@
+# Target labels
+ vtkCommonMath
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkAmoebaMinimizer.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkFunctionSet.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkInitialValueProblemSolver.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkMatrix3x3.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkMatrix4x4.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkPolynomialSolversUnivariate.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkQuaternionInterpolator.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkRungeKutta2.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkRungeKutta4.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkRungeKutta45.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkQuaternion.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkTuple.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkQuaternion.txx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkAmoebaMinimizer.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkFunctionSet.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkInitialValueProblemSolver.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkMatrix3x3.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkMatrix4x4.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkPolynomialSolversUnivariate.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkQuaternionInterpolator.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkRungeKutta2.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkRungeKutta4.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Math/vtkRungeKutta45.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Common/Math/vtkCommonMathModule.h

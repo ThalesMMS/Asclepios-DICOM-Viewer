@@ -1,0 +1,82 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageConnector.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageConnectivityFilter.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageContinuousDilate3D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageContinuousErode3D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageDilateErode3D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageIslandRemoval2D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageNonMaximumSuppression.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageOpenClose3D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageSeedConnectivity.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageSkeleton2D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageThresholdConnectivity.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageConnector.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageConnectivityFilter.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageContinuousDilate3D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageContinuousErode3D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageDilateErode3D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageIslandRemoval2D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageNonMaximumSuppression.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageOpenClose3D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageSeedConnectivity.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageSkeleton2D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageThresholdConnectivity.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Imaging/Morphological/vtkImagingMorphologicalModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkImagingMorphological"
+		],
+		"name" : "vtkImagingMorphological"
+	}
+}

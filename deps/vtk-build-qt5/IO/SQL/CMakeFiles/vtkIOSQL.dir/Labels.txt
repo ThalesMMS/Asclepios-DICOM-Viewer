@@ -1,0 +1,28 @@
+# Target labels
+ vtkIOSQL
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkDatabaseToTableReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkRowQuery.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkRowQueryToTable.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkSQLDatabase.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkSQLDatabaseSchema.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkSQLDatabaseTableSource.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkSQLQuery.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkTableToDatabaseWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkSQLiteDatabase.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkSQLiteQuery.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkSQLiteToTableReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkTableToSQLiteWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkDatabaseToTableReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkRowQuery.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkRowQueryToTable.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkSQLDatabase.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkSQLDatabaseSchema.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkSQLDatabaseTableSource.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkSQLQuery.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkTableToDatabaseWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkSQLiteDatabase.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkSQLiteQuery.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkSQLiteToTableReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/SQL/vtkTableToSQLiteWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/SQL/vtkIOSQLModule.h

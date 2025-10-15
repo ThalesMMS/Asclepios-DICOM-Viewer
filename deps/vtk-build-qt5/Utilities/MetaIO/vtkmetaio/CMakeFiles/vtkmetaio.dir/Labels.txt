@@ -1,0 +1,36 @@
+# Target labels
+ vtkMetaIO
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaTypes.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaUtils.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaArrow.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaBlob.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaCommand.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaCommand.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaContour.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaContour.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaDTITube.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaEllipse.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaGroup.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaGaussian.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaImage.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaImageUtils.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaLandmark.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaLine.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaMesh.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaMesh.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaObject.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaOutput.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaOutput.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaScene.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaSurface.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaTube.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaVesselTube.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaTransform.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaTubeGraph.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaForm.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaForm.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaArray.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaArray.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaFEMObject.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/MetaIO/vtkmetaio/metaFEMObject.cxx

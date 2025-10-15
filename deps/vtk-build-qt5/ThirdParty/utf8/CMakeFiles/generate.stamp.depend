@@ -1,0 +1,5 @@
+# CMake generation dependency list for this directory.
+D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkModuleInfo.cmake.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/utf8/CMakeLists.txt
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/utf8/module.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/utf8/vtk_utf8.h.in

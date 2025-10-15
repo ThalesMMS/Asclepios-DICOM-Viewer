@@ -1,0 +1,20 @@
+#EnSight 6 file written by VTK
+
+FORMAT
+type: ensight
+
+GEOMETRY
+model: 1 1 elements6-bin.geo
+VARIABLE
+tensor symm per node: 1 1	pointTensors 	elements6-bin_pd_pointTensors
+tensor symm per element: 1 1	cellTensors 	elements6-bin_cd_cellTensors
+
+TIME
+time set: 	 1
+number of steps: 	 2
+time values: 	 0 0.1
+
+FILE
+file set: 1
+number of steps: 2
+

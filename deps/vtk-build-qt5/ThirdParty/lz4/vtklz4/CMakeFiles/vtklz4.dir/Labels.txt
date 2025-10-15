@@ -1,0 +1,11 @@
+# Target labels
+ vtklz4
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4/vtklz4/lib/lz4.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4/vtklz4/lib/lz4hc.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4/vtklz4/lib/lz4frame.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4/vtklz4/lib/xxhash.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4/vtklz4/lib/lz4.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4/vtklz4/lib/lz4hc.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4/vtklz4/lib/lz4frame.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4/vtklz4/lib/lz4frame_static.h

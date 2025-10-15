@@ -1,0 +1,4 @@
+# CMake generation dependency list for this directory.
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/exodusII/vtkexodusII/CMakeLists.txt
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/exodusII/vtkexodusII/cmake/exodus_config.h.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/exodusII/vtkexodusII/include/exodusII_cfg.h.in

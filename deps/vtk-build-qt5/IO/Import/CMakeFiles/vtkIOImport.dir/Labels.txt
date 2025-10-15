@@ -1,0 +1,15 @@
+# Target labels
+ vtkIOImport
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Import/vtk3DSImporter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Import/vtkImporter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Import/vtkVRMLImporter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Import/vtkOBJImporter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Import/vtkOBJImporterInternals.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Import/vtk3DS.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Import/vtk3DSImporter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Import/vtkImporter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Import/vtkVRMLImporter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Import/vtkOBJImporter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Import/vtkOBJImporterInternals.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/Import/vtkIOImportModule.h

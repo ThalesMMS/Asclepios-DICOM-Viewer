@@ -1,0 +1,21 @@
+{
+  "family" : "OSPRay",
+  "version" : "0.0",
+  "materials" : {
+    "Glass" : {
+      "type": "Glass"
+    },
+    "Water" : {
+      "type": "Glass",
+      "doubles" : {
+          "attenuationColor" : [0.0, 0.1, 0.5]
+      }
+    },
+    "Bumpy" : {
+      "type" : "OBJMaterial",
+      "textures" : {
+        "map_bump" : "vtk.png"
+      }
+    }
+  }
+}

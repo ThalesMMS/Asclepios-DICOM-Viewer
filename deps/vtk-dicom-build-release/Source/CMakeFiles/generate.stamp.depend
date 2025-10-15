@@ -1,0 +1,5 @@
+# CMake generation dependency list for this directory.
+D:/Asclepios-DICOM-Viewer/deps/vtk-dicom/CMake/vtkDICOMBuild.h.in
+D:/Asclepios-DICOM-Viewer/deps/vtk-dicom/CMake/vtkDICOMConfig.h.in
+D:/Asclepios-DICOM-Viewer/deps/vtk-dicom/CMake/vtkDICOMModule.h.in
+D:/Asclepios-DICOM-Viewer/deps/vtk-dicom/Source/CMakeLists.txt

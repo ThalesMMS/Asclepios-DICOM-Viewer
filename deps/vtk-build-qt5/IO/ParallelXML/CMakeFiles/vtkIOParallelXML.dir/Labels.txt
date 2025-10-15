@@ -1,0 +1,32 @@
+# Target labels
+ vtkIOParallelXML
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPDataSetWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPDataObjectWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPDataWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPImageDataWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPPolyDataWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPRectilinearGridWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPStructuredDataWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPStructuredGridWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPTableWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPUnstructuredDataWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPUnstructuredGridWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPHierarchicalBoxDataWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPMultiBlockDataWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPUniformGridAMRWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPDataSetWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPDataObjectWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPDataWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPImageDataWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPPolyDataWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPRectilinearGridWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPStructuredDataWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPStructuredGridWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPTableWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPUnstructuredDataWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPUnstructuredGridWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPHierarchicalBoxDataWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPMultiBlockDataWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ParallelXML/vtkXMLPUniformGridAMRWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/ParallelXML/vtkIOParallelXMLModule.h

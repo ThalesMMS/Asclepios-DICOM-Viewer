@@ -1,0 +1,37 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4/vtklz4/lib/lz4.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4/vtklz4/lib/lz4hc.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4/vtklz4/lib/lz4frame.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4/vtklz4/lib/xxhash.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4/vtklz4/lib/lz4.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4/vtklz4/lib/lz4hc.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4/vtklz4/lib/lz4frame.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4/vtklz4/lib/lz4frame_static.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtklz4"
+		],
+		"name" : "vtklz4"
+	}
+}

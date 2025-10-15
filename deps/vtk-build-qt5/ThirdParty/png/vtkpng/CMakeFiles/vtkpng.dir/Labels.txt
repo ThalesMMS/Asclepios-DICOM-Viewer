@@ -1,0 +1,23 @@
+# Target labels
+ vtkpng
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/png.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/pngerror.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/pngget.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/pngmem.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/pngpread.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/pngread.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/pngrio.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/pngrtran.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/pngrutil.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/pngset.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/pngtrans.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/pngwio.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/pngwrite.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/pngwtran.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/pngwutil.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/png.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/pngconf.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/pnglibconf.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/png/vtkpng/vtk_png_mangle.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/png/vtkpng/vtkpngConfig.h

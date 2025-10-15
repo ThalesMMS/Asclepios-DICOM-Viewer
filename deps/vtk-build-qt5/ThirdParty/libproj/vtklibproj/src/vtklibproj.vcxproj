@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{03EC6CE2-D10A-3817-8304-11F5113B3CBF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>vtklibproj</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">vtklibproj.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">vtkproj-8.2</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">vtklibproj.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">vtkproj-8.2</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">vtklibproj.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">vtkproj-8.2</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">vtklibproj.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">vtkproj-8.2</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;MUTEX_win32;PROJ_LIB="D:/Asclepios-DICOM-Viewer/deps/vtk-install-qt5-debug/";CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;MUTEX_win32;PROJ_LIB=\"D:/Asclepios-DICOM-Viewer/deps/vtk-install-qt5-debug/\";CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;MUTEX_win32;PROJ_LIB="D:/Asclepios-DICOM-Viewer/deps/vtk-install-qt5-debug/";CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;MUTEX_win32;PROJ_LIB=\"D:/Asclepios-DICOM-Viewer/deps/vtk-install-qt5-debug/\";CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;MUTEX_win32;PROJ_LIB="D:/Asclepios-DICOM-Viewer/deps/vtk-install-qt5-debug/";CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;MUTEX_win32;PROJ_LIB=\"D:/Asclepios-DICOM-Viewer/deps/vtk-install-qt5-debug/\";CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;MUTEX_win32;PROJ_LIB="D:/Asclepios-DICOM-Viewer/deps/vtk-install-qt5-debug/";CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;MUTEX_win32;PROJ_LIB=\"D:/Asclepios-DICOM-Viewer/deps/vtk-install-qt5-debug/\";CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/libproj/vtklibproj/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCXXCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindThreads.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\GenerateExportHeader.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\exportheader.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\lib_proj.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/libproj/vtklibproj/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCXXCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindThreads.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\GenerateExportHeader.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\exportheader.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\lib_proj.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/libproj/vtklibproj/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCXXCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindThreads.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\GenerateExportHeader.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\exportheader.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\lib_proj.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/src/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/libproj/vtklibproj/src/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCXXCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckCompilerFlag.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckSourceCompiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\FindThreads.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\GenerateExportHeader.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\exportheader.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\lib_proj.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\nad_init.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_aea.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_aeqd.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_airy.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_aitoff.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_august.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_bacon.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_bipc.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_boggs.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_bonne.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_calcofi.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_cass.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_cc.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_cea.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_chamb.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_collg.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_comill.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_crast.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_denoy.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_eck1.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_eck2.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_eck3.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_eck4.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_eck5.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_eqc.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_eqdc.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_fahey.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_fouc_s.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_gall.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_geos.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_gins8.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_gnom.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_gn_sinu.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_goode.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_gstmerc.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_hammer.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_hatano.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_igh.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_isea.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_imw_p.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_krovak.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_labrd.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_laea.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_lagrng.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_larr.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_lask.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_lcca.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_lcc.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_loxim.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_lsat.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_misrsom.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_mbt_fps.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_mbtfpp.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_mbtfpq.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_merc.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_mill.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_mod_ster.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_moll.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_natearth.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_natearth2.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_nell.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_nell_h.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_nocol.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_nsper.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_nzmg.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_ob_tran.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_ocea.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_oea.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_omerc.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_ortho.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_patterson.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_poly.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_putp2.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_putp3.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_putp4p.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_putp5.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_putp6.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_qsc.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_robin.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_rpoly.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_sch.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_sconics.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_somerc.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_sterea.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_stere.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_sts.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_tcc.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_tcea.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_times.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_tmerc.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_tpeqd.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_urm5.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_urmfps.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_vandg.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_vandg2.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_vandg4.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_wag2.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_wag3.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_wag7.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_wink1.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_wink2.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\proj_etmerc.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\aasincos.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\adjlon.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\bch2bps.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\bchgen.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\biveval.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\dmstor.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\emess.c" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\emess.h" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\geocent.c" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\geocent.h" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\geodesic.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\mk_cheby.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\nad_cvt.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\nad_intr.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_apply_gridshift.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_apply_vgridshift.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_auth.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_ctx.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_fileapi.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_datum_set.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_datums.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_deriv.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_ell_set.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_ellps.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_errno.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_factors.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_fwd.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_fwd3d.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_gauss.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_gc_reader.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_generic_selftest.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_geocent.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_gridcatalog.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_gridinfo.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_gridlist.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\PJ_healpix.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_init.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_initcache.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_inv.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_inv3d.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_latlong.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_list.c" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_list.h" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_log.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_malloc.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_mlfn.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_msfn.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_mutex.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_open_lib.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_param.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_phi2.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_pr_list.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_qsfn.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_release.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_run_selftests.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_strerrno.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_transform.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_tsfn.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_units.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_utils.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_zpoly1.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\proj_mdist.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\proj_rouss.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\rtodms.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\vector1.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\pj_strtod.c" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src\proj_config.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\projects.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\proj_api.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\geodesic.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src\vtk_libproj_mangle.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\libproj\vtklibproj\src\vtklibproj_export.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ZERO_CHECK.vcxproj">
+      <Project>{CB3CEBE8-D3FC-3706-83B0-652E45C69461}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

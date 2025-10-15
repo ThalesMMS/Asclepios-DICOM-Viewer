@@ -1,0 +1,6 @@
+# Target labels
+ vtkIOCityGML
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/CityGML/vtkCityGMLReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/CityGML/vtkCityGMLReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/CityGML/vtkIOCityGMLModule.h

@@ -1,0 +1,12 @@
+# Target labels
+ vtkInteractionImage
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Image/vtkImageViewer2.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Image/vtkImageViewer.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Image/vtkResliceImageViewer.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Image/vtkResliceImageViewerMeasurements.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Image/vtkImageViewer2.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Image/vtkImageViewer.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Image/vtkResliceImageViewer.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Image/vtkResliceImageViewerMeasurements.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Interaction/Image/vtkInteractionImageModule.h

@@ -1,0 +1,6 @@
+# Target labels
+ vtkIOVeraOut
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/VeraOut/vtkVeraOutReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/VeraOut/vtkVeraOutReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/VeraOut/vtkIOVeraOutModule.h

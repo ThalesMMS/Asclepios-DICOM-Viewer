@@ -1,0 +1,12 @@
+# CMake generation dependency list for this directory.
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCCompilerFlag.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckIncludeFile.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckIncludeFileCXX.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckIncludeFiles.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckSymbolExists.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckTypeSize.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/TestBigEndian.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/expat/vtkexpat/CMakeLists.txt
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/expat/vtkexpat/ConfigureChecks.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/expat/vtkexpat/expat_config.h.cmake

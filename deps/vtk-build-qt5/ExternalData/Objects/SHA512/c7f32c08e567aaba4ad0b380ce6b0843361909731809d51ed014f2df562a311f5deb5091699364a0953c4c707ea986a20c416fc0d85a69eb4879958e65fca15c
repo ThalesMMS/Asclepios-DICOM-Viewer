@@ -1,0 +1,47 @@
+# A couple cubes in different groups
+# One is textured. One is not.
+# This used to cause trouble for the importer.
+mtllib cube-scene.mtl
+# Cube The First
+g cube00
+v 0 0 0
+v 1 0 0
+v 0 1 0
+v 1 1 0
+v 0 0 1
+v 1 0 1
+v 0 1 1
+v 1 1 1
+vt 0 0
+vt 1 0
+vt 0 1
+vt 1 1
+vn  0  0 -1
+vn  0  0  1
+vn  0 -1  0
+vn  0  1  0
+vn -1  0  0
+vn  1  0  0
+usemtl solidcolor
+f 1/1/1 3/2/1 4/4/1 2/3/1
+f 5/1/2 6/2/2 8/4/2 7/3/2
+f 1/1/3 2/2/3 6/4/3 5/3/3
+f 3/1/4 7/2/4 8/4/4 4/3/4
+f 1/1/5 5/2/5 7/4/5 3/3/5
+f 2/1/6 4/2/6 8/4/6 6/3/6
+# Cube The Second
+g cube01
+v 2 1 1
+v 1 2 1
+v 2 2 1
+v 1 1 2
+v 2 1 2
+v 1 2 2
+v 2 2 2
+usemtl imagetexture
+f   8/1/1  10/2/1  11/4/1   9/3/1
+f  12/1/2  13/2/2  15/4/2  14/3/2
+f   8/1/3   9/2/3  13/4/3  12/3/3
+f  10/1/4  14/2/4  15/4/4  11/3/4
+f   8/1/5  12/2/5  14/4/5  10/3/5
+f   9/1/6  11/2/6  15/4/6  13/3/6

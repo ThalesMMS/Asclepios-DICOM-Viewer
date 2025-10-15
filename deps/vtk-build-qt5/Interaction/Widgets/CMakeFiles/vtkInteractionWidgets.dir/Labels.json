@@ -1,0 +1,850 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtk3DWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAbstractPolygonalHandleRepresentation3D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAbstractWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAffineRepresentation2D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAffineRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAffineWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAngleRepresentation2D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAngleRepresentation3D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAngleRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAngleWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAxesTransformRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAxesTransformWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBalloonRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBalloonWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBezierContourLineInterpolator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBiDimensionalRepresentation2D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBiDimensionalRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBiDimensionalWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBorderRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBorderWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBoundedPlanePointPlacer.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBoxRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBoxWidget2.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBoxWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBrokenLineWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkButtonRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkButtonWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCameraRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCameraWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCaptionRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCaptionWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCellCentersPointPlacer.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCenteredSliderRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCenteredSliderWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCheckerboardRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCheckerboardWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkClosedSurfacePointPlacer.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkConstrainedPointHandleRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkContinuousValueWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkContinuousValueWidgetRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkContourLineInterpolator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkContourRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkContourWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCurveRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkDijkstraImageContourLineInterpolator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkDistanceRepresentation2D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkDistanceRepresentation3D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkDistanceRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkDistanceWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkEllipsoidTensorProbeRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkEvent.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkFinitePlaneRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkFinitePlaneWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkFixedSizeHandleRepresentation3D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkFocalPlaneContourRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkFocalPlanePointPlacer.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkHandleRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkHandleWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkHoverWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImageActorPointPlacer.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImageCroppingRegionsWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImageOrthoPlanes.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImagePlaneWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImageTracerWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImplicitCylinderRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImplicitCylinderWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImplicitPlaneRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImplicitPlaneWidget2.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImplicitPlaneWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkLinearContourLineInterpolator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkLineRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkLineWidget2.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkLineWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkLogoRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkLogoWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkMeasurementCubeHandleRepresentation3D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkOrientationMarkerWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkOrientedGlyphContourRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkOrientedGlyphFocalPlaneContourRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkOrientedPolygonalHandleRepresentation3D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkParallelopipedRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkParallelopipedWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPlaneWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPlaybackRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPlaybackWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPointHandleRepresentation2D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPointHandleRepresentation3D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPointPlacer.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPointWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPolyDataContourLineInterpolator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPolyDataPointPlacer.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPolyDataSourceWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPolyLineRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPolyLineWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPolygonalHandleRepresentation3D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPolygonalSurfaceContourLineInterpolator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPolygonalSurfacePointPlacer.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkProgressBarRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkProgressBarWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkProp3DButtonRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkRectilinearWipeRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkRectilinearWipeWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkScalarBarRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkScalarBarWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSeedRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSeedWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSliderRepresentation2D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSliderRepresentation3D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSliderRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSliderWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSphereHandleRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSphereRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSphereWidget2.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSphereWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSplineRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSplineWidget2.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSplineWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkTensorProbeRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkTensorProbeWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkTerrainContourLineInterpolator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkTerrainDataPointPlacer.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkTextRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkTexturedButtonRepresentation2D.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkTexturedButtonRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkTextWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkWidgetCallbackMapper.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkWidgetEvent.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkWidgetEventTranslator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkWidgetRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkWidgetSet.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkXYPlotWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkResliceCursorLineRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkResliceCursorRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkResliceCursorThickLineRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkResliceCursorWidget.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkResliceCursorActor.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkResliceCursorPicker.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkResliceCursor.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkResliceCursorPolyDataAlgorithm.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtk3DWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAbstractPolygonalHandleRepresentation3D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAbstractWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAffineRepresentation2D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAffineRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAffineWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAngleRepresentation2D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAngleRepresentation3D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAngleRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAngleWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAxesTransformRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkAxesTransformWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBalloonRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBalloonWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBezierContourLineInterpolator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBiDimensionalRepresentation2D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBiDimensionalRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBiDimensionalWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBorderRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBorderWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBoundedPlanePointPlacer.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBoxRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBoxWidget2.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBoxWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkBrokenLineWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkButtonRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkButtonWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCameraRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCameraWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCaptionRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCaptionWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCellCentersPointPlacer.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCenteredSliderRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCenteredSliderWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCheckerboardRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCheckerboardWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkClosedSurfacePointPlacer.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkConstrainedPointHandleRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkContinuousValueWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkContinuousValueWidgetRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkContourLineInterpolator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkContourRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkContourWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkCurveRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkDijkstraImageContourLineInterpolator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkDistanceRepresentation2D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkDistanceRepresentation3D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkDistanceRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkDistanceWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkEllipsoidTensorProbeRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkEvent.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkFinitePlaneRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkFinitePlaneWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkFixedSizeHandleRepresentation3D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkFocalPlaneContourRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkFocalPlanePointPlacer.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkHandleRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkHandleWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkHoverWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImageActorPointPlacer.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImageCroppingRegionsWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImageOrthoPlanes.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImagePlaneWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImageTracerWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImplicitCylinderRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImplicitCylinderWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImplicitPlaneRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImplicitPlaneWidget2.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkImplicitPlaneWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkLinearContourLineInterpolator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkLineRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkLineWidget2.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkLineWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkLogoRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkLogoWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkMeasurementCubeHandleRepresentation3D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkOrientationMarkerWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkOrientedGlyphContourRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkOrientedGlyphFocalPlaneContourRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkOrientedPolygonalHandleRepresentation3D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkParallelopipedRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkParallelopipedWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPlaneWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPlaybackRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPlaybackWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPointHandleRepresentation2D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPointHandleRepresentation3D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPointPlacer.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPointWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPolyDataContourLineInterpolator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPolyDataPointPlacer.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPolyDataSourceWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPolyLineRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPolyLineWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPolygonalHandleRepresentation3D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPolygonalSurfaceContourLineInterpolator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkPolygonalSurfacePointPlacer.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkProgressBarRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkProgressBarWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkProp3DButtonRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkRectilinearWipeRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkRectilinearWipeWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkScalarBarRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkScalarBarWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSeedRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSeedWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSliderRepresentation2D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSliderRepresentation3D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSliderRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSliderWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSphereHandleRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSphereRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSphereWidget2.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSphereWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSplineRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSplineWidget2.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkSplineWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkTensorProbeRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkTensorProbeWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkTerrainContourLineInterpolator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkTerrainDataPointPlacer.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkTextRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkTexturedButtonRepresentation2D.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkTexturedButtonRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkTextWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkWidgetCallbackMapper.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkWidgetEvent.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkWidgetEventTranslator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkWidgetRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkWidgetSet.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkXYPlotWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkResliceCursorLineRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkResliceCursorRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkResliceCursorThickLineRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkResliceCursorWidget.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkResliceCursorActor.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkResliceCursorPicker.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkResliceCursor.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Interaction/Widgets/vtkResliceCursorPolyDataAlgorithm.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Interaction/Widgets/vtkInteractionWidgetsModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkInteractionWidgets"
+		],
+		"name" : "vtkInteractionWidgets"
+	}
+}

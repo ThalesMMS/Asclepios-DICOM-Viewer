@@ -1,0 +1,10 @@
+# Target labels
+ vtkFiltersProgrammable
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Programmable/vtkProgrammableAttributeDataFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Programmable/vtkProgrammableFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Programmable/vtkProgrammableGlyphFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Programmable/vtkProgrammableAttributeDataFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Programmable/vtkProgrammableFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Programmable/vtkProgrammableGlyphFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Filters/Programmable/vtkFiltersProgrammableModule.h

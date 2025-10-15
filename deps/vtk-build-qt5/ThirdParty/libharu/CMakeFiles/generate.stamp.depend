@@ -1,0 +1,8 @@
+# CMake generation dependency list for this directory.
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDependentOption.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkpng.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkzlib.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkModuleInfo.cmake.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/CMakeLists.txt
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/module.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtk_libharu.h.in

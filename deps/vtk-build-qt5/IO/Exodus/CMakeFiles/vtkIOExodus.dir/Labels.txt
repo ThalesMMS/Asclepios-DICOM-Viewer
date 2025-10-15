@@ -1,0 +1,23 @@
+# Target labels
+ vtkIOExodus
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkCPExodusIIElementBlock.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkCPExodusIIInSituReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkCPExodusIINodalCoordinatesTemplate.txx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkCPExodusIIResultsArrayTemplate.txx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkExodusIICache.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkExodusIIReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkExodusIIReaderParser.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkExodusIIReaderVariableCheck.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkExodusIIWriter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkModelMetadata.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkCPExodusIINodalCoordinatesTemplate.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkCPExodusIIResultsArrayTemplate.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkCPExodusIIElementBlock.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkCPExodusIIInSituReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkExodusIICache.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkExodusIIReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkExodusIIReaderParser.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkExodusIIWriter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Exodus/vtkModelMetadata.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/Exodus/vtkIOExodusModule.h

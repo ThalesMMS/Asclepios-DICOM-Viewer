@@ -1,0 +1,24 @@
+# Target labels
+ vtkImagingColor
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageHSIToRGB.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageHSVToRGB.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageYIQToRGB.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageLuminance.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageMapToRGBA.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageMapToWindowLevelColors.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageQuantizeRGBToIndex.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageRGBToHSI.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageRGBToHSV.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageRGBToYIQ.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageHSIToRGB.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageHSVToRGB.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageYIQToRGB.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageLuminance.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageMapToRGBA.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageMapToWindowLevelColors.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageQuantizeRGBToIndex.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageRGBToHSI.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageRGBToHSV.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Color/vtkImageRGBToYIQ.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Imaging/Color/vtkImagingColorModule.h

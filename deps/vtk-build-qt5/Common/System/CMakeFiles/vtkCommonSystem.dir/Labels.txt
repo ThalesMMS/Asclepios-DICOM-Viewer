@@ -1,0 +1,18 @@
+# Target labels
+ vtkCommonSystem
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/vtkClientSocket.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/vtkDirectory.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/vtkServerSocket.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/vtkSocket.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/vtkSocketCollection.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/vtkThreadMessager.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/vtkTimerLog.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/vtkClientSocket.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/vtkDirectory.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/vtkServerSocket.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/vtkSocket.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/vtkSocketCollection.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/vtkThreadMessager.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/vtkTimerLog.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Common/System/vtkCommonSystemModule.h

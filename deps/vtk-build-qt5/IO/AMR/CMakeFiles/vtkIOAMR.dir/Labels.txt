@@ -1,0 +1,24 @@
+# Target labels
+ vtkIOAMR
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRBaseParticlesReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRBaseReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRDataSetCache.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMREnzoParticlesReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMREnzoReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMREnzoReaderInternal.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMReXParticlesReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRFlashParticlesReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRFlashReader.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRFlashReaderInternal.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRBaseParticlesReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRBaseReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRDataSetCache.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMREnzoParticlesReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMREnzoReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMREnzoReaderInternal.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMReXParticlesReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRFlashParticlesReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRFlashReader.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/AMR/vtkAMRFlashReaderInternal.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/AMR/vtkIOAMRModule.h

@@ -1,0 +1,28 @@
+#
+# Wavefront material file
+
+newmtl mat1
+Ka 0.823529 0.6 0
+Kd 0.823529 0.6 0
+Ks 0.882353 0.882353 0.882353
+illum 2
+Ns 22.6274
+map_Kd
+map_bump
+
+newmtl mat2
+Ka 0.8 0.8 0.8
+Kd 1 1 1
+Ks 0.5 0.5 0.5
+illum 2
+Ns 34.2967
+map_Kd vtk.png
+
+newmtl mat3
+type metal
+Ka 0.8 0.8 0.8
+Kd 1 1 1
+Ks 0.5 0.5 0.5
+illum 2
+Ns 34.2967
+map_Kd vtk.png

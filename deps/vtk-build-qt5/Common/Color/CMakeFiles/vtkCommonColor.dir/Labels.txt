@@ -1,0 +1,8 @@
+# Target labels
+ vtkCommonColor
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Color/vtkColorSeries.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Color/vtkNamedColors.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Color/vtkColorSeries.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/Color/vtkNamedColors.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Common/Color/vtkCommonColorModule.h

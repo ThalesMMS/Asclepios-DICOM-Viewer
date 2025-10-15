@@ -1,0 +1,10 @@
+# Target labels
+ vtkFiltersImaging
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Imaging/vtkPairwiseExtractHistogram2D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Imaging/vtkExtractHistogram2D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Imaging/vtkComputeHistogram2DOutliers.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Imaging/vtkPairwiseExtractHistogram2D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Imaging/vtkExtractHistogram2D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Imaging/vtkComputeHistogram2DOutliers.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Filters/Imaging/vtkFiltersImagingModule.h

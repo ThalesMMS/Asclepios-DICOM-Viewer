@@ -1,0 +1,97 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeAttribute.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeCell.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeCellIterator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeCellIteratorOnCellBoundaries.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeCellIteratorOnCellList.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeCellIteratorOnDataSet.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeCellIteratorOne.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeCellIteratorStrategy.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeDataSet.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeExport.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgePointIterator.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgePointIteratorOnCell.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgePointIteratorOnDataSet.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgePointIteratorOne.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeAttribute.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeCell.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeCellIterator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeCellIteratorOnCellBoundaries.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeCellIteratorOnCellList.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeCellIteratorOnDataSet.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeCellIteratorOne.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeCellIteratorStrategy.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgeDataSet.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgePointIterator.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgePointIteratorOnCell.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgePointIteratorOnDataSet.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/GenericBridge/vtkBridgePointIteratorOne.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/GenericBridge/vtkTestingGenericBridgeModule.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkTestingGenericBridge"
+		],
+		"name" : "vtkTestingGenericBridge"
+	}
+}

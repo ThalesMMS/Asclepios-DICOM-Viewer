@@ -1,0 +1,7 @@
+# Target labels
+ vtksqlite
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/sqlite/vtksqlite/sqlite3.c
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/sqlite/vtksqlite/sqlite3.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/sqlite/vtksqlite/vtk_sqlite_mangle.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/sqlite/vtksqlite/vtksqlite_export.h

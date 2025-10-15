@@ -1,0 +1,8 @@
+# Target labels
+ vtkIOExportOpenGL2
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ExportOpenGL2/vtkOpenGLGL2PSExporter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/ExportOpenGL2/vtkIOExportOpenGL2ObjectFactory.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/IO/ExportOpenGL2/vtkOpenGLGL2PSExporter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/ExportOpenGL2/vtkIOExportOpenGL2ObjectFactory.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/IO/ExportOpenGL2/vtkIOExportOpenGL2Module.h

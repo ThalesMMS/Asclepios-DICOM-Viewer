@@ -1,0 +1,187 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_annotation.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_array.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_binary.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_boolean.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_catalog.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_destination.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_dict.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_doc_png.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_doc.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_encoder_cns.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_encoder_cnt.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_encoder_jp.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_encoder_kr.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_encoder.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_encrypt.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_encryptdict.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_error.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_ext_gstate.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_font_cid.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_font_tt.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_font_type1.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_font.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_fontdef_base14.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_fontdef_cid.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_fontdef_cns.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_fontdef_cnt.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_fontdef_jp.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_fontdef_kr.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_fontdef_tt.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_fontdef_type1.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_fontdef.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_gstate.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_image_ccitt.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_image_png.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_image.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_info.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_list.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_mmgr.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_name.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_namedict.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_null.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_number.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_objects.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_outline.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_page_label.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_page_operator.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_pages.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_real.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_shading.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_streams.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_string.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_u3d.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_utils.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_xref.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_pdfa.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_3dmeasure.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_exdata.c"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libharu/vtklibharu/src/hpdf_encoder_utf.c"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtklibharu"
+		],
+		"name" : "vtklibharu"
+	}
+}

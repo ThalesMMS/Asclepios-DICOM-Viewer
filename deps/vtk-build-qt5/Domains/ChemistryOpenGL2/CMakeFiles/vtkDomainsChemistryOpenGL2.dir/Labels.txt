@@ -1,0 +1,8 @@
+# Target labels
+ vtkDomainsChemistryOpenGL2
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/ChemistryOpenGL2/vtkOpenGLMoleculeMapper.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Domains/ChemistryOpenGL2/vtkDomainsChemistryOpenGL2ObjectFactory.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Domains/ChemistryOpenGL2/vtkOpenGLMoleculeMapper.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Domains/ChemistryOpenGL2/vtkDomainsChemistryOpenGL2ObjectFactory.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Domains/ChemistryOpenGL2/vtkDomainsChemistryOpenGL2Module.h

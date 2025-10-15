@@ -1,0 +1,26 @@
+# Target labels
+ vtkImagingMorphological
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageConnector.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageConnectivityFilter.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageContinuousDilate3D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageContinuousErode3D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageDilateErode3D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageIslandRemoval2D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageNonMaximumSuppression.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageOpenClose3D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageSeedConnectivity.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageSkeleton2D.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageThresholdConnectivity.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageConnector.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageConnectivityFilter.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageContinuousDilate3D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageContinuousErode3D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageDilateErode3D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageIslandRemoval2D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageNonMaximumSuppression.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageOpenClose3D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageSeedConnectivity.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageSkeleton2D.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Imaging/Morphological/vtkImageThresholdConnectivity.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Imaging/Morphological/vtkImagingMorphologicalModule.h

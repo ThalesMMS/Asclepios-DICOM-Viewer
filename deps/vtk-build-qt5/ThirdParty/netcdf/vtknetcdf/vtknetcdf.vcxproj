@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CB2C2E30-179B-3DB2-8FA9-8137A21A0727}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>vtknetcdf</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">vtknetcdf.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">vtkNetCDF-8.2</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">vtknetcdf.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">vtkNetCDF-8.2</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">vtknetcdf.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">vtkNetCDF-8.2</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">vtknetcdf.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">vtkNetCDF-8.2</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\hl\src;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\hl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\hl\src;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\hl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\hl\src;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\hl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\hl\src;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\hl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\hl\src;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\hl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\hl\src;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\hl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\hl\src;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\hl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\hl\src;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\hl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\hl\src;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\hl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\hl\src;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\hl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;HAVE_CONFIG_H;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\hl\src;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\hl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\hl\src;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\hdf5;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\include;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\src;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\hl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/netcdf/vtknetcdf/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/netcdf/vtknetcdf/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFileCXX.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckSymbolExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckTypeSize.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\TestBigEndian.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\config.h.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\include\netcdf_meta.h.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\vtk_netcdf_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/netcdf/vtknetcdf/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/netcdf/vtknetcdf/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFileCXX.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckSymbolExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckTypeSize.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\TestBigEndian.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\config.h.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\include\netcdf_meta.h.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\vtk_netcdf_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/netcdf/vtknetcdf/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/netcdf/vtknetcdf/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFileCXX.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckSymbolExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckTypeSize.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\TestBigEndian.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\config.h.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\include\netcdf_meta.h.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\vtk_netcdf_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/netcdf/vtknetcdf/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ThirdParty/netcdf/vtknetcdf/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFileCXX.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckIncludeFiles.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckSymbolExists.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\CheckTypeSize.cmake;C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\TestBigEndian.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\config.h.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\include\netcdf_meta.h.in;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\vtk_netcdf_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\datt.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dattget.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dattinq.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dattput.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dcompound.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dcopy.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\ddim.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\ddispatch.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\denum.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\derror.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dfile.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dgroup.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dinternal.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\doffsets.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dopaque.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dparallel.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\drc.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dstring.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dtype.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dutf8.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dvar.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dvarget.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dvarinq.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dvarput.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dvlen.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\dwinpath.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\nc.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\ncaux.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\ncbytes.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\nchashmap.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\nclist.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\nclistmgr.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\nclog.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\nctime.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\ncuri.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libdispatch\utf8proc.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\liblib\nc_initialize.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc\attr.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc\dim.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc\lookup3.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc\memio.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc\nc3dispatch.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc\nc3internal.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc\nc_hashmap.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc\ncio.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc\ncx.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc\posixio.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc\putget.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc\v1hpg.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc\var.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4\error4.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4\nc4attr.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4\nc4dim.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4\nc4dispatch.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4\nc4file.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4\nc4grp.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4\nc4hdf.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4\nc4info.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4\nc4internal.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4\nc4printer.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4\nc4type.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4\nc4var.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\libsrc4\ncfunc.c" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\include\netcdf.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\netcdf\vtknetcdf\include\vtk_netcdf_mangle.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\include\netcdf_meta.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\netcdf\vtknetcdf\vtk_netcdf_config.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ZERO_CHECK.vcxproj">
+      <Project>{CB3CEBE8-D3FC-3706-83B0-652E45C69461}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\hl\src\vtkhdf5_hl_src.vcxproj">
+      <Project>{EF381C4C-A7E1-3F56-8C1B-96FA69842FB7}</Project>
+      <Name>vtkhdf5_hl_src</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\hdf5\vtkhdf5\src\vtkhdf5_src.vcxproj">
+      <Project>{F31E3BC5-751D-3ABF-AC6F-D8262D46DEEC}</Project>
+      <Name>vtkhdf5_src</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\zlib\vtkzlib\vtkzlib.vcxproj">
+      <Project>{342F70EC-5F35-3320-9822-A570989F1860}</Project>
+      <Name>vtkzlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

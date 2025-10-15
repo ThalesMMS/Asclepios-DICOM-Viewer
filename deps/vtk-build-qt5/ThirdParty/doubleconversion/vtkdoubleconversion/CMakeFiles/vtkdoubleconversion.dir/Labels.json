@@ -1,0 +1,64 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/bignum.cc"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/bignum-dtoa.cc"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/cached-powers.cc"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/diy-fp.cc"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/double-conversion.cc"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/fast-dtoa.cc"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/fixed-dtoa.cc"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/strtod.cc"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/bignum.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/cached-powers.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/diy-fp.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/double-conversion.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/fast-dtoa.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/fixed-dtoa.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/ieee.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/strtod.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion/vtkdoubleconversion/double-conversion/utils.h"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkdoubleconversion"
+		],
+		"name" : "vtkdoubleconversion"
+	}
+}

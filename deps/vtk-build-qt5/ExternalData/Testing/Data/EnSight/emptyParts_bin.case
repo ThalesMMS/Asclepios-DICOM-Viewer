@@ -1,0 +1,11 @@
+FORMAT
+type:               ensight gold
+
+GEOMETRY
+model:              emptyParts_bin.geo
+
+VARIABLE
+scalar per node:    scalar_per_node     emptyParts_bin.scalar_per_node
+scalar per element: scalar_per_element  emptyParts_bin.scalar_per_element
+vector per node:    vector_per_node     emptyParts_bin.vector_per_node
+vector per element: vector_per_element  emptyParts_bin.vector_per_element

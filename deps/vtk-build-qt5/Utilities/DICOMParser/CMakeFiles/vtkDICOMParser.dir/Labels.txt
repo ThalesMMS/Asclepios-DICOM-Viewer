@@ -1,0 +1,6 @@
+# Target labels
+ vtkDICOMParser
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/DICOMParser/DICOMFile.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/DICOMParser/DICOMParser.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/DICOMParser/DICOMAppHelper.cxx

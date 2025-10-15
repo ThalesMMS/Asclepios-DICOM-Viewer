@@ -1,0 +1,94 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtAnnotationView.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtListView.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtRecordView.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtTableRepresentation.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtTableView.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtTreeView.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtView.cxx"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Views/Qt/moc_vtkQtAnnotationView.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Views/Qt/moc_vtkQtListView.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Views/Qt/moc_vtkQtRecordView.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Views/Qt/moc_vtkQtTableView.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Views/Qt/moc_vtkQtTreeView.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Views/Qt/moc_vtkQtView.cpp"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtAnnotationView.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtListView.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtRecordView.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtTableRepresentation.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtTableView.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtTreeView.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk/Views/Qt/vtkQtView.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Views/Qt/vtkViewsQtModule.h"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/7917aa9c854bb9edfd769510723808e5/moc_vtkQtAnnotationView.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/7917aa9c854bb9edfd769510723808e5/moc_vtkQtListView.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/7917aa9c854bb9edfd769510723808e5/moc_vtkQtRecordView.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/7917aa9c854bb9edfd769510723808e5/moc_vtkQtTableView.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/7917aa9c854bb9edfd769510723808e5/moc_vtkQtTreeView.cpp.rule"
+		},
+		{
+			"file" : "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/7917aa9c854bb9edfd769510723808e5/moc_vtkQtView.cpp.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"vtkViewsQt"
+		],
+		"name" : "vtkViewsQt"
+	}
+}

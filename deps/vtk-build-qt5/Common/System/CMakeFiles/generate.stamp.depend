@@ -1,0 +1,13 @@
+# CMake generation dependency list for this directory.
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckLibraryExists.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckSymbolExists.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkCommonCore.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkkwiml.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtksys.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/lib/cmake/vtk-8.2/Modules/vtkutf8.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkModuleHeaders.cmake.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkModuleInfo.cmake.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkexportheader.cmake.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/CMakeLists.txt
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/module.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/vtkTestSocketFeatures.cmake

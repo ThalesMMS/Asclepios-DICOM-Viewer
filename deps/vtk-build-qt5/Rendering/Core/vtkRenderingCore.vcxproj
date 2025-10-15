@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BA44572E-7F10-306E-9DD6-7B528A2DC1A6}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>vtkRenderingCore</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">vtkRenderingCore.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">vtkRenderingCore-8.2</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">vtkRenderingCore.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">vtkRenderingCore-8.2</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">vtkRenderingCore.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">vtkRenderingCore-8.2</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">vtkRenderingCore.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">vtkRenderingCore-8.2</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Sources;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Sources;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Sources;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Sources;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Sources;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Sources;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Sources;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Sources;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Sources;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Sources;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;VTK_IN_VTK;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Sources;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Color;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\System;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ComputationalGeometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\General;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Geometry;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Sources;D:\Asclepios-DICOM-Viewer\deps\vtk\Filters\Sources;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Core/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/Core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonColor.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonComputationalGeometry.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonDataModel.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonExecutionModel.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonMath.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonMisc.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonSystem.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonTransforms.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkFiltersCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkFiltersGeneral.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkFiltersGeometry.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkFiltersSources.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkkwiml.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtksys.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkutf8.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleHeaders.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleInfo.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkexportheader.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\module.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Core/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/Core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonColor.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonComputationalGeometry.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonDataModel.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonExecutionModel.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonMath.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonMisc.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonSystem.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonTransforms.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkFiltersCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkFiltersGeneral.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkFiltersGeometry.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkFiltersSources.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkkwiml.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtksys.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkutf8.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleHeaders.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleInfo.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkexportheader.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\module.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Core/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/Core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonColor.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonComputationalGeometry.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonDataModel.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonExecutionModel.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonMath.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonMisc.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonSystem.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonTransforms.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkFiltersCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkFiltersGeneral.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkFiltersGeometry.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkFiltersSources.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkkwiml.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtksys.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkutf8.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleHeaders.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleInfo.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkexportheader.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\module.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Core/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5 --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/Core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonColor.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonComputationalGeometry.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonDataModel.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonExecutionModel.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonMath.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonMisc.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonSystem.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkCommonTransforms.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkFiltersCore.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkFiltersGeneral.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkFiltersGeometry.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkFiltersSources.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkkwiml.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtksys.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\lib\cmake\vtk-8.2\Modules\vtkutf8.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleHeaders.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkModuleInfo.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\CMake\vtkexportheader.cmake.in;D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\module.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAbstractMapper3D.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAbstractMapper.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAbstractPicker.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAbstractVolumeMapper.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkActor2DCollection.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkActor2D.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkActorCollection.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkActor.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAssembly.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkBackgroundColorMonitor.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkBillboardTextActor3D.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCameraActor.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCamera.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCameraInterpolator.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCellCenterDepthSort.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCIEDE2000.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkColorTransferFunction.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCompositeDataDisplayAttributes.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCompositeDataDisplayAttributesLegacy.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCompositePolyDataMapper.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCoordinate.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCullerCollection.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCuller.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkDataSetMapper.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkDiscretizableColorTransferFunction.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkDistanceToCamera.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkFollower.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkFrameBufferObjectBase.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkFrustumCoverageCuller.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkFXAAOptions.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkGenericRenderWindowInteractor.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkGenericVertexAttributeMapping.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkGlyph3DMapper.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkGPUInfo.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkGPUInfoList.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkGraphicsFactory.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkGraphMapper.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkGraphToGlyphs.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkHardwareSelector.cxx">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(PreprocessorDefinitions);VTK_OPENGL2</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(PreprocessorDefinitions);VTK_OPENGL2</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(PreprocessorDefinitions);VTK_OPENGL2</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(PreprocessorDefinitions);VTK_OPENGL2</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkHierarchicalPolyDataMapper.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkImageActor.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkImageMapper3D.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkImageMapper.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkImageProperty.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkImageSlice.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkImageSliceMapper.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkInteractorEventRecorder.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkInteractorObserver.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkLabeledContourMapper.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkLightActor.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkLightCollection.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkLight.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkLightKit.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkLogLookupTable.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkLookupTableWithEnabling.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkMapArrayValues.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkMapper2D.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkMapperCollection.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkMapper.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkObserverMediator.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPointGaussianMapper.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPolyDataMapper2D.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPolyDataMapper.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkProp3DCollection.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkProp3D.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkProp3DFollower.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPropAssembly.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPropCollection.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkProp.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkProperty2D.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkProperty.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRendererCollection.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderer.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRendererDelegate.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRendererSource.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderPass.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderState.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderTimerLog.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderWindowCollection.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderWindow.cxx">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(PreprocessorDefinitions);VTK_OPENGL2</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(PreprocessorDefinitions);VTK_OPENGL2</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(PreprocessorDefinitions);VTK_OPENGL2</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(PreprocessorDefinitions);VTK_OPENGL2</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderWindowInteractor.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderWindowInteractor3D.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkSelectVisiblePoints.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkShaderDeviceAdapter2.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkSkybox.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTextActor.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTextActor3D.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTexture.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTexturedActor2D.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTransformCoordinateSystems.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTransformInterpolator.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTupleInterpolator.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkViewDependentErrorMetric.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkViewport.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkVisibilitySort.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkVolumeCollection.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkVolume.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkVolumeProperty.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkWindowLevelLookupTable.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkWindowToImageFilter.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAssemblyNode.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAssemblyPath.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAssemblyPaths.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAreaPicker.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPicker.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAbstractPropPicker.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPropPicker.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPickingManager.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkLODProp3D.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkWorldPointPicker.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCellPicker.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPointPicker.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderedAreaPicker.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkScenePicker.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkInteractorStyle.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkInteractorStyleSwitchBase.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkInteractorStyle3D.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTDxInteractorStyle.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTDxInteractorStyleCamera.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTDxInteractorStyleSettings.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkStringToImage.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTextMapper.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTextProperty.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTextPropertyCollection.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTextRenderer.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAbstractInteractionDevice.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAbstractRenderDevice.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderWidget.cxx" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkGPUInfoListArray.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkNoise200x200.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPythagoreanQuadruples.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRayCastStructures.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderingCoreEnums.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTDxMotionEventInfo.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAbstractMapper3D.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAbstractMapper.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAbstractPicker.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAbstractVolumeMapper.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkActor2DCollection.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkActor2D.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkActorCollection.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkActor.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAssembly.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkBackgroundColorMonitor.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkBillboardTextActor3D.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCameraActor.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCamera.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCameraInterpolator.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCellCenterDepthSort.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCIEDE2000.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkColorTransferFunction.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCompositeDataDisplayAttributes.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCompositeDataDisplayAttributesLegacy.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCompositePolyDataMapper.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCoordinate.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCullerCollection.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCuller.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkDataSetMapper.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkDiscretizableColorTransferFunction.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkDistanceToCamera.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkFollower.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkFrameBufferObjectBase.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkFrustumCoverageCuller.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkFXAAOptions.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkGenericRenderWindowInteractor.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkGenericVertexAttributeMapping.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkGlyph3DMapper.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkGPUInfo.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkGPUInfoList.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkGraphicsFactory.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkGraphMapper.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkGraphToGlyphs.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkHardwareSelector.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkHierarchicalPolyDataMapper.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkImageActor.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkImageMapper3D.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkImageMapper.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkImageProperty.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkImageSlice.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkImageSliceMapper.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkInteractorEventRecorder.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkInteractorObserver.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkLabeledContourMapper.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkLightActor.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkLightCollection.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkLight.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkLightKit.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkLogLookupTable.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkLookupTableWithEnabling.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkMapArrayValues.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkMapper2D.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkMapperCollection.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkMapper.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkObserverMediator.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPointGaussianMapper.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPolyDataMapper2D.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPolyDataMapper.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkProp3DCollection.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkProp3D.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkProp3DFollower.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPropAssembly.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPropCollection.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkProp.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkProperty2D.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkProperty.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRendererCollection.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderer.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRendererDelegate.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRendererSource.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderPass.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderState.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderTimerLog.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderWindowCollection.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderWindow.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderWindowInteractor.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderWindowInteractor3D.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkSelectVisiblePoints.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkShaderDeviceAdapter2.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkSkybox.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTextActor.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTextActor3D.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTexture.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTexturedActor2D.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTransformCoordinateSystems.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTransformInterpolator.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTupleInterpolator.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkViewDependentErrorMetric.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkViewport.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkVisibilitySort.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkVolumeCollection.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkVolume.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkVolumeProperty.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkWindowLevelLookupTable.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkWindowToImageFilter.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAssemblyNode.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAssemblyPath.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAssemblyPaths.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAreaPicker.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPicker.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAbstractPropPicker.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPropPicker.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPickingManager.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkLODProp3D.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkWorldPointPicker.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkCellPicker.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkPointPicker.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderedAreaPicker.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkScenePicker.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkInteractorStyle.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkInteractorStyleSwitchBase.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkInteractorStyle3D.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTDxInteractorStyle.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTDxInteractorStyleCamera.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTDxInteractorStyleSettings.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkStringToImage.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTextMapper.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTextProperty.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTextPropertyCollection.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkTextRenderer.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAbstractInteractionDevice.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkAbstractRenderDevice.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Core\vtkRenderWidget.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Rendering\Core\vtkRenderingCoreModule.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\ZERO_CHECK.vcxproj">
+      <Project>{CB3CEBE8-D3FC-3706-83B0-652E45C69461}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Color\vtkCommonColor.vcxproj">
+      <Project>{34F14E20-ED06-31D1-851C-C0B1B7AAFFAB}</Project>
+      <Name>vtkCommonColor</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ComputationalGeometry\vtkCommonComputationalGeometry.vcxproj">
+      <Project>{18AFF291-A3BF-3A78-8D0E-9533913A72FC}</Project>
+      <Name>vtkCommonComputationalGeometry</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Core\vtkCommonCore.vcxproj">
+      <Project>{0813AC50-5742-391F-BCAA-0CA45ACC8EC1}</Project>
+      <Name>vtkCommonCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\DataModel\vtkCommonDataModel.vcxproj">
+      <Project>{DE04E99B-0156-39F9-9522-11FEAF6BB697}</Project>
+      <Name>vtkCommonDataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\ExecutionModel\vtkCommonExecutionModel.vcxproj">
+      <Project>{3C0CF2CA-93C8-37D6-BE96-C7AE892D0014}</Project>
+      <Name>vtkCommonExecutionModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Math\vtkCommonMath.vcxproj">
+      <Project>{35C7861D-7CF6-3B28-8B3A-75A41E759A06}</Project>
+      <Name>vtkCommonMath</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Misc\vtkCommonMisc.vcxproj">
+      <Project>{5CCB42B8-75CD-33C7-B57B-77D85779A44F}</Project>
+      <Name>vtkCommonMisc</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\System\vtkCommonSystem.vcxproj">
+      <Project>{40362FE2-03ED-3548-B645-BB70543CD248}</Project>
+      <Name>vtkCommonSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Common\Transforms\vtkCommonTransforms.vcxproj">
+      <Project>{1107639F-582A-3769-8C14-6D21E67C6DC0}</Project>
+      <Name>vtkCommonTransforms</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Core\vtkFiltersCore.vcxproj">
+      <Project>{90BC696F-CAF9-32AB-BDA8-193D221585C1}</Project>
+      <Name>vtkFiltersCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\General\vtkFiltersGeneral.vcxproj">
+      <Project>{1360DB5E-B6BF-33C7-9A41-76B7A8211682}</Project>
+      <Name>vtkFiltersGeneral</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Geometry\vtkFiltersGeometry.vcxproj">
+      <Project>{5BD5024F-08F3-3D5F-85CE-AFA17C983130}</Project>
+      <Name>vtkFiltersGeometry</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Filters\Sources\vtkFiltersSources.vcxproj">
+      <Project>{9C31BF77-73F1-3F0D-828A-21598AEF3065}</Project>
+      <Name>vtkFiltersSources</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build-qt5\Utilities\KWSys\vtksys\vtksys.vcxproj">
+      <Project>{F5E45E60-7B5D-3AAC-BE34-651E9BF023BE}</Project>
+      <Name>vtksys</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

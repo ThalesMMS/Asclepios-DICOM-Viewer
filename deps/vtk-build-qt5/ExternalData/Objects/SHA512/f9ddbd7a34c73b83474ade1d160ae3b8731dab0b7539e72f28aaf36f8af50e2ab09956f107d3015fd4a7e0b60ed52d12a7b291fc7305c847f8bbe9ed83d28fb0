@@ -1,0 +1,135 @@
+<phyloxml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.phyloxml.org" xsi:schemaLocation="http://www.phyloxml.org http://www.phyloxml.org/1.10/phyloxml.xsd">
+<phylogeny rooted="true">
+  <name>
+    example tree
+  </name>
+  <description>
+    example tree to test PhyloXML reader and writer
+  </description>
+  <confidence type="probability">
+    0.99
+  </confidence>
+  <property datatype="xsd:integer" ref="NOAA:length" applies_to="phylogeny" unit="METRIC:m">
+    1
+  </property>
+  <clade>
+    <name>
+      root
+    </name>
+    <confidence type="probability">
+      0.95
+    </confidence>
+    <property datatype="xsd:integer" ref="NOAA:length" applies_to="clade" unit="METRIC:m">
+      0
+    </property>
+    <clade branch_length="1.0">
+      <name>
+       internalOne
+      </name>
+      <confidence type="probability">
+        0.90
+      </confidence>
+      <color>
+        <red>
+          0
+        </red>
+        <green>
+          0
+        </green>
+        <blue>
+          0
+        </blue>
+      </color>
+      <property datatype="xsd:integer" ref="NOAA:length" applies_to="clade" unit="METRIC:m">
+        2
+      </property>
+      <clade>
+        <name>
+          internalTwo
+        </name>
+        <branch_length>
+          2.0
+        </branch_length>
+        <confidence type="probability">
+          0.85
+        </confidence>
+        <color>
+          <red>
+            255
+          </red>
+          <green>
+            0
+          </green>
+          <blue>
+            0
+          </blue>
+        </color>
+        <property datatype="xsd:integer" ref="NOAA:length" applies_to="clade" unit="METRIC:m">
+          3
+        </property>
+        <clade branch_length="1.0">
+          <name>
+            a
+          </name>
+          <confidence type="probability">
+            0.80
+          </confidence>
+          <property datatype="xsd:integer" ref="NOAA:length" applies_to="clade" unit="METRIC:m">
+            4
+          </property>
+        </clade>
+        <clade>
+          <name>
+            b
+          </name>
+          <branch_length>
+            1.0
+          </branch_length>
+          <confidence type="probability">
+            0.75
+          </confidence>
+          <color>
+            <red>
+              0
+            </red>
+            <green>
+              255
+            </green>
+            <blue>
+              0
+            </blue>
+          </color>
+          <property datatype="xsd:integer" ref="NOAA:length" applies_to="clade" unit="METRIC:m">
+            5
+          </property>
+        </clade>
+      </clade>
+      <clade>
+        <name>
+          c
+        </name>
+        <branch_length>
+          3.0
+        </branch_length>
+        <confidence type="probability">
+          0.85
+        </confidence>
+        <color>
+          <red>
+            0
+          </red>
+          <green>
+            0
+          </green>
+          <blue>
+            255
+          </blue>
+        </color>
+        <property datatype="xsd:integer" ref="NOAA:length" applies_to="clade" unit="METRIC:m">
+          6
+        </property>
+      </clade>
+    </clade>
+  </clade>
+</phylogeny>
+</phyloxml>

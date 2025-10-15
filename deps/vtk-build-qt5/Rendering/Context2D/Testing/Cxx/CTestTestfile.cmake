@@ -1,0 +1,44 @@
+# CMake generated Testfile for 
+# Source directory: D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Context2D/Testing/Cxx
+# Build directory: D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Rendering/Context2D/Testing/Cxx
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+if(CTEST_CONFIGURATION_TYPE MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test(vtkRenderingContext2DCxx-TestContext2D "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/Debug/vtkRenderingContext2DCxxTests.exe" "TestContext2D" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary")
+  set_tests_properties(vtkRenderingContext2DCxx-TestContext2D PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkRenderingContext2D" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Context2D/Testing/Cxx/CMakeLists.txt;2;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Context2D/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test(vtkRenderingContext2DCxx-TestContext2D "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/Release/vtkRenderingContext2DCxxTests.exe" "TestContext2D" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary")
+  set_tests_properties(vtkRenderingContext2DCxx-TestContext2D PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkRenderingContext2D" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Context2D/Testing/Cxx/CMakeLists.txt;2;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Context2D/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test(vtkRenderingContext2DCxx-TestContext2D "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/MinSizeRel/vtkRenderingContext2DCxxTests.exe" "TestContext2D" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary")
+  set_tests_properties(vtkRenderingContext2DCxx-TestContext2D PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkRenderingContext2D" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Context2D/Testing/Cxx/CMakeLists.txt;2;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Context2D/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test(vtkRenderingContext2DCxx-TestContext2D "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/RelWithDebInfo/vtkRenderingContext2DCxxTests.exe" "TestContext2D" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary")
+  set_tests_properties(vtkRenderingContext2DCxx-TestContext2D PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkRenderingContext2D" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Context2D/Testing/Cxx/CMakeLists.txt;2;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Context2D/Testing/Cxx/CMakeLists.txt;0;")
+else()
+  add_test(vtkRenderingContext2DCxx-TestContext2D NOT_AVAILABLE)
+endif()
+if(CTEST_CONFIGURATION_TYPE MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test(vtkRenderingContext2DCxx-TestPolyDataToContext "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/Debug/vtkRenderingContext2DCxxTests.exe" "TestPolyDataToContext" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary" "-V" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/Rendering/Context2D/Testing/Data/Baseline/TestPolyDataToContext.png")
+  set_tests_properties(vtkRenderingContext2DCxx-TestPolyDataToContext PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkRenderingContext2D" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Context2D/Testing/Cxx/CMakeLists.txt;2;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Context2D/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test(vtkRenderingContext2DCxx-TestPolyDataToContext "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/Release/vtkRenderingContext2DCxxTests.exe" "TestPolyDataToContext" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary" "-V" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/Rendering/Context2D/Testing/Data/Baseline/TestPolyDataToContext.png")
+  set_tests_properties(vtkRenderingContext2DCxx-TestPolyDataToContext PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkRenderingContext2D" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Context2D/Testing/Cxx/CMakeLists.txt;2;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Context2D/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test(vtkRenderingContext2DCxx-TestPolyDataToContext "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/MinSizeRel/vtkRenderingContext2DCxxTests.exe" "TestPolyDataToContext" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary" "-V" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/Rendering/Context2D/Testing/Data/Baseline/TestPolyDataToContext.png")
+  set_tests_properties(vtkRenderingContext2DCxx-TestPolyDataToContext PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkRenderingContext2D" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Context2D/Testing/Cxx/CMakeLists.txt;2;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Context2D/Testing/Cxx/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test(vtkRenderingContext2DCxx-TestPolyDataToContext "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/bin/RelWithDebInfo/vtkRenderingContext2DCxxTests.exe" "TestPolyDataToContext" "-D" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData//Testing" "-T" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/Temporary" "-V" "D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/ExternalData/Rendering/Context2D/Testing/Data/Baseline/TestPolyDataToContext.png")
+  set_tests_properties(vtkRenderingContext2DCxx-TestPolyDataToContext PROPERTIES  FAIL_REGULAR_EXPRESSION "(
+|^)ERROR: ;instance(s)? still around" LABELS "vtkRenderingContext2D" SKIP_RETURN_CODE "125" _BACKTRACE_TRIPLES "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/ExternalData.cmake;356;add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkTestingMacros.cmake;298;ExternalData_add_test;D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Context2D/Testing/Cxx/CMakeLists.txt;2;vtk_add_test_cxx;D:/Asclepios-DICOM-Viewer/deps/vtk/Rendering/Context2D/Testing/Cxx/CMakeLists.txt;0;")
+else()
+  add_test(vtkRenderingContext2DCxx-TestPolyDataToContext NOT_AVAILABLE)
+endif()

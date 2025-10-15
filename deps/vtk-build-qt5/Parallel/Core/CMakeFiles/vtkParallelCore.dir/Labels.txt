@@ -1,0 +1,34 @@
+# Target labels
+ vtkParallelCore
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkCommunicator.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkDummyCommunicator.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkDummyController.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkMultiProcessController.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkMultiProcessStream.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkPDirectory.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkProcess.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkProcessGroup.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkPSystemTools.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkSocketCommunicator.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkSocketController.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkSubCommunicator.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkSubGroup.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkFieldDataSerializer.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Parallel/Core/vtkSocketCommunicatorHash.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkCommunicator.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkDummyCommunicator.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkDummyController.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkMultiProcessController.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkMultiProcessStream.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkPDirectory.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkProcess.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkProcessGroup.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkPSystemTools.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkSocketCommunicator.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkSocketController.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkSubCommunicator.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkSubGroup.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/Parallel/Core/vtkFieldDataSerializer.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Parallel/Core/vtkParallelCoreModule.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/CMakeFiles/af7de1b90a42ae5874d22e185c3173bb/vtkSocketCommunicatorHash.h.rule

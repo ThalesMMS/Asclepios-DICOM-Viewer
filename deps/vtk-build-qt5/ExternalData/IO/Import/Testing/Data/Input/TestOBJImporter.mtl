@@ -1,0 +1,4 @@
+newmtl TestOBJImporter
+map_Ka TestOBJImporter.png
+map_Kd TestOBJImporter.png
+map_Ks TestOBJImporter.png

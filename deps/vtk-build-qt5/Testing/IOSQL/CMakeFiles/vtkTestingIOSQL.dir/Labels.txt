@@ -1,0 +1,6 @@
+# Target labels
+ vtkTestingIOSQL
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/IOSQL/DatabaseSchemaWith2Tables.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/Testing/IOSQL/DatabaseSchemaWith2Tables.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/Testing/IOSQL/vtkTestingIOSQLModule.h

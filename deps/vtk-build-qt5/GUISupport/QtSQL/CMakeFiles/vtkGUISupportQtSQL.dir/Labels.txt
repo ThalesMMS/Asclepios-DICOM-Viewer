@@ -1,0 +1,10 @@
+# Target labels
+ vtkGUISupportQtSQL
+# Source files and their labels
+D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/QtSQL/vtkQtSQLDatabase.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/QtSQL/vtkQtSQLQuery.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/QtSQL/vtkQtTimePointUtility.cxx
+D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/QtSQL/vtkQtSQLDatabase.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/QtSQL/vtkQtSQLQuery.h
+D:/Asclepios-DICOM-Viewer/deps/vtk/GUISupport/QtSQL/vtkQtTimePointUtility.h
+D:/Asclepios-DICOM-Viewer/deps/vtk-build-qt5/GUISupport/QtSQL/vtkGUISupportQtSQLModule.h
