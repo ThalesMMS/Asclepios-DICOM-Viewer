@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5FC2AB75-E686-33AE-9817-FC13098B54CE}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>IOCore</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">IOCore.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">vtkIOCore-9.3d</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">IOCore.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">vtkIOCore-9.3</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">IOCore.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">vtkIOCore-9.3</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">IOCore.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">vtkIOCore-9.3</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib\vtkzlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/Utilities/KWIML" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/KWIML" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/Utilities/KWSys" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/KWSys" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/kissfft" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/kissfft" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/doubleconversion" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/lz4" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/lzma" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lzma" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/utf8" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/utf8" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/zlib" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/fast_float" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/fast_float" /bigobj /utf-8</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;kiss_fft_scalar=double;KISSFFT_DLL_IMPORT=1;LZ4_DLL_IMPORT=1;CMAKE_INTDIR="Debug";IOCore_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;kiss_fft_scalar=double;KISSFFT_DLL_IMPORT=1;LZ4_DLL_IMPORT=1;CMAKE_INTDIR=\"Debug\";IOCore_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\fast_float;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\fast_float;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\fast_float;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\fast_float;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\lib\Debug\vtkCommonExecutionModel-9.3d.lib;..\..\lib\Debug\vtkCommonDataModel-9.3d.lib;..\..\lib\Debug\vtkCommonMisc-9.3d.lib;..\..\lib\Debug\vtkdoubleconversion-9.3d.lib;..\..\lib\Debug\vtklz4-9.3d.lib;..\..\lib\Debug\vtklzma-9.3d.lib;..\..\lib\Debug\vtkzlib-9.3d.lib;..\..\lib\Debug\vtkCommonTransforms-9.3d.lib;..\..\lib\Debug\vtkCommonMath-9.3d.lib;..\..\lib\Debug\vtkkissfft-9.3d.lib;..\..\lib\Debug\vtkCommonCore-9.3d.lib;..\..\lib\Debug\vtksys-9.3d.lib;ws2_32.lib;dbghelp.lib;psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Asclepios-DICOM-Viewer/deps/vtk-build/lib/Debug/vtkIOCore-9.3d.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Asclepios-DICOM-Viewer/deps/vtk-build/bin/Debug/vtkIOCore-9.3d.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib\vtkzlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/Utilities/KWIML" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/KWIML" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/Utilities/KWSys" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/KWSys" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/kissfft" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/kissfft" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/doubleconversion" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/lz4" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/lzma" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lzma" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/utf8" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/utf8" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/zlib" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/fast_float" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/fast_float" /bigobj /utf-8</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;kiss_fft_scalar=double;KISSFFT_DLL_IMPORT=1;LZ4_DLL_IMPORT=1;CMAKE_INTDIR="Release";IOCore_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;kiss_fft_scalar=double;KISSFFT_DLL_IMPORT=1;LZ4_DLL_IMPORT=1;CMAKE_INTDIR=\"Release\";IOCore_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\fast_float;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\fast_float;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\fast_float;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\fast_float;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\lib\Release\vtkCommonExecutionModel-9.3.lib;..\..\lib\Release\vtkCommonDataModel-9.3.lib;..\..\lib\Release\vtkCommonMisc-9.3.lib;..\..\lib\Release\vtkdoubleconversion-9.3.lib;..\..\lib\Release\vtklz4-9.3.lib;..\..\lib\Release\vtklzma-9.3.lib;..\..\lib\Release\vtkzlib-9.3.lib;..\..\lib\Release\vtkCommonTransforms-9.3.lib;..\..\lib\Release\vtkCommonMath-9.3.lib;..\..\lib\Release\vtkkissfft-9.3.lib;..\..\lib\Release\vtkCommonCore-9.3.lib;..\..\lib\Release\vtksys-9.3.lib;ws2_32.lib;dbghelp.lib;psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Asclepios-DICOM-Viewer/deps/vtk-build/lib/Release/vtkIOCore-9.3.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Asclepios-DICOM-Viewer/deps/vtk-build/bin/Release/vtkIOCore-9.3.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib\vtkzlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/Utilities/KWIML" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/KWIML" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/Utilities/KWSys" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/KWSys" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/kissfft" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/kissfft" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/doubleconversion" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/lz4" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/lzma" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lzma" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/utf8" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/utf8" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/zlib" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/fast_float" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/fast_float" /bigobj /utf-8</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;kiss_fft_scalar=double;KISSFFT_DLL_IMPORT=1;LZ4_DLL_IMPORT=1;CMAKE_INTDIR="MinSizeRel";IOCore_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;kiss_fft_scalar=double;KISSFFT_DLL_IMPORT=1;LZ4_DLL_IMPORT=1;CMAKE_INTDIR=\"MinSizeRel\";IOCore_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\fast_float;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\fast_float;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\fast_float;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\fast_float;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\lib\MinSizeRel\vtkCommonExecutionModel-9.3.lib;..\..\lib\MinSizeRel\vtkCommonDataModel-9.3.lib;..\..\lib\MinSizeRel\vtkCommonMisc-9.3.lib;..\..\lib\MinSizeRel\vtkdoubleconversion-9.3.lib;..\..\lib\MinSizeRel\vtklz4-9.3.lib;..\..\lib\MinSizeRel\vtklzma-9.3.lib;..\..\lib\MinSizeRel\vtkzlib-9.3.lib;..\..\lib\MinSizeRel\vtkCommonTransforms-9.3.lib;..\..\lib\MinSizeRel\vtkCommonMath-9.3.lib;..\..\lib\MinSizeRel\vtkkissfft-9.3.lib;..\..\lib\MinSizeRel\vtkCommonCore-9.3.lib;..\..\lib\MinSizeRel\vtksys-9.3.lib;ws2_32.lib;dbghelp.lib;psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Asclepios-DICOM-Viewer/deps/vtk-build/lib/MinSizeRel/vtkIOCore-9.3.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Asclepios-DICOM-Viewer/deps/vtk-build/bin/MinSizeRel/vtkIOCore-9.3.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib\vtkzlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/Utilities/KWIML" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/KWIML" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/Utilities/KWSys" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/Utilities/KWSys" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/kissfft" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/kissfft" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/doubleconversion" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/doubleconversion" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/lz4" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lz4" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/lzma" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/lzma" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/utf8" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/utf8" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/zlib" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/zlib" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/fast_float" /external:I "D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/fast_float" /bigobj /utf-8</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4251</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;kiss_fft_scalar=double;KISSFFT_DLL_IMPORT=1;LZ4_DLL_IMPORT=1;CMAKE_INTDIR="RelWithDebInfo";IOCore_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;kiss_fft_scalar=double;KISSFFT_DLL_IMPORT=1;LZ4_DLL_IMPORT=1;CMAKE_INTDIR=\"RelWithDebInfo\";IOCore_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\fast_float;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\fast_float;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk-build\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Core;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\ExecutionModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\DataModel;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Math;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft\vtkkissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Transforms;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk\Common\Misc;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion\vtkdoubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4\vtklz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma\vtklzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib\vtkzlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWIML;D:\Asclepios-DICOM-Viewer\deps\vtk-build\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk\Utilities\KWSys;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\kissfft;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\doubleconversion;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lz4;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\lzma;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\utf8;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\zlib;D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\fast_float;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\fast_float;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\lib\RelWithDebInfo\vtkCommonExecutionModel-9.3.lib;..\..\lib\RelWithDebInfo\vtkCommonDataModel-9.3.lib;..\..\lib\RelWithDebInfo\vtkCommonMisc-9.3.lib;..\..\lib\RelWithDebInfo\vtkdoubleconversion-9.3.lib;..\..\lib\RelWithDebInfo\vtklz4-9.3.lib;..\..\lib\RelWithDebInfo\vtklzma-9.3.lib;..\..\lib\RelWithDebInfo\vtkzlib-9.3.lib;..\..\lib\RelWithDebInfo\vtkCommonTransforms-9.3.lib;..\..\lib\RelWithDebInfo\vtkCommonMath-9.3.lib;..\..\lib\RelWithDebInfo\vtkkissfft-9.3.lib;..\..\lib\RelWithDebInfo\vtkCommonCore-9.3.lib;..\..\lib\RelWithDebInfo\vtksys-9.3.lib;ws2_32.lib;dbghelp.lib;psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/Asclepios-DICOM-Viewer/deps/vtk-build/lib/RelWithDebInfo/vtkIOCore-9.3.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Asclepios-DICOM-Viewer/deps/vtk-build/bin/RelWithDebInfo/vtkIOCore-9.3.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Core/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build/IO/Core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\exportheader.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\IO\Core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Core/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build/IO/Core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\exportheader.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\IO\Core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Core/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build/IO/Core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\exportheader.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\IO\Core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/IO/Core/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build/IO/Core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Qt\Tools\CMake_64\share\cmake-3.30\Modules\exportheader.cmake.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\IO\Core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkAbstractParticleWriter.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkAbstractPolyDataReader.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkArrayDataReader.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkArrayDataWriter.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkArrayReader.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkArrayWriter.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkASCIITextCodec.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkBase64InputStream.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkBase64OutputStream.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkBase64Utilities.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkDataCompressor.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkDelimitedTextWriter.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkFileResourceStream.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkGlobFileNames.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkInputStream.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkJavaScriptDataWriter.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkLZ4DataCompressor.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkLZMADataCompressor.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkMemoryResourceStream.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkNumberToString.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkOutputStream.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkResourceParser.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkResourceStream.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkSortFileNames.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkTextCodec.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkTextCodecFactory.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkURI.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkURILoader.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkUTF16TextCodec.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkUTF8TextCodec.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkWriter.cxx" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkZLibDataCompressor.cxx" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkUpdateCellsV8toV9.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkAbstractParticleWriter.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkAbstractPolyDataReader.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkArrayDataReader.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkArrayDataWriter.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkArrayReader.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkArrayWriter.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkASCIITextCodec.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkBase64InputStream.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkBase64OutputStream.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkBase64Utilities.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkDataCompressor.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkDelimitedTextWriter.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkFileResourceStream.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkGlobFileNames.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkInputStream.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkJavaScriptDataWriter.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkLZ4DataCompressor.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkLZMADataCompressor.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkMemoryResourceStream.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkNumberToString.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkOutputStream.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkResourceParser.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkResourceStream.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkSortFileNames.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkTextCodec.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkTextCodecFactory.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkURI.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkURILoader.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkUTF16TextCodec.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkUTF8TextCodec.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkWriter.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Core\vtkZLibDataCompressor.h" />
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\IO\Core\vtkIOCoreModule.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\ZERO_CHECK.vcxproj">
+      <Project>{30408C1C-2036-3B78-9D38-9776F7BDC758}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Core\CommonCore.vcxproj">
+      <Project>{1308E356-53E5-35BC-BC55-371D1AD40657}</Project>
+      <Name>CommonCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\DataModel\CommonDataModel.vcxproj">
+      <Project>{73B2AEA2-FD4A-3FC0-8780-970DCEA75399}</Project>
+      <Name>CommonDataModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\ExecutionModel\CommonExecutionModel.vcxproj">
+      <Project>{28EF36BF-9737-360E-BCFE-278656BF97F4}</Project>
+      <Name>CommonExecutionModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Math\CommonMath.vcxproj">
+      <Project>{B43ACB43-7138-30A2-9C8B-521ADD04D862}</Project>
+      <Name>CommonMath</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Misc\CommonMisc.vcxproj">
+      <Project>{220CBDAA-CFE9-3B22-9E0A-0ACDA982FF38}</Project>
+      <Name>CommonMisc</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\Common\Transforms\CommonTransforms.vcxproj">
+      <Project>{47ED0629-E2A2-3425-8E57-8D27DF5EA623}</Project>
+      <Name>CommonTransforms</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\doubleconversion\vtkdoubleconversion\doubleconversion.vcxproj">
+      <Project>{C4E8B2D6-B230-3199-8A7F-5495E72ED04E}</Project>
+      <Name>doubleconversion</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\kissfft\vtkkissfft\kissfft.vcxproj">
+      <Project>{A1E900D4-1547-3D61-A662-20F2B1CD6E61}</Project>
+      <Name>kissfft</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lz4\vtklz4\lz4.vcxproj">
+      <Project>{858F2CD4-C038-3CB1-A65A-7419445D192F}</Project>
+      <Name>lz4</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\lzma\vtklzma\lzma.vcxproj">
+      <Project>{8BEAE8CC-15A2-322F-B10A-B74F7F6DB5D3}</Project>
+      <Name>lzma</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\Utilities\KWSys\vtksys\vtksys.vcxproj">
+      <Project>{9BF0B4F4-02F9-359E-962D-B3F50DE6753B}</Project>
+      <Name>vtksys</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\zlib\vtkzlib\zlib.vcxproj">
+      <Project>{3953DB35-EF83-3630-AB1B-4EF13B271235}</Project>
+      <Name>zlib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

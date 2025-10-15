@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E438B2B7-3ED8-3D07-981C-622F8CA9CF8C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>dcmrt</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\lib\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">dcmrt.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">dcmrt</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\lib\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">dcmrt.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">dcmrt</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\lib\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">dcmrt.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">dcmrt</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\lib\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">dcmrt.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">dcmrt</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;DEBUG;dcmrt_EXPORTS;USE_NULL_SAFE_OFSTRING;DCMTK_BUILD_IN_PROGRESS;NOMINMAX;_CRT_FAR_MAPPINGS_NO_DEPRECATE;_CRT_IS_WCTYPE_NO_DEPRECATE;_CRT_MANAGED_FP_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE_GLOBALS;_CRT_SETERRORMODE_BEEP_SLEEP_NO_DEPRECATE;_CRT_TIME_FUNCTIONS_NO_DEPRECATE;_CRT_VCCLRIT_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;_REENTRANT;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;DEBUG;dcmrt_EXPORTS;USE_NULL_SAFE_OFSTRING;DCMTK_BUILD_IN_PROGRESS;NOMINMAX;_CRT_FAR_MAPPINGS_NO_DEPRECATE;_CRT_IS_WCTYPE_NO_DEPRECATE;_CRT_MANAGED_FP_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE_GLOBALS;_CRT_SETERRORMODE_BEEP_SLEEP_NO_DEPRECATE;_CRT_TIME_FUNCTIONS_NO_DEPRECATE;_CRT_VCCLRIT_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;_REENTRANT;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;dcmrt_EXPORTS;USE_NULL_SAFE_OFSTRING;DCMTK_BUILD_IN_PROGRESS;NOMINMAX;_CRT_FAR_MAPPINGS_NO_DEPRECATE;_CRT_IS_WCTYPE_NO_DEPRECATE;_CRT_MANAGED_FP_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE_GLOBALS;_CRT_SETERRORMODE_BEEP_SLEEP_NO_DEPRECATE;_CRT_TIME_FUNCTIONS_NO_DEPRECATE;_CRT_VCCLRIT_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;_REENTRANT;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;dcmrt_EXPORTS;USE_NULL_SAFE_OFSTRING;DCMTK_BUILD_IN_PROGRESS;NOMINMAX;_CRT_FAR_MAPPINGS_NO_DEPRECATE;_CRT_IS_WCTYPE_NO_DEPRECATE;_CRT_MANAGED_FP_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE_GLOBALS;_CRT_SETERRORMODE_BEEP_SLEEP_NO_DEPRECATE;_CRT_TIME_FUNCTIONS_NO_DEPRECATE;_CRT_VCCLRIT_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;_REENTRANT;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;dcmrt_EXPORTS;USE_NULL_SAFE_OFSTRING;DCMTK_BUILD_IN_PROGRESS;NOMINMAX;_CRT_FAR_MAPPINGS_NO_DEPRECATE;_CRT_IS_WCTYPE_NO_DEPRECATE;_CRT_MANAGED_FP_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE_GLOBALS;_CRT_SETERRORMODE_BEEP_SLEEP_NO_DEPRECATE;_CRT_TIME_FUNCTIONS_NO_DEPRECATE;_CRT_VCCLRIT_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;_REENTRANT;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;dcmrt_EXPORTS;USE_NULL_SAFE_OFSTRING;DCMTK_BUILD_IN_PROGRESS;NOMINMAX;_CRT_FAR_MAPPINGS_NO_DEPRECATE;_CRT_IS_WCTYPE_NO_DEPRECATE;_CRT_MANAGED_FP_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE_GLOBALS;_CRT_SETERRORMODE_BEEP_SLEEP_NO_DEPRECATE;_CRT_TIME_FUNCTIONS_NO_DEPRECATE;_CRT_VCCLRIT_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;_REENTRANT;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;dcmrt_EXPORTS;USE_NULL_SAFE_OFSTRING;DCMTK_BUILD_IN_PROGRESS;NOMINMAX;_CRT_FAR_MAPPINGS_NO_DEPRECATE;_CRT_IS_WCTYPE_NO_DEPRECATE;_CRT_MANAGED_FP_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE_GLOBALS;_CRT_SETERRORMODE_BEEP_SLEEP_NO_DEPRECATE;_CRT_TIME_FUNCTIONS_NO_DEPRECATE;_CRT_VCCLRIT_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;_REENTRANT;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;dcmrt_EXPORTS;USE_NULL_SAFE_OFSTRING;DCMTK_BUILD_IN_PROGRESS;NOMINMAX;_CRT_FAR_MAPPINGS_NO_DEPRECATE;_CRT_IS_WCTYPE_NO_DEPRECATE;_CRT_MANAGED_FP_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE_GLOBALS;_CRT_SETERRORMODE_BEEP_SLEEP_NO_DEPRECATE;_CRT_TIME_FUNCTIONS_NO_DEPRECATE;_CRT_VCCLRIT_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;_REENTRANT;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/libsrc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/dcmtk -BD:/Asclepios-DICOM-Viewer/deps/dcmtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/dcmrt/libsrc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmrt\libsrc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/libsrc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/dcmtk -BD:/Asclepios-DICOM-Viewer/deps/dcmtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/dcmrt/libsrc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmrt\libsrc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/libsrc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/dcmtk -BD:/Asclepios-DICOM-Viewer/deps/dcmtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/dcmrt/libsrc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmrt\libsrc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/libsrc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/dcmtk -BD:/Asclepios-DICOM-Viewer/deps/dcmtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/dcmrt/libsrc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmrt\libsrc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drmdose.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drmimage.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drmplan.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drmstrct.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtaadcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtadcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtads.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtafcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtafs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtags.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtajcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtancs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtarms.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtars.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtas1.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtas2.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtas3.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtas4.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtass.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtbads.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtbas.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtbcps.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtbl1.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtbl2.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtbldls.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtbldps.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtblds1.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtblds2.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtbldts.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtbrcss.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtbrdrs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtbrs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtbs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtbss.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtbvcps.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcbars.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtccs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcctus.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcdrs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtces.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcgis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtchs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcims.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcncs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcos.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcpas.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcpis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcps.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcsas.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcshs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcsis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcsrs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcss.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcttcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcvcss.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcvdas.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtcvis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtdccs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtdcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtdcvs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtdddps.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtddps.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtdfss.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtdias.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtdimcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtdimrs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtdirs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtdose.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtdrs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtds.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtdspcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtdss.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtdtcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtdvhs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtdvrrs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drteas.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drteblds.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drteblos.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtecs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtecvis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtecvs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtes.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtfbdds.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtfds.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtfes.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtfgs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtfgss.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtfms.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtfsss.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtgas1.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtgas2.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtgas3.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtgas4.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtgas5.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtgas6.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtgmcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtgms.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtgpis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drthsdrs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtiais.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtians.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtiblds.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtibls.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtibs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drticpds.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drticps.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtics.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtidcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtiis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtimage.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtionpl.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtiontr.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtipiqs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtircs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtiseis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtitts.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtiwps.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtiws.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtlsds1.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtlsds2.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtlsds.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtmacds.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtmas.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtmdrs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtmls.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtmps.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtmris.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtmss.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtmttcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtmucs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtnmas.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtoas.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtois.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtopis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtos.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtosirs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtpasms.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtpass.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtpbcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtpbdds.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtpbdos.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtpcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtpcxs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtpdecs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtpdeds.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtpfms.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtpics.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtplan.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtplos.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtporcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtporis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtppcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtpros.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtprsis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtpscs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtpsics.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtpss.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtpsss.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtpvis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtqds.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtras.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrbas1.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrbas2.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrbdgs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrbls.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrbos1.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrbos2.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrbos3.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrbs1.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrbs2.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrbs3.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrbss.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrcdrs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrcos.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrcps.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrdais.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrdcks.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrdps.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrdrs1.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrdrs2.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrdrs3.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrds.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrdsis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrecs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrfgs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrfors.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrics.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrims.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtris.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrlsds.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrmdrs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrms.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrmss1.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrmss2.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrpcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrpis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrppcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrpphs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrpprs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrpps.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrppss.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrps.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrris1.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrris2.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrris3.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrrms.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrros.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrrpcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrrros.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrrs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrrshs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrscs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrsers.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrses.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrshs1.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrshs2.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrshs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrsis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrsns.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrsos.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrsrs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrss.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrsss.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrsts.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrtps1.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrtps2.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrtps3.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrtps4.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrtrs1.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrtrs2.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrvcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrvis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrws.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtrwvms.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtscris.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtscs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtscvs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtsdcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtsds.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtshds.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtsins.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtsis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtsns.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtspccs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtspcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtspgis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtsppcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtsptcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtss.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtssrcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtssrs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtsss.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtstrct.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drttms1.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drttms2.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drttrccs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drttreat.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drttrtcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drttscds.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drttscs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drttsibs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drttsmds.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtttrcs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drttts.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drttypes.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtudis.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtvls.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtwps.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtwrs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtwrsrs.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtws.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\libsrc\drtxrs.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\ZERO_CHECK.vcxproj">
+      <Project>{33C2E6D3-E4F9-392D-AB92-31556DB0CB8C}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\libsrc\dcmdata.vcxproj">
+      <Project>{360F027C-5CA4-3227-A50F-C180E7A49489}</Project>
+      <Name>dcmdata</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmimgle\libsrc\dcmimgle.vcxproj">
+      <Project>{CC7D7BC2-6533-303D-9B80-9A0D760D8BFC}</Project>
+      <Name>dcmimgle</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\oficonv\libsrc\oficonv.vcxproj">
+      <Project>{D66142B1-7BD6-324C-B3E7-C05C390FAD95}</Project>
+      <Name>oficonv</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\oflog\libsrc\oflog.vcxproj">
+      <Project>{FBDA2CA6-2108-3829-ABE9-40D09B8E679E}</Project>
+      <Name>oflog</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\ofstd\libsrc\ofstd.vcxproj">
+      <Project>{3D157540-0E3B-3317-9988-38F40D3163E7}</Project>
+      <Name>ofstd</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

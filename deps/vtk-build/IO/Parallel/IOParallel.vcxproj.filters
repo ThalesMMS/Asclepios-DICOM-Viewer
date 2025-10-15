@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkMultiBlockPLOT3DReaderInternals.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkEnSightWriter.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkMultiBlockPLOT3DReader.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkNek5000Reader.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkPChacoReader.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkPDataSetReader.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkPDataSetWriter.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkPImageWriter.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkPlot3DMetaReader.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkPOpenFOAMReader.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkEnSightWriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkMultiBlockPLOT3DReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkNek5000Reader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkPChacoReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkPDataSetReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkPDataSetWriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkPImageWriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkPlot3DMetaReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkPOpenFOAMReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\IO\Parallel\vtkIOParallelModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\vtkMultiBlockPLOT3DReaderInternals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk\IO\Parallel\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{D19F7611-7FF5-3992-B1B6-862847B24C81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{30271CBC-F011-39AF-9640-35478AC8E9E9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

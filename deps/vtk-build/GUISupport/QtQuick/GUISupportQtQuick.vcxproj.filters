@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\GUISupport\QtQuick\GUISupportQtQuick_autogen\mocs_compilation_Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtQuick\QQuickVTKInteractiveWidget.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtQuick\QQuickVTKInteractorAdapter.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtQuick\QQuickVTKRenderItem.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtQuick\QQuickVTKRenderWindow.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtQuick\QQuickVTKItem.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\GUISupport\QtQuick\GUISupportQtQuick_autogen\mocs_compilation_Release.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\GUISupport\QtQuick\GUISupportQtQuick_autogen\mocs_compilation_MinSizeRel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\GUISupport\QtQuick\GUISupportQtQuick_autogen\mocs_compilation_RelWithDebInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtQuick\QQuickVTKInteractiveWidget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtQuick\QQuickVTKInteractorAdapter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtQuick\QQuickVTKRenderItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtQuick\QQuickVTKRenderWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtQuick\QQuickVTKItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\GUISupport\QtQuick\vtkGUISupportQtQuickModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk\GUISupport\QtQuick\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{D19F7611-7FF5-3992-B1B6-862847B24C81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{30271CBC-F011-39AF-9640-35478AC8E9E9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

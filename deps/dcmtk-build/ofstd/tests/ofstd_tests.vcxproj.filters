@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tests.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tatof.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\terror.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tmap.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tvec.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tfilsys.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tftoa.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tthread.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tbase64.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tstring.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tstrutl.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tlist.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tstack.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tofdatim.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tofstd.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tmarkup.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tchrenc.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\txml.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tuuid.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\toffile.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tmem.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\toption.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\ttuple.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tlimits.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tvariant.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\tipc.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\tests\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2053398E-13DB-33BA-8BB7-0B2AB09438BE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

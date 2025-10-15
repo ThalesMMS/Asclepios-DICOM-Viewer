@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\apndimpl.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\appender.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\asyncap.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\clogger.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\config.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\consap.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\cygwin32.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\env.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\factory.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\fileap.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\fileinfo.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\filter.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\globinit.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\hierarchy.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\hierlock.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\layout.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\lloguser.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\lockfile.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\log4judp.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\logevent.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\logger.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\logimpl.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\loglevel.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\loglog.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\logmacro.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\mdc.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\ndc.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\ntelogap.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\nullap.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\objreg.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\oflog.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\patlay.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\pointer.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\property.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\queue.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\rootlog.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\sleep.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\snprintf.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\sockbuff.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\socket.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\socketap.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\strccloc.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\strcloc.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\strhelp.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\striconv.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\syncprims.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\syslogap.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\threads.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\timehelp.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\tls.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\version.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\winsock.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\windebap.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\winconap.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\libsrc\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2053398E-13DB-33BA-8BB7-0B2AB09438BE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

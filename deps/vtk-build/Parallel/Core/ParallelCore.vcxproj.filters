@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkCommunicator.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkDummyCommunicator.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkDummyController.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkFieldDataSerializer.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkMultiProcessController.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkMultiProcessStream.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkPDirectory.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkProcess.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkProcessGroup.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkPSystemTools.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkSocketCommunicator.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkSocketController.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkSubCommunicator.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkSubGroup.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkThreadedCallbackQueue.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkThreadedCallbackQueue.txx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkThreadedTaskQueue.txx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkCommunicator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkDummyCommunicator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkDummyController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkFieldDataSerializer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkMultiProcessController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkMultiProcessStream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkPDirectory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkProcess.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkProcessGroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkPSystemTools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkSocketCommunicator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkSocketController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkSubCommunicator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkSubGroup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkThreadedCallbackQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\vtkThreadedTaskQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\Parallel\Core\vtkParallelCoreModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\Parallel\Core\vtkSocketCommunicatorHash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\CMakeFiles\ceaf48bf3d8618d092e68bfbe7733319\vtkSocketCommunicatorHash.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Parallel\Core\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{89AD89A6-376B-3834-AF06-5E45C977ED11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{D19F7611-7FF5-3992-B1B6-862847B24C81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{30271CBC-F011-39AF-9640-35478AC8E9E9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\CMakeFiles\230d61aad4b0faacd6b54a2a3f5caf0a\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E6BF2D0F-1095-3F85-B618-A5B657AC00B9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,8 @@
+// SPDX-FileCopyrightText: Copyright (c) Ken Martin, Will Schroeder, Bill Lorensen
+// SPDX-License-Identifier: BSD-3-Clause
+#ifndef vtkGlyph3DVS_h
+#define vtkGlyph3DVS_h
+
+extern const char *vtkGlyph3DVS;
+
+#endif

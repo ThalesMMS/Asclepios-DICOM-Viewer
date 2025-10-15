@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\CMakeFiles\8b21639f0fd3a53dc0c699f80e8c0662\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Files">
+      <UniqueIdentifier>{A95CFD86-A9B9-309E-917B-4C8157ED6535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{89AD89A6-376B-3834-AF06-5E45C977ED11}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

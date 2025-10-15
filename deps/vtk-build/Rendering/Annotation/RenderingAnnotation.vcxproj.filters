@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkAnnotatedCubeActor.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkArcPlotter.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkAxesActor.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkAxisActor.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkAxisActor2D.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkAxisFollower.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkBarChartActor.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkCaptionActor2D.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkConvexHull2D.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkCornerAnnotation.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkCubeAxesActor.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkCubeAxesActor2D.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkGraphAnnotationLayersFilter.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkLeaderActor2D.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkLegendBoxActor.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkLegendScaleActor.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkParallelCoordinatesActor.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkPieChartActor.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkPolarAxesActor.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkProp3DAxisFollower.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkScalarBarActor.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkSpiderPlotActor.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkXYPlotActor.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkAnnotatedCubeActor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkArcPlotter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkAxesActor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkAxisActor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkAxisActor2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkAxisFollower.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkBarChartActor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkCaptionActor2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkConvexHull2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkCornerAnnotation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkCubeAxesActor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkCubeAxesActor2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkGraphAnnotationLayersFilter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkLeaderActor2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkLegendBoxActor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkLegendScaleActor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkParallelCoordinatesActor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkPieChartActor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkPolarAxesActor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkProp3DAxisFollower.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkScalarBarActor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkSpiderPlotActor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\vtkXYPlotActor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\Rendering\Annotation\vtkRenderingAnnotationModule.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk\Rendering\Annotation\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{D19F7611-7FF5-3992-B1B6-862847B24C81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{30271CBC-F011-39AF-9640-35478AC8E9E9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

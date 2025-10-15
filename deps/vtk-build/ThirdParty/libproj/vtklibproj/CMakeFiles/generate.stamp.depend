@@ -1,0 +1,14 @@
+# CMake generation dependency list for this directory.
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeParseArguments.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckFunctionExists.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckIncludeFile.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckLibraryExists.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindThreads.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/CMakeLists.txt
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/cmake/ProjConfig.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/cmake/ProjUtilities.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/cmake/ProjVersion.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/cmake/proj_config.cmake.in

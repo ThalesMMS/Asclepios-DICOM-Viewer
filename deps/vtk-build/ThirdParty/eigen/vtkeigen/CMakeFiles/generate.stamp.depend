@@ -1,0 +1,5 @@
+# CMake generation dependency list for this directory.
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCXXCompilerFlag.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/eigen/vtkeigen/CMakeLists.txt
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/eigen/vtkeigen/cmake/FindStandardMathLibrary.cmake

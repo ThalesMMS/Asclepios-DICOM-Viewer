@@ -1,0 +1,10 @@
+# CMake generation dependency list for this directory.
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckIncludeFile.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckLibraryExists.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindThreads.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/exodusII/vtkexodusII/CMakeLists.txt
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/exodusII/vtkexodusII/cmake/exodus_config.h.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/exodusII/vtkexodusII/include/exodusII_cfg.h.in

@@ -1,0 +1,1211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{15AC4407-7571-3692-8C2B-7ACD421347C3}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>oficonv_data_files</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\CMakeFiles\bcfcc546b755e8ea4b7e5fd1708db776\oficonv_data_files.rule">
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Creating oficonv data files from source</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/CP/CP936EXT%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/CP/CP936EXT%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/CP/UCS%CP936EXT.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/CP/UCS%CP936EXT.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB18030%UCS@BMP.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB18030%UCS@BMP.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312EXT%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312EXT%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312GBK%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312GBK%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312UDA1%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312UDA1%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312UDA2%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312UDA2%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GBKEXT%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GBKEXT%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GBKUDA%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GBKUDA%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GB2312.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GB2312.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GB2312EXT.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GB2312EXT.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GB2312UDA1.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GB2312UDA1.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GB2312UDA2.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GB2312UDA2.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GBKEXT.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GBKEXT.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GBKUDA.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GBKUDA.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS@BMP%GB18030.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS@BMP%GB18030.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-2%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-2%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-3%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-3%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-4%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-4%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-5%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-5%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-6%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-6%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-7%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-7%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-8%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-8%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-9%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-9%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-11%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-11%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-15%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-15%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-2.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-2.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-3.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-3.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-4.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-4.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-5.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-5.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-6.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-6.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-7.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-7.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-8.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-8.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-9.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-9.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-11.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-11.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-15.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-15.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/JISX0201-KANA%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/JISX0201-KANA%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/JISX0208@1990%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/JISX0208@1990%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/JISX0212%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/JISX0212%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/UCS%JISX0201-KANA.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/UCS%JISX0201-KANA.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/UCS%JISX0208@1990.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/UCS%JISX0208@1990.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/UCS%JISX0212.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/UCS%JISX0212.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/KS/KSC5601HANGUL%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/KS/KSC5601HANGUL%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/KS/KSC5601HANJA%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/KS/KSC5601HANJA%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/KS/UCS%KSC5601HANGUL.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/KS/UCS%KSC5601HANGUL.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/KS/UCS%KSC5601HANJA.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/KS/UCS%KSC5601HANJA.src"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO646/ISO646-JP%UCS.646" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO646/ISO646-JP%UCS.646"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO646/ISO646-US%UCS.646" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO646/ISO646-US%UCS.646"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/mapper.dir" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/mapper.dir"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -m -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/mapper.dir.db" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/mapper.dir"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkcsmapper.exe -p -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/charset.pivot.pvdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/charset.pivot"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/EUC/EUC-CN.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/EUC/EUC-CN.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/EUC/EUC-KR.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/EUC/EUC-KR.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/GB/GB18030.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/GB/GB18030.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/GB/GBK.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/GB/GBK.src"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-1.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-1 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-2.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-2 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-3.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-3 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-4.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-4 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-5.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-5 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-6.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-6 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-7.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-7 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-8.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-8 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-9.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-9 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-11.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-11 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-15.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-15 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-1.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-1.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-2.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-2.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-3.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-3.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-4.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-4.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-5.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-5.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-6.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-6.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-7.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-7.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-8.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-8.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-9.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-9.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-11.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-11.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-15.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-15.src"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO646/ISO646.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO646-US.src" -DREGEX=ISO646-x -DREPLACE=ISO646-US -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO646/ISO646-US.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO646-US.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/MISC/JISX0201-KANA.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/MISC/JISX0201-KANA.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/MISC/JISX0208@1990.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/MISC/JISX0208@1990.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/MISC/Shift_JIS.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/MISC/Shift_JIS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/MISC/JISX0212.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/MISC/JISX0212.src"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/UTF/UTF.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DREGEX=UTF-mod -DREPLACE=UTF1632 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/UTF/UTF.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp03.src" -DREGEX=UTF-mod -DREPLACE=UTF8 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp04.src" -DREGEX=UTF-x -DREPLACE=UTF-16-INTERNAL -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp05.src" -DREGEX=UTF-x -DREPLACE=UTF-16-SWAPPED -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp06.src" -DREGEX=UTF-x -DREPLACE=UTF-16 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp07.src" -DREGEX=UTF-x -DREPLACE=UTF-16BE -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp08.src" -DREGEX=UTF-x -DREPLACE=UTF-16LE -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp09.src" -DREGEX=UTF-x -DREPLACE=UTF-32-INTERNAL -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp10.src" -DREGEX=UTF-x -DREPLACE=UTF-32-SWAPPED -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp11.src" -DREGEX=UTF-x -DREPLACE=UTF-32 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp12.src" -DREGEX=UTF-x -DREPLACE=UTF-32BE -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp13.src" -DREGEX=UTF-x -DREPLACE=UTF-32LE -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp03.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp15.src" -DREGEX=UTF-x -DREPLACE=UTF-8 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp04.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16-INTERNAL.src" -DREGEX=UTF-var -DREPLACE=utf16,internal,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp05.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16-SWAPPED.src" -DREGEX=UTF-var -DREPLACE=utf16,swapped,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp06.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16.src" -DREGEX=UTF-var -DREPLACE=utf16 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp07.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16BE.src" -DREGEX=UTF-var -DREPLACE=utf16,big,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp08.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16LE.src" -DREGEX=UTF-var -DREPLACE=utf16,little,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp09.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32-INTERNAL.src" -DREGEX=UTF-var -DREPLACE=utf32,internal,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp10.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32-SWAPPED.src" -DREGEX=UTF-var -DREPLACE=utf32,swapped,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp11.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32.src" -DREGEX=UTF-var -DREPLACE=utf32 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp12.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32BE.src" -DREGEX=UTF-var -DREPLACE=utf32,big,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp13.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32LE.src" -DREGEX=UTF-var -DREPLACE=utf32,little,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp15.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-8.src" -DREGEX=UTF-var -DREPLACE=utf8 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16-INTERNAL.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16-INTERNAL.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16-SWAPPED.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16-SWAPPED.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16BE.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16BE.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16LE.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16LE.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32-INTERNAL.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32-INTERNAL.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32-SWAPPED.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32-SWAPPED.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32BE.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32BE.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32LE.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32LE.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-8.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-8.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -m -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/esdb.dir.db" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/esdb.dir"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Debug\mkesdb.exe -m -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/esdb.alias.db" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/esdb.alias"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\oficonv\datasrc\CMakeFiles\oficonv_data_files</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Creating oficonv data files from source</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/CP/CP936EXT%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/CP/CP936EXT%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/CP/UCS%CP936EXT.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/CP/UCS%CP936EXT.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB18030%UCS@BMP.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB18030%UCS@BMP.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312EXT%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312EXT%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312GBK%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312GBK%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312UDA1%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312UDA1%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312UDA2%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312UDA2%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GBKEXT%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GBKEXT%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GBKUDA%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GBKUDA%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GB2312.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GB2312.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GB2312EXT.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GB2312EXT.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GB2312UDA1.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GB2312UDA1.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GB2312UDA2.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GB2312UDA2.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GBKEXT.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GBKEXT.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GBKUDA.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GBKUDA.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS@BMP%GB18030.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS@BMP%GB18030.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-2%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-2%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-3%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-3%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-4%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-4%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-5%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-5%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-6%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-6%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-7%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-7%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-8%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-8%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-9%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-9%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-11%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-11%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-15%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-15%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-2.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-2.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-3.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-3.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-4.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-4.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-5.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-5.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-6.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-6.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-7.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-7.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-8.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-8.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-9.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-9.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-11.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-11.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-15.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-15.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/JISX0201-KANA%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/JISX0201-KANA%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/JISX0208@1990%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/JISX0208@1990%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/JISX0212%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/JISX0212%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/UCS%JISX0201-KANA.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/UCS%JISX0201-KANA.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/UCS%JISX0208@1990.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/UCS%JISX0208@1990.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/UCS%JISX0212.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/UCS%JISX0212.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/KS/KSC5601HANGUL%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/KS/KSC5601HANGUL%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/KS/KSC5601HANJA%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/KS/KSC5601HANJA%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/KS/UCS%KSC5601HANGUL.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/KS/UCS%KSC5601HANGUL.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/KS/UCS%KSC5601HANJA.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/KS/UCS%KSC5601HANJA.src"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO646/ISO646-JP%UCS.646" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO646/ISO646-JP%UCS.646"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO646/ISO646-US%UCS.646" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO646/ISO646-US%UCS.646"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/mapper.dir" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/mapper.dir"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -m -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/mapper.dir.db" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/mapper.dir"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkcsmapper.exe -p -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/charset.pivot.pvdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/charset.pivot"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/EUC/EUC-CN.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/EUC/EUC-CN.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/EUC/EUC-KR.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/EUC/EUC-KR.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/GB/GB18030.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/GB/GB18030.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/GB/GBK.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/GB/GBK.src"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-1.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-1 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-2.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-2 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-3.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-3 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-4.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-4 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-5.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-5 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-6.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-6 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-7.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-7 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-8.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-8 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-9.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-9 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-11.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-11 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-15.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-15 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-1.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-1.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-2.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-2.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-3.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-3.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-4.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-4.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-5.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-5.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-6.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-6.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-7.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-7.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-8.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-8.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-9.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-9.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-11.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-11.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-15.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-15.src"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO646/ISO646.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO646-US.src" -DREGEX=ISO646-x -DREPLACE=ISO646-US -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO646/ISO646-US.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO646-US.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/MISC/JISX0201-KANA.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/MISC/JISX0201-KANA.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/MISC/JISX0208@1990.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/MISC/JISX0208@1990.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/MISC/Shift_JIS.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/MISC/Shift_JIS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/MISC/JISX0212.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/MISC/JISX0212.src"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/UTF/UTF.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DREGEX=UTF-mod -DREPLACE=UTF1632 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/UTF/UTF.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp03.src" -DREGEX=UTF-mod -DREPLACE=UTF8 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp04.src" -DREGEX=UTF-x -DREPLACE=UTF-16-INTERNAL -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp05.src" -DREGEX=UTF-x -DREPLACE=UTF-16-SWAPPED -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp06.src" -DREGEX=UTF-x -DREPLACE=UTF-16 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp07.src" -DREGEX=UTF-x -DREPLACE=UTF-16BE -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp08.src" -DREGEX=UTF-x -DREPLACE=UTF-16LE -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp09.src" -DREGEX=UTF-x -DREPLACE=UTF-32-INTERNAL -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp10.src" -DREGEX=UTF-x -DREPLACE=UTF-32-SWAPPED -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp11.src" -DREGEX=UTF-x -DREPLACE=UTF-32 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp12.src" -DREGEX=UTF-x -DREPLACE=UTF-32BE -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp13.src" -DREGEX=UTF-x -DREPLACE=UTF-32LE -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp03.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp15.src" -DREGEX=UTF-x -DREPLACE=UTF-8 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp04.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16-INTERNAL.src" -DREGEX=UTF-var -DREPLACE=utf16,internal,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp05.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16-SWAPPED.src" -DREGEX=UTF-var -DREPLACE=utf16,swapped,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp06.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16.src" -DREGEX=UTF-var -DREPLACE=utf16 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp07.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16BE.src" -DREGEX=UTF-var -DREPLACE=utf16,big,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp08.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16LE.src" -DREGEX=UTF-var -DREPLACE=utf16,little,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp09.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32-INTERNAL.src" -DREGEX=UTF-var -DREPLACE=utf32,internal,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp10.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32-SWAPPED.src" -DREGEX=UTF-var -DREPLACE=utf32,swapped,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp11.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32.src" -DREGEX=UTF-var -DREPLACE=utf32 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp12.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32BE.src" -DREGEX=UTF-var -DREPLACE=utf32,big,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp13.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32LE.src" -DREGEX=UTF-var -DREPLACE=utf32,little,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp15.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-8.src" -DREGEX=UTF-var -DREPLACE=utf8 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16-INTERNAL.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16-INTERNAL.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16-SWAPPED.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16-SWAPPED.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16BE.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16BE.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16LE.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16LE.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32-INTERNAL.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32-INTERNAL.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32-SWAPPED.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32-SWAPPED.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32BE.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32BE.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32LE.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32LE.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-8.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-8.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -m -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/esdb.dir.db" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/esdb.dir"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\Release\mkesdb.exe -m -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/esdb.alias.db" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/esdb.alias"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\oficonv\datasrc\CMakeFiles\oficonv_data_files</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</VerifyInputsAndOutputsExist>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Creating oficonv data files from source</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/CP/CP936EXT%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/CP/CP936EXT%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/CP/UCS%CP936EXT.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/CP/UCS%CP936EXT.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB18030%UCS@BMP.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB18030%UCS@BMP.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312EXT%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312EXT%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312GBK%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312GBK%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312UDA1%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312UDA1%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312UDA2%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312UDA2%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GBKEXT%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GBKEXT%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GBKUDA%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GBKUDA%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GB2312.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GB2312.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GB2312EXT.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GB2312EXT.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GB2312UDA1.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GB2312UDA1.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GB2312UDA2.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GB2312UDA2.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GBKEXT.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GBKEXT.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GBKUDA.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GBKUDA.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS@BMP%GB18030.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS@BMP%GB18030.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-2%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-2%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-3%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-3%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-4%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-4%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-5%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-5%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-6%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-6%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-7%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-7%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-8%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-8%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-9%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-9%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-11%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-11%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-15%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-15%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-2.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-2.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-3.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-3.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-4.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-4.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-5.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-5.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-6.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-6.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-7.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-7.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-8.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-8.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-9.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-9.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-11.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-11.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-15.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-15.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/JISX0201-KANA%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/JISX0201-KANA%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/JISX0208@1990%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/JISX0208@1990%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/JISX0212%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/JISX0212%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/UCS%JISX0201-KANA.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/UCS%JISX0201-KANA.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/UCS%JISX0208@1990.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/UCS%JISX0208@1990.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/UCS%JISX0212.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/UCS%JISX0212.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/KS/KSC5601HANGUL%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/KS/KSC5601HANGUL%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/KS/KSC5601HANJA%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/KS/KSC5601HANJA%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/KS/UCS%KSC5601HANGUL.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/KS/UCS%KSC5601HANGUL.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/KS/UCS%KSC5601HANJA.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/KS/UCS%KSC5601HANJA.src"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO646/ISO646-JP%UCS.646" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO646/ISO646-JP%UCS.646"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO646/ISO646-US%UCS.646" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO646/ISO646-US%UCS.646"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/mapper.dir" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/mapper.dir"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -m -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/mapper.dir.db" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/mapper.dir"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkcsmapper.exe -p -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/charset.pivot.pvdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/charset.pivot"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/EUC/EUC-CN.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/EUC/EUC-CN.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/EUC/EUC-KR.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/EUC/EUC-KR.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/GB/GB18030.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/GB/GB18030.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/GB/GBK.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/GB/GBK.src"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-1.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-1 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-2.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-2 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-3.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-3 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-4.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-4 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-5.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-5 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-6.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-6 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-7.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-7 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-8.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-8 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-9.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-9 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-11.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-11 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-15.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-15 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-1.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-1.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-2.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-2.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-3.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-3.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-4.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-4.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-5.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-5.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-6.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-6.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-7.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-7.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-8.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-8.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-9.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-9.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-11.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-11.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-15.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-15.src"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO646/ISO646.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO646-US.src" -DREGEX=ISO646-x -DREPLACE=ISO646-US -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO646/ISO646-US.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO646-US.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/MISC/JISX0201-KANA.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/MISC/JISX0201-KANA.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/MISC/JISX0208@1990.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/MISC/JISX0208@1990.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/MISC/Shift_JIS.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/MISC/Shift_JIS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/MISC/JISX0212.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/MISC/JISX0212.src"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/UTF/UTF.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DREGEX=UTF-mod -DREPLACE=UTF1632 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/UTF/UTF.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp03.src" -DREGEX=UTF-mod -DREPLACE=UTF8 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp04.src" -DREGEX=UTF-x -DREPLACE=UTF-16-INTERNAL -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp05.src" -DREGEX=UTF-x -DREPLACE=UTF-16-SWAPPED -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp06.src" -DREGEX=UTF-x -DREPLACE=UTF-16 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp07.src" -DREGEX=UTF-x -DREPLACE=UTF-16BE -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp08.src" -DREGEX=UTF-x -DREPLACE=UTF-16LE -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp09.src" -DREGEX=UTF-x -DREPLACE=UTF-32-INTERNAL -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp10.src" -DREGEX=UTF-x -DREPLACE=UTF-32-SWAPPED -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp11.src" -DREGEX=UTF-x -DREPLACE=UTF-32 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp12.src" -DREGEX=UTF-x -DREPLACE=UTF-32BE -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp13.src" -DREGEX=UTF-x -DREPLACE=UTF-32LE -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp03.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp15.src" -DREGEX=UTF-x -DREPLACE=UTF-8 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp04.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16-INTERNAL.src" -DREGEX=UTF-var -DREPLACE=utf16,internal,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp05.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16-SWAPPED.src" -DREGEX=UTF-var -DREPLACE=utf16,swapped,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp06.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16.src" -DREGEX=UTF-var -DREPLACE=utf16 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp07.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16BE.src" -DREGEX=UTF-var -DREPLACE=utf16,big,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp08.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16LE.src" -DREGEX=UTF-var -DREPLACE=utf16,little,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp09.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32-INTERNAL.src" -DREGEX=UTF-var -DREPLACE=utf32,internal,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp10.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32-SWAPPED.src" -DREGEX=UTF-var -DREPLACE=utf32,swapped,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp11.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32.src" -DREGEX=UTF-var -DREPLACE=utf32 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp12.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32BE.src" -DREGEX=UTF-var -DREPLACE=utf32,big,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp13.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32LE.src" -DREGEX=UTF-var -DREPLACE=utf32,little,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp15.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-8.src" -DREGEX=UTF-var -DREPLACE=utf8 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16-INTERNAL.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16-INTERNAL.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16-SWAPPED.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16-SWAPPED.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16BE.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16BE.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16LE.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16LE.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32-INTERNAL.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32-INTERNAL.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32-SWAPPED.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32-SWAPPED.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32BE.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32BE.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32LE.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32LE.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-8.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-8.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -m -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/esdb.dir.db" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/esdb.dir"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\MinSizeRel\mkesdb.exe -m -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/esdb.alias.db" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/esdb.alias"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\oficonv\datasrc\CMakeFiles\oficonv_data_files</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</VerifyInputsAndOutputsExist>
+      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</BuildInParallel>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Creating oficonv data files from source</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/CP/CP936EXT%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/CP/CP936EXT%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/CP/UCS%CP936EXT.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/CP/UCS%CP936EXT.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB18030%UCS@BMP.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB18030%UCS@BMP.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312EXT%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312EXT%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312GBK%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312GBK%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312UDA1%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312UDA1%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GB2312UDA2%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GB2312UDA2%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GBKEXT%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GBKEXT%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/GBKUDA%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/GBKUDA%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GB2312.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GB2312.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GB2312EXT.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GB2312EXT.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GB2312UDA1.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GB2312UDA1.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GB2312UDA2.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GB2312UDA2.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GBKEXT.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GBKEXT.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS%GBKUDA.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS%GBKUDA.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/GB/UCS@BMP%GB18030.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/GB/UCS@BMP%GB18030.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-2%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-2%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-3%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-3%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-4%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-4%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-5%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-5%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-6%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-6%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-7%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-7%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-8%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-8%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-9%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-9%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-11%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-11%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/ISO-8859-15%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/ISO-8859-15%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-2.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-2.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-3.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-3.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-4.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-4.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-5.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-5.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-6.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-6.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-7.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-7.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-8.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-8.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-9.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-9.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-11.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-11.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO-8859/UCS%ISO-8859-15.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO-8859/UCS%ISO-8859-15.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/JISX0201-KANA%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/JISX0201-KANA%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/JISX0208@1990%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/JISX0208@1990%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/JISX0212%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/JISX0212%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/UCS%JISX0201-KANA.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/UCS%JISX0201-KANA.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/UCS%JISX0208@1990.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/UCS%JISX0208@1990.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/JIS/UCS%JISX0212.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/JIS/UCS%JISX0212.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/KS/KSC5601HANGUL%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/KS/KSC5601HANGUL%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/KS/KSC5601HANJA%UCS.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/KS/KSC5601HANJA%UCS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/KS/UCS%KSC5601HANGUL.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/KS/UCS%KSC5601HANGUL.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/KS/UCS%KSC5601HANJA.mps" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/KS/UCS%KSC5601HANJA.src"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO646/ISO646-JP%UCS.646" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO646/ISO646-JP%UCS.646"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/ISO646/ISO646-US%UCS.646" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/ISO646/ISO646-US%UCS.646"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/mapper.dir" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/mapper.dir"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -m -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/mapper.dir.db" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/mapper.dir"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkcsmapper.exe -p -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/csmapper/charset.pivot.pvdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/csmapper/charset.pivot"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/EUC/EUC-CN.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/EUC/EUC-CN.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/EUC/EUC-KR.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/EUC/EUC-KR.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/GB/GB18030.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/GB/GB18030.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/GB/GBK.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/GB/GBK.src"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-1.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-1 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-2.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-2 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-3.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-3 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-4.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-4 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-5.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-5 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-6.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-6 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-7.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-7 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-8.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-8 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-9.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-9 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-11.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-11 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO-8859/ISO-8859.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-15.src" -DREGEX=ISO-8859-x -DREPLACE=ISO-8859-15 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-1.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-1.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-2.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-2.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-3.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-3.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-4.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-4.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-5.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-5.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-6.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-6.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-7.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-7.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-8.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-8.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-9.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-9.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-11.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-11.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO-8859/ISO-8859-15.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO-8859-15.src"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/ISO646/ISO646.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO646-US.src" -DREGEX=ISO646-x -DREPLACE=ISO646-US -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/ISO646/ISO646-US.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/ISO646-US.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/MISC/JISX0201-KANA.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/MISC/JISX0201-KANA.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/MISC/JISX0208@1990.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/MISC/JISX0208@1990.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/MISC/Shift_JIS.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/MISC/Shift_JIS.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/MISC/JISX0212.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/MISC/JISX0212.src"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/UTF/UTF.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DREGEX=UTF-mod -DREPLACE=UTF1632 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/UTF/UTF.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp03.src" -DREGEX=UTF-mod -DREPLACE=UTF8 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp04.src" -DREGEX=UTF-x -DREPLACE=UTF-16-INTERNAL -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp05.src" -DREGEX=UTF-x -DREPLACE=UTF-16-SWAPPED -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp06.src" -DREGEX=UTF-x -DREPLACE=UTF-16 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp07.src" -DREGEX=UTF-x -DREPLACE=UTF-16BE -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp08.src" -DREGEX=UTF-x -DREPLACE=UTF-16LE -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp09.src" -DREGEX=UTF-x -DREPLACE=UTF-32-INTERNAL -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp10.src" -DREGEX=UTF-x -DREPLACE=UTF-32-SWAPPED -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp11.src" -DREGEX=UTF-x -DREPLACE=UTF-32 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp12.src" -DREGEX=UTF-x -DREPLACE=UTF-32BE -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp01.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp13.src" -DREGEX=UTF-x -DREPLACE=UTF-32LE -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp03.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp15.src" -DREGEX=UTF-x -DREPLACE=UTF-8 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp04.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16-INTERNAL.src" -DREGEX=UTF-var -DREPLACE=utf16,internal,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp05.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16-SWAPPED.src" -DREGEX=UTF-var -DREPLACE=utf16,swapped,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp06.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16.src" -DREGEX=UTF-var -DREPLACE=utf16 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp07.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16BE.src" -DREGEX=UTF-var -DREPLACE=utf16,big,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp08.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16LE.src" -DREGEX=UTF-var -DREPLACE=utf16,little,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp09.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32-INTERNAL.src" -DREGEX=UTF-var -DREPLACE=utf32,internal,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp10.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32-SWAPPED.src" -DREGEX=UTF-var -DREPLACE=utf32,swapped,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp11.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32.src" -DREGEX=UTF-var -DREPLACE=utf32 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp12.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32BE.src" -DREGEX=UTF-var -DREPLACE=utf32,big,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp13.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32LE.src" -DREGEX=UTF-var -DREPLACE=utf32,little,force -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DINFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/temp15.src" -DOUTFILE="D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-8.src" -DREGEX=UTF-var -DREPLACE=utf8 -P "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/replace.cmake"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16-INTERNAL.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16-INTERNAL.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16-SWAPPED.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16-SWAPPED.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16BE.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16BE.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-16LE.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-16LE.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32-INTERNAL.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32-INTERNAL.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32-SWAPPED.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32-SWAPPED.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32BE.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32BE.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-32LE.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-32LE.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/UTF/UTF-8.esdb" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/UTF-8.src"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -m -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/esdb.dir.db" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/esdb.dir"
+if %errorlevel% neq 0 goto :cmEnd
+..\..\bin\RelWithDebInfo\mkesdb.exe -m -o "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/data/esdb/esdb.alias.db" "D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/esdb/esdb.alias"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\oficonv\datasrc\CMakeFiles\oficonv_data_files</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</VerifyInputsAndOutputsExist>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\datasrc\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/dcmtk -BD:/Asclepios-DICOM-Viewer/deps/dcmtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\oficonv\datasrc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/dcmtk -BD:/Asclepios-DICOM-Viewer/deps/dcmtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\oficonv\datasrc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/dcmtk -BD:/Asclepios-DICOM-Viewer/deps/dcmtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\oficonv\datasrc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/datasrc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/dcmtk -BD:/Asclepios-DICOM-Viewer/deps/dcmtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/oficonv/datasrc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\oficonv\datasrc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\oficonv\datasrc\CMakeFiles\oficonv_data_files">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\ZERO_CHECK.vcxproj">
+      <Project>{33C2E6D3-E4F9-392D-AB92-31556DB0CB8C}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\oficonv\apps\mkcsmapper.vcxproj">
+      <Project>{1305AF85-CBA0-34BE-B5DF-1C5BC5F72FF8}</Project>
+      <Name>mkcsmapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\oficonv\apps\mkesdb.vcxproj">
+      <Project>{229AC1F2-514E-3548-9D72-23882177C69A}</Project>
+      <Name>mkesdb</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

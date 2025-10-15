@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B42B990C-B24E-30ED-8519-6E24B74DC781}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>dcmnet</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\lib\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">dcmnet.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">dcmnet</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\lib\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">dcmnet.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">dcmnet</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\lib\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">dcmnet.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">dcmnet</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\lib\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">dcmnet.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">dcmnet</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;DEBUG;dcmnet_EXPORTS;USE_NULL_SAFE_OFSTRING;DCMTK_BUILD_IN_PROGRESS;NOMINMAX;_CRT_FAR_MAPPINGS_NO_DEPRECATE;_CRT_IS_WCTYPE_NO_DEPRECATE;_CRT_MANAGED_FP_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE_GLOBALS;_CRT_SETERRORMODE_BEEP_SLEEP_NO_DEPRECATE;_CRT_TIME_FUNCTIONS_NO_DEPRECATE;_CRT_VCCLRIT_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;_REENTRANT;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;DEBUG;dcmnet_EXPORTS;USE_NULL_SAFE_OFSTRING;DCMTK_BUILD_IN_PROGRESS;NOMINMAX;_CRT_FAR_MAPPINGS_NO_DEPRECATE;_CRT_IS_WCTYPE_NO_DEPRECATE;_CRT_MANAGED_FP_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE_GLOBALS;_CRT_SETERRORMODE_BEEP_SLEEP_NO_DEPRECATE;_CRT_TIME_FUNCTIONS_NO_DEPRECATE;_CRT_VCCLRIT_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;_REENTRANT;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;dcmnet_EXPORTS;USE_NULL_SAFE_OFSTRING;DCMTK_BUILD_IN_PROGRESS;NOMINMAX;_CRT_FAR_MAPPINGS_NO_DEPRECATE;_CRT_IS_WCTYPE_NO_DEPRECATE;_CRT_MANAGED_FP_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE_GLOBALS;_CRT_SETERRORMODE_BEEP_SLEEP_NO_DEPRECATE;_CRT_TIME_FUNCTIONS_NO_DEPRECATE;_CRT_VCCLRIT_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;_REENTRANT;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;dcmnet_EXPORTS;USE_NULL_SAFE_OFSTRING;DCMTK_BUILD_IN_PROGRESS;NOMINMAX;_CRT_FAR_MAPPINGS_NO_DEPRECATE;_CRT_IS_WCTYPE_NO_DEPRECATE;_CRT_MANAGED_FP_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE_GLOBALS;_CRT_SETERRORMODE_BEEP_SLEEP_NO_DEPRECATE;_CRT_TIME_FUNCTIONS_NO_DEPRECATE;_CRT_VCCLRIT_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;_REENTRANT;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;dcmnet_EXPORTS;USE_NULL_SAFE_OFSTRING;DCMTK_BUILD_IN_PROGRESS;NOMINMAX;_CRT_FAR_MAPPINGS_NO_DEPRECATE;_CRT_IS_WCTYPE_NO_DEPRECATE;_CRT_MANAGED_FP_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE_GLOBALS;_CRT_SETERRORMODE_BEEP_SLEEP_NO_DEPRECATE;_CRT_TIME_FUNCTIONS_NO_DEPRECATE;_CRT_VCCLRIT_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;_REENTRANT;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;dcmnet_EXPORTS;USE_NULL_SAFE_OFSTRING;DCMTK_BUILD_IN_PROGRESS;NOMINMAX;_CRT_FAR_MAPPINGS_NO_DEPRECATE;_CRT_IS_WCTYPE_NO_DEPRECATE;_CRT_MANAGED_FP_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE_GLOBALS;_CRT_SETERRORMODE_BEEP_SLEEP_NO_DEPRECATE;_CRT_TIME_FUNCTIONS_NO_DEPRECATE;_CRT_VCCLRIT_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;_REENTRANT;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level4</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;dcmnet_EXPORTS;USE_NULL_SAFE_OFSTRING;DCMTK_BUILD_IN_PROGRESS;NOMINMAX;_CRT_FAR_MAPPINGS_NO_DEPRECATE;_CRT_IS_WCTYPE_NO_DEPRECATE;_CRT_MANAGED_FP_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE_GLOBALS;_CRT_SETERRORMODE_BEEP_SLEEP_NO_DEPRECATE;_CRT_TIME_FUNCTIONS_NO_DEPRECATE;_CRT_VCCLRIT_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;_REENTRANT;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;dcmnet_EXPORTS;USE_NULL_SAFE_OFSTRING;DCMTK_BUILD_IN_PROGRESS;NOMINMAX;_CRT_FAR_MAPPINGS_NO_DEPRECATE;_CRT_IS_WCTYPE_NO_DEPRECATE;_CRT_MANAGED_FP_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE_GLOBALS;_CRT_SETERRORMODE_BEEP_SLEEP_NO_DEPRECATE;_CRT_TIME_FUNCTIONS_NO_DEPRECATE;_CRT_VCCLRIT_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;_REENTRANT;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmnet/libsrc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/dcmtk -BD:/Asclepios-DICOM-Viewer/deps/dcmtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/dcmnet/libsrc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmnet\libsrc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmnet/libsrc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/dcmtk -BD:/Asclepios-DICOM-Viewer/deps/dcmtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/dcmnet/libsrc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmnet\libsrc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmnet/libsrc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/dcmtk -BD:/Asclepios-DICOM-Viewer/deps/dcmtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/dcmnet/libsrc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmnet\libsrc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmnet/libsrc/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/dcmtk -BD:/Asclepios-DICOM-Viewer/deps/dcmtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/dcmnet/libsrc/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmnet\libsrc\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\assoc.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\cond.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dcasccff.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dcasccfg.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dccfenmp.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dccfpcmp.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dccfprmp.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dccfrsmp.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dccftsmp.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dccfuidh.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dcmlayer.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dcmtrans.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dcompat.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dcuserid.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dfindscu.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dimcancl.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dimcmd.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dimdump.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dimecho.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dimfind.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dimget.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dimmove.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dimse.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dimstore.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\diutil.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dstorscp.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dstorscu.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dul.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dulconst.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dulextra.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dulfsm.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dulparse.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dulpres.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\dwrap.c" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\extneg.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\helpers.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\lst.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\scp.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\scpcfg.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\scppool.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\scpthrd.cc" />
+    <ClCompile Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\libsrc\scu.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\ZERO_CHECK.vcxproj">
+      <Project>{33C2E6D3-E4F9-392D-AB92-31556DB0CB8C}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\libsrc\dcmdata.vcxproj">
+      <Project>{360F027C-5CA4-3227-A50F-C180E7A49489}</Project>
+      <Name>dcmdata</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\oficonv\libsrc\oficonv.vcxproj">
+      <Project>{D66142B1-7BD6-324C-B3E7-C05C390FAD95}</Project>
+      <Name>oficonv</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\oflog\libsrc\oflog.vcxproj">
+      <Project>{FBDA2CA6-2108-3829-ABE9-40D09B8E679E}</Project>
+      <Name>oflog</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\ofstd\libsrc\ofstd.vcxproj">
+      <Project>{3D157540-0E3B-3317-9988-38F40D3163E7}</Project>
+      <Name>ofstd</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

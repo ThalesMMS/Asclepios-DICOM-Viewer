@@ -1,0 +1,14 @@
+# CMake generation dependency list for this directory.
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/CH
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/CMakeLists.txt
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/GL27
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/ITRF2000
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/ITRF2008
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/ITRF2014
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/nad.lst
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/nad27
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/nad83
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/other.extra
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/proj.ini
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/sql_filelist.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/world

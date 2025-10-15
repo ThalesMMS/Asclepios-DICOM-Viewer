@@ -1,0 +1,18 @@
+# CMake generation dependency list for this directory.
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakePackageConfigHelpers.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CTest.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CTestUseLaunchers.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCCompilerFlag.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCXXCompilerFlag.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCompilerFlag.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckIncludeFile.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckIncludeFileCXX.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckIncludeFiles.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckSourceCompiles.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckTypeSize.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GenerateExportHeader.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/WriteBasicConfigVersionFile.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/exportheader.cmake.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/ogg/vtkogg/CMakeLists.txt
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/ogg/vtkogg/cmake/CheckSizes.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/ogg/vtkogg/include/ogg/config_types.h.in

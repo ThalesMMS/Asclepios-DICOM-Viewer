@@ -1,0 +1,36 @@
+# CMake generated Testfile for 
+# Source directory: D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmtls/tests
+# Build directory: D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/dcmtls/tests
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+if(CTEST_CONFIGURATION_TYPE MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test([=[dcmtls_scp_tls]=] "C:/Qt/Tools/CMake_64/bin/cmake.exe" "-DDCMTK_CTEST_TESTCASE_COMMAND=D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/Debug/dcmtls_tests.exe" "-DDCMTK_CTEST_TEST_NAME=dcmtls_scp_tls" "-P" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/CMakeFiles/dcmtkCTestRun.cmake")
+  set_tests_properties([=[dcmtls_scp_tls]=] PROPERTIES  LABELS "dcmtls" REQUIRED_FILES "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/Debug/dcmtls_tests.exe" _BACKTRACE_TRIPLES "D:/Asclepios-DICOM-Viewer/deps/dcmtk/CMake/dcmtkMacros.cmake;31;add_test;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmtls/tests/CMakeLists.txt;8;DCMTK_ADD_TESTS;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmtls/tests/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test([=[dcmtls_scp_tls]=] "C:/Qt/Tools/CMake_64/bin/cmake.exe" "-DDCMTK_CTEST_TESTCASE_COMMAND=D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/Release/dcmtls_tests.exe" "-DDCMTK_CTEST_TEST_NAME=dcmtls_scp_tls" "-P" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/CMakeFiles/dcmtkCTestRun.cmake")
+  set_tests_properties([=[dcmtls_scp_tls]=] PROPERTIES  LABELS "dcmtls" REQUIRED_FILES "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/Release/dcmtls_tests.exe" _BACKTRACE_TRIPLES "D:/Asclepios-DICOM-Viewer/deps/dcmtk/CMake/dcmtkMacros.cmake;31;add_test;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmtls/tests/CMakeLists.txt;8;DCMTK_ADD_TESTS;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmtls/tests/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test([=[dcmtls_scp_tls]=] "C:/Qt/Tools/CMake_64/bin/cmake.exe" "-DDCMTK_CTEST_TESTCASE_COMMAND=D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/MinSizeRel/dcmtls_tests.exe" "-DDCMTK_CTEST_TEST_NAME=dcmtls_scp_tls" "-P" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/CMakeFiles/dcmtkCTestRun.cmake")
+  set_tests_properties([=[dcmtls_scp_tls]=] PROPERTIES  LABELS "dcmtls" REQUIRED_FILES "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/MinSizeRel/dcmtls_tests.exe" _BACKTRACE_TRIPLES "D:/Asclepios-DICOM-Viewer/deps/dcmtk/CMake/dcmtkMacros.cmake;31;add_test;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmtls/tests/CMakeLists.txt;8;DCMTK_ADD_TESTS;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmtls/tests/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test([=[dcmtls_scp_tls]=] "C:/Qt/Tools/CMake_64/bin/cmake.exe" "-DDCMTK_CTEST_TESTCASE_COMMAND=D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/RelWithDebInfo/dcmtls_tests.exe" "-DDCMTK_CTEST_TEST_NAME=dcmtls_scp_tls" "-P" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/CMakeFiles/dcmtkCTestRun.cmake")
+  set_tests_properties([=[dcmtls_scp_tls]=] PROPERTIES  LABELS "dcmtls" REQUIRED_FILES "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/RelWithDebInfo/dcmtls_tests.exe" _BACKTRACE_TRIPLES "D:/Asclepios-DICOM-Viewer/deps/dcmtk/CMake/dcmtkMacros.cmake;31;add_test;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmtls/tests/CMakeLists.txt;8;DCMTK_ADD_TESTS;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmtls/tests/CMakeLists.txt;0;")
+else()
+  add_test([=[dcmtls_scp_tls]=] NOT_AVAILABLE)
+endif()
+if(CTEST_CONFIGURATION_TYPE MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test([=[dcmtls_scp_pool_tls]=] "C:/Qt/Tools/CMake_64/bin/cmake.exe" "-DDCMTK_CTEST_TESTCASE_COMMAND=D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/Debug/dcmtls_tests.exe" "-DDCMTK_CTEST_TEST_NAME=dcmtls_scp_pool_tls" "-P" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/CMakeFiles/dcmtkCTestRun.cmake")
+  set_tests_properties([=[dcmtls_scp_pool_tls]=] PROPERTIES  LABELS "dcmtls" REQUIRED_FILES "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/Debug/dcmtls_tests.exe" _BACKTRACE_TRIPLES "D:/Asclepios-DICOM-Viewer/deps/dcmtk/CMake/dcmtkMacros.cmake;31;add_test;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmtls/tests/CMakeLists.txt;8;DCMTK_ADD_TESTS;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmtls/tests/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test([=[dcmtls_scp_pool_tls]=] "C:/Qt/Tools/CMake_64/bin/cmake.exe" "-DDCMTK_CTEST_TESTCASE_COMMAND=D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/Release/dcmtls_tests.exe" "-DDCMTK_CTEST_TEST_NAME=dcmtls_scp_pool_tls" "-P" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/CMakeFiles/dcmtkCTestRun.cmake")
+  set_tests_properties([=[dcmtls_scp_pool_tls]=] PROPERTIES  LABELS "dcmtls" REQUIRED_FILES "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/Release/dcmtls_tests.exe" _BACKTRACE_TRIPLES "D:/Asclepios-DICOM-Viewer/deps/dcmtk/CMake/dcmtkMacros.cmake;31;add_test;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmtls/tests/CMakeLists.txt;8;DCMTK_ADD_TESTS;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmtls/tests/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test([=[dcmtls_scp_pool_tls]=] "C:/Qt/Tools/CMake_64/bin/cmake.exe" "-DDCMTK_CTEST_TESTCASE_COMMAND=D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/MinSizeRel/dcmtls_tests.exe" "-DDCMTK_CTEST_TEST_NAME=dcmtls_scp_pool_tls" "-P" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/CMakeFiles/dcmtkCTestRun.cmake")
+  set_tests_properties([=[dcmtls_scp_pool_tls]=] PROPERTIES  LABELS "dcmtls" REQUIRED_FILES "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/MinSizeRel/dcmtls_tests.exe" _BACKTRACE_TRIPLES "D:/Asclepios-DICOM-Viewer/deps/dcmtk/CMake/dcmtkMacros.cmake;31;add_test;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmtls/tests/CMakeLists.txt;8;DCMTK_ADD_TESTS;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmtls/tests/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test([=[dcmtls_scp_pool_tls]=] "C:/Qt/Tools/CMake_64/bin/cmake.exe" "-DDCMTK_CTEST_TESTCASE_COMMAND=D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/RelWithDebInfo/dcmtls_tests.exe" "-DDCMTK_CTEST_TEST_NAME=dcmtls_scp_pool_tls" "-P" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/CMakeFiles/dcmtkCTestRun.cmake")
+  set_tests_properties([=[dcmtls_scp_pool_tls]=] PROPERTIES  LABELS "dcmtls" REQUIRED_FILES "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/RelWithDebInfo/dcmtls_tests.exe" _BACKTRACE_TRIPLES "D:/Asclepios-DICOM-Viewer/deps/dcmtk/CMake/dcmtkMacros.cmake;31;add_test;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmtls/tests/CMakeLists.txt;8;DCMTK_ADD_TESTS;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmtls/tests/CMakeLists.txt;0;")
+else()
+  add_test([=[dcmtls_scp_pool_tls]=] NOT_AVAILABLE)
+endif()

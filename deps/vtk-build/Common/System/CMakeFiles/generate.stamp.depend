@@ -1,0 +1,12 @@
+# CMake generation dependency list for this directory.
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckIncludeFile.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckLibraryExists.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckSymbolExists.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindThreads.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/exportheader.cmake.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/CMakeLists.txt
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/vtkTestSocketFeatures.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/Common/System/vtkTestSocklenT.cxx

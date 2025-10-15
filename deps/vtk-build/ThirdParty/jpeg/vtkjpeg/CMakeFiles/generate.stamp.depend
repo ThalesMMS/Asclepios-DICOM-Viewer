@@ -1,0 +1,8 @@
+# CMake generation dependency list for this directory.
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckIncludeFile.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckIncludeFileCXX.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckSymbolExists.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckTypeSize.cmake
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/jpeg/vtkjpeg/CMakeLists.txt
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/jpeg/vtkjpeg/jconfigint.h.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/jpeg/vtkjpeg/win/jconfig.h.in

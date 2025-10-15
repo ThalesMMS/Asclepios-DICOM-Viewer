@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{30F94FF6-2D1E-31A8-B1F8-067C89590C8C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\config\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\ofstd\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oflog\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimgle\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmimage\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpeg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmjpls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtls\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmnet\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsr\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmsign\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmwlm\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmqrdb\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpstat\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmrt\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmiod\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmseg\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmtract\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmpmap\include;D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmect\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmdata\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmdata/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/dcmtk -BD:/Asclepios-DICOM-Viewer/deps/dcmtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/dcmdata/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmdata/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/dcmtk -BD:/Asclepios-DICOM-Viewer/deps/dcmtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/dcmdata/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmdata/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/dcmtk -BD:/Asclepios-DICOM-Viewer/deps/dcmtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/dcmdata/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmdata/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/dcmtk -BD:/Asclepios-DICOM-Viewer/deps/dcmtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/dcmdata/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\ZERO_CHECK.vcxproj">
+      <Project>{33C2E6D3-E4F9-392D-AB92-31556DB0CB8C}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\apps\cda2dcm.vcxproj">
+      <Project>{B3070F8E-AD74-3E85-96A0-F94846EAC3FF}</Project>
+      <Name>cda2dcm</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\apps\dcm2json.vcxproj">
+      <Project>{ACC20E2E-E6AA-3627-B1CC-E3F8F44A5068}</Project>
+      <Name>dcm2json</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\apps\dcm2pdf.vcxproj">
+      <Project>{884451DE-EAAF-30AB-80EF-D079919E2A57}</Project>
+      <Name>dcm2pdf</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\apps\dcm2xml.vcxproj">
+      <Project>{F0429B35-DB30-31FB-809B-923F33568435}</Project>
+      <Name>dcm2xml</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\apps\dcmconv.vcxproj">
+      <Project>{2822C30A-15B7-3F41-ABBD-35765B1911F6}</Project>
+      <Name>dcmconv</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\apps\dcmcrle.vcxproj">
+      <Project>{94FD01B0-FECB-36C1-A80F-2D48841C6536}</Project>
+      <Name>dcmcrle</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\libsrc\dcmdata.vcxproj">
+      <Project>{360F027C-5CA4-3227-A50F-C180E7A49489}</Project>
+      <Name>dcmdata</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\tests\dcmdata_tests.vcxproj">
+      <Project>{6C65C748-322F-3EAB-909D-278B6ED4AA5D}</Project>
+      <Name>dcmdata_tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\apps\dcmdrle.vcxproj">
+      <Project>{EFBB01AD-8F10-3647-B404-EDB437867E85}</Project>
+      <Name>dcmdrle</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\apps\dcmdump.vcxproj">
+      <Project>{6A795146-1AAD-34B9-B5EE-898125B9F6CC}</Project>
+      <Name>dcmdump</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\apps\dcmftest.vcxproj">
+      <Project>{A5A075C3-0EBF-3D93-8165-07DE3E57A833}</Project>
+      <Name>dcmftest</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\apps\dcmgpdir.vcxproj">
+      <Project>{3CEDE1B4-6B7F-391D-99B8-83E678DAF031}</Project>
+      <Name>dcmgpdir</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\apps\dcmodify.vcxproj">
+      <Project>{0336C110-5984-38D1-B7C5-C6A45CF81F60}</Project>
+      <Name>dcmodify</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\libdcxml\dcmxml.vcxproj">
+      <Project>{64184679-E34F-3FE9-91D0-8CF1CC1225D8}</Project>
+      <Name>dcmxml</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\apps\dump2dcm.vcxproj">
+      <Project>{CD9A619F-14B2-3D14-B2F7-EB5C1B67F031}</Project>
+      <Name>dump2dcm</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\libi2d\i2d.vcxproj">
+      <Project>{FC6A2666-539F-38E2-B004-3C5A3419C6F3}</Project>
+      <Name>i2d</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\apps\img2dcm.vcxproj">
+      <Project>{D53C18A9-EE8A-3DBE-81F5-2010F52DAC42}</Project>
+      <Name>img2dcm</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\apps\pdf2dcm.vcxproj">
+      <Project>{B0CE0AF5-BF2A-3F66-938E-3760C2DA0316}</Project>
+      <Name>pdf2dcm</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\apps\stl2dcm.vcxproj">
+      <Project>{EEBCAB51-79EC-3AD8-BA5D-9BE525BC0C55}</Project>
+      <Name>stl2dcm</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmdata\apps\xml2dcm.vcxproj">
+      <Project>{7B321CAC-91F7-37CC-ABC4-0A75E790842B}</Project>
+      <Name>xml2dcm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

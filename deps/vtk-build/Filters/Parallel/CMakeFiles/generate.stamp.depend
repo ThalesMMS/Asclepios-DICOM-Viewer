@@ -1,0 +1,5 @@
+# CMake generation dependency list for this directory.
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/exportheader.cmake.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkObjectFactory.cxx.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/CMake/vtkObjectFactory.h.in
+D:/Asclepios-DICOM-Viewer/deps/vtk/Filters/Parallel/CMakeLists.txt

@@ -1,0 +1,690 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The system is: Windows - 10.0.26100 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.14.23+b0019275e for .NET Framework
+      Build started 10/15/2025 12:54:24 PM.
+      
+      Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\3.30.5\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\3.30.5\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\3.30.5\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.53
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/3.30.5/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.14.23+b0019275e for .NET Framework
+      Build started 10/15/2025 12:54:25 PM.
+      
+      Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\3.30.5\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        Touching "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\3.30.5\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\3.30.5\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.54
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/3.30.5/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-fkbzsx"
+      binary: "D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-fkbzsx"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-fkbzsx'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8421a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 10/15/2025 12:54:26 PM.
+        
+        Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-fkbzsx\\cmTC_8421a.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_8421a.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-fkbzsx\\Debug\\".
+          Creating directory "cmTC_8421a.dir\\Debug\\cmTC_8421a.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_8421a.dir\\Debug\\cmTC_8421a.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_8421a.dir\\Debug\\cmTC_8421a.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8421a.dir\\Debug\\\\" /Fd"cmTC_8421a.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Qt\\Tools\\CMake_64\\share\\cmake-3.30\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8421a.dir\\Debug\\\\" /Fd"cmTC_8421a.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Qt\\Tools\\CMake_64\\share\\cmake-3.30\\Modules\\CMakeCCompilerABI.c"
+          CMakeCCompilerABI.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-fkbzsx\\Debug\\cmTC_8421a.exe" /INCREMENTAL /ILK:"cmTC_8421a.dir\\Debug\\cmTC_8421a.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-fkbzsx/Debug/cmTC_8421a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-fkbzsx/Debug/cmTC_8421a.lib" /MACHINE:X64  /machine:x64 cmTC_8421a.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_8421a.vcxproj -> D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-fkbzsx\\Debug\\cmTC_8421a.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_8421a.dir\\Debug\\cmTC_8421a.tlog\\unsuccessfulbuild".
+          Touching "cmTC_8421a.dir\\Debug\\cmTC_8421a.tlog\\cmTC_8421a.lastbuildstate".
+        Done Building Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-fkbzsx\\cmTC_8421a.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.50
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the C compiler's linker: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35217.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-f6qean"
+      binary: "D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-f6qean"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-f6qean'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_d64de.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 10/15/2025 12:54:27 PM.
+        
+        Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-f6qean\\cmTC_d64de.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_d64de.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-f6qean\\Debug\\".
+          Creating directory "cmTC_d64de.dir\\Debug\\cmTC_d64de.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_d64de.dir\\Debug\\cmTC_d64de.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_d64de.dir\\Debug\\cmTC_d64de.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_d64de.dir\\Debug\\\\" /Fd"cmTC_d64de.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Qt\\Tools\\CMake_64\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_d64de.dir\\Debug\\\\" /Fd"cmTC_d64de.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Qt\\Tools\\CMake_64\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
+          CMakeCXXCompilerABI.cpp
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-f6qean\\Debug\\cmTC_d64de.exe" /INCREMENTAL /ILK:"cmTC_d64de.dir\\Debug\\cmTC_d64de.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-f6qean/Debug/cmTC_d64de.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-f6qean/Debug/cmTC_d64de.lib" /MACHINE:X64  /machine:x64 cmTC_d64de.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_d64de.vcxproj -> D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-f6qean\\Debug\\cmTC_d64de.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_d64de.dir\\Debug\\cmTC_d64de.tlog\\unsuccessfulbuild".
+          Touching "cmTC_d64de.dir\\Debug\\cmTC_d64de.tlog\\cmTC_d64de.lastbuildstate".
+        Done Building Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-f6qean\\cmTC_d64de.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.52
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'CXX': C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the CXX compiler's linker: "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.44.35217.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/Qt6Dependencies.cmake:35 (_qt_internal_find_third_party_dependencies)"
+      - "C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/Qt6Config.cmake:174 (include)"
+      - "D:/Asclepios-DICOM-Viewer/deps/vtk-install/lib/cmake/vtk-9.3/VTK-vtk-module-find-packages.cmake:115 (find_package)"
+      - "D:/Asclepios-DICOM-Viewer/deps/vtk-install/lib/cmake/vtk-9.3/vtk-config.cmake:166 (include)"
+      - "CMakeLists.txt:73 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-8b7hmc"
+      binary: "D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-8b7hmc"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "D:/Asclepios-DICOM-Viewer/deps/vtk-install/lib/cmake/vtk-9.3/patches/99;D:/Asclepios-DICOM-Viewer/deps/vtk-install/lib/cmake/vtk-9.3;D:/Asclepios-DICOM-Viewer/deps/vtk-dicom/CMake;C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6;C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/3rdparty/kwin"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-8b7hmc'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_805fb.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 10/15/2025 12:54:52 PM.
+        
+        Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-8b7hmc\\cmTC_805fb.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_805fb.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-8b7hmc\\Debug\\".
+          Creating directory "cmTC_805fb.dir\\Debug\\cmTC_805fb.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_805fb.dir\\Debug\\cmTC_805fb.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_805fb.dir\\Debug\\cmTC_805fb.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_805fb.dir\\Debug\\\\" /Fd"cmTC_805fb.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-8b7hmc\\src.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_805fb.dir\\Debug\\\\" /Fd"cmTC_805fb.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-8b7hmc\\src.c"
+          src.c
+        D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-8b7hmc\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-8b7hmc\\cmTC_805fb.vcxproj]
+        Done Building Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-8b7hmc\\cmTC_805fb.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-8b7hmc\\cmTC_805fb.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-8b7hmc\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-8b7hmc\\cmTC_805fb.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.32
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/Qt6Dependencies.cmake:35 (_qt_internal_find_third_party_dependencies)"
+      - "C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/Qt6Config.cmake:174 (include)"
+      - "D:/Asclepios-DICOM-Viewer/deps/vtk-install/lib/cmake/vtk-9.3/VTK-vtk-module-find-packages.cmake:115 (find_package)"
+      - "D:/Asclepios-DICOM-Viewer/deps/vtk-install/lib/cmake/vtk-9.3/vtk-config.cmake:166 (include)"
+      - "CMakeLists.txt:73 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-s90a9g"
+      binary: "D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-s90a9g"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "D:/Asclepios-DICOM-Viewer/deps/vtk-install/lib/cmake/vtk-9.3/patches/99;D:/Asclepios-DICOM-Viewer/deps/vtk-install/lib/cmake/vtk-9.3;D:/Asclepios-DICOM-Viewer/deps/vtk-dicom/CMake;C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6;C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/3rdparty/kwin"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-s90a9g'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_64016.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 10/15/2025 12:54:52 PM.
+        
+        Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-s90a9g\\cmTC_64016.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_64016.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-s90a9g\\Debug\\".
+          Creating directory "cmTC_64016.dir\\Debug\\cmTC_64016.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_64016.dir\\Debug\\cmTC_64016.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_64016.dir\\Debug\\cmTC_64016.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_64016.dir\\Debug\\\\" /Fd"cmTC_64016.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-s90a9g\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_64016.dir\\Debug\\\\" /Fd"cmTC_64016.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-s90a9g\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-s90a9g\\Debug\\cmTC_64016.exe" /INCREMENTAL /ILK:"cmTC_64016.dir\\Debug\\cmTC_64016.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-s90a9g/Debug/cmTC_64016.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-s90a9g/Debug/cmTC_64016.lib" /MACHINE:X64  /machine:x64 cmTC_64016.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-s90a9g\\cmTC_64016.vcxproj]
+        Done Building Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-s90a9g\\cmTC_64016.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-s90a9g\\cmTC_64016.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-s90a9g\\cmTC_64016.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.41
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/Qt6Dependencies.cmake:35 (_qt_internal_find_third_party_dependencies)"
+      - "C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/Qt6Config.cmake:174 (include)"
+      - "D:/Asclepios-DICOM-Viewer/deps/vtk-install/lib/cmake/vtk-9.3/VTK-vtk-module-find-packages.cmake:115 (find_package)"
+      - "D:/Asclepios-DICOM-Viewer/deps/vtk-install/lib/cmake/vtk-9.3/vtk-config.cmake:166 (include)"
+      - "CMakeLists.txt:73 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-fvu5co"
+      binary: "D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-fvu5co"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "D:/Asclepios-DICOM-Viewer/deps/vtk-install/lib/cmake/vtk-9.3/patches/99;D:/Asclepios-DICOM-Viewer/deps/vtk-install/lib/cmake/vtk-9.3;D:/Asclepios-DICOM-Viewer/deps/vtk-dicom/CMake;C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6;C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/3rdparty/kwin"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-fvu5co'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_489ea.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 10/15/2025 12:54:53 PM.
+        
+        Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-fvu5co\\cmTC_489ea.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_489ea.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-fvu5co\\Debug\\".
+          Creating directory "cmTC_489ea.dir\\Debug\\cmTC_489ea.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_489ea.dir\\Debug\\cmTC_489ea.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_489ea.dir\\Debug\\cmTC_489ea.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_489ea.dir\\Debug\\\\" /Fd"cmTC_489ea.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-fvu5co\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_489ea.dir\\Debug\\\\" /Fd"cmTC_489ea.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-fvu5co\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-fvu5co\\Debug\\cmTC_489ea.exe" /INCREMENTAL /ILK:"cmTC_489ea.dir\\Debug\\cmTC_489ea.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-fvu5co/Debug/cmTC_489ea.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-fvu5co/Debug/cmTC_489ea.lib" /MACHINE:X64  /machine:x64 cmTC_489ea.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-fvu5co\\cmTC_489ea.vcxproj]
+        Done Building Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-fvu5co\\cmTC_489ea.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-fvu5co\\cmTC_489ea.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-fvu5co\\cmTC_489ea.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.40
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/FindWrapAtomic.cmake:36 (check_cxx_source_compiles)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:35 (_qt_internal_find_third_party_dependencies)"
+      - "C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:45 (include)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:142 (find_dependency)"
+      - "C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:45 (_qt_internal_find_qt_dependencies)"
+      - "C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:43 (include)"
+      - "C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/Qt6Config.cmake:235 (find_package)"
+      - "D:/Asclepios-DICOM-Viewer/deps/vtk-install/lib/cmake/vtk-9.3/VTK-vtk-module-find-packages.cmake:115 (find_package)"
+      - "D:/Asclepios-DICOM-Viewer/deps/vtk-install/lib/cmake/vtk-9.3/vtk-config.cmake:166 (include)"
+      - "CMakeLists.txt:73 (find_package)"
+    checks:
+      - "Performing Test HAVE_STDATOMIC"
+    directories:
+      source: "D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-6q6q1m"
+      binary: "D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-6q6q1m"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "D:/Asclepios-DICOM-Viewer/deps/vtk-install/lib/cmake/vtk-9.3/patches/99;D:/Asclepios-DICOM-Viewer/deps/vtk-install/lib/cmake/vtk-9.3;D:/Asclepios-DICOM-Viewer/deps/vtk-dicom/CMake;C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6;C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;C:/Qt/6.9.3/msvc2022_64/lib/cmake/Qt6/3rdparty/kwin"
+    buildResult:
+      variable: "HAVE_STDATOMIC"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-6q6q1m'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_94fe9.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 10/15/2025 12:54:54 PM.
+        
+        Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-6q6q1m\\cmTC_94fe9.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_94fe9.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-6q6q1m\\Debug\\".
+          Creating directory "cmTC_94fe9.dir\\Debug\\cmTC_94fe9.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_94fe9.dir\\Debug\\cmTC_94fe9.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_94fe9.dir\\Debug\\cmTC_94fe9.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_STDATOMIC /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_94fe9.dir\\Debug\\\\" /Fd"cmTC_94fe9.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-6q6q1m\\src.cxx"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_STDATOMIC /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_94fe9.dir\\Debug\\\\" /Fd"cmTC_94fe9.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-6q6q1m\\src.cxx"
+          src.cxx
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-6q6q1m\\Debug\\cmTC_94fe9.exe" /INCREMENTAL /ILK:"cmTC_94fe9.dir\\Debug\\cmTC_94fe9.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-6q6q1m/Debug/cmTC_94fe9.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-6q6q1m/Debug/cmTC_94fe9.lib" /MACHINE:X64  /machine:x64 cmTC_94fe9.dir\\Debug\\src.obj
+          cmTC_94fe9.vcxproj -> D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-6q6q1m\\Debug\\cmTC_94fe9.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_94fe9.dir\\Debug\\cmTC_94fe9.tlog\\unsuccessfulbuild".
+          Touching "cmTC_94fe9.dir\\Debug\\cmTC_94fe9.tlog\\cmTC_94fe9.lastbuildstate".
+        Done Building Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-6q6q1m\\cmTC_94fe9.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.57
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckSourceCompiles.cmake:77 (cmake_check_source_compiles)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GenerateExportHeader.cmake:206 (check_source_compiles)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GenerateExportHeader.cmake:263 (_check_cxx_compiler_attribute)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GenerateExportHeader.cmake:420 (_test_compiler_has_deprecated)"
+      - "D:/Asclepios-DICOM-Viewer/deps/vtk-install/lib/cmake/vtk-9.3/vtkModule.cmake:4141 (generate_export_header)"
+      - "Source/CMakeLists.txt:218 (vtk_module_add_module)"
+    checks:
+      - "Performing Test COMPILER_HAS_DEPRECATED_ATTR"
+    directories:
+      source: "D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-828bmc"
+      binary: "D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-828bmc"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "D:/Asclepios-DICOM-Viewer/deps/vtk-dicom/CMake"
+    buildResult:
+      variable: "COMPILER_HAS_DEPRECATED_ATTR"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-828bmc'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8a609.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 10/15/2025 12:55:01 PM.
+        
+        Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\cmTC_8a609.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_8a609.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\Debug\\".
+          Creating directory "cmTC_8a609.dir\\Debug\\cmTC_8a609.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_8a609.dir\\Debug\\cmTC_8a609.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_8a609.dir\\Debug\\cmTC_8a609.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D COMPILER_HAS_DEPRECATED_ATTR /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_8a609.dir\\Debug\\\\" /Fd"cmTC_8a609.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\src.cxx"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D COMPILER_HAS_DEPRECATED_ATTR /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_8a609.dir\\Debug\\\\" /Fd"cmTC_8a609.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\src.cxx"
+          src.cxx
+        D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\src.cxx(1,16): error C2065: '__deprecated__': undeclared identifier [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\cmTC_8a609.vcxproj]
+        D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\src.cxx(1,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\cmTC_8a609.vcxproj]
+        D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\src.cxx(1,33): error C2062: type 'int' unexpected [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\cmTC_8a609.vcxproj]
+        D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\src.cxx(1,48): error C2143: syntax error: missing ';' before '{' [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\cmTC_8a609.vcxproj]
+        D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\src.cxx(1,48): error C2447: '{': missing function header (old-style formal list?) [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\cmTC_8a609.vcxproj]
+        D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\src.cxx(2,25): error C3861: 'somefunc': identifier not found [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\cmTC_8a609.vcxproj]
+        Done Building Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\cmTC_8a609.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\cmTC_8a609.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\src.cxx(1,16): error C2065: '__deprecated__': undeclared identifier [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\cmTC_8a609.vcxproj]
+          D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\src.cxx(1,1): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\cmTC_8a609.vcxproj]
+          D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\src.cxx(1,33): error C2062: type 'int' unexpected [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\cmTC_8a609.vcxproj]
+          D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\src.cxx(1,48): error C2143: syntax error: missing ';' before '{' [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\cmTC_8a609.vcxproj]
+          D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\src.cxx(1,48): error C2447: '{': missing function header (old-style formal list?) [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\cmTC_8a609.vcxproj]
+          D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\src.cxx(2,25): error C3861: 'somefunc': identifier not found [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-828bmc\\cmTC_8a609.vcxproj]
+        
+            0 Warning(s)
+            6 Error(s)
+        
+        Time Elapsed 00:00:00.32
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CheckSourceCompiles.cmake:77 (cmake_check_source_compiles)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GenerateExportHeader.cmake:206 (check_source_compiles)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GenerateExportHeader.cmake:269 (_check_cxx_compiler_attribute)"
+      - "C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/GenerateExportHeader.cmake:420 (_test_compiler_has_deprecated)"
+      - "D:/Asclepios-DICOM-Viewer/deps/vtk-install/lib/cmake/vtk-9.3/vtkModule.cmake:4141 (generate_export_header)"
+      - "Source/CMakeLists.txt:218 (vtk_module_add_module)"
+    checks:
+      - "Performing Test COMPILER_HAS_DEPRECATED"
+    directories:
+      source: "D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-ob088a"
+      binary: "D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-ob088a"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "D:/Asclepios-DICOM-Viewer/deps/vtk-dicom/CMake"
+    buildResult:
+      variable: "COMPILER_HAS_DEPRECATED"
+      cached: true
+      stdout: |
+        Change Dir: 'D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-ob088a'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_9fce6.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.14.23+b0019275e for .NET Framework
+        Build started 10/15/2025 12:55:02 PM.
+        
+        Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-ob088a\\cmTC_9fce6.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_9fce6.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-ob088a\\Debug\\".
+          Creating directory "cmTC_9fce6.dir\\Debug\\cmTC_9fce6.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_9fce6.dir\\Debug\\cmTC_9fce6.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_9fce6.dir\\Debug\\cmTC_9fce6.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D COMPILER_HAS_DEPRECATED /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_9fce6.dir\\Debug\\\\" /Fd"cmTC_9fce6.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-ob088a\\src.cxx"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D COMPILER_HAS_DEPRECATED /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_9fce6.dir\\Debug\\\\" /Fd"cmTC_9fce6.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-ob088a\\src.cxx"
+          src.cxx
+        D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-ob088a\\src.cxx(2,25): warning C4996: 'somefunc': was declared deprecated [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-ob088a\\cmTC_9fce6.vcxproj]
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-ob088a\\Debug\\cmTC_9fce6.exe" /INCREMENTAL /ILK:"cmTC_9fce6.dir\\Debug\\cmTC_9fce6.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-ob088a/Debug/cmTC_9fce6.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/Asclepios-DICOM-Viewer/deps/vtk-dicom-build/CMakeFiles/CMakeScratch/TryCompile-ob088a/Debug/cmTC_9fce6.lib" /MACHINE:X64  /machine:x64 cmTC_9fce6.dir\\Debug\\src.obj
+          cmTC_9fce6.vcxproj -> D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-ob088a\\Debug\\cmTC_9fce6.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_9fce6.dir\\Debug\\cmTC_9fce6.tlog\\unsuccessfulbuild".
+          Touching "cmTC_9fce6.dir\\Debug\\cmTC_9fce6.tlog\\cmTC_9fce6.lastbuildstate".
+        Done Building Project "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-ob088a\\cmTC_9fce6.vcxproj" (default targets).
+        
+        Build succeeded.
+        
+        "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-ob088a\\cmTC_9fce6.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-ob088a\\src.cxx(2,25): warning C4996: 'somefunc': was declared deprecated [D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom-build\\CMakeFiles\\CMakeScratch\\TryCompile-ob088a\\cmTC_9fce6.vcxproj]
+        
+            1 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.51
+        
+      exitCode: 0
+...

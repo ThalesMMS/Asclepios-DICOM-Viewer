@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\CMakeFiles\f9064abb047f4bea828105e0535d1aa2\proj.db.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\CMakeFiles\0d4947b2ade211013525c44ffd2a6117\generate_proj_db.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\libproj\vtklibproj\data\CMakeFiles\generate_proj_db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{89AD89A6-376B-3834-AF06-5E45C977ED11}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

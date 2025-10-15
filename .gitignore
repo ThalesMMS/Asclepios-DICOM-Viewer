@@ -395,11 +395,3 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/deps/vtk-build
-/deps/dcmtk-install
-/deps/dcmtk-build
-/deps/vtk-install
-/deps/vtk-dicom-build
-/deps/vtk-dicom-install
-/src/gui/QtMsBuild/Tasks
-/src/gui/QtMsBuild/QtMsBuild

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\CMakeFiles\bcfcc546b755e8ea4b7e5fd1708db776\oficonv_data_files.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\oficonv\datasrc\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\oficonv\datasrc\CMakeFiles\oficonv_data_files" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E6BF2D0F-1095-3F85-B618-A5B657AC00B9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

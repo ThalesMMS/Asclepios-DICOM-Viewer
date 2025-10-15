@@ -1,0 +1,6 @@
+# CMake generation dependency list for this directory.
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindBISON.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindFLEX.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageHandleStandardArgs.cmake
+C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/FindPackageMessage.cmake
+D:/Asclepios-DICOM-Viewer/deps/dcmtk/oficonv/apps/CMakeLists.txt

@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A20D3640-6AC8-3460-89F1-E70ED2490FDF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>generate_proj_db</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\CMakeFiles\f9064abb047f4bea828105e0535d1aa2\proj.db.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating proj.db</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+cd D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E remove -f D:/Asclepios-DICOM-Viewer/deps/vtk-build/lib/../share/vtk-9.3/proj/proj.db
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_CROSSCOMPILING_EMULATOR= -DALL_SQL_IN=D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/libproj/vtklibproj/data/all.sql.in -DEXE_SQLITE3=D:/Asclepios-DICOM-Viewer/deps/vtk-build/bin/Debug/sqlitebin-9.3d.exe -DPROJ_DB=D:/Asclepios-DICOM-Viewer/deps/vtk-build/lib/../share/vtk-9.3/proj/proj.db -DPROJ_VERSION=8.1.0 -P D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/generate_proj_db.cmake
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy D:/Asclepios-DICOM-Viewer/deps/vtk-build/lib/../share/vtk-9.3/proj/proj.db D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/libproj/vtklibproj/data/for_tests
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\begin.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\proj_db_table_defs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\conversion_triggers.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\metadata.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\unit_of_measure.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\extent.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\scope.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\coordinate_system.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\axis.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\ellipsoid.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\prime_meridian.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\geodetic_datum.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\geodetic_datum_ensemble_member.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\vertical_datum.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\vertical_datum_ensemble_member.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\conversion.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\geodetic_crs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\projected_crs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\vertical_crs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\compound_crs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\helmert_transformation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\grid_transformation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\grid_transformation_custom.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\other_transformation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\other_transformation_custom.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\concatenated_operation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\concatenated_operation_step.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\alias_name.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\supersession.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\deprecation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\esri.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\ignf.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\nkg.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\grid_alternatives.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\grid_alternatives_generated_noaa.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\customizations.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\nkg_post_customizations.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\commit.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\generate_proj_db.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\share\vtk-9.3\proj\proj.db</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating proj.db</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+cd D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E remove -f D:/Asclepios-DICOM-Viewer/deps/vtk-build/lib/../share/vtk-9.3/proj/proj.db
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_CROSSCOMPILING_EMULATOR= -DALL_SQL_IN=D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/libproj/vtklibproj/data/all.sql.in -DEXE_SQLITE3=D:/Asclepios-DICOM-Viewer/deps/vtk-build/bin/Release/sqlitebin-9.3.exe -DPROJ_DB=D:/Asclepios-DICOM-Viewer/deps/vtk-build/lib/../share/vtk-9.3/proj/proj.db -DPROJ_VERSION=8.1.0 -P D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/generate_proj_db.cmake
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy D:/Asclepios-DICOM-Viewer/deps/vtk-build/lib/../share/vtk-9.3/proj/proj.db D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/libproj/vtklibproj/data/for_tests
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\begin.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\proj_db_table_defs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\conversion_triggers.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\metadata.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\unit_of_measure.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\extent.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\scope.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\coordinate_system.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\axis.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\ellipsoid.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\prime_meridian.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\geodetic_datum.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\geodetic_datum_ensemble_member.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\vertical_datum.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\vertical_datum_ensemble_member.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\conversion.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\geodetic_crs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\projected_crs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\vertical_crs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\compound_crs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\helmert_transformation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\grid_transformation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\grid_transformation_custom.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\other_transformation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\other_transformation_custom.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\concatenated_operation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\concatenated_operation_step.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\alias_name.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\supersession.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\deprecation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\esri.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\ignf.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\nkg.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\grid_alternatives.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\grid_alternatives_generated_noaa.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\customizations.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\nkg_post_customizations.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\commit.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\generate_proj_db.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\share\vtk-9.3\proj\proj.db</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Generating proj.db</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+cd D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E remove -f D:/Asclepios-DICOM-Viewer/deps/vtk-build/lib/../share/vtk-9.3/proj/proj.db
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_CROSSCOMPILING_EMULATOR= -DALL_SQL_IN=D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/libproj/vtklibproj/data/all.sql.in -DEXE_SQLITE3=D:/Asclepios-DICOM-Viewer/deps/vtk-build/bin/MinSizeRel/sqlitebin-9.3.exe -DPROJ_DB=D:/Asclepios-DICOM-Viewer/deps/vtk-build/lib/../share/vtk-9.3/proj/proj.db -DPROJ_VERSION=8.1.0 -P D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/generate_proj_db.cmake
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy D:/Asclepios-DICOM-Viewer/deps/vtk-build/lib/../share/vtk-9.3/proj/proj.db D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/libproj/vtklibproj/data/for_tests
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\begin.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\proj_db_table_defs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\conversion_triggers.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\metadata.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\unit_of_measure.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\extent.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\scope.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\coordinate_system.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\axis.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\ellipsoid.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\prime_meridian.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\geodetic_datum.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\geodetic_datum_ensemble_member.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\vertical_datum.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\vertical_datum_ensemble_member.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\conversion.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\geodetic_crs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\projected_crs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\vertical_crs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\compound_crs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\helmert_transformation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\grid_transformation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\grid_transformation_custom.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\other_transformation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\other_transformation_custom.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\concatenated_operation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\concatenated_operation_step.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\alias_name.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\supersession.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\deprecation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\esri.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\ignf.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\nkg.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\grid_alternatives.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\grid_alternatives_generated_noaa.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\customizations.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\nkg_post_customizations.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\commit.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\generate_proj_db.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\share\vtk-9.3\proj\proj.db</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Generating proj.db</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+cd D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E remove -f D:/Asclepios-DICOM-Viewer/deps/vtk-build/lib/../share/vtk-9.3/proj/proj.db
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -DCMAKE_CROSSCOMPILING_EMULATOR= -DALL_SQL_IN=D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/libproj/vtklibproj/data/all.sql.in -DEXE_SQLITE3=D:/Asclepios-DICOM-Viewer/deps/vtk-build/bin/RelWithDebInfo/sqlitebin-9.3.exe -DPROJ_DB=D:/Asclepios-DICOM-Viewer/deps/vtk-build/lib/../share/vtk-9.3/proj/proj.db -DPROJ_VERSION=8.1.0 -P D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/generate_proj_db.cmake
+if %errorlevel% neq 0 goto :cmEnd
+C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy D:/Asclepios-DICOM-Viewer/deps/vtk-build/lib/../share/vtk-9.3/proj/proj.db D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/libproj/vtklibproj/data/for_tests
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\begin.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\proj_db_table_defs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\conversion_triggers.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\metadata.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\unit_of_measure.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\extent.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\scope.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\coordinate_system.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\axis.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\ellipsoid.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\prime_meridian.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\geodetic_datum.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\geodetic_datum_ensemble_member.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\vertical_datum.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\vertical_datum_ensemble_member.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\conversion.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\geodetic_crs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\projected_crs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\vertical_crs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\compound_crs.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\helmert_transformation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\grid_transformation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\grid_transformation_custom.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\other_transformation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\other_transformation_custom.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\concatenated_operation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\concatenated_operation_step.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\alias_name.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\supersession.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\deprecation.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\esri.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\ignf.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\nkg.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\grid_alternatives.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\grid_alternatives_generated_noaa.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\customizations.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\nkg_post_customizations.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql\commit.sql;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\generate_proj_db.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\share\vtk-9.3\proj\proj.db</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\CMakeFiles\0d4947b2ade211013525c44ffd2a6117\generate_proj_db.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\share\vtk-9.3\proj\proj.db;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\libproj\vtklibproj\data\CMakeFiles\generate_proj_db</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\share\vtk-9.3\proj\proj.db;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\libproj\vtklibproj\data\CMakeFiles\generate_proj_db</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\share\vtk-9.3\proj\proj.db;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\libproj\vtklibproj\data\CMakeFiles\generate_proj_db</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\share\vtk-9.3\proj\proj.db;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\libproj\vtklibproj\data\CMakeFiles\generate_proj_db</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</VerifyInputsAndOutputsExist>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/libproj/vtklibproj/data/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\CH;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\GL27;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\ITRF2000;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\ITRF2008;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\ITRF2014;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\nad.lst;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\nad27;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\nad83;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\other.extra;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\proj.ini;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql_filelist.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\world;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\libproj\vtklibproj\data\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/libproj/vtklibproj/data/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\CH;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\GL27;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\ITRF2000;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\ITRF2008;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\ITRF2014;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\nad.lst;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\nad27;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\nad83;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\other.extra;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\proj.ini;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql_filelist.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\world;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\libproj\vtklibproj\data\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/libproj/vtklibproj/data/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\CH;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\GL27;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\ITRF2000;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\ITRF2008;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\ITRF2014;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\nad.lst;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\nad27;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\nad83;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\other.extra;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\proj.ini;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql_filelist.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\world;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\libproj\vtklibproj\data\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Asclepios-DICOM-Viewer/deps/vtk/ThirdParty/libproj/vtklibproj/data/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/Asclepios-DICOM-Viewer/deps/vtk -BD:/Asclepios-DICOM-Viewer/deps/vtk-build --check-stamp-file D:/Asclepios-DICOM-Viewer/deps/vtk-build/ThirdParty/libproj/vtklibproj/data/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\CH;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\GL27;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\ITRF2000;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\ITRF2008;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\ITRF2014;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\nad.lst;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\nad27;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\nad83;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\other.extra;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\proj.ini;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\sql_filelist.cmake;D:\Asclepios-DICOM-Viewer\deps\vtk\ThirdParty\libproj\vtklibproj\data\world;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\libproj\vtklibproj\data\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\libproj\vtklibproj\data\CMakeFiles\generate_proj_db">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\ZERO_CHECK.vcxproj">
+      <Project>{30408C1C-2036-3B78-9D38-9776F7BDC758}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\Asclepios-DICOM-Viewer\deps\vtk-build\ThirdParty\sqlite\vtksqlite\sqlitebin.vcxproj">
+      <Project>{21D3E2D5-4D4B-38EA-96ED-A644B6D53FA5}</Project>
+      <Name>sqlitebin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

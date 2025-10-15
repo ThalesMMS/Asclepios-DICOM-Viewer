@@ -1,0 +1,36 @@
+# CMake generated Testfile for 
+# Source directory: D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/tests
+# Build directory: D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/dcmrt/tests
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+if(CTEST_CONFIGURATION_TYPE MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test([=[dcmrt_search]=] "C:/Qt/Tools/CMake_64/bin/cmake.exe" "-DDCMTK_CTEST_TESTCASE_COMMAND=D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/Debug/dcmrt_tests.exe" "-DDCMTK_CTEST_TEST_NAME=dcmrt_search" "-P" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/CMakeFiles/dcmtkCTestRun.cmake")
+  set_tests_properties([=[dcmrt_search]=] PROPERTIES  LABELS "dcmrt" REQUIRED_FILES "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/Debug/dcmrt_tests.exe" _BACKTRACE_TRIPLES "D:/Asclepios-DICOM-Viewer/deps/dcmtk/CMake/dcmtkMacros.cmake;31;add_test;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/tests/CMakeLists.txt;14;DCMTK_ADD_TESTS;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/tests/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test([=[dcmrt_search]=] "C:/Qt/Tools/CMake_64/bin/cmake.exe" "-DDCMTK_CTEST_TESTCASE_COMMAND=D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/Release/dcmrt_tests.exe" "-DDCMTK_CTEST_TEST_NAME=dcmrt_search" "-P" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/CMakeFiles/dcmtkCTestRun.cmake")
+  set_tests_properties([=[dcmrt_search]=] PROPERTIES  LABELS "dcmrt" REQUIRED_FILES "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/Release/dcmrt_tests.exe" _BACKTRACE_TRIPLES "D:/Asclepios-DICOM-Viewer/deps/dcmtk/CMake/dcmtkMacros.cmake;31;add_test;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/tests/CMakeLists.txt;14;DCMTK_ADD_TESTS;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/tests/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test([=[dcmrt_search]=] "C:/Qt/Tools/CMake_64/bin/cmake.exe" "-DDCMTK_CTEST_TESTCASE_COMMAND=D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/MinSizeRel/dcmrt_tests.exe" "-DDCMTK_CTEST_TEST_NAME=dcmrt_search" "-P" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/CMakeFiles/dcmtkCTestRun.cmake")
+  set_tests_properties([=[dcmrt_search]=] PROPERTIES  LABELS "dcmrt" REQUIRED_FILES "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/MinSizeRel/dcmrt_tests.exe" _BACKTRACE_TRIPLES "D:/Asclepios-DICOM-Viewer/deps/dcmtk/CMake/dcmtkMacros.cmake;31;add_test;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/tests/CMakeLists.txt;14;DCMTK_ADD_TESTS;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/tests/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test([=[dcmrt_search]=] "C:/Qt/Tools/CMake_64/bin/cmake.exe" "-DDCMTK_CTEST_TESTCASE_COMMAND=D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/RelWithDebInfo/dcmrt_tests.exe" "-DDCMTK_CTEST_TEST_NAME=dcmrt_search" "-P" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/CMakeFiles/dcmtkCTestRun.cmake")
+  set_tests_properties([=[dcmrt_search]=] PROPERTIES  LABELS "dcmrt" REQUIRED_FILES "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/RelWithDebInfo/dcmrt_tests.exe" _BACKTRACE_TRIPLES "D:/Asclepios-DICOM-Viewer/deps/dcmtk/CMake/dcmtkMacros.cmake;31;add_test;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/tests/CMakeLists.txt;14;DCMTK_ADD_TESTS;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/tests/CMakeLists.txt;0;")
+else()
+  add_test([=[dcmrt_search]=] NOT_AVAILABLE)
+endif()
+if(CTEST_CONFIGURATION_TYPE MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
+  add_test([=[dcmrt_contour]=] "C:/Qt/Tools/CMake_64/bin/cmake.exe" "-DDCMTK_CTEST_TESTCASE_COMMAND=D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/Debug/dcmrt_tests.exe" "-DDCMTK_CTEST_TEST_NAME=dcmrt_contour" "-P" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/CMakeFiles/dcmtkCTestRun.cmake")
+  set_tests_properties([=[dcmrt_contour]=] PROPERTIES  LABELS "dcmrt" REQUIRED_FILES "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/Debug/dcmrt_tests.exe" _BACKTRACE_TRIPLES "D:/Asclepios-DICOM-Viewer/deps/dcmtk/CMake/dcmtkMacros.cmake;31;add_test;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/tests/CMakeLists.txt;14;DCMTK_ADD_TESTS;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/tests/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+  add_test([=[dcmrt_contour]=] "C:/Qt/Tools/CMake_64/bin/cmake.exe" "-DDCMTK_CTEST_TESTCASE_COMMAND=D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/Release/dcmrt_tests.exe" "-DDCMTK_CTEST_TEST_NAME=dcmrt_contour" "-P" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/CMakeFiles/dcmtkCTestRun.cmake")
+  set_tests_properties([=[dcmrt_contour]=] PROPERTIES  LABELS "dcmrt" REQUIRED_FILES "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/Release/dcmrt_tests.exe" _BACKTRACE_TRIPLES "D:/Asclepios-DICOM-Viewer/deps/dcmtk/CMake/dcmtkMacros.cmake;31;add_test;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/tests/CMakeLists.txt;14;DCMTK_ADD_TESTS;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/tests/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
+  add_test([=[dcmrt_contour]=] "C:/Qt/Tools/CMake_64/bin/cmake.exe" "-DDCMTK_CTEST_TESTCASE_COMMAND=D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/MinSizeRel/dcmrt_tests.exe" "-DDCMTK_CTEST_TEST_NAME=dcmrt_contour" "-P" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/CMakeFiles/dcmtkCTestRun.cmake")
+  set_tests_properties([=[dcmrt_contour]=] PROPERTIES  LABELS "dcmrt" REQUIRED_FILES "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/MinSizeRel/dcmrt_tests.exe" _BACKTRACE_TRIPLES "D:/Asclepios-DICOM-Viewer/deps/dcmtk/CMake/dcmtkMacros.cmake;31;add_test;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/tests/CMakeLists.txt;14;DCMTK_ADD_TESTS;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/tests/CMakeLists.txt;0;")
+elseif(CTEST_CONFIGURATION_TYPE MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
+  add_test([=[dcmrt_contour]=] "C:/Qt/Tools/CMake_64/bin/cmake.exe" "-DDCMTK_CTEST_TESTCASE_COMMAND=D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/RelWithDebInfo/dcmrt_tests.exe" "-DDCMTK_CTEST_TEST_NAME=dcmrt_contour" "-P" "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/CMakeFiles/dcmtkCTestRun.cmake")
+  set_tests_properties([=[dcmrt_contour]=] PROPERTIES  LABELS "dcmrt" REQUIRED_FILES "D:/Asclepios-DICOM-Viewer/deps/dcmtk-build/bin/RelWithDebInfo/dcmrt_tests.exe" _BACKTRACE_TRIPLES "D:/Asclepios-DICOM-Viewer/deps/dcmtk/CMake/dcmtkMacros.cmake;31;add_test;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/tests/CMakeLists.txt;14;DCMTK_ADD_TESTS;D:/Asclepios-DICOM-Viewer/deps/dcmtk/dcmrt/tests/CMakeLists.txt;0;")
+else()
+  add_test([=[dcmrt_contour]=] NOT_AVAILABLE)
+endif()

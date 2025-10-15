@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\CMakeFiles\a2bb3e40287700b7b776db52e7a68f84\dcmfg-test-exhaustive.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk\dcmfg\tests\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\Asclepios-DICOM-Viewer\deps\dcmtk-build\dcmfg\tests\CMakeFiles\dcmfg-test-exhaustive" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E6BF2D0F-1095-3F85-B618-A5B657AC00B9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
