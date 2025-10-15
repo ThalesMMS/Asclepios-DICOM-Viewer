@@ -395,3 +395,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/deps/vtk-build
+/deps/dcmtk-install
+/deps/dcmtk-build
