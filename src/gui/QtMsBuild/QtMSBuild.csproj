@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ Copyright (C) 2025 The Qt Company Ltd.
+ SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only WITH Qt-GPL-exception-1.0
+-->
+<Project ToolsVersion="$(VisualStudioVersion)" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!-- Sets property TargetFrameworkVersion and LangVersion -->
+  <Import Project="$(SolutionDir)\targetframework.props" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <!-- override since MSBuild accepts only syntax that is included in C# 5.0 or lower -->
+    <LangVersion>5</LangVersion>
+    <RootNamespace>QtMSBuild</RootNamespace>
+    <AssemblyName>QtMSBuild</AssemblyName>
+    <ProjectGuid>{A618D28B-9352-44F4-AA71-609BF68BF871}</ProjectGuid>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' OR '$(Configuration)|$(Platform)' == 'Debug|arm64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' OR '$(Configuration)|$(Platform)' == 'Release|arm64' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!--
+  /////////////////////////////////////////////////////////////////////////////////////////////////
+  // Global references
+  // -->
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Runtime" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' != 'Debug|arm64' AND '$(Configuration)|$(Platform)' != 'Release|arm64' ">
+  <Reference Include="$(VCTargetsPath)\Application Type\Linux\1.0\Microsoft.Build.Linux.Tasks.dll" />
+  <Reference Include="$(VCTargetsPath)\Application Type\Linux\1.0\liblinux.dll" />
+  </ItemGroup>
+  <!--
+  /////////////////////////////////////////////////////////////////////////////////////////////////
+  // General package references
+  // -->
+  <Import Project="$(SolutionDir)\references.props" />
+  <ItemGroup>
+    <PackageReference Include="$(Name_Microsoft_VSSDK_BuildTools)" Version="$(Version_Microsoft_VSSDK_BuildTools)" />
+    <PackageReference Include="$(Name_Microsoft_VisualStudio_SDK)" Version="$(Version_Microsoft_VisualStudio_SDK)" ExcludeAssets="runtime" />
+    <PackageReference Include="$(Name_Microsoft_Build)" Version="$(Version_Microsoft_Build)" />
+    <PackageReference Include="$(Name_Microsoft_Build_Tasks_Core)" Version="$(Version_Microsoft_Build)" />
+  </ItemGroup>
+  <!--
+  /////////////////////////////////////////////////////////////////////////////////////////////////
+  // Version specific package references
+  // -->
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)'=='17.0'">
+      <ItemGroup>
+      </ItemGroup>
+    </When>
+    <When Condition="'$(VisualStudioVersion)'=='16.0'">
+      <ItemGroup>
+        <PackageReference Include="$(Name_Microsoft_VisualStudio_Validation)" Version="$(Version_Microsoft_VisualStudio_Validation)" />
+        <PackageReference Include="$(Name_Microsoft_VisualStudio_RpcContracts)" Version="$(Version_Microsoft_VisualStudio_RpcContracts)" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <!--
+  /////////////////////////////////////////////////////////////////////////////////////////////////
+  // Solution project references
+  // -->
+  <ItemGroup>
+    <ProjectReference Include="..\QtVsTools.RegExpr\QtVsTools.RegExpr.csproj">
+      <Project>{a2831b9b-4d3b-46cb-85df-1b5c277c17db}</Project>
+      <Name>QtVsTools.RegExpr</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <!--
+  /////////////////////////////////////////////////////////////////////////////////////////////////
+  // Project items
+  // -->
+  <ItemGroup>
+    <Content Include="QtMSBuild\vs-debugtools\natvis\qt5.natvis">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QtMSBuild\vs-debugtools\natvis\qt6.natvis">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <T4Template Include="Properties\AssemblyInfo.cs">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <OutputFile>Properties\AssemblyInfo.tt.cs</OutputFile>
+      <DependsOn>$(SolutionDir)\version.tt;$(SolutionDir)\common.tt</DependsOn>
+      <LastGenOutput>AssemblyInfo.tt.cs</LastGenOutput>
+    </T4Template>
+    <Compile Include="ITaskLoggingHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.tt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyInfo.cs</DependentUpon>
+    </Compile>
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Qt/MSBuild common property pages and targets
+    // -->
+    <Content Include="QtMSBuild\qt_defaults.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\Qt.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\qt_private.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\qt.targets">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\qt_settings.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QtMSBuild\qt_settings.targets">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QtMSBuild\qt_globals.targets">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QtMSBuild\qt_build.targets">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QtMSBuild\qt_vars.targets">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QtMSBuild\qt_work.targets">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(SolutionDir)\version.log">
+      <Link>QtMSBuild\version.log</Link>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Qt/MSBuild moc property pages and targets
+    // -->
+    <Content Include="QtMSBuild\moc\qt_import.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\moc\qtmoc.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\moc\qtmoc.targets">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\moc\qtmoc.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <T4Template Include="QtMSBuild\moc\qtmoc_v3.xml_TT">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <OutputFile>moc\qtmoc_v3.xml</OutputFile>
+      <DependsOn>$(SolutionDir)\version.targets;$(SolutionDir)\version.tt;$(SolutionDir)\common.tt</DependsOn>
+      <LastGenOutput>qtmoc_v3.xml</LastGenOutput>
+      <SubType>Designer</SubType>
+    </T4Template>
+    <Content Include="QtMSBuild\moc\qtmoc_v3.xml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qtmoc_v3.xml_TT</DependentUpon>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <T4Template Include="QtMSBuild\moc\qtmoc_cl.targets_TT">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <OutputFile>moc\qtmoc_cl.targets</OutputFile>
+      <DependsOn>$(SolutionDir)\version.targets;$(SolutionDir)\version.tt;$(SolutionDir)\common.tt</DependsOn>
+      <SubType>Designer</SubType>
+      <LastGenOutput>qtmoc_cl.targets</LastGenOutput>
+    </T4Template>
+    <Content Include="QtMSBuild\moc\qtmoc_cl.targets">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qtmoc_cl.targets_TT</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Qt/MSBuild qml property pages and targets
+    // -->
+    <Content Include="QtMSBuild\qml\qt_import.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\qml\qtqml.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\qml\qtqml.targets">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\qml\qtqml_cache.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\qml\qtqml_cache.targets">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\qml\qtqml_static.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\qml\qtqml_static.targets">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Qt/MSBuild rcc property pages and targets
+    // -->
+    <Content Include="QtMSBuild\rcc\qt_import.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\rcc\qtrcc.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\rcc\qtrcc.targets">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\rcc\qtrcc.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <T4Template Include="QtMSBuild\rcc\qtrcc_v3.xml_TT">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <OutputFile>rcc\qtrcc_v3.xml</OutputFile>
+      <DependsOn>$(SolutionDir)\version.targets;$(SolutionDir)\version.tt;$(SolutionDir)\common.tt</DependsOn>
+      <LastGenOutput>qtrcc_v3.xml</LastGenOutput>
+      <SubType>Designer</SubType>
+    </T4Template>
+    <Content Include="QtMSBuild\rcc\qtrcc_v3.xml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qtrcc_v3.xml_TT</DependentUpon>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <T4Template Include="QtMSBuild\rcc\qtrcc_cl.targets_TT">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <OutputFile>rcc\qtrcc_cl.targets</OutputFile>
+      <DependsOn>$(SolutionDir)\version.targets;$(SolutionDir)\version.tt;$(SolutionDir)\common.tt</DependsOn>
+      <SubType>Designer</SubType>
+      <LastGenOutput>qtrcc_cl.targets</LastGenOutput>
+    </T4Template>
+    <Content Include="QtMSBuild\rcc\qtrcc_cl.targets">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qtrcc_cl.targets_TT</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Qt/MSBuild repc property pages and targets
+    // -->
+    <Content Include="QtMSBuild\repc\qt_import.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\repc\qtrepc.props">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QtMSBuild\repc\qtrepc.targets">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QtMSBuild\repc\qtrepc.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <T4Template Include="QtMSBuild\repc\qtrepc_v3.xml_TT">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <OutputFile>repc\qtrepc_v3.xml</OutputFile>
+      <DependsOn>$(SolutionDir)\version.targets;$(SolutionDir)\version.tt;$(SolutionDir)\common.tt</DependsOn>
+      <LastGenOutput>qtrepc_v3.xml</LastGenOutput>
+      <SubType>Designer</SubType>
+    </T4Template>
+    <Content Include="QtMSBuild\repc\qtrepc_v3.xml">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qtrepc_v3.xml_TT</DependentUpon>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <T4Template Include="QtMSBuild\repc\qtrepc_cl.targets_TT">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <OutputFile>repc\qtrepc_cl.targets</OutputFile>
+      <DependsOn>$(SolutionDir)\version.targets;$(SolutionDir)\version.tt;$(SolutionDir)\common.tt</DependsOn>
+      <SubType>Designer</SubType>
+      <LastGenOutput>qtrepc_cl.targets</LastGenOutput>
+    </T4Template>
+    <Content Include="QtMSBuild\repc\qtrepc_cl.targets">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qtrepc_cl.targets_TT</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Qt/MSBuild uic property pages and targets
+    // -->
+    <Content Include="QtMSBuild\uic\qt_import.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\uic\qtuic.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QtMSBuild\uic\qtuic.targets">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QtMSBuild\uic\qtuic.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QtMSBuild\uic\qtuic_v3.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Qt/MSBuild deploy properties and targets
+    // -->
+    <Content Include="QtMSBuild\deploy\qt_import.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\deploy\qtdeploy.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QtMSBuild\deploy\qtdeploy.targets">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QtMSBuild\deploy\qtdeploy.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Qt/MSBuild idc properties and targets
+    // -->
+    <Content Include="QtMSBuild\idc\qt_import.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="QtMSBuild\idc\qtidc.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QtMSBuild\idc\qtidc.targets">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QtMSBuild\idc\qtidc.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Qt/MSBuild translation tools property pages and targets
+    // -->
+    <Content Include="QtMSBuild\translation\qttranslation.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QtMSBuild\translation\qttranslation.targets">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QtMSBuild\translation\qttranslation.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="QtMSBuild\translation\qt_import.props">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Inline tasks
+    // -->
+    <Compile Include="Tasks\QtRunTask.cs" />
+    <Compile Include="Tasks\GetVarsFromMSBuild.cs" />
+    <Compile Include="Tasks\ListQrc.cs" />
+    <Compile Include="Tasks\ParseVarDefs.cs" />
+    <Compile Include="Tasks\GetVarsFromMakefile.cs" />
+    <Compile Include="Tasks\QtRunWork.cs" />
+    <Compile Include="Tasks\GetItemHash.cs" />
+    <Compile Include="Tasks\Flatten.cs" />
+    <Compile Include="Tasks\Expand.cs" />
+    <Compile Include="Tasks\Join.cs" />
+    <Compile Include="Tasks\DumpItems.cs" />
+    <Compile Include="Tasks\HostTranslatePaths_Windows.cs" />
+    <Compile Include="Tasks\HostExec_Windows.cs" />
+  </ItemGroup>
+  <Choose>
+    <When Condition=" '$(Configuration)|$(Platform)' != 'Debug|arm64' AND '$(Configuration)|$(Platform)' != 'Release|arm64' ">
+      <ItemGroup>
+        <Compile Include="Tasks\HostExec_LinuxWSL_Error.cs" />
+        <Compile Include="Tasks\HostTranslatePaths_LinuxWSL_Error.cs" />
+        <Compile Include="Tasks\HostTranslatePaths_LinuxSSL.cs" />
+        <Compile Include="Tasks\HostExec_LinuxSSL.cs" />
+        <Compile Include="Tasks\HostTranslatePaths_LinuxWSL.cs" />
+        <Compile Include="Tasks\HostExec_LinuxWSL.cs" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <T4Template Include="QtMSBuild\qt_tasks.targets_TT">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <OutputFile>qt_tasks.targets</OutputFile>
+      <DependsOn>$(SolutionDir)\version.targets;$(SolutionDir)\version.tt;$(SolutionDir)\common.tt</DependsOn>
+      <SubType>Designer</SubType>
+      <LastGenOutput>qt_tasks.targets</LastGenOutput>
+    </T4Template>
+    <Content Include="QtMSBuild\qt_tasks.targets">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>qt_tasks.targets_TT</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <T4Template Include="$(SolutionDir)\vstools.pri_TT">
+      <Link>vstools.pri_TT</Link>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <OutputFile>$(SolutionDir)\vstools.pri</OutputFile>
+      <DependsOn>$(SolutionDir)\version.targets;$(SolutionDir)\version.tt;$(SolutionDir)\common.tt</DependsOn>
+      <LastGenOutput>vstools.pri</LastGenOutput>
+      <SubType>Designer</SubType>
+    </T4Template>
+    <None Include="$(SolutionDir)\vstools.pri">
+      <Link>vstools.pri</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vstools.pri_TT</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\transform.targets" />
+  <!--
+  /////////////////////////////////////////////////////////////////////////////////////////////////
+  // Create .zip package
+  // -->
+  <Target Name="ZipBuild" AfterTargets="Build">
+    <Delete Files="$(OutputPath)\QtMSBuild.zip"/>
+    <ZipDirectory
+      SourceDirectory="$(OutputPath)\QtMSBuild"
+      DestinationFile="$(OutputPath)\QtMSBuild.zip"/>
+  </Target>
+</Project>

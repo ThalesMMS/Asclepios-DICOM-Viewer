@@ -401,3 +401,5 @@ FodyWeavers.xsd
 /deps/vtk-install
 /deps/vtk-dicom-build
 /deps/vtk-dicom-install
+/src/gui/QtMsBuild/Tasks
+/src/gui/QtMsBuild/QtMsBuild
