@@ -34,6 +34,7 @@ namespace asclepios::gui
 		void setWindowWidthCenter(const int& t_width, const int& t_center);
 		void setInitialWindowWidthCenter();
 		void SetInputData(vtkImageData* in) override;
+		void UpdateDisplayExtent();
 
 		void changeWindowWidthCenter(const int& t_width, const int& t_center);
 

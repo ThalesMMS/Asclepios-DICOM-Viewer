@@ -4,16 +4,21 @@
 #include <vtkDICOMApplyPalette.h>
 #include <vtkDICOMDictHash.h>
 #include <vtkDICOMMetaData.h>
+#include <vtkDataObject.h>
 #include <vtkImageActor.h>
 #include <vtkImageData.h>
 #include <vtkImageMapper3D.h>
 #include <vtkImageMapToWindowLevelColors.h>
 #include <vtkImageStack.h>
+#include <vtkInteractorStyleImage.h>
+#include <vtkInformation.h>
 #include <vtkObjectFactory.h>
 #include <vtkRenderer.h>
 #include <vtkRenderWindow.h>
 #include <vtkRendererCollection.h>
+#include <vtkStreamingDemandDrivenPipeline.h>
 #include <vtkWindowLevelLookupTable.h>
+#include <cmath>
 
 vtkStandardNewMacro(asclepios::gui::vtkWidgetDICOM)
 
@@ -75,8 +80,130 @@ void asclepios::gui::vtkWidgetDICOM::setInitialWindowWidthCenter()
 //-----------------------------------------------------------------------------
 void asclepios::gui::vtkWidgetDICOM::SetInputData(vtkImageData* in)
 {
+	if (!in)
+	{
+		return;
+	}
+
+	// Ensure the image has a sane spacing before passing it to the VTK pipeline.
+	const double* currentSpacing = in->GetSpacing();
+	double spacing[3] = {
+		currentSpacing ? currentSpacing[0] : 0.0,
+		currentSpacing ? currentSpacing[1] : 0.0,
+		currentSpacing ? currentSpacing[2] : 0.0
+	};
+	if (spacing[0] == 0.0 && spacing[1] == 0.0 && spacing[2] == 0.0)
+	{
+		spacing[0] = spacing[1] = spacing[2] = 1.0;
+		in->SetSpacing(spacing);
+	}
+
 	WindowLevel->SetInputData(in);
+
 	UpdateDisplayExtent();
+}
+
+//-----------------------------------------------------------------------------
+void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
+{
+	auto* const input = GetInputAlgorithm();
+	if (!input || !ImageActor)
+	{
+		return;
+	}
+
+	input->UpdateInformation();
+	auto* const outInfo = input->GetOutputInformation(0);
+	if (!outInfo)
+	{
+		return;
+	}
+
+	int* const wholeExtent = outInfo->Get(vtkStreamingDemandDrivenPipeline::WHOLE_EXTENT());
+	if (!wholeExtent)
+	{
+		return;
+	}
+
+	const int sliceMin = wholeExtent[SliceOrientation * 2];
+	const int sliceMax = wholeExtent[SliceOrientation * 2 + 1];
+	if (Slice < sliceMin || Slice > sliceMax)
+	{
+		Slice = static_cast<int>((sliceMin + sliceMax) * 0.5);
+	}
+
+	switch (SliceOrientation)
+	{
+	case vtkImageViewer2::SLICE_ORIENTATION_XY:
+		ImageActor->SetDisplayExtent(
+			wholeExtent[0], wholeExtent[1], wholeExtent[2], wholeExtent[3], Slice, Slice);
+		break;
+
+	case vtkImageViewer2::SLICE_ORIENTATION_XZ:
+		ImageActor->SetDisplayExtent(
+			wholeExtent[0], wholeExtent[1], Slice, Slice, wholeExtent[4], wholeExtent[5]);
+		break;
+
+	case vtkImageViewer2::SLICE_ORIENTATION_YZ:
+		ImageActor->SetDisplayExtent(
+			Slice, Slice, wholeExtent[2], wholeExtent[3], wholeExtent[4], wholeExtent[5]);
+		break;
+	default:
+		break;
+	}
+
+	if (!Renderer)
+	{
+		return;
+	}
+
+	if (InteractorStyle && InteractorStyle->GetAutoAdjustCameraClippingRange())
+	{
+		Renderer->ResetCameraClippingRange();
+		return;
+	}
+
+	auto* const cam = Renderer->GetActiveCamera();
+	if (!cam)
+	{
+		return;
+	}
+
+	double bounds[6];
+	ImageActor->GetBounds(bounds);
+	const double spos = bounds[SliceOrientation * 2];
+	const double cpos = cam->GetPosition()[SliceOrientation];
+	const double range = std::fabs(spos - cpos);
+
+	const double* infoSpacing = outInfo->Get(vtkDataObject::SPACING());
+	double safeSpacing[3] = { 1.0, 1.0, 1.0 };
+	if (!infoSpacing)
+	{
+		if (auto* const image = vtkImageData::SafeDownCast(GetInput()))
+		{
+			image->GetSpacing(safeSpacing);
+		}
+		outInfo->Set(vtkDataObject::SPACING(), safeSpacing, 3);
+		infoSpacing = safeSpacing;
+	}
+
+	for (int idx = 0; idx < 3; ++idx)
+	{
+		if (!std::isfinite(infoSpacing[idx]) || infoSpacing[idx] == 0.0)
+		{
+			safeSpacing[idx] = 1.0;
+		}
+		else
+		{
+			safeSpacing[idx] = infoSpacing[idx];
+		}
+	}
+
+	const double avgSpacing =
+		(safeSpacing[0] + safeSpacing[1] + safeSpacing[2]) / 3.0;
+	cam->SetClippingRange(
+		range - avgSpacing * 3.0,
+		range + avgSpacing * 3.0);
 }
 
 //-----------------------------------------------------------------------------
