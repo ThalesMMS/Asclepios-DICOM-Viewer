@@ -22,7 +22,7 @@
 
 #include <dcmtk/dcmdata/dcdeftag.h>
 #include <dcmtk/dcmdata/dctk.h>
-#include <dcmtk/dcmimage/dcmimage.h>
+#include <dcmtk/dcmimgle/dcmimage.h>
 #include <dcmtk/dcmimage/diregist.h>
 
 namespace

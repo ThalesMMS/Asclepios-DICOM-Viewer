@@ -39,9 +39,9 @@ vtkSmartPointer<vtkDICOMReader> asclepios::core::Image::getImageReader() const
         localReader->Update();
 
         const auto* const metaData = localReader->GetMetaData();
-        const auto* const output = localReader->GetOutput();
-        const auto* const pointData = output ? output->GetPointData() : nullptr;
-        const auto* const scalars = pointData ? pointData->GetScalars() : nullptr;
+        auto* const output = localReader->GetOutput();
+        auto* const pointData = output ? output->GetPointData() : nullptr;
+        auto* const scalars = pointData ? pointData->GetScalars() : nullptr;
         if (!metaData || !scalars)
         {
                 vtkGenericWarningMacro(<< "[Image] vtkDICOMReader produced incomplete output for " << m_path
