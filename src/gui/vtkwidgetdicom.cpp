@@ -111,19 +111,25 @@ void asclepios::gui::vtkWidgetDICOM::setInitialWindowWidthCenter()
 //-----------------------------------------------------------------------------
 void asclepios::gui::vtkWidgetDICOM::SetInputData(vtkImageData* in)
 {
-	if (!in)
-	{
-		qWarning() << "[vtkWidgetDICOM] SetInputData called with null image";
-		return;
-	}
+        if (!in)
+        {
+                qWarning() << "[vtkWidgetDICOM] SetInputData called with null image";
+                Superclass::SetInputData(nullptr);
+                return;
+        }
 
-	// Ensure the image has a sane spacing before passing it to the VTK pipeline.
-	const double* currentSpacing = in->GetSpacing();
-	double spacing[3] = {
-		currentSpacing ? currentSpacing[0] : 0.0,
-		currentSpacing ? currentSpacing[1] : 0.0,
-		currentSpacing ? currentSpacing[2] : 0.0
-	};
+        Superclass::SetInputData(in);
+
+        vtkImageData* const baseInput = vtkImageData::SafeDownCast(GetInput());
+        vtkImageData* const imageData = baseInput ? baseInput : in;
+
+        // Ensure the image has a sane spacing before passing it to the VTK pipeline.
+        const double* currentSpacing = imageData->GetSpacing();
+        double spacing[3] = {
+                currentSpacing ? currentSpacing[0] : 0.0,
+                currentSpacing ? currentSpacing[1] : 0.0,
+                currentSpacing ? currentSpacing[2] : 0.0
+        };
 
 	auto assignSpacingComponent =
 		[&](const vtkDICOMValue& value, int componentIndex, int spacingIndex) -> bool
@@ -239,14 +245,14 @@ void asclepios::gui::vtkWidgetDICOM::SetInputData(vtkImageData* in)
 		}
 	}
 
-	if (spacingModified || spacingNormalized)
-	{
-		in->SetSpacing(spacing);
-		if (spacingNormalized)
-		{
-			qWarning() << "[vtkWidgetDICOM] Invalid input spacing detected. Normalized to"
-				<< spacing[0] << spacing[1] << spacing[2];
-		}
+        if (spacingModified || spacingNormalized)
+        {
+                imageData->SetSpacing(spacing);
+                if (spacingNormalized)
+                {
+                        qWarning() << "[vtkWidgetDICOM] Invalid input spacing detected. Normalized to"
+                                << spacing[0] << spacing[1] << spacing[2];
+                }
 		else
 		{
 			qInfo() << "[vtkWidgetDICOM] Synchronized spacing from DICOM metadata:"
@@ -254,7 +260,7 @@ void asclepios::gui::vtkWidgetDICOM::SetInputData(vtkImageData* in)
 		}
 	}
 
-	WindowLevel->SetInputData(in);
+        WindowLevel->SetInputData(imageData);
 	WindowLevel->UpdateInformation();
 	WindowLevel->GetOutput()->SetSpacing(spacing);
 	if (auto* const inputAlgorithm = WindowLevel->GetInputAlgorithm())
