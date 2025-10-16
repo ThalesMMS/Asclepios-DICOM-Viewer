@@ -11,6 +11,7 @@
 #include <vtkRenderWindowInteractor.h>
 #include <vtkRendererCollection.h>
 #include <vtkType.h>
+#include <vtkPropCollection.h>
 
 #include <QLoggingCategory>
 #include <QString>
@@ -90,6 +91,29 @@ bool asclepios::gui::vtkWidget2D::initWidgetDICOM()
                 m_dcmWidget = vtkSmartPointer<vtkWidgetDICOM>::New();
                 m_dcmWidget->SetRenderWindow(m_renderWindows[0]);
                 m_activeRenderWindow = m_dcmWidget->GetRenderWindow();
+                if (auto* const renderWindow = m_dcmWidget->GetRenderWindow())
+                {
+                        auto* const rendererCollection = renderWindow->GetRenderers();
+                        auto* const renderer = m_dcmWidget->GetRenderer();
+                        auto* const imageActor = m_dcmWidget->GetImageActor();
+                        if (renderer && rendererCollection &&
+                                rendererCollection->IsItemPresent(renderer) == 0)
+                        {
+                                renderWindow->AddRenderer(renderer);
+                                qCInfo(lcVtkWidget2D)
+                                        << "Added vtkWidgetDICOM renderer to render window.";
+                        }
+                        if (renderer && imageActor &&
+                                renderer->GetViewProps()->IsItemPresent(imageActor) == 0)
+                        {
+                                renderer->AddViewProp(imageActor);
+                                qCInfo(lcVtkWidget2D)
+                                        << "Added image actor to renderer.";
+                        }
+                        qCInfo(lcVtkWidget2D)
+                                << "Render window renderer count after setup:"
+                                << (rendererCollection ? rendererCollection->GetNumberOfItems() : 0);
+                }
                 initRenderingLayers();
                 qCInfo(lcVtkWidget2D) << "Created vtkWidgetDICOM instance.";
         }
@@ -123,7 +147,32 @@ bool asclepios::gui::vtkWidget2D::initWidgetDICOM()
         m_dcmWidget->setWindowCenter(m_image->getWindowCenter());
         m_dcmWidget->setWindowWidth(m_image->getWindowWidth());
         m_dcmWidget->setInitialWindowWidthCenter();
+        m_dcmWidget->SetSlice(0);
+        m_dcmWidget->setWindowWidth(m_image->getWindowWidth());
+        m_dcmWidget->setWindowCenter(m_image->getWindowCenter());
+        if (auto* const renderer = m_dcmWidget->GetRenderer())
+        {
+                renderer->ResetCamera();
+        }
         m_dcmWidget->Render();
+        if (auto* const renderer = m_dcmWidget->GetRenderer())
+        {
+                renderer->ResetCameraClippingRange();
+        }
+        if (auto* const renderer = m_dcmWidget->GetRenderer())
+        {
+                if (auto* const imageActor = m_dcmWidget->GetImageActor())
+                {
+                        renderer->AddActor(imageActor);
+                }
+                const auto actorCount =
+                        renderer->GetActors() ? renderer->GetActors()->GetNumberOfItems() : 0;
+                const auto propCount =
+                        renderer->GetViewProps() ? renderer->GetViewProps()->GetNumberOfItems() : 0;
+                qCInfo(lcVtkWidget2D)
+                        << "Renderer actor count after Render():" << actorCount
+                        << "view props:" << propCount;
+        }
         qCInfo(lcVtkWidget2D) << "Widget render invoked.";
         return true;
 }
@@ -135,6 +184,11 @@ void asclepios::gui::vtkWidget2D::setInteractor(const vtkSmartPointer<vtkRenderW
 	{
 		m_interactor = t_interactor;
 		m_interactor->SetInteractorStyle(vtkSmartPointer<vtkWidget2DInteractorStyle>::New());
+                if (m_dcmWidget)
+                {
+                        m_dcmWidget->SetupInteractor(m_interactor);
+                        m_activeRenderWindow = m_dcmWidget->GetRenderWindow();
+                }
 	}
 	else
 	{
@@ -463,13 +517,26 @@ bool asclepios::gui::vtkWidget2D::ensureImageDataAvailability()
 
         if (isReaderOutputValid())
         {
+                logImageInfo(m_imageReader->GetOutput(), "vtkDICOMReader");
+                if (m_preferFallbackDecoder)
+                {
+                        qCInfo(lcVtkWidget2D)
+                                << "PreferFallbackDecoder enabled - attempting DCMTK importer.";
+                        if (buildFallbackImage())
+                        {
+                                qCInfo(lcVtkWidget2D)
+                                        << "DCMTK fallback importer created successfully.";
+                                return true;
+                        }
+                        qCWarning(lcVtkWidget2D)
+                                << "DCMTK fallback importer failed - continuing with vtkDICOMReader output.";
+                }
                 if (m_usingFallbackDecoder)
                 {
                         qCInfo(lcVtkWidget2D)
                                 << "vtkDICOMReader output recovered. Disabling fallback decoder.";
+                        resetFallback();
                 }
-                resetFallback();
-                logImageInfo(m_imageReader->GetOutput(), "vtkDICOMReader");
                 return true;
         }
 

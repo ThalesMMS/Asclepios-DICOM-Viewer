@@ -1,5 +1,6 @@
 #include "widget2d.h"
 #include <vtkGenericOpenGLRenderWindow.h>
+#include <vtkRenderer.h>
 #include <vtkRendererCollection.h>
 #include <exception>
 #include <QFocusEvent>
@@ -288,6 +289,25 @@ void asclepios::gui::Widget2D::onRenderFinished()
                 m_vtkWidget->setInteractor(m_qtvtkWidget->
                         GetRenderWindow()->GetInteractor());
                 m_vtkWidget->render();
+                if (auto* const rw = m_qtvtkWidget->GetRenderWindow())
+                {
+                        auto* const collection = rw->GetRenderers();
+                        const int rendererCount = collection ? collection->GetNumberOfItems() : 0;
+                        int viewPropCount = 0;
+                        if (collection)
+                        {
+                                collection->InitTraversal();
+                                while (auto* renderer = collection->GetNextItem())
+                                {
+                                        viewPropCount += renderer->GetViewProps()
+                                                ? renderer->GetViewProps()->GetNumberOfItems()
+                                                : 0;
+                                }
+                        }
+                        qCInfo(lcWidget2D)
+                                << "Render completed. Render window renderers:" << rendererCount
+                                << "total view props:" << viewPropCount;
+                }
                 auto const max = m_image->getIsMultiFrame()
                         ? m_image->getNumberOfFrames() - 1
                         : static_cast<int>(m_series->getSinlgeFrameImages().size()) - 1;

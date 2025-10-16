@@ -45,6 +45,7 @@ namespace asclepios::gui
                 std::unique_ptr<vtkWidgetOverlay> m_widgetOverlay = {};
                 bool m_colorsInverted = false;
                 bool m_usingFallbackDecoder = false;
+                bool m_preferFallbackDecoder = true;
                 vtkSmartPointer<vtkImageImport> m_fallbackImporter = {};
                 std::vector<unsigned char> m_fallbackByteBuffer = {};
                 std::vector<unsigned short> m_fallbackWordBuffer = {};
