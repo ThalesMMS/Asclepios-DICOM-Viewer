@@ -34,9 +34,8 @@ int asclepios::core::CoreController::getLastSeriesSize() const
 //-----------------------------------------------------------------------------
 void asclepios::core::CoreController::resetData()
 {
-	m_coreRepository.reset();
-	m_coreRepository = nullptr;
 	m_coreRepository = std::make_unique<CoreRepository>();
+	m_dicomReader = std::make_unique<DicomReader>();
 }
 
 //-----------------------------------------------------------------------------
