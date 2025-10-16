@@ -59,14 +59,14 @@ void asclepios::gui::Widget2D::render()
 			}
 			dynamic_cast<TabWidget*>(m_tabWidget)->setTabTitle(0,
 				m_series->getDescription().c_str());
-			auto* const vtkWidget = dynamic_cast<vtkWidget2D*>(m_vtkWidget.get());
-			vtkWidget->setSeries(m_series);
-			vtkWidget->setImage(m_image);
-			vtkWidget->resetOverlay();
-			m_tabWidget->setAcceptDrops(false);
-			m_future = QtConcurrent::run(initImageReader, vtkWidget, this);
-			Q_UNUSED(connect(this, &Widget2D::imageReaderInitialized,
-				this, &Widget2D::onRenderFinished));
+                        auto* const vtkWidget = dynamic_cast<vtkWidget2D*>(m_vtkWidget.get());
+                        vtkWidget->setSeries(m_series);
+                        vtkWidget->setImage(m_image);
+                        vtkWidget->resetOverlay();
+                        m_tabWidget->setAcceptDrops(false);
+                        Q_UNUSED(connect(this, &Widget2D::imageReaderInitialized,
+                                this, &Widget2D::onRenderFinished));
+                        m_future = QtConcurrent::run(initImageReader, vtkWidget, this);
 		}
 		catch (std::exception& ex)
 		{
