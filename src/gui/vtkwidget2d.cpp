@@ -461,7 +461,9 @@ bool asclepios::gui::vtkWidget2D::buildFallbackImage()
         }
 
         CodecRegistrationGuard guard;
-        std::unique_ptr<DicomImage> dicomImage = std::make_unique<DicomImage>(path.c_str());
+        constexpr unsigned long creationFlags = CIF_UsePartialAccessToPixelData | CIF_AcrNemaCompatibility;
+        std::unique_ptr<DicomImage> dicomImage =
+                std::make_unique<DicomImage>(path.c_str(), creationFlags);
         if (!dicomImage || dicomImage->getStatus() != EIS_Normal)
         {
                 const char* statusString = dicomImage ? DicomImage::getString(dicomImage->getStatus())
@@ -469,6 +471,22 @@ bool asclepios::gui::vtkWidget2D::buildFallbackImage()
                 qCritical() << "[vtkWidget2D] DCMTK fallback decoder failed:" << statusString;
                 return false;
         }
+
+        const auto applyWindowLevel = [&]()
+        {
+                const int windowWidth = m_image->getWindowWidth();
+                const int windowCenter = m_image->getWindowCenter();
+                if (windowWidth > 0)
+                {
+                        dicomImage->setWindow(windowCenter, windowWidth);
+                }
+                else
+                {
+                        dicomImage->setMinMaxWindow();
+                }
+        };
+
+        applyWindowLevel();
 
         const unsigned long width = dicomImage->getWidth();
         const unsigned long height = dicomImage->getHeight();
@@ -531,43 +549,70 @@ bool asclepios::gui::vtkWidget2D::buildFallbackImage()
                 }
         }
 
-        for (unsigned long frame = 0; frame < frameCount; ++frame)
+        const auto copyFramesIntoBuffer = [&](auto& buffer) -> bool
         {
-                const void* frameData = dicomImage->getOutputData(frame, bitsPerSample);
-                if (!frameData)
+                if (buffer.empty())
                 {
-                        qCritical() << "[vtkWidget2D] DCMTK fallback decoder returned null frame data at index"
-                                    << frame;
-                        resetFallback();
+                        qCritical() << "[vtkWidget2D] Fallback buffer is empty before frame extraction.";
                         return false;
                 }
 
-                if (bitsPerSample > 8)
+                auto copyFrames = [&](unsigned long& failureIndex) -> bool
                 {
-                        if (isSigned)
+                        auto* destination = buffer.data();
+                        for (unsigned long frame = 0; frame < frameCount; ++frame)
                         {
-                                auto* destination = m_fallbackSignedWordBuffer.data();
+                                const void* frameData = dicomImage->getOutputData(frame, bitsPerSample);
+                                if (!frameData)
+                                {
+                                        failureIndex = frame;
+                                        return false;
+                                }
                                 std::memcpy(destination + frame * framePixelCount, frameData, frameByteCount);
                         }
-                        else
-                        {
-                                auto* destination = m_fallbackWordBuffer.data();
-                                std::memcpy(destination + frame * framePixelCount, frameData, frameByteCount);
-                        }
-                }
-                else
+                        return true;
+                };
+
+                unsigned long failedFrameIndex = 0;
+                if (copyFrames(failedFrameIndex))
                 {
-                        if (isSigned)
-                        {
-                                auto* destination = m_fallbackSignedByteBuffer.data();
-                                std::memcpy(destination + frame * framePixelCount, frameData, frameByteCount);
-                        }
-                        else
-                        {
-                                auto* destination = m_fallbackByteBuffer.data();
-                                std::memcpy(destination + frame * framePixelCount, frameData, frameByteCount);
-                        }
+                        return true;
                 }
+
+                qWarning() << "[vtkWidget2D] DCMTK fallback decoder returned null frame data at index"
+                           << failedFrameIndex
+                           << "- retrying with adjusted window/level configuration.";
+
+                dicomImage->setMinMaxWindow();
+                applyWindowLevel();
+
+                if (copyFrames(failedFrameIndex))
+                {
+                        return true;
+                }
+
+                qCritical() << "[vtkWidget2D] DCMTK fallback decoder returned null frame data at index"
+                            << failedFrameIndex << "even after retry.";
+                return false;
+        };
+
+        bool framesCopied = false;
+
+        if (bitsPerSample > 8)
+        {
+                framesCopied = isSigned ? copyFramesIntoBuffer(m_fallbackSignedWordBuffer)
+                                        : copyFramesIntoBuffer(m_fallbackWordBuffer);
+        }
+        else
+        {
+                framesCopied = isSigned ? copyFramesIntoBuffer(m_fallbackSignedByteBuffer)
+                                        : copyFramesIntoBuffer(m_fallbackByteBuffer);
+        }
+
+        if (!framesCopied)
+        {
+                resetFallback();
+                return false;
         }
 
         m_fallbackImporter = vtkSmartPointer<vtkImageImport>::New();
