@@ -12,7 +12,8 @@
 #include <vtkRendererCollection.h>
 #include <vtkType.h>
 
-#include <QDebug>
+#include <QLoggingCategory>
+#include <QString>
 
 #include <algorithm>
 #include <cmath>
@@ -26,6 +27,8 @@
 #include <dcmtk/dcmdata/dctk.h>
 #include <dcmtk/dcmimgle/dcmimage.h>
 #include <dcmtk/dcmimage/diregist.h>
+
+Q_LOGGING_CATEGORY(lcVtkWidget2D, "asclepios.gui.vtkwidget2d")
 
 namespace
 {
@@ -50,49 +53,62 @@ namespace
 //-----------------------------------------------------------------------------
 void asclepios::gui::vtkWidget2D::initImageReader()
 {
+        qCInfo(lcVtkWidget2D)
+                << "initImageReader started for series"
+                << (m_series ? QString::fromStdString(m_series->getUID()) : QStringLiteral("<null>"))
+                << "image"
+                << (m_image ? QString::fromStdString(m_image->getSOPInstanceUID()) : QStringLiteral("<null>"));
         resetOverlay();
         if (!m_image)
         {
+                qCCritical(lcVtkWidget2D) << "initImageReader aborted: image is null.";
                 throw std::runtime_error("image is null!");
         }
         m_imageReader = m_image->getImageReader();
         if (!m_imageReader)
         {
+                qCCritical(lcVtkWidget2D) << "initImageReader aborted: vtkDICOMReader unavailable.";
                 throw std::runtime_error("dmcReader is null!");
         }
         resetFallback();
         if (!ensureImageDataAvailability())
         {
+                qCCritical(lcVtkWidget2D)
+                        << "initImageReader failed: ensureImageDataAvailability returned false.";
                 throw std::runtime_error("Failed to prepare DICOM image data for rendering.");
         }
+        qCInfo(lcVtkWidget2D)
+                << "initImageReader completed successfully. Using fallback decoder:" << m_usingFallbackDecoder;
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::vtkWidget2D::initWidgetDICOM()
 {
-	if (!m_dcmWidget)
-	{
-		m_dcmWidget = vtkSmartPointer<vtkWidgetDICOM>::New();
-		m_dcmWidget->SetRenderWindow(m_renderWindows[0]);
-		m_activeRenderWindow = m_dcmWidget->GetRenderWindow();
-		initRenderingLayers();
-		qInfo() << "[vtkWidget2D] Created vtkWidgetDICOM instance";
-	}
-        qInfo() << "[vtkWidget2D] Setting DICOM widget data. Window/Level from image:"
-                << m_image->getWindowWidth() << m_image->getWindowCenter();
+        if (!m_dcmWidget)
+        {
+                m_dcmWidget = vtkSmartPointer<vtkWidgetDICOM>::New();
+                m_dcmWidget->SetRenderWindow(m_renderWindows[0]);
+                m_activeRenderWindow = m_dcmWidget->GetRenderWindow();
+                initRenderingLayers();
+                qCInfo(lcVtkWidget2D) << "Created vtkWidgetDICOM instance.";
+        }
+        qCInfo(lcVtkWidget2D)
+                << "Setting DICOM widget data. Window/Level from image:" << m_image->getWindowWidth()
+                << m_image->getWindowCenter();
 
         if (m_usingFallbackDecoder)
         {
                 if (m_fallbackImporter && hasValidScalars(m_fallbackImporter->GetOutput()))
                 {
-                        qWarning() << "[vtkWidget2D] Using DCMTK fallback image data.";
+                        qCWarning(lcVtkWidget2D) << "Using DCMTK fallback image data.";
                         m_dcmWidget->setImageReader(nullptr);
                         m_dcmWidget->setImageMetaData(nullptr);
                         m_dcmWidget->SetInputData(m_fallbackImporter->GetOutput());
                 }
                 else
                 {
-                        qCritical() << "[vtkWidget2D] Fallback image data unavailable. Aborting render.";
+                        qCCritical(lcVtkWidget2D)
+                                << "Fallback image data unavailable. Aborting render.";
                         return;
                 }
         }
@@ -101,11 +117,13 @@ void asclepios::gui::vtkWidget2D::initWidgetDICOM()
                 m_dcmWidget->setImageMetaData(m_imageReader->GetMetaData());
                 m_dcmWidget->setImageReader(m_imageReader);
         }
+        qCInfo(lcVtkWidget2D) << "vtkWidgetDICOM configured using"
+                              << (m_usingFallbackDecoder ? "fallback importer" : "vtkDICOMReader");
         m_dcmWidget->setWindowCenter(m_image->getWindowCenter());
         m_dcmWidget->setWindowWidth(m_image->getWindowWidth());
         m_dcmWidget->setInitialWindowWidthCenter();
         m_dcmWidget->Render();
-        qInfo() << "[vtkWidget2D] Widget render invoked";
+        qCInfo(lcVtkWidget2D) << "Widget render invoked.";
 }
 
 //-----------------------------------------------------------------------------
@@ -127,26 +145,27 @@ void asclepios::gui::vtkWidget2D::render()
 {
         if (!ensureImageDataAvailability())
         {
-                qWarning() << "[vtkWidget2D] render() aborted - unable to obtain usable image data";
+                qCWarning(lcVtkWidget2D)
+                        << "render() aborted - unable to obtain usable image data.";
                 return;
         }
         initWidgetDICOM();
         if (!m_dcmWidget)
         {
-                qWarning() << "[vtkWidget2D] render() aborted - vtkWidgetDICOM missing";
+                qCWarning(lcVtkWidget2D) << "render() aborted - vtkWidgetDICOM missing.";
                 return;
-	}
+        }
 	auto* const interactorStyle =
 		dynamic_cast<vtkWidget2DInteractorStyle*>(m_dcmWidget->GetRenderWindow()->
 			GetInteractor()->GetInteractorStyle());
 	if (interactorStyle)
 	{
 		interactorStyle->setWidget(this);
-		interactorStyle->setSeries(m_series);
-		interactorStyle->setImage(m_image);
-		interactorStyle->updateOvelayImageNumber(0);
-		qInfo() << "[vtkWidget2D] InteractorStyle configured";
-	}
+                interactorStyle->setSeries(m_series);
+                interactorStyle->setImage(m_image);
+                interactorStyle->updateOvelayImageNumber(0);
+                qCInfo(lcVtkWidget2D) << "InteractorStyle configured.";
+        }
 	fitImage();
 	createvtkWidgetOverlay();
 	m_dcmWidget->GetRenderWindow()->Render();
@@ -193,12 +212,14 @@ void asclepios::gui::vtkWidget2D::applyTransformation(const transformationType& 
 		default:
 			break;
 		}
-	}
-	catch (const std::exception& ex)
-	{
-		//todo log
-	}
-	m_activeRenderWindow->Render();
+        }
+        catch (const std::exception& ex)
+        {
+                qCWarning(lcVtkWidget2D)
+                        << "Failed to apply transformation" << static_cast<int>(t_type)
+                        << "due to" << ex.what();
+        }
+        m_activeRenderWindow->Render();
 }
 
 //-----------------------------------------------------------------------------
@@ -258,12 +279,13 @@ double asclepios::gui::vtkWidget2D::computeScale() const
 	const auto primary = actRatio > winRatio
 		                     ? yExtent * 0.5
 		                     : xExtent * 0.5 * winRatio;
-	if (!std::isfinite(primary) || primary <= 0.0)
-	{
-		qWarning() << "[vtkWidget2D] computeScale falling back to 1.0 - size:"
-			<< width << height << "bounds:" << xExtent << yExtent;
-		return 1.0;
-	}
+        if (!std::isfinite(primary) || primary <= 0.0)
+        {
+                qCWarning(lcVtkWidget2D)
+                        << "computeScale falling back to 1.0 - size:" << width << height
+                        << "bounds:" << xExtent << yExtent;
+                return 1.0;
+        }
 	return primary;
 }
 
@@ -388,15 +410,36 @@ void asclepios::gui::vtkWidget2D::createvtkWidgetOverlay()
 //-----------------------------------------------------------------------------
 bool asclepios::gui::vtkWidget2D::ensureImageDataAvailability()
 {
+        const auto logImageInfo = [&](vtkImageData* image, const char* source)
+        {
+                if (!image)
+                {
+                        qCWarning(lcVtkWidget2D)
+                                << "Image data logging skipped because" << source << "returned null.";
+                        return;
+                }
+
+                int dims[3] = {0, 0, 0};
+                image->GetDimensions(dims);
+                double spacing[3] = {0.0, 0.0, 0.0};
+                image->GetSpacing(spacing);
+                qCInfo(lcVtkWidget2D)
+                        << "Image data available from" << source
+                        << "dimensions" << dims[0] << "x" << dims[1] << "x" << dims[2]
+                        << "spacing" << spacing[0] << spacing[1] << spacing[2];
+        };
+
         if (m_usingFallbackDecoder && m_fallbackImporter &&
                 hasValidScalars(m_fallbackImporter->GetOutput()))
         {
+                logImageInfo(m_fallbackImporter->GetOutput(), "fallback importer (cached)");
                 return true;
         }
 
         if (!m_imageReader)
         {
-                qWarning() << "[vtkWidget2D] No vtkDICOMReader available to provide image data.";
+                qCWarning(lcVtkWidget2D)
+                        << "No vtkDICOMReader available to provide image data.";
                 return false;
         }
 
@@ -404,21 +447,30 @@ bool asclepios::gui::vtkWidget2D::ensureImageDataAvailability()
         {
                 if (m_usingFallbackDecoder)
                 {
-                        qInfo() << "[vtkWidget2D] vtkDICOMReader output recovered. Disabling fallback decoder.";
+                        qCInfo(lcVtkWidget2D)
+                                << "vtkDICOMReader output recovered. Disabling fallback decoder.";
                 }
                 resetFallback();
+                logImageInfo(m_imageReader->GetOutput(), "vtkDICOMReader");
                 return true;
         }
 
-        qWarning() << "[vtkWidget2D] vtkDICOMReader metadata or scalars missing. Attempting DCMTK fallback decoder.";
+        qCWarning(lcVtkWidget2D)
+                << "vtkDICOMReader metadata or scalars missing. Attempting DCMTK fallback decoder.";
 
         if (buildFallbackImage())
         {
-                qInfo() << "[vtkWidget2D] DCMTK fallback decoder succeeded. Displaying recovered image.";
+                qCInfo(lcVtkWidget2D)
+                        << "DCMTK fallback decoder succeeded. Displaying recovered image.";
+                if (m_fallbackImporter)
+                {
+                        logImageInfo(m_fallbackImporter->GetOutput(), "fallback importer");
+                }
                 return true;
         }
 
-        qCritical() << "[vtkWidget2D] Failed to decode DICOM image even after fallback.";
+        qCCritical(lcVtkWidget2D)
+                << "Failed to decode DICOM image even after fallback.";
         return false;
 }
 
@@ -447,7 +499,8 @@ bool asclepios::gui::vtkWidget2D::buildFallbackImage()
 
         if (!m_image)
         {
-                qCritical() << "[vtkWidget2D] Cannot execute fallback without an associated image object.";
+                qCCritical(lcVtkWidget2D)
+                        << "Cannot execute fallback without an associated image object.";
                 return false;
         }
 
@@ -456,8 +509,8 @@ bool asclepios::gui::vtkWidget2D::buildFallbackImage()
         const OFCondition loadStatus = fileFormat.loadFile(path.c_str());
         if (loadStatus.bad())
         {
-                qCritical() << "[vtkWidget2D] DCMTK failed to load" << path.c_str() << ":"
-                            << loadStatus.text();
+                qCCritical(lcVtkWidget2D) << "DCMTK failed to load" << path.c_str() << ":"
+                                          << loadStatus.text();
                 return false;
         }
 
@@ -469,7 +522,7 @@ bool asclepios::gui::vtkWidget2D::buildFallbackImage()
         {
                 const char* statusString = dicomImage ? DicomImage::getString(dicomImage->getStatus())
                                                       : "unknown error";
-                qCritical() << "[vtkWidget2D] DCMTK fallback decoder failed:" << statusString;
+                qCCritical(lcVtkWidget2D) << "DCMTK fallback decoder failed:" << statusString;
                 return false;
         }
 
@@ -494,7 +547,8 @@ bool asclepios::gui::vtkWidget2D::buildFallbackImage()
         const unsigned long frameCount = std::max<unsigned long>(1, dicomImage->getFrameCount());
         if (width == 0 || height == 0)
         {
-                qCritical() << "[vtkWidget2D] Fallback decoder produced invalid dimensions:" << width << height;
+                qCCritical(lcVtkWidget2D)
+                        << "Fallback decoder produced invalid dimensions:" << width << height;
                 return false;
         }
 
@@ -521,7 +575,7 @@ bool asclepios::gui::vtkWidget2D::buildFallbackImage()
                 static_cast<size_t>(samplesPerPixel);
         if (framePixelCount == 0)
         {
-                qCritical() << "[vtkWidget2D] Fallback decoder calculated zero-sized frame.";
+                qCCritical(lcVtkWidget2D) << "Fallback decoder calculated zero-sized frame.";
                 return false;
         }
 
@@ -554,7 +608,8 @@ bool asclepios::gui::vtkWidget2D::buildFallbackImage()
         {
                 if (buffer.empty())
                 {
-                        qCritical() << "[vtkWidget2D] Fallback buffer is empty before frame extraction.";
+                        qCCritical(lcVtkWidget2D)
+                                << "Fallback buffer is empty before frame extraction.";
                         return false;
                 }
 
@@ -580,9 +635,9 @@ bool asclepios::gui::vtkWidget2D::buildFallbackImage()
                         return true;
                 }
 
-                qWarning() << "[vtkWidget2D] DCMTK fallback decoder returned null frame data at index"
-                           << failedFrameIndex
-                           << "- retrying with adjusted window/level configuration.";
+                qCWarning(lcVtkWidget2D)
+                        << "DCMTK fallback decoder returned null frame data at index" << failedFrameIndex
+                        << "- retrying with adjusted window/level configuration.";
 
                 dicomImage->setMinMaxWindow();
                 applyWindowLevel();
@@ -592,8 +647,9 @@ bool asclepios::gui::vtkWidget2D::buildFallbackImage()
                         return true;
                 }
 
-                qCritical() << "[vtkWidget2D] DCMTK fallback decoder returned null frame data at index"
-                            << failedFrameIndex << "even after retry.";
+                qCCritical(lcVtkWidget2D)
+                        << "DCMTK fallback decoder returned null frame data at index"
+                        << failedFrameIndex << "even after retry.";
                 return false;
         };
 
@@ -660,7 +716,8 @@ bool asclepios::gui::vtkWidget2D::buildFallbackImage()
 
         if (!m_usingFallbackDecoder)
         {
-                qCritical() << "[vtkWidget2D] DCMTK fallback produced image without valid scalars.";
+                qCCritical(lcVtkWidget2D)
+                        << "DCMTK fallback produced image without valid scalars.";
         }
 
         return m_usingFallbackDecoder;

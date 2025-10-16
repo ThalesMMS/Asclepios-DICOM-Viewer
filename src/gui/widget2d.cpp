@@ -1,7 +1,7 @@
 #include "widget2d.h"
 #include <vtkGenericOpenGLRenderWindow.h>
 #include <QFocusEvent>
-#include <QDebug>
+#include <QLoggingCategory>
 #include <QtConcurrent/QtConcurrent>
 #include <QString>
 #include <QSizePolicy>
@@ -9,6 +9,8 @@
 #include "vtkwidget2dinteractorstyle.h"
 #include "study.h"
 #include "patient.h"
+
+Q_LOGGING_CATEGORY(lcWidget2D, "asclepios.gui.widget2d")
 
 
 asclepios::gui::Widget2D::Widget2D(QWidget* parent)
@@ -64,11 +66,31 @@ void asclepios::gui::Widget2D::render()
 {
         if (m_qtvtkWidget && m_vtkWidget && m_renderWindow->Get())
         {
+                if (!m_series || !m_image)
+                {
+                        qCWarning(lcWidget2D)
+                                << "Render aborted due to missing series/image context.";
+                        return;
+                }
+
                 try
                 {
+                        const auto expectedFrames = m_image->getIsMultiFrame()
+                                ? m_image->getNumberOfFrames()
+                                : static_cast<int>(m_series->getSinlgeFrameImages().size());
+                        qCInfo(lcWidget2D)
+                                << "Render requested. Multi-frame:" << m_image->getIsMultiFrame()
+                                << "expected frames:" << expectedFrames
+                                << "series UID:" << QString::fromStdString(m_series->getUID())
+                                << "series index:" << m_series->getIndex()
+                                << "image SOP UID:" << QString::fromStdString(m_image->getSOPInstanceUID())
+                                << "image index:" << m_image->getIndex()
+                                << "path:" << QString::fromStdString(m_image->getImagePath());
+
                         if(m_image->getIsMultiFrame())
                         {
                                 startLoadingAnimation();
+                                qCInfo(lcWidget2D) << "Loading animation started for multi-frame image.";
                         }
                         if (m_errorLabel)
                         {
@@ -89,12 +111,15 @@ void asclepios::gui::Widget2D::render()
                         vtkWidget->setImage(m_image);
                         vtkWidget->resetOverlay();
                         m_tabWidget->setAcceptDrops(false);
+                        qCInfo(lcWidget2D) << "Dispatching QtConcurrent::run for image reader initialization.";
                         m_future = QtConcurrent::run(initImageReader, vtkWidget, this);
+                        qCInfo(lcWidget2D)
+                                << "QtConcurrent::run dispatched. Running:" << m_future.isRunning();
                 }
                 catch (std::exception& ex)
                 {
                         m_future = {};
-                        qWarning() << "[Widget2D] Render failed:" << ex.what();
+                        qCCritical(lcWidget2D) << "Render failed due to exception:" << ex.what();
                         Q_EMIT imageReaderFailed(QString::fromUtf8(ex.what()));
                 }
         }
@@ -131,20 +156,22 @@ void asclepios::gui::Widget2D::resetView()
         m_series = nullptr;
         //todo reset title of tab
         disconnectScroll();
-	createConnections();
-	qInfo() << "[Widget2D] View reset";
+        createConnections();
+        qCInfo(lcWidget2D) << "View reset.";
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::setSliderValues(const int& t_min, const int& t_max, const int& t_value)
 {
-	if (m_scroll)
-	{
-		const QSignalBlocker blocker(m_scroll);
-		m_scroll->setMinimum(t_min);
-		m_scroll->setMaximum(t_max);
-		m_scroll->setValue(t_value);
-	}
+        if (m_scroll)
+        {
+                const QSignalBlocker blocker(m_scroll);
+                m_scroll->setMinimum(t_min);
+                m_scroll->setMaximum(t_max);
+                m_scroll->setValue(t_value);
+                qCDebug(lcWidget2D) << "Scroll slider configured. Min:" << t_min
+                                    << "Max:" << t_max << "Value:" << t_value;
+        }
 }
 
 //-----------------------------------------------------------------------------
@@ -176,24 +203,28 @@ void asclepios::gui::Widget2D::onApplyTransformation(const transformationType& t
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::onRefreshScrollValues(core::Series* t_series, core::Image* t_image)
 {
-	auto* const study = t_series->getParentObject();
-	if (canScrollBeRefreshed(study->getParentObject()->getIndex(),
-		study->getIndex(), t_series->getIndex()))
-	{
-		if (!m_image->getIsMultiFrame())
-		{
-			const auto size = static_cast<int>(t_series->getSinlgeFrameImages().size());
-			const auto value =
-				(t_image->getIndex() <= m_scroll->value() 
-				&& size > 1 && t_image->getIndex() > 0)
-				? m_scroll->value() + 1
-				: m_scroll->value();
-			setSliderValues(0, size - 1, value);
-			dynamic_cast<vtkWidget2D*>(m_vtkWidget.get())->updateOvelayImageNumber(0,
-				size,
-				std::stoi(m_series->getNumber()));
-		}
-	}
+        auto* const study = t_series->getParentObject();
+        if (canScrollBeRefreshed(study->getParentObject()->getIndex(),
+                study->getIndex(), t_series->getIndex()))
+        {
+                if (!m_image->getIsMultiFrame())
+                {
+                        const auto size = static_cast<int>(t_series->getSinlgeFrameImages().size());
+                        const auto value =
+                                (t_image->getIndex() <= m_scroll->value()
+                                && size > 1 && t_image->getIndex() > 0)
+                                ? m_scroll->value() + 1
+                                : m_scroll->value();
+                        setSliderValues(0, size - 1, value);
+                        dynamic_cast<vtkWidget2D*>(m_vtkWidget.get())->updateOvelayImageNumber(0,
+                                size,
+                                std::stoi(m_series->getNumber()));
+                        qCDebug(lcWidget2D)
+                                << "Scroll values refreshed from importer. Series index:" << t_series->getIndex()
+                                << "Image index:" << t_image->getIndex()
+                                << "Current value:" << value;
+                }
+        }
 }
 
 void asclepios::gui::Widget2D::onChangeScrollValue(vtkObject* t_obj , unsigned long , void*, void*) const
@@ -201,10 +232,12 @@ void asclepios::gui::Widget2D::onChangeScrollValue(vtkObject* t_obj , unsigned l
 	const QSignalBlocker blocker(m_scroll);
 	auto* const  style =
 		dynamic_cast<vtkWidget2DInteractorStyle*>(t_obj);
-	if(style)
-	{
-		m_scroll->setValue(style->getCurrentImageIndex());
-	}
+        if(style)
+        {
+                m_scroll->setValue(style->getCurrentImageIndex());
+                qCDebug(lcWidget2D)
+                        << "Scroll value updated from interactor style:" << style->getCurrentImageIndex();
+        }
 }
 
 //-----------------------------------------------------------------------------
@@ -219,17 +252,17 @@ void asclepios::gui::Widget2D::onSetMaximized() const
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::onRenderFinished()
 {
-        qInfo() << "[Widget2D] Render finished. Setting up interactor/scroll.";
+        qCInfo(lcWidget2D) << "Render finished successfully. Future finished:" << m_future.isFinished();
         m_vtkWidget->setInteractor(m_qtvtkWidget->
                 GetRenderWindow()->GetInteractor());
-	m_vtkWidget->render();
-	auto const max = m_image->getIsMultiFrame()
-		? m_image->getNumberOfFrames() - 1
-		: static_cast<int>(m_series->getSinlgeFrameImages().size()) - 1;
-	m_scroll->setMaximum(max);
-	dynamic_cast<vtkWidget2D*>(m_vtkWidget.get())
-		->updateOvelayImageNumber(0, max + 1,
-			std::stoi(m_series->getNumber()));
+        m_vtkWidget->render();
+        auto const max = m_image->getIsMultiFrame()
+                ? m_image->getNumberOfFrames() - 1
+                : static_cast<int>(m_series->getSinlgeFrameImages().size()) - 1;
+        m_scroll->setMaximum(max);
+        dynamic_cast<vtkWidget2D*>(m_vtkWidget.get())
+                ->updateOvelayImageNumber(0, max + 1,
+                        std::stoi(m_series->getNumber()));
         connectScroll();
         m_scroll->setVisible(m_scroll->maximum());
         m_tabWidget->setAcceptDrops(true);
@@ -243,13 +276,15 @@ void asclepios::gui::Widget2D::onRenderFinished()
         {
                 m_errorLabel->hide();
         }
-        qInfo() << "[Widget2D] Scroll range:" << 0 << "-" << max;
+        qCInfo(lcWidget2D) << "Scroll range configured:" << 0 << "-" << max;
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::onRenderFailed(const QString& t_message)
 {
-        qWarning() << "[Widget2D] Render failed. Showing placeholder:" << t_message;
+        qCWarning(lcWidget2D)
+                << "Render failed. Showing placeholder." << "Reason:" << t_message
+                << "Future running:" << m_future.isRunning();
         stopLoadingAnimation();
         m_future = {};
         m_isImageLoaded = false;
@@ -290,22 +325,23 @@ void asclepios::gui::Widget2D::closeEvent(QCloseEvent* t_event)
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::onChangeImage(int t_index)
 {
-	try
-	{
-		auto* interactorStyle =
+        try
+        {
+                auto* interactorStyle =
 			dynamic_cast<vtkWidget2DInteractorStyle*>(
 				m_qtvtkWidget->GetRenderWindow()->
 				GetInteractor()->GetInteractorStyle());
-		if (interactorStyle)
-		{
-			onActivateWidget(true);
-			interactorStyle->changeImage(t_index);
-		}
-	}
-	catch (const std::exception& ex)
-	{
-		qWarning() << "[Widget2D] Failed to change image:" << ex.what();
-	}
+                if (interactorStyle)
+                {
+                        onActivateWidget(true);
+                        interactorStyle->changeImage(t_index);
+                        qCDebug(lcWidget2D) << "Scroll value changed by user to frame" << t_index;
+                }
+        }
+        catch (const std::exception& ex)
+        {
+                qCWarning(lcWidget2D) << "Failed to change image:" << ex.what();
+        }
 }
 
 //-----------------------------------------------------------------------------
@@ -394,17 +430,23 @@ void asclepios::gui::Widget2D::setScrollStyle() const
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::initImageReader(vtkWidget2D* t_vtkWidget2D, Widget2D* t_self)
 {
+        qCInfo(lcWidget2D) << "Background initImageReader started.";
         try
         {
                 t_vtkWidget2D->initImageReader();
+                qCInfo(lcWidget2D) << "Background initImageReader completed successfully.";
                 emit t_self->imageReaderInitialized();
         }
         catch (const std::exception& ex)
         {
+                qCWarning(lcWidget2D)
+                        << "Background initImageReader failed with exception:" << ex.what();
                 emit t_self->imageReaderFailed(QString::fromUtf8(ex.what()));
         }
         catch (...)
         {
+                qCWarning(lcWidget2D)
+                        << "Background initImageReader failed with an unknown exception.";
                 emit t_self->imageReaderFailed(Widget2D::tr("Unknown error while preparing the image reader."));
         }
 }
