@@ -1,7 +1,6 @@
 #pragma once
 
 #include <vtkDICOMReader.h>
-#include <vtkWeakPointer.h>
 #include <vtkSmartPointer.h>
 #include "utils.h"
 
@@ -92,7 +91,7 @@ namespace asclepios::core
 		double m_pixelSpacingY = -1;
 		int m_acquisitionNumber = {};
 		bool m_isMultiframe = false;
-		vtkWeakPointer<vtkDICOMReader> m_imageReader = {};
+		mutable vtkSmartPointer<vtkDICOMReader> m_imageReader = {};
 
 		static bool isLess(Image* t_lhs, Image* t_rhs);
 	};

@@ -29,17 +29,23 @@ vtkSmartPointer<vtkDICOMReader> asclepios::core::Image::getImageReader() const
 {
         if (m_imageReader)
         {
-                return vtkSmartPointer<vtkDICOMReader>(m_imageReader);
+                return m_imageReader;
         }
 
-        vtkNew<vtkDICOMReader> localReader;
-        localReader->SetFileName(m_path.c_str());
+        if (m_path.empty())
+        {
+                vtkGenericWarningMacro(<< "[Image] getImageReader() called without a valid path.");
+                return nullptr;
+        }
+
+        m_imageReader = vtkSmartPointer<vtkDICOMReader>::New();
+        m_imageReader->SetFileName(m_path.c_str());
 
         CodecRegistrationGuard guard;
-        localReader->Update();
+        m_imageReader->Update();
 
-        const auto* const metaData = localReader->GetMetaData();
-        auto* const output = localReader->GetOutput();
+        const auto* const metaData = m_imageReader->GetMetaData();
+        auto* const output = m_imageReader->GetOutput();
         auto* const pointData = output ? output->GetPointData() : nullptr;
         auto* const scalars = pointData ? pointData->GetScalars() : nullptr;
         if (!metaData || !scalars)
@@ -47,8 +53,16 @@ vtkSmartPointer<vtkDICOMReader> asclepios::core::Image::getImageReader() const
                 vtkGenericWarningMacro(<< "[Image] vtkDICOMReader produced incomplete output for " << m_path
                                        << " (metadata or pixel data missing)");
         }
+        else
+        {
+                int dimensions[3] = { 0, 0, 0 };
+                output->GetDimensions(dimensions);
+                vtkGenericWarningMacro(<< "[Image] vtkDICOMReader initialized for " << m_path
+                                       << " dimensions: " << dimensions[0] << "x"
+                                       << dimensions[1] << "x" << dimensions[2]);
+        }
 
-        return localReader;
+        return m_imageReader;
 }
 
 //-----------------------------------------------------------------------------

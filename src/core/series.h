@@ -4,6 +4,7 @@
 #include <memory>
 #include "image.h"
 #include "utils.h"
+#include <vtkWeakPointer.h>
 
 namespace asclepios::core
 {
