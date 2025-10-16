@@ -1,5 +1,6 @@
 #include "widget2d.h"
 #include <vtkGenericOpenGLRenderWindow.h>
+#include <vtkRendererCollection.h>
 #include <exception>
 #include <QFocusEvent>
 #include <QLoggingCategory>
@@ -88,6 +89,13 @@ void asclepios::gui::Widget2D::render()
         auto* const renderWindow = m_qtvtkWidget ? m_qtvtkWidget->GetRenderWindow() : nullptr;
         if (m_qtvtkWidget && m_vtkWidget && renderWindow)
         {
+                const int* const size = renderWindow->GetSize();
+                auto* const rendererCollection = renderWindow->GetRenderers();
+                const int rendererCount = rendererCollection ? rendererCollection->GetNumberOfItems() : 0;
+                qCInfo(lcWidget2D)
+                        << "Render window ready. size:" << size[0] << size[1]
+                        << "renderers:" << rendererCount;
+
                 if (!m_series || !m_image)
                 {
                         qCWarning(lcWidget2D)

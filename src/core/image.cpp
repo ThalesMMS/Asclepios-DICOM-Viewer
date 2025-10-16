@@ -4,6 +4,10 @@
 #include <vtkSetGet.h>
 #include <vtkPointData.h>
 #include <vtkImageData.h>
+#include <QString>
+#include <QLoggingCategory>
+
+Q_LOGGING_CATEGORY(lcImage, "asclepios.core.image")
 
 namespace
 {
@@ -50,16 +54,20 @@ vtkSmartPointer<vtkDICOMReader> asclepios::core::Image::getImageReader() const
         auto* const scalars = pointData ? pointData->GetScalars() : nullptr;
         if (!metaData || !scalars)
         {
-                vtkGenericWarningMacro(<< "[Image] vtkDICOMReader produced incomplete output for " << m_path
-                                       << " (metadata or pixel data missing)");
+                qCWarning(lcImage)
+                        << "vtkDICOMReader produced incomplete output for"
+                        << QString::fromStdString(m_path)
+                        << "(metadata or pixel data missing)";
         }
         else
         {
                 int dimensions[3] = { 0, 0, 0 };
                 output->GetDimensions(dimensions);
-                vtkGenericWarningMacro(<< "[Image] vtkDICOMReader initialized for " << m_path
-                                       << " dimensions: " << dimensions[0] << "x"
-                                       << dimensions[1] << "x" << dimensions[2]);
+                qCInfo(lcImage)
+                        << "vtkDICOMReader initialized for"
+                        << QString::fromStdString(m_path)
+                        << "dimensions:" << dimensions[0] << "x"
+                        << dimensions[1] << "x" << dimensions[2];
         }
 
         return m_imageReader;
