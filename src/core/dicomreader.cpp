@@ -1,18 +1,50 @@
 #include "dicomreader.h"
 #include <dcmtk/dcmdata/dcdeftag.h>
 #include <dcmtk/dcmimgle/dcmimage.h>
+#include <QFileInfo>
+#include <QLoggingCategory>
+#include <QString>
+
+Q_LOGGING_CATEGORY(lcDicomReader, "asclepios.core.dicom")
+
+namespace
+{
+        QString formatTagKey(const DcmTagKey& tagKey)
+        {
+                return QStringLiteral("(%1,%2)")
+                        .arg(tagKey.getGroup(), 4, 16, QLatin1Char('0'))
+                        .arg(tagKey.getElement(), 4, 16, QLatin1Char('0'))
+                        .toUpper();
+        }
+
+        QString sanitizePath(const std::string& path)
+        {
+                const QFileInfo fileInfo(QString::fromStdString(path));
+                return fileInfo.fileName().isEmpty() ? fileInfo.filePath() : fileInfo.fileName();
+        }
+}
 
 void asclepios::core::DicomReader::readFile(const std::string& t_filePath)
 {
-	m_filePath = t_filePath;
-	m_file = std::make_unique<DcmFileFormat>();
-	if (m_file->loadFile(t_filePath.c_str()).bad())
-	{
-		m_file.release();
-		m_dataSet = nullptr;
-		throw std::runtime_error("Cannot open file!");
-	}
-	m_dataSet = m_file->getDataset();
+        m_filePath = t_filePath;
+        m_file = std::make_unique<DcmFileFormat>();
+        const auto sanitizedPath = sanitizePath(t_filePath);
+        qInfo(lcDicomReader) << "[Logging] Starting DICOM read for" << sanitizedPath;
+        if (m_file->loadFile(t_filePath.c_str()).bad())
+        {
+                qCritical(lcDicomReader) << "[Logging] Failed to load DICOM file" << sanitizedPath;
+                m_file.reset();
+                m_dataSet = nullptr;
+                throw std::runtime_error("Cannot open file!");
+        }
+        m_dataSet = m_file->getDataset();
+        if (m_dataSet == nullptr)
+        {
+                qWarning(lcDicomReader) << "[Logging] DICOM file has no metadata" << sanitizedPath;
+                m_file.reset();
+                throw std::runtime_error("Missing dataset metadata!");
+        }
+        qInfo(lcDicomReader) << "[Logging] Successfully loaded DICOM file" << sanitizedPath;
 }
 
 //-----------------------------------------------------------------------------
@@ -41,11 +73,13 @@ std::unique_ptr<asclepios::core::Study> asclepios::core::DicomReader::getReadStu
 //-----------------------------------------------------------------------------
 std::unique_ptr<asclepios::core::Series> asclepios::core::DicomReader::getReadSeries() const
 {
-	const auto modality = getTagFromDataSet(DCM_Modality);
-	if (!isModalitySupported(modality))
-	{
-		return nullptr;
-	}
+        const auto modality = getTagFromDataSet(DCM_Modality);
+        if (!isModalitySupported(modality))
+        {
+                qWarning(lcDicomReader) << "[Logging] Unsupported modality encountered in"
+                                        << sanitizePath(m_filePath) << ":" << QString::fromStdString(modality);
+                return nullptr;
+        }
 	auto tempSeries = std::make_unique<Series>();
 	tempSeries->setUID(getTagFromDataSet(DCM_SeriesInstanceUID));
 	tempSeries->setDate(getTagFromDataSet(DCM_SeriesDate));
@@ -93,18 +127,18 @@ std::unique_ptr<asclepios::core::Image> asclepios::core::DicomReader::getReadIma
 //-----------------------------------------------------------------------------
 std::string asclepios::core::DicomReader::getTagFromDataSet(const DcmTagKey& tagKey) const
 {
-	try
-	{
-		OFString result;
-		m_dataSet->findAndGetOFStringArray(tagKey, result);
-		return result.c_str();
-	}
-	catch (std::exception& ex)
-	{
-		//todo log exception
-		[[maybe_unused]] const auto* const what = ex.what();
-		return {};
-	}
+        try
+        {
+                OFString result;
+                m_dataSet->findAndGetOFStringArray(tagKey, result);
+                return result.c_str();
+        }
+        catch (std::exception& ex)
+        {
+                qWarning(lcDicomReader) << "[Logging] Exception while reading tag"
+                                        << formatTagKey(tagKey) << ":" << ex.what();
+                return {};
+        }
 }
 
 //-----------------------------------------------------------------------------
@@ -139,29 +173,38 @@ std::tuple<int, int> asclepios::core::DicomReader::getWindowLevel() const
 //-----------------------------------------------------------------------------
 std::tuple<double, double> asclepios::core::DicomReader::getPixelSpacing() const
 {
-	auto pixelSpacing = getTagFromDataSet(DCM_PixelSpacing);
-	if (pixelSpacing.empty())
-	{
-		pixelSpacing = getTagFromDataSet(DCM_ImagerPixelSpacing);
-	}
-	if (!pixelSpacing.empty())
+        auto pixelSpacing = getTagFromDataSet(DCM_PixelSpacing);
+        auto usedTag = DCM_PixelSpacing;
+        if (pixelSpacing.empty())
+        {
+                pixelSpacing = getTagFromDataSet(DCM_ImagerPixelSpacing);
+                usedTag = DCM_ImagerPixelSpacing;
+        }
+        if (!pixelSpacing.empty())
 	{
 		const auto separatorPosition = pixelSpacing.find('\\');
 		const auto x =
 			pixelSpacing.substr(0, pixelSpacing.find('\\'));
-		try
-		{
-			if (separatorPosition != pixelSpacing.length())
-			{
-				const auto y =
-					pixelSpacing.substr(separatorPosition + 1, pixelSpacing.length());
-				return std::make_tuple(std::stod(x), std::stod(y));
-			}
-		}
-		catch (std::exception& ex)
-		{
-			//todo log exception
-		}
-	}
-	return std::make_tuple(1, 1);
+                try
+                {
+                        if (separatorPosition != pixelSpacing.length())
+                        {
+                                const auto y =
+                                        pixelSpacing.substr(separatorPosition + 1, pixelSpacing.length());
+                                return std::make_tuple(std::stod(x), std::stod(y));
+                        }
+                }
+                catch (std::exception& ex)
+                {
+                        qWarning(lcDicomReader) << "[Logging] Exception while parsing pixel spacing for tag"
+                                                << formatTagKey(usedTag) << ":" << ex.what();
+                }
+        }
+        else
+        {
+                qWarning(lcDicomReader) << "[Logging] Missing pixel spacing metadata for tags"
+                                        << formatTagKey(DCM_PixelSpacing) << "and"
+                                        << formatTagKey(DCM_ImagerPixelSpacing);
+        }
+        return std::make_tuple(1, 1);
 }
