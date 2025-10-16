@@ -15,6 +15,7 @@
 
 #include <algorithm>
 #include <cmath>
+#include <cstdint>
 #include <cstring>
 #include <memory>
 #include <sstream>
@@ -485,9 +486,17 @@ bool asclepios::gui::vtkWidget2D::buildFallbackImage()
                 samplesPerPixel = 1;
         }
 
-        Uint16 bitsStored = static_cast<Uint16>(dicomImage->getDepth());
-        dataset->findAndGetUint16(DCM_BitsStored, bitsStored);
-        const int bitsPerSample = bitsStored > 8 ? 16 : 8;
+        Uint16 pixelRepresentation = 0;
+        dataset->findAndGetUint16(DCM_PixelRepresentation, pixelRepresentation);
+        const bool isSigned = pixelRepresentation == 1;
+
+        Uint16 bitsAllocated = static_cast<Uint16>(dicomImage->getDepth());
+        dataset->findAndGetUint16(DCM_BitsAllocated, bitsAllocated);
+        if (bitsAllocated == 0)
+        {
+                dataset->findAndGetUint16(DCM_BitsStored, bitsAllocated);
+        }
+        const int bitsPerSample = bitsAllocated > 8 ? 16 : 8;
 
         const size_t framePixelCount = static_cast<size_t>(width) * static_cast<size_t>(height) *
                 static_cast<size_t>(samplesPerPixel);
@@ -501,11 +510,25 @@ bool asclepios::gui::vtkWidget2D::buildFallbackImage()
 
         if (bitsPerSample > 8)
         {
-                m_fallbackWordBuffer.resize(framePixelCount * frameCount);
+                if (isSigned)
+                {
+                        m_fallbackSignedWordBuffer.resize(framePixelCount * frameCount);
+                }
+                else
+                {
+                        m_fallbackWordBuffer.resize(framePixelCount * frameCount);
+                }
         }
         else
         {
-                m_fallbackByteBuffer.resize(framePixelCount * frameCount);
+                if (isSigned)
+                {
+                        m_fallbackSignedByteBuffer.resize(framePixelCount * frameCount);
+                }
+                else
+                {
+                        m_fallbackByteBuffer.resize(framePixelCount * frameCount);
+                }
         }
 
         for (unsigned long frame = 0; frame < frameCount; ++frame)
@@ -521,13 +544,29 @@ bool asclepios::gui::vtkWidget2D::buildFallbackImage()
 
                 if (bitsPerSample > 8)
                 {
-                        auto* destination = reinterpret_cast<Uint16*>(m_fallbackWordBuffer.data());
-                        std::memcpy(destination + frame * framePixelCount, frameData, frameByteCount);
+                        if (isSigned)
+                        {
+                                auto* destination = m_fallbackSignedWordBuffer.data();
+                                std::memcpy(destination + frame * framePixelCount, frameData, frameByteCount);
+                        }
+                        else
+                        {
+                                auto* destination = m_fallbackWordBuffer.data();
+                                std::memcpy(destination + frame * framePixelCount, frameData, frameByteCount);
+                        }
                 }
                 else
                 {
-                        auto* destination = m_fallbackByteBuffer.data();
-                        std::memcpy(destination + frame * framePixelCount, frameData, frameByteCount);
+                        if (isSigned)
+                        {
+                                auto* destination = m_fallbackSignedByteBuffer.data();
+                                std::memcpy(destination + frame * framePixelCount, frameData, frameByteCount);
+                        }
+                        else
+                        {
+                                auto* destination = m_fallbackByteBuffer.data();
+                                std::memcpy(destination + frame * framePixelCount, frameData, frameByteCount);
+                        }
                 }
         }
 
@@ -541,15 +580,33 @@ bool asclepios::gui::vtkWidget2D::buildFallbackImage()
 
         if (bitsPerSample > 8)
         {
-                m_fallbackImporter->SetDataScalarTypeToUnsignedShort();
-                m_fallbackImporter->CopyImportVoidPointer(m_fallbackWordBuffer.data(),
-                        m_fallbackWordBuffer.size() * sizeof(Uint16));
+                if (isSigned)
+                {
+                        m_fallbackImporter->SetDataScalarTypeToShort();
+                        m_fallbackImporter->CopyImportVoidPointer(m_fallbackSignedWordBuffer.data(),
+                                m_fallbackSignedWordBuffer.size() * sizeof(std::int16_t));
+                }
+                else
+                {
+                        m_fallbackImporter->SetDataScalarTypeToUnsignedShort();
+                        m_fallbackImporter->CopyImportVoidPointer(m_fallbackWordBuffer.data(),
+                                m_fallbackWordBuffer.size() * sizeof(Uint16));
+                }
         }
         else
         {
-                m_fallbackImporter->SetDataScalarTypeToUnsignedChar();
-                m_fallbackImporter->CopyImportVoidPointer(m_fallbackByteBuffer.data(),
-                        m_fallbackByteBuffer.size());
+                if (isSigned)
+                {
+                        m_fallbackImporter->SetDataScalarTypeToSignedChar();
+                        m_fallbackImporter->CopyImportVoidPointer(m_fallbackSignedByteBuffer.data(),
+                                m_fallbackSignedByteBuffer.size());
+                }
+                else
+                {
+                        m_fallbackImporter->SetDataScalarTypeToUnsignedChar();
+                        m_fallbackImporter->CopyImportVoidPointer(m_fallbackByteBuffer.data(),
+                                m_fallbackByteBuffer.size());
+                }
         }
 
         m_fallbackImporter->Update();
@@ -570,6 +627,8 @@ void asclepios::gui::vtkWidget2D::resetFallback()
         m_fallbackImporter = nullptr;
         m_fallbackByteBuffer.clear();
         m_fallbackWordBuffer.clear();
+        m_fallbackSignedByteBuffer.clear();
+        m_fallbackSignedWordBuffer.clear();
 }
 
 //-----------------------------------------------------------------------------
