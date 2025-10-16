@@ -6,6 +6,7 @@
 
 #include <vtkImageImport.h>
 
+#include <cstdint>
 #include <vector>
 
 enum class transformationType;
@@ -47,6 +48,8 @@ namespace asclepios::gui
                 vtkSmartPointer<vtkImageImport> m_fallbackImporter = {};
                 std::vector<unsigned char> m_fallbackByteBuffer = {};
                 std::vector<unsigned short> m_fallbackWordBuffer = {};
+                std::vector<std::int8_t> m_fallbackSignedByteBuffer = {};
+                std::vector<std::int16_t> m_fallbackSignedWordBuffer = {};
 
                 void initRenderingLayers();
                 void initWidgetDICOM();
