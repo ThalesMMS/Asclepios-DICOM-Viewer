@@ -21,6 +21,7 @@
 #include <cstring>
 #include <memory>
 #include <sstream>
+#include <stdexcept>
 #include <string>
 
 #include <dcmtk/dcmdata/dcdeftag.h>
@@ -82,7 +83,7 @@ void asclepios::gui::vtkWidget2D::initImageReader()
 }
 
 //-----------------------------------------------------------------------------
-void asclepios::gui::vtkWidget2D::initWidgetDICOM()
+bool asclepios::gui::vtkWidget2D::initWidgetDICOM()
 {
         if (!m_dcmWidget)
         {
@@ -109,7 +110,7 @@ void asclepios::gui::vtkWidget2D::initWidgetDICOM()
                 {
                         qCCritical(lcVtkWidget2D)
                                 << "Fallback image data unavailable. Aborting render.";
-                        return;
+                        return false;
                 }
         }
         else
@@ -124,6 +125,7 @@ void asclepios::gui::vtkWidget2D::initWidgetDICOM()
         m_dcmWidget->setInitialWindowWidthCenter();
         m_dcmWidget->Render();
         qCInfo(lcVtkWidget2D) << "Widget render invoked.";
+        return true;
 }
 
 //-----------------------------------------------------------------------------
@@ -147,17 +149,22 @@ void asclepios::gui::vtkWidget2D::render()
         {
                 qCWarning(lcVtkWidget2D)
                         << "render() aborted - unable to obtain usable image data.";
-                return;
+                throw std::runtime_error("Unable to obtain usable image data for rendering.");
         }
-        initWidgetDICOM();
+        if (!initWidgetDICOM())
+        {
+                qCCritical(lcVtkWidget2D)
+                        << "render() aborted - initWidgetDICOM failed to configure image data.";
+                throw std::runtime_error("Failed to configure renderable image data.");
+        }
         if (!m_dcmWidget)
         {
                 qCWarning(lcVtkWidget2D) << "render() aborted - vtkWidgetDICOM missing.";
-                return;
+                throw std::runtime_error("vtkWidgetDICOM is not available for rendering.");
         }
-	auto* const interactorStyle =
-		dynamic_cast<vtkWidget2DInteractorStyle*>(m_dcmWidget->GetRenderWindow()->
-			GetInteractor()->GetInteractorStyle());
+        auto* const interactorStyle =
+                dynamic_cast<vtkWidget2DInteractorStyle*>(m_dcmWidget->GetRenderWindow()->
+                        GetInteractor()->GetInteractorStyle());
 	if (interactorStyle)
 	{
 		interactorStyle->setWidget(this);

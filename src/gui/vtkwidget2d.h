@@ -52,7 +52,11 @@ namespace asclepios::gui
                 std::vector<std::int16_t> m_fallbackSignedWordBuffer = {};
 
                 void initRenderingLayers();
-                void initWidgetDICOM();
+                /**
+                 * Initializes the vtkWidgetDICOM instance with image data.
+                 * @return False when no renderable data could be configured for rendering.
+                 */
+                bool initWidgetDICOM();
                 void createvtkWidgetOverlay();
                 void invertColors();
                 void fitImage() const;

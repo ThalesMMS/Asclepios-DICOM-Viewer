@@ -1,5 +1,6 @@
 #include "widget2d.h"
 #include <vtkGenericOpenGLRenderWindow.h>
+#include <exception>
 #include <QFocusEvent>
 #include <QLoggingCategory>
 #include <QtConcurrent/QtConcurrent>
@@ -253,30 +254,47 @@ void asclepios::gui::Widget2D::onSetMaximized() const
 void asclepios::gui::Widget2D::onRenderFinished()
 {
         qCInfo(lcWidget2D) << "Render finished successfully. Future finished:" << m_future.isFinished();
-        m_vtkWidget->setInteractor(m_qtvtkWidget->
-                GetRenderWindow()->GetInteractor());
-        m_vtkWidget->render();
-        auto const max = m_image->getIsMultiFrame()
-                ? m_image->getNumberOfFrames() - 1
-                : static_cast<int>(m_series->getSinlgeFrameImages().size()) - 1;
-        m_scroll->setMaximum(max);
-        dynamic_cast<vtkWidget2D*>(m_vtkWidget.get())
-                ->updateOvelayImageNumber(0, max + 1,
-                        std::stoi(m_series->getNumber()));
-        connectScroll();
-        m_scroll->setVisible(m_scroll->maximum());
-        m_tabWidget->setAcceptDrops(true);
-        m_future = {};
-        disconnect(this, &Widget2D::imageReaderInitialized,
-                   this, &Widget2D::onRenderFinished);
-        disconnect(this, &Widget2D::imageReaderFailed,
-                   this, &Widget2D::onRenderFailed);
-        stopLoadingAnimation();
-        if (m_errorLabel)
+        try
         {
-                m_errorLabel->hide();
+                m_vtkWidget->setInteractor(m_qtvtkWidget->
+                        GetRenderWindow()->GetInteractor());
+                m_vtkWidget->render();
+                auto const max = m_image->getIsMultiFrame()
+                        ? m_image->getNumberOfFrames() - 1
+                        : static_cast<int>(m_series->getSinlgeFrameImages().size()) - 1;
+                m_scroll->setMaximum(max);
+                dynamic_cast<vtkWidget2D*>(m_vtkWidget.get())
+                        ->updateOvelayImageNumber(0, max + 1,
+                                std::stoi(m_series->getNumber()));
+                connectScroll();
+                m_scroll->setVisible(m_scroll->maximum());
+                m_tabWidget->setAcceptDrops(true);
+                m_future = {};
+                disconnect(this, &Widget2D::imageReaderInitialized,
+                           this, &Widget2D::onRenderFinished);
+                disconnect(this, &Widget2D::imageReaderFailed,
+                           this, &Widget2D::onRenderFailed);
+                stopLoadingAnimation();
+                if (m_errorLabel)
+                {
+                        m_errorLabel->hide();
+                }
+                qCInfo(lcWidget2D) << "Scroll range configured:" << 0 << "-" << max;
         }
-        qCInfo(lcWidget2D) << "Scroll range configured:" << 0 << "-" << max;
+        catch (const std::exception& ex)
+        {
+                qCCritical(lcWidget2D)
+                        << "Render finalization failed due to exception:" << ex.what();
+                Q_EMIT imageReaderFailed(QString::fromUtf8(ex.what()));
+                return;
+        }
+        catch (...)
+        {
+                qCCritical(lcWidget2D)
+                        << "Render finalization failed due to unknown error.";
+                Q_EMIT imageReaderFailed(QString());
+                return;
+        }
 }
 
 //-----------------------------------------------------------------------------
