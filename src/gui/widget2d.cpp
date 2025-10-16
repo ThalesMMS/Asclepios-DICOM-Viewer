@@ -1,6 +1,7 @@
 #include "widget2d.h"
 #include <vtkGenericOpenGLRenderWindow.h>
 #include <QFocusEvent>
+#include <QDebug>
 #include <QtConcurrent/QtConcurrent>
 #include "tabwidget.h"
 #include "vtkwidget2dinteractorstyle.h"
@@ -70,7 +71,7 @@ void asclepios::gui::Widget2D::render()
 		catch (std::exception& ex)
 		{
 			m_future = {};
-			//todo log
+			qWarning() << "[Widget2D] Render failed:" << ex.what();
 		}
 	}
 }
@@ -99,6 +100,7 @@ void asclepios::gui::Widget2D::resetView()
 	//todo reset title of tab
 	disconnectScroll();
 	createConnections();
+	qInfo() << "[Widget2D] View reset";
 }
 
 //-----------------------------------------------------------------------------
@@ -185,6 +187,7 @@ void asclepios::gui::Widget2D::onSetMaximized() const
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::onRenderFinished()
 {
+	qInfo() << "[Widget2D] Render finished. Setting up interactor/scroll.";
 	m_vtkWidget->setInteractor(m_qtvtkWidget->
 		GetRenderWindow()->GetInteractor());
 	m_vtkWidget->render();
@@ -202,6 +205,7 @@ void asclepios::gui::Widget2D::onRenderFinished()
 	disconnect(this, &Widget2D::imageReaderInitialized,
 	           this, &Widget2D::onRenderFinished);
 	stopLoadingAnimation();
+	qInfo() << "[Widget2D] Scroll range:" << 0 << "-" << max;
 }
 
 //-----------------------------------------------------------------------------
@@ -229,7 +233,7 @@ void asclepios::gui::Widget2D::onChangeImage(int t_index)
 	}
 	catch (const std::exception& ex)
 	{
-		//todo
+		qWarning() << "[Widget2D] Failed to change image:" << ex.what();
 	}
 }
 

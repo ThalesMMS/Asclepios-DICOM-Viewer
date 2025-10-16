@@ -7,6 +7,8 @@
 #include <vtkDataArray.h>
 #include <vtkImageActor.h>
 #include <vtkRenderWindowInteractor.h>
+#include <QDebug>
+#include <cmath>
 #include "utils.h"
 #include "vtkwidget2dinteractorstyle.h"
 
@@ -34,13 +36,17 @@ void asclepios::gui::vtkWidget2D::initWidgetDICOM()
 		m_dcmWidget->SetRenderWindow(m_renderWindows[0]);
 		m_activeRenderWindow = m_dcmWidget->GetRenderWindow();
 		initRenderingLayers();
+		qInfo() << "[vtkWidget2D] Created vtkWidgetDICOM instance";
 	}
+	qInfo() << "[vtkWidget2D] Setting DICOM widget data. Window/Level from image:"
+		<< m_image->getWindowWidth() << m_image->getWindowCenter();
 	m_dcmWidget->setImageMetaData(m_imageReader->GetMetaData());
 	m_dcmWidget->setImageReader(m_imageReader);
 	m_dcmWidget->setWindowCenter(m_image->getWindowCenter());
 	m_dcmWidget->setWindowWidth(m_image->getWindowWidth());
 	m_dcmWidget->setInitialWindowWidthCenter();
 	m_dcmWidget->Render();
+	qInfo() << "[vtkWidget2D] Widget render invoked";
 }
 
 //-----------------------------------------------------------------------------
@@ -62,11 +68,13 @@ void asclepios::gui::vtkWidget2D::render()
 {
 	if (!m_imageReader || !m_imageReader->GetMetaData())
 	{
+		qWarning() << "[vtkWidget2D] render() aborted - missing reader or metadata";
 		return;
 	}
 	initWidgetDICOM();
 	if (!m_dcmWidget)
 	{
+		qWarning() << "[vtkWidget2D] render() aborted - vtkWidgetDICOM missing";
 		return;
 	}
 	auto* const interactorStyle =
@@ -78,6 +86,7 @@ void asclepios::gui::vtkWidget2D::render()
 		interactorStyle->setSeries(m_series);
 		interactorStyle->setImage(m_image);
 		interactorStyle->updateOvelayImageNumber(0);
+		qInfo() << "[vtkWidget2D] InteractorStyle configured";
 	}
 	fitImage();
 	createvtkWidgetOverlay();
@@ -174,14 +183,29 @@ double asclepios::gui::vtkWidget2D::computeScale() const
 		m_dcmWidget->GetRenderWindow()->GetSize();
 	auto* const bounds =
 		m_dcmWidget->GetImageActor()->GetBounds();
-	const auto winRatio =
-		static_cast<double>(size[1]) / static_cast<double>(size[0]);
-	const auto actRatio =
-		static_cast<double>((bounds[3] - bounds[2])) /
-		static_cast<double>((bounds[1] - bounds[0]));
-	return actRatio > winRatio
-		       ? bounds[3] / 2
-		       : bounds[1] / 2 * winRatio;
+	const auto width = static_cast<double>(size[0]);
+	const auto height = static_cast<double>(size[1]);
+	const auto xExtent = static_cast<double>(bounds[1] - bounds[0]);
+	const auto yExtent = static_cast<double>(bounds[3] - bounds[2]);
+
+	if (width <= 0.0 || height <= 0.0 || xExtent <= 0.0 || yExtent <= 0.0)
+	{
+		return 1.0;
+	}
+
+	const auto winRatio = height / width;
+	const auto actRatio = yExtent / xExtent;
+
+	const auto primary = actRatio > winRatio
+		                     ? yExtent * 0.5
+		                     : xExtent * 0.5 * winRatio;
+	if (!std::isfinite(primary) || primary <= 0.0)
+	{
+		qWarning() << "[vtkWidget2D] computeScale falling back to 1.0 - size:"
+			<< width << height << "bounds:" << xExtent << yExtent;
+		return 1.0;
+	}
+	return primary;
 }
 
 //-----------------------------------------------------------------------------

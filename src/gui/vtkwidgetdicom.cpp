@@ -18,6 +18,7 @@
 #include <vtkRendererCollection.h>
 #include <vtkStreamingDemandDrivenPipeline.h>
 #include <vtkWindowLevelLookupTable.h>
+#include <QDebug>
 #include <cmath>
 
 vtkStandardNewMacro(asclepios::gui::vtkWidgetDICOM)
@@ -26,9 +27,13 @@ vtkStandardNewMacro(asclepios::gui::vtkWidgetDICOM)
 void asclepios::gui::vtkWidgetDICOM::setImageReader(vtkDICOMReader* t_reader)
 {
 	m_reader = t_reader;
+	qInfo() << "[vtkWidgetDICOM] Reader set. Output extent:"
+		<< (m_reader ? QString::number(m_reader->GetOutput()->GetExtent()[1] -
+			m_reader->GetOutput()->GetExtent()[0] + 1) : QString("null"));
 	SetInputData(m_reader->GetOutput());
 	if (m_reader->HasOverlay())
 	{
+		qInfo() << "[vtkWidgetDICOM] Overlay detected. Creating actor.";
 		createOverlayActor();
 	}
 }
@@ -82,6 +87,7 @@ void asclepios::gui::vtkWidgetDICOM::SetInputData(vtkImageData* in)
 {
 	if (!in)
 	{
+		qWarning() << "[vtkWidgetDICOM] SetInputData called with null image";
 		return;
 	}
 
@@ -96,11 +102,14 @@ void asclepios::gui::vtkWidgetDICOM::SetInputData(vtkImageData* in)
 	{
 		spacing[0] = spacing[1] = spacing[2] = 1.0;
 		in->SetSpacing(spacing);
+		qWarning() << "[vtkWidgetDICOM] Input spacing was zero. Forcing to 1,1,1.";
 	}
 
 	WindowLevel->SetInputData(in);
 
 	UpdateDisplayExtent();
+	qInfo() << "[vtkWidgetDICOM] Input data set. Spacing:"
+		<< spacing[0] << spacing[1] << spacing[2];
 }
 
 //-----------------------------------------------------------------------------
@@ -109,6 +118,7 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 	auto* const input = GetInputAlgorithm();
 	if (!input || !ImageActor)
 	{
+		qWarning() << "[vtkWidgetDICOM] UpdateDisplayExtent aborted - missing input or actor";
 		return;
 	}
 
@@ -116,12 +126,14 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 	auto* const outInfo = input->GetOutputInformation(0);
 	if (!outInfo)
 	{
+		qWarning() << "[vtkWidgetDICOM] Output information missing";
 		return;
 	}
 
 	int* const wholeExtent = outInfo->Get(vtkStreamingDemandDrivenPipeline::WHOLE_EXTENT());
 	if (!wholeExtent)
 	{
+		qWarning() << "[vtkWidgetDICOM] Whole extent missing";
 		return;
 	}
 
@@ -185,6 +197,8 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 		}
 		outInfo->Set(vtkDataObject::SPACING(), safeSpacing, 3);
 		infoSpacing = safeSpacing;
+		qWarning() << "[vtkWidgetDICOM] Metadata spacing missing. Falling back to"
+			<< safeSpacing[0] << safeSpacing[1] << safeSpacing[2];
 	}
 
 	for (int idx = 0; idx < 3; ++idx)
@@ -204,6 +218,9 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 	cam->SetClippingRange(
 		range - avgSpacing * 3.0,
 		range + avgSpacing * 3.0);
+	qInfo() << "[vtkWidgetDICOM] Clipping range updated. Range:" << range
+		<< "Avg spacing:" << avgSpacing
+		<< "Slice orientation:" << SliceOrientation;
 }
 
 //-----------------------------------------------------------------------------
