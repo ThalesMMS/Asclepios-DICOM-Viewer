@@ -1,15 +1,53 @@
 #include "image.h"
+#include "smartdjdecoderregistration.h"
+
+#include <QDebug>
+#include <vtkPointData.h>
+
+namespace
+{
+        class CodecRegistrationGuard
+        {
+        public:
+                CodecRegistrationGuard()
+                {
+                        asclepios::core::SmartDJDecoderRegistration::registerCodecs();
+                }
+
+                ~CodecRegistrationGuard()
+                {
+                        asclepios::core::SmartDJDecoderRegistration::cleanup();
+                }
+
+                CodecRegistrationGuard(const CodecRegistrationGuard&) = delete;
+                CodecRegistrationGuard& operator=(const CodecRegistrationGuard&) = delete;
+        };
+}
 
 vtkSmartPointer<vtkDICOMReader> asclepios::core::Image::getImageReader() const
 {
-	if (m_imageReader)
-	{
-		return vtkSmartPointer<vtkDICOMReader>(m_imageReader);
-	}
-	vtkNew<vtkDICOMReader> m_imageReader;
-	m_imageReader->SetFileName(m_path.c_str());
-	m_imageReader->Update();
-	return m_imageReader;
+        if (m_imageReader)
+        {
+                return vtkSmartPointer<vtkDICOMReader>(m_imageReader);
+        }
+
+        vtkNew<vtkDICOMReader> localReader;
+        localReader->SetFileName(m_path.c_str());
+
+        CodecRegistrationGuard guard;
+        localReader->Update();
+
+        const auto* const metaData = localReader->GetMetaData();
+        const auto* const output = localReader->GetOutput();
+        const auto* const pointData = output ? output->GetPointData() : nullptr;
+        const auto* const scalars = pointData ? pointData->GetScalars() : nullptr;
+        if (!metaData || !scalars)
+        {
+                qWarning() << "[Image] vtkDICOMReader produced incomplete output for" << m_path.c_str()
+                           << "(metadata or pixel data missing)";
+        }
+
+        return localReader;
 }
 
 //-----------------------------------------------------------------------------

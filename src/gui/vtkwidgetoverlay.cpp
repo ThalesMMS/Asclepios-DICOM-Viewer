@@ -1,4 +1,5 @@
 #include "vtkwidgetoverlay.h"
+#include <QDebug>
 #include <QFileDialog>
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -111,11 +112,16 @@ void asclepios::gui::vtkWidgetOverlay::positionOverlay()
 //-----------------------------------------------------------------------------
 void asclepios::gui::vtkWidgetOverlay::createOverlayInfo(vtkDICOMMetaData* t_metadata)
 {
-	for (const auto& info : m_overlays)
-	{
-		vtkDICOMTag::StaticTag tag{};
-		tag.Key = info->getTagKey();
-		auto tagValue = t_metadata->Get(vtkDICOMTag(tag)).AsString();
+        if (!t_metadata)
+        {
+                qWarning() << "[vtkWidgetOverlay] Missing metadata. Overlay text will be limited.";
+                return;
+        }
+        for (const auto& info : m_overlays)
+        {
+                vtkDICOMTag::StaticTag tag{};
+                tag.Key = info->getTagKey();
+                auto tagValue = t_metadata->Get(vtkDICOMTag(tag)).AsString();
 		core::Utils::processTagFormat(tag, tagValue);
 		auto tagText = info->getTextBefore();
 		tagText.append(replaceInvalidCharactersInString(tagValue));

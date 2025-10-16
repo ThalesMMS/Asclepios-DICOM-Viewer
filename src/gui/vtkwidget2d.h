@@ -4,6 +4,10 @@
 #include "vtkwidgetdicom.h"
 #include "vtkwidgetoverlay.h"
 
+#include <vtkImageImport.h>
+
+#include <vector>
+
 enum class transformationType;
 
 namespace asclepios::gui
@@ -32,22 +36,31 @@ namespace asclepios::gui
 		void updateOverlayWindowLevelApply(const int& t_window, const int& t_level, const bool& t_apply);
 		void resetOverlay();
 
-	private:
-		vtkSmartPointer<vtkDICOMReader> m_imageReader = {};
-		vtkSmartPointer<vtkWidgetDICOM> m_dcmWidget = {};
-		vtkSmartPointer<vtkRenderWindowInteractor> m_interactor = {};
-		vtkSmartPointer<vtkRenderer> m_vtkWidgetOverlayRenderer = {};
-		std::unique_ptr<vtkWidgetOverlay> m_widgetOverlay = {};
-		bool m_colorsInverted = false;
+        private:
+                vtkSmartPointer<vtkDICOMReader> m_imageReader = {};
+                vtkSmartPointer<vtkWidgetDICOM> m_dcmWidget = {};
+                vtkSmartPointer<vtkRenderWindowInteractor> m_interactor = {};
+                vtkSmartPointer<vtkRenderer> m_vtkWidgetOverlayRenderer = {};
+                std::unique_ptr<vtkWidgetOverlay> m_widgetOverlay = {};
+                bool m_colorsInverted = false;
+                bool m_usingFallbackDecoder = false;
+                vtkSmartPointer<vtkImageImport> m_fallbackImporter = {};
+                std::vector<unsigned char> m_fallbackByteBuffer = {};
+                std::vector<unsigned short> m_fallbackWordBuffer = {};
 
-		void initRenderingLayers();
-		void initWidgetDICOM();
-		void createvtkWidgetOverlay();
-		void invertColors();
-		void fitImage() const;
-		void refreshOverlayInCorner(const int& t_corner);
-		void updateOverlayMouseCoordinates(const int& x, const int& y) const;
-		[[nodiscard]] std::string computeHUValueInPixel(const int& t_pixel) const;
-		[[nodiscard]] double computeScale() const;
-	};
+                void initRenderingLayers();
+                void initWidgetDICOM();
+                void createvtkWidgetOverlay();
+                void invertColors();
+                void fitImage() const;
+                void refreshOverlayInCorner(const int& t_corner);
+                void updateOverlayMouseCoordinates(const int& x, const int& y) const;
+                [[nodiscard]] std::string computeHUValueInPixel(const int& t_pixel) const;
+                [[nodiscard]] double computeScale() const;
+                bool ensureImageDataAvailability();
+                bool isReaderOutputValid() const;
+                bool buildFallbackImage();
+                void resetFallback();
+                bool hasValidScalars(vtkImageData* image) const;
+        };
 }
