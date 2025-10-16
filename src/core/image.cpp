@@ -1,7 +1,7 @@
 #include "image.h"
 #include "smartdjdecoderregistration.h"
 
-#include <QDebug>
+#include <vtkSetGet.h>
 #include <vtkPointData.h>
 
 namespace
@@ -43,8 +43,8 @@ vtkSmartPointer<vtkDICOMReader> asclepios::core::Image::getImageReader() const
         const auto* const scalars = pointData ? pointData->GetScalars() : nullptr;
         if (!metaData || !scalars)
         {
-                qWarning() << "[Image] vtkDICOMReader produced incomplete output for" << m_path.c_str()
-                           << "(metadata or pixel data missing)";
+                vtkGenericWarningMacro(<< "[Image] vtkDICOMReader produced incomplete output for " << m_path
+                                       << " (metadata or pixel data missing)");
         }
 
         return localReader;
