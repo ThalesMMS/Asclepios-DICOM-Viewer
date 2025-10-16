@@ -1,6 +1,7 @@
 #pragma once
 
 #include <qfuture.h>
+#include <QElapsedTimer>
 #include <QVTKOpenGLNativeWidget.h>
 #include "vtkwidget3d.h"
 #include "widgetbase.h"
@@ -39,7 +40,8 @@ namespace asclepios::gui
 		ToolbarWidget3D* m_toolbar = {};
 		QVTKOpenGLNativeWidget* m_qtvtkWidget = {};
 		std::unique_ptr<vtkWidget3D> m_vtkWidget = {};
-		QFuture<void> m_future = {};
+                QFuture<void> m_future = {};
+                QElapsedTimer m_renderTimer = {};
 
 		void initView() override;
 		void initData() override;

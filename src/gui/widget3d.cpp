@@ -2,8 +2,13 @@
 #include "tabwidget.h"
 #include <vtkRendererCollection.h>
 #include <vtkGenericOpenGLRenderWindow.h>
+#include <QElapsedTimer>
 #include <QKeyEvent>
+#include <QLoggingCategory>
+#include <QString>
 #include <QtConcurrent/qtconcurrentrun.h>
+
+Q_LOGGING_CATEGORY(lcWidget3D, "asclepios.gui.widget3d")
 
 asclepios::gui::Widget3D::Widget3D(QWidget* parent)
 	: WidgetBase(parent)
@@ -17,26 +22,33 @@ asclepios::gui::Widget3D::Widget3D(QWidget* parent)
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget3D::render()
 {
-	if (!m_image)
-	{
-		throw std::runtime_error("No image for widget 3d!");
-	}
-	try
-	{
-		m_toolbar->getUI().toolButtonCrop->setVisible(false);
-		m_toolbar->getUI().comboBoxFilters->setVisible(false);
-		startLoadingAnimation();
-		m_vtkWidget->setImage(m_image);
-		m_vtkWidget->setSeries(m_series);
-		m_vtkWidget->setInteractor(m_qtvtkWidget->GetInteractor());
-		m_future = QtConcurrent::run(onRenderAsync, this);
-		Q_UNUSED(connect(this, &Widget3D::finishedRenderAsync,
-			this, &Widget3D::onFinishedRenderAsync));
-	}
-	catch (const std::exception& ex)
-	{
-		//todo log
-	}
+        qCInfo(lcWidget3D) << "render() requested" << "patientIdx" << m_patientIndex
+                           << "studyIdx" << m_studyIndex << "seriesIdx" << m_seriesIndex
+                           << "imageIdx" << m_imageIndex << "hasImage" << static_cast<bool>(m_image)
+                           << "hasSeries" << static_cast<bool>(m_series);
+        if (!m_image)
+        {
+                qCWarning(lcWidget3D) << "render() aborted: missing image for seriesIdx" << m_seriesIndex;
+                throw std::runtime_error("No image for widget 3d!");
+        }
+        try
+        {
+                m_toolbar->getUI().toolButtonCrop->setVisible(false);
+                m_toolbar->getUI().comboBoxFilters->setVisible(false);
+                startLoadingAnimation();
+                m_vtkWidget->setImage(m_image);
+                m_vtkWidget->setSeries(m_series);
+                m_vtkWidget->setInteractor(m_qtvtkWidget->GetInteractor());
+                m_renderTimer.start();
+                m_future = QtConcurrent::run(onRenderAsync, this);
+                qCInfo(lcWidget3D) << "render() async task started" << "isRunning" << m_future.isRunning();
+                Q_UNUSED(connect(this, &Widget3D::finishedRenderAsync,
+                        this, &Widget3D::onFinishedRenderAsync));
+        }
+        catch (const std::exception& ex)
+        {
+                qCCritical(lcWidget3D) << "render() failed" << ex.what();
+        }
 }
 
 //-----------------------------------------------------------------------------
@@ -75,18 +87,24 @@ bool asclepios::gui::Widget3D::eventFilter(QObject* watched, QEvent* event)
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget3D::onfilterChanged(const QString& t_filter) const
 {
-	if (m_qtvtkWidget && m_vtkWidget)
-	{
-		m_vtkWidget->setFilter(t_filter);
-		m_qtvtkWidget->GetRenderWindow()->Render();
-	}
+        if (m_qtvtkWidget && m_vtkWidget)
+        {
+                const auto seriesUid = m_series ? QString::fromStdString(m_series->getUID()) : QStringLiteral("n/a");
+                qCInfo(lcWidget3D) << "Filter change requested" << t_filter
+                                   << "seriesUid" << seriesUid << "imageIdx" << m_imageIndex;
+                m_vtkWidget->setFilter(t_filter);
+                m_qtvtkWidget->GetRenderWindow()->Render();
+                qCDebug(lcWidget3D) << "Filter applied" << t_filter;
+        }
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget3D::onCropPressed(const bool& t_pressed) const
 {
-	m_vtkWidget->activateBoxWidget(t_pressed);
-	m_qtvtkWidget->GetRenderWindow()->Render();
+        qCInfo(lcWidget3D) << "Crop widget toggled" << (t_pressed ? "enabled" : "disabled")
+                           << "seriesIdx" << m_seriesIndex << "imageIdx" << m_imageIndex;
+        m_vtkWidget->activateBoxWidget(t_pressed);
+        m_qtvtkWidget->GetRenderWindow()->Render();
 }
 
 //-----------------------------------------------------------------------------
@@ -114,27 +132,35 @@ void asclepios::gui::Widget3D::onSetMaximized() const
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget3D::onFinishedRenderAsync()
 {
-	auto* const renderWindow =
-		m_qtvtkWidget->GetRenderWindow();
-	renderWindow->AddRenderer(m_vtkWidget->
-		getRenderWindows()[0]->GetRenderers()->
-		GetFirstRenderer());
-	renderWindow->Render();
-	onfilterChanged(m_toolbar->getUI()
-		.comboBoxFilters->itemData(0).toString());
-	stopLoadingAnimation();
-	disconnect(this, &Widget3D::finishedRenderAsync,
-		this, &Widget3D::onFinishedRenderAsync);
-	m_toolbar->getUI().toolButtonCrop->setVisible(true);
-	m_toolbar->getUI().comboBoxFilters->setVisible(true);
-	installEventFilter(this);
+        auto* const renderWindow =
+                m_qtvtkWidget->GetRenderWindow();
+        renderWindow->AddRenderer(m_vtkWidget->
+                getRenderWindows()[0]->GetRenderers()->
+                GetFirstRenderer());
+        renderWindow->Render();
+        onfilterChanged(m_toolbar->getUI()
+                .comboBoxFilters->itemData(0).toString());
+        stopLoadingAnimation();
+        disconnect(this, &Widget3D::finishedRenderAsync,
+                this, &Widget3D::onFinishedRenderAsync);
+        m_toolbar->getUI().toolButtonCrop->setVisible(true);
+        m_toolbar->getUI().comboBoxFilters->setVisible(true);
+        installEventFilter(this);
+        if (m_renderTimer.isValid())
+        {
+                qCInfo(lcWidget3D) << "render() async task finished in" << m_renderTimer.elapsed() << "ms";
+        }
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget3D::onRenderAsync(Widget3D* t_self)
 {
-	t_self->m_vtkWidget->render();
-	emit t_self->finishedRenderAsync();
+        QElapsedTimer timer;
+        timer.start();
+        t_self->m_vtkWidget->render();
+        qCInfo(lcWidget3D) << "vtkWidget3D::render completed" << "seriesIdx" << t_self->m_seriesIndex
+                           << "imageIdx" << t_self->m_imageIndex << "durationMs" << timer.elapsed();
+        emit t_self->finishedRenderAsync();
 }
 
 //-----------------------------------------------------------------------------
