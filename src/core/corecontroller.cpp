@@ -1,10 +1,14 @@
 #include "corecontroller.h"
+#include <QDebug>
 #include <QFileInfo>
 #include <QLoggingCategory>
 #include <QString>
 #include <stdexcept>
 
-Q_LOGGING_CATEGORY(lcCoreController, "asclepios.core.controller")
+namespace asclepios::core
+{
+        Q_LOGGING_CATEGORY(lcCoreController, "asclepios.core.controller")
+}
 
 namespace
 {
@@ -82,7 +86,7 @@ void asclepios::core::CoreController::insertDataInRepo() const
         {
                 m_coreRepository->addImage(m_dicomReader->getReadImage());
                 const auto* const lastImage = m_coreRepository->getLastImage();
-                const auto* const lastSeries = m_coreRepository->getLastSeries();
+                auto* const lastSeries = m_coreRepository->getLastSeries();
                 const auto frameCount = lastImage && lastImage->getIsMultiFrame()
                         ? lastImage->getNumberOfFrames()
                         : static_cast<int>(lastSeries->getSinlgeFrameImages().size());

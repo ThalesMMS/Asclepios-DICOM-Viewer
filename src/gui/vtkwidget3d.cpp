@@ -75,7 +75,7 @@ std::tuple<int, int> asclepios::gui::vtkWidget3D::getWindowLevel() const
         const auto windowWidth = imageReader->GetMetaData()->Get(DC::WindowWidth).AsInt();
         qCDebug(lcVtkWidget3D) << "getWindowLevel()" << "center" << windowCenter << "width" << windowWidth
                                << "imageIdx" << (m_image ? m_image->getIndex() : -1);
-        return std::make_tuple<int, int>(windowCenter, windowWidth);
+        return std::make_tuple(windowCenter, windowWidth);
 }
 
 //-----------------------------------------------------------------------------

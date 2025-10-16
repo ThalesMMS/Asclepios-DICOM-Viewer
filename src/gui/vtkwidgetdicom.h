@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vtkDICOMReader.h>
+#include <vtkDICOMMetaData.h>
 #include <vtkImageViewer2.h>
 #include <vtkSmartPointer.h>
 #include <tuple>
@@ -40,7 +41,7 @@ namespace asclepios::gui
 
 
 	private:
-		vtkDICOMMetaData* m_imageMetaData = {};
+		vtkSmartPointer<vtkDICOMMetaData> m_imageMetaData = {};
 		vtkDICOMReader* m_reader = {};
 		vtkSmartPointer<vtkImageActor> m_overlayActor = {};
 		int m_windowWidth = {};

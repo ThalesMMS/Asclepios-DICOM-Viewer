@@ -30,6 +30,14 @@ vtkStandardNewMacro(asclepios::gui::vtkWidgetDICOM)
 void asclepios::gui::vtkWidgetDICOM::setImageReader(vtkDICOMReader* t_reader)
 {
         m_reader = t_reader;
+        if (m_reader)
+        {
+                setImageMetaData(m_reader->GetMetaData());
+        }
+        else
+        {
+                setImageMetaData(nullptr);
+        }
 
         vtkImageData* readerOutput = nullptr;
         if (m_reader)

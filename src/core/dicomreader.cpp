@@ -1,11 +1,15 @@
 #include "dicomreader.h"
 #include <dcmtk/dcmdata/dcdeftag.h>
 #include <dcmtk/dcmimgle/dcmimage.h>
+#include <QDebug>
 #include <QFileInfo>
 #include <QLoggingCategory>
 #include <QString>
 
-Q_LOGGING_CATEGORY(lcDicomReader, "asclepios.core.dicom")
+namespace asclepios::core
+{
+        Q_LOGGING_CATEGORY(lcDicomReader, "asclepios.core.dicom")
+}
 
 namespace
 {
