@@ -10,6 +10,7 @@
 #include <vtkPointData.h>
 #include <vtkRenderWindowInteractor.h>
 #include <vtkRendererCollection.h>
+#include <vtkType.h>
 
 #include <QDebug>
 
@@ -642,7 +643,7 @@ bool asclepios::gui::vtkWidget2D::buildFallbackImage()
         {
                 if (isSigned)
                 {
-                        m_fallbackImporter->SetDataScalarTypeToSignedChar();
+                        m_fallbackImporter->SetDataScalarType(VTK_SIGNED_CHAR);
                         m_fallbackImporter->CopyImportVoidPointer(m_fallbackSignedByteBuffer.data(),
                                 m_fallbackSignedByteBuffer.size());
                 }
