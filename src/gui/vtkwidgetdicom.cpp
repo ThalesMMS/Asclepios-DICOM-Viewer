@@ -239,23 +239,25 @@ void asclepios::gui::vtkWidgetDICOM::SetInputData(vtkImageData* in)
 		}
 	}
 
-	if (spacingModified || spacingNormalized)
-	{
-		in->SetSpacing(spacing);
-		if (spacingNormalized)
-		{
-			qWarning() << "[vtkWidgetDICOM] Invalid input spacing detected. Normalized to"
-				<< spacing[0] << spacing[1] << spacing[2];
-		}
-		else
-		{
-			qInfo() << "[vtkWidgetDICOM] Synchronized spacing from DICOM metadata:"
-				<< spacing[0] << spacing[1] << spacing[2];
-		}
-	}
+        if (spacingModified || spacingNormalized)
+        {
+                in->SetSpacing(spacing);
+                if (spacingNormalized)
+                {
+                        qWarning() << "[vtkWidgetDICOM] Invalid input spacing detected. Normalized to"
+                                << spacing[0] << spacing[1] << spacing[2];
+                }
+                else
+                {
+                        qInfo() << "[vtkWidgetDICOM] Synchronized spacing from DICOM metadata:"
+                                << spacing[0] << spacing[1] << spacing[2];
+                }
+        }
 
-	WindowLevel->SetInputData(in);
-	WindowLevel->UpdateInformation();
+        Superclass::SetInputData(in);
+
+        WindowLevel->SetInputData(in);
+        WindowLevel->UpdateInformation();
 	WindowLevel->GetOutput()->SetSpacing(spacing);
 	if (auto* const inputAlgorithm = WindowLevel->GetInputAlgorithm())
 	{
