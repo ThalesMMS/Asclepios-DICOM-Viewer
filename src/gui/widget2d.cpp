@@ -3,6 +3,8 @@
 #include <QFocusEvent>
 #include <QDebug>
 #include <QtConcurrent/QtConcurrent>
+#include <QString>
+#include <QSizePolicy>
 #include "tabwidget.h"
 #include "vtkwidget2dinteractorstyle.h"
 #include "study.h"
@@ -21,12 +23,23 @@ asclepios::gui::Widget2D::Widget2D(QWidget* parent)
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::initView()
 {
-	m_ui.setupUi(this);
-	setLayout(new QHBoxLayout(this));
-	layout()->setMargin(0);
-	layout()->setSpacing(0);
-	layout()->addWidget(m_qtvtkWidget);
-	layout()->addWidget(m_scroll);
+        m_ui.setupUi(this);
+        setLayout(new QHBoxLayout(this));
+        layout()->setMargin(0);
+        layout()->setSpacing(0);
+        layout()->addWidget(m_qtvtkWidget);
+        if (!m_errorLabel)
+        {
+                m_errorLabel = new QLabel(tr("Unable to render the selected image."), this);
+                m_errorLabel->setAlignment(Qt::AlignCenter);
+                m_errorLabel->setWordWrap(true);
+                m_errorLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+                m_errorLabel->setStyleSheet(QStringLiteral("color: #f44336; background-color: rgba(0, 0, 0, 180);"
+                                                       "padding: 16px;"));
+                m_errorLabel->hide();
+        }
+        layout()->addWidget(m_errorLabel);
+        layout()->addWidget(m_scroll);
 }
 
 //-----------------------------------------------------------------------------
@@ -49,31 +62,42 @@ void asclepios::gui::Widget2D::initData()
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::render()
 {
-	if (m_qtvtkWidget && m_vtkWidget && m_renderWindow->Get())
-	{
-		try
-		{
-			if(m_image->getIsMultiFrame())
-			{
-				startLoadingAnimation();
-			}
-			dynamic_cast<TabWidget*>(m_tabWidget)->setTabTitle(0,
-				m_series->getDescription().c_str());
+        if (m_qtvtkWidget && m_vtkWidget && m_renderWindow->Get())
+        {
+                try
+                {
+                        if(m_image->getIsMultiFrame())
+                        {
+                                startLoadingAnimation();
+                        }
+                        if (m_errorLabel)
+                        {
+                                m_errorLabel->hide();
+                        }
+                        if (m_qtvtkWidget)
+                        {
+                                m_qtvtkWidget->show();
+                        }
+                        dynamic_cast<TabWidget*>(m_tabWidget)->setTabTitle(0,
+                                m_series->getDescription().c_str());
                         auto* const vtkWidget = dynamic_cast<vtkWidget2D*>(m_vtkWidget.get());
                         Q_UNUSED(connect(this, &Widget2D::imageReaderInitialized,
                                 this, &Widget2D::onRenderFinished));
+                        Q_UNUSED(connect(this, &Widget2D::imageReaderFailed,
+                                this, &Widget2D::onRenderFailed));
                         vtkWidget->setSeries(m_series);
                         vtkWidget->setImage(m_image);
                         vtkWidget->resetOverlay();
                         m_tabWidget->setAcceptDrops(false);
                         m_future = QtConcurrent::run(initImageReader, vtkWidget, this);
-		}
-		catch (std::exception& ex)
-		{
-			m_future = {};
-			qWarning() << "[Widget2D] Render failed:" << ex.what();
-		}
-	}
+                }
+                catch (std::exception& ex)
+                {
+                        m_future = {};
+                        qWarning() << "[Widget2D] Render failed:" << ex.what();
+                        Q_EMIT imageReaderFailed(QString::fromUtf8(ex.what()));
+                }
+        }
 }
 
 //-----------------------------------------------------------------------------
@@ -92,13 +116,21 @@ void asclepios::gui::Widget2D::createConnections()
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::resetView()
 {
-	resetWidgets();
-	resetScroll();
-	m_isImageLoaded = false;
-	m_image = nullptr;
-	m_series = nullptr;
-	//todo reset title of tab
-	disconnectScroll();
+        resetWidgets();
+        resetScroll();
+        if (m_errorLabel)
+        {
+                m_errorLabel->hide();
+        }
+        if (m_qtvtkWidget)
+        {
+                m_qtvtkWidget->show();
+        }
+        m_isImageLoaded = false;
+        m_image = nullptr;
+        m_series = nullptr;
+        //todo reset title of tab
+        disconnectScroll();
 	createConnections();
 	qInfo() << "[Widget2D] View reset";
 }
@@ -187,9 +219,9 @@ void asclepios::gui::Widget2D::onSetMaximized() const
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::onRenderFinished()
 {
-	qInfo() << "[Widget2D] Render finished. Setting up interactor/scroll.";
-	m_vtkWidget->setInteractor(m_qtvtkWidget->
-		GetRenderWindow()->GetInteractor());
+        qInfo() << "[Widget2D] Render finished. Setting up interactor/scroll.";
+        m_vtkWidget->setInteractor(m_qtvtkWidget->
+                GetRenderWindow()->GetInteractor());
 	m_vtkWidget->render();
 	auto const max = m_image->getIsMultiFrame()
 		? m_image->getNumberOfFrames() - 1
@@ -198,14 +230,53 @@ void asclepios::gui::Widget2D::onRenderFinished()
 	dynamic_cast<vtkWidget2D*>(m_vtkWidget.get())
 		->updateOvelayImageNumber(0, max + 1,
 			std::stoi(m_series->getNumber()));
-	connectScroll();
-	m_scroll->setVisible(m_scroll->maximum());
-	m_tabWidget->setAcceptDrops(true);
-	m_future = {};
-	disconnect(this, &Widget2D::imageReaderInitialized,
-	           this, &Widget2D::onRenderFinished);
-	stopLoadingAnimation();
-	qInfo() << "[Widget2D] Scroll range:" << 0 << "-" << max;
+        connectScroll();
+        m_scroll->setVisible(m_scroll->maximum());
+        m_tabWidget->setAcceptDrops(true);
+        m_future = {};
+        disconnect(this, &Widget2D::imageReaderInitialized,
+                   this, &Widget2D::onRenderFinished);
+        disconnect(this, &Widget2D::imageReaderFailed,
+                   this, &Widget2D::onRenderFailed);
+        stopLoadingAnimation();
+        if (m_errorLabel)
+        {
+                m_errorLabel->hide();
+        }
+        qInfo() << "[Widget2D] Scroll range:" << 0 << "-" << max;
+}
+
+//-----------------------------------------------------------------------------
+void asclepios::gui::Widget2D::onRenderFailed(const QString& t_message)
+{
+        qWarning() << "[Widget2D] Render failed. Showing placeholder:" << t_message;
+        stopLoadingAnimation();
+        m_future = {};
+        m_isImageLoaded = false;
+        if (m_qtvtkWidget)
+        {
+                m_qtvtkWidget->hide();
+        }
+        if (m_scroll)
+        {
+                m_scroll->hide();
+        }
+        if (m_errorLabel)
+        {
+                const auto message = t_message.isEmpty()
+                        ? tr("Unable to render the selected image.")
+                        : tr("Unable to render the selected image.\n%1").arg(t_message);
+                m_errorLabel->setText(message);
+                m_errorLabel->show();
+        }
+        if (m_tabWidget)
+        {
+                m_tabWidget->setAcceptDrops(true);
+        }
+        disconnect(this, &Widget2D::imageReaderInitialized,
+                   this, &Widget2D::onRenderFinished);
+        disconnect(this, &Widget2D::imageReaderFailed,
+                   this, &Widget2D::onRenderFailed);
 }
 
 //-----------------------------------------------------------------------------
@@ -323,8 +394,19 @@ void asclepios::gui::Widget2D::setScrollStyle() const
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::initImageReader(vtkWidget2D* t_vtkWidget2D, Widget2D* t_self)
 {
-	t_vtkWidget2D->initImageReader();
-	emit t_self->imageReaderInitialized();
+        try
+        {
+                t_vtkWidget2D->initImageReader();
+                emit t_self->imageReaderInitialized();
+        }
+        catch (const std::exception& ex)
+        {
+                emit t_self->imageReaderFailed(QString::fromUtf8(ex.what()));
+        }
+        catch (...)
+        {
+                emit t_self->imageReaderFailed(Widget2D::tr("Unknown error while preparing the image reader."));
+        }
 }
 
 //-----------------------------------------------------------------------------
