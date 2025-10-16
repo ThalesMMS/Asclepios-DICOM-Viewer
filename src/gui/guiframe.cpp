@@ -1,8 +1,11 @@
 #include "guiframe.h"
-#include <QDesktopWidget>
 #include <QPushButton>
 #include <QMenuBar>
 #include <QWindowStateChangeEvent>
+#include <QtGlobal>
+#include <QGuiApplication>
+#include <QScreen>
+#include <QWindow>
 
 #include "gui.h"
 #include "utils.h"
@@ -99,6 +102,50 @@ void asclepios::gui::GUIFrame::onMinimize()
 void asclepios::gui::GUIFrame::initView()
 {
 	m_ui.setupUi(this);
+	const QSize baselineContentSize(900, 640);
+	const int minContentWidth = 640;
+	const int minContentHeight = 480;
+	const QScreen* targetScreen =
+		windowHandle() ? windowHandle()->screen() : QGuiApplication::primaryScreen();
+	const QSize availableSize = targetScreen
+		? targetScreen->availableGeometry().size()
+		: baselineContentSize;
+	const int topBarHeight = m_ui.widgetTopBar
+		? m_ui.widgetTopBar->sizeHint().height()
+		: 0;
+
+	int contentWidth = baselineContentSize.width();
+	if (availableSize.width() > 0)
+	{
+		contentWidth = qMin(contentWidth, availableSize.width());
+		if (availableSize.width() >= minContentWidth)
+		{
+			contentWidth = qMax(contentWidth, minContentWidth);
+		}
+	}
+	else
+	{
+		contentWidth = qMax(contentWidth, minContentWidth);
+	}
+
+	const int availableHeightForContent = availableSize.height() - topBarHeight;
+	int contentHeight = baselineContentSize.height();
+	if (availableHeightForContent > 0)
+	{
+		contentHeight = qMin(contentHeight, availableHeightForContent);
+		if (availableHeightForContent >= minContentHeight)
+		{
+			contentHeight = qMax(contentHeight, minContentHeight);
+		}
+	}
+	else
+	{
+		contentHeight = qMax(contentHeight, minContentHeight);
+	}
+
+	const QSize minimumFrameSize(contentWidth, contentHeight + topBarHeight);
+	setMinimumSize(minimumFrameSize);
+	m_ui.widgetContent->setMinimumSize(contentWidth, contentHeight);
 	setAutoFillBackground(false);
 	m_ui.maximizeButton->setIcon(QIcon(buttonMaximizeOn));
 	m_ui.icon->setPixmap(QPixmap::fromImage(QImage(iconTitleBar)));

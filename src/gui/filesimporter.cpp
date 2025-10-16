@@ -2,24 +2,44 @@
 #include <QApplication>
 #include <QDebug>
 #include <QtConcurrent/QtConcurrent>
+#include <QMutexLocker>
 
 void asclepios::gui::FilesImporter::startImporter()
 {
 	qInfo() << "[FilesImporter] Starting importer thread";
-	m_isWorking = true;
-	start();
+	{
+		QMutexLocker locker(&m_filesMutex);
+		m_isWorking = true;
+	}
+	m_filesCondition.wakeAll();
+	if (!isRunning())
+	{
+		start();
+	}
 }
 
 //-----------------------------------------------------------------------------
-void asclepios::gui::FilesImporter::stopImporter()
+void asclepios::gui::FilesImporter::stopImporter(const QString& reason)
 {
-	qInfo() << "[FilesImporter] Stop requested";
+	const QString context = reason.isEmpty()
+		? QStringLiteral("generic request")
+		: reason;
+	qInfo() << "[FilesImporter] Stop requested (" << context << ")";
 	m_futureFolders.waitForFinished();
-	m_isWorking = false;
-	quit();
+	{
+		QMutexLocker locker(&m_filesMutex);
+		m_isWorking = false;
+	}
+	m_filesCondition.wakeAll();
 	wait();
-	m_filesPaths.clear();
-	m_foldersPaths.clear();
+	{
+		QMutexLocker filesLocker(&m_filesMutex);
+		m_filesPaths.clear();
+	}
+	{
+		QMutexLocker foldersLocker(&m_foldersMutex);
+		m_foldersPaths.clear();
+	}
 	qInfo() << "[FilesImporter] Importer stopped. Queues cleared.";
 }
 
@@ -27,13 +47,15 @@ void asclepios::gui::FilesImporter::stopImporter()
 void asclepios::gui::FilesImporter::addFiles(const QStringList& t_paths)
 {
 	QApplication::setOverrideCursor(Qt::WaitCursor);
-	for (const auto& path : t_paths)
 	{
-		qInfo() << "[FilesImporter] Queueing file" << path;
-		m_filesMutex.lock();
-		m_filesPaths.push_back(path);
-		m_filesMutex.unlock();
+		QMutexLocker locker(&m_filesMutex);
+		for (const auto& path : t_paths)
+		{
+			qInfo() << "[FilesImporter] Queueing file" << path;
+			m_filesPaths.push_back(path);
+		}
 	}
+	m_filesCondition.wakeAll();
 	QApplication::restoreOverrideCursor();
 }
 
@@ -51,29 +73,42 @@ void asclepios::gui::FilesImporter::addFolders(const QStringList& t_paths)
 		&QFutureWatcher<void>::finished, this,
 		&FilesImporter::parseFoldersFinished));
 	m_futureWatcherFolders.setFuture(m_futureFolders);
+	m_filesCondition.wakeAll();
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::FilesImporter::parseFolders(FilesImporter* t_self)
 {
-	while (!t_self->m_foldersPaths.isEmpty())
+	while (true)
 	{
-		t_self->m_foldersMutex.lock();
-		QString folderPath = t_self->m_foldersPaths.front();
-		QDirIterator it(folderPath, QDir::Files,
-		                QDirIterator::Subdirectories);
-		t_self->m_foldersMutex.unlock();
-		qInfo() << "[FilesImporter] Parsing folder" << folderPath;
-		while (it.hasNext())
+		QString folderPath;
 		{
-			it.next();
-			t_self->m_filesMutex.lock();
-			t_self->m_filesPaths.push_back(it.filePath());
-			t_self->m_filesMutex.unlock();
+			QMutexLocker folderLocker(&t_self->m_foldersMutex);
+			if (t_self->m_foldersPaths.isEmpty())
+			{
+				break;
+			}
+			folderPath = t_self->m_foldersPaths.front();
+			t_self->m_foldersPaths.pop_front();
 		}
-		t_self->m_foldersMutex.lock();
-		t_self->m_foldersPaths.pop_front();
-		t_self->m_foldersMutex.unlock();
+
+		qInfo() << "[FilesImporter] Parsing folder" << folderPath;
+		QStringList discoveredFiles;
+		for (QDirIterator it(folderPath, QDir::Files, QDirIterator::Subdirectories);
+			it.hasNext();)
+		{
+			discoveredFiles.push_back(it.next());
+		}
+
+		if (!discoveredFiles.isEmpty())
+		{
+			QMutexLocker filesLocker(&t_self->m_filesMutex);
+			for (const auto& filePath : discoveredFiles)
+			{
+				t_self->m_filesPaths.push_back(filePath);
+			}
+		}
+		t_self->m_filesCondition.wakeAll();
 		qInfo() << "[FilesImporter] Finished folder" << folderPath;
 	}
 }
@@ -95,9 +130,23 @@ bool asclepios::gui::FilesImporter::newSeries() const
 //-----------------------------------------------------------------------------
 void asclepios::gui::FilesImporter::run()
 {
-	while (m_isWorking)
+	while (true)
 	{
-		importFiles();
+		QString nextFile;
+		{
+			QMutexLocker locker(&m_filesMutex);
+			while (m_filesPaths.empty() && m_isWorking)
+			{
+				m_filesCondition.wait(&m_filesMutex);
+			}
+			if (!m_isWorking)
+			{
+				return;
+			}
+			nextFile = m_filesPaths.front();
+			m_filesPaths.pop_front();
+		}
+		importFile(nextFile);
 	}
 }
 
@@ -111,36 +160,29 @@ void asclepios::gui::FilesImporter::parseFoldersFinished() const
 }
 
 //-----------------------------------------------------------------------------
-void asclepios::gui::FilesImporter::importFiles()
+void asclepios::gui::FilesImporter::importFile(const QString& t_path)
 {
-	while (!m_filesPaths.empty() && m_isWorking)
+	m_coreController->readData(t_path.toStdString());
+	qInfo() << "[FilesImporter] Processed file" << t_path;
+	if (newSeries())
 	{
-		m_filesMutex.lock();
-		m_coreController->
-			readData(m_filesPaths.front().toStdString());
-		qInfo() << "[FilesImporter] Processed file" << m_filesPaths.front();
-		if (newSeries())
-		{
-			qInfo() << "[FilesImporter] Emitting populate signals "
-				<< "Patient index:" << m_coreController->getLastPatientIndex()
-				<< "Study index:" << m_coreController->getLastStudyIndex()
-				<< "Series index:" << m_coreController->getLastSeriesIndex()
-				<< "Image index:" << m_coreController->getLastImageIndex();
-			emit addNewThumbnail(m_coreController->getLastPatient(),
-				m_coreController->getLastStudy(),
-				m_coreController->getLastSeries(),
-				m_coreController->getLastImage());
-			emit populateWidget(m_coreController->getLastSeries(),
-				m_coreController->getLastImage());
-			emit showThumbnailsWidget(true);
-		}
-		auto* const lastImage = m_coreController->getLastImage();
-		if(lastImage && !lastImage->getIsMultiFrame())
-		{
-			emit refreshScrollValues(m_coreController->getLastSeries(),
-				m_coreController->getLastImage());
-		}
-		m_filesPaths.pop_front();
-		m_filesMutex.unlock();
+		qInfo() << "[FilesImporter] Emitting populate signals "
+			<< "Patient index:" << m_coreController->getLastPatientIndex()
+			<< "Study index:" << m_coreController->getLastStudyIndex()
+			<< "Series index:" << m_coreController->getLastSeriesIndex()
+			<< "Image index:" << m_coreController->getLastImageIndex();
+		emit addNewThumbnail(m_coreController->getLastPatient(),
+			m_coreController->getLastStudy(),
+			m_coreController->getLastSeries(),
+			m_coreController->getLastImage());
+		emit populateWidget(m_coreController->getLastSeries(),
+			m_coreController->getLastImage());
+		emit showThumbnailsWidget(true);
+	}
+	auto* const lastImage = m_coreController->getLastImage();
+	if(lastImage && !lastImage->getIsMultiFrame())
+	{
+		emit refreshScrollValues(m_coreController->getLastSeries(),
+			m_coreController->getLastImage());
 	}
 }

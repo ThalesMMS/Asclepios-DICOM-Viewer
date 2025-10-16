@@ -47,6 +47,9 @@ namespace asclepios::gui
 		int m_windowCenter = {};
 		std::unique_ptr<WindowLevelFilter> m_windowLevelFilter = {};
 		bool m_isOverlay = false;
+		double m_lastClippingRange = -1.0;
+		double m_lastAvgSpacing = -1.0;
+		int m_lastSliceOrientation = -1;
 
 		void createOverlayActor();
 		void setMONOCHROME1WindowWidthCenter();

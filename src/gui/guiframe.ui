@@ -368,8 +368,8 @@ QMenu::item:selected {
     <widget class="QWidget" name="widgetContent" native="true">
      <property name="minimumSize">
       <size>
-       <width>1032</width>
-       <height>767</height>
+       <width>900</width>
+       <height>640</height>
       </size>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">

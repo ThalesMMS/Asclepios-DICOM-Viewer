@@ -6,6 +6,8 @@
 #include <QFile>
 #include <QCoreApplication>
 #include <QStandardPaths>
+#include <QMutex>
+#include <QMutexLocker>
 #include <QTextStream>
 #include "gui.h"
 #include "guiframe.h"
@@ -18,6 +20,7 @@ VTK_MODULE_INIT(vtkRenderingVolumeOpenGL2);
 namespace
 {
 QFile g_logFile;
+QMutex g_logMutex;
 
 QString logTypeToString(QtMsgType type)
 {
@@ -34,6 +37,8 @@ QString logTypeToString(QtMsgType type)
 
 void messageHandler(QtMsgType type, const QMessageLogContext& context, const QString& message)
 {
+	QMutexLocker locker(&g_logMutex);
+
 	if (!g_logFile.isOpen())
 	{
 		return;

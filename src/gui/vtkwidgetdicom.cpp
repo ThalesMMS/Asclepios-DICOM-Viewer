@@ -1,9 +1,11 @@
 #include "vtkwidgetdicom.h"
 #include <vtkCamera.h>
 #include <vtkCoordinate.h>
+#include <vtkAlgorithm.h>
 #include <vtkDICOMApplyPalette.h>
 #include <vtkDICOMDictHash.h>
 #include <vtkDICOMMetaData.h>
+#include <vtkDICOMValue.h>
 #include <vtkDataObject.h>
 #include <vtkImageActor.h>
 #include <vtkImageData.h>
@@ -20,6 +22,7 @@
 #include <vtkWindowLevelLookupTable.h>
 #include <QDebug>
 #include <cmath>
+#include <limits>
 
 vtkStandardNewMacro(asclepios::gui::vtkWidgetDICOM)
 
@@ -98,14 +101,146 @@ void asclepios::gui::vtkWidgetDICOM::SetInputData(vtkImageData* in)
 		currentSpacing ? currentSpacing[1] : 0.0,
 		currentSpacing ? currentSpacing[2] : 0.0
 	};
-	if (spacing[0] == 0.0 && spacing[1] == 0.0 && spacing[2] == 0.0)
+
+	auto assignSpacingComponent =
+		[&](const vtkDICOMValue& value, int componentIndex, int spacingIndex) -> bool
 	{
-		spacing[0] = spacing[1] = spacing[2] = 1.0;
+		if (!value.IsValid())
+		{
+			return false;
+		}
+		if (componentIndex < 0)
+		{
+			componentIndex = 0;
+		}
+		const auto count = value.GetNumberOfValues();
+		if (count == 0 || static_cast<size_t>(componentIndex) >= count)
+		{
+			return false;
+		}
+		const double candidate = value.GetDouble(componentIndex);
+		if (!std::isfinite(candidate) || candidate <= 0.0)
+		{
+			return false;
+		}
+		const double existing = spacing[spacingIndex];
+		if (!std::isfinite(existing) || existing <= 0.0 ||
+			std::abs(existing - candidate) > std::numeric_limits<double>::epsilon())
+		{
+			spacing[spacingIndex] = candidate;
+			return true;
+		}
+		return false;
+	};
+
+	bool spacingModified = false;
+	if (m_imageMetaData)
+	{
+		const auto& pixelSpacing =
+			m_imageMetaData->GetAttributeValue(0, DC::PixelSpacing);
+		spacingModified |= assignSpacingComponent(pixelSpacing, 0, 0);
+		spacingModified |= assignSpacingComponent(pixelSpacing, 1, 1);
+
+		if ((!std::isfinite(spacing[0]) || spacing[0] <= 0.0) ||
+			(!std::isfinite(spacing[1]) || spacing[1] <= 0.0))
+		{
+			const auto& imagerPixelSpacing =
+				m_imageMetaData->GetAttributeValue(0, DC::ImagerPixelSpacing);
+			spacingModified |= assignSpacingComponent(imagerPixelSpacing, 0, 0);
+			spacingModified |= assignSpacingComponent(imagerPixelSpacing, 1, 1);
+		}
+
+		spacingModified |= assignSpacingComponent(
+			m_imageMetaData->GetAttributeValue(0, DC::SpacingBetweenSlices), 0, 2);
+		if (!std::isfinite(spacing[2]) || spacing[2] <= 0.0)
+		{
+			spacingModified |= assignSpacingComponent(
+				m_imageMetaData->GetAttributeValue(0, DC::SliceThickness), 0, 2);
+		}
+
+		if ((!std::isfinite(spacing[2]) || spacing[2] <= 0.0) && m_reader && m_reader->GetOutput())
+		{
+			const int* extent = m_reader->GetOutput()->GetExtent();
+			const int sliceCount = extent[5] - extent[4] + 1;
+			if (sliceCount > 1)
+			{
+				if (auto* const meta = m_reader->GetMetaData())
+				{
+					const int firstSlice = extent[4];
+					const int secondSlice = firstSlice + 1;
+					const int firstFile = meta->GetFileIndex(firstSlice);
+					const int secondFile = meta->GetFileIndex(secondSlice);
+					int firstFrame = meta->GetFrameIndex(firstSlice);
+					int secondFrame = meta->GetFrameIndex(secondSlice);
+					if (firstFrame < 0)
+					{
+						firstFrame = 0;
+					}
+					if (secondFrame < 0)
+					{
+						secondFrame = 0;
+					}
+					if (firstFile >= 0 && secondFile >= 0 &&
+						firstFrame >= 0 && secondFrame >= 0)
+					{
+						const auto& ipp0 = meta->GetAttributeValue(
+							firstFile, firstFrame, DC::ImagePositionPatient);
+						const auto& ipp1 = meta->GetAttributeValue(
+							secondFile, secondFrame, DC::ImagePositionPatient);
+						if (ipp0.IsValid() && ipp1.IsValid() &&
+							ipp0.GetNumberOfValues() >= 3 && ipp1.GetNumberOfValues() >= 3)
+						{
+							const double dx = ipp1.GetDouble(0) - ipp0.GetDouble(0);
+							const double dy = ipp1.GetDouble(1) - ipp0.GetDouble(1);
+							const double dz = ipp1.GetDouble(2) - ipp0.GetDouble(2);
+							const double distance = std::sqrt(dx * dx + dy * dy + dz * dz);
+							if (std::isfinite(distance) && distance > 0.0)
+							{
+								spacing[2] = distance;
+								spacingModified = true;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	bool spacingNormalized = false;
+	for (double& axisSpacing : spacing)
+	{
+		if (!std::isfinite(axisSpacing) || axisSpacing <= 0.0)
+		{
+			axisSpacing = 1.0;
+			spacingNormalized = true;
+		}
+	}
+
+	if (spacingModified || spacingNormalized)
+	{
 		in->SetSpacing(spacing);
-		qWarning() << "[vtkWidgetDICOM] Input spacing was zero. Forcing to 1,1,1.";
+		if (spacingNormalized)
+		{
+			qWarning() << "[vtkWidgetDICOM] Invalid input spacing detected. Normalized to"
+				<< spacing[0] << spacing[1] << spacing[2];
+		}
+		else
+		{
+			qInfo() << "[vtkWidgetDICOM] Synchronized spacing from DICOM metadata:"
+				<< spacing[0] << spacing[1] << spacing[2];
+		}
 	}
 
 	WindowLevel->SetInputData(in);
+	WindowLevel->UpdateInformation();
+	WindowLevel->GetOutput()->SetSpacing(spacing);
+	if (auto* const inputAlgorithm = WindowLevel->GetInputAlgorithm())
+	{
+		if (auto* const info = inputAlgorithm->GetOutputInformation(0))
+		{
+			info->Set(vtkDataObject::SPACING(), spacing, 3);
+		}
+	}
 
 	UpdateDisplayExtent();
 	qInfo() << "[vtkWidgetDICOM] Input data set. Spacing:"
@@ -197,7 +332,7 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 		}
 		outInfo->Set(vtkDataObject::SPACING(), safeSpacing, 3);
 		infoSpacing = safeSpacing;
-		qWarning() << "[vtkWidgetDICOM] Metadata spacing missing. Falling back to"
+		qInfo() << "[vtkWidgetDICOM] Propagated spacing metadata from vtkImageData:"
 			<< safeSpacing[0] << safeSpacing[1] << safeSpacing[2];
 	}
 
@@ -218,9 +353,17 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 	cam->SetClippingRange(
 		range - avgSpacing * 3.0,
 		range + avgSpacing * 3.0);
-	qInfo() << "[vtkWidgetDICOM] Clipping range updated. Range:" << range
-		<< "Avg spacing:" << avgSpacing
-		<< "Slice orientation:" << SliceOrientation;
+	if (std::abs(range - m_lastClippingRange) > 1e-6 ||
+		std::abs(avgSpacing - m_lastAvgSpacing) > 1e-6 ||
+		SliceOrientation != m_lastSliceOrientation)
+	{
+		qInfo() << "[vtkWidgetDICOM] Clipping range updated. Range:" << range
+			<< "Avg spacing:" << avgSpacing
+			<< "Slice orientation:" << SliceOrientation;
+		m_lastClippingRange = range;
+		m_lastAvgSpacing = avgSpacing;
+		m_lastSliceOrientation = SliceOrientation;
+	}
 }
 
 //-----------------------------------------------------------------------------

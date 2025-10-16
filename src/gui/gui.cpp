@@ -12,7 +12,7 @@ asclepios::gui::GUI::~GUI()
 {
 	if (m_filesImporter->isRunning())
 	{
-		m_filesImporter->stopImporter();
+		m_filesImporter->stopImporter(QStringLiteral("application shutdown"));
 	}
 	m_widgetsController->waitForRenderingThreads();
 }
@@ -168,7 +168,7 @@ void asclepios::gui::GUI::onCloseAllPatients() const
 	QApplication::setOverrideCursor(Qt::WaitCursor);
 	disconnectFilesImporter();
 	onShowThumbnailsWidget(false);
-	m_filesImporter->stopImporter();
+	m_filesImporter->stopImporter(QStringLiteral("close all patients"));
 	m_widgetsController->resetData();
 	m_thumbnailsWidget->resetData();
 	m_filesImporter->getCoreController()->resetData();

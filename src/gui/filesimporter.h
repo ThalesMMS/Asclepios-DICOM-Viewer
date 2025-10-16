@@ -5,6 +5,7 @@
 #include <qfuturewatcher.h>
 #include <qmutex.h>
 #include <QThread>
+#include <QWaitCondition>
 #include "corecontroller.h"
 
 namespace asclepios::gui
@@ -19,7 +20,7 @@ namespace asclepios::gui
 		~FilesImporter() = default;
 
 		void startImporter();
-		void stopImporter();
+		void stopImporter(const QString& reason = {});
 		void addFiles(const QStringList& t_paths);
 		void addFolders(const QStringList& t_paths);
 		core::CoreController* getCoreController() const { return m_coreController.get(); }
@@ -40,6 +41,7 @@ namespace asclepios::gui
 	private:
 		QMutex m_filesMutex;
 		QMutex m_foldersMutex;
+		QWaitCondition m_filesCondition;
 		QFuture<void> m_futureFolders;
 		QFutureWatcher<void> m_futureWatcherFolders;
 		std::unique_ptr<core::CoreController> m_coreController = {};
@@ -47,7 +49,7 @@ namespace asclepios::gui
 		QStringList m_foldersPaths;
 		bool m_isWorking = false;
 
-		void importFiles();
+		void importFile(const QString& t_path);
 		static void parseFolders(FilesImporter* t_self);
 		[[nodiscard]] bool newSeries() const;
 	};
