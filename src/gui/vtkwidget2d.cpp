@@ -21,6 +21,7 @@
 #include <cstring>
 #include <memory>
 #include <sstream>
+#include <stdexcept>
 #include <string>
 
 #include <dcmtk/dcmdata/dcdeftag.h>
@@ -82,7 +83,7 @@ void asclepios::gui::vtkWidget2D::initImageReader()
 }
 
 //-----------------------------------------------------------------------------
-void asclepios::gui::vtkWidget2D::initWidgetDICOM()
+bool asclepios::gui::vtkWidget2D::initWidgetDICOM()
 {
         if (!m_dcmWidget)
         {
@@ -109,7 +110,7 @@ void asclepios::gui::vtkWidget2D::initWidgetDICOM()
                 {
                         qCCritical(lcVtkWidget2D)
                                 << "Fallback image data unavailable. Aborting render.";
-                        return;
+                        return false;
                 }
         }
         else
@@ -124,6 +125,7 @@ void asclepios::gui::vtkWidget2D::initWidgetDICOM()
         m_dcmWidget->setInitialWindowWidthCenter();
         m_dcmWidget->Render();
         qCInfo(lcVtkWidget2D) << "Widget render invoked.";
+        return true;
 }
 
 //-----------------------------------------------------------------------------
@@ -149,7 +151,13 @@ void asclepios::gui::vtkWidget2D::render()
                         << "render() aborted - unable to obtain usable image data.";
                 return;
         }
-        initWidgetDICOM();
+        const auto widgetConfigured = initWidgetDICOM();
+        if (!widgetConfigured)
+        {
+                qCCritical(lcVtkWidget2D)
+                        << "render() aborted - vtkWidgetDICOM configuration failed.";
+                throw std::runtime_error("Failed to configure vtkWidgetDICOM with renderable data.");
+        }
         if (!m_dcmWidget)
         {
                 qCWarning(lcVtkWidget2D) << "render() aborted - vtkWidgetDICOM missing.";

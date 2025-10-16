@@ -255,7 +255,25 @@ void asclepios::gui::Widget2D::onRenderFinished()
         qCInfo(lcWidget2D) << "Render finished successfully. Future finished:" << m_future.isFinished();
         m_vtkWidget->setInteractor(m_qtvtkWidget->
                 GetRenderWindow()->GetInteractor());
-        m_vtkWidget->render();
+        try
+        {
+                m_vtkWidget->render();
+        }
+        catch (const std::exception& ex)
+        {
+                qCCritical(lcWidget2D)
+                        << "vtkWidget2D::render threw an exception:" << ex.what();
+                Q_EMIT imageReaderFailed(QString::fromUtf8(ex.what()));
+                return;
+        }
+        catch (...)
+        {
+                qCCritical(lcWidget2D)
+                        << "vtkWidget2D::render threw an unknown exception.";
+                Q_EMIT imageReaderFailed(
+                        QStringLiteral("An unknown error occurred while rendering the image."));
+                return;
+        }
         auto const max = m_image->getIsMultiFrame()
                 ? m_image->getNumberOfFrames() - 1
                 : static_cast<int>(m_series->getSinlgeFrameImages().size()) - 1;
