@@ -35,18 +35,20 @@ namespace asclepios::gui
 		void setMaximize(TabWidget* t_widget) const;
 		void populateWidget(core::Series* t_series, core::Image* t_image) const;
 
-	private:
-		std::unique_ptr<WidgetsRepository> m_widgetsRepository = {};
-		std::unique_ptr<WidgetsContainer> m_widgetsContainer = {};
-		TabWidget* m_activeWidget = {};
-		FilesImporter* m_filesImporter = {};
+        private:
+                std::unique_ptr<WidgetsRepository> m_widgetsRepository = {};
+                std::unique_ptr<WidgetsContainer> m_widgetsContainer = {};
+                TabWidget* m_activeWidget = {};
+                FilesImporter* m_filesImporter = {};
+                WidgetsContainer::layouts m_currentLayout = WidgetsContainer::layouts::none;
 
-		void initData();
-		void createRemoveWidgets(const std::size_t& t_nrWidgets) const;
-		void createConnections() const;
-		void resetConnections();
-		[[nodiscard]] TabWidget* createNewWidget() const;
-		[[nodiscard]] TabWidget* findNextAvailableWidget() const;
-		[[nodiscard]] std::size_t computeNumberWidgetsFromLayout(const WidgetsContainer::layouts& t_layout);
-	};
+                void initData();
+                void createRemoveWidgets(const std::size_t& t_nrWidgets) const;
+                void createConnections() const;
+                void resetConnections();
+                [[nodiscard]] TabWidget* createNewWidget() const;
+                [[nodiscard]] TabWidget* findNextAvailableWidget() const;
+                [[nodiscard]] std::size_t computeNumberWidgetsFromLayout(const WidgetsContainer::layouts& t_layout);
+                [[nodiscard]] static const char* layoutToString(const WidgetsContainer::layouts& t_layout);
+        };
 }

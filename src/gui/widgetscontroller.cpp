@@ -2,6 +2,11 @@
 #include "filesimporter.h"
 #include "widget2d.h"
 
+#include <QLoggingCategory>
+#include <QString>
+
+Q_LOGGING_CATEGORY(lcWidgetsController, "asclepios.gui.widgetscontroller")
+
 asclepios::gui::WidgetsController::WidgetsController()
 {
 	initData();
@@ -18,11 +23,12 @@ void asclepios::gui::WidgetsController::initData()
 //-----------------------------------------------------------------------------
 void asclepios::gui::WidgetsController::createWidgets(const WidgetsContainer::layouts& t_layout)
 {
-	resetConnections();
-	createRemoveWidgets(computeNumberWidgetsFromLayout(t_layout));
-	m_widgetsContainer->setLayout(t_layout);
-	createConnections();
-	(*m_widgetsRepository->getWidgets().begin())->onFocus(true);
+        resetConnections();
+        createRemoveWidgets(computeNumberWidgetsFromLayout(t_layout));
+        m_widgetsContainer->setLayout(t_layout);
+        m_currentLayout = t_layout;
+        createConnections();
+        (*m_widgetsRepository->getWidgets().begin())->onFocus(true);
 }
 
 void asclepios::gui::WidgetsController::createWidgetMPR3D(const WidgetBase::WidgetType& t_type) const
@@ -99,25 +105,52 @@ void asclepios::gui::WidgetsController::setMaximize(TabWidget* t_widget) const
 void asclepios::gui::WidgetsController::populateWidget(core::Series* t_series, core::Image* t_image) const
 {
 	auto* const widget = findNextAvailableWidget();
-	if (widget)
-	{
-		auto* const widget2d = dynamic_cast<Widget2D*>(widget->getActiveTabbedWidget());
-		if(!widget2d)
-		{
-			return;
-		}
-		widget2d->setWidgetType(WidgetBase::WidgetType::widget2d);
-		widget2d->setSeries(t_series);
-		widget2d->setImage(t_image);
-		auto* const study = t_series->getParentObject();
-		widget2d->setIndexes(study->getParentObject()->getIndex(),
-		                     study->getIndex(), t_series->getIndex(),
-		                     t_image->getIndex());
-		widget2d->setIsImageLoaded(true);
-		widget2d->render();
-		Q_UNUSED(connect(m_filesImporter, &FilesImporter::refreshScrollValues,
-			widget2d, &Widget2D::onRefreshScrollValues));
-	}
+        if (widget)
+        {
+                auto* const widget2d = dynamic_cast<Widget2D*>(widget->getActiveTabbedWidget());
+                if(!widget2d)
+                {
+                        return;
+                }
+                widget2d->setWidgetType(WidgetBase::WidgetType::widget2d);
+                widget2d->setSeries(t_series);
+                widget2d->setImage(t_image);
+                auto* const study = t_series->getParentObject();
+                widget2d->setIndexes(study->getParentObject()->getIndex(),
+                                     study->getIndex(), t_series->getIndex(),
+                                     t_image->getIndex());
+                widget2d->setIsImageLoaded(true);
+                qCInfo(lcWidgetsController)
+                        << "Requesting render for series" << QString::fromStdString(t_series->getUID())
+                        << "(index" << t_series->getIndex() << ")"
+                        << "image" << QString::fromStdString(t_image->getSOPInstanceUID())
+                        << "(index" << t_image->getIndex() << ")"
+                        << "layout" << layoutToString(m_currentLayout);
+                widget2d->render();
+                Q_UNUSED(connect(m_filesImporter, &FilesImporter::refreshScrollValues,
+                        widget2d, &Widget2D::onRefreshScrollValues));
+        }
+}
+
+//-----------------------------------------------------------------------------
+const char* asclepios::gui::WidgetsController::layoutToString(const WidgetsContainer::layouts& t_layout)
+{
+        switch (t_layout)
+        {
+        case WidgetsContainer::layouts::one:
+                return "one";
+        case WidgetsContainer::layouts::twoRowOneBottom:
+                return "twoRowOneBottom";
+        case WidgetsContainer::layouts::twoColumnOneRight:
+                return "twoColumnOneRight";
+        case WidgetsContainer::layouts::threeRowOneBottom:
+                return "threeRowOneBottom";
+        case WidgetsContainer::layouts::threeColumnOneRight:
+                return "threeColumnOneRight";
+        case WidgetsContainer::layouts::none:
+        default:
+                return "none";
+        }
 }
 
 //-----------------------------------------------------------------------------
