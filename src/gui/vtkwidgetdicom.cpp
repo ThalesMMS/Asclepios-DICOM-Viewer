@@ -29,16 +29,31 @@ vtkStandardNewMacro(asclepios::gui::vtkWidgetDICOM)
 
 void asclepios::gui::vtkWidgetDICOM::setImageReader(vtkDICOMReader* t_reader)
 {
-	m_reader = t_reader;
-	qInfo() << "[vtkWidgetDICOM] Reader set. Output extent:"
-		<< (m_reader ? QString::number(m_reader->GetOutput()->GetExtent()[1] -
-			m_reader->GetOutput()->GetExtent()[0] + 1) : QString("null"));
-	SetInputData(m_reader->GetOutput());
-	if (m_reader->HasOverlay())
-	{
-		qInfo() << "[vtkWidgetDICOM] Overlay detected. Creating actor.";
-		createOverlayActor();
-	}
+        m_reader = t_reader;
+
+        vtkImageData* readerOutput = nullptr;
+        if (m_reader)
+        {
+                readerOutput = m_reader->GetOutput();
+        }
+
+        if (readerOutput)
+        {
+                const int* extent = readerOutput->GetExtent();
+                const int sizeX = extent ? extent[1] - extent[0] + 1 : 0;
+                qInfo() << "[vtkWidgetDICOM] Reader set. Output extent:" << sizeX;
+                SetInputData(readerOutput);
+                if (m_reader->HasOverlay())
+                {
+                        qInfo() << "[vtkWidgetDICOM] Overlay detected. Creating actor.";
+                        createOverlayActor();
+                }
+        }
+        else
+        {
+                qInfo() << "[vtkWidgetDICOM] Reader cleared.";
+                vtkImageViewer2::SetInputData(nullptr);
+        }
 }
 
 //-----------------------------------------------------------------------------

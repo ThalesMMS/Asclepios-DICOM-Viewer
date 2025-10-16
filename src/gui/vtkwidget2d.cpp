@@ -84,6 +84,7 @@ void asclepios::gui::vtkWidget2D::initWidgetDICOM()
                 if (m_fallbackImporter && hasValidScalars(m_fallbackImporter->GetOutput()))
                 {
                         qWarning() << "[vtkWidget2D] Using DCMTK fallback image data.";
+                        m_dcmWidget->setImageReader(nullptr);
                         m_dcmWidget->setImageMetaData(nullptr);
                         m_dcmWidget->SetInputData(m_fallbackImporter->GetOutput());
                 }
