@@ -3,6 +3,7 @@
 
 #include <vtkSetGet.h>
 #include <vtkPointData.h>
+#include <vtkImageData.h>
 
 namespace
 {
