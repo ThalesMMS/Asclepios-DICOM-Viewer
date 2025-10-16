@@ -409,12 +409,32 @@ std::tuple<int, int> asclepios::gui::vtkWidgetDICOM::getImageActorDisplayValue()
 //-----------------------------------------------------------------------------
 double asclepios::gui::vtkWidgetDICOM::getZoomFactor()
 {
-	auto* const actorExtend =
-		GetImageActor()->GetDisplayExtent();
-	const auto [x, y] = getImageActorDisplayValue();
-	return static_cast<double>(std::abs(y - x)) /
-		static_cast<double>(static_cast<double>(actorExtend[1])
-			- static_cast<double>(actorExtend[0]) + 1);
+        auto* const imageActor = GetImageActor();
+        if (!imageActor)
+        {
+                qWarning() << "[vtkWidgetDICOM] getZoomFactor called without an image actor";
+                return 0.0;
+        }
+
+        auto* const actorExtend = imageActor->GetDisplayExtent();
+        if (!actorExtend)
+        {
+                qWarning() << "[vtkWidgetDICOM] Missing display extent for zoom computation";
+                return 0.0;
+        }
+
+        const auto [x, y] = getImageActorDisplayValue();
+        const double denominator = static_cast<double>(actorExtend[1])
+                - static_cast<double>(actorExtend[0]) + 1.0;
+        if (!std::isfinite(denominator) || denominator <= 0.0)
+        {
+                qWarning() << "[vtkWidgetDICOM] Invalid display extent width:" << denominator
+                        << "(extent:" << actorExtend[0] << actorExtend[1] << ')';
+                return 0.0;
+        }
+
+        const double numerator = static_cast<double>(std::abs(y - x));
+        return numerator / denominator;
 }
 
 //-----------------------------------------------------------------------------

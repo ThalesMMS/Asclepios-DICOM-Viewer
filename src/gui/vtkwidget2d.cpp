@@ -232,12 +232,23 @@ void asclepios::gui::vtkWidget2D::applyTransformation(const transformationType& 
 //-----------------------------------------------------------------------------
 void asclepios::gui::vtkWidget2D::updateOverlayZoomFactor()
 {
-	const auto factor = m_dcmWidget->getZoomFactor();
-	std::stringstream zoom;
-	zoom << "Zoom: " << setprecision(2) << factor << '\n';
-	m_widgetOverlay->updateOverlayInCorner(2,
-		std::to_string(static_cast<int>(overlayKey::zoom)),
-		zoom.str());
+        const auto factor = m_dcmWidget->getZoomFactor();
+        if (!std::isfinite(factor) || factor <= 0.0)
+        {
+                qCWarning(lcVtkWidget2D)
+                        << "Ignoring invalid zoom factor" << factor;
+                m_widgetOverlay->updateOverlayInCorner(2,
+                        std::to_string(static_cast<int>(overlayKey::zoom)),
+                        std::string());
+                refreshOverlayInCorner(2);
+                return;
+        }
+
+        std::stringstream zoom;
+        zoom << "Zoom: " << setprecision(2) << factor << '\n';
+        m_widgetOverlay->updateOverlayInCorner(2,
+                std::to_string(static_cast<int>(overlayKey::zoom)),
+                zoom.str());
 	refreshOverlayInCorner(2);
 }
 
