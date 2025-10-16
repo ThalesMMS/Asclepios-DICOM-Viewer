@@ -1,12 +1,15 @@
 #include "widgetmpr.h"
 #include <QFocusEvent>
+#include <QLoggingCategory>
 #include <vtkEventQtSlotConnect.h>
 #include <vtkGenericOpenGLRenderWindow.h>
 #include <QtConcurrent/qtconcurrentrun.h>
 #include "tabwidget.h"
 
+Q_LOGGING_CATEGORY(lcWidgetMpr, "asclepios.gui.widgetmpr")
+
 asclepios::gui::WidgetMPR::WidgetMPR(QWidget* parent)
-	: WidgetBase(parent)
+        : WidgetBase(parent)
 {
 	initData();
 	initView();
@@ -17,25 +20,41 @@ asclepios::gui::WidgetMPR::WidgetMPR(QWidget* parent)
 //-----------------------------------------------------------------------------
 void asclepios::gui::WidgetMPR::render()
 {
-	if (!m_image || !m_widgetMPR)
-	{
-		return;
-	}
-	m_toolbar->getUI().toolButtonReslicer->setVisible(false);
-	m_toolbar->getUI().toolButtonReset->setVisible(false);
-	startLoadingAnimation();
-	if (m_image->getIsMultiFrame())
-	{
-		m_widgetMPR->setImage(m_image);
-	}
-	else
-	{
-		m_widgetMPR->setImage(m_image);
-		m_widgetMPR->setSeries(m_series);
-	}
-	m_future = QtConcurrent::run(onRenderAsync, this);
-	Q_UNUSED(connect(this, &WidgetMPR::finishedRenderAsync,
-		this, &WidgetMPR::onFinishedRenderAsync));
+        if (!m_image)
+        {
+                qCWarning(lcWidgetMpr) << "Cannot render MPR widget without image.";
+                return;
+        }
+        if (!m_widgetMPR)
+        {
+                qCCritical(lcWidgetMpr) << "Cannot render MPR widget without underlying vtkWidgetMPR instance.";
+                return;
+        }
+        qCInfo(lcWidgetMpr) << "Starting render for" << (m_image->getIsMultiFrame() ? "multi-frame" : "single-frame")
+                            << "dataset.";
+        m_toolbar->getUI().toolButtonReslicer->setVisible(false);
+        m_toolbar->getUI().toolButtonReset->setVisible(false);
+        qCDebug(lcWidgetMpr) << "Hid reslice/reset actions while preparing render.";
+        startLoadingAnimation();
+        if (m_image->getIsMultiFrame())
+        {
+                qCDebug(lcWidgetMpr) << "Assigning multi-frame image to vtkWidgetMPR.";
+                m_widgetMPR->setImage(m_image);
+        }
+        else
+        {
+                qCDebug(lcWidgetMpr) << "Assigning single-frame image and series to vtkWidgetMPR.";
+                m_widgetMPR->setImage(m_image);
+                if (!m_series)
+                {
+                        qCWarning(lcWidgetMpr) << "Single-frame render requested but series metadata is missing.";
+                }
+                m_widgetMPR->setSeries(m_series);
+        }
+        qCInfo(lcWidgetMpr) << "Launching asynchronous render task.";
+        m_future = QtConcurrent::run(onRenderAsync, this);
+        Q_UNUSED(connect(this, &WidgetMPR::finishedRenderAsync,
+                this, &WidgetMPR::onFinishedRenderAsync));
 }
 
 //-----------------------------------------------------------------------------
@@ -88,18 +107,22 @@ void asclepios::gui::WidgetMPR::onActivateWidget(const bool& t_flag, QObject* t_
 //-----------------------------------------------------------------------------
 void asclepios::gui::WidgetMPR::onFinishedRenderAsync()
 {
-	stopLoadingAnimation();
-	for (const auto& widget : m_qtvtkWidgets)
-	{
-		widget->setVisible(true);
-	}
-	m_widgetMPR->setRenderWindowsMPR(
-		m_qtvtkWidgets[0]->GetRenderWindow(),
-		m_qtvtkWidgets[1]->GetRenderWindow(),
-		m_qtvtkWidgets[2]->GetRenderWindow());
-	m_widgetMPR->render();
-	m_toolbar->getUI().toolButtonReslicer->setVisible(true);
-	m_toolbar->getUI().toolButtonReset->setVisible(true);
+        qCInfo(lcWidgetMpr) << "Asynchronous render task completed.";
+        stopLoadingAnimation();
+        for (const auto& widget : m_qtvtkWidgets)
+        {
+                widget->setVisible(true);
+                qCDebug(lcWidgetMpr) << "Widget" << widget << "is now visible:" << widget->isVisible();
+        }
+        m_widgetMPR->setRenderWindowsMPR(
+                m_qtvtkWidgets[0]->GetRenderWindow(),
+                m_qtvtkWidgets[1]->GetRenderWindow(),
+                m_qtvtkWidgets[2]->GetRenderWindow());
+        qCDebug(lcWidgetMpr) << "Render windows assigned to vtkWidgetMPR, triggering render.";
+        m_widgetMPR->render();
+        m_toolbar->getUI().toolButtonReslicer->setVisible(true);
+        m_toolbar->getUI().toolButtonReset->setVisible(true);
+        qCDebug(lcWidgetMpr) << "Reslice/reset actions restored visibility.";
 }
 
 //-----------------------------------------------------------------------------
@@ -175,9 +198,15 @@ void asclepios::gui::WidgetMPR::startLoadingAnimation()
 //-----------------------------------------------------------------------------
 void asclepios::gui::WidgetMPR::onRenderAsync(WidgetMPR* t_self)
 {
-	if (t_self->m_widgetMPR)
-	{
-		t_self->m_widgetMPR->create3DMatrix();
-		emit t_self->finishedRenderAsync();
-	}
+        if (t_self->m_widgetMPR)
+        {
+                qCInfo(lcWidgetMpr) << "Asynchronous task creating 3D matrix.";
+                t_self->m_widgetMPR->create3DMatrix();
+                qCInfo(lcWidgetMpr) << "3D matrix creation completed inside async task.";
+                emit t_self->finishedRenderAsync();
+        }
+        else
+        {
+                qCWarning(lcWidgetMpr) << "Async render task invoked without vtkWidgetMPR instance.";
+        }
 }
