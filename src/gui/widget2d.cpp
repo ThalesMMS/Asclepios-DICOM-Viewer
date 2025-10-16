@@ -26,6 +26,10 @@ asclepios::gui::Widget2D::Widget2D(QWidget* parent)
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::initView()
 {
+        if (layout())
+        {
+                delete layout();
+        }
         m_ui.setupUi(this);
         setLayout(new QHBoxLayout(this));
         layout()->setMargin(0);
@@ -49,15 +53,31 @@ void asclepios::gui::Widget2D::initView()
 void asclepios::gui::Widget2D::initData()
 {
 	disconnectScroll();
-	delete m_scroll;
-	delete m_qtvtkWidget;
+        if (auto* widgetLayout = layout())
+        {
+                if (m_scroll)
+                {
+                        widgetLayout->removeWidget(m_scroll);
+                }
+                if (m_qtvtkWidget)
+                {
+                        widgetLayout->removeWidget(m_qtvtkWidget);
+                }
+        }
+        delete m_scroll;
+        delete m_qtvtkWidget;
 	m_scroll = new QScrollBar(Qt::Vertical, this);
 	setScrollStyle();
 	m_renderWindow[0] =
 		vtkSmartPointer<vtkGenericOpenGLRenderWindow>::New();
 	m_vtkWidget = std::make_unique<vtkWidget2D>();
 	m_qtvtkWidget = new QVTKOpenGLNativeWidget(this);
+        m_qtvtkWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 	m_qtvtkWidget->SetRenderWindow(m_renderWindow[0]);
+        if (auto* const rw = m_qtvtkWidget->GetRenderWindow())
+        {
+                rw->SetDoubleBuffer(true);
+        }
 	m_vtkWidget->setRenderWindow(m_qtvtkWidget->GetRenderWindow());
 	m_vtkEvents = std::make_unique<vtkEventFilter>(this);
 }
@@ -65,7 +85,8 @@ void asclepios::gui::Widget2D::initData()
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::render()
 {
-        if (m_qtvtkWidget && m_vtkWidget && m_renderWindow->Get())
+        auto* const renderWindow = m_qtvtkWidget ? m_qtvtkWidget->GetRenderWindow() : nullptr;
+        if (m_qtvtkWidget && m_vtkWidget && renderWindow)
         {
                 if (!m_series || !m_image)
                 {
@@ -335,8 +356,8 @@ void asclepios::gui::Widget2D::onRenderFailed(const QString& t_message)
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::closeEvent(QCloseEvent* t_event)
 {
-	initView();
-	initData();
+        initData();
+        initView();
 	QWidget::closeEvent(t_event);
 }
 
@@ -412,10 +433,19 @@ void asclepios::gui::Widget2D::resetWidgets()
 		m_vtkWidget.reset();
 	}
 	m_vtkWidget = std::make_unique<vtkWidget2D>();
-	m_qtvtkWidget->SetRenderWindow(vtkNew<vtkGenericOpenGLRenderWindow>());
+        vtkSmartPointer<vtkGenericOpenGLRenderWindow> newRenderWindow =
+                vtkSmartPointer<vtkGenericOpenGLRenderWindow>::New();
+        m_qtvtkWidget->SetRenderWindow(newRenderWindow);
 	m_renderWindow[0] = m_qtvtkWidget->GetRenderWindow();
+        if (m_renderWindow[0])
+        {
+                m_renderWindow[0]->SetDoubleBuffer(true);
+        }
 	m_vtkWidget->setRenderWindow(m_renderWindow[0]);
-	m_renderWindow[0]->Render();
+        if (m_renderWindow[0])
+        {
+                m_renderWindow[0]->Render();
+        }
 }
 
 //-----------------------------------------------------------------------------

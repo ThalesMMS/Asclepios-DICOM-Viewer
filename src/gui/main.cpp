@@ -5,6 +5,8 @@
 #include <QDir>
 #include <QFile>
 #include <QCoreApplication>
+#include <QSurfaceFormat>
+#include <QVTKOpenGLNativeWidget.h>
 #include <QStandardPaths>
 #include <QMutex>
 #include <QMutexLocker>
@@ -94,6 +96,7 @@ void setupLogging()
 int main(int argc, char* argv[])
 {
 	QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+        QSurfaceFormat::setDefaultFormat(QVTKOpenGLNativeWidget::defaultFormat());
 	QApplication application(argc, argv);
 	QCoreApplication::setOrganizationName("Asclepios");
 	QCoreApplication::setOrganizationDomain("asclepios.local");
