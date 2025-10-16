@@ -2,11 +2,14 @@
 
 #include "patient.h"
 #include <dcmtk/dcmdata/dcfilefo.h>
+#include <QLoggingCategory>
 
 namespace asclepios::core
 {
-	class DicomReader
-	{
+        Q_DECLARE_LOGGING_CATEGORY(lcDicomReader)
+
+        class DicomReader
+        {
 	public:
 		DicomReader() = default;
 		~DicomReader() = default;

@@ -1,14 +1,17 @@
 #pragma once
 
 #include <memory>
+#include <QLoggingCategory>
 #include "corerepository.h"
 #include "utils.h"
 #include "dicomreader.h"
 
 namespace asclepios::core
 {
-	class export CoreController
-	{
+        Q_DECLARE_LOGGING_CATEGORY(lcCoreController)
+
+        class export CoreController
+        {
 	public:
 		CoreController();
 		~CoreController() = default;
