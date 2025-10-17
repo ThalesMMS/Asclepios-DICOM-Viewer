@@ -44,12 +44,17 @@ void asclepios::gui::WidgetsController::createWidgetMPR3D(const WidgetBase::Widg
 //-----------------------------------------------------------------------------
 void asclepios::gui::WidgetsController::applyTransformation(const transformationType& t_type) const
 {
-	if (auto* const widget2d = dynamic_cast<Widget2D*>(m_activeWidget->getTabbedWidget());
-		widget2d && widget2d->getWidgetType() == WidgetBase::WidgetType::widget2d
-		&& widget2d->getFuture().isFinished() && widget2d->getImage())
-	{
-		dynamic_cast<vtkWidget2D*>(widget2d->getWidgetVTK())->applyTransformation(t_type);
-	}
+        if (!m_activeWidget)
+        {
+                return;
+        }
+
+        if (auto* const widget2d = dynamic_cast<Widget2D*>(m_activeWidget->getTabbedWidget());
+                widget2d && widget2d->getWidgetType() == WidgetBase::WidgetType::widget2d
+                && widget2d->getIsImageLoaded() && widget2d->getImage())
+        {
+                widget2d->onApplyTransformation(t_type);
+        }
 }
 
 //-----------------------------------------------------------------------------
