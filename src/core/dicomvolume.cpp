@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <cmath>
 #include <cstring>
+#include <limits>
 #include <stdexcept>
 #include <type_traits>
 
@@ -186,6 +187,48 @@ namespace
 		geometry.Spacing[2] = spacingZ;
 	}
 
+        double computeUnsignedMaximum(int bits)
+        {
+                if (bits <= 0)
+                {
+                        return 0.0;
+                }
+                if (bits >= static_cast<int>(std::numeric_limits<unsigned long long>::digits))
+                {
+                        return static_cast<double>(std::numeric_limits<unsigned long long>::max());
+                }
+                const auto value = (1ULL << bits) - 1ULL;
+                return static_cast<double>(value);
+        }
+
+        double computeSignedMinimum(int bits)
+        {
+                if (bits <= 0)
+                {
+                        return 0.0;
+                }
+                if (bits >= static_cast<int>(std::numeric_limits<long long>::digits))
+                {
+                        return static_cast<double>(std::numeric_limits<long long>::min());
+                }
+                const auto value = -(1LL << (bits - 1));
+                return static_cast<double>(value);
+        }
+
+        double computeSignedMaximum(int bits)
+        {
+                if (bits <= 0)
+                {
+                        return 0.0;
+                }
+                if (bits >= static_cast<int>(std::numeric_limits<long long>::digits))
+                {
+                        return static_cast<double>(std::numeric_limits<long long>::max());
+                }
+                const auto value = (1LL << (bits - 1)) - 1LL;
+                return static_cast<double>(value);
+        }
+
         void allocateImageData(DicomVolume& volume, int width, int height, int depth)
         {
                 if (!volume.ImageData)
@@ -198,9 +241,36 @@ namespace
 
                 const auto bitsAllocated = volume.PixelInfo.BitsAllocated;
                 const bool isSigned = volume.PixelInfo.IsSigned;
+                const double slope = volume.PixelInfo.RescaleSlope;
+                const double intercept = volume.PixelInfo.RescaleIntercept;
+
+                const double originalMinimum = isSigned ? computeSignedMinimum(bitsAllocated) : 0.0;
+                const double originalMaximum = isSigned ? computeSignedMaximum(bitsAllocated) : computeUnsignedMaximum(bitsAllocated);
+                const double transformedMinimum = slope * originalMinimum + intercept;
+                const double transformedMaximum = slope * originalMaximum + intercept;
+                const double expectedMinimum = std::min(transformedMinimum, transformedMaximum);
+                const double expectedMaximum = std::max(transformedMinimum, transformedMaximum);
+
                 int scalarType = VTK_VOID;
 
-                if (bitsAllocated <= 8)
+                const double unsignedMaximum = computeUnsignedMaximum(bitsAllocated);
+                const bool requiresSignedRange = !isSigned &&
+                        (expectedMinimum < 0.0 - epsilon || expectedMaximum > unsignedMaximum + epsilon);
+
+                if (requiresSignedRange)
+                {
+                        const double shortMinimum = static_cast<double>(std::numeric_limits<short>::min());
+                        const double shortMaximum = static_cast<double>(std::numeric_limits<short>::max());
+                        if (expectedMinimum >= shortMinimum && expectedMaximum <= shortMaximum)
+                        {
+                                scalarType = VTK_SHORT;
+                        }
+                        else
+                        {
+                                scalarType = VTK_FLOAT;
+                        }
+                }
+                else if (bitsAllocated <= 8)
                 {
                         scalarType = isSigned ? VTK_CHAR : VTK_UNSIGNED_CHAR;
                 }
@@ -254,57 +324,58 @@ namespace
                                });
         }
 
-        void copyFrameData(const void* source, vtkImageData* imageData, int frameIndex,
+        template <typename SourceT>
+        void copyFrameData(const SourceT* source, vtkImageData* imageData, int frameIndex,
                            const DicomPixelInfo& pixelInfo, int width, int height)
         {
-		const auto samples = pixelInfo.SamplesPerPixel;
-		const vtkIdType sliceVoxelCount = static_cast<vtkIdType>(width) * height * samples;
-		const vtkIdType sliceOffset = sliceVoxelCount * frameIndex;
+                const auto samples = pixelInfo.SamplesPerPixel;
+                const vtkIdType sliceVoxelCount = static_cast<vtkIdType>(width) * height * samples;
+                const vtkIdType sliceOffset = sliceVoxelCount * frameIndex;
 		auto* scalars = imageData->GetPointData()->GetScalars();
 		if (!scalars)
 		{
 			throw std::runtime_error("vtkImageData is missing scalar data.");
 		}
-		switch (scalars->GetDataType())
-		{
-		case VTK_UNSIGNED_CHAR:
-			copyPixels(static_cast<const unsigned char*>(source),
-			           static_cast<unsigned char*>(scalars->GetVoidPointer(sliceOffset)),
-			           static_cast<size_t>(sliceVoxelCount),
-			           pixelInfo);
-			break;
-		case VTK_CHAR:
-			copyPixels(static_cast<const signed char*>(source),
-			           static_cast<signed char*>(scalars->GetVoidPointer(sliceOffset)),
-			           static_cast<size_t>(sliceVoxelCount),
-			           pixelInfo);
-			break;
-		case VTK_UNSIGNED_SHORT:
-			copyPixels(static_cast<const unsigned short*>(source),
-			           static_cast<unsigned short*>(scalars->GetVoidPointer(sliceOffset)),
-			           static_cast<size_t>(sliceVoxelCount),
-			           pixelInfo);
-			break;
+                switch (scalars->GetDataType())
+                {
+                case VTK_UNSIGNED_CHAR:
+                        copyPixels(source,
+                                   static_cast<unsigned char*>(scalars->GetVoidPointer(sliceOffset)),
+                                   static_cast<size_t>(sliceVoxelCount),
+                                   pixelInfo);
+                        break;
+                case VTK_CHAR:
+                        copyPixels(source,
+                                   static_cast<signed char*>(scalars->GetVoidPointer(sliceOffset)),
+                                   static_cast<size_t>(sliceVoxelCount),
+                                   pixelInfo);
+                        break;
+                case VTK_UNSIGNED_SHORT:
+                        copyPixels(source,
+                                   static_cast<unsigned short*>(scalars->GetVoidPointer(sliceOffset)),
+                                   static_cast<size_t>(sliceVoxelCount),
+                                   pixelInfo);
+                        break;
                 case VTK_SHORT:
-                        copyPixels(static_cast<const signed short*>(source),
+                        copyPixels(source,
                                    static_cast<signed short*>(scalars->GetVoidPointer(sliceOffset)),
                                    static_cast<size_t>(sliceVoxelCount),
                                    pixelInfo);
                         break;
                 case VTK_UNSIGNED_INT:
-                        copyPixels(static_cast<const Uint32*>(source),
+                        copyPixels(source,
                                    static_cast<Uint32*>(scalars->GetVoidPointer(sliceOffset)),
                                    static_cast<size_t>(sliceVoxelCount),
                                    pixelInfo);
                         break;
                 case VTK_INT:
-                        copyPixels(static_cast<const Sint32*>(source),
+                        copyPixels(source,
                                    static_cast<Sint32*>(scalars->GetVoidPointer(sliceOffset)),
                                    static_cast<size_t>(sliceVoxelCount),
                                    pixelInfo);
                         break;
                 case VTK_FLOAT:
-                        copyPixels(static_cast<const float*>(source),
+                        copyPixels(source,
                                    static_cast<float*>(scalars->GetVoidPointer(sliceOffset)),
                                    static_cast<size_t>(sliceVoxelCount),
                                    pixelInfo);
@@ -448,9 +519,6 @@ namespace
                                         width,
                                         height);
                         }
-
-                        volume->PixelInfo.RescaleSlope = 1.0;
-                        volume->PixelInfo.RescaleIntercept = 0.0;
                 }
                 else if (bits <= 16)
                 {
@@ -518,9 +586,6 @@ namespace
                                                 height);
                                 }
                         }
-
-                        volume->PixelInfo.RescaleSlope = 1.0;
-                        volume->PixelInfo.RescaleIntercept = 0.0;
                 }
                 else if (isSigned)
                 {
@@ -553,9 +618,6 @@ namespace
                                         width,
                                         height);
                         }
-
-                        volume->PixelInfo.RescaleSlope = 1.0;
-                        volume->PixelInfo.RescaleIntercept = 0.0;
                 }
                 else
                 {
@@ -588,10 +650,10 @@ namespace
                                         width,
                                         height);
                         }
-
-                        volume->PixelInfo.RescaleSlope = 1.0;
-                        volume->PixelInfo.RescaleIntercept = 0.0;
                 }
+
+                volume->PixelInfo.RescaleSlope = 1.0;
+                volume->PixelInfo.RescaleIntercept = 0.0;
 
                 return volume;
         }
@@ -683,6 +745,20 @@ bool DicomVolumeLoader::diagnoseStudy(const std::string& path)
                 qCInfo(lcDicomVolumeLoader)
                         << "Diagnostic load succeeded. Dimensions:"
                         << dimensions[0] << dimensions[1] << dimensions[2];
+                auto* scalars = volume->ImageData->GetPointData() ?
+                        volume->ImageData->GetPointData()->GetScalars() : nullptr;
+                if (scalars)
+                {
+                        qCInfo(lcDicomVolumeLoader)
+                                << "Diagnostic scalar type:"
+                                << scalars->GetDataTypeAsString()
+                                << "components:"
+                                << scalars->GetNumberOfComponents();
+                }
+                qCInfo(lcDicomVolumeLoader)
+                        << "Diagnostic rescale applied:"
+                        << volume->PixelInfo.RescaleSlope
+                        << volume->PixelInfo.RescaleIntercept;
                 return true;
         }
         catch (const std::exception& ex)
@@ -752,19 +828,80 @@ std::shared_ptr<DicomVolume> DicomVolumeLoader::loadSeries(const std::vector<std
 	}
 	allocateImageData(*volume, width, height, volume->NumberOfFrames);
 
-	for (int index = 0; index < volume->NumberOfFrames; ++index)
-	{
-		const auto& sliceVolume = *sortedSlices[index].second;
-		copyFrameData(
-			sliceVolume.ImageData->GetScalarPointer(),
-			volume->ImageData,
-			index,
-			volume->PixelInfo,
-			width,
-			height);
-	}
+        for (int index = 0; index < volume->NumberOfFrames; ++index)
+        {
+                const auto& sliceVolume = *sortedSlices[index].second;
+                auto* sliceScalars = sliceVolume.ImageData->GetPointData() ?
+                        sliceVolume.ImageData->GetPointData()->GetScalars() : nullptr;
+                if (!sliceScalars)
+                {
+                        throw std::runtime_error("Slice image data missing scalars while assembling volume.");
+                }
 
-	volume->PixelInfo.RescaleSlope = 1.0;
+                switch (sliceScalars->GetDataType())
+                {
+                case VTK_UNSIGNED_CHAR:
+                        copyFrameData(static_cast<const unsigned char*>(sliceVolume.ImageData->GetScalarPointer()),
+                                      volume->ImageData,
+                                      index,
+                                      volume->PixelInfo,
+                                      width,
+                                      height);
+                        break;
+                case VTK_CHAR:
+                        copyFrameData(static_cast<const signed char*>(sliceVolume.ImageData->GetScalarPointer()),
+                                      volume->ImageData,
+                                      index,
+                                      volume->PixelInfo,
+                                      width,
+                                      height);
+                        break;
+                case VTK_UNSIGNED_SHORT:
+                        copyFrameData(static_cast<const unsigned short*>(sliceVolume.ImageData->GetScalarPointer()),
+                                      volume->ImageData,
+                                      index,
+                                      volume->PixelInfo,
+                                      width,
+                                      height);
+                        break;
+                case VTK_SHORT:
+                        copyFrameData(static_cast<const signed short*>(sliceVolume.ImageData->GetScalarPointer()),
+                                      volume->ImageData,
+                                      index,
+                                      volume->PixelInfo,
+                                      width,
+                                      height);
+                        break;
+                case VTK_UNSIGNED_INT:
+                        copyFrameData(static_cast<const Uint32*>(sliceVolume.ImageData->GetScalarPointer()),
+                                      volume->ImageData,
+                                      index,
+                                      volume->PixelInfo,
+                                      width,
+                                      height);
+                        break;
+                case VTK_INT:
+                        copyFrameData(static_cast<const Sint32*>(sliceVolume.ImageData->GetScalarPointer()),
+                                      volume->ImageData,
+                                      index,
+                                      volume->PixelInfo,
+                                      width,
+                                      height);
+                        break;
+                case VTK_FLOAT:
+                        copyFrameData(static_cast<const float*>(sliceVolume.ImageData->GetScalarPointer()),
+                                      volume->ImageData,
+                                      index,
+                                      volume->PixelInfo,
+                                      width,
+                                      height);
+                        break;
+                default:
+                        throw std::runtime_error("Unsupported scalar type while assembling DICOM volume.");
+                }
+        }
+
+        volume->PixelInfo.RescaleSlope = 1.0;
 	volume->PixelInfo.RescaleIntercept = 0.0;
 
 	return volume;
