@@ -4,8 +4,6 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
-#include <vtkDICOMMetaData.h>
-#include <vtkDICOMTag.h>
 #include <vtkRenderWindow.h>
 #include <vtkTextProperty.h>
 #include "utils.h"
@@ -27,7 +25,7 @@ asclepios::gui::vtkWidgetOverlay::~vtkWidgetOverlay()
 }
 
 //-----------------------------------------------------------------------------
-void asclepios::gui::vtkWidgetOverlay::createOverlay(vtkRenderWindow* t_renderWindow, vtkDICOMMetaData* t_metadata)
+void asclepios::gui::vtkWidgetOverlay::createOverlay(vtkRenderWindow* t_renderWindow, const asclepios::core::DicomMetadata* t_metadata)
 {
 	if (!m_render)
 	{
@@ -110,7 +108,7 @@ void asclepios::gui::vtkWidgetOverlay::positionOverlay()
 }
 
 //-----------------------------------------------------------------------------
-void asclepios::gui::vtkWidgetOverlay::createOverlayInfo(vtkDICOMMetaData* t_metadata)
+void asclepios::gui::vtkWidgetOverlay::createOverlayInfo(const asclepios::core::DicomMetadata* t_metadata)
 {
         if (!t_metadata)
         {
@@ -119,20 +117,22 @@ void asclepios::gui::vtkWidgetOverlay::createOverlayInfo(vtkDICOMMetaData* t_met
         }
         for (const auto& info : m_overlays)
         {
-                vtkDICOMTag::StaticTag tag{};
-                tag.Key = info->getTagKey();
-                auto tagValue = t_metadata->Get(vtkDICOMTag(tag)).AsString();
-		core::Utils::processTagFormat(tag, tagValue);
-		auto tagText = info->getTextBefore();
-		tagText.append(replaceInvalidCharactersInString(tagValue));
-		tagText.append(info->getTextAfter());
-		if (!tagText.empty() && tagText != "\n"
-			&& tagText != "Series: \n" && tagText != "Zoom: \n")
-		{
-			m_cornersOfOverlay[info->getCorner()]->setOverlayInfo(
-				std::to_string(tag.Key), tagText);
-		}
-	}
+                const unsigned int key = info->getTagKey();
+                asclepios::core::DicomTag tag(
+                        static_cast<unsigned short>((key >> 16) & 0xFFFF),
+                        static_cast<unsigned short>(key & 0xFFFF));
+                auto tagValue = t_metadata->getString(tag);
+                asclepios::core::Utils::processTagFormat(tag, tagValue);
+                auto tagText = info->getTextBefore();
+                tagText.append(replaceInvalidCharactersInString(tagValue));
+                tagText.append(info->getTextAfter());
+                if (!tagText.empty() && tagText != "\n"
+                        && tagText != "Series: \n" && tagText != "Zoom: \n")
+                {
+                        m_cornersOfOverlay[info->getCorner()]->setOverlayInfo(
+                                std::to_string(key), tagText);
+                }
+        }
 }
 
 //-----------------------------------------------------------------------------
@@ -209,3 +209,4 @@ std::string asclepios::gui::vtkWidgetOverlay::replaceInvalidCharactersInString(c
 	}
 	return s;
 }
+

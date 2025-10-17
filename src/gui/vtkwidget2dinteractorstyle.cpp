@@ -4,6 +4,8 @@
 #include <vtkObjectFactory.h>
 #include "utils.h"
 
+#include "dicomvolume.h"
+
 
 vtkStandardNewMacro(asclepios::gui::vtkWidget2DInteractorStyle);
 
@@ -167,12 +169,22 @@ void asclepios::gui::vtkWidget2DInteractorStyle::refreshImage() const
 	{
 		throw std::runtime_error("Image is null!");
 	}
-	if (m_widget2D && m_widget2D->getImageReader())
+	if (!m_widget2D)
 	{
-		m_widget2D->setImage(m_image);
-		m_widget2D->setImageReader(m_image->getImageReader());
-		m_widget2D->getDCMWidget()->setImageReader(m_image->getImageReader());
+		throw std::runtime_error("Widget2D is null!");
 	}
+	const auto volume = m_image->getDicomVolume();
+	if (!volume || !volume->ImageData)
+	{
+		throw std::runtime_error("Unable to refresh image: missing DICOM volume.");
+	}
+	m_widget2D->setImage(m_image);
+	m_widget2D->setVolume(volume);
+	if (auto widgetDicom = m_widget2D->getDCMWidget())
+	{
+		widgetDicom->setVolume(volume);
+	}
+	m_widget2D->render();
 }
 
 //-----------------------------------------------------------------------------

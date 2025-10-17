@@ -1,12 +1,12 @@
 #include "utils.h"
 
-void asclepios::core::Utils::processTagFormat(const vtkDICOMTag& t_tag, std::string& t_value)
+void asclepios::core::Utils::processTagFormat(const DicomTag& t_tag, std::string& t_value)
 {
 	if (t_value.empty())
 	{
 		return;
 	}
-	switch (t_tag.GetKey())
+	switch (t_tag.packed())
 	{
 	case 524320: //study date
 		t_value = getDateFormat(t_value);

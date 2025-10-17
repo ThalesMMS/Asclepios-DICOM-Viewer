@@ -1,9 +1,7 @@
 #include "image.h"
 #include "smartdjdecoderregistration.h"
+#include "dicomvolume.h"
 
-#include <vtkSetGet.h>
-#include <vtkPointData.h>
-#include <vtkImageData.h>
 #include <QString>
 #include <QLoggingCategory>
 
@@ -29,48 +27,51 @@ namespace
         };
 }
 
-vtkSmartPointer<vtkDICOMReader> asclepios::core::Image::getImageReader() const
+std::shared_ptr<asclepios::core::DicomVolume> asclepios::core::Image::getDicomVolume() const
 {
-        if (m_imageReader)
+        if (m_volume)
         {
-                return m_imageReader;
+                return m_volume;
         }
 
         if (m_path.empty())
         {
-                vtkGenericWarningMacro(<< "[Image] getImageReader() called without a valid path.");
+                qWarning(lcImage) << "getDicomVolume() called without a valid path.";
                 return nullptr;
         }
 
-        m_imageReader = vtkSmartPointer<vtkDICOMReader>::New();
-        m_imageReader->SetFileName(m_path.c_str());
-
         CodecRegistrationGuard guard;
-        m_imageReader->Update();
-
-        const auto* const metaData = m_imageReader->GetMetaData();
-        auto* const output = m_imageReader->GetOutput();
-        auto* const pointData = output ? output->GetPointData() : nullptr;
-        auto* const scalars = pointData ? pointData->GetScalars() : nullptr;
-        if (!metaData || !scalars)
+        try
         {
-                qCWarning(lcImage)
-                        << "vtkDICOMReader produced incomplete output for"
-                        << QString::fromStdString(m_path)
-                        << "(metadata or pixel data missing)";
+                m_volume = DicomVolumeLoader::loadImage(m_path);
         }
-        else
+        catch (const std::exception& ex)
         {
-                int dimensions[3] = { 0, 0, 0 };
-                output->GetDimensions(dimensions);
+                qCCritical(lcImage)
+                        << "DCMTK failed to load"
+                        << QString::fromStdString(m_path)
+                        << ":" << ex.what();
+                m_volume.reset();
+        }
+
+        if (m_volume && m_volume->ImageData)
+        {
+                int dimensions[3] = {0, 0, 0};
+                m_volume->ImageData->GetDimensions(dimensions);
                 qCInfo(lcImage)
-                        << "vtkDICOMReader initialized for"
+                        << "Loaded DICOM image"
                         << QString::fromStdString(m_path)
                         << "dimensions:" << dimensions[0] << "x"
                         << dimensions[1] << "x" << dimensions[2];
         }
+        else
+        {
+                qCWarning(lcImage)
+                        << "Unable to obtain image data for"
+                        << QString::fromStdString(m_path);
+        }
 
-        return m_imageReader;
+        return m_volume;
 }
 
 //-----------------------------------------------------------------------------

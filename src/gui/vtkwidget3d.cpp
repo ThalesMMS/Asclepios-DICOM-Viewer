@@ -1,11 +1,12 @@
 #include "vtkwidget3d.h"
 #include <vtkRenderer.h>
-#include <vtkDICOMMetaData.h>
 #include <vtkWidgetRepresentation.h>
 #include <vtkVolumeProperty.h>
 #include <vtkRenderWindowInteractor.h>
 #include <vtkContourValues.h>
 #include <vtkImageData.h>
+#include <vtkDataArray.h>
+#include <vtkPointData.h>
 #include <QElapsedTimer>
 #include <QLoggingCategory>
 #include <QString>
@@ -66,16 +67,41 @@ void asclepios::gui::vtkWidget3D::setVolumeMapperBlend() const
 }
 
 //-----------------------------------------------------------------------------
-std::tuple<int, int> asclepios::gui::vtkWidget3D::getWindowLevel() const
+std::shared_ptr<asclepios::core::DicomVolume> asclepios::gui::vtkWidget3D::acquireVolume() const
 {
-        const auto imageReader =
-                m_image->getImageReader();
-        const auto windowCenter = imageReader->
-                GetMetaData()->Get(DC::WindowCenter).AsInt();
-        const auto windowWidth = imageReader->GetMetaData()->Get(DC::WindowWidth).AsInt();
-        qCDebug(lcVtkWidget3D) << "getWindowLevel()" << "center" << windowCenter << "width" << windowWidth
+        if (m_image && m_image->getIsMultiFrame())
+        {
+                return m_image->getDicomVolume();
+        }
+        if (m_series)
+        {
+                return m_series->getVolumeForSingleFrameSeries();
+        }
+        return nullptr;
+}
+
+std::tuple<int, int> asclepios::gui::vtkWidget3D::getWindowLevel(const std::shared_ptr<core::DicomVolume>& volume) const
+{
+        if (!volume || !volume->ImageData)
+        {
+                return std::make_tuple(0, 0);
+        }
+        double window = volume->PixelInfo.WindowWidth;
+        double level = volume->PixelInfo.WindowCenter;
+        if (window <= 0.0 || level == 0.0)
+        {
+                auto* const scalars = volume->ImageData->GetPointData()->GetScalars();
+                if (scalars)
+                {
+                        double range[2] = {0.0, 0.0};
+                        scalars->GetRange(range);
+                        window = range[1] - range[0];
+                        level = 0.5 * (range[1] + range[0]);
+                }
+        }
+        qCDebug(lcVtkWidget3D) << "getWindowLevel()" << "center" << level << "width" << window
                                << "imageIdx" << (m_image ? m_image->getIndex() : -1);
-        return std::make_tuple(windowCenter, windowWidth);
+        return std::make_tuple(static_cast<int>(std::round(window)), static_cast<int>(std::round(level)));
 }
 
 //-----------------------------------------------------------------------------
@@ -83,13 +109,22 @@ void asclepios::gui::vtkWidget3D::setFilter(const QString& t_filePath)
 {
         try
         {
+                if (!m_volumeData)
+                {
+                        m_volumeData = acquireVolume();
+                }
+                if (!m_volumeData || !m_volumeData->ImageData)
+                {
+                        qCWarning(lcVtkWidget3D) << "setFilter() aborted - volume data unavailable.";
+                        return;
+                }
                 if (t_filePath == "MIP")
                 {
                         m_transferFunction.reset();
                         m_transferFunction = std::make_unique<TransferFunction>();
                         m_mapper->SetBlendMode(vtkVolumeMapper::MAXIMUM_INTENSITY_BLEND);
                         m_transferFunction->setMaximumIntensityProjectionFunction(0, 0);
-                        const auto [window, level] = getWindowLevel();
+                        const auto [window, level] = getWindowLevel(m_volumeData);
                         m_transferFunction->updateWindowLevel(window, level);
                         qCInfo(lcVtkWidget3D) << "setFilter() applied MIP" << "imageIdx"
                                               << (m_image ? m_image->getIndex() : -1);
@@ -118,17 +153,23 @@ void asclepios::gui::vtkWidget3D::render()
 {
         m_renderWindows[0]->OffScreenRenderingOn();
         setVolumeMapperBlend();
-        const auto [window, level] = getWindowLevel();
-        const bool useMultiFrame = m_image && m_image->getIsMultiFrame();
-        const auto reader = useMultiFrame
-                                    ? m_image->getImageReader()
-                                    : m_series->getReaderForAllSingleFrameImages();
-        qCInfo(lcVtkWidget3D) << "render() configuring pipeline" << "useMultiFrame" << useMultiFrame
+        m_volumeData = acquireVolume();
+        if (!m_volumeData || !m_volumeData->ImageData)
+        {
+                qCCritical(lcVtkWidget3D) << "render() aborted - volume data unavailable.";
+                return;
+        }
+        const auto [window, level] = getWindowLevel(m_volumeData);
+        qCInfo(lcVtkWidget3D) << "render() configuring pipeline"
                               << "seriesUid" << (m_series ? QString::fromStdString(m_series->getUID()) : QStringLiteral("n/a"))
                               << "imageIdx" << (m_image ? m_image->getIndex() : -1);
-        m_mapper->SetInputConnection(reader->GetOutputPort());
+        m_mapper->SetInputData(m_volumeData->ImageData);
         m_transferFunction->updateWindowLevel(window, level);
         m_volume->SetMapper(m_mapper);
+        if (m_volumeData->Direction)
+        {
+                m_volume->SetUserMatrix(m_volumeData->Direction);
+        }
         m_renderer->AddActor(m_volume);
         m_renderWindows[0]->AddRenderer(m_renderer);
         QElapsedTimer timer;
@@ -140,12 +181,12 @@ void asclepios::gui::vtkWidget3D::render()
         m_volume->SetOrigin(extend[0] + (extend[1] - extend[0]) / 2,
                             extend[2] + (extend[3] - extend[2]) / 2, 0);
         initInteractorStyle();
-        qint64 voxelCount = -1;
-        int dimensions[3] = { 0, 0, 0 };
-        if (auto* imageData = vtkImageData::SafeDownCast(reader->GetOutput()))
+        int dimensions[3] = {0, 0, 0};
+        vtkIdType voxelCount = -1;
+        if (m_volumeData->ImageData)
         {
-                imageData->GetDimensions(dimensions);
-                voxelCount = static_cast<qint64>(dimensions[0]) * dimensions[1] * dimensions[2];
+                m_volumeData->ImageData->GetDimensions(dimensions);
+                voxelCount = static_cast<vtkIdType>(dimensions[0]) * dimensions[1] * dimensions[2];
         }
         qCInfo(lcVtkWidget3D) << "render() completed" << "durationMs" << renderDuration
                               << "bounds" << extend[0] << extend[1] << extend[2] << extend[3] << extend[4] << extend[5]

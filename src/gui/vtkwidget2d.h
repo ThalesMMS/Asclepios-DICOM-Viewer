@@ -4,10 +4,9 @@
 #include "vtkwidgetdicom.h"
 #include "vtkwidgetoverlay.h"
 
-#include <vtkImageImport.h>
+#include <memory>
 
-#include <cstdint>
-#include <vector>
+#include "dicomvolume.h"
 
 enum class transformationType;
 
@@ -20,12 +19,11 @@ namespace asclepios::gui
 		~vtkWidget2D() = default;
 
 		//getters
-		[[nodiscard]] vtkSmartPointer<vtkDICOMReader> getImageReader() const { return m_imageReader; }
 		[[nodiscard]] vtkSmartPointer<vtkWidgetDICOM> getDCMWidget() const { return m_dcmWidget; }
 		[[nodiscard]] vtkSmartPointer<vtkRenderWindowInteractor> getInteractor() const { return m_interactor; }
 
 		//setters
-		void setImageReader(const  vtkSmartPointer<vtkDICOMReader>& t_reader) { m_imageReader = t_reader; }
+		void setVolume(const std::shared_ptr<core::DicomVolume>& t_volume) { m_volume = t_volume; }
 		void setInteractor(const vtkSmartPointer<vtkRenderWindowInteractor>& t_interactor) override;
 
 		void initImageReader();
@@ -38,19 +36,12 @@ namespace asclepios::gui
 		void resetOverlay();
 
         private:
-                vtkSmartPointer<vtkDICOMReader> m_imageReader = {};
+                std::shared_ptr<core::DicomVolume> m_volume = {};
                 vtkSmartPointer<vtkWidgetDICOM> m_dcmWidget = {};
                 vtkSmartPointer<vtkRenderWindowInteractor> m_interactor = {};
                 vtkSmartPointer<vtkRenderer> m_vtkWidgetOverlayRenderer = {};
                 std::unique_ptr<vtkWidgetOverlay> m_widgetOverlay = {};
                 bool m_colorsInverted = false;
-                bool m_usingFallbackDecoder = false;
-                bool m_preferFallbackDecoder = true;
-                vtkSmartPointer<vtkImageImport> m_fallbackImporter = {};
-                std::vector<unsigned char> m_fallbackByteBuffer = {};
-                std::vector<unsigned short> m_fallbackWordBuffer = {};
-                std::vector<std::int8_t> m_fallbackSignedByteBuffer = {};
-                std::vector<std::int16_t> m_fallbackSignedWordBuffer = {};
 
                 void initRenderingLayers();
                 /**
@@ -65,10 +56,5 @@ namespace asclepios::gui
                 void updateOverlayMouseCoordinates(const int& x, const int& y) const;
                 [[nodiscard]] std::string computeHUValueInPixel(const int& t_pixel) const;
                 [[nodiscard]] double computeScale() const;
-                bool ensureImageDataAvailability();
-                bool isReaderOutputValid() const;
-                bool buildFallbackImage();
-                void resetFallback();
-                bool hasValidScalars(vtkImageData* image) const;
         };
 }

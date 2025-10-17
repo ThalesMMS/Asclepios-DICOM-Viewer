@@ -1,8 +1,8 @@
 #include "series.h"
 #include <algorithm>
-#include <vtkDICOMSorter.h>
-#include <vtkDICOMMetaData.h>
-#include <vtkStringArray.h>
+#include <QLoggingCategory>
+
+Q_LOGGING_CATEGORY(lcSeries, "asclepios.core.series")
 
 asclepios::core::Image* asclepios::core::Series::getNextSingleFrameImage(Image* t_image)
 {
@@ -42,49 +42,48 @@ asclepios::core::Image* asclepios::core::Series::getSingleFrameImageByIndex(cons
 }
 
 //-----------------------------------------------------------------------------
-vtkSmartPointer<vtkDICOMReader> asclepios::core::Series::getReaderForAllSingleFrameImages()
+std::shared_ptr<asclepios::core::DicomVolume> asclepios::core::Series::getVolumeForSingleFrameSeries()
 {
-	if (m_readerSingleFrame)
+	if (m_cachedVolume)
 	{
-		return vtkSmartPointer<vtkDICOMReader>(m_readerSingleFrame);
+		return m_cachedVolume;
 	}
-	vtkNew<vtkDICOMReader> newReader;
-	vtkNew<vtkStringArray> sinleFramesImages;
-	vtkNew<vtkDICOMSorter> sorter;
-	int count = 0;
+	if (m_singleFrameImages.empty())
+	{
+		qCWarning(lcSeries) << "Requested volume for series without single-frame images.";
+		return nullptr;
+	}
+	std::vector<std::string> paths;
+	paths.reserve(m_singleFrameImages.size());
 	for (const auto& image : m_singleFrameImages)
 	{
-		const auto path = image->getImagePath();
-		if (!path.empty())
+		if (!image->getImagePath().empty())
 		{
-			sinleFramesImages->InsertValue(count++, path);
+			paths.emplace_back(image->getImagePath());
 		}
 	}
-	sorter->SetInputFileNames(sinleFramesImages);
-	sorter->Update();
-	newReader->SetFileNames(sorter->GetFileNamesForSeries(0));
-	newReader->SetDataByteOrderToLittleEndian();
-	newReader->Update(0);
-	m_readerSingleFrame = newReader;
-	return vtkSmartPointer<vtkDICOMReader>(newReader);
+	if (paths.empty())
+	{
+		qCWarning(lcSeries) << "No valid file paths were collected for the series volume.";
+		return nullptr;
+	}
+	try
+	{
+		m_cachedVolume = DicomVolumeLoader::loadSeries(paths);
+	}
+	catch (const std::exception& ex)
+	{
+		qCCritical(lcSeries) << "Failed to load series volume:" << ex.what();
+		m_cachedVolume.reset();
+	}
+	return m_cachedVolume;
 }
 
 //-----------------------------------------------------------------------------
-vtkSmartPointer<vtkDICOMMetaData> asclepios::core::Series::getMetaDataForSeries()
+const asclepios::core::DicomMetadata* asclepios::core::Series::getMetadataForSeries()
 {
-	if (m_singleFrameImages.empty())
-	{
-		return nullptr;
-	}
-	if (!m_metaDataSingleFrame)
-	{
-		m_metaDataSingleFrame = vtkSmartPointer<vtkDICOMMetaData>::New();
-	}
-	vtkNew<vtkDICOMReader> tempReader;
-	tempReader->SetFileName((*m_singleFrameImages.begin())->getImagePath().c_str());
-	tempReader->Update();
-	m_metaDataSingleFrame->DeepCopy(tempReader->GetMetaData());
-	return m_metaDataSingleFrame;
+	const auto volume = getVolumeForSingleFrameSeries();
+	return volume ? &volume->Metadata : nullptr;
 }
 
 //-----------------------------------------------------------------------------
@@ -97,6 +96,7 @@ asclepios::core::Image* asclepios::core::Series::addSingleFrameImage(std::unique
 		m_singleFrameImages.emplace(std::move(t_image));
 		index = m_singleFrameImages.size() - 1;
 		t_newImage = true;
+		m_cachedVolume.reset();
 	}
 	auto it = m_singleFrameImages.begin();
 	std::advance(it, index);
@@ -114,6 +114,7 @@ asclepios::core::Image* asclepios::core::Series::addMultiFrameImage(std::unique_
 		m_multiFrameImages.emplace(std::move(t_image));
 		index = m_multiFrameImages.size() - 1;
 		t_newImage = true;
+		m_cachedVolume.reset();
 	}
 	auto it = m_multiFrameImages.begin();
 	std::advance(it, index);

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 #include <vtkVolume.h>
 #include <vtkBoxWidget2.h>
 #include <vtkSmartVolumeMapper.h>
@@ -7,6 +9,7 @@
 #include "vtkboxwidget3dcallback.h"
 #include "vtkwidget3dinteractorstyle.h"
 #include "vtkwidgetbase.h"
+#include "dicomvolume.h"
 
 namespace asclepios::gui
 {
@@ -34,13 +37,15 @@ namespace asclepios::gui
 		vtkSmartPointer<vtkVolume> m_volume;
 		vtkSmartPointer<vtkBoxWidget2> m_boxWidget;
 		vtkSmartPointer<vtkBoxWidget3DCallback> m_boxWidgetCallback = {};
-		vtkRenderWindowInteractor* m_interactor = {};
+        vtkRenderWindowInteractor* m_interactor = {};
+        std::shared_ptr<core::DicomVolume> m_volumeData = {};
 
 		void initWidget();
 		void initBoxWidget();
 		void initBoxWidgetCallback();
 		void initInteractorStyle();
-		void setVolumeMapperBlend() const;
-		[[nodiscard]] std::tuple< int, int> getWindowLevel() const;
+        void setVolumeMapperBlend() const;
+        std::shared_ptr<core::DicomVolume> acquireVolume() const;
+        [[nodiscard]] std::tuple<int, int> getWindowLevel(const std::shared_ptr<core::DicomVolume>& volume) const;
 	};
 }

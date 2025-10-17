@@ -6,7 +6,6 @@
 #include <vtkRendererCollection.h>
 #include <vtkRenderWindowInteractor.h>
 #include <vtkImageData.h>
-#include <vtkDICOMMetaData.h>
 #include <vtkScalarsToColors.h>
 #include <QLoggingCategory>
 
@@ -250,10 +249,8 @@ void asclepios::gui::vtkWidgetMPR::createVTKkWidgetOverlay(vtkRenderWindow* t_wi
 {
 	auto* const renderer =
 		t_window->GetRenderers()->GetFirstRenderer();
-        auto* const metadata =
-                m_image->getIsMultiFrame()
-                        ? m_image->getImageReader()->GetMetaData()
-                        : m_series->getMetaDataForSeries().Get();
+        const auto volume = m_mprMaker ? m_mprMaker->getVolume() : nullptr;
+        const auto* metadata = volume ? &volume->Metadata : nullptr;
         if (!metadata)
         {
                 qCWarning(lcVtkWidgetMpr) << "Metadata missing while creating overlay for window" << t_windowNumber;

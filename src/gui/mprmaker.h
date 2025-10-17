@@ -1,9 +1,11 @@
 #pragma once
 
-#include <vtkDICOMReader.h>
+#include <memory>
+
 #include <vtkImageResliceToColors.h>
 #include <vtkRenderWindow.h>
 #include <vtkSmartPointer.h>
+#include "dicomvolume.h"
 
 namespace asclepios::core
 {
@@ -35,7 +37,8 @@ namespace asclepios::gui
 		[[nodiscard]] int getInitalLevel() const { return m_initialLevel; }
 		[[nodiscard]] vtkImageResliceToColors* getImageReslice(const int t_plane) const { return m_reslicer[t_plane]; }
 		[[nodiscard]] vtkImageReslice* getOriginalValueImageReslice(int t_plane);
-		[[nodiscard]] vtkImageData* getInputData() const { return m_reader->GetOutput(); }
+		[[nodiscard]] vtkImageData* getInputData() const { return m_volume ? m_volume->ImageData : nullptr; }
+		[[nodiscard]] std::shared_ptr<core::DicomVolume> getVolume() const { return m_volume; }
 		[[nodiscard]] double getCenterSliceZPosition(int t_plane) const;
 		[[nodiscard]] vtkSmartPointer<vtkScalarsToColors> getColorMapScalar() const { return m_colorMap; }
 
@@ -50,7 +53,7 @@ namespace asclepios::gui
 		core::Image* m_image = {};
 		int m_initialWindow = 0;
 		int m_initialLevel = 0;
-		vtkSmartPointer<vtkDICOMReader> m_reader = {};
+        std::shared_ptr<core::DicomVolume> m_volume = {};
 		vtkSmartPointer<vtkImageResliceToColors> m_reslicer[3] = {};
 		vtkSmartPointer<vtkImageReslice> m_originalValuesReslicer[3] = {};
 		vtkSmartPointer<vtkRenderWindow> m_renderWindow[3] = {};
@@ -78,7 +81,7 @@ namespace asclepios::gui
 		void initialize();
 		void setInitialMatrix();
 		void createMprViews();
-		void setMiddleSlice(int t_plane, const vtkSmartPointer<vtkDICOMReader>& t_reader);
+        void setMiddleSlice(int t_plane);
 		void renderPlaneOffScreen(int t_plane);
 	};
 }

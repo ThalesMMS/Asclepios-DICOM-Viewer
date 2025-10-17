@@ -1,11 +1,13 @@
 #pragma once
 
-#include <vtkDICOMReader.h>
-#include <vtkDICOMMetaData.h>
+#include <memory>
+#include <tuple>
+
 #include <vtkImageViewer2.h>
 #include <vtkSmartPointer.h>
-#include <tuple>
+
 #include "windowlevelfilter.h"
+#include "dicomvolume.h"
 
 namespace asclepios::gui
 {
@@ -15,48 +17,40 @@ namespace asclepios::gui
 		static vtkWidgetDICOM* New();
 		vtkTypeMacro(vtkWidgetDICOM, vtkImageViewer2);
 
-		vtkWidgetDICOM() :m_windowLevelFilter(std::make_unique<WindowLevelFilter>()) { }
-		~vtkWidgetDICOM() = default;
+		vtkWidgetDICOM();
+		~vtkWidgetDICOM() override = default;
 
-		//getters
-		[[nodiscard]] vtkDICOMMetaData* getImageMetaData() const { return m_imageMetaData; }
+		// getters
+		[[nodiscard]] double getZoomFactor();
 		[[nodiscard]] int getWindowWidth() const { return m_windowWidth; }
 		[[nodiscard]] int getWindowCenter() const { return m_windowCenter; }
-		[[nodiscard]] bool getIsOverlay() const { return m_isOverlay; }
-		[[nodiscard]] double getZoomFactor();
 
-		//setters
-		void setImageMetaData(vtkDICOMMetaData* t_metaData) { m_imageMetaData = t_metaData; }
-		void setWindowWidth(const int& t_windowWidth) { m_windowWidth = t_windowWidth; }
-		void setWindowCenter(const int& t_windowCenter) { m_windowCenter = t_windowCenter; }
-		void setIsOverlay(const bool& t_flag) { m_isOverlay = t_flag; }
-		void setImageReader(vtkDICOMReader* t_reader);
-		void setInvertColors(const bool& t_flag);
-		void setWindowWidthCenter(const int& t_width, const int& t_center);
+		// setters
+		void setVolume(const std::shared_ptr<core::DicomVolume>& t_volume);
+		void setInvertColors(bool t_flag);
+		void setWindowWidthCenter(int t_width, int t_center);
 		void setInitialWindowWidthCenter();
 		void SetInputData(vtkImageData* in) override;
 		void UpdateDisplayExtent();
 
-		void changeWindowWidthCenter(const int& t_width, const int& t_center);
-
+		void changeWindowWidthCenter(int t_width, int t_center);
 
 	private:
-		vtkSmartPointer<vtkDICOMMetaData> m_imageMetaData = {};
-		vtkDICOMReader* m_reader = {};
-		vtkSmartPointer<vtkImageActor> m_overlayActor = {};
-		int m_windowWidth = {};
-		int m_windowCenter = {};
+		std::shared_ptr<core::DicomVolume> m_volume = {};
 		std::unique_ptr<WindowLevelFilter> m_windowLevelFilter = {};
-		bool m_isOverlay = false;
+		int m_windowWidth = 0;
+		int m_windowCenter = 0;
+		bool m_colorsInverted = false;
 		double m_lastClippingRange = -1.0;
 		double m_lastAvgSpacing = -1.0;
 		int m_lastSliceOrientation = -1;
 
-		void createOverlayActor();
+		void applyDirectionMatrix();
+		void updateScalarsForInversion();
 		void setMONOCHROME1WindowWidthCenter();
 		void setMONOCHROME2WindowWidthCenter();
-		void setPALETTECOLORWindowWidthCenter();
-		[[nodiscard]] vtkSmartPointer<vtkImageMapToWindowLevelColors> createMapColors() const;
+		void setDefaultWindowLevelFromRange();
 		[[nodiscard]] std::tuple<int, int> getImageActorDisplayValue();
 	};
 }
+

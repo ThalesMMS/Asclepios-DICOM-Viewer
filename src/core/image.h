@@ -1,8 +1,10 @@
 #pragma once
 
-#include <vtkDICOMReader.h>
+#include <memory>
+
 #include <vtkSmartPointer.h>
 #include "utils.h"
+#include "dicomvolume.h"
 
 namespace asclepios::core
 {
@@ -34,10 +36,7 @@ namespace asclepios::core
 		[[nodiscard]] export double getPixelSpacingY() const { return m_pixelSpacingY; }
 		[[nodiscard]] export int getInstanceNumber() const { return m_instanceNumber; }
 		
-		/**
-		* Getter for image reader. If image reader is null is created.
-		*/
-		[[nodiscard]] export vtkSmartPointer<vtkDICOMReader> getImageReader() const;
+		[[nodiscard]] export std::shared_ptr<DicomVolume> getDicomVolume() const;
 
 		//setters
 		void export setParentObject(Series* t_parent) { m_parent = t_parent; }
@@ -91,7 +90,7 @@ namespace asclepios::core
 		double m_pixelSpacingY = -1;
 		int m_acquisitionNumber = {};
 		bool m_isMultiframe = false;
-		mutable vtkSmartPointer<vtkDICOMReader> m_imageReader = {};
+		mutable std::shared_ptr<DicomVolume> m_volume = {};
 
 		static bool isLess(Image* t_lhs, Image* t_rhs);
 	};

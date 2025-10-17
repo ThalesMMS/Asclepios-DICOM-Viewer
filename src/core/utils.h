@@ -1,6 +1,7 @@
 #pragma once
 #include <vtkCommand.h>
-#include <vtkDICOMTag.h>
+
+#include "dicomvolume.h"
 
 #define export __declspec(dllexport)
 #define unused(x) (void)x;
@@ -61,10 +62,11 @@ namespace asclepios::core
 		Utils() = default;
 		~Utils() = default;
 
-		static void processTagFormat(const vtkDICOMTag& t_tag, std::string& t_value);
+		static void processTagFormat(const DicomTag& t_tag, std::string& t_value);
 
 	private:
 		[[nodiscard]] static std::string getDateFormat(const std::string& t_date);
 		[[nodiscard]] static std::string getTimeFormat(const std::string& t_time);
 	};
 }
+
