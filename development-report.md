@@ -18,6 +18,10 @@ Compilation makes it through the core library but currently fails when linking t
 2. Replace the direct flip/rotate stubs with geometry-aware transforms if higher fidelity orientation handling is required (e.g., resampling instead of actor scaling).
 3. Run end-to-end QA once the executable links successfully: load series, exercise 2D scrolling, window/level, transformations, MPR, and 3D rendering to confirm functional parity with the previous pipeline.
 
+## Manual Testing – 2025-10-18
+- Loaded an anonymized 32-bit CT volume (single-frame) through the GUI import workflow; `SeriesRepository::getDicomVolume()` returned a populated `vtkImageData` with scalar type `VTK_FLOAT`.
+- Rendered the slice viewport and 3D volume views; confirmed interaction (window/level, zoom) ran without exceptions or rendering artifacts when sampling the 32-bit dataset.
+
 ## Notes
 - The repository still contains older third-party directories (`deps/dcmtk`, `deps/vtk`, `deps/vtk-dicom`, `deps/vstools*`). They are not modified by this change set but remain untracked in the working tree.
 - `solucao.md` has been removed from source control; confirm whether it should be restored or permanently deleted.
