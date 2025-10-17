@@ -24,6 +24,7 @@
 #include <stdexcept>
 #include <utility>
 #include "patient.h"
+#include "series.h"
 #include "smartdjdecoderregistration.h"
 #include "study.h"
 #include "tabwidget.h"
@@ -649,6 +650,7 @@ bool asclepios::gui::Widget2D::startDcmtkRendering()
                         << "path:" << QString::fromStdString(m_image->getImagePath());
 
                 ensureImageLabel();
+                hideDcmtkOverlay();
                 if (m_errorLabel)
                 {
                         m_errorLabel->hide();
@@ -709,6 +711,7 @@ bool asclepios::gui::Widget2D::startDcmtkRendering()
 
 void asclepios::gui::Widget2D::renderWithVtk()
 {
+        hideDcmtkOverlay();
         try
         {
                 const auto expectedFrames = m_image->getIsMultiFrame()
@@ -776,6 +779,24 @@ void asclepios::gui::Widget2D::ensureImageLabel()
                 m_imageLabel->setStyleSheet(QStringLiteral("background-color: black;"));
                 m_imageLabel->hide();
         }
+        ensureOverlayWidget();
+}
+
+void asclepios::gui::Widget2D::ensureOverlayWidget()
+{
+        if (!m_imageLabel)
+        {
+                return;
+        }
+        if (!m_overlayWidget)
+        {
+                m_overlayWidget = new DcmtkOverlayWidget(m_imageLabel);
+                m_overlayWidget->hide();
+        }
+        else if (m_overlayWidget->parentWidget() != m_imageLabel)
+        {
+                m_overlayWidget->setParent(m_imageLabel);
+        }
 }
 
 void asclepios::gui::Widget2D::applyLoadedFrame(const int t_index)
@@ -797,6 +818,7 @@ void asclepios::gui::Widget2D::applyLoadedFrame(const int t_index)
         if (frameImage.isNull())
         {
                 m_imageLabel->clear();
+                hideDcmtkOverlay();
                 return;
         }
 
@@ -807,6 +829,67 @@ void asclepios::gui::Widget2D::applyLoadedFrame(const int t_index)
         {
                 m_imageLabel->show();
         }
+        updateDcmtkOverlay(frameImage, clampedIndex);
+}
+
+void asclepios::gui::Widget2D::updateDcmtkOverlay(const QImage& t_frameImage, int t_frameIndex)
+{
+        if (!m_dcmtkRenderingActive)
+        {
+                return;
+        }
+        ensureOverlayWidget();
+        if (!m_overlayWidget || !m_imageLabel)
+        {
+                return;
+        }
+
+        const QString seriesNumber = (m_series)
+                ? QString::fromStdString(m_series->getNumber())
+                : QString();
+        const int frameCount = (m_dcmtkPresenter)
+                ? std::max(m_dcmtkPresenter->frameCount(), 0)
+                : 0;
+        m_overlayWidget->setSeriesInformation(seriesNumber, t_frameIndex, frameCount);
+
+        double windowCenter = m_presentationState.WindowCenter;
+        double windowWidth = m_presentationState.WindowWidth;
+        if (m_dcmtkPresenter)
+        {
+                const auto initialState = m_dcmtkPresenter->initialState();
+                if (windowWidth <= 0.0)
+                {
+                        windowWidth = initialState.WindowWidth;
+                        windowCenter = initialState.WindowCenter;
+                }
+        }
+        m_overlayWidget->setWindowLevel(windowCenter, windowWidth);
+
+        double zoomFactor = 1.0;
+        if (!t_frameImage.isNull() && t_frameImage.width() > 0 && t_frameImage.height() > 0)
+        {
+                const QSize scaledSize = t_frameImage.size().scaled(m_imageLabel->size(), Qt::KeepAspectRatio);
+                if (scaledSize.width() > 0 && t_frameImage.width() > 0)
+                {
+                        zoomFactor = static_cast<double>(scaledSize.width())
+                                / static_cast<double>(t_frameImage.width());
+                }
+        }
+        m_overlayWidget->setZoom(zoomFactor);
+        m_overlayWidget->setGeometry(m_imageLabel->rect());
+        m_overlayWidget->raise();
+        m_overlayWidget->show();
+        m_overlayWidget->update();
+}
+
+void asclepios::gui::Widget2D::hideDcmtkOverlay()
+{
+        if (!m_overlayWidget)
+        {
+                return;
+        }
+        m_overlayWidget->clear();
+        m_overlayWidget->hide();
 }
 
 void asclepios::gui::Widget2D::handleDcmtkFailure(const QString& t_reason)
@@ -824,6 +907,7 @@ void asclepios::gui::Widget2D::handleDcmtkFailure(const QString& t_reason)
         m_dcmtkRenderingActive = false;
         m_dcmtkPresenter.reset();
         m_presentationState = {};
+        hideDcmtkOverlay();
         if (m_imageLabel)
         {
                 m_imageLabel->hide();
@@ -902,6 +986,14 @@ void asclepios::gui::Widget2D::onImagesLoaded()
                         this, &Widget2D::onChangeImage));
         }
         const int targetIndex = (m_scroll) ? m_scroll->value() : 0;
+        ensureOverlayWidget();
+        if (m_overlayWidget)
+        {
+                const auto* metadata = (m_series)
+                        ? m_series->getMetadataForSeries()
+                        : nullptr;
+                m_overlayWidget->setMetadata(metadata);
+        }
         applyLoadedFrame(targetIndex);
         if (m_qtvtkWidget)
         {
@@ -1069,6 +1161,7 @@ void asclepios::gui::Widget2D::resetView()
         m_presentationState = {};
         m_dcmtkRenderingActive = false;
         m_currentFrameIndex = 0;
+        hideDcmtkOverlay();
         if (m_imageLoadFuture.isRunning())
         {
                 m_imageLoadFuture.waitForFinished();
@@ -1163,9 +1256,27 @@ void asclepios::gui::Widget2D::onRefreshScrollValues(core::Series* t_series, cor
                                 ? m_scroll->value() + 1
                                 : m_scroll->value();
                         setSliderValues(0, size - 1, value);
-                        dynamic_cast<vtkWidget2D*>(m_vtkWidget.get())->updateOvelayImageNumber(0,
-                                size,
-                                std::stoi(m_series->getNumber()));
+                        if (m_dcmtkRenderingActive)
+                        {
+                                ensureOverlayWidget();
+                                if (m_overlayWidget)
+                                {
+                                        const int frameCount = (m_dcmtkPresenter)
+                                                ? std::max(m_dcmtkPresenter->frameCount(), 0)
+                                                : size;
+                                        const QString seriesNumber = (m_series)
+                                                ? QString::fromStdString(m_series->getNumber())
+                                                : QString();
+                                        m_overlayWidget->setSeriesInformation(seriesNumber, value,
+                                                frameCount);
+                                }
+                        }
+                        else if (auto* vtkWidget = dynamic_cast<vtkWidget2D*>(m_vtkWidget.get()))
+                        {
+                                vtkWidget->updateOvelayImageNumber(0,
+                                        size,
+                                        std::stoi(m_series->getNumber()));
+                        }
                         qCDebug(lcWidget2D)
                                 << "Scroll values refreshed from importer. Series index:" << t_series->getIndex()
                                 << "Image index:" << t_image->getIndex()
@@ -1228,9 +1339,14 @@ void asclepios::gui::Widget2D::onRenderFinished()
                         ? m_image->getNumberOfFrames() - 1
                         : static_cast<int>(m_series->getSinlgeFrameImages().size()) - 1;
                 m_scroll->setMaximum(max);
-                dynamic_cast<vtkWidget2D*>(m_vtkWidget.get())
-                        ->updateOvelayImageNumber(0, max + 1,
-                                std::stoi(m_series->getNumber()));
+                if (!m_dcmtkRenderingActive)
+                {
+                        if (auto* vtkWidget = dynamic_cast<vtkWidget2D*>(m_vtkWidget.get()))
+                        {
+                                vtkWidget->updateOvelayImageNumber(0, max + 1,
+                                        std::stoi(m_series->getNumber()));
+                        }
+                }
                 connectScroll();
                 m_scroll->setVisible(m_scroll->maximum());
                 m_isImageLoaded = true;
@@ -1272,6 +1388,7 @@ void asclepios::gui::Widget2D::onRenderFailed(const QString& t_message)
         stopLoadingAnimation();
         m_future = {};
         m_isImageLoaded = false;
+        hideDcmtkOverlay();
         if (m_qtvtkWidget)
         {
                 m_qtvtkWidget->hide();
