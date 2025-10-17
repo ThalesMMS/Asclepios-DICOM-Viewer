@@ -27,8 +27,14 @@ namespace
         };
 }
 
-std::shared_ptr<asclepios::core::DicomVolume> asclepios::core::Image::getDicomVolume() const
+std::shared_ptr<asclepios::core::DicomVolume> asclepios::core::Image::getDicomVolume(
+        QString* t_failureReason) const
 {
+        if (t_failureReason)
+        {
+                t_failureReason->clear();
+        }
+
         if (m_volume)
         {
                 return m_volume;
@@ -36,10 +42,18 @@ std::shared_ptr<asclepios::core::DicomVolume> asclepios::core::Image::getDicomVo
 
         if (m_path.empty())
         {
-                qWarning(lcImage) << "getDicomVolume() called without a valid path.";
+                const auto reason = QStringLiteral("Image has no filesystem path associated with it.");
+                qWarning(lcImage)
+                        << "getDicomVolume() called without a valid path."
+                        << "reason:" << reason;
+                if (t_failureReason)
+                {
+                        *t_failureReason = reason;
+                }
                 return nullptr;
         }
 
+        QString failureReason;
         CodecRegistrationGuard guard;
         try
         {
@@ -47,6 +61,9 @@ std::shared_ptr<asclepios::core::DicomVolume> asclepios::core::Image::getDicomVo
         }
         catch (const std::exception& ex)
         {
+                const auto path = QString::fromStdString(m_path);
+                const auto exceptionText = QString::fromUtf8(ex.what());
+                failureReason = QStringLiteral("DCMTK failed to load %1: %2").arg(path, exceptionText);
                 qCCritical(lcImage)
                         << "DCMTK failed to load"
                         << QString::fromStdString(m_path)
@@ -66,9 +83,20 @@ std::shared_ptr<asclepios::core::DicomVolume> asclepios::core::Image::getDicomVo
         }
         else
         {
+                if (failureReason.isEmpty())
+                {
+                        failureReason = QStringLiteral("Unable to obtain image data for %1.")
+                                                .arg(QString::fromStdString(m_path));
+                }
                 qCWarning(lcImage)
                         << "Unable to obtain image data for"
-                        << QString::fromStdString(m_path);
+                        << QString::fromStdString(m_path)
+                        << "reason:" << failureReason;
+        }
+
+        if (t_failureReason && !failureReason.isEmpty())
+        {
+                *t_failureReason = failureReason;
         }
 
         return m_volume;

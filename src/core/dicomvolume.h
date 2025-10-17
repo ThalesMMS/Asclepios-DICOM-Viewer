@@ -73,13 +73,14 @@ namespace asclepios::core
 		int NumberOfFrames = 1;
 	};
 
-	class DicomVolumeLoader
-	{
-	public:
-		static std::shared_ptr<DicomVolume> loadImage(const std::string& path);
-		static std::shared_ptr<DicomVolume> loadSeries(const std::vector<std::string>& slicePaths);
+        class DicomVolumeLoader
+        {
+        public:
+                static std::shared_ptr<DicomVolume> loadImage(const std::string& path);
+                static std::shared_ptr<DicomVolume> loadSeries(const std::vector<std::string>& slicePaths);
+                static bool diagnoseStudy(const std::string& path);
 
-	private:
-		static void populateDirectionMatrix(DicomVolume& volume);
-	};
+        private:
+                static void populateDirectionMatrix(DicomVolume& volume);
+        };
 }

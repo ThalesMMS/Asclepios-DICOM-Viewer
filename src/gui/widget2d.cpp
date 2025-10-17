@@ -376,10 +376,19 @@ void asclepios::gui::Widget2D::onRenderFailed(const QString& t_message)
         }
         if (m_errorLabel)
         {
-                const auto message = t_message.isEmpty()
+                const auto reason = t_message.trimmed();
+                const auto message = reason.isEmpty()
                         ? tr("Unable to render the selected image.")
-                        : tr("Unable to render the selected image.\n%1").arg(t_message);
+                        : tr("Unable to render the selected image.\n%1").arg(reason);
                 m_errorLabel->setText(message);
+                if (!reason.isEmpty())
+                {
+                        m_errorLabel->setToolTip(reason);
+                }
+                else
+                {
+                        m_errorLabel->setToolTip({});
+                }
                 m_errorLabel->show();
         }
         if (m_tabWidget)
@@ -526,9 +535,10 @@ void asclepios::gui::Widget2D::initImageReader(vtkWidget2D* t_vtkWidget2D, Widge
         }
         catch (const std::exception& ex)
         {
+                const auto reason = QString::fromUtf8(ex.what());
                 qCWarning(lcWidget2D)
-                        << "Background initImageReader failed with exception:" << ex.what();
-                emit t_self->imageReaderFailed(QString::fromUtf8(ex.what()));
+                        << "Background initImageReader failed with exception:" << reason;
+                emit t_self->imageReaderFailed(reason);
         }
         catch (...)
         {
