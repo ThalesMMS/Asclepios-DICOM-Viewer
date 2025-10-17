@@ -352,7 +352,7 @@ void asclepios::gui::Widget2D::DcmtkImagePresenter::populateFromSeries(core::Ser
                 return;
         }
 
-        auto& singleFrameImages = t_series->getSinlgeFrameImages();
+        auto& singleFrameImages = t_series->getSingleFrameImages();
         m_frames.reserve(m_frames.size() + static_cast<int>(singleFrameImages.size()));
 
         for (const auto& imageEntry : singleFrameImages)
