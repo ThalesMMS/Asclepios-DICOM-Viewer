@@ -1,10 +1,8 @@
 #include "widget2d.h"
-#include <vtkGenericOpenGLRenderWindow.h>
-#include <vtkRenderer.h>
-#include <vtkRendererCollection.h>
 #include <exception>
 #include <QFile>
 #include <QFocusEvent>
+#include <QHBoxLayout>
 #include <QLoggingCategory>
 #include <QPixmap>
 #include <QSizePolicy>
@@ -28,7 +26,6 @@
 #include "smartdjdecoderregistration.h"
 #include "study.h"
 #include "tabwidget.h"
-#include "vtkwidget2dinteractorstyle.h"
 
 Q_LOGGING_CATEGORY(lcWidget2D, "asclepios.gui.widget2d")
 
@@ -660,10 +657,6 @@ bool asclepios::gui::Widget2D::startDcmtkRendering()
                         m_imageLabel->clear();
                         m_imageLabel->hide();
                 }
-                if (m_qtvtkWidget)
-                {
-                        m_qtvtkWidget->hide();
-                }
                 if (m_tabWidget)
                 {
                         m_tabWidget->setAcceptDrops(false);
@@ -707,65 +700,6 @@ bool asclepios::gui::Widget2D::startDcmtkRendering()
         }
 
         return false;
-}
-
-void asclepios::gui::Widget2D::renderWithVtk()
-{
-        hideDcmtkOverlay();
-        try
-        {
-                const auto expectedFrames = m_image->getIsMultiFrame()
-                        ? m_image->getNumberOfFrames()
-                        : static_cast<int>(m_series->getSinlgeFrameImages().size());
-                qCInfo(lcWidget2D)
-                        << "Render requested via VTK. Multi-frame:" << m_image->getIsMultiFrame()
-                        << "expected frames:" << expectedFrames
-                        << "series UID:" << QString::fromStdString(m_series->getUID())
-                        << "series index:" << m_series->getIndex()
-                        << "image SOP UID:" << QString::fromStdString(m_image->getSOPInstanceUID())
-                        << "image index:" << m_image->getIndex()
-                        << "path:" << QString::fromStdString(m_image->getImagePath());
-
-                if (m_imageLabel)
-                {
-                        m_imageLabel->hide();
-                }
-                if (m_qtvtkWidget)
-                {
-                        m_qtvtkWidget->show();
-                }
-                dynamic_cast<TabWidget*>(m_tabWidget)->setTabTitle(0,
-                        m_series->getDescription().c_str());
-                auto* const vtkWidget = dynamic_cast<vtkWidget2D*>(m_vtkWidget.get());
-                Q_UNUSED(connect(this, &Widget2D::imageReaderInitialized,
-                        this, &Widget2D::onRenderFinished));
-                Q_UNUSED(connect(this, &Widget2D::imageReaderFailed,
-                        this, &Widget2D::onRenderFailed));
-                vtkWidget->setSeries(m_series);
-                vtkWidget->setImage(m_image);
-                vtkWidget->resetOverlay();
-                if (m_tabWidget)
-                {
-                        m_tabWidget->setAcceptDrops(false);
-                }
-                if (m_image->getIsMultiFrame())
-                {
-                        startLoadingAnimation();
-                }
-                m_dcmtkRenderingActive = false;
-                m_dcmtkPresenter.reset();
-                m_presentationState = {};
-                m_currentFrameIndex = 0;
-                m_future = QtConcurrent::run(initImageReader, vtkWidget, this);
-                qCInfo(lcWidget2D)
-                        << "QtConcurrent::run dispatched for VTK pipeline. Running:" << m_future.isRunning();
-        }
-        catch (std::exception& ex)
-        {
-                m_future = {};
-                qCCritical(lcWidget2D) << "Render failed due to exception:" << ex.what();
-                Q_EMIT imageReaderFailed(QString::fromUtf8(ex.what()));
-        }
 }
 
 void asclepios::gui::Widget2D::ensureImageLabel()
@@ -924,12 +858,15 @@ void asclepios::gui::Widget2D::handleDcmtkFailure(const QString& t_reason)
                 m_scroll->setMaximum(0);
         }
         m_imageLoadFuture = {};
-        if (m_useDcmtkPipeline)
+        if (m_errorLabel)
         {
-                qCInfo(lcWidget2D) << "Falling back to VTK rendering.";
-                m_useDcmtkPipeline = false;
-                renderWithVtk();
-                m_useDcmtkPipeline = true;
+                const auto reason = t_reason.trimmed();
+                const auto message = reason.isEmpty()
+                        ? tr("Unable to render the selected image.")
+                        : tr("Unable to render the selected image.\n%1").arg(reason);
+                m_errorLabel->setText(message);
+                m_errorLabel->setToolTip(reason);
+                m_errorLabel->show();
         }
 }
 
@@ -995,10 +932,6 @@ void asclepios::gui::Widget2D::onImagesLoaded()
                 m_overlayWidget->setMetadata(metadata);
         }
         applyLoadedFrame(targetIndex);
-        if (m_qtvtkWidget)
-        {
-                m_qtvtkWidget->hide();
-        }
         m_imageLoadFuture = {};
         qCInfo(lcWidget2D) << "DCMTK prototype rendering completed." << "frames:"
                            << m_dcmtkPresenter->frameCount();
@@ -1022,10 +955,10 @@ void asclepios::gui::Widget2D::initView()
                 delete layout();
         }
         m_ui.setupUi(this);
-        setLayout(new QHBoxLayout(this));
-        layout()->setMargin(0);
-        layout()->setSpacing(0);
-        layout()->addWidget(m_qtvtkWidget);
+        auto* containerLayout = new QHBoxLayout(this);
+        containerLayout->setMargin(0);
+        containerLayout->setSpacing(0);
+        setLayout(containerLayout);
         ensureImageLabel();
         if (m_imageLabel && layout()->indexOf(m_imageLabel) == -1)
         {
@@ -1043,114 +976,100 @@ void asclepios::gui::Widget2D::initView()
         }
         layout()->addWidget(m_errorLabel);
         layout()->addWidget(m_scroll);
+        if (m_imageLabel && m_vtkEvents)
+        {
+                m_imageLabel->installEventFilter(m_vtkEvents.get());
+        }
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::initData()
 {
-	disconnectScroll();
+        disconnectScroll();
         if (auto* widgetLayout = layout())
         {
                 if (m_scroll)
                 {
                         widgetLayout->removeWidget(m_scroll);
                 }
-                if (m_qtvtkWidget)
-                {
-                        widgetLayout->removeWidget(m_qtvtkWidget);
-                }
                 if (m_imageLabel)
                 {
                         widgetLayout->removeWidget(m_imageLabel);
                 }
+                if (m_errorLabel)
+                {
+                        widgetLayout->removeWidget(m_errorLabel);
+                }
         }
         delete m_scroll;
-        delete m_qtvtkWidget;
         m_scroll = new QScrollBar(Qt::Vertical, this);
         setScrollStyle();
-	m_renderWindow[0] =
-		vtkSmartPointer<vtkGenericOpenGLRenderWindow>::New();
-	m_vtkWidget = std::make_unique<vtkWidget2D>();
-        m_qtvtkWidget = new QVTKOpenGLNativeWidget(this);
-        m_qtvtkWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        m_qtvtkWidget->SetRenderWindow(m_renderWindow[0]);
-        if (m_imageLabel)
+        if (!m_vtkEvents)
         {
-                m_imageLabel->hide();
+                m_vtkEvents = std::make_unique<vtkEventFilter>(this);
         }
-        if (auto* const rw = m_qtvtkWidget->GetRenderWindow())
-        {
-                rw->SetDoubleBuffer(true);
-        }
-	m_vtkWidget->setRenderWindow(m_qtvtkWidget->GetRenderWindow());
-	m_vtkEvents = std::make_unique<vtkEventFilter>(this);
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::render()
 {
         m_renderAbortedDueToMissingContext = false;
-        auto* const renderWindow = m_qtvtkWidget ? m_qtvtkWidget->GetRenderWindow() : nullptr;
-        if (m_qtvtkWidget && m_vtkWidget && renderWindow)
+        if (!m_series || !m_image)
         {
-                const int* const size = renderWindow->GetSize();
-                auto* const rendererCollection = renderWindow->GetRenderers();
-                const int rendererCount = rendererCollection ? rendererCollection->GetNumberOfItems() : 0;
-                qCInfo(lcWidget2D)
-                        << "Render window ready. size:" << size[0] << size[1]
-                        << "renderers:" << rendererCount;
+                const auto trigger = m_lastRenderRequestSource.isEmpty()
+                        ? QStringLiteral("unknown")
+                        : m_lastRenderRequestSource;
+                qCWarning(lcWidget2D)
+                        << "Render aborted due to missing series/image context."
+                        << "seriesMissing" << (m_series == nullptr)
+                        << "imageMissing" << (m_image == nullptr)
+                        << "trigger" << trigger
+                        << "seriesPtr" << static_cast<const void*>(m_series)
+                        << "imagePtr" << static_cast<const void*>(m_image);
+                m_isImageLoaded = false;
+                m_renderAbortedDueToMissingContext = true;
+                return;
+        }
 
-                if (!m_series || !m_image)
-                {
-                        const auto trigger = m_lastRenderRequestSource.isEmpty()
-                                ? QStringLiteral("unknown")
-                                : m_lastRenderRequestSource;
-                        qCWarning(lcWidget2D)
-                                << "Render aborted due to missing series/image context."
-                                << "seriesMissing" << (m_series == nullptr)
-                                << "imageMissing" << (m_image == nullptr)
-                                << "trigger" << trigger
-                                << "seriesPtr" << static_cast<const void*>(m_series)
-                                << "imagePtr" << static_cast<const void*>(m_image);
-                        m_isImageLoaded = false;
-                        m_renderAbortedDueToMissingContext = true;
-                        return;
-                }
+        if (!startDcmtkRendering())
+        {
+                qCWarning(lcWidget2D) << "DCMTK rendering path failed to start."
+                                      << "series" << static_cast<const void*>(m_series)
+                                      << "image" << static_cast<const void*>(m_image);
+        }
+}
 
-                if (m_useDcmtkPipeline && startDcmtkRendering())
-                {
-                        return;
-                }
-
-                renderWithVtk();
+void asclepios::gui::Widget2D::waitForPendingTasks() const
+{
+        if (m_imageLoadWatcher)
+        {
+                m_imageLoadWatcher->waitForFinished();
         }
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::createConnections()
 {
-	setFocusPolicy(Qt::FocusPolicy::WheelFocus);
-	m_qtvtkWidget->installEventFilter(m_vtkEvents.get());
-	Q_UNUSED(connect(m_vtkEvents.get(),
-		&vtkEventFilter::activateWidget,
-		this, &Widget2D::onActivateWidget));
-	Q_UNUSED(connect(m_vtkEvents.get(),
-		&vtkEventFilter::setMaximized,
-		this, &Widget2D::onSetMaximized));
+        setFocusPolicy(Qt::FocusPolicy::WheelFocus);
+        if (m_imageLabel && m_vtkEvents)
+        {
+                m_imageLabel->installEventFilter(m_vtkEvents.get());
+                Q_UNUSED(connect(m_vtkEvents.get(),
+                        &vtkEventFilter::activateWidget,
+                        this, &Widget2D::onActivateWidget));
+                Q_UNUSED(connect(m_vtkEvents.get(),
+                        &vtkEventFilter::setMaximized,
+                        this, &Widget2D::onSetMaximized));
+        }
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::resetView()
 {
-        resetWidgets();
         resetScroll();
         if (m_errorLabel)
         {
                 m_errorLabel->hide();
-        }
-        if (m_qtvtkWidget)
-        {
-                m_qtvtkWidget->show();
         }
         if (m_imageLabel)
         {
@@ -1162,9 +1081,9 @@ void asclepios::gui::Widget2D::resetView()
         m_dcmtkRenderingActive = false;
         m_currentFrameIndex = 0;
         hideDcmtkOverlay();
-        if (m_imageLoadFuture.isRunning())
+        if (m_imageLoadWatcher && m_imageLoadWatcher->isRunning())
         {
-                m_imageLoadFuture.waitForFinished();
+                m_imageLoadWatcher->waitForFinished();
         }
         m_imageLoadFuture = {};
         m_isImageLoaded = false;
@@ -1231,13 +1150,6 @@ void asclepios::gui::Widget2D::onApplyTransformation(const transformationType& t
                 return;
         }
 
-        if (m_vtkWidget && m_image)
-        {
-                if (auto* widget2d = dynamic_cast<vtkWidget2D*>(m_vtkWidget.get()))
-                {
-                        widget2d->applyTransformation(t_type);
-                }
-        }
 }
 
 //-----------------------------------------------------------------------------
@@ -1271,12 +1183,6 @@ void asclepios::gui::Widget2D::onRefreshScrollValues(core::Series* t_series, cor
                                                 frameCount);
                                 }
                         }
-                        else if (auto* vtkWidget = dynamic_cast<vtkWidget2D*>(m_vtkWidget.get()))
-                        {
-                                vtkWidget->updateOvelayImageNumber(0,
-                                        size,
-                                        std::stoi(m_series->getNumber()));
-                        }
                         qCDebug(lcWidget2D)
                                 << "Scroll values refreshed from importer. Series index:" << t_series->getIndex()
                                 << "Image index:" << t_image->getIndex()
@@ -1285,143 +1191,12 @@ void asclepios::gui::Widget2D::onRefreshScrollValues(core::Series* t_series, cor
         }
 }
 
-void asclepios::gui::Widget2D::onChangeScrollValue(vtkObject* t_obj , unsigned long , void*, void*) const
-{
-	const QSignalBlocker blocker(m_scroll);
-	auto* const  style =
-		dynamic_cast<vtkWidget2DInteractorStyle*>(t_obj);
-        if(style)
-        {
-                m_scroll->setValue(style->getCurrentImageIndex());
-                qCDebug(lcWidget2D)
-                        << "Scroll value updated from interactor style:" << style->getCurrentImageIndex();
-        }
-}
-
-//-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::onSetMaximized() const
 {
-	if(m_tabWidget)
-	{
-		dynamic_cast<TabWidget*>(m_tabWidget)->onMaximize();
-	}
-}
-
-//-----------------------------------------------------------------------------
-void asclepios::gui::Widget2D::onRenderFinished()
-{
-        qCInfo(lcWidget2D) << "Render finished successfully. Future finished:" << m_future.isFinished();
-        try
+        if(m_tabWidget)
         {
-                m_vtkWidget->setInteractor(m_qtvtkWidget->
-                        GetRenderWindow()->GetInteractor());
-                m_vtkWidget->render();
-                if (auto* const rw = m_qtvtkWidget->GetRenderWindow())
-                {
-                        auto* const collection = rw->GetRenderers();
-                        const int rendererCount = collection ? collection->GetNumberOfItems() : 0;
-                        int viewPropCount = 0;
-                        if (collection)
-                        {
-                                collection->InitTraversal();
-                                while (auto* renderer = collection->GetNextItem())
-                                {
-                                        viewPropCount += renderer->GetViewProps()
-                                                ? renderer->GetViewProps()->GetNumberOfItems()
-                                                : 0;
-                                }
-                        }
-                        qCInfo(lcWidget2D)
-                                << "Render completed. Render window renderers:" << rendererCount
-                                << "total view props:" << viewPropCount;
-                }
-                auto const max = m_image->getIsMultiFrame()
-                        ? m_image->getNumberOfFrames() - 1
-                        : static_cast<int>(m_series->getSinlgeFrameImages().size()) - 1;
-                m_scroll->setMaximum(max);
-                if (!m_dcmtkRenderingActive)
-                {
-                        if (auto* vtkWidget = dynamic_cast<vtkWidget2D*>(m_vtkWidget.get()))
-                        {
-                                vtkWidget->updateOvelayImageNumber(0, max + 1,
-                                        std::stoi(m_series->getNumber()));
-                        }
-                }
-                connectScroll();
-                m_scroll->setVisible(m_scroll->maximum());
-                m_isImageLoaded = true;
-                m_tabWidget->setAcceptDrops(true);
-                m_future = {};
-                disconnect(this, &Widget2D::imageReaderInitialized,
-                           this, &Widget2D::onRenderFinished);
-                disconnect(this, &Widget2D::imageReaderFailed,
-                           this, &Widget2D::onRenderFailed);
-                stopLoadingAnimation();
-                if (m_errorLabel)
-                {
-                        m_errorLabel->hide();
-                }
-                qCInfo(lcWidget2D) << "Scroll range configured:" << 0 << "-" << max;
+                dynamic_cast<TabWidget*>(m_tabWidget)->onMaximize();
         }
-        catch (const std::exception& ex)
-        {
-                qCCritical(lcWidget2D)
-                        << "Render finalization failed due to exception:" << ex.what();
-                Q_EMIT imageReaderFailed(QString::fromUtf8(ex.what()));
-                return;
-        }
-        catch (...)
-        {
-                qCCritical(lcWidget2D)
-                        << "Render finalization failed due to unknown error.";
-                Q_EMIT imageReaderFailed(QString());
-                return;
-        }
-}
-
-//-----------------------------------------------------------------------------
-void asclepios::gui::Widget2D::onRenderFailed(const QString& t_message)
-{
-        qCWarning(lcWidget2D)
-                << "Render failed. Showing placeholder." << "Reason:" << t_message
-                << "Future running:" << m_future.isRunning();
-        stopLoadingAnimation();
-        m_future = {};
-        m_isImageLoaded = false;
-        hideDcmtkOverlay();
-        if (m_qtvtkWidget)
-        {
-                m_qtvtkWidget->hide();
-        }
-        if (m_scroll)
-        {
-                m_scroll->hide();
-        }
-        if (m_errorLabel)
-        {
-                const auto reason = t_message.trimmed();
-                const auto message = reason.isEmpty()
-                        ? tr("Unable to render the selected image.")
-                        : tr("Unable to render the selected image.\n%1").arg(reason);
-                m_errorLabel->setText(message);
-                if (!reason.isEmpty())
-                {
-                        m_errorLabel->setToolTip(reason);
-                }
-                else
-                {
-                        m_errorLabel->setToolTip({});
-                }
-                m_errorLabel->show();
-        }
-        if (m_tabWidget)
-        {
-                m_tabWidget->setAcceptDrops(true);
-        }
-        disconnect(this, &Widget2D::imageReaderInitialized,
-                   this, &Widget2D::onRenderFinished);
-        disconnect(this, &Widget2D::imageReaderFailed,
-                   this, &Widget2D::onRenderFailed);
 }
 
 //-----------------------------------------------------------------------------
@@ -1429,64 +1204,28 @@ void asclepios::gui::Widget2D::closeEvent(QCloseEvent* t_event)
 {
         initData();
         initView();
-	QWidget::closeEvent(t_event);
+        QWidget::closeEvent(t_event);
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::onChangeImage(int t_index)
 {
-        if (m_dcmtkRenderingActive)
+        if (!m_dcmtkRenderingActive)
         {
-                applyLoadedFrame(t_index);
+                qCDebug(lcWidget2D) << "Ignoring scroll request because DCMTK rendering is inactive.";
                 return;
         }
-        try
-        {
-                auto* interactorStyle =
-                        dynamic_cast<vtkWidget2DInteractorStyle*>(
-                                m_qtvtkWidget->GetRenderWindow()->
-				GetInteractor()->GetInteractorStyle());
-                if (interactorStyle)
-                {
-                        onActivateWidget(true);
-                        interactorStyle->changeImage(t_index);
-                        qCDebug(lcWidget2D) << "Scroll value changed by user to frame" << t_index;
-                }
-        }
-        catch (const std::exception& ex)
-        {
-                qCWarning(lcWidget2D) << "Failed to change image:" << ex.what();
-        }
+        applyLoadedFrame(t_index);
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::connectScroll()
 {
-        if (m_dcmtkRenderingActive)
+        if (m_scroll)
         {
-                if (m_scroll)
-                {
-                        Q_UNUSED(connect(m_scroll, &QScrollBar::valueChanged,
-                                this, &Widget2D::onChangeImage));
-                }
-                return;
+                Q_UNUSED(connect(m_scroll, &QScrollBar::valueChanged,
+                        this, &Widget2D::onChangeImage));
         }
-
-        if (!m_scrollConnection)
-        {
-                m_scrollConnection = vtkSmartPointer<vtkEventQtSlotConnect>::New();
-        }
-        if (m_qtvtkWidget && m_qtvtkWidget->GetRenderWindow() &&
-                m_qtvtkWidget->GetRenderWindow()->GetInteractor() &&
-                m_qtvtkWidget->GetRenderWindow()->GetInteractor()->GetInteractorStyle())
-        {
-                m_scrollConnection->Connect(
-                        m_qtvtkWidget->GetRenderWindow()->GetInteractor()->GetInteractorStyle(),
-                        changeScrollValue, this,
-                        SLOT(onChangeScrollValue(vtkObject*, unsigned long, void*, void*)));
-        }
-        Q_UNUSED(connect(m_scroll, &QScrollBar::valueChanged,
-                this, &Widget2D::onChangeImage));
 }
 
 //-----------------------------------------------------------------------------
@@ -1506,46 +1245,13 @@ void asclepios::gui::Widget2D::disconnectScroll() const
                 disconnect(m_scroll, &QScrollBar::valueChanged,
                            this, &Widget2D::onChangeImage);
         }
-        if (m_scrollConnection && m_qtvtkWidget && m_qtvtkWidget->GetRenderWindow() &&
-                m_qtvtkWidget->GetRenderWindow()->GetInteractor() &&
-                m_qtvtkWidget->GetRenderWindow()->GetInteractor()->GetInteractorStyle())
-        {
-                m_scrollConnection->Disconnect(
-                        m_qtvtkWidget->GetRenderWindow()
-                        ->GetInteractor()->GetInteractorStyle(),
-                        changeScrollValue,
-			this, SLOT(onChangeScrollValue(vtkObject*, unsigned long, void*, void*)));
-	}
-}
-
-//-----------------------------------------------------------------------------
-void asclepios::gui::Widget2D::resetWidgets()
-{
-	if (m_vtkWidget)
-	{
-		m_vtkWidget.reset();
-	}
-	m_vtkWidget = std::make_unique<vtkWidget2D>();
-        vtkSmartPointer<vtkGenericOpenGLRenderWindow> newRenderWindow =
-                vtkSmartPointer<vtkGenericOpenGLRenderWindow>::New();
-        m_qtvtkWidget->SetRenderWindow(newRenderWindow);
-	m_renderWindow[0] = m_qtvtkWidget->GetRenderWindow();
-        if (m_renderWindow[0])
-        {
-                m_renderWindow[0]->SetDoubleBuffer(true);
-        }
-	m_vtkWidget->setRenderWindow(m_renderWindow[0]);
-        if (m_renderWindow[0])
-        {
-                m_renderWindow[0]->Render();
-        }
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::resetScroll()
 {
-	if (m_scroll)
-	{
+        if (m_scroll)
+        {
 		const QSignalBlocker blocker(m_scroll);
 		m_scroll->setValue(0);
 		m_scroll->setMaximum(0);
@@ -1578,34 +1284,10 @@ void asclepios::gui::Widget2D::resizeEvent(QResizeEvent* t_event)
 }
 
 //-----------------------------------------------------------------------------
-void asclepios::gui::Widget2D::initImageReader(vtkWidget2D* t_vtkWidget2D, Widget2D* t_self)
-{
-        qCInfo(lcWidget2D) << "Background initImageReader started.";
-        try
-        {
-                t_vtkWidget2D->initImageReader();
-                qCInfo(lcWidget2D) << "Background initImageReader completed successfully.";
-                emit t_self->imageReaderInitialized();
-        }
-        catch (const std::exception& ex)
-        {
-                const auto reason = QString::fromUtf8(ex.what());
-                qCWarning(lcWidget2D)
-                        << "Background initImageReader failed with exception:" << reason;
-                emit t_self->imageReaderFailed(reason);
-        }
-        catch (...)
-        {
-                qCWarning(lcWidget2D)
-                        << "Background initImageReader failed with an unknown exception.";
-                emit t_self->imageReaderFailed(Widget2D::tr("Unknown error while preparing the image reader."));
-        }
-}
-
-//-----------------------------------------------------------------------------
 bool asclepios::gui::Widget2D::canScrollBeRefreshed(const int& t_patientIndex, const int& t_studyIndex,
                                                     const int& t_seriesIndex) const
 {
-	return m_vtkWidget && m_vtkWidget->getImage() && t_patientIndex == m_patientIndex &&
-		t_studyIndex == m_studyIndex && m_seriesIndex == t_seriesIndex;
+        return m_dcmtkRenderingActive && m_dcmtkPresenter && m_dcmtkPresenter->isValid()
+                && t_patientIndex == m_patientIndex && t_studyIndex == m_studyIndex
+                && m_seriesIndex == t_seriesIndex;
 }
