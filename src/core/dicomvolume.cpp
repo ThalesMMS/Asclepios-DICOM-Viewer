@@ -4,6 +4,7 @@
 #include <cmath>
 #include <cstring>
 #include <stdexcept>
+#include <type_traits>
 
 #include <dcmtk/dcmdata/dcdeftag.h>
 #include <dcmtk/dcmdata/dcdicent.h>
@@ -185,47 +186,77 @@ namespace
 		geometry.Spacing[2] = spacingZ;
 	}
 
-	void allocateImageData(DicomVolume& volume, int width, int height, int depth)
-	{
-		if (!volume.ImageData)
-		{
-			volume.ImageData = vtkSmartPointer<vtkImageData>::New();
-		}
-		volume.ImageData->SetDimensions(width, height, depth);
-		volume.ImageData->SetSpacing(volume.Geometry.Spacing);
-		volume.ImageData->SetOrigin(volume.Geometry.Origin);
-		volume.ImageData->AllocateScalars(
-			volume.PixelInfo.IsSigned
-				? (volume.PixelInfo.BitsAllocated > 8 ? VTK_SHORT : VTK_CHAR)
-				: (volume.PixelInfo.BitsAllocated > 8 ? VTK_UNSIGNED_SHORT : VTK_UNSIGNED_CHAR),
-			volume.PixelInfo.SamplesPerPixel);
-	}
+        void allocateImageData(DicomVolume& volume, int width, int height, int depth)
+        {
+                if (!volume.ImageData)
+                {
+                        volume.ImageData = vtkSmartPointer<vtkImageData>::New();
+                }
+                volume.ImageData->SetDimensions(width, height, depth);
+                volume.ImageData->SetSpacing(volume.Geometry.Spacing);
+                volume.ImageData->SetOrigin(volume.Geometry.Origin);
 
-	template <typename SourceT, typename TargetT>
-	void copyPixels(const SourceT* source, TargetT* target, size_t count,
-	                const DicomPixelInfo& pixelInfo)
-	{
-		const double slope = pixelInfo.RescaleSlope;
-		const double intercept = pixelInfo.RescaleIntercept;
-		if (std::abs(slope - 1.0) <= epsilon && std::abs(intercept) <= epsilon)
-		{
-			std::transform(source, source + count, target,
-				[](const SourceT value) { return static_cast<TargetT>(value); });
-		}
-		else
-		{
-			std::transform(source, source + count, target,
-			               [&](const SourceT value)
-			               {
-				               const double transformed = slope * static_cast<double>(value) + intercept;
-				               return static_cast<TargetT>(std::round(transformed));
-			               });
-		}
-	}
+                const auto bitsAllocated = volume.PixelInfo.BitsAllocated;
+                const bool isSigned = volume.PixelInfo.IsSigned;
+                int scalarType = VTK_VOID;
 
-	void copyFrameData(const void* source, vtkImageData* imageData, int frameIndex,
-	                   const DicomPixelInfo& pixelInfo, int width, int height)
-	{
+                if (bitsAllocated <= 8)
+                {
+                        scalarType = isSigned ? VTK_CHAR : VTK_UNSIGNED_CHAR;
+                }
+                else if (bitsAllocated <= 16)
+                {
+                        scalarType = isSigned ? VTK_SHORT : VTK_UNSIGNED_SHORT;
+                }
+                else
+                {
+                        scalarType = isSigned ? VTK_INT : VTK_UNSIGNED_INT;
+                }
+
+                volume.ImageData->AllocateScalars(scalarType, volume.PixelInfo.SamplesPerPixel);
+        }
+
+        template <typename SourceT, typename TargetT>
+        void copyPixels(const SourceT* source, TargetT* target, size_t count,
+                        const DicomPixelInfo& pixelInfo)
+        {
+                const double slope = pixelInfo.RescaleSlope;
+                const double intercept = pixelInfo.RescaleIntercept;
+                if (std::abs(slope - 1.0) <= epsilon && std::abs(intercept) <= epsilon)
+                {
+                        if constexpr (std::is_same_v<SourceT, TargetT>)
+                        {
+                                std::copy(source, source + count, target);
+                        }
+                        else
+                        {
+                                std::transform(source, source + count, target,
+                                               [](const SourceT value)
+                                               {
+                                                       return static_cast<TargetT>(value);
+                                               });
+                        }
+                        return;
+                }
+
+                std::transform(source, source + count, target,
+                               [&](const SourceT value)
+                               {
+                                       const double transformed = slope * static_cast<double>(value) + intercept;
+                                       if constexpr (std::is_floating_point_v<TargetT>)
+                                       {
+                                               return static_cast<TargetT>(transformed);
+                                       }
+                                       else
+                                       {
+                                               return static_cast<TargetT>(std::round(transformed));
+                                       }
+                               });
+        }
+
+        void copyFrameData(const void* source, vtkImageData* imageData, int frameIndex,
+                           const DicomPixelInfo& pixelInfo, int width, int height)
+        {
 		const auto samples = pixelInfo.SamplesPerPixel;
 		const vtkIdType sliceVoxelCount = static_cast<vtkIdType>(width) * height * samples;
 		const vtkIdType sliceOffset = sliceVoxelCount * frameIndex;
@@ -254,16 +285,34 @@ namespace
 			           static_cast<size_t>(sliceVoxelCount),
 			           pixelInfo);
 			break;
-		case VTK_SHORT:
-			copyPixels(static_cast<const signed short*>(source),
-			           static_cast<signed short*>(scalars->GetVoidPointer(sliceOffset)),
-			           static_cast<size_t>(sliceVoxelCount),
-			           pixelInfo);
-			break;
-		default:
-			throw std::runtime_error("Unsupported scalar type for DICOM image data.");
-		}
-	}
+                case VTK_SHORT:
+                        copyPixels(static_cast<const signed short*>(source),
+                                   static_cast<signed short*>(scalars->GetVoidPointer(sliceOffset)),
+                                   static_cast<size_t>(sliceVoxelCount),
+                                   pixelInfo);
+                        break;
+                case VTK_UNSIGNED_INT:
+                        copyPixels(static_cast<const Uint32*>(source),
+                                   static_cast<Uint32*>(scalars->GetVoidPointer(sliceOffset)),
+                                   static_cast<size_t>(sliceVoxelCount),
+                                   pixelInfo);
+                        break;
+                case VTK_INT:
+                        copyPixels(static_cast<const Sint32*>(source),
+                                   static_cast<Sint32*>(scalars->GetVoidPointer(sliceOffset)),
+                                   static_cast<size_t>(sliceVoxelCount),
+                                   pixelInfo);
+                        break;
+                case VTK_FLOAT:
+                        copyPixels(static_cast<const float*>(source),
+                                   static_cast<float*>(scalars->GetVoidPointer(sliceOffset)),
+                                   static_cast<size_t>(sliceVoxelCount),
+                                   pixelInfo);
+                        break;
+                default:
+                        throw std::runtime_error("Unsupported scalar type for DICOM image data.");
+                }
+        }
 
 	void populateDirectionMatrixInternal(DicomVolume& volume)
 	{
@@ -368,63 +417,133 @@ namespace
 		const bool isSigned = volume->PixelInfo.IsSigned;
 		const size_t sliceSize = static_cast<size_t>(width) * height * volume->PixelInfo.SamplesPerPixel;
 
-		if (bits <= 8)
-		{
-			std::vector<Uint8> frameBuffer(sliceSize);
-			Uint32 startFragment = 0;
-			OFString decompressedColorModel;
-
-			for (unsigned long frame = 0; frame < numberOfFrames; ++frame)
-			{
-				const OFCondition status = pixelDataElement->getUncompressedFrame(
-					dataset,
-					static_cast<Uint32>(frame),
-					startFragment,
-					frameBuffer.data(),
-					static_cast<Uint32>(frameBuffer.size() * sizeof(Uint8)),
-					decompressedColorModel);
-
-				if (status.bad())
-				{
-					throw std::runtime_error(
-						"Unable to decompress frame " + std::to_string(frame) + " for: " + path +
-						" (" + std::string(status.text()) + ')');
-				}
-
-				copyFrameData(
-					frameBuffer.data(),
-					volume->ImageData,
-					static_cast<int>(frame),
-					volume->PixelInfo,
-					width,
-					height);
-			}
-
-			volume->PixelInfo.RescaleSlope = 1.0;
-			volume->PixelInfo.RescaleIntercept = 0.0;
-		}
-                else if (isSigned)
+                if (bits <= 8)
                 {
-                        std::vector<Sint16> frameBuffer(sliceSize);
+                        std::vector<Uint8> frameBuffer(sliceSize);
                         Uint32 startFragment = 0;
                         OFString decompressedColorModel;
 
-			for (unsigned long frame = 0; frame < numberOfFrames; ++frame)
-			{
-				const OFCondition status = pixelDataElement->getUncompressedFrame(
-					dataset,
-					static_cast<Uint32>(frame),
-					startFragment,
-					frameBuffer.data(),
-					static_cast<Uint32>(frameBuffer.size() * sizeof(Sint16)),
-					decompressedColorModel);
+                        for (unsigned long frame = 0; frame < numberOfFrames; ++frame)
+                        {
+                                const OFCondition status = pixelDataElement->getUncompressedFrame(
+                                        dataset,
+                                        static_cast<Uint32>(frame),
+                                        startFragment,
+                                        frameBuffer.data(),
+                                        static_cast<Uint32>(frameBuffer.size() * sizeof(Uint8)),
+                                        decompressedColorModel);
 
-				if (status.bad())
-				{
-					throw std::runtime_error(
-						"Unable to decompress frame " + std::to_string(frame) + " for: " + path +
-						" (" + std::string(status.text()) + ')');
-				}
+                                if (status.bad())
+                                {
+                                        throw std::runtime_error(
+                                                "Unable to decompress frame " + std::to_string(frame) + " for: " + path +
+                                                " (" + std::string(status.text()) + ')');
+                                }
+
+                                copyFrameData(
+                                        frameBuffer.data(),
+                                        volume->ImageData,
+                                        static_cast<int>(frame),
+                                        volume->PixelInfo,
+                                        width,
+                                        height);
+                        }
+
+                        volume->PixelInfo.RescaleSlope = 1.0;
+                        volume->PixelInfo.RescaleIntercept = 0.0;
+                }
+                else if (bits <= 16)
+                {
+                        if (isSigned)
+                        {
+                                std::vector<Sint16> frameBuffer(sliceSize);
+                                Uint32 startFragment = 0;
+                                OFString decompressedColorModel;
+
+                                for (unsigned long frame = 0; frame < numberOfFrames; ++frame)
+                                {
+                                        const OFCondition status = pixelDataElement->getUncompressedFrame(
+                                                dataset,
+                                                static_cast<Uint32>(frame),
+                                                startFragment,
+                                                frameBuffer.data(),
+                                                static_cast<Uint32>(frameBuffer.size() * sizeof(Sint16)),
+                                                decompressedColorModel);
+
+                                        if (status.bad())
+                                        {
+                                                throw std::runtime_error(
+                                                        "Unable to decompress frame " + std::to_string(frame) + " for: " + path +
+                                                        " (" + std::string(status.text()) + ')');
+                                        }
+
+                                        copyFrameData(
+                                                frameBuffer.data(),
+                                                volume->ImageData,
+                                                static_cast<int>(frame),
+                                                volume->PixelInfo,
+                                                width,
+                                                height);
+                                }
+                        }
+                        else
+                        {
+                                std::vector<Uint16> frameBuffer(sliceSize);
+                                Uint32 startFragment = 0;
+                                OFString decompressedColorModel;
+
+                                for (unsigned long frame = 0; frame < numberOfFrames; ++frame)
+                                {
+                                        const OFCondition status = pixelDataElement->getUncompressedFrame(
+                                                dataset,
+                                                static_cast<Uint32>(frame),
+                                                startFragment,
+                                                frameBuffer.data(),
+                                                static_cast<Uint32>(frameBuffer.size() * sizeof(Uint16)),
+                                                decompressedColorModel);
+
+                                        if (status.bad())
+                                        {
+                                                throw std::runtime_error(
+                                                        "Unable to decompress frame " + std::to_string(frame) + " for: " + path +
+                                                        " (" + std::string(status.text()) + ')');
+                                        }
+
+                                        copyFrameData(
+                                                frameBuffer.data(),
+                                                volume->ImageData,
+                                                static_cast<int>(frame),
+                                                volume->PixelInfo,
+                                                width,
+                                                height);
+                                }
+                        }
+
+                        volume->PixelInfo.RescaleSlope = 1.0;
+                        volume->PixelInfo.RescaleIntercept = 0.0;
+                }
+                else if (isSigned)
+                {
+                        std::vector<Sint32> frameBuffer(sliceSize);
+                        Uint32 startFragment = 0;
+                        OFString decompressedColorModel;
+
+                        for (unsigned long frame = 0; frame < numberOfFrames; ++frame)
+                        {
+                                const OFCondition status = pixelDataElement->getUncompressedFrame(
+                                        dataset,
+                                        static_cast<Uint32>(frame),
+                                        startFragment,
+                                        frameBuffer.data(),
+                                        static_cast<Uint32>(frameBuffer.size() * sizeof(Sint32)),
+                                        decompressedColorModel);
+
+                                if (status.bad())
+                                {
+                                        throw std::runtime_error(
+                                                "Unable to decompress frame " + std::to_string(frame) + " for: " + path +
+                                                " (" + std::string(status.text()) + ')');
+                                }
 
                                 copyFrameData(
                                         frameBuffer.data(),
@@ -440,26 +559,26 @@ namespace
                 }
                 else
                 {
-                        std::vector<Uint16> frameBuffer(sliceSize);
+                        std::vector<Uint32> frameBuffer(sliceSize);
                         Uint32 startFragment = 0;
-			OFString decompressedColorModel;
+                        OFString decompressedColorModel;
 
-			for (unsigned long frame = 0; frame < numberOfFrames; ++frame)
-			{
-				const OFCondition status = pixelDataElement->getUncompressedFrame(
-					dataset,
-					static_cast<Uint32>(frame),
-					startFragment,
-					frameBuffer.data(),
-					static_cast<Uint32>(frameBuffer.size() * sizeof(Uint16)),
-					decompressedColorModel);
+                        for (unsigned long frame = 0; frame < numberOfFrames; ++frame)
+                        {
+                                const OFCondition status = pixelDataElement->getUncompressedFrame(
+                                        dataset,
+                                        static_cast<Uint32>(frame),
+                                        startFragment,
+                                        frameBuffer.data(),
+                                        static_cast<Uint32>(frameBuffer.size() * sizeof(Uint32)),
+                                        decompressedColorModel);
 
-				if (status.bad())
-				{
-					throw std::runtime_error(
-						"Unable to decompress frame " + std::to_string(frame) + " for: " + path +
-						" (" + std::string(status.text()) + ')');
-				}
+                                if (status.bad())
+                                {
+                                        throw std::runtime_error(
+                                                "Unable to decompress frame " + std::to_string(frame) + " for: " + path +
+                                                " (" + std::string(status.text()) + ')');
+                                }
 
                                 copyFrameData(
                                         frameBuffer.data(),
