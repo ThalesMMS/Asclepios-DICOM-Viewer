@@ -291,6 +291,21 @@ void asclepios::gui::vtkWidgetDICOM::setVolume(const std::shared_ptr<core::Dicom
 		                             : nullptr;
 	const int scalarType = activeScalars ? activeScalars->GetDataType() : VTK_DOUBLE;
 	const int scalarComponents = activeScalars ? activeScalars->GetNumberOfComponents() : 1;
+	if (m_volume && m_volume->ImageData)
+	{
+		if (vtkInformation* dataInfo = m_volume->ImageData->GetInformation())
+		{
+			vtkDataObject::SetPointDataActiveScalarInfo(
+				dataInfo,
+				scalarType,
+				scalarComponents);
+			vtkDataObject::SetActiveAttribute(
+				dataInfo,
+				vtkDataObject::FIELD_ASSOCIATION_POINTS,
+				scalarName,
+				vtkDataSetAttributes::SCALARS);
+		}
+	}
 	if (m_inputProducer)
 	{
 		m_inputProducer->SetOutput(m_volume->ImageData);
@@ -328,10 +343,43 @@ void asclepios::gui::vtkWidgetDICOM::setVolume(const std::shared_ptr<core::Dicom
 		}
 		m_windowLevelColors->UpdateInformation();
 		m_windowLevelColors->Update();
+		if (auto* output = m_windowLevelColors->GetOutput())
+		{
+			int dims[3] = {0, 0, 0};
+			output->GetDimensions(dims);
+			double range[2] = {0.0, 0.0};
+			output->GetScalarRange(range);
+			qCInfo(lcWidgetDicom)
+				<< "Window-level output dimensions"
+				<< dims[0]
+				<< dims[1]
+				<< dims[2]
+				<< "range"
+				<< range[0]
+				<< range[1];
+		}
+		else
+		{
+			qCWarning(lcWidgetDicom) << "Window-level filter produced null output.";
+		}
 	}
 	if (m_imageActor)
 	{
-		m_imageActor->SetInputData(m_windowLevelColors ? m_windowLevelColors->GetOutput() : nullptr);
+		if (m_windowLevelColors)
+		{
+			if (auto* mapper = m_imageActor->GetMapper())
+			{
+				mapper->SetInputConnection(m_windowLevelColors->GetOutputPort());
+			}
+			else
+			{
+				m_imageActor->SetInputData(m_windowLevelColors->GetOutput());
+			}
+		}
+		else
+		{
+			m_imageActor->SetInputData(nullptr);
+		}
 		m_imageActor->SetVisibility(1);
 		m_imageActor->Modified();
 	}
