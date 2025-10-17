@@ -153,6 +153,9 @@
     <ClCompile Include="corneroverlay.cpp">
       <Filter>utils\source</Filter>
     </ClCompile>
+    <ClCompile Include="dcmtkoverlaywidget.cpp">
+      <Filter>utils\source</Filter>
+    </ClCompile>
     <ClCompile Include="overlayinfo.cpp">
       <Filter>utils\source</Filter>
     </ClCompile>
@@ -369,6 +372,9 @@
       <Filter>vtk_widgets\header</Filter>
     </ClInclude>
     <ClInclude Include="corneroverlay.h">
+      <Filter>utils\header</Filter>
+    </ClInclude>
+    <ClInclude Include="dcmtkoverlaywidget.h">
       <Filter>utils\header</Filter>
     </ClInclude>
     <ClInclude Include="overlayinfo.h">

@@ -106,6 +106,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="corneroverlay.cpp" />
+    <ClCompile Include="dcmtkoverlaywidget.cpp" />
     <ClCompile Include="filemenu.cpp" />
     <ClCompile Include="filesimporter.cpp" />
     <ClCompile Include="framelesswindow.cpp" />
@@ -177,6 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="corneroverlay.h" />
+    <ClInclude Include="dcmtkoverlaywidget.h" />
     <QtMoc Include="guiframe.h" />
     <QtMoc Include="framelesswindow.h" />
     <QtMoc Include="filemenu.h" />

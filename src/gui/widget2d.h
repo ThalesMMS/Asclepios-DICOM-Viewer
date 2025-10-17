@@ -15,6 +15,7 @@
 #include <vtkEventQtSlotConnect.h>
 #include <dcmtk/dcmimgle/diutils.h>
 #include "ui_widget2d.h"
+#include "dcmtkoverlaywidget.h"
 #include "vtkwidget2d.h"
 #include "vtkwidgetbase.h"
 #include "widgetbase.h"
@@ -136,6 +137,7 @@ namespace asclepios::gui
                 QFuture<std::shared_ptr<DcmtkImagePresenter>> m_imageLoadFuture = {};
                 QPointer<QLabel> m_errorLabel = {};
                 QPointer<QLabel> m_imageLabel = {};
+                QPointer<DcmtkOverlayWidget> m_overlayWidget = {};
                 std::shared_ptr<DcmtkImagePresenter> m_dcmtkPresenter = {};
                 QString m_lastRenderRequestSource = {};
                 bool m_renderAbortedDueToMissingContext = false;
@@ -160,11 +162,14 @@ namespace asclepios::gui
                                                         const int& t_seriesIndex) const;
                 [[nodiscard]] bool startDcmtkRendering();
                 void ensureImageLabel();
+                void ensureOverlayWidget();
                 void applyLoadedFrame(const int t_index);
                 void renderWithVtk();
                 static std::shared_ptr<DcmtkImagePresenter> loadFramesWithDcmtk(core::Series* t_series, core::Image* t_image);
                 static const QVector<QRgb>& grayscaleColorTable();
                 void handleDcmtkFailure(const QString& t_reason);
+                void updateDcmtkOverlay(const QImage& t_frameImage, int t_frameIndex);
+                void hideDcmtkOverlay();
                 void resizeEvent(QResizeEvent* t_event) override;
         };
 }
