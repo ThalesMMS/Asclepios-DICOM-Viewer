@@ -210,7 +210,7 @@ namespace
                 }
                 else
                 {
-                        scalarType = isSigned ? VTK_FLOAT : VTK_UNSIGNED_INT;
+                        scalarType = isSigned ? VTK_INT : VTK_UNSIGNED_INT;
                 }
 
                 volume.ImageData->AllocateScalars(scalarType, volume.PixelInfo.SamplesPerPixel);
@@ -294,6 +294,12 @@ namespace
                 case VTK_UNSIGNED_INT:
                         copyPixels(static_cast<const Uint32*>(source),
                                    static_cast<Uint32*>(scalars->GetVoidPointer(sliceOffset)),
+                                   static_cast<size_t>(sliceVoxelCount),
+                                   pixelInfo);
+                        break;
+                case VTK_INT:
+                        copyPixels(static_cast<const Sint32*>(source),
+                                   static_cast<Sint32*>(scalars->GetVoidPointer(sliceOffset)),
                                    static_cast<size_t>(sliceVoxelCount),
                                    pixelInfo);
                         break;
@@ -518,7 +524,7 @@ namespace
                 }
                 else if (isSigned)
                 {
-                        std::vector<float> frameBuffer(sliceSize);
+                        std::vector<Sint32> frameBuffer(sliceSize);
                         Uint32 startFragment = 0;
                         OFString decompressedColorModel;
 
@@ -529,7 +535,7 @@ namespace
                                         static_cast<Uint32>(frame),
                                         startFragment,
                                         frameBuffer.data(),
-                                        static_cast<Uint32>(frameBuffer.size() * sizeof(float)),
+                                        static_cast<Uint32>(frameBuffer.size() * sizeof(Sint32)),
                                         decompressedColorModel);
 
                                 if (status.bad())
