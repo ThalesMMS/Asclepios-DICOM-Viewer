@@ -27,10 +27,21 @@ namespace asclepios::gui
 		[[nodiscard]] QVTKOpenGLNativeWidget* getWidgetOpenGLNative() const { return m_qtvtkWidget; }
 		[[nodiscard]] vtkWidgetBase* getWidgetVTK() const { return m_vtkWidget.get(); }
 		[[nodiscard]] QScrollBar* getScrollBar() const { return m_scroll; }
-		[[nodiscard]] QFuture<void> getFuture() const { return m_future; }
-		
-		void render() override;
-		
+                [[nodiscard]] QFuture<void> getFuture() const { return m_future; }
+                void setRenderRequestSource(const QString& t_source) { m_lastRenderRequestSource = t_source; }
+                [[nodiscard]] QString getRenderRequestSource() const { return m_lastRenderRequestSource; }
+                [[nodiscard]] bool wasRenderAbortedDueToMissingContext() const
+                {
+                        return m_renderAbortedDueToMissingContext;
+                }
+                void clearRenderAbortedDueToMissingContext()
+                {
+                        m_renderAbortedDueToMissingContext = false;
+                        m_lastRenderRequestSource.clear();
+                }
+
+                void render() override;
+
         signals:
                 void imageReaderInitialized();
                 void imageReaderFailed(const QString& t_message);
@@ -58,6 +69,8 @@ namespace asclepios::gui
                 QScrollBar* m_scroll = {};
                 QFuture<void> m_future = {};
                 QPointer<QLabel> m_errorLabel = {};
+                QString m_lastRenderRequestSource = {};
+                bool m_renderAbortedDueToMissingContext = false;
 
                 void initView() override;
                 void initData() override;

@@ -108,11 +108,21 @@ void asclepios::gui::WidgetsController::populateWidget(core::Series* t_series, c
         if (widget)
         {
                 auto* const widget2d = dynamic_cast<Widget2D*>(widget->getActiveTabbedWidget());
-                if(!widget2d)
+                if (!widget2d)
                 {
                         return;
                 }
+                if (!t_series || !t_image)
+                {
+                        qCWarning(lcWidgetsController)
+                                << "populateWidget received null data from importer."
+                                << "seriesMissing" << (t_series == nullptr)
+                                << "imageMissing" << (t_image == nullptr);
+                        widget2d->setIsImageLoaded(false);
+                        return;
+                }
                 widget2d->setWidgetType(WidgetBase::WidgetType::widget2d);
+                widget2d->setRenderRequestSource(QStringLiteral("FilesImporter::populateWidget"));
                 widget2d->setSeries(t_series);
                 widget2d->setImage(t_image);
                 auto* const study = t_series->getParentObject();
@@ -127,6 +137,17 @@ void asclepios::gui::WidgetsController::populateWidget(core::Series* t_series, c
                         << "(index" << t_image->getIndex() << ")"
                         << "layout" << layoutToString(m_currentLayout);
                 widget2d->render();
+                if (widget2d->wasRenderAbortedDueToMissingContext())
+                {
+                        qCWarning(lcWidgetsController)
+                                << "Widget2D render aborted due to missing context."
+                                << "seriesMissing" << (widget2d->getSeries() == nullptr)
+                                << "imageMissing" << (widget2d->getImage() == nullptr)
+                                << "trigger" << widget2d->getRenderRequestSource();
+                        widget2d->setIsImageLoaded(false);
+                        widget2d->clearRenderAbortedDueToMissingContext();
+                        return;
+                }
                 Q_UNUSED(connect(m_filesImporter, &FilesImporter::refreshScrollValues,
                         widget2d, &Widget2D::onRefreshScrollValues));
         }
