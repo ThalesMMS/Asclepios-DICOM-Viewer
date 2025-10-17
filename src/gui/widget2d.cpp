@@ -82,7 +82,7 @@ QVector<QImage> asclepios::gui::Widget2D::loadFramesWithDcmtk(core::Series* t_se
                 const auto height = static_cast<int>(dicom->getHeight());
                 const auto monochrome = dicom->isMonochrome();
                 const auto bits = monochrome ? 8 : 24;
-                const auto* data = static_cast<const Uint8*>(dicom->getOutputData(bits, 0, frameIndex));
+                const auto* data = static_cast<const Uint8*>(dicom->getOutputData(bits, frameIndex, 0));
                 if (!data)
                 {
                         throw std::runtime_error("Failed to access decoded pixel data");
