@@ -230,19 +230,133 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 		qCWarning(lcWidgetDicom) << "UpdateDisplayExtent aborted - missing input or actor.";
 		return;
 	}
+
+	input->UpdateInformation();
+	auto* outInfo = input->GetOutputInformation(0);
+
+	constexpr double spacingUpperBound = 1e4;
+	auto isMagnitudeValid = [spacingUpperBound](double value) -> bool
+	{
+		const double absValue = std::abs(value);
+		return std::isfinite(value) && value > 0.0 && absValue > epsilon && absValue < spacingUpperBound;
+	};
+
+	double sanitizedSpacing[3] = {1.0, 1.0, 1.0};
+	bool mutatedSpacing = false;
+
+	auto mergeSpacing = [&](const double* source)
+	{
+		if (!source)
+		{
+			return;
+		}
+		for (int axis = 0; axis < 3; ++axis)
+		{
+			if (isMagnitudeValid(source[axis]))
+			{
+				sanitizedSpacing[axis] = std::abs(source[axis]);
+			}
+		}
+	};
+
+	if (m_volume)
+	{
+		mergeSpacing(m_volume->Geometry.Spacing);
+	}
+
+	auto* const inputImage = vtkImageData::SafeDownCast(GetInput());
+	double originalImageSpacing[3] = {1.0, 1.0, 1.0};
+	if (inputImage)
+	{
+		const double* currentSpacing = inputImage->GetSpacing();
+		if (currentSpacing)
+		{
+			for (int axis = 0; axis < 3; ++axis)
+			{
+				originalImageSpacing[axis] = currentSpacing[axis];
+			}
+			mergeSpacing(currentSpacing);
+		}
+	}
+
+	bool needsOutInfoUpdate = (outInfo == nullptr);
+	if (outInfo)
+	{
+		const double* infoSpacing = outInfo->Get(vtkDataObject::SPACING());
+		if (!infoSpacing)
+		{
+			needsOutInfoUpdate = true;
+		}
+		else
+		{
+			for (int axis = 0; axis < 3; ++axis)
+			{
+				if (!isMagnitudeValid(infoSpacing[axis]))
+				{
+					needsOutInfoUpdate = true;
+				}
+			}
+			mergeSpacing(infoSpacing);
+			for (int axis = 0; axis < 3; ++axis)
+			{
+				if (std::abs(std::abs(infoSpacing[axis]) - sanitizedSpacing[axis]) > epsilon)
+				{
+					needsOutInfoUpdate = true;
+					break;
+				}
+			}
+		}
+	}
+	else
+	{
+		mutatedSpacing = true;
+	}
+
+	if (needsOutInfoUpdate && outInfo)
+	{
+		outInfo->Set(vtkDataObject::SPACING(), sanitizedSpacing, 3);
+		mutatedSpacing = true;
+	}
+
+	if (inputImage)
+	{
+		bool spacingChanged = false;
+		for (int axis = 0; axis < 3; ++axis)
+		{
+			if (std::abs(std::abs(originalImageSpacing[axis]) - sanitizedSpacing[axis]) > epsilon)
+			{
+				spacingChanged = true;
+				break;
+			}
+		}
+		if (spacingChanged)
+		{
+			inputImage->SetSpacing(sanitizedSpacing);
+			mutatedSpacing = true;
+		}
+	}
+
+	if (mutatedSpacing)
+	{
+		qCWarning(lcWidgetDicom)
+			<< "Sanitized image spacing to"
+			<< sanitizedSpacing[0]
+			<< sanitizedSpacing[1]
+			<< sanitizedSpacing[2];
+	}
+
 	Superclass::UpdateDisplayExtent();
 
 	input->UpdateInformation();
-	auto* const outInfo = input->GetOutputInformation(0);
+	outInfo = input->GetOutputInformation(0);
 	if (!outInfo)
 	{
 		return;
 	}
 
-	const double* infoSpacing = outInfo->Get(vtkDataObject::SPACING());
-	if (!infoSpacing && m_volume)
+	if (!outInfo->Get(vtkDataObject::SPACING()))
 	{
-		outInfo->Set(vtkDataObject::SPACING(), m_volume->Geometry.Spacing, 3);
+		outInfo->Set(vtkDataObject::SPACING(), sanitizedSpacing, 3);
 	}
 
 	auto* const renderer = GetRenderer();
@@ -250,14 +364,33 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 	{
 		return;
 	}
-	if (InteractorStyle && InteractorStyle->GetAutoAdjustCameraClippingRange())
-	{
-		renderer->ResetCameraClippingRange();
-		return;
-	}
+
 	auto* const camera = renderer->GetActiveCamera();
 	if (!camera)
 	{
+		return;
+	}
+
+	bool cameraInvalid = false;
+	const double* cameraPosition = camera->GetPosition();
+	const double* cameraFocalPoint = camera->GetFocalPoint();
+	for (int axis = 0; axis < 3; ++axis)
+	{
+		if (!std::isfinite(cameraPosition[axis]) || !std::isfinite(cameraFocalPoint[axis]))
+		{
+			cameraInvalid = true;
+			break;
+		}
+	}
+
+	if ((mutatedSpacing || cameraInvalid) && ImageActor)
+	{
+		renderer->ResetCamera();
+	}
+
+	if (InteractorStyle && InteractorStyle->GetAutoAdjustCameraClippingRange())
+	{
+		renderer->ResetCameraClippingRange();
 		return;
 	}
 
@@ -267,15 +400,14 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 	const double cpos = camera->GetPosition()[SliceOrientation];
 	const double range = std::fabs(spos - cpos);
 	const double* spacing = outInfo->Get(vtkDataObject::SPACING());
-	double safeSpacing[3] = {1.0, 1.0, 1.0};
+	double safeSpacing[3] = {sanitizedSpacing[0], sanitizedSpacing[1], sanitizedSpacing[2]};
 	if (m_volume)
 	{
 		for (int index = 0; index < 3; ++index)
 		{
-			const double value = std::abs(m_volume->Geometry.Spacing[index]);
-			if (std::isfinite(value) && value > epsilon)
+			if (isMagnitudeValid(m_volume->Geometry.Spacing[index]))
 			{
-				safeSpacing[index] = value;
+				safeSpacing[index] = std::abs(m_volume->Geometry.Spacing[index]);
 			}
 		}
 	}
@@ -283,10 +415,9 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 	{
 		for (int index = 0; index < 3; ++index)
 		{
-			const double value = std::abs(spacing[index]);
-			if (std::isfinite(value) && value > epsilon)
+			if (isMagnitudeValid(spacing[index]))
 			{
-				safeSpacing[index] = value;
+				safeSpacing[index] = std::abs(spacing[index]);
 			}
 		}
 	}
