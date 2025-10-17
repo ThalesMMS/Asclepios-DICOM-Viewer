@@ -3,54 +3,101 @@
 #include <memory>
 #include <tuple>
 
-#include <vtkImageViewer2.h>
+#include <vtkImageActor.h>
+#include <vtkImageMapToWindowLevelColors.h>
+#include <vtkInformation.h>
+#include <vtkMatrix4x4.h>
+#include <vtkObject.h>
+#include <vtkRenderWindow.h>
+#include <vtkRenderWindowInteractor.h>
+#include <vtkRenderer.h>
 #include <vtkSmartPointer.h>
+#include <vtkTrivialProducer.h>
 
-#include "windowlevelfilter.h"
-#include "dicomvolume.h"
+namespace asclepios::core
+{
+	struct DicomVolume;
+}
 
 namespace asclepios::gui
 {
-	class vtkWidgetDICOM final : public vtkImageViewer2
+	class WindowLevelFilter;
+
+	class vtkWidgetDICOM final : public vtkObject
 	{
 	public:
 		static vtkWidgetDICOM* New();
-		vtkTypeMacro(vtkWidgetDICOM, vtkImageViewer2);
+		vtkTypeMacro(vtkWidgetDICOM, vtkObject);
 
 		vtkWidgetDICOM();
-		~vtkWidgetDICOM() override = default;
+		~vtkWidgetDICOM() override;
 
-		// getters
 		[[nodiscard]] double getZoomFactor();
 		[[nodiscard]] int getWindowWidth() const { return m_windowWidth; }
 		[[nodiscard]] int getWindowCenter() const { return m_windowCenter; }
 
-		// setters
 		void setVolume(const std::shared_ptr<core::DicomVolume>& t_volume);
 		void setInvertColors(bool t_flag);
 		void setWindowWidthCenter(int t_width, int t_center);
+		void changeWindowWidthCenter(int t_width, int t_center);
 		void setInitialWindowWidthCenter();
-		void SetInputData(vtkImageData* in) override;
+
+		void SetRenderWindow(vtkRenderWindow* renderWindow);
+		[[nodiscard]] vtkRenderWindow* GetRenderWindow() const { return m_renderWindow; }
+		[[nodiscard]] vtkRenderer* GetRenderer() const { return m_renderer; }
+		[[nodiscard]] vtkImageActor* GetImageActor() const { return m_imageActor; }
+
+		void SetupInteractor(vtkRenderWindowInteractor* interactor);
+		[[nodiscard]] vtkRenderWindowInteractor* GetInteractor() const { return m_interactor; }
+
+		void Render();
+
+		void SetSlice(int slice);
+		[[nodiscard]] int GetSlice() const { return m_currentSlice; }
+		[[nodiscard]] int GetSliceMin() const { return m_sliceMin; }
+		[[nodiscard]] int GetSliceMax() const { return m_sliceMax; }
+
+		void SetSliceOrientation(int orientation);
+		void SetSliceOrientationToXY();
+		void SetSliceOrientationToXZ();
+		void SetSliceOrientationToYZ();
+		[[nodiscard]] int GetSliceOrientation() const { return m_sliceOrientation; }
+
 		void UpdateDisplayExtent();
 
-		void changeWindowWidthCenter(int t_width, int t_center);
+		static constexpr int SLICE_ORIENTATION_YZ = 0;
+		static constexpr int SLICE_ORIENTATION_XZ = 1;
+		static constexpr int SLICE_ORIENTATION_XY = 2;
 
 	private:
 		std::shared_ptr<core::DicomVolume> m_volume = {};
 		std::unique_ptr<WindowLevelFilter> m_windowLevelFilter = {};
+		vtkSmartPointer<vtkImageMapToWindowLevelColors> m_windowLevelColors = {};
+		vtkSmartPointer<vtkTrivialProducer> m_inputProducer = {};
+		vtkSmartPointer<vtkImageActor> m_imageActor = {};
+		vtkSmartPointer<vtkRenderer> m_renderer = {};
+		vtkRenderWindow* m_renderWindow = nullptr;
+		vtkRenderWindowInteractor* m_interactor = nullptr;
+
 		int m_windowWidth = 0;
 		int m_windowCenter = 0;
 		bool m_colorsInverted = false;
+
+		int m_sliceOrientation = SLICE_ORIENTATION_XY;
+		int m_currentSlice = 0;
+		int m_sliceMin = 0;
+		int m_sliceMax = 0;
+
 		double m_lastClippingRange = -1.0;
 		double m_lastAvgSpacing = -1.0;
 		int m_lastSliceOrientation = -1;
 
 		void applyDirectionMatrix();
 		void updateScalarsForInversion();
-		void setMONOCHROME1WindowWidthCenter();
-		void setMONOCHROME2WindowWidthCenter();
 		void setDefaultWindowLevelFromRange();
 		[[nodiscard]] std::tuple<int, int> getImageActorDisplayValue();
+		void updateSliceRange();
+		void updateActorExtentWithInformation(vtkInformation* info);
+		[[nodiscard]] vtkMatrix4x4* getDirectionMatrix() const;
 	};
 }
-

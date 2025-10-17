@@ -1,25 +1,36 @@
 #include "vtkwidgetdicom.h"
 
+#include "windowlevelfilter.h"
+
+#include "dicomvolume.h"
+
 #include <vtkCamera.h>
 #include <vtkCoordinate.h>
+#include <vtkDataArray.h>
+#include <vtkDataObject.h>
+#include <vtkDataSetAttributes.h>
 #include <vtkImageActor.h>
 #include <vtkImageData.h>
 #include <vtkImageMapToWindowLevelColors.h>
-#include <vtkImageProperty.h>
+#include <vtkImageMapper3D.h>
+#include <vtkInformation.h>
+#include <vtkInteractorStyleImage.h>
+#include <vtkMatrix4x4.h>
+#include <vtkNew.h>
 #include <vtkObjectFactory.h>
 #include <vtkPointData.h>
 #include <vtkRenderWindow.h>
+#include <vtkRenderWindowInteractor.h>
 #include <vtkRenderer.h>
 #include <vtkRendererCollection.h>
 #include <vtkStreamingDemandDrivenPipeline.h>
-#include <vtkWindowLevelLookupTable.h>
-#include <vtkInformation.h>
-#include <vtkInteractorStyleImage.h>
 
+#include <QDebug>
 #include <QLoggingCategory>
 
 #include <algorithm>
 #include <cmath>
+#include <tuple>
 
 Q_LOGGING_CATEGORY(lcWidgetDicom, "asclepios.gui.vtkwidgetdicom")
 vtkStandardNewMacro(asclepios::gui::vtkWidgetDICOM)
@@ -28,12 +39,12 @@ namespace
 {
 	constexpr double epsilon = 1e-8;
 
-	void copyDirectionToImage(vtkImageData* imageData, const vtkMatrix4x4* direction)
+	void copyDirectionToImage(vtkImageData* imageData, vtkMatrix4x4* direction)
 	{
 #if VTK_MAJOR_VERSION >= 9
 		if (imageData && direction)
 		{
-			imageData->SetDirectionMatrix(const_cast<vtkMatrix4x4*>(direction));
+			imageData->SetDirectionMatrix(direction);
 		}
 #else
 		(void)imageData;
@@ -52,7 +63,7 @@ namespace
 		{
 			return;
 		}
-		auto* const scalars = imageData->GetPointData()->GetScalars();
+		auto* const scalars = imageData->GetPointData() ? imageData->GetPointData()->GetScalars() : nullptr;
 		if (!scalars)
 		{
 			return;
@@ -67,12 +78,119 @@ namespace
 			value = slope * value + intercept;
 			scalars->SetTuple1(tuple, value);
 		}
+		scalars->Modified();
+		imageData->Modified();
+	}
+
+	bool isMagnitudeValid(double value)
+	{
+		constexpr double spacingUpperBound = 1e4;
+		const double absValue = std::abs(value);
+		return std::isfinite(value) && absValue > epsilon && absValue < spacingUpperBound;
 	}
 }
 
 asclepios::gui::vtkWidgetDICOM::vtkWidgetDICOM()
 	: m_windowLevelFilter(std::make_unique<WindowLevelFilter>())
 {
+	m_windowLevelColors = vtkSmartPointer<vtkImageMapToWindowLevelColors>::New();
+	m_windowLevelColors->PassAlphaToOutputOff();
+	m_windowLevelColors->SetOutputFormatToLuminance();
+
+	m_inputProducer = vtkSmartPointer<vtkTrivialProducer>::New();
+	m_windowLevelColors->SetInputConnection(m_inputProducer->GetOutputPort());
+
+	m_imageActor = vtkSmartPointer<vtkImageActor>::New();
+	m_imageActor->InterpolateOn();
+
+	m_renderer = vtkSmartPointer<vtkRenderer>::New();
+	m_renderer->SetBackground(0.0, 0.0, 0.0);
+	m_renderer->AddActor(m_imageActor);
+
+	m_windowLevelFilter->setWindowLevelColors(m_windowLevelColors);
+}
+
+asclepios::gui::vtkWidgetDICOM::~vtkWidgetDICOM() = default;
+
+void asclepios::gui::vtkWidgetDICOM::SetRenderWindow(vtkRenderWindow* renderWindow)
+{
+	if (renderWindow == m_renderWindow)
+	{
+		return;
+	}
+
+	if (m_renderWindow && m_renderer)
+	{
+		auto* const renderers = m_renderWindow->GetRenderers();
+		if (renderers && renderers->IsItemPresent(m_renderer) != 0)
+		{
+			m_renderWindow->RemoveRenderer(m_renderer);
+		}
+	}
+
+	m_renderWindow = renderWindow;
+
+	if (!m_renderWindow || !m_renderer)
+	{
+		return;
+	}
+
+	auto* const renderers = m_renderWindow->GetRenderers();
+	if (!renderers || renderers->IsItemPresent(m_renderer) == 0)
+	{
+		m_renderWindow->AddRenderer(m_renderer);
+	}
+
+	if (m_interactor && m_interactor->GetRenderWindow() != m_renderWindow)
+	{
+		m_interactor->SetRenderWindow(m_renderWindow);
+	}
+	if (m_renderWindow->GetInteractor() != m_interactor && m_interactor)
+	{
+		m_renderWindow->SetInteractor(m_interactor);
+	}
+}
+
+void asclepios::gui::vtkWidgetDICOM::SetupInteractor(vtkRenderWindowInteractor* interactor)
+{
+	m_interactor = interactor;
+	if (!m_interactor || !m_renderWindow)
+	{
+		return;
+	}
+	if (m_interactor->GetRenderWindow() != m_renderWindow)
+	{
+		m_interactor->SetRenderWindow(m_renderWindow);
+	}
+	if (m_renderWindow->GetInteractor() != m_interactor)
+	{
+		m_renderWindow->SetInteractor(m_interactor);
+	}
+}
+
+void asclepios::gui::vtkWidgetDICOM::Render()
+{
+	UpdateDisplayExtent();
+	if (m_renderWindow)
+	{
+		const int* size = m_renderWindow->GetSize();
+		if (!size || size[0] <= 0 || size[1] <= 0)
+		{
+			m_renderWindow->SetSize(512, 512);
+		}
+		if (m_renderWindow->GetNeverRendered())
+		{
+			m_renderWindow->Start();
+		}
+		const int* resolvedSize = m_renderWindow->GetSize();
+		qInfo()
+			<< "[vtkWidgetDICOM] Rendering with size"
+			<< (resolvedSize ? resolvedSize[0] : 0)
+			<< (resolvedSize ? resolvedSize[1] : 0)
+			<< "offscreen"
+			<< m_renderWindow->GetOffScreenRendering();
+		m_renderWindow->Render();
+	}
 }
 
 void asclepios::gui::vtkWidgetDICOM::setVolume(const std::shared_ptr<core::DicomVolume>& t_volume)
@@ -81,36 +199,122 @@ void asclepios::gui::vtkWidgetDICOM::setVolume(const std::shared_ptr<core::Dicom
 	if (!m_volume || !m_volume->ImageData)
 	{
 		qCWarning(lcWidgetDicom) << "Clearing DICOM widget input.";
-		Superclass::SetInputData(nullptr);
+		if (m_inputProducer)
+		{
+			m_inputProducer->SetOutput(nullptr);
+			m_inputProducer->Modified();
+		}
+		if (m_imageActor)
+		{
+			m_imageActor->SetInputData(nullptr);
+			m_imageActor->SetVisibility(0);
+			m_imageActor->Modified();
+		}
+		updateSliceRange();
 		return;
 	}
 
-        qCInfo(lcWidgetDicom)
-                << "Configuring DICOM widget with dimensions"
-                << m_volume->ImageData->GetDimensions()[0]
-                << m_volume->ImageData->GetDimensions()[1]
-                << m_volume->ImageData->GetDimensions()[2];
+	int dims[3] = {0, 0, 0};
+	m_volume->ImageData->GetDimensions(dims);
+	qCInfo(lcWidgetDicom)
+		<< "Configuring DICOM widget with dimensions"
+		<< dims[0]
+		<< dims[1]
+		<< dims[2];
 
-        copyDirectionToImage(m_volume->ImageData, m_volume->Direction);
-        const bool requiresRescale =
-                (std::abs(m_volume->PixelInfo.RescaleSlope - 1.0) > epsilon) ||
-                (std::abs(m_volume->PixelInfo.RescaleIntercept) > epsilon);
-        if (requiresRescale)
-        {
-                applySlopeIntercept(m_volume->ImageData, m_volume->PixelInfo);
-                m_volume->PixelInfo.RescaleSlope = 1.0;
-                m_volume->PixelInfo.RescaleIntercept = 0.0;
-        }
+	copyDirectionToImage(m_volume->ImageData, getDirectionMatrix());
 
-        Superclass::SetInputData(m_volume->ImageData);
-	SetSliceOrientationToXY();
-	SetSlice(0);
+	const bool requiresRescale =
+		(std::abs(m_volume->PixelInfo.RescaleSlope - 1.0) > epsilon) ||
+		(std::abs(m_volume->PixelInfo.RescaleIntercept) > epsilon);
+	auto* scalarsBefore = m_volume->ImageData->GetPointData()
+		                       ? m_volume->ImageData->GetPointData()->GetScalars()
+		                       : nullptr;
+	if (!scalarsBefore)
+	{
+		qCCritical(lcWidgetDicom) << "Scalar array missing prior to rescale.";
+	}
+	else if (!scalarsBefore->GetName())
+	{
+		scalarsBefore->SetName("Scalars");
+		if (m_volume && m_volume->ImageData && m_volume->ImageData->GetPointData())
+		{
+			m_volume->ImageData->GetPointData()->SetActiveScalars(scalarsBefore->GetName());
+		}
+	}
+	if (requiresRescale)
+	{
+		applySlopeIntercept(m_volume->ImageData, m_volume->PixelInfo);
+		m_volume->PixelInfo.RescaleSlope = 1.0;
+		m_volume->PixelInfo.RescaleIntercept = 0.0;
+	}
+	auto* scalarsAfter = m_volume->ImageData->GetPointData()
+		                      ? m_volume->ImageData->GetPointData()->GetScalars()
+		                      : nullptr;
+	if (scalarsAfter)
+	{
+		double range[2] = {0.0, 0.0};
+		scalarsAfter->GetRange(range);
+		if (!scalarsAfter->GetName())
+		{
+			scalarsAfter->SetName("Scalars");
+		}
+		if (m_volume && m_volume->ImageData && m_volume->ImageData->GetPointData())
+		{
+			m_volume->ImageData->GetPointData()->SetActiveScalars(scalarsAfter->GetName());
+		}
+		qCInfo(lcWidgetDicom)
+			<< "Scalar array confirmed after rescale. Range:"
+			<< range[0]
+			<< range[1];
+	}
+	else
+	{
+		qCCritical(lcWidgetDicom) << "Scalar array missing after rescale.";
+	}
+
+	if (m_inputProducer)
+	{
+		m_inputProducer->SetOutput(m_volume->ImageData);
+		m_inputProducer->Modified();
+	}
+	m_windowLevelColors->Update();
+	if (m_imageActor)
+	{
+		m_imageActor->SetInputData(m_windowLevelColors->GetOutput());
+		m_imageActor->SetVisibility(1);
+		m_imageActor->Modified();
+	}
+	if (scalarsAfter)
+	{
+		const char* scalarName = scalarsAfter->GetName() ? scalarsAfter->GetName() : "Scalars";
+		m_windowLevelColors->SetInputArrayToProcess(
+			0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, scalarName);
+		vtkDataObject::SetPointDataActiveScalarInfo(
+			m_windowLevelColors->GetInputInformation(),
+			scalarsAfter->GetDataType(),
+			scalarsAfter->GetNumberOfComponents());
+	}
+	else
+	{
+		m_windowLevelColors->SetInputArrayToProcess(
+			0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, "Scalars");
+	}
+	m_windowLevelColors->UpdateInformation();
+
+	m_imageActor->SetVisibility(1);
+
 	setInitialWindowWidthCenter();
-	GetRenderer()->GetActiveCamera()->ParallelProjectionOn();
+	SetSliceOrientationToXY();
+	updateSliceRange();
+	SetSlice(0);
+
+	if (auto* const camera = m_renderer ? m_renderer->GetActiveCamera() : nullptr)
+	{
+		camera->ParallelProjectionOn();
+	}
+
 	applyDirectionMatrix();
-	SetColorWindow(static_cast<double>(m_windowWidth));
-	SetColorLevel(static_cast<double>(m_windowCenter));
-	Render();
 }
 
 void asclepios::gui::vtkWidgetDICOM::applyDirectionMatrix()
@@ -129,11 +333,22 @@ void asclepios::gui::vtkWidgetDICOM::applyDirectionMatrix()
 #endif
 }
 
+vtkMatrix4x4* asclepios::gui::vtkWidgetDICOM::getDirectionMatrix() const
+{
+#if VTK_MAJOR_VERSION >= 9
+	return (m_volume && m_volume->Direction) ? m_volume->Direction.GetPointer() : nullptr;
+#else
+	return nullptr;
+#endif
+}
+
 void asclepios::gui::vtkWidgetDICOM::setInvertColors(bool t_flag)
 {
 	m_colorsInverted = t_flag;
-	updateScalarsForInversion();
-	Render();
+	if (m_windowLevelFilter)
+	{
+		m_windowLevelFilter->setAreColorsInverted(m_colorsInverted);
+	}
 }
 
 void asclepios::gui::vtkWidgetDICOM::updateScalarsForInversion()
@@ -142,12 +357,14 @@ void asclepios::gui::vtkWidgetDICOM::updateScalarsForInversion()
 	{
 		return;
 	}
-	if (!m_colorsInverted)
+	auto* const scalars = m_volume->ImageData->GetPointData()
+		                     ? m_volume->ImageData->GetPointData()->GetScalars()
+		                     : nullptr;
+	if (!scalars)
 	{
 		return;
 	}
-	auto* const scalars = m_volume->ImageData->GetPointData()->GetScalars();
-	if (!scalars)
+	if (!m_colorsInverted)
 	{
 		return;
 	}
@@ -160,14 +377,33 @@ void asclepios::gui::vtkWidgetDICOM::updateScalarsForInversion()
 		const double value = scalars->GetTuple1(index);
 		scalars->SetTuple1(index, maxValue - value);
 	}
+	scalars->Modified();
+	m_volume->ImageData->Modified();
 }
 
 void asclepios::gui::vtkWidgetDICOM::setWindowWidthCenter(const int t_width, const int t_center)
 {
-	m_windowLevelFilter->setWindowWidthCenter(t_width, t_center);
-	m_windowWidth = t_width;
+	const int safeWidth = (t_width == 0) ? 1 : t_width;
+	if (m_windowLevelFilter)
+	{
+		m_windowLevelFilter->setWindowWidthCenter(safeWidth, t_center);
+	}
+	m_windowLevelColors->SetWindow(static_cast<double>(safeWidth));
+	m_windowLevelColors->SetLevel(static_cast<double>(t_center));
+	m_windowLevelColors->Update();
+	if (m_imageActor)
+	{
+		m_imageActor->Modified();
+	}
+	m_windowWidth = safeWidth;
 	m_windowCenter = t_center;
-	Superclass::Render();
+}
+
+void asclepios::gui::vtkWidgetDICOM::changeWindowWidthCenter(const int t_width, const int t_center)
+{
+	m_windowWidth += t_width;
+	m_windowCenter += t_center;
+	setWindowWidthCenter(m_windowWidth, m_windowCenter);
 }
 
 void asclepios::gui::vtkWidgetDICOM::setInitialWindowWidthCenter()
@@ -181,12 +417,25 @@ void asclepios::gui::vtkWidgetDICOM::setInitialWindowWidthCenter()
 	{
 		m_windowWidth = static_cast<int>(std::round(m_volume->PixelInfo.WindowWidth));
 		m_windowCenter = static_cast<int>(std::round(m_volume->PixelInfo.WindowCenter));
+		qCInfo(lcWidgetDicom)
+			<< "Using DICOM window from metadata. Width:"
+			<< m_windowWidth
+			<< "Center:"
+			<< m_windowCenter;
 	}
 	else
 	{
 		setDefaultWindowLevelFromRange();
 	}
 	setInvertColors(m_volume->PixelInfo.InvertMonochrome);
+	setWindowWidthCenter(m_windowWidth, m_windowCenter);
+	qCInfo(lcWidgetDicom)
+		<< "Initial window configured. Width:"
+		<< m_windowWidth
+		<< "Center:"
+		<< m_windowCenter
+		<< "Invert:"
+		<< m_colorsInverted;
 }
 
 void asclepios::gui::vtkWidgetDICOM::setDefaultWindowLevelFromRange()
@@ -198,6 +447,8 @@ void asclepios::gui::vtkWidgetDICOM::setDefaultWindowLevelFromRange()
 	{
 		m_windowWidth = 4096;
 		m_windowCenter = 2048;
+		qCWarning(lcWidgetDicom)
+			<< "Fallback window level because scalars were unavailable.";
 		return;
 	}
 	double range[2] = {0.0, 0.0};
@@ -208,44 +459,152 @@ void asclepios::gui::vtkWidgetDICOM::setDefaultWindowLevelFromRange()
 	{
 		m_windowWidth = 4096;
 	}
+	qCInfo(lcWidgetDicom)
+		<< "Computed window from scalar range:"
+		<< range[0]
+		<< range[1]
+		<< "Width:"
+		<< m_windowWidth
+		<< "Center:"
+		<< m_windowCenter;
 }
 
-void asclepios::gui::vtkWidgetDICOM::SetInputData(vtkImageData* in)
+void asclepios::gui::vtkWidgetDICOM::SetSliceOrientation(const int orientation)
 {
-	if (!in)
+	if (orientation < SLICE_ORIENTATION_YZ || orientation > SLICE_ORIENTATION_XY)
 	{
-		qCWarning(lcWidgetDicom) << "SetInputData called with null image.";
-		Superclass::SetInputData(nullptr);
 		return;
 	}
-	Superclass::SetInputData(in);
-
-	vtkImageData* const baseInput = vtkImageData::SafeDownCast(GetInput());
-	vtkImageData* const imageData = baseInput ? baseInput : in;
-	GetWindowLevel()->SetInputData(imageData);
-	GetWindowLevel()->UpdateInformation();
-	GetWindowLevel()->GetOutput()->SetSpacing(imageData->GetSpacing());
+	if (m_sliceOrientation == orientation)
+	{
+		return;
+	}
+	m_sliceOrientation = orientation;
+	updateSliceRange();
 	UpdateDisplayExtent();
+}
+
+void asclepios::gui::vtkWidgetDICOM::SetSliceOrientationToXY()
+{
+	SetSliceOrientation(SLICE_ORIENTATION_XY);
+}
+
+void asclepios::gui::vtkWidgetDICOM::SetSliceOrientationToXZ()
+{
+	SetSliceOrientation(SLICE_ORIENTATION_XZ);
+}
+
+void asclepios::gui::vtkWidgetDICOM::SetSliceOrientationToYZ()
+{
+	SetSliceOrientation(SLICE_ORIENTATION_YZ);
+}
+
+void asclepios::gui::vtkWidgetDICOM::SetSlice(const int slice)
+{
+	const int clamped = std::clamp(slice, m_sliceMin, m_sliceMax);
+	if (m_currentSlice == clamped)
+	{
+		return;
+	}
+	m_currentSlice = clamped;
+	UpdateDisplayExtent();
+}
+
+void asclepios::gui::vtkWidgetDICOM::updateSliceRange()
+{
+	int extent[6] = {0, -1, 0, -1, 0, -1};
+	if (m_windowLevelColors)
+	{
+		m_windowLevelColors->UpdateInformation();
+		if (auto* info = m_windowLevelColors->GetOutputInformation(0))
+		{
+			if (info->Has(vtkStreamingDemandDrivenPipeline::WHOLE_EXTENT()))
+			{
+				info->Get(vtkStreamingDemandDrivenPipeline::WHOLE_EXTENT(), extent);
+			}
+		}
+	}
+	if ((extent[1] < extent[0] || extent[3] < extent[2] || extent[5] < extent[4]) && m_volume && m_volume->ImageData)
+	{
+		m_volume->ImageData->GetExtent(extent);
+	}
+
+	switch (m_sliceOrientation)
+	{
+	case SLICE_ORIENTATION_XY:
+		m_sliceMin = extent[4];
+		m_sliceMax = extent[5];
+		break;
+	case SLICE_ORIENTATION_XZ:
+		m_sliceMin = extent[2];
+		m_sliceMax = extent[3];
+		break;
+	case SLICE_ORIENTATION_YZ:
+	default:
+		m_sliceMin = extent[0];
+		m_sliceMax = extent[1];
+		break;
+	}
+
+	if (m_sliceMin > m_sliceMax)
+	{
+		std::swap(m_sliceMin, m_sliceMax);
+	}
+	m_currentSlice = std::clamp(m_currentSlice, m_sliceMin, m_sliceMax);
+}
+
+void asclepios::gui::vtkWidgetDICOM::updateActorExtentWithInformation(vtkInformation* info)
+{
+	int extent[6] = {0, -1, 0, -1, 0, -1};
+	auto isExtentValid = [](const int* candidate) -> bool
+	{
+		return candidate[1] >= candidate[0] &&
+			candidate[3] >= candidate[2] &&
+			candidate[5] >= candidate[4];
+	};
+
+	if (info && info->Has(vtkStreamingDemandDrivenPipeline::WHOLE_EXTENT()))
+	{
+		info->Get(vtkStreamingDemandDrivenPipeline::WHOLE_EXTENT(), extent);
+	}
+
+	if (!isExtentValid(extent) && m_volume && m_volume->ImageData)
+	{
+		m_volume->ImageData->GetExtent(extent);
+	}
+
+	const int safeSlice = std::clamp(m_currentSlice, m_sliceMin, m_sliceMax);
+	switch (m_sliceOrientation)
+	{
+	case SLICE_ORIENTATION_XY:
+		extent[4] = safeSlice;
+		extent[5] = safeSlice;
+		break;
+	case SLICE_ORIENTATION_XZ:
+		extent[2] = safeSlice;
+		extent[3] = safeSlice;
+		break;
+	case SLICE_ORIENTATION_YZ:
+	default:
+		extent[0] = safeSlice;
+		extent[1] = safeSlice;
+		break;
+	}
+
+	m_imageActor->SetDisplayExtent(extent);
+	m_imageActor->Modified();
 }
 
 void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 {
-	auto* const input = GetInputAlgorithm();
-	if (!input || !ImageActor)
+	if (!m_windowLevelColors || !m_imageActor)
 	{
-		qCWarning(lcWidgetDicom) << "UpdateDisplayExtent aborted - missing input or actor.";
+		qCWarning(lcWidgetDicom) << "UpdateDisplayExtent aborted - missing filter or actor.";
 		return;
 	}
 
-	input->UpdateInformation();
-	auto* outInfo = input->GetOutputInformation(0);
-
-	constexpr double spacingUpperBound = 1e4;
-	auto isMagnitudeValid = [spacingUpperBound](double value) -> bool
-	{
-		const double absValue = std::abs(value);
-		return std::isfinite(value) && value > 0.0 && absValue > epsilon && absValue < spacingUpperBound;
-	};
+	m_windowLevelColors->UpdateInformation();
+	auto* info = m_windowLevelColors->GetOutputInformation(0);
 
 	double sanitizedSpacing[3] = {1.0, 1.0, 1.0};
 	bool mutatedSpacing = false;
@@ -270,7 +629,7 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 		mergeSpacing(m_volume->Geometry.Spacing);
 	}
 
-	auto* const inputImage = vtkImageData::SafeDownCast(GetInput());
+	auto* const inputImage = m_volume ? m_volume->ImageData.GetPointer() : nullptr;
 	double originalImageSpacing[3] = {1.0, 1.0, 1.0};
 	if (inputImage)
 	{
@@ -285,10 +644,10 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 		}
 	}
 
-	bool needsOutInfoUpdate = (outInfo == nullptr);
-	if (outInfo)
+	bool needsOutInfoUpdate = (info == nullptr);
+	if (info)
 	{
-		const double* infoSpacing = outInfo->Get(vtkDataObject::SPACING());
+		const double* infoSpacing = info->Get(vtkDataObject::SPACING());
 		if (!infoSpacing)
 		{
 			needsOutInfoUpdate = true;
@@ -318,9 +677,9 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 		mutatedSpacing = true;
 	}
 
-	if (needsOutInfoUpdate && outInfo)
+	if (needsOutInfoUpdate && info)
 	{
-		outInfo->Set(vtkDataObject::SPACING(), sanitizedSpacing, 3);
+		info->Set(vtkDataObject::SPACING(), sanitizedSpacing, 3);
 		mutatedSpacing = true;
 	}
 
@@ -351,27 +710,27 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 			<< sanitizedSpacing[2];
 	}
 
-	Superclass::UpdateDisplayExtent();
+	updateSliceRange();
+	updateActorExtentWithInformation(info);
 
-	input->UpdateInformation();
-	outInfo = input->GetOutputInformation(0);
-	if (!outInfo)
+	m_windowLevelColors->Update();
+	info = m_windowLevelColors->GetOutputInformation(0);
+	if (!info)
 	{
 		return;
 	}
 
-	if (!outInfo->Get(vtkDataObject::SPACING()))
+	if (!info->Get(vtkDataObject::SPACING()))
 	{
-		outInfo->Set(vtkDataObject::SPACING(), sanitizedSpacing, 3);
+		info->Set(vtkDataObject::SPACING(), sanitizedSpacing, 3);
 	}
 
-	auto* const renderer = GetRenderer();
-	if (!renderer)
+	if (!m_renderer)
 	{
 		return;
 	}
 
-	auto* const camera = renderer->GetActiveCamera();
+	auto* const camera = m_renderer->GetActiveCamera();
 	if (!camera)
 	{
 		return;
@@ -389,14 +748,14 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 		}
 	}
 
-	if ((mutatedSpacing || cameraInvalid) && ImageActor)
+	if (mutatedSpacing || cameraInvalid || m_lastSliceOrientation != m_sliceOrientation)
 	{
-		renderer->ResetCamera();
+		m_renderer->ResetCamera();
 		const double* resetPosition = camera->GetPosition();
 		const double* resetFocalPoint = camera->GetFocalPoint();
 		qCInfo(lcWidgetDicom)
 			<< "Reset camera due to"
-			<< (mutatedSpacing ? "spacing update" : "invalid camera")
+			<< (mutatedSpacing ? "spacing update" : (cameraInvalid ? "invalid camera" : "orientation change"))
 			<< "position"
 			<< resetPosition[0]
 			<< resetPosition[1]
@@ -405,112 +764,114 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 			<< resetFocalPoint[0]
 			<< resetFocalPoint[1]
 			<< resetFocalPoint[2];
+		camera->ParallelProjectionOn();
+		m_lastSliceOrientation = m_sliceOrientation;
 	}
 
-	if (InteractorStyle && InteractorStyle->GetAutoAdjustCameraClippingRange())
-	{
-		renderer->ResetCameraClippingRange();
-		return;
-	}
+	auto* const interactorStyle = m_interactor
+		                              ? vtkInteractorStyleImage::SafeDownCast(m_interactor->GetInteractorStyle())
+		                              : nullptr;
 
-	double bounds[6] = {0.0};
-	ImageActor->GetBounds(bounds);
-	const int* displayExtent = ImageActor->GetDisplayExtent();
-	qCInfo(lcWidgetDicom)
-		<< "Actor bounds"
-		<< bounds[0]
-		<< bounds[1]
-		<< bounds[2]
-		<< bounds[3]
-		<< bounds[4]
-		<< bounds[5]
-		<< "display extent"
-		<< displayExtent[0]
-		<< displayExtent[1]
-		<< displayExtent[2]
-		<< displayExtent[3]
-		<< displayExtent[4]
-		<< displayExtent[5];
-	const double spos = bounds[SliceOrientation * 2];
-	const double cpos = camera->GetPosition()[SliceOrientation];
-	const double range = std::fabs(spos - cpos);
-	const double* spacing = outInfo->Get(vtkDataObject::SPACING());
-	double safeSpacing[3] = {sanitizedSpacing[0], sanitizedSpacing[1], sanitizedSpacing[2]};
-	if (m_volume)
+	if (interactorStyle && interactorStyle->GetAutoAdjustCameraClippingRange())
 	{
-		for (int index = 0; index < 3; ++index)
+		m_renderer->ResetCameraClippingRange();
+	}
+	else
+	{
+		double bounds[6] = {0.0};
+		m_imageActor->GetBounds(bounds);
+		const int* displayExtent = m_imageActor->GetDisplayExtent();
+		qCInfo(lcWidgetDicom)
+			<< "Actor bounds"
+			<< bounds[0]
+			<< bounds[1]
+			<< bounds[2]
+			<< bounds[3]
+			<< bounds[4]
+			<< bounds[5]
+			<< "display extent"
+			<< displayExtent[0]
+			<< displayExtent[1]
+			<< displayExtent[2]
+			<< displayExtent[3]
+			<< displayExtent[4]
+			<< displayExtent[5];
+
+		const int axis = (m_sliceOrientation == SLICE_ORIENTATION_XY)
+			                 ? 2
+			                 : (m_sliceOrientation == SLICE_ORIENTATION_XZ ? 1 : 0);
+		const double spos = bounds[axis * 2];
+		const double cpos = camera->GetPosition()[axis];
+		const double range = std::fabs(spos - cpos);
+		const double* spacing = info->Get(vtkDataObject::SPACING());
+		double safeSpacing[3] = {sanitizedSpacing[0], sanitizedSpacing[1], sanitizedSpacing[2]};
+		if (m_volume)
 		{
-			if (isMagnitudeValid(m_volume->Geometry.Spacing[index]))
+			for (int index = 0; index < 3; ++index)
 			{
-				safeSpacing[index] = std::abs(m_volume->Geometry.Spacing[index]);
+				if (isMagnitudeValid(m_volume->Geometry.Spacing[index]))
+				{
+					safeSpacing[index] = std::abs(m_volume->Geometry.Spacing[index]);
+				}
 			}
 		}
-	}
-	if (spacing)
-	{
-		for (int index = 0; index < 3; ++index)
+		if (spacing)
 		{
-			if (isMagnitudeValid(spacing[index]))
+			for (int index = 0; index < 3; ++index)
 			{
-				safeSpacing[index] = std::abs(spacing[index]);
+				if (isMagnitudeValid(spacing[index]))
+				{
+					safeSpacing[index] = std::abs(spacing[index]);
+				}
 			}
 		}
-	}
 
-	double avgSpacing = (safeSpacing[0] + safeSpacing[1] + safeSpacing[2]) / 3.0;
-	if (!std::isfinite(avgSpacing) || avgSpacing <= epsilon)
-	{
-		avgSpacing = 1.0;
-	}
-	const double halfThickness = std::max(avgSpacing * 3.0, epsilon);
-	double nearPlane = range - halfThickness;
-	double farPlane = range + halfThickness;
+		double avgSpacing = (safeSpacing[0] + safeSpacing[1] + safeSpacing[2]) / 3.0;
+		if (!std::isfinite(avgSpacing) || avgSpacing <= epsilon)
+		{
+			avgSpacing = 1.0;
+		}
+		const double halfThickness = std::max(avgSpacing * 3.0, epsilon);
+		double nearPlane = range - halfThickness;
+		double farPlane = range + halfThickness;
 
-	const double minNearPlane = std::max(epsilon, halfThickness * 0.1);
-	if (!std::isfinite(nearPlane) || nearPlane <= minNearPlane)
-	{
-		nearPlane = minNearPlane;
-	}
-	if (!std::isfinite(farPlane) || farPlane <= nearPlane)
-	{
-		farPlane = nearPlane + halfThickness;
-	}
+		const double minNearPlane = std::max(epsilon, halfThickness * 0.1);
+		if (!std::isfinite(nearPlane) || nearPlane <= minNearPlane)
+		{
+			nearPlane = minNearPlane;
+		}
+		if (!std::isfinite(farPlane) || farPlane <= nearPlane)
+		{
+			farPlane = nearPlane + halfThickness;
+		}
 
-	camera->SetClippingRange(nearPlane, farPlane);
-	double computedNear = 0.0;
-	double computedFar = 0.0;
-	camera->GetClippingRange(computedNear, computedFar);
-	qCInfo(lcWidgetDicom)
-		<< "Clipping range set to"
-		<< computedNear
-		<< computedFar
-		<< "range baseline"
-		<< range
-		<< "axis spacing"
-		<< avgSpacing
-		<< "parallel scale"
-		<< camera->GetParallelScale();
-	m_lastClippingRange = range;
-	m_lastAvgSpacing = avgSpacing;
-	m_lastSliceOrientation = SliceOrientation;
-}
-
-void asclepios::gui::vtkWidgetDICOM::changeWindowWidthCenter(const int t_width, const int t_center)
-{
-	m_windowWidth += t_width;
-	m_windowCenter += t_center;
-	setWindowWidthCenter(m_windowWidth, m_windowCenter);
+		camera->SetClippingRange(nearPlane, farPlane);
+		double computedNear = 0.0;
+		double computedFar = 0.0;
+		camera->GetClippingRange(computedNear, computedFar);
+		qCInfo(lcWidgetDicom)
+			<< "Clipping range set to"
+			<< computedNear
+			<< computedFar
+			<< "range baseline"
+			<< range
+			<< "axis spacing"
+			<< avgSpacing
+			<< "parallel scale"
+			<< camera->GetParallelScale();
+		m_lastClippingRange = range;
+		m_lastAvgSpacing = avgSpacing;
+	}
 }
 
 double asclepios::gui::vtkWidgetDICOM::getZoomFactor()
 {
-	auto* const imageActor = GetImageActor();
-	if (!imageActor)
+	if (!m_imageActor)
 	{
 		qCWarning(lcWidgetDicom) << "getZoomFactor called without an image actor.";
 		return 0.0;
 	}
-	auto* const actorExtent = imageActor->GetDisplayExtent();
+	const int* actorExtent = m_imageActor->GetDisplayExtent();
 	if (!actorExtent)
 	{
 		qCWarning(lcWidgetDicom) << "Missing display extent for zoom computation.";
@@ -528,38 +889,17 @@ double asclepios::gui::vtkWidgetDICOM::getZoomFactor()
 
 std::tuple<int, int> asclepios::gui::vtkWidgetDICOM::getImageActorDisplayValue()
 {
-	auto* const imageActor = GetImageActor();
-	if (!imageActor)
+	if (!m_imageActor || !m_renderWindow || !m_renderer)
 	{
 		return {0, 0};
 	}
 	double actorBounds[6] = {0.0};
-	imageActor->GetBounds(actorBounds);
+	m_imageActor->GetBounds(actorBounds);
 	vtkNew<vtkCoordinate> coordinate;
 	coordinate->SetCoordinateSystemToWorld();
 	coordinate->SetValue(actorBounds[0], 0, 0);
-	const int x = coordinate->GetComputedDisplayValue(
-		GetRenderWindow()->GetRenderers()->GetFirstRenderer())[0];
+	const int x = coordinate->GetComputedDisplayValue(m_renderer)[0];
 	coordinate->SetValue(actorBounds[1], 0, 0);
-	const int y = coordinate->GetComputedDisplayValue(
-		GetRenderWindow()->GetRenderers()->GetFirstRenderer())[0];
+	const int y = coordinate->GetComputedDisplayValue(m_renderer)[0];
 	return std::make_tuple(x, y);
-}
-
-void asclepios::gui::vtkWidgetDICOM::setMONOCHROME1WindowWidthCenter()
-{
-	vtkNew<vtkWindowLevelLookupTable> table;
-	table->SetWindow(std::abs(m_windowWidth));
-	table->SetLevel(m_windowCenter);
-	table->SetInverseVideo(true);
-	table->Build();
-	table->BuildSpecialColors();
-	GetWindowLevel()->SetLookupTable(table);
-	m_windowLevelFilter->setDICOMWidget(this);
-}
-
-void asclepios::gui::vtkWidgetDICOM::setMONOCHROME2WindowWidthCenter()
-{
-	m_windowLevelFilter->setDICOMWidget(this);
-	m_windowLevelFilter->setWindowWidthCenter(m_windowWidth, m_windowCenter);
 }

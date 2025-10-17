@@ -1,25 +1,28 @@
 #pragma once
-#include <vtkImageViewer2.h>
+
+#include <vtkSmartPointer.h>
+
+class vtkImageMapToWindowLevelColors;
+class vtkWindowLevelLookupTable;
 
 namespace asclepios::gui
 {
 	class WindowLevelFilter
 	{
 	public:
-		WindowLevelFilter() = default;
-		~WindowLevelFilter() = default;
+		WindowLevelFilter();
+		~WindowLevelFilter();
 
-		//getters
-		[[nodiscard]] vtkImageViewer2* getDICOMWidget() const { return m_dicomWidget; }
-		[[nodiscard]] bool getAreColorosInverted() const { return m_invert; }
+		[[nodiscard]] vtkImageMapToWindowLevelColors* getWindowLevelColors() const { return m_windowLevelColors; }
+		[[nodiscard]] bool getAreColorsInverted() const { return m_invert; }
 
-		//setters
-		void setDICOMWidget(vtkImageViewer2* t_widget) { m_dicomWidget = t_widget; }
-		void setAreColorsInverted(const bool& t_flag) { m_invert = t_flag; }
-		void setWindowWidthCenter(const int& t_width, const int& t_center) const;
+		void setWindowLevelColors(vtkImageMapToWindowLevelColors* t_filter);
+		void setAreColorsInverted(bool t_flag);
+		void setWindowWidthCenter(int t_width, int t_center);
 
 	private:
-		vtkImageViewer2* m_dicomWidget = {};
+		vtkImageMapToWindowLevelColors* m_windowLevelColors = nullptr;
+		vtkSmartPointer<vtkWindowLevelLookupTable> m_lookupTable = {};
 		bool m_invert = false;
 	};
 }
