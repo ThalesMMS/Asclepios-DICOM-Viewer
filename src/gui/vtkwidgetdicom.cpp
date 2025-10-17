@@ -494,16 +494,16 @@ void asclepios::gui::vtkWidgetDICOM::setInitialWindowWidthCenter()
 		qCWarning(lcWidgetDicom) << "Missing volume while initializing window/level.";
 		return;
 	}
-	if (m_volume->PixelInfo.WindowWidth > 0.0 && m_volume->PixelInfo.WindowCenter != 0.0)
-	{
-		m_windowWidth = static_cast<int>(std::round(m_volume->PixelInfo.WindowWidth));
-		m_windowCenter = static_cast<int>(std::round(m_volume->PixelInfo.WindowCenter));
-		qCInfo(lcWidgetDicom)
-			<< "Using DICOM window from metadata. Width:"
-			<< m_windowWidth
-			<< "Center:"
-			<< m_windowCenter;
-	}
+        if (m_volume->PixelInfo.WindowWidth > 0.0)
+        {
+                m_windowWidth = static_cast<int>(std::lround(m_volume->PixelInfo.WindowWidth));
+                m_windowCenter = static_cast<int>(std::lround(m_volume->PixelInfo.WindowCenter));
+                qCInfo(lcWidgetDicom)
+                        << "Using DICOM window from metadata (width > 0). Width:"
+                        << m_windowWidth
+                        << "Center:"
+                        << m_windowCenter;
+        }
 	else
 	{
 		setDefaultWindowLevelFromRange();
