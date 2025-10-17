@@ -6,8 +6,10 @@ vtkStandardNewMacro(asclepios::gui::vtkWidgetOverlayCallback);
 void asclepios::gui::vtkWidgetOverlayCallback::Execute([[maybe_unused]] vtkObject* caller, const unsigned long eventId,
                                                        [[maybe_unused]] void* callData)
 {
-	if (eventId == ModifiedEvent)
-	{
-		m_widgetOverlay->positionOverlay();
-	}
+    if (eventId != ModifiedEvent || m_widgetOverlay == nullptr)
+    {
+        return;
+    }
+
+    m_widgetOverlay->positionOverlay();
 }

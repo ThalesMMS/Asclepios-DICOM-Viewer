@@ -522,10 +522,10 @@ bool DicomVolumeLoader::diagnoseStudy(const std::string& path)
                         const DcmRepresentationParameter* repParam = nullptr;
                         pixelData->getOriginalRepresentationKey(repType, repParam);
                         const DcmXfer pixelXfer(repType);
-                        qCInfo(lcDicomVolumeLoader)
-                                << "Pixel data representation:"
-                                << QString::fromLatin1(pixelXfer.getXferName())
-                                << "encapsulated:" << pixelData->isEncapsulated();
+			qCInfo(lcDicomVolumeLoader)
+			        << "Pixel data representation:"
+			        << QString::fromLatin1(pixelXfer.getXferName())
+			        << "encapsulated:" << static_cast<bool>(pixelXfer.isEncapsulated());
                 }
                 else
                 {

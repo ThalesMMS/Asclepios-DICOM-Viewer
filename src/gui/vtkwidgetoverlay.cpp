@@ -18,19 +18,26 @@ asclepios::gui::vtkWidgetOverlay::vtkWidgetOverlay()
 //-----------------------------------------------------------------------------
 asclepios::gui::vtkWidgetOverlay::~vtkWidgetOverlay()
 {
-	if (m_render)
-	{
-		m_render->GetRenderWindow()->RemoveObserver(m_observerTag);
-	}
+    if (!m_render)
+    {
+        return;
+    }
+
+    vtkRenderWindow* const renderWindow = m_render->GetRenderWindow();
+    if (renderWindow && m_observerTag != 0)
+    {
+        renderWindow->RemoveObserver(m_observerTag);
+        m_observerTag = 0;
+    }
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::vtkWidgetOverlay::createOverlay(vtkRenderWindow* t_renderWindow, const asclepios::core::DicomMetadata* t_metadata)
 {
-	if (!m_render)
-	{
-		return;
-	}
+    if (!m_render || !t_renderWindow)
+    {
+        return;
+    }
 	clearOverlay();
 	createOverlayInfo(t_metadata);
 	createCallback(t_renderWindow);
@@ -93,8 +100,23 @@ void asclepios::gui::vtkWidgetOverlay::readOverlayInfo()
 //-----------------------------------------------------------------------------
 void asclepios::gui::vtkWidgetOverlay::positionOverlay()
 {
-	auto* const size =
-		m_render->GetRenderWindow()->GetSize();
+    if (!m_render)
+    {
+        return;
+    }
+
+    vtkRenderWindow* const renderWindow = m_render->GetRenderWindow();
+    if (!renderWindow)
+    {
+        return;
+    }
+
+    const int* const size = renderWindow->GetSize();
+    if (!size)
+    {
+        return;
+    }
+
 	for (int i = 0; i < 2; ++i)
 	{
 		for (int j = 0; j < 2; ++j)
@@ -162,6 +184,17 @@ void asclepios::gui::vtkWidgetOverlay::setPositionOfOverlayInCorner(const int& x
 //-----------------------------------------------------------------------------
 void asclepios::gui::vtkWidgetOverlay::createCallback(vtkRenderWindow* t_renderWindow)
 {
+    if (!t_renderWindow)
+    {
+        return;
+    }
+
+    if (m_observerTag != 0)
+    {
+        t_renderWindow->RemoveObserver(m_observerTag);
+        m_observerTag = 0;
+    }
+
 	const auto callback =
 		vtkSmartPointer<vtkWidgetOverlayCallback>::New();
 	callback->setWidget(this);
