@@ -87,6 +87,7 @@ void asclepios::gui::Widget2D::initData()
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::render()
 {
+        m_renderAbortedDueToMissingContext = false;
         auto* const renderWindow = m_qtvtkWidget ? m_qtvtkWidget->GetRenderWindow() : nullptr;
         if (m_qtvtkWidget && m_vtkWidget && renderWindow)
         {
@@ -99,8 +100,18 @@ void asclepios::gui::Widget2D::render()
 
                 if (!m_series || !m_image)
                 {
+                        const auto trigger = m_lastRenderRequestSource.isEmpty()
+                                ? QStringLiteral("unknown")
+                                : m_lastRenderRequestSource;
                         qCWarning(lcWidget2D)
-                                << "Render aborted due to missing series/image context.";
+                                << "Render aborted due to missing series/image context."
+                                << "seriesMissing" << (m_series == nullptr)
+                                << "imageMissing" << (m_image == nullptr)
+                                << "trigger" << trigger
+                                << "seriesPtr" << static_cast<const void*>(m_series)
+                                << "imagePtr" << static_cast<const void*>(m_image);
+                        m_isImageLoaded = false;
+                        m_renderAbortedDueToMissingContext = true;
                         return;
                 }
 
