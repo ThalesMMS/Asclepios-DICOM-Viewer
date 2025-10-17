@@ -11,13 +11,9 @@
 #include <QString>
 #include <QVector>
 #include <QRgb>
-#include <QVTKOpenGLNativeWidget.h>
-#include <vtkEventQtSlotConnect.h>
 #include <dcmtk/dcmimgle/diutils.h>
 #include "ui_widget2d.h"
 #include "dcmtkoverlaywidget.h"
-#include "vtkwidget2d.h"
-#include "vtkwidgetbase.h"
 #include "widgetbase.h"
 
 #include <memory>
@@ -36,10 +32,8 @@ namespace asclepios::gui
                 ~Widget2D() = default;
 
 		//getters
-		[[nodiscard]] QVTKOpenGLNativeWidget* getWidgetOpenGLNative() const { return m_qtvtkWidget; }
-		[[nodiscard]] vtkWidgetBase* getWidgetVTK() const { return m_vtkWidget.get(); }
-		[[nodiscard]] QScrollBar* getScrollBar() const { return m_scroll; }
-                [[nodiscard]] QFuture<void> getFuture() const { return m_future; }
+                [[nodiscard]] QScrollBar* getScrollBar() const { return m_scroll; }
+                void waitForPendingTasks() const;
                 void setRenderRequestSource(const QString& t_source) { m_lastRenderRequestSource = t_source; }
                 [[nodiscard]] QString getRenderRequestSource() const { return m_lastRenderRequestSource; }
                 [[nodiscard]] bool wasRenderAbortedDueToMissingContext() const
@@ -53,10 +47,6 @@ namespace asclepios::gui
                 }
 
                 void render() override;
-
-        signals:
-                void imageReaderInitialized();
-                void imageReaderFailed(const QString& t_message);
 
         struct PresentationState
         {
@@ -114,25 +104,18 @@ namespace asclepios::gui
                 void onActivateWidget(const bool& t_flag);
                 void onApplyTransformation(const transformationType& t_type);
                 void onRefreshScrollValues(core::Series* t_series, core::Image* t_image);
-                void onChangeScrollValue(vtkObject* t_obj, unsigned long t_index, void*, void*) const;
                 void onSetMaximized() const;
-                void onRenderFailed(const QString& t_message);
                 void onImagesLoaded();
 
         private slots :
                 void onChangeImage(int t_index);
-                void onRenderFinished();
 
-	protected:
-		void closeEvent(QCloseEvent* t_event) override;
+        protected:
+                void closeEvent(QCloseEvent* t_event) override;
 
-	private:
+        private:
                 Ui::Widget2D m_ui = {};
-                QVTKOpenGLNativeWidget* m_qtvtkWidget = {};
-                std::unique_ptr<vtkWidgetBase> m_vtkWidget = {};
-                vtkSmartPointer<vtkEventQtSlotConnect> m_scrollConnection = {};
                 QScrollBar* m_scroll = {};
-                QFuture<void> m_future = {};
                 std::unique_ptr<QFutureWatcher<std::shared_ptr<DcmtkImagePresenter>>> m_imageLoadWatcher = {};
                 QFuture<std::shared_ptr<DcmtkImagePresenter>> m_imageLoadFuture = {};
                 QPointer<QLabel> m_errorLabel = {};
@@ -141,7 +124,6 @@ namespace asclepios::gui
                 std::shared_ptr<DcmtkImagePresenter> m_dcmtkPresenter = {};
                 QString m_lastRenderRequestSource = {};
                 bool m_renderAbortedDueToMissingContext = false;
-                bool m_useDcmtkPipeline = true;
                 bool m_dcmtkRenderingActive = false;
                 int m_currentFrameIndex = 0;
                 PresentationState m_presentationState = {};
@@ -153,18 +135,15 @@ namespace asclepios::gui
                 void connectScroll();
                 void startLoadingAnimation() override;
                 void disconnectScroll() const;
-                void resetWidgets();
                 void resetScroll();
                 void setScrollStyle() const;
                 void setSliderValues(const int& t_min, const int& t_max, const int& t_value) override;
-                static void initImageReader(vtkWidget2D* t_vtkWidget2D, Widget2D* t_self);
                 [[nodiscard]] bool canScrollBeRefreshed(const int& t_patientIndex, const int& t_studyIndex,
                                                         const int& t_seriesIndex) const;
                 [[nodiscard]] bool startDcmtkRendering();
                 void ensureImageLabel();
                 void ensureOverlayWidget();
                 void applyLoadedFrame(const int t_index);
-                void renderWithVtk();
                 static std::shared_ptr<DcmtkImagePresenter> loadFramesWithDcmtk(core::Series* t_series, core::Image* t_image);
                 static const QVector<QRgb>& grayscaleColorTable();
                 void handleDcmtkFailure(const QString& t_reason);

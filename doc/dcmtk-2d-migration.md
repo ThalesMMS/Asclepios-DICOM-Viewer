@@ -1,32 +1,26 @@
-# DCMTK 2D Rendering Migration Plan
+# DCMTK 2D Rendering Migration Notes
 
-## Proof of concept summary
-- O `Widget2D` agora tenta carregar estudos 2D com DCMTK antes de recorrer ao pipeline VTK. O fluxo inicia em `startDcmtkRendering`, que aciona o carregamento assíncrono das fatias e oculta o widget VTK até a conclusão.【F:src/gui/widget2d.cpp†L129-L189】【F:src/gui/widget2d.cpp†L191-L243】
-- As imagens são decodificadas em `loadFramesWithDcmtk`, reutilizando janela/nivel e a mesma lógica de geração de bitmap usada nas miniaturas, mas convertendo diretamente para `QImage`/`QPixmap` em memória.【F:src/gui/widget2d.cpp†L45-L127】
-- Após o término do carregamento, `onImagesLoaded` popula o `QLabel` dedicado, sincroniza a barra de rolagem vertical e preserva o fallback para VTK quando necessário.【F:src/gui/widget2d.cpp†L245-L298】【F:src/gui/widget2d.cpp†L300-L352】
+## Estado atual
+- `Widget2D::render()` agora valida apenas o contexto clínico e delega o carregamento de frames a `startDcmtkRendering()`, eliminando o acoplamento obrigatório com `QVTKOpenGLNativeWidget` e `vtkWidget2D`.
+- Os widgets Qt (rótulo de imagem, overlay e barra de rolagem) são criados e mantidos independentemente de qualquer renderizador VTK, simplificando o caminho padrão para exibição de séries com DCMTK.【F:src/gui/widget2d.cpp†L969-L1052】【F:src/gui/widget2d.cpp†L1016-L1084】
+- Operações assíncronas ficam restritas ao `QFutureWatcher` de carregamento DCMTK; o controlador de widgets aguarda essas tarefas via `Widget2D::waitForPendingTasks()` em vez de depender de futures VTK.【F:src/gui/widget2d.cpp†L189-L214】【F:src/gui/widgetscontroller.cpp†L72-L80】
 
-## Pontos de integração
-### Window/Level
-- O protótipo aplica `WindowCenter`/`WindowWidth` diretamente na conversão DCMTK, garantindo paridade com o VTK e com o gerador de miniaturas.【F:src/gui/widget2d.cpp†L69-L107】
-- A infraestrutura de VTK ainda usa `WindowLevelFilter` para aplicar LUTs e inversão, e precisará ser substituída por um estágio equivalente na nova pilha antes de desativar o VTK.【F:src/gui/windowlevelfilter.cpp†L1-L62】
+## Passos ao portar funcionalidades
+1. **Preparar o estado inicial**: chamar `initData()`/`initView()` para garantir que o rótulo de imagem e a barra de rolagem estejam anexados ao layout. Assegure-se de não reinstanciar widgets VTK durante o ciclo de vida padrão.【F:src/gui/widget2d.cpp†L988-L1014】
+2. **Reutilizar o apresentador DCMTK**: carregar frames via `DcmtkImagePresenter::load` e consumir `applyLoadedFrame()` para refletir janelas/níveis e transformações. Qualquer novo filtro deve operar sobre `Widget2D::PresentationState`.
+3. **Sincronizar navegação**: utilizar `setSliderValues()` e `connectScroll()` para manter a barra de rolagem em sincronia com `m_currentFrameIndex`. Ajustes de importadores devem chamar `onRefreshScrollValues()` para atualizar overlays.【F:src/gui/widget2d.cpp†L1124-L1167】
+4. **Atualizar overlays**: invocar `ensureOverlayWidget()` e `updateDcmtkOverlay()` ao introduzir novos metadados exibidos na tela. O overlay é aplicado diretamente sobre o `QLabel` escalado.【F:src/gui/widget2d.cpp†L812-L857】
+5. **Resetar estado**: `resetView()` limpa presenter, animação e overlays sem tocar em recursos VTK. Use antes de descartar a aba ou ao alternar estudos.【F:src/gui/widget2d.cpp†L1086-L1120】
 
-### Navegação por slices
-- A barra de rolagem agora controla tanto o VTK quanto o novo renderizador via `connectScroll`/`onChangeImage`, permitindo alternância transparente entre os pipelines.【F:src/gui/widget2d.cpp†L368-L407】【F:src/gui/widget2d.cpp†L409-L440】
-- O pipeline DCMTK produz todas as fatias antecipadamente, preservando o número de quadros esperado para séries multi-frame e conjuntos single-frame.【F:src/gui/widget2d.cpp†L45-L127】
+## Validação recomendada
+- **Casos de teste**: importar séries single-frame, multi-frame e datasets comprimidos (JPEG/LZW) garantindo que `onImagesLoaded()` exiba o frame correto, com janelas padrão preservadas.【F:src/gui/widget2d.cpp†L861-L919】
+- **Transformações**: aplicar flip, rotate e invert pelo toolbar; confirmar que `applyLoadedFrame()` atualiza tanto a imagem quanto o overlay com os novos estados.【F:src/gui/widget2d.cpp†L732-L784】
+- **Rolagem**: mover a barra vertical rapidamente para aferir fluidez e certificar que `waitForPendingTasks()` é chamado antes de destruir a aba (evita threads órfãs).【F:src/gui/widget2d.cpp†L189-L214】
+- **Erros controlados**: interromper o carregamento (ex. remover arquivo do disco) para acionar `handleDcmtkFailure()` e verificar mensagens amigáveis e limpeza do overlay.【F:src/gui/widget2d.cpp†L821-L847】
 
-### Overlays e interações adicionais
-- As sobreposições (número da imagem, ângulo de rotação, etc.) continuam atualizadas pelo `vtkWidget2D::updateOvelayImageNumber`, exigindo um equivalente no pipeline Qt/DCMTK para manter paridade visual.【F:src/gui/vtkwidget2d.cpp†L311-L341】【F:src/gui/vtkwidget2dinteractorstyle.cpp†L114-L233】
-- Interações avançadas (zoom, pan, invert) permanecem no `vtkWidget2DInteractorStyle`; será necessário reimplementar essas transformações usando eventos Qt ao migrar completamente.【F:src/gui/vtkwidget2dinteractorstyle.cpp†L48-L233】
+## Fallback VTK legado
+O pipeline VTK para 2D não faz mais parte do caminho de execução padrão. Para depuração pontual:
+- Consulte `tools/vtk-fallback.md`, que descreve como levantar um utilitário isolado (fora do build principal) reutilizando `vtkWidget2D` e `QVTKOpenGLNativeWidget` para comparar renderizações.
+- O utilitário não é compilado automaticamente; mantenha-o em um clone/branch separado para evitar dependências transitivas em builds DCMTK-only.
 
-## Estratégia de migração incremental
-1. **Encapsular o carregamento DCMTK**: evoluir `loadFramesWithDcmtk` para retornar um objeto de volume com metadados de escala e overlays, permitindo compartilhar dados entre 2D, MPR e 3D sem duplicação.【F:src/gui/widget2d.cpp†L45-L127】
-2. **Unificar controles de janela/nível**: introduzir um serviço comum que atualize simultaneamente o `QImage` e os filtros VTK enquanto ambos coexistirem; remover gradualmente dependências de `WindowLevelFilter` quando o serviço Qt estiver pronto.【F:src/gui/windowlevelfilter.cpp†L1-L62】【F:src/gui/widget2d.cpp†L69-L107】
-3. **Migrar interações e overlays**: replicar `updateOvelayImageNumber` e os gestos do interactor VTK usando eventos Qt, garantindo que `onChangeImage`, rolagem e transformações tenham a mesma assinatura de sinal/slot para evitar regressões.【F:src/gui/widget2d.cpp†L368-L440】【F:src/gui/vtkwidget2d.cpp†L311-L341】
-4. **Ativar modo híbrido controlável**: manter o fallback automático (`handleDcmtkFailure`) até que métricas de desempenho e testes de fidelidade assegurem paridade; oferecer uma flag de build ou preferência avançada para alternar entre pipelines durante o período de transição.【F:src/gui/widget2d.cpp†L300-L352】【F:src/gui/widget2d.cpp†L129-L189】
-5. **Retirar VTK gradualmente**: após validar controles e overlays, substituir as chamadas em `renderWithVtk` por adaptadores para o novo pipeline e remover dependências de VTK no widget 2D, preservando VTK apenas nas telas MPR/3D.【F:src/gui/widget2d.cpp†L191-L243】
-
-## Validação de desempenho e fidelidade
-- **Conjuntos de estudos**: testar séries single-frame (CR, DX), multi-frame (MR, CT volumétrico), compressão JPEG e dados com inversão de escala para capturar variações de pixel data.【F:src/gui/widget2d.cpp†L45-L127】
-- **Comparação visual**: capturar o mesmo índice de slice via pipeline DCMTK e VTK (usando o fallback manual) e comparar histogramas/valores médios por pixel para garantir que a aplicação de janela/nivel permaneça idêntica.【F:src/gui/widget2d.cpp†L69-L107】【F:src/gui/widget2d.cpp†L191-L243】
-- **Métricas de desempenho**: instrumentar o tempo de decodificação e a latência de troca de slice em `startDcmtkRendering` e `onImagesLoaded`, registrando os tempos para cada modalidade antes de desligar o VTK.【F:src/gui/widget2d.cpp†L129-L189】【F:src/gui/widget2d.cpp†L245-L298】
-- **Critérios de saída**: somente desativar o pipeline VTK após garantir paridade de janela/nivel, overlays, interações e tempo de resposta (p95) equivalente ou superior ao baseline VTK em estudos representativos.【F:src/gui/widget2d.cpp†L129-L243】【F:src/gui/vtkwidget2d.cpp†L311-L341】
+Documente observações e regressões nesta página para manter o histórico da migração DCMTK sincronizado com futuras evoluções.

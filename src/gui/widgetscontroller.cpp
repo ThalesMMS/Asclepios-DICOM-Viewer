@@ -74,12 +74,14 @@ void asclepios::gui::WidgetsController::resetData() const
 //-----------------------------------------------------------------------------
 void asclepios::gui::WidgetsController::waitForRenderingThreads() const
 {
-	const auto widgets = m_widgetsRepository->getWidgets();
-	for (const auto& widget : widgets)
-	{
-		dynamic_cast<Widget2D*>(widget->getTabbedWidget())
-			->getFuture().waitForFinished();
-	}
+        const auto widgets = m_widgetsRepository->getWidgets();
+        for (const auto& widget : widgets)
+        {
+                if (auto* widget2d = dynamic_cast<Widget2D*>(widget->getTabbedWidget()))
+                {
+                        widget2d->waitForPendingTasks();
+                }
+        }
 }
 
 //-----------------------------------------------------------------------------
