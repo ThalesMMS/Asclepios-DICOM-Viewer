@@ -273,35 +273,68 @@ void asclepios::gui::vtkWidgetDICOM::setVolume(const std::shared_ptr<core::Dicom
 		qCCritical(lcWidgetDicom) << "Scalar array missing after rescale.";
 	}
 
+	const char* scalarName = "Scalars";
+	if (scalarsAfter && scalarsAfter->GetName())
+	{
+		scalarName = scalarsAfter->GetName();
+	}
+	else if (scalarsBefore && scalarsBefore->GetName())
+	{
+		scalarName = scalarsBefore->GetName();
+	}
+	if (m_volume && m_volume->ImageData && m_volume->ImageData->GetPointData())
+	{
+		m_volume->ImageData->GetPointData()->SetActiveScalars(scalarName);
+	}
+	vtkDataArray* activeScalars = (m_volume && m_volume->ImageData && m_volume->ImageData->GetPointData())
+		                             ? m_volume->ImageData->GetPointData()->GetScalars()
+		                             : nullptr;
+	const int scalarType = activeScalars ? activeScalars->GetDataType() : VTK_DOUBLE;
+	const int scalarComponents = activeScalars ? activeScalars->GetNumberOfComponents() : 1;
 	if (m_inputProducer)
 	{
 		m_inputProducer->SetOutput(m_volume->ImageData);
+		vtkInformation* producerInfo = m_inputProducer->GetOutputInformation(0);
+		if (producerInfo)
+		{
+			vtkDataObject::SetPointDataActiveScalarInfo(
+				producerInfo,
+				scalarType,
+				scalarComponents);
+			vtkDataObject::SetActiveAttribute(
+				producerInfo,
+				vtkDataObject::FIELD_ASSOCIATION_POINTS,
+				scalarName,
+				vtkDataSetAttributes::SCALARS);
+		}
 		m_inputProducer->Modified();
+		m_inputProducer->UpdateInformation();
 	}
-	m_windowLevelColors->Update();
+	if (m_windowLevelColors)
+	{
+		m_windowLevelColors->SetInputArrayToProcess(
+			0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, scalarName);
+		if (vtkInformation* inputInfo = m_windowLevelColors->GetInputInformation())
+		{
+			vtkDataObject::SetPointDataActiveScalarInfo(
+				inputInfo,
+				scalarType,
+				scalarComponents);
+			vtkDataObject::SetActiveAttribute(
+				inputInfo,
+				vtkDataObject::FIELD_ASSOCIATION_POINTS,
+				scalarName,
+				vtkDataSetAttributes::SCALARS);
+		}
+		m_windowLevelColors->UpdateInformation();
+		m_windowLevelColors->Update();
+	}
 	if (m_imageActor)
 	{
-		m_imageActor->SetInputData(m_windowLevelColors->GetOutput());
+		m_imageActor->SetInputData(m_windowLevelColors ? m_windowLevelColors->GetOutput() : nullptr);
 		m_imageActor->SetVisibility(1);
 		m_imageActor->Modified();
 	}
-	if (scalarsAfter)
-	{
-		const char* scalarName = scalarsAfter->GetName() ? scalarsAfter->GetName() : "Scalars";
-		m_windowLevelColors->SetInputArrayToProcess(
-			0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, scalarName);
-		vtkDataObject::SetPointDataActiveScalarInfo(
-			m_windowLevelColors->GetInputInformation(),
-			scalarsAfter->GetDataType(),
-			scalarsAfter->GetNumberOfComponents());
-	}
-	else
-	{
-		m_windowLevelColors->SetInputArrayToProcess(
-			0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, "Scalars");
-	}
-	m_windowLevelColors->UpdateInformation();
-
 	m_imageActor->SetVisibility(1);
 
 	setInitialWindowWidthCenter();
