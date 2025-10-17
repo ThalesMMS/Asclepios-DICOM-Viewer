@@ -229,7 +229,8 @@ namespace
                 return static_cast<double>(value);
         }
 
-        void allocateImageData(DicomVolume& volume, int width, int height, int depth)
+        void allocateImageData(DicomVolume& volume, int width, int height, int depth,
+                               int requestedScalarType = VTK_VOID)
         {
                 if (!volume.ImageData)
                 {
@@ -251,7 +252,13 @@ namespace
                 const double expectedMinimum = std::min(transformedMinimum, transformedMaximum);
                 const double expectedMaximum = std::max(transformedMinimum, transformedMaximum);
 
-                int scalarType = VTK_VOID;
+                int scalarType = requestedScalarType;
+
+                if (scalarType != VTK_VOID)
+                {
+                        volume.ImageData->AllocateScalars(scalarType, volume.PixelInfo.SamplesPerPixel);
+                        return;
+                }
 
                 const double unsignedMaximum = computeUnsignedMaximum(bitsAllocated);
                 const bool requiresSignedRange = !isSigned &&
@@ -809,24 +816,32 @@ std::shared_ptr<DicomVolume> DicomVolumeLoader::loadSeries(const std::vector<std
 	std::sort(sortedSlices.begin(), sortedSlices.end(),
 	          [](const auto& lhs, const auto& rhs) { return lhs.first < rhs.first; });
 
-	auto volume = std::make_shared<DicomVolume>();
-	volume->Geometry = reference.Geometry;
-	volume->PixelInfo = reference.PixelInfo;
-	volume->Metadata = reference.Metadata;
-	volume->NumberOfFrames = static_cast<int>(sortedSlices.size());
-	normalizeDirections(volume->Geometry);
-	populateDirectionMatrixInternal(*volume);
+        auto volume = std::make_shared<DicomVolume>();
+        volume->Geometry = reference.Geometry;
+        volume->PixelInfo = reference.PixelInfo;
+        volume->Metadata = reference.Metadata;
+        volume->NumberOfFrames = static_cast<int>(sortedSlices.size());
+        normalizeDirections(volume->Geometry);
+        populateDirectionMatrixInternal(*volume);
 
-	if (sortedSlices.size() >= 2)
-	{
-		const double spacing =
-			std::abs(sortedSlices[1].first - sortedSlices.front().first);
-		if (spacing > epsilon)
-		{
-			volume->Geometry.Spacing[2] = spacing;
-		}
-	}
-	allocateImageData(*volume, width, height, volume->NumberOfFrames);
+        auto* referencePointData = reference.ImageData->GetPointData();
+        auto* referenceScalars = referencePointData ? referencePointData->GetScalars() : nullptr;
+        if (!referenceScalars)
+        {
+                throw std::runtime_error("Reference slice missing scalar data while assembling volume.");
+        }
+        const int referenceScalarType = referenceScalars->GetDataType();
+
+        if (sortedSlices.size() >= 2)
+        {
+                const double spacing =
+                        std::abs(sortedSlices[1].first - sortedSlices.front().first);
+                if (spacing > epsilon)
+                {
+                        volume->Geometry.Spacing[2] = spacing;
+                }
+        }
+        allocateImageData(*volume, width, height, volume->NumberOfFrames, referenceScalarType);
 
         for (int index = 0; index < volume->NumberOfFrames; ++index)
         {
