@@ -179,6 +179,7 @@
   <ItemGroup>
     <ClInclude Include="corneroverlay.h" />
     <ClInclude Include="dcmtkoverlaywidget.h" />
+    <QtMoc Include="dcmtkoverlaywidget.h" />
     <QtMoc Include="guiframe.h" />
     <QtMoc Include="framelesswindow.h" />
     <QtMoc Include="filemenu.h" />
