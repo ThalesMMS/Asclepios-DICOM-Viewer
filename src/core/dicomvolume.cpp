@@ -16,8 +16,12 @@
 #include <dcmtk/dcmdata/dcvrtm.h>
 #include <dcmtk/dcmdata/dcrledrg.h>
 #include <dcmtk/dcmdata/dcpixel.h>
+#include <dcmtk/dcmdata/dcxfer.h>
 #include <dcmtk/ofstd/ofstring.h>
 #include <dcmtk/dcmimgle/diutils.h>
+
+#include <QLoggingCategory>
+#include <QString>
 
 #include <vtkDataArray.h>
 #include <vtkDataObject.h>
@@ -31,6 +35,8 @@ using asclepios::core::DicomTag;
 using asclepios::core::DicomVolume;
 using asclepios::core::DicomVolumeLoader;
 using DicomGeometry = asclepios::core::DicomGeometry;
+
+Q_LOGGING_CATEGORY(lcDicomVolumeLoader, "asclepios.core.dicomvolume")
 
 namespace
 {
@@ -468,14 +474,115 @@ namespace
 
 std::shared_ptr<DicomVolume> DicomVolumeLoader::loadImage(const std::string& path)
 {
-	return loadSingleFile(path);
+        return loadSingleFile(path);
+}
+
+bool DicomVolumeLoader::diagnoseStudy(const std::string& path)
+{
+        const auto qPath = QString::fromStdString(path);
+        qCInfo(lcDicomVolumeLoader)
+                << "Running diagnostic load for" << qPath;
+
+        DcmFileFormat file;
+        const OFCondition status = file.loadFile(path.c_str());
+        if (status.bad())
+        {
+                qCWarning(lcDicomVolumeLoader)
+                        << "Diagnostic failed to open" << qPath
+                        << ":" << status.text();
+                return false;
+        }
+
+        auto* dataset = file.getDataset();
+        if (!dataset)
+        {
+                qCWarning(lcDicomVolumeLoader)
+                        << "Diagnostic dataset missing for" << qPath;
+                return false;
+        }
+
+        const DcmXfer originalXfer(dataset->getOriginalXfer());
+        qCInfo(lcDicomVolumeLoader)
+                << "Original transfer syntax:"
+                << QString::fromLatin1(originalXfer.getXferName())
+                << "encapsulated:" << static_cast<bool>(originalXfer.isEncapsulated());
+
+        DcmElement* pixelElement = nullptr;
+        if (dataset->findAndGetElement(DCM_PixelData, pixelElement).good() && pixelElement)
+        {
+                if (auto* pixelData = dynamic_cast<DcmPixelData*>(pixelElement))
+                {
+                        E_TransferSyntax repType = EXS_Unknown;
+                        const DcmRepresentationParameter* repParam = nullptr;
+                        pixelData->getOriginalRepresentationKey(repType, repParam);
+                        const DcmXfer pixelXfer(repType);
+                        qCInfo(lcDicomVolumeLoader)
+                                << "Pixel data representation:"
+                                << QString::fromLatin1(pixelXfer.getXferName())
+                                << "encapsulated:" << pixelData->isEncapsulated();
+                }
+                else
+                {
+                        qCWarning(lcDicomVolumeLoader)
+                                << "Diagnostic pixel data element had unexpected type for"
+                                << qPath;
+                }
+        }
+        else
+        {
+                qCWarning(lcDicomVolumeLoader)
+                        << "Diagnostic pixel data lookup failed for" << qPath;
+        }
+
+        try
+        {
+                const auto volume = loadImage(path);
+                if (!volume || !volume->ImageData)
+                {
+                        qCWarning(lcDicomVolumeLoader)
+                                << "Diagnostic load produced empty image data for" << qPath;
+                        return false;
+                }
+
+                int dimensions[3] = {0, 0, 0};
+                volume->ImageData->GetDimensions(dimensions);
+                if (dimensions[0] <= 0 || dimensions[1] <= 0 || dimensions[2] <= 0)
+                {
+                        qCWarning(lcDicomVolumeLoader)
+                                << "Diagnostic load reported invalid dimensions for"
+                                << qPath
+                                << dimensions[0] << dimensions[1] << dimensions[2];
+                        return false;
+                }
+
+                qCInfo(lcDicomVolumeLoader)
+                        << "Diagnostic load succeeded. Dimensions:"
+                        << dimensions[0] << dimensions[1] << dimensions[2];
+                return true;
+        }
+        catch (const std::exception& ex)
+        {
+                qCCritical(lcDicomVolumeLoader)
+                        << "Diagnostic load failed for"
+                        << qPath
+                        << ":" << ex.what();
+        }
+        catch (...)
+        {
+                qCCritical(lcDicomVolumeLoader)
+                        << "Diagnostic load failed for"
+                        << qPath
+                        << ": unknown exception.";
+        }
+
+        return false;
 }
 
 std::shared_ptr<DicomVolume> DicomVolumeLoader::loadSeries(const std::vector<std::string>& slicePaths)
 {
-	if (slicePaths.empty())
-	{
-		throw std::runtime_error("Cannot load DICOM series: no slice paths provided.");
+        if (slicePaths.empty())
+        {
+                throw std::runtime_error("Cannot load DICOM series: no slice paths provided.");
 	}
 
 	std::vector<std::shared_ptr<DicomVolume>> slices;

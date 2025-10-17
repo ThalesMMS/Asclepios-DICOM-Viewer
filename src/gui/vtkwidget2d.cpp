@@ -66,13 +66,19 @@ void asclepios::gui::vtkWidget2D::initImageReader()
 		qCCritical(lcVtkWidget2D) << "initImageReader aborted: image is null.";
 		throw std::runtime_error("image is null!");
 	}
-	CodecRegistrationGuard guard;
-	m_volume = m_image->getDicomVolume();
-	if (!m_volume || !m_volume->ImageData)
-	{
-		qCCritical(lcVtkWidget2D) << "initImageReader failed: DICOM volume unavailable.";
-		throw std::runtime_error("Failed to load image volume.");
-	}
+        CodecRegistrationGuard guard;
+        QString failureReason;
+        m_volume = m_image->getDicomVolume(&failureReason);
+        if (!m_volume || !m_volume->ImageData)
+        {
+                const auto message = failureReason.isEmpty()
+                        ? QStringLiteral("Failed to load image volume.")
+                        : failureReason;
+                qCCritical(lcVtkWidget2D)
+                        << "initImageReader failed: DICOM volume unavailable."
+                        << "reason:" << message;
+                throw std::runtime_error(message.toStdString());
+        }
 	qCInfo(lcVtkWidget2D)
 		<< "Loaded DICOM volume with dimensions"
 		<< m_volume->ImageData->GetDimensions()[0]

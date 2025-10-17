@@ -2,6 +2,7 @@
 
 #include <memory>
 
+#include <QString>
 #include <vtkSmartPointer.h>
 #include "utils.h"
 #include "dicomvolume.h"
@@ -36,7 +37,8 @@ namespace asclepios::core
 		[[nodiscard]] export double getPixelSpacingY() const { return m_pixelSpacingY; }
 		[[nodiscard]] export int getInstanceNumber() const { return m_instanceNumber; }
 		
-		[[nodiscard]] export std::shared_ptr<DicomVolume> getDicomVolume() const;
+                [[nodiscard]] export std::shared_ptr<DicomVolume> getDicomVolume(
+                        QString* t_failureReason = nullptr) const;
 
 		//setters
 		void export setParentObject(Series* t_parent) { m_parent = t_parent; }
