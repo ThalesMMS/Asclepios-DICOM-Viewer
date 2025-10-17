@@ -386,6 +386,19 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 	if ((mutatedSpacing || cameraInvalid) && ImageActor)
 	{
 		renderer->ResetCamera();
+		const double* resetPosition = camera->GetPosition();
+		const double* resetFocalPoint = camera->GetFocalPoint();
+		qCInfo(lcWidgetDicom)
+			<< "Reset camera due to"
+			<< (mutatedSpacing ? "spacing update" : "invalid camera")
+			<< "position"
+			<< resetPosition[0]
+			<< resetPosition[1]
+			<< resetPosition[2]
+			<< "focal"
+			<< resetFocalPoint[0]
+			<< resetFocalPoint[1]
+			<< resetFocalPoint[2];
 	}
 
 	if (InteractorStyle && InteractorStyle->GetAutoAdjustCameraClippingRange())
@@ -396,6 +409,22 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 
 	double bounds[6] = {0.0};
 	ImageActor->GetBounds(bounds);
+	const int* displayExtent = ImageActor->GetDisplayExtent();
+	qCInfo(lcWidgetDicom)
+		<< "Actor bounds"
+		<< bounds[0]
+		<< bounds[1]
+		<< bounds[2]
+		<< bounds[3]
+		<< bounds[4]
+		<< bounds[5]
+		<< "display extent"
+		<< displayExtent[0]
+		<< displayExtent[1]
+		<< displayExtent[2]
+		<< displayExtent[3]
+		<< displayExtent[4]
+		<< displayExtent[5];
 	const double spos = bounds[SliceOrientation * 2];
 	const double cpos = camera->GetPosition()[SliceOrientation];
 	const double range = std::fabs(spos - cpos);
@@ -442,6 +471,19 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 	}
 
 	camera->SetClippingRange(nearPlane, farPlane);
+	double computedNear = 0.0;
+	double computedFar = 0.0;
+	camera->GetClippingRange(computedNear, computedFar);
+	qCInfo(lcWidgetDicom)
+		<< "Clipping range set to"
+		<< computedNear
+		<< computedFar
+		<< "range baseline"
+		<< range
+		<< "axis spacing"
+		<< avgSpacing
+		<< "parallel scale"
+		<< camera->GetParallelScale();
 	m_lastClippingRange = range;
 	m_lastAvgSpacing = avgSpacing;
 	m_lastSliceOrientation = SliceOrientation;
