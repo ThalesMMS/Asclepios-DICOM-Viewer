@@ -403,11 +403,11 @@ namespace
 			volume->PixelInfo.RescaleSlope = 1.0;
 			volume->PixelInfo.RescaleIntercept = 0.0;
 		}
-		else if (isSigned)
-		{
-			std::vector<Sint16> frameBuffer(sliceSize);
-			Uint32 startFragment = 0;
-			OFString decompressedColorModel;
+                else if (isSigned)
+                {
+                        std::vector<Sint16> frameBuffer(sliceSize);
+                        Uint32 startFragment = 0;
+                        OFString decompressedColorModel;
 
 			for (unsigned long frame = 0; frame < numberOfFrames; ++frame)
 			{
@@ -426,19 +426,22 @@ namespace
 						" (" + std::string(status.text()) + ')');
 				}
 
-				copyFrameData(
-					frameBuffer.data(),
-					volume->ImageData,
-					static_cast<int>(frame),
-					volume->PixelInfo,
-					width,
-					height);
-			}
-		}
-		else
-		{
-			std::vector<Uint16> frameBuffer(sliceSize);
-			Uint32 startFragment = 0;
+                                copyFrameData(
+                                        frameBuffer.data(),
+                                        volume->ImageData,
+                                        static_cast<int>(frame),
+                                        volume->PixelInfo,
+                                        width,
+                                        height);
+                        }
+
+                        volume->PixelInfo.RescaleSlope = 1.0;
+                        volume->PixelInfo.RescaleIntercept = 0.0;
+                }
+                else
+                {
+                        std::vector<Uint16> frameBuffer(sliceSize);
+                        Uint32 startFragment = 0;
 			OFString decompressedColorModel;
 
 			for (unsigned long frame = 0; frame < numberOfFrames; ++frame)
@@ -458,18 +461,21 @@ namespace
 						" (" + std::string(status.text()) + ')');
 				}
 
-				copyFrameData(
-					frameBuffer.data(),
-					volume->ImageData,
-					static_cast<int>(frame),
-					volume->PixelInfo,
-					width,
-					height);
-			}
-		}
+                                copyFrameData(
+                                        frameBuffer.data(),
+                                        volume->ImageData,
+                                        static_cast<int>(frame),
+                                        volume->PixelInfo,
+                                        width,
+                                        height);
+                        }
 
-		return volume;
-	}
+                        volume->PixelInfo.RescaleSlope = 1.0;
+                        volume->PixelInfo.RescaleIntercept = 0.0;
+                }
+
+                return volume;
+        }
 }
 
 std::shared_ptr<DicomVolume> DicomVolumeLoader::loadImage(const std::string& path)

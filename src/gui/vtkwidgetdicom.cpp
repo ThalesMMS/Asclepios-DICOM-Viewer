@@ -85,16 +85,22 @@ void asclepios::gui::vtkWidgetDICOM::setVolume(const std::shared_ptr<core::Dicom
 		return;
 	}
 
-	qCInfo(lcWidgetDicom)
-		<< "Configuring DICOM widget with dimensions"
-		<< m_volume->ImageData->GetDimensions()[0]
-		<< m_volume->ImageData->GetDimensions()[1]
-		<< m_volume->ImageData->GetDimensions()[2];
+        qCInfo(lcWidgetDicom)
+                << "Configuring DICOM widget with dimensions"
+                << m_volume->ImageData->GetDimensions()[0]
+                << m_volume->ImageData->GetDimensions()[1]
+                << m_volume->ImageData->GetDimensions()[2];
 
-	copyDirectionToImage(m_volume->ImageData, m_volume->Direction);
-        applySlopeIntercept(m_volume->ImageData, m_volume->PixelInfo);
-        m_volume->PixelInfo.RescaleSlope = 1.0;
-        m_volume->PixelInfo.RescaleIntercept = 0.0;
+        copyDirectionToImage(m_volume->ImageData, m_volume->Direction);
+        const bool requiresRescale =
+                (std::abs(m_volume->PixelInfo.RescaleSlope - 1.0) > epsilon) ||
+                (std::abs(m_volume->PixelInfo.RescaleIntercept) > epsilon);
+        if (requiresRescale)
+        {
+                applySlopeIntercept(m_volume->ImageData, m_volume->PixelInfo);
+                m_volume->PixelInfo.RescaleSlope = 1.0;
+                m_volume->PixelInfo.RescaleIntercept = 0.0;
+        }
 
         Superclass::SetInputData(m_volume->ImageData);
 	SetSliceOrientationToXY();
