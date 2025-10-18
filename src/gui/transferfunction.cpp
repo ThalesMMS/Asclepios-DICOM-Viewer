@@ -18,6 +18,52 @@ void asclepios::gui::TransferFunction::setMaximumIntensityProjectionFunction(con
 }
 
 //-----------------------------------------------------------------------------
+void asclepios::gui::TransferFunction::initializeDefaultCurve()
+{
+	m_colorFunction = vtkSmartPointer<vtkColorTransferFunction>::New();
+	m_opacityFunction = vtkSmartPointer<vtkPiecewiseFunction>::New();
+	m_colors.clear();
+	m_opacities.clear();
+
+	const auto addColorPoint = [this](const int value, const double red, const double green, const double blue)
+	{
+		auto colorPoint = std::make_unique<Color>();
+		colorPoint->setValue(value);
+		colorPoint->setRed(red);
+		colorPoint->setGreen(green);
+		colorPoint->setBlue(blue);
+		m_colorFunction->AddRGBPoint(colorPoint->getValue(),
+			colorPoint->getRed(),
+			colorPoint->getGreen(),
+			colorPoint->getBlue());
+		m_colors.emplace_back(std::move(colorPoint));
+	};
+
+	const auto addOpacityPoint = [this](const int value, const double alpha)
+	{
+		auto opacityPoint = std::make_unique<Opacity>();
+		opacityPoint->setValue(value);
+		opacityPoint->setAlpha(alpha);
+		m_opacityFunction->AddPoint(opacityPoint->getValue(), opacityPoint->getAlpha());
+		m_opacities.emplace_back(std::move(opacityPoint));
+	};
+
+	addColorPoint(0, 0.0, 0.0, 0.0);
+	addColorPoint(1000, 1.0, 1.0, 1.0);
+
+	addOpacityPoint(0, 0.0);
+	addOpacityPoint(1000, 1.0);
+
+	m_window = 0;
+	m_level = 0;
+	m_ambient = 0.1;
+	m_diffuse = 0.9;
+	m_specular = 1.0;
+	m_specularPower = 64;
+	m_shade = true;
+}
+
+//-----------------------------------------------------------------------------
 void asclepios::gui::TransferFunction::updateWindowLevel(const double& t_window, const double& t_level)
 {
 	m_window += t_window;

@@ -81,6 +81,7 @@ namespace asclepios::gui
 		void setSpecularPower(const double& t_specularPower) { m_specularPower = t_specularPower; }
 		void setHasShade(const bool& t_shade) { m_shade = t_shade; }
 		void setMaximumIntensityProjectionFunction(const int& t_windowCenter, const int& t_windowWidth);
+		void initializeDefaultCurve();
 
 		void updateWindowLevel(const double& t_window, const double& t_level);
 		void loadFilterFromFile(const QString& t_fileName);

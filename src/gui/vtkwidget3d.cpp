@@ -20,6 +20,7 @@ void asclepios::gui::vtkWidget3D::initWidget()
         m_renderer = vtkSmartPointer<vtkRenderer>::New();
         m_volume = vtkSmartPointer<vtkVolume>::New();
         m_transferFunction = std::make_unique<TransferFunction>();
+        m_transferFunction->initializeDefaultCurve();
         qCInfo(lcVtkWidget3D) << "Initialized vtkWidget3D components"
                               << "renderWindow" << m_renderWindows[0].GetPointer()
                               << "mapper" << m_mapper.GetPointer()
@@ -135,6 +136,19 @@ std::tuple<int, int> asclepios::gui::vtkWidget3D::getWindowLevel(const std::shar
         return std::make_tuple(static_cast<int>(std::round(window)), static_cast<int>(std::round(level)));
 }
 
+void asclepios::gui::vtkWidget3D::applyWindowLevelToTransferFunction(const int window, const int level)
+{
+        if (!m_transferFunction)
+        {
+                return;
+        }
+        const auto currentWindow = m_transferFunction->getWindow();
+        const auto currentLevel = m_transferFunction->getLevel();
+        const auto windowDelta = static_cast<double>(window) - static_cast<double>(currentWindow);
+        const auto levelDelta = static_cast<double>(level) - static_cast<double>(currentLevel);
+        m_transferFunction->updateWindowLevel(windowDelta, levelDelta);
+}
+
 //-----------------------------------------------------------------------------
 void asclepios::gui::vtkWidget3D::setFilter(const QString& t_filePath)
 {
@@ -152,14 +166,15 @@ void asclepios::gui::vtkWidget3D::setFilter(const QString& t_filePath)
                         return;
                 }
                 m_lastVolumeError.clear();
+                const auto [window, level] = getWindowLevel(m_volumeData);
                 if (t_filePath == "MIP")
                 {
                         m_transferFunction.reset();
                         m_transferFunction = std::make_unique<TransferFunction>();
+                        m_transferFunction->initializeDefaultCurve();
                         m_mapper->SetBlendMode(vtkVolumeMapper::MAXIMUM_INTENSITY_BLEND);
                         m_transferFunction->setMaximumIntensityProjectionFunction(0, 0);
-                        const auto [window, level] = getWindowLevel(m_volumeData);
-                        m_transferFunction->updateWindowLevel(window, level);
+                        applyWindowLevelToTransferFunction(window, level);
                         qCInfo(lcVtkWidget3D) << "setFilter() applied MIP" << "imageIdx"
                                               << (m_image ? m_image->getIndex() : -1);
                 }
@@ -167,6 +182,7 @@ void asclepios::gui::vtkWidget3D::setFilter(const QString& t_filePath)
                 {
                         m_mapper->SetBlendMode(vtkVolumeMapper::COMPOSITE_BLEND);
                         m_transferFunction->loadFilterFromFile(t_filePath);
+                        applyWindowLevelToTransferFunction(window, level);
                         qCInfo(lcVtkWidget3D) << "setFilter() loaded filter" << t_filePath
                                               << "seriesUid"
                                               << (m_series ? QString::fromStdString(m_series->getUID()) : QStringLiteral("n/a"));
@@ -201,8 +217,9 @@ void asclepios::gui::vtkWidget3D::render()
                               << "seriesUid" << (m_series ? QString::fromStdString(m_series->getUID()) : QStringLiteral("n/a"))
                               << "imageIdx" << (m_image ? m_image->getIndex() : -1);
         m_mapper->SetInputData(m_volumeData->ImageData);
-        m_transferFunction->updateWindowLevel(window, level);
+        applyWindowLevelToTransferFunction(window, level);
         m_volume->SetMapper(m_mapper);
+        updateFilter();
         if (m_volumeData->Direction)
         {
                 m_volume->SetUserMatrix(m_volumeData->Direction);
