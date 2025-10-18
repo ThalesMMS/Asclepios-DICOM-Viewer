@@ -8,7 +8,9 @@
 #include <QLabel>
 #include <QPointer>
 #include <QResizeEvent>
+#include <QPoint>
 #include <QString>
+#include <QSize>
 #include <QVector>
 #include <QRgb>
 #include <dcmtk/dcmimgle/diutils.h>
@@ -113,6 +115,7 @@ namespace asclepios::gui
 
         protected:
                 void closeEvent(QCloseEvent* t_event) override;
+                bool eventFilter(QObject* t_watched, QEvent* t_event) override;
 
         private:
                 Ui::Widget2D m_ui = {};
@@ -128,6 +131,13 @@ namespace asclepios::gui
                 bool m_dcmtkRenderingActive = false;
                 int m_currentFrameIndex = 0;
                 PresentationState m_presentationState = {};
+                QImage m_cachedFrame = {};
+                QSize m_lastDisplaySize = {};
+                double m_manualZoomFactor = 1.0;
+                bool m_windowLevelDragging = false;
+                QPoint m_lastMousePosition = {};
+                double m_initialWindowCenter = 0.0;
+                double m_initialWindowWidth = 1.0;
 
                 void initView() override;
                 void initData() override;
@@ -144,6 +154,7 @@ namespace asclepios::gui
                 [[nodiscard]] bool startDcmtkRendering();
                 void ensureImageLabel();
                 void ensureOverlayWidget();
+                void refreshDisplayedFrame(bool t_updateOverlay);
                 void applyLoadedFrame(const int t_index);
                 static std::shared_ptr<DcmtkImagePresenter> loadFramesWithDcmtk(asclepios::core::Series* t_series, asclepios::core::Image* t_image);
                 static const QVector<QRgb>& grayscaleColorTable();
@@ -151,5 +162,7 @@ namespace asclepios::gui
                 void updateDcmtkOverlay(const QImage& t_frameImage, int t_frameIndex);
                 void hideDcmtkOverlay();
                 void resizeEvent(QResizeEvent* t_event) override;
+                void adjustFrameByStep(int t_step);
+                void resetWindowLevel();
         };
 }

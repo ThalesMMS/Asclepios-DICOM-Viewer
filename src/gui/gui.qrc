@@ -27,6 +27,7 @@
         <file>res/maximize-button2.png</file>
         <file>res/minimize-button1.png</file>
         <file>res/arrow_icon.png</file>
+        <file>res/overlays.json</file>
         <file alias="loading">res/loading_gif.gif</file>
         <file alias="closeTab">res/closeTab_icon.png</file>
     </qresource>

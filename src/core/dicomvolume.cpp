@@ -1,4 +1,5 @@
 #include "dicomvolume.h"
+#include "smartdjdecoderregistration.h"
 
 #include <algorithm>
 #include <cmath>
@@ -43,6 +44,23 @@ Q_LOGGING_CATEGORY(lcDicomVolumeLoader, "asclepios.core.dicomvolume")
 namespace
 {
 	constexpr double epsilon = 1e-8;
+
+        class CodecRegistrationGuard
+        {
+        public:
+                CodecRegistrationGuard()
+                {
+                        asclepios::core::SmartDJDecoderRegistration::registerCodecs();
+                }
+
+                ~CodecRegistrationGuard()
+                {
+                        asclepios::core::SmartDJDecoderRegistration::cleanup();
+                }
+
+                CodecRegistrationGuard(const CodecRegistrationGuard&) = delete;
+                CodecRegistrationGuard& operator=(const CodecRegistrationGuard&) = delete;
+        };
 
 	[[nodiscard]] std::string extractString(DcmItem& dataset, const DcmTagKey& tag)
 	{
@@ -668,6 +686,7 @@ namespace
 
 std::shared_ptr<DicomVolume> DicomVolumeLoader::loadImage(const std::string& path)
 {
+        CodecRegistrationGuard guard;
         return loadSingleFile(path);
 }
 
@@ -788,6 +807,7 @@ bool DicomVolumeLoader::diagnoseStudy(const std::string& path)
 
 std::shared_ptr<DicomVolume> DicomVolumeLoader::loadSeries(const std::vector<std::string>& slicePaths)
 {
+        CodecRegistrationGuard guard;
         if (slicePaths.empty())
         {
                 throw std::runtime_error("Cannot load DICOM series: no slice paths provided.");

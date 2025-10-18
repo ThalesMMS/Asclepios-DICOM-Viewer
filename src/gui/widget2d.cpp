@@ -4,10 +4,13 @@
 #include <QFocusEvent>
 #include <QHBoxLayout>
 #include <QLoggingCategory>
+#include <QMouseEvent>
 #include <QPixmap>
+#include <QSignalBlocker>
 #include <QSizePolicy>
 #include <QTransform>
 #include <QString>
+#include <QWheelEvent>
 #include <QtConcurrent/QtConcurrent>
 #include <dcmtk/dcmimgle/dcmimage.h>
 #include <dcmtk/dcmdata/dcdeftag.h>
@@ -684,6 +687,12 @@ bool asclepios::gui::Widget2D::startDcmtkRendering()
                 m_dcmtkPresenter.reset();
                 m_presentationState = {};
                 m_currentFrameIndex = 0;
+                m_cachedFrame = {};
+                m_lastDisplaySize = {};
+                m_manualZoomFactor = 1.0;
+                m_windowLevelDragging = false;
+                m_initialWindowCenter = 0.0;
+                m_initialWindowWidth = 1.0;
                 m_imageLoadFuture = QtConcurrent::run(loadFramesWithDcmtk, m_series, m_image);
                 m_imageLoadWatcher->setFuture(m_imageLoadFuture);
                 qCInfo(lcWidget2D)
@@ -711,7 +720,13 @@ void asclepios::gui::Widget2D::ensureImageLabel()
                 m_imageLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
                 m_imageLabel->setMinimumSize(QSize(1, 1));
                 m_imageLabel->setStyleSheet(QStringLiteral("background-color: black;"));
+                m_imageLabel->setMouseTracking(true);
                 m_imageLabel->hide();
+        }
+        if (m_imageLabel)
+        {
+                m_imageLabel->removeEventFilter(this);
+                m_imageLabel->installEventFilter(this);
         }
         ensureOverlayWidget();
 }
@@ -733,6 +748,33 @@ void asclepios::gui::Widget2D::ensureOverlayWidget()
         }
 }
 
+void asclepios::gui::Widget2D::refreshDisplayedFrame(const bool t_updateOverlay)
+{
+        if (!m_imageLabel || m_cachedFrame.isNull())
+        {
+                return;
+        }
+
+        const double clampedZoom = std::clamp(m_manualZoomFactor, 0.1, 8.0);
+        m_manualZoomFactor = clampedZoom;
+        const QSize baseSize = m_imageLabel->size();
+        const int targetWidth = std::max(1, static_cast<int>(std::lround(static_cast<double>(baseSize.width()) * clampedZoom)));
+        const int targetHeight = std::max(1, static_cast<int>(std::lround(static_cast<double>(baseSize.height()) * clampedZoom)));
+
+        QPixmap pixmap = QPixmap::fromImage(m_cachedFrame);
+        pixmap = pixmap.scaled(QSize(targetWidth, targetHeight), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        m_lastDisplaySize = pixmap.size();
+        m_imageLabel->setPixmap(pixmap);
+        if (!m_imageLabel->isVisible())
+        {
+                m_imageLabel->show();
+        }
+        if (t_updateOverlay)
+        {
+                updateDcmtkOverlay(m_cachedFrame, m_currentFrameIndex);
+        }
+}
+
 void asclepios::gui::Widget2D::applyLoadedFrame(const int t_index)
 {
         if (!m_dcmtkRenderingActive || !m_dcmtkPresenter || !m_dcmtkPresenter->isValid() || !m_imageLabel)
@@ -751,18 +793,15 @@ void asclepios::gui::Widget2D::applyLoadedFrame(const int t_index)
         const QImage frameImage = m_dcmtkPresenter->renderFrame(clampedIndex, m_presentationState);
         if (frameImage.isNull())
         {
+                m_cachedFrame = {};
+                m_lastDisplaySize = {};
                 m_imageLabel->clear();
                 hideDcmtkOverlay();
                 return;
         }
 
-        const auto pixmap = QPixmap::fromImage(frameImage);
-        m_imageLabel->setPixmap(pixmap.scaled(m_imageLabel->size(), Qt::KeepAspectRatio,
-                Qt::SmoothTransformation));
-        if (!m_imageLabel->isVisible())
-        {
-                m_imageLabel->show();
-        }
+        m_cachedFrame = frameImage;
+        refreshDisplayedFrame(false);
         updateDcmtkOverlay(frameImage, clampedIndex);
 }
 
@@ -800,14 +839,11 @@ void asclepios::gui::Widget2D::updateDcmtkOverlay(const QImage& t_frameImage, in
         m_overlayWidget->setWindowLevel(windowCenter, windowWidth);
 
         double zoomFactor = 1.0;
-        if (!t_frameImage.isNull() && t_frameImage.width() > 0 && t_frameImage.height() > 0)
+        if (!t_frameImage.isNull() && t_frameImage.width() > 0 && t_frameImage.height() > 0
+                && m_lastDisplaySize.width() > 0 && m_lastDisplaySize.height() > 0)
         {
-                const QSize scaledSize = t_frameImage.size().scaled(m_imageLabel->size(), Qt::KeepAspectRatio);
-                if (scaledSize.width() > 0 && t_frameImage.width() > 0)
-                {
-                        zoomFactor = static_cast<double>(scaledSize.width())
-                                / static_cast<double>(t_frameImage.width());
-                }
+                zoomFactor = static_cast<double>(m_lastDisplaySize.width())
+                        / static_cast<double>(t_frameImage.width());
         }
         m_overlayWidget->setZoom(zoomFactor);
         m_overlayWidget->setGeometry(m_imageLabel->rect());
@@ -824,6 +860,43 @@ void asclepios::gui::Widget2D::hideDcmtkOverlay()
         }
         m_overlayWidget->clear();
         m_overlayWidget->hide();
+        m_windowLevelDragging = false;
+}
+
+void asclepios::gui::Widget2D::adjustFrameByStep(const int t_step)
+{
+        if (!m_dcmtkRenderingActive || !m_dcmtkPresenter || t_step == 0)
+        {
+                return;
+        }
+        const int frameCount = std::max(m_dcmtkPresenter->frameCount(), 0);
+        if (frameCount <= 0)
+        {
+                return;
+        }
+        const int targetIndex = std::clamp(m_currentFrameIndex + t_step, 0, frameCount - 1);
+        if (targetIndex == m_currentFrameIndex)
+        {
+                return;
+        }
+        if (m_scroll)
+        {
+                const QSignalBlocker blocker(m_scroll);
+                m_scroll->setValue(targetIndex);
+        }
+        applyLoadedFrame(targetIndex);
+}
+
+void asclepios::gui::Widget2D::resetWindowLevel()
+{
+        if (!m_dcmtkPresenter)
+        {
+                return;
+        }
+        const auto initialState = m_dcmtkPresenter->initialState();
+        m_presentationState.WindowCenter = initialState.WindowCenter;
+        m_presentationState.WindowWidth = initialState.WindowWidth;
+        applyLoadedFrame(m_currentFrameIndex);
 }
 
 void asclepios::gui::Widget2D::handleDcmtkFailure(const QString& t_reason)
@@ -841,6 +914,12 @@ void asclepios::gui::Widget2D::handleDcmtkFailure(const QString& t_reason)
         m_dcmtkRenderingActive = false;
         m_dcmtkPresenter.reset();
         m_presentationState = {};
+        m_cachedFrame = {};
+        m_lastDisplaySize = {};
+        m_manualZoomFactor = 1.0;
+        m_windowLevelDragging = false;
+        m_initialWindowCenter = 0.0;
+        m_initialWindowWidth = 1.0;
         hideDcmtkOverlay();
         if (m_imageLabel)
         {
@@ -931,10 +1010,174 @@ void asclepios::gui::Widget2D::onImagesLoaded()
                         : nullptr;
                 m_overlayWidget->setMetadata(metadata);
         }
+        m_manualZoomFactor = 1.0;
+        m_cachedFrame = {};
+        m_lastDisplaySize = {};
+        m_windowLevelDragging = false;
+        m_initialWindowCenter = m_presentationState.WindowCenter;
+        m_initialWindowWidth = std::max(m_presentationState.WindowWidth, 1.0);
         applyLoadedFrame(targetIndex);
         m_imageLoadFuture = {};
         qCInfo(lcWidget2D) << "DCMTK prototype rendering completed." << "frames:"
                            << m_dcmtkPresenter->frameCount();
+}
+
+bool asclepios::gui::Widget2D::eventFilter(QObject* t_watched, QEvent* t_event)
+{
+        if (t_watched == m_imageLabel && t_event)
+        {
+                const bool renderActive = m_dcmtkRenderingActive && m_dcmtkPresenter && m_dcmtkPresenter->isValid();
+                switch (t_event->type())
+                {
+                case QEvent::Wheel:
+                {
+                        if (!renderActive)
+                        {
+                                break;
+                        }
+                        auto* wheelEvent = static_cast<QWheelEvent*>(t_event);
+                        const QPoint angleDelta = wheelEvent->angleDelta();
+                        if (wheelEvent->modifiers().testFlag(Qt::ControlModifier))
+                        {
+                                double relativeStep = 0.0;
+                                if (angleDelta.y() != 0)
+                                {
+                                        relativeStep = static_cast<double>(angleDelta.y()) / 120.0;
+                                }
+                                else if (angleDelta.x() != 0)
+                                {
+                                        relativeStep = static_cast<double>(angleDelta.x()) / 120.0;
+                                }
+                                if (relativeStep == 0.0)
+                                {
+                                        relativeStep = (angleDelta.y() > 0 || angleDelta.x() > 0)
+                                                ? 1.0
+                                                : ((angleDelta.y() < 0 || angleDelta.x() < 0) ? -1.0 : 0.0);
+                                }
+                                if (relativeStep != 0.0)
+                                {
+                                        const double scaleStep = 0.1;
+                                        m_manualZoomFactor = std::clamp(
+                                                m_manualZoomFactor + scaleStep * relativeStep,
+                                                0.1,
+                                                8.0);
+                                        refreshDisplayedFrame(true);
+                                }
+                        }
+                        else
+                        {
+                                int steps = 0;
+                                if (angleDelta.y() != 0)
+                                {
+                                        steps = angleDelta.y() / 120;
+                                        if (steps == 0)
+                                        {
+                                                steps = angleDelta.y() > 0 ? 1 : -1;
+                                        }
+                                }
+                                else if (angleDelta.x() != 0)
+                                {
+                                        steps = angleDelta.x() / 120;
+                                        if (steps == 0)
+                                        {
+                                                steps = angleDelta.x() > 0 ? 1 : -1;
+                                        }
+                                }
+                                if (steps != 0)
+                                {
+                                        adjustFrameByStep(-steps);
+                                }
+                        }
+                        wheelEvent->accept();
+                        return true;
+                }
+                case QEvent::MouseButtonPress:
+                {
+                        if (!renderActive)
+                        {
+                                break;
+                        }
+                        auto* mouseEvent = static_cast<QMouseEvent*>(t_event);
+                        if (mouseEvent->button() == Qt::LeftButton)
+                        {
+                                m_windowLevelDragging = true;
+                                m_lastMousePosition = mouseEvent->pos();
+                                const auto initialState = m_dcmtkPresenter->initialState();
+                                if (m_presentationState.WindowWidth <= 0.0)
+                                {
+                                        m_presentationState.WindowWidth = initialState.WindowWidth;
+                                        m_presentationState.WindowCenter = initialState.WindowCenter;
+                                }
+                                m_initialWindowCenter = m_presentationState.WindowCenter;
+                                m_initialWindowWidth = std::max(m_presentationState.WindowWidth, 1.0);
+                                mouseEvent->accept();
+                                break;
+                        }
+                        if (mouseEvent->button() == Qt::MiddleButton)
+                        {
+                                m_manualZoomFactor = 1.0;
+                                refreshDisplayedFrame(true);
+                                mouseEvent->accept();
+                                return true;
+                        }
+                        break;
+                }
+                case QEvent::MouseMove:
+                {
+                        if (!renderActive || !m_windowLevelDragging)
+                        {
+                                break;
+                        }
+                        auto* mouseEvent = static_cast<QMouseEvent*>(t_event);
+                        const QPoint delta = mouseEvent->pos() - m_lastMousePosition;
+                        const double referenceWidth = std::max(m_initialWindowWidth, 1.0);
+                        const double widthChange = static_cast<double>(delta.x()) * (referenceWidth / 300.0);
+                        const double centerChange = static_cast<double>(-delta.y()) * (referenceWidth / 300.0);
+                        m_presentationState.WindowWidth = std::max(1.0, m_initialWindowWidth + widthChange);
+                        m_presentationState.WindowCenter = m_initialWindowCenter + centerChange;
+                        applyLoadedFrame(m_currentFrameIndex);
+                        mouseEvent->accept();
+                        return true;
+                }
+                case QEvent::MouseButtonRelease:
+                {
+                        if (!m_windowLevelDragging)
+                        {
+                                break;
+                        }
+                        m_windowLevelDragging = false;
+                        auto* mouseEvent = static_cast<QMouseEvent*>(t_event);
+                        mouseEvent->accept();
+                        break;
+                }
+                case QEvent::MouseButtonDblClick:
+                {
+                        if (!renderActive)
+                        {
+                                break;
+                        }
+                        auto* mouseEvent = static_cast<QMouseEvent*>(t_event);
+                        if (mouseEvent->button() == Qt::LeftButton
+                                && mouseEvent->modifiers().testFlag(Qt::ControlModifier))
+                        {
+                                resetWindowLevel();
+                                mouseEvent->accept();
+                                return true;
+                        }
+                        if (mouseEvent->button() == Qt::MiddleButton)
+                        {
+                                m_manualZoomFactor = 1.0;
+                                refreshDisplayedFrame(true);
+                                mouseEvent->accept();
+                                return true;
+                        }
+                        break;
+                }
+                default:
+                        break;
+                }
+        }
+        return WidgetBase::eventFilter(t_watched, t_event);
 }
 
 
@@ -1080,6 +1323,12 @@ void asclepios::gui::Widget2D::resetView()
         m_presentationState = {};
         m_dcmtkRenderingActive = false;
         m_currentFrameIndex = 0;
+        m_cachedFrame = {};
+        m_lastDisplaySize = {};
+        m_manualZoomFactor = 1.0;
+        m_windowLevelDragging = false;
+        m_initialWindowCenter = 0.0;
+        m_initialWindowWidth = 1.0;
         hideDcmtkOverlay();
         if (m_imageLoadWatcher && m_imageLoadWatcher->isRunning())
         {

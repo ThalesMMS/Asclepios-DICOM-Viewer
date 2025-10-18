@@ -227,30 +227,50 @@ void asclepios::gui::DcmtkOverlayWidget::loadConfiguration()
                 return;
         }
 
-        QFile file(QString::fromUtf8(overlaysInformation));
-        if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        const auto attemptLoad = [this](const QString& candidate, const bool logFailure) -> bool
         {
-                qCWarning(lcDcmtkOverlayWidget)
-                        << "Failed to open overlays configuration" << file.fileName() << file.errorString();
-                m_configurationLoaded = true;
-                return;
+                QFile source(candidate);
+                if (!source.open(QIODevice::ReadOnly | QIODevice::Text))
+                {
+                        if (logFailure)
+                        {
+                                qCWarning(lcDcmtkOverlayWidget)
+                                        << "Failed to open overlays configuration" << candidate << source.errorString();
+                        }
+                        return false;
+                }
+
+                const auto document = QJsonDocument::fromJson(source.readAll());
+                const auto root = document.object();
+                const auto overlays = root.value(QStringLiteral("Overlay")).toArray();
+                m_entries.clear();
+                m_entryTexts.clear();
+                m_entries.reserve(overlays.size());
+                for (const auto& item : overlays)
+                {
+                        const QJsonObject object = item.toObject();
+                        OverlayEntry entry;
+                        entry.TextBefore = object.value(QStringLiteral("TextBefore")).toString();
+                        entry.TextAfter = object.value(QStringLiteral("TextAfter")).toString();
+                        entry.TagKey = static_cast<unsigned int>(object.value(QStringLiteral("TagKey")).toInt());
+                        entry.Corner = object.value(QStringLiteral("Corner")).toInt();
+                        entry.Dynamic = isDynamicTag(entry.TagKey);
+                        m_entries.append(entry);
+                }
+                return true;
+        };
+
+        if (!attemptLoad(QString::fromUtf8(overlaysInformation), true))
+        {
+                if (!attemptLoad(QStringLiteral(":/res/overlays.json"), true))
+                {
+                        m_entries.clear();
+                        m_entryTexts.clear();
+                        m_configurationLoaded = true;
+                        return;
+                }
         }
 
-        const auto document = QJsonDocument::fromJson(file.readAll());
-        const auto root = document.object();
-        const auto overlays = root.value(QStringLiteral("Overlay")).toArray();
-        m_entries.reserve(overlays.size());
-        for (const auto& item : overlays)
-        {
-                const QJsonObject object = item.toObject();
-                OverlayEntry entry;
-                entry.TextBefore = object.value(QStringLiteral("TextBefore")).toString();
-                entry.TextAfter = object.value(QStringLiteral("TextAfter")).toString();
-                entry.TagKey = static_cast<unsigned int>(object.value(QStringLiteral("TagKey")).toInt());
-                entry.Corner = object.value(QStringLiteral("Corner")).toInt();
-                entry.Dynamic = isDynamicTag(entry.TagKey);
-                m_entries.append(entry);
-        }
         m_configurationLoaded = true;
 }
 
