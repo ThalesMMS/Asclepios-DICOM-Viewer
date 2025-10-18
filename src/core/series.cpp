@@ -5,6 +5,8 @@
 #include <QLoggingCategory>
 #include <QString>
 
+Q_LOGGING_CATEGORY(lcSeries, "asclepios.core.series")
+
 namespace
 {
         std::atomic<std::uint64_t> g_volumeCacheHits = 0;
@@ -29,8 +31,6 @@ namespace
                         << "hitRatePct" << hitRate;
         }
 }
-
-Q_LOGGING_CATEGORY(lcSeries, "asclepios.core.series")
 
 asclepios::core::Image* asclepios::core::Series::getNextSingleFrameImage(Image* t_image)
 {
