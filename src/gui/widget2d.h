@@ -14,6 +14,7 @@
 #include <QSize>
 #include <QVector>
 #include <QRgb>
+#include <QMutex>
 #include <dcmtk/dcmimgle/diutils.h>
 #include "ui_widget2d.h"
 #include "dcmtkoverlaywidget.h"
@@ -81,6 +82,7 @@ namespace asclepios::gui
                         double DefaultWindowWidth = 0.0;
                         DicomImage* SourceImage = nullptr;
                         int FrameIndex = 0;
+                        bool Cached = false;
                 };
 
                 DcmtkImagePresenter() = default;
@@ -89,10 +91,11 @@ namespace asclepios::gui
                 [[nodiscard]] bool isValid() const;
                 [[nodiscard]] int frameCount() const;
                 [[nodiscard]] PresentationState initialState() const { return m_initialState; }
-                [[nodiscard]] QImage renderFrame(int frameIndex, const PresentationState& state) const;
+                [[nodiscard]] QImage renderFrame(int frameIndex, const PresentationState& state);
                 [[nodiscard]] std::size_t totalAllocatedFrameBytes() const { return m_totalFrameBytes; }
                 [[nodiscard]] qint64 decodingDurationMs() const { return m_decodingDurationMs; }
                 void setDecodingDurationMs(qint64 t_duration) { m_decodingDurationMs = t_duration; }
+                void prefetchAllFrames();
 
                 static std::shared_ptr<DcmtkImagePresenter> load(asclepios::core::Series* t_series, asclepios::core::Image* t_image);
 
@@ -103,11 +106,13 @@ namespace asclepios::gui
                 std::vector<std::unique_ptr<DicomImage>> m_singleFrameImages = {};
                 std::size_t m_totalFrameBytes = 0;
                 qint64 m_decodingDurationMs = 0;
+                mutable QMutex m_cacheMutex = {};
 
                 static asclepios::core::DicomPixelInfo extractPixelInfo(const std::string& t_path, const asclepios::core::Image* t_fallbackImage);
                 void populateFromImage(asclepios::core::Image* t_image);
                 void populateFromSeries(asclepios::core::Series* t_series);
-                void appendFrame(DicomImage* t_sourceImage, const asclepios::core::DicomPixelInfo& t_pixelInfo, int t_frameIndex);
+                void initializeFrameBuffer(DicomImage* t_sourceImage, const asclepios::core::DicomPixelInfo& t_pixelInfo, int t_frameIndex);
+                void ensureFrameCached(FrameBuffer& t_frame);
                 [[nodiscard]] static std::size_t bytesPerSample(EP_Representation t_representation);
         };
 
@@ -120,6 +125,7 @@ namespace asclepios::gui
 
         private slots :
                 void onChangeImage(int t_index);
+                void onFramePrefetchFinished();
 
         protected:
                 void closeEvent(QCloseEvent* t_event) override;
@@ -150,6 +156,8 @@ namespace asclepios::gui
                 QElapsedTimer m_firstFrameTimer = {};
                 QElapsedTimer m_frameLoadTimer = {};
                 bool m_reportedFirstFrame = false;
+                QFuture<void> m_framePrefetchFuture = {};
+                std::unique_ptr<QFutureWatcher<void>> m_framePrefetchWatcher = {};
 
                 void initView() override;
                 void initData() override;

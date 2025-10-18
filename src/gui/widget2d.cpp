@@ -12,6 +12,7 @@
 #include <QString>
 #include <QWheelEvent>
 #include <QtConcurrent/QtConcurrent>
+#include <QMutexLocker>
 #include <dcmtk/dcmimgle/dcmimage.h>
 #include <dcmtk/dcmdata/dcdeftag.h>
 #include <dcmtk/dcmdata/dcfilefo.h>
@@ -45,28 +46,6 @@ const QVector<QRgb>& asclepios::gui::Widget2D::grayscaleColorTable()
                 }
         }
         return colorTable;
-}
-
-namespace
-{
-        template <typename T>
-        std::pair<double, double> computeRange(const T* data, const std::size_t count)
-        {
-                if (!data || count == 0)
-                {
-                        return {0.0, 0.0};
-                }
-
-                double minValue = static_cast<double>(data[0]);
-                double maxValue = minValue;
-                for (std::size_t index = 1; index < count; ++index)
-                {
-                        const double value = static_cast<double>(data[index]);
-                        minValue = std::min(minValue, value);
-                        maxValue = std::max(maxValue, value);
-                }
-                return {minValue, maxValue};
-        }
 }
 
 bool asclepios::gui::Widget2D::DcmtkImagePresenter::isValid() const
@@ -172,7 +151,7 @@ asclepios::core::DicomPixelInfo asclepios::gui::Widget2D::DcmtkImagePresenter::e
         return info;
 }
 
-void asclepios::gui::Widget2D::DcmtkImagePresenter::appendFrame(DicomImage* t_sourceImage,
+void asclepios::gui::Widget2D::DcmtkImagePresenter::initializeFrameBuffer(DicomImage* t_sourceImage,
         const asclepios::core::DicomPixelInfo& t_pixelInfo, const int t_frameIndex)
 {
         if (!t_sourceImage)
@@ -184,124 +163,57 @@ void asclepios::gui::Widget2D::DcmtkImagePresenter::appendFrame(DicomImage* t_so
                 throw std::runtime_error(DicomImage::getString(t_sourceImage->getStatus()));
         }
 
-        const auto* pixelData = t_sourceImage->getInterData();
-        if (!pixelData)
-        {
-                throw std::runtime_error("Intermediate DICOM pixel data unavailable");
-        }
-
-        const auto representation = pixelData->getRepresentation();
-        const auto bytesPerValue = bytesPerSample(representation);
-        if (bytesPerValue == 0)
-        {
-                throw std::runtime_error("Unsupported pixel representation encountered");
-        }
-
-        const auto width = static_cast<int>(t_sourceImage->getWidth());
-        const auto height = static_cast<int>(t_sourceImage->getHeight());
-        const auto planes = std::max(pixelData->getPlanes(), 1);
-        const auto* rawData = static_cast<const char*>(pixelData->getData());
-        if (!rawData)
-        {
-                throw std::runtime_error("Failed to access decompressed DICOM pixel data");
-        }
-
-        const std::size_t frameSampleCount = static_cast<std::size_t>(width)
-                * static_cast<std::size_t>(height)
-                * static_cast<std::size_t>(planes);
-        const std::size_t frameByteCount = frameSampleCount * bytesPerValue;
-        const std::size_t offset = static_cast<std::size_t>(t_frameIndex) * frameByteCount;
-
-        if (frameByteCount > static_cast<std::size_t>(std::numeric_limits<int>::max()))
-        {
-                throw std::runtime_error("Frame data exceeds supported size");
-        }
-
         FrameBuffer frame;
-        frame.Width = width;
-        frame.Height = height;
+        frame.PixelInfo = t_pixelInfo;
+        frame.SourceImage = t_sourceImage;
+        frame.FrameIndex = t_frameIndex;
+        frame.Width = static_cast<int>(t_sourceImage->getWidth());
+        frame.Height = static_cast<int>(t_sourceImage->getHeight());
         frame.SamplesPerPixel = (t_pixelInfo.SamplesPerPixel > 0)
                 ? t_pixelInfo.SamplesPerPixel
-                : planes;
-        frame.PixelInfo = t_pixelInfo;
-        frame.Representation = representation;
-        frame.FrameIndex = t_frameIndex;
-        frame.SourceImage = t_sourceImage;
-        frame.Data = QByteArray(rawData + static_cast<qint64>(offset),
-                static_cast<int>(frameByteCount));
-        const std::size_t frameBytes = static_cast<std::size_t>(frame.Data.size());
-        m_totalFrameBytes += frameBytes;
-        qCInfo(lcWidget2D)
-                << "[Telemetry] Frame allocation" << "frameIndex" << t_frameIndex
-                << "bytes" << static_cast<unsigned long long>(frameBytes)
-                << "accumulatedBytes" << static_cast<unsigned long long>(m_totalFrameBytes)
-                << "width" << frame.Width << "height" << frame.Height
-                << "samplesPerPixel" << frame.SamplesPerPixel;
+                : 1;
 
         if (frame.SamplesPerPixel <= 1)
         {
-                const std::size_t pixelCount = static_cast<std::size_t>(frame.Width)
-                        * static_cast<std::size_t>(frame.Height);
-
-                switch (representation)
+                double minValue = 0.0;
+                double maxValue = 0.0;
+                if (t_sourceImage->getMinMaxValues(minValue, maxValue))
                 {
-                case EPR_Sint8:
-                {
-                        const auto range = computeRange(reinterpret_cast<const std::int8_t*>(frame.Data.constData()), pixelCount);
-                        frame.MinValue = range.first;
-                        frame.MaxValue = range.second;
-                        break;
-                }
-                case EPR_Uint8:
-                {
-                        const auto range = computeRange(reinterpret_cast<const std::uint8_t*>(frame.Data.constData()), pixelCount);
-                        frame.MinValue = range.first;
-                        frame.MaxValue = range.second;
-                        break;
-                }
-                case EPR_Sint16:
-                {
-                        const auto range = computeRange(reinterpret_cast<const std::int16_t*>(frame.Data.constData()), pixelCount);
-                        frame.MinValue = range.first;
-                        frame.MaxValue = range.second;
-                        break;
-                }
-                case EPR_Uint16:
-                {
-                        const auto range = computeRange(reinterpret_cast<const std::uint16_t*>(frame.Data.constData()), pixelCount);
-                        frame.MinValue = range.first;
-                        frame.MaxValue = range.second;
-                        break;
-                }
-                case EPR_Sint32:
-                {
-                        const auto range = computeRange(reinterpret_cast<const std::int32_t*>(frame.Data.constData()), pixelCount);
-                        frame.MinValue = range.first;
-                        frame.MaxValue = range.second;
-                        break;
-                }
-                case EPR_Uint32:
-                {
-                        const auto range = computeRange(reinterpret_cast<const std::uint32_t*>(frame.Data.constData()), pixelCount);
-                        frame.MinValue = range.first;
-                        frame.MaxValue = range.second;
-                        break;
-                }
-                default:
-                        frame.MinValue = 0.0;
-                        frame.MaxValue = 0.0;
-                        break;
+                        frame.MinValue = minValue;
+                        frame.MaxValue = maxValue;
                 }
 
-                const double computedWidth = (t_pixelInfo.WindowWidth > 0.0)
-                        ? t_pixelInfo.WindowWidth
-                        : std::max(frame.MaxValue - frame.MinValue, 1.0);
-                const double computedCenter = (t_pixelInfo.WindowWidth > 0.0)
-                        ? t_pixelInfo.WindowCenter
-                        : (frame.MinValue + frame.MaxValue) * 0.5;
+                double windowCenter = t_pixelInfo.WindowCenter;
+                double windowWidth = t_pixelInfo.WindowWidth;
+                bool hasWindow = (windowWidth > 0.0);
 
-                frame.DefaultWindowWidth = std::max(computedWidth, 1.0);
-                frame.DefaultWindowCenter = computedCenter;
+                if (!hasWindow)
+                {
+                        double voiCenter = 0.0;
+                        double voiWidth = 0.0;
+                        if (t_sourceImage->getWindow(voiCenter, voiWidth))
+                        {
+                                windowCenter = voiCenter;
+                                windowWidth = voiWidth;
+                                hasWindow = (windowWidth > 0.0);
+                        }
+                }
+
+                if (!hasWindow && frame.MaxValue > frame.MinValue)
+                {
+                        windowWidth = frame.MaxValue - frame.MinValue;
+                        windowCenter = (frame.MaxValue + frame.MinValue) * 0.5;
+                        hasWindow = true;
+                }
+
+                if (!hasWindow)
+                {
+                        windowWidth = 1.0;
+                        windowCenter = 0.0;
+                }
+
+                frame.DefaultWindowWidth = std::max(windowWidth, 1.0);
+                frame.DefaultWindowCenter = windowCenter;
         }
         else
         {
@@ -322,6 +234,150 @@ void asclepios::gui::Widget2D::DcmtkImagePresenter::appendFrame(DicomImage* t_so
         }
 
         m_frames.append(std::move(frame));
+}
+
+void asclepios::gui::Widget2D::DcmtkImagePresenter::ensureFrameCached(FrameBuffer& t_frame)
+{
+        QMutexLocker locker(&m_cacheMutex);
+        if (t_frame.Cached)
+        {
+                return;
+        }
+
+        QElapsedTimer decodeTimer;
+        decodeTimer.start();
+
+        if (!t_frame.SourceImage)
+        {
+                throw std::runtime_error("Missing DICOM image context");
+        }
+        if (t_frame.SourceImage->getStatus() != EIS_Normal)
+        {
+                throw std::runtime_error(DicomImage::getString(t_frame.SourceImage->getStatus()));
+        }
+
+        const auto* pixelData = t_frame.SourceImage->getInterData();
+        if (!pixelData)
+        {
+                throw std::runtime_error("Intermediate DICOM pixel data unavailable");
+        }
+
+        const auto representation = pixelData->getRepresentation();
+        const auto bytesPerValue = bytesPerSample(representation);
+        if (bytesPerValue == 0)
+        {
+                throw std::runtime_error("Unsupported pixel representation encountered");
+        }
+
+        const auto width = static_cast<int>(t_frame.SourceImage->getWidth());
+        const auto height = static_cast<int>(t_frame.SourceImage->getHeight());
+        const auto planes = std::max(pixelData->getPlanes(), 1);
+        const auto* rawData = static_cast<const char*>(pixelData->getData());
+        if (!rawData)
+        {
+                throw std::runtime_error("Failed to access decompressed DICOM pixel data");
+        }
+
+        const std::size_t frameSampleCount = static_cast<std::size_t>(width)
+                * static_cast<std::size_t>(height)
+                * static_cast<std::size_t>(planes);
+        const std::size_t frameByteCount = frameSampleCount * bytesPerValue;
+        const std::size_t offset = static_cast<std::size_t>(t_frame.FrameIndex) * frameByteCount;
+
+        if (frameByteCount > static_cast<std::size_t>(std::numeric_limits<int>::max()))
+        {
+                throw std::runtime_error("Frame data exceeds supported size");
+        }
+
+        t_frame.Width = width;
+        t_frame.Height = height;
+        t_frame.SamplesPerPixel = (t_frame.PixelInfo.SamplesPerPixel > 0)
+                ? t_frame.PixelInfo.SamplesPerPixel
+                : planes;
+        t_frame.Representation = representation;
+        t_frame.Data = QByteArray(rawData + static_cast<qint64>(offset),
+                static_cast<int>(frameByteCount));
+
+        if (t_frame.SamplesPerPixel <= 1)
+        {
+                double minValue = t_frame.MinValue;
+                double maxValue = t_frame.MaxValue;
+                if (t_frame.SourceImage->getMinMaxValues(minValue, maxValue))
+                {
+                        t_frame.MinValue = minValue;
+                        t_frame.MaxValue = maxValue;
+                }
+
+                double windowCenter = t_frame.PixelInfo.WindowCenter;
+                double windowWidth = t_frame.PixelInfo.WindowWidth;
+                bool hasWindow = (windowWidth > 0.0);
+
+                if (!hasWindow)
+                {
+                        double voiCenter = 0.0;
+                        double voiWidth = 0.0;
+                        if (t_frame.SourceImage->getWindow(voiCenter, voiWidth))
+                        {
+                                windowCenter = voiCenter;
+                                windowWidth = voiWidth;
+                                hasWindow = (windowWidth > 0.0);
+                        }
+                }
+
+                if (!hasWindow && t_frame.MaxValue > t_frame.MinValue)
+                {
+                        windowWidth = t_frame.MaxValue - t_frame.MinValue;
+                        windowCenter = (t_frame.MaxValue + t_frame.MinValue) * 0.5;
+                        hasWindow = true;
+                }
+
+                t_frame.DefaultWindowWidth = std::max(windowWidth, 1.0);
+                t_frame.DefaultWindowCenter = windowCenter;
+        }
+        else
+        {
+                t_frame.MinValue = 0.0;
+                t_frame.MaxValue = 255.0;
+                t_frame.DefaultWindowWidth = 255.0;
+                t_frame.DefaultWindowCenter = 127.0;
+        }
+
+        t_frame.Cached = true;
+        const std::size_t frameBytes = static_cast<std::size_t>(t_frame.Data.size());
+        m_totalFrameBytes += frameBytes;
+        m_decodingDurationMs += decodeTimer.elapsed();
+
+        qCInfo(lcWidget2D)
+                << "[Telemetry] Frame cached" << "frameIndex" << t_frame.FrameIndex
+                << "bytes" << static_cast<unsigned long long>(frameBytes)
+                << "accumulatedBytes" << static_cast<unsigned long long>(m_totalFrameBytes)
+                << "width" << t_frame.Width << "height" << t_frame.Height
+                << "samplesPerPixel" << t_frame.SamplesPerPixel;
+}
+
+void asclepios::gui::Widget2D::DcmtkImagePresenter::prefetchAllFrames()
+{
+        for (auto& frame : m_frames)
+        {
+                try
+                {
+                        ensureFrameCached(frame);
+                }
+                catch (const std::exception& ex)
+                {
+                        qCWarning(lcWidget2D)
+                                << "Failed to prefetch frame" << frame.FrameIndex
+                                << ":" << ex.what();
+                        return;
+                }
+                catch (...)
+                {
+                        qCWarning(lcWidget2D)
+                                << "Failed to prefetch frame" << frame.FrameIndex
+                                << ": unknown error";
+                        return;
+                }
+        }
 }
 
 void asclepios::gui::Widget2D::DcmtkImagePresenter::populateFromImage(asclepios::core::Image* t_image)
@@ -350,13 +406,12 @@ void asclepios::gui::Widget2D::DcmtkImagePresenter::populateFromImage(asclepios:
         m_frames.reserve(m_frames.size() + availableFrames);
         for (int frameIndex = 0; frameIndex < availableFrames; ++frameIndex)
         {
-                appendFrame(m_multiFrameImage.get(), pixelInfo, frameIndex);
+                initializeFrameBuffer(m_multiFrameImage.get(), pixelInfo, frameIndex);
         }
         qCInfo(lcWidget2D)
-                << "[Telemetry] Multi-frame dataset decoded"
+                << "[Telemetry] Multi-frame dataset prepared"
                 << "path" << QString::fromStdString(t_image->getImagePath())
-                << "frames" << availableFrames
-                << "allocatedBytes" << static_cast<unsigned long long>(m_totalFrameBytes);
+                << "frames" << availableFrames;
 }
 
 void asclepios::gui::Widget2D::DcmtkImagePresenter::populateFromSeries(asclepios::core::Series* t_series)
@@ -389,14 +444,13 @@ void asclepios::gui::Widget2D::DcmtkImagePresenter::populateFromSeries(asclepios
                 }
 
                 const auto pixelInfo = extractPixelInfo(sourceImage->getImagePath(), sourceImage);
-                appendFrame(dicomImage.get(), pixelInfo, 0);
+                initializeFrameBuffer(dicomImage.get(), pixelInfo, 0);
                 m_singleFrameImages.push_back(std::move(dicomImage));
         }
         qCInfo(lcWidget2D)
-                << "[Telemetry] Single-frame series decoded"
+                << "[Telemetry] Single-frame series prepared"
                 << "seriesUid" << (t_series ? QString::fromStdString(t_series->getUID()) : QStringLiteral("n/a"))
-                << "images" << singleFrameImages.size()
-                << "allocatedBytes" << static_cast<unsigned long long>(m_totalFrameBytes);
+                << "images" << singleFrameImages.size();
 }
 
 std::shared_ptr<asclepios::gui::Widget2D::DcmtkImagePresenter> asclepios::gui::Widget2D::DcmtkImagePresenter::load(
@@ -421,14 +475,33 @@ std::shared_ptr<asclepios::gui::Widget2D::DcmtkImagePresenter> asclepios::gui::W
 }
 
 QImage asclepios::gui::Widget2D::DcmtkImagePresenter::renderFrame(const int frameIndex,
-        const PresentationState& state) const
+        const PresentationState& state)
 {
         if (frameIndex < 0 || frameIndex >= m_frames.size())
         {
                 return {};
         }
 
-        const auto& frame = m_frames.at(frameIndex);
+        FrameBuffer& frame = m_frames[frameIndex];
+        try
+        {
+                ensureFrameCached(frame);
+        }
+        catch (const std::exception& ex)
+        {
+                qCWarning(lcWidget2D)
+                        << "Failed to render frame" << frameIndex
+                        << ":" << ex.what();
+                return {};
+        }
+        catch (...)
+        {
+                qCWarning(lcWidget2D)
+                        << "Failed to render frame" << frameIndex
+                        << ": unknown error";
+                return {};
+        }
+
         if (frame.Width <= 0 || frame.Height <= 0)
         {
                 return {};
@@ -580,8 +653,10 @@ QImage asclepios::gui::Widget2D::DcmtkImagePresenter::renderFrame(const int fram
                         return image;
                 }
 
+                bool filledFromSourceImage = false;
                 if (frame.SourceImage)
                 {
+                        QMutexLocker locker(&m_cacheMutex);
                         const auto* rgbData = static_cast<const Uint8*>(
                                 frame.SourceImage->getOutputData(24, frame.FrameIndex, 0));
                         if (rgbData)
@@ -594,17 +669,19 @@ QImage asclepios::gui::Widget2D::DcmtkImagePresenter::renderFrame(const int fram
                                                 bytesPerLine);
                                 }
                                 frame.SourceImage->deleteOutputData();
+                                filledFromSourceImage = true;
                         }
-                        else if (!frame.Data.isEmpty())
+                }
+
+                if (!filledFromSourceImage && !frame.Data.isEmpty())
+                {
+                        const std::size_t bytesPerLine = static_cast<std::size_t>(frame.Width)
+                                * static_cast<std::size_t>(frame.SamplesPerPixel);
+                        for (int row = 0; row < frame.Height; ++row)
                         {
-                                const std::size_t bytesPerLine = static_cast<std::size_t>(frame.Width)
-                                        * static_cast<std::size_t>(frame.SamplesPerPixel);
-                                for (int row = 0; row < frame.Height; ++row)
-                                {
-                                        std::memcpy(image.scanLine(row),
-                                                frame.Data.constData() + static_cast<qint64>(row) * bytesPerLine,
-                                                bytesPerLine);
-                                }
+                                std::memcpy(image.scanLine(row),
+                                        frame.Data.constData() + static_cast<qint64>(row) * bytesPerLine,
+                                        bytesPerLine);
                         }
                 }
         }
@@ -664,6 +741,17 @@ bool asclepios::gui::Widget2D::startDcmtkRendering()
         qCInfo(lcWidget2D) << "Starting DCMTK-based 2D rendering prototype.";
         try
         {
+                if (m_framePrefetchFuture.isRunning())
+                {
+                        m_framePrefetchFuture.cancel();
+                        m_framePrefetchFuture.waitForFinished();
+                }
+                m_framePrefetchFuture = {};
+                if (m_framePrefetchWatcher)
+                {
+                        m_framePrefetchWatcher.reset();
+                }
+
                 const auto expectedFrames = m_image->getIsMultiFrame()
                         ? m_image->getNumberOfFrames()
                         : static_cast<int>(m_series->getSingleFrameImages().size());
@@ -986,6 +1074,16 @@ void asclepios::gui::Widget2D::resetWindowLevel()
 void asclepios::gui::Widget2D::handleDcmtkFailure(const QString& t_reason)
 {
         stopLoadingAnimation();
+        if (m_framePrefetchFuture.isRunning())
+        {
+                m_framePrefetchFuture.cancel();
+                m_framePrefetchFuture.waitForFinished();
+        }
+        m_framePrefetchFuture = {};
+        if (m_framePrefetchWatcher)
+        {
+                m_framePrefetchWatcher.reset();
+        }
         if (!t_reason.isEmpty())
         {
                 qCWarning(lcWidget2D) << "DCMTK prototype rendering failed:" << t_reason;
@@ -1039,7 +1137,6 @@ void asclepios::gui::Widget2D::handleDcmtkFailure(const QString& t_reason)
 
 void asclepios::gui::Widget2D::onImagesLoaded()
 {
-        stopLoadingAnimation();
         if (!m_imageLoadWatcher)
         {
                 return;
@@ -1063,6 +1160,7 @@ void asclepios::gui::Widget2D::onImagesLoaded()
 
         if (!presenter || !presenter->isValid())
         {
+                stopLoadingAnimation();
                 handleDcmtkFailure(tr("No frames decoded from the selected dataset."));
                 return;
         }
@@ -1118,9 +1216,56 @@ void asclepios::gui::Widget2D::onImagesLoaded()
         m_initialWindowCenter = m_presentationState.WindowCenter;
         m_initialWindowWidth = std::max(m_presentationState.WindowWidth, 1.0);
         applyLoadedFrame(targetIndex);
+        if (m_dcmtkPresenter && m_dcmtkPresenter->frameCount() > 1)
+        {
+                if (!m_framePrefetchWatcher)
+                {
+                        m_framePrefetchWatcher = std::make_unique<QFutureWatcher<void>>(this);
+                        Q_UNUSED(connect(m_framePrefetchWatcher.get(), &QFutureWatcher<void>::finished,
+                                this, &Widget2D::onFramePrefetchFinished));
+                }
+
+                auto presenterRef = m_dcmtkPresenter;
+                m_framePrefetchFuture = QtConcurrent::run([presenterRef]()
+                {
+                        try
+                        {
+                                presenterRef->prefetchAllFrames();
+                        }
+                        catch (const std::exception& ex)
+                        {
+                                qCWarning(lcWidget2D)
+                                        << "Background prefetch failed:" << ex.what();
+                        }
+                        catch (...)
+                        {
+                                qCWarning(lcWidget2D)
+                                        << "Background prefetch failed due to an unknown error.";
+                        }
+                });
+                m_framePrefetchWatcher->setFuture(m_framePrefetchFuture);
+        }
+        else
+        {
+                stopLoadingAnimation();
+        }
         m_imageLoadFuture = {};
         qCInfo(lcWidget2D) << "DCMTK prototype rendering completed." << "frames:"
                            << m_dcmtkPresenter->frameCount();
+}
+
+void asclepios::gui::Widget2D::onFramePrefetchFinished()
+{
+        stopLoadingAnimation();
+        m_framePrefetchFuture = {};
+        if (m_dcmtkPresenter)
+        {
+                qCInfo(lcWidget2D)
+                        << "[Telemetry] DCMTK prefetch completed"
+                        << "frames" << m_dcmtkPresenter->frameCount()
+                        << "allocatedBytes" << static_cast<unsigned long long>(m_dcmtkPresenter->totalAllocatedFrameBytes())
+                        << "decodingMs" << m_dcmtkPresenter->decodingDurationMs();
+        }
 }
 
 bool asclepios::gui::Widget2D::eventFilter(QObject* t_watched, QEvent* t_event)
@@ -1390,6 +1535,10 @@ void asclepios::gui::Widget2D::waitForPendingTasks() const
         if (m_imageLoadWatcher)
         {
                 m_imageLoadWatcher->waitForFinished();
+        }
+        if (m_framePrefetchFuture.isRunning())
+        {
+                const_cast<QFuture<void>&>(m_framePrefetchFuture).waitForFinished();
         }
 }
 
