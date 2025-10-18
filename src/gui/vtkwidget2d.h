@@ -18,7 +18,7 @@ namespace asclepios::gui
         {
         public:
                 vtkWidget2D();
-                ~vtkWidget2D() = default;
+                ~vtkWidget2D();
 
                 //getters
                 [[nodiscard]] vtkSmartPointer<vtkWidgetDICOM> getDCMWidget() const { return m_dcmWidget; }
@@ -29,6 +29,8 @@ namespace asclepios::gui
                 void setVolume(const std::shared_ptr<core::DicomVolume>& t_volume) { m_volume = t_volume; }
                 void setInteractor(const vtkSmartPointer<vtkRenderWindowInteractor>& t_interactor) override;
                 void setActiveTool(InteractionTool t_tool);
+                void publishBridgeProperty(Widget2D* t_widget);
+                static vtkWidget2D* findForContext(const core::Series* t_series, const core::Image* t_image);
 
                 void initImageReader();
                 void render() override;
@@ -48,6 +50,7 @@ namespace asclepios::gui
                 std::unique_ptr<vtkWidgetOverlay> m_widgetOverlay = {};
                 bool m_colorsInverted = false;
                 InteractionTool m_activeTool;
+                QPointer<Widget2D> m_bridgeTarget = {};
 
                 void initRenderingLayers();
                 /**

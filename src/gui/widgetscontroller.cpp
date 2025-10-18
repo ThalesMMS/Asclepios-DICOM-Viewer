@@ -274,13 +274,28 @@ void asclepios::gui::WidgetsController::connectVtkToolBridge(Widget2D* t_widget)
                 return;
         }
 
-        const QVariant property = t_widget->property(Widget2D::vtkWidgetPropertyName);
-        const auto rawValue = property.isValid()
+        QVariant property = t_widget->property(Widget2D::vtkWidgetPropertyName);
+        auto rawValue = property.isValid()
                 ? property.value<quintptr>()
                 : static_cast<quintptr>(0);
-        auto* const vtkWidget = rawValue != 0
+        auto* vtkWidget = rawValue != 0
                 ? reinterpret_cast<vtkWidget2D*>(rawValue)
                 : nullptr;
+
+        if (!vtkWidget)
+        {
+                if (auto* const candidate = vtkWidget2D::findForContext(t_widget->getSeries(), t_widget->getImage()))
+                {
+                        candidate->publishBridgeProperty(t_widget);
+                        property = t_widget->property(Widget2D::vtkWidgetPropertyName);
+                        rawValue = property.isValid()
+                                ? property.value<quintptr>()
+                                : static_cast<quintptr>(0);
+                        vtkWidget = rawValue != 0
+                                ? reinterpret_cast<vtkWidget2D*>(rawValue)
+                                : nullptr;
+                }
+        }
 
         auto bindingIt = m_vtkToolConnections.find(t_widget);
         const auto removeBinding = [this, &bindingIt]()
