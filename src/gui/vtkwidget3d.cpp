@@ -7,8 +7,11 @@
 #include <vtkImageData.h>
 #include <vtkDataArray.h>
 #include <vtkPointData.h>
+#include <vtkCamera.h>
+#include <vtkOpenGLRenderWindow.h>
 #include <QElapsedTimer>
 #include <QLoggingCategory>
+#include <QByteArray>
 #include <QString>
 
 Q_LOGGING_CATEGORY(lcVtkWidget3D, "asclepios.gui.vtkwidget3d")
@@ -201,7 +204,20 @@ void asclepios::gui::vtkWidget3D::setFilter(const QString& t_filePath)
 //-----------------------------------------------------------------------------
 void asclepios::gui::vtkWidget3D::render()
 {
-        m_renderWindows[0]->OffScreenRenderingOn();
+        const QByteArray disableOffscreenEnv = qgetenv("ASCLEPIOS_3D_DISABLE_OFFSCREEN").trimmed().toLower();
+        const bool disableOffscreen =
+                disableOffscreenEnv == "1" || disableOffscreenEnv == "true" || disableOffscreenEnv == "yes" ||
+                disableOffscreenEnv == "on";
+        if (disableOffscreen)
+        {
+                qCInfo(lcVtkWidget3D) << "render() forcing on-screen rendering due to ASCLEPIOS_3D_DISABLE_OFFSCREEN"
+                                      << disableOffscreenEnv;
+                m_renderWindows[0]->OffScreenRenderingOff();
+        }
+        else
+        {
+                m_renderWindows[0]->OffScreenRenderingOn();
+        }
         setVolumeMapperBlend();
         QString failureReason;
         m_volumeData = acquireVolume(&failureReason);
@@ -233,11 +249,39 @@ void asclepios::gui::vtkWidget3D::render()
         m_renderer->AddVolume(m_volume);
         m_renderer->ResetCamera();
         m_renderWindows[0]->AddRenderer(m_renderer);
+        double viewport[4] = {0.0, 0.0, 0.0, 0.0};
+        if (m_renderer && m_renderer->GetViewport())
+        {
+                const double* rendererViewport = m_renderer->GetViewport();
+                viewport[0] = rendererViewport[0];
+                viewport[1] = rendererViewport[1];
+                viewport[2] = rendererViewport[2];
+                viewport[3] = rendererViewport[3];
+        }
+        double clippingRange[2] = {0.0, 0.0};
+        if (auto* const camera = m_renderer ? m_renderer->GetActiveCamera() : nullptr)
+        {
+                camera->GetClippingRange(clippingRange);
+        }
+        const int* size = m_renderWindows[0]->GetSize();
+        auto* const openGlWindow = vtkOpenGLRenderWindow::SafeDownCast(m_renderWindows[0]);
+        const unsigned int frameBufferObject = openGlWindow ? openGlWindow->GetFrameBufferObject() : 0U;
+        const unsigned int defaultFrameBufferId = openGlWindow ? openGlWindow->GetDefaultFrameBufferId() : 0U;
+        qCInfo(lcVtkWidget3D) << "render() OpenGL state"
+                              << "size" << (size ? size[0] : 0) << (size ? size[1] : 0)
+                              << "viewport" << viewport[0] << viewport[1] << viewport[2] << viewport[3]
+                              << "clipRange" << clippingRange[0] << clippingRange[1]
+                              << "offscreen" << m_renderWindows[0]->GetOffScreenRendering()
+                              << "fbo" << frameBufferObject
+                              << "defaultFbo" << defaultFrameBufferId;
         QElapsedTimer timer;
         timer.start();
         m_renderWindows[0]->Render();
         const auto renderDuration = timer.elapsed();
-        m_renderWindows[0]->OffScreenRenderingOff();
+        if (!disableOffscreen)
+        {
+                m_renderWindows[0]->OffScreenRenderingOff();
+        }
         auto* const extend = m_volume->GetBounds();
         initInteractorStyle();
         int dimensions[3] = {0, 0, 0};

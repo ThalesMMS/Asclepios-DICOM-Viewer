@@ -5,6 +5,7 @@
 
 #include <vtkImageActor.h>
 #include <vtkImageMapToWindowLevelColors.h>
+#include <vtkImageSliceMapper.h>
 #include <vtkInformation.h>
 #include <vtkMatrix4x4.h>
 #include <vtkObject.h>
@@ -72,12 +73,13 @@ namespace asclepios::gui
 	private:
 		std::shared_ptr<core::DicomVolume> m_volume = {};
 		std::unique_ptr<WindowLevelFilter> m_windowLevelFilter = {};
-		vtkSmartPointer<vtkImageMapToWindowLevelColors> m_windowLevelColors = {};
-		vtkSmartPointer<vtkTrivialProducer> m_inputProducer = {};
-		vtkSmartPointer<vtkImageActor> m_imageActor = {};
-		vtkSmartPointer<vtkRenderer> m_renderer = {};
-		vtkRenderWindow* m_renderWindow = nullptr;
-		vtkRenderWindowInteractor* m_interactor = nullptr;
+                vtkSmartPointer<vtkImageMapToWindowLevelColors> m_windowLevelColors = {};
+                vtkSmartPointer<vtkTrivialProducer> m_inputProducer = {};
+                vtkSmartPointer<vtkImageActor> m_imageActor = {};
+                vtkSmartPointer<vtkImageSliceMapper> m_sliceMapper = {};
+                vtkSmartPointer<vtkRenderer> m_renderer = {};
+                vtkRenderWindow* m_renderWindow = nullptr;
+                vtkRenderWindowInteractor* m_interactor = nullptr;
 
 		int m_windowWidth = 0;
 		int m_windowCenter = 0;
@@ -85,19 +87,21 @@ namespace asclepios::gui
 
 		int m_sliceOrientation = SLICE_ORIENTATION_XY;
 		int m_currentSlice = 0;
-		int m_sliceMin = 0;
-		int m_sliceMax = 0;
+                int m_sliceMin = 0;
+                int m_sliceMax = 0;
 
-		double m_lastClippingRange = -1.0;
-		double m_lastAvgSpacing = -1.0;
-		int m_lastSliceOrientation = -1;
+                double m_lastClippingRange = -1.0;
+                double m_lastAvgSpacing = -1.0;
+                int m_lastSliceOrientation = -1;
+                bool m_useSliceMapper = false;
 
-		void applyDirectionMatrix();
-		void updateScalarsForInversion();
-		void setDefaultWindowLevelFromRange();
-		[[nodiscard]] std::tuple<int, int> getImageActorDisplayValue();
-		void updateSliceRange();
-		void updateActorExtentWithInformation(vtkInformation* info);
-		[[nodiscard]] vtkMatrix4x4* getDirectionMatrix() const;
-	};
+                void applyDirectionMatrix();
+                void updateScalarsForInversion();
+                void setDefaultWindowLevelFromRange();
+                [[nodiscard]] std::tuple<int, int> getImageActorDisplayValue();
+                void updateSliceRange();
+                void updateActorExtentWithInformation(vtkInformation* info);
+                [[nodiscard]] vtkMatrix4x4* getDirectionMatrix() const;
+                [[nodiscard]] vtkImageMapper3D* getImageMapper() const;
+        };
 }
