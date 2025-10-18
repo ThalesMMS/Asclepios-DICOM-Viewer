@@ -13,12 +13,14 @@
 #include <vtkImageData.h>
 #include <vtkImageMapToWindowLevelColors.h>
 #include <vtkImageMapper3D.h>
+#include <vtkImageSliceMapper.h>
 #include <vtkInformation.h>
 #include <vtkInteractorStyleImage.h>
 #include <vtkMatrix4x4.h>
 #include <vtkNew.h>
 #include <vtkObjectFactory.h>
 #include <vtkPointData.h>
+#include <vtkOpenGLRenderWindow.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderWindowInteractor.h>
 #include <vtkRenderer.h>
@@ -27,6 +29,7 @@
 
 #include <QDebug>
 #include <QLoggingCategory>
+#include <QByteArray>
 
 #include <algorithm>
 #include <cmath>
@@ -93,19 +96,41 @@ namespace
 asclepios::gui::vtkWidgetDICOM::vtkWidgetDICOM()
 	: m_windowLevelFilter(std::make_unique<WindowLevelFilter>())
 {
-	m_windowLevelColors = vtkSmartPointer<vtkImageMapToWindowLevelColors>::New();
-	m_windowLevelColors->PassAlphaToOutputOff();
-	m_windowLevelColors->SetOutputFormatToLuminance();
+        m_windowLevelColors = vtkSmartPointer<vtkImageMapToWindowLevelColors>::New();
+        m_windowLevelColors->PassAlphaToOutputOff();
+        m_windowLevelColors->SetOutputFormatToLuminance();
 
-	m_inputProducer = vtkSmartPointer<vtkTrivialProducer>::New();
-	m_windowLevelColors->SetInputConnection(m_inputProducer->GetOutputPort());
+        m_inputProducer = vtkSmartPointer<vtkTrivialProducer>::New();
+        m_windowLevelColors->SetInputConnection(m_inputProducer->GetOutputPort());
 
-	m_imageActor = vtkSmartPointer<vtkImageActor>::New();
-	m_imageActor->InterpolateOn();
+        m_imageActor = vtkSmartPointer<vtkImageActor>::New();
+        m_imageActor->InterpolateOn();
 
-	m_renderer = vtkSmartPointer<vtkRenderer>::New();
-	m_renderer->SetBackground(0.0, 0.0, 0.0);
-	m_renderer->AddActor(m_imageActor);
+        const QByteArray useSliceMapperEnv = qgetenv("ASCLEPIOS_2D_USE_SLICE_MAPPER").trimmed().toLower();
+        m_useSliceMapper =
+                useSliceMapperEnv == "1" || useSliceMapperEnv == "true" || useSliceMapperEnv == "yes" ||
+                useSliceMapperEnv == "on";
+        if (m_useSliceMapper)
+        {
+                m_sliceMapper = vtkSmartPointer<vtkImageSliceMapper>::New();
+                if (m_sliceMapper)
+                {
+                        m_sliceMapper->SliceAtFocalPointOff();
+                        m_sliceMapper->SliceFacesCameraOn();
+                        m_sliceMapper->BorderOff();
+                }
+                m_imageActor->SetMapper(m_sliceMapper);
+                qCInfo(lcWidgetDicom) << "Using vtkImageSliceMapper due to ASCLEPIOS_2D_USE_SLICE_MAPPER"
+                                      << useSliceMapperEnv;
+        }
+        else
+        {
+                qCInfo(lcWidgetDicom) << "Using default vtkImageActor mapper";
+        }
+
+        m_renderer = vtkSmartPointer<vtkRenderer>::New();
+        m_renderer->SetBackground(0.0, 0.0, 0.0);
+        m_renderer->AddActor(m_imageActor);
 
 	m_windowLevelFilter->setWindowLevelColors(m_windowLevelColors);
 }
@@ -170,27 +195,46 @@ void asclepios::gui::vtkWidgetDICOM::SetupInteractor(vtkRenderWindowInteractor* 
 
 void asclepios::gui::vtkWidgetDICOM::Render()
 {
-	UpdateDisplayExtent();
-	if (m_renderWindow)
-	{
-		const int* size = m_renderWindow->GetSize();
-		if (!size || size[0] <= 0 || size[1] <= 0)
-		{
-			m_renderWindow->SetSize(512, 512);
-		}
-		if (m_renderWindow->GetNeverRendered())
-		{
-			m_renderWindow->Start();
-		}
-		const int* resolvedSize = m_renderWindow->GetSize();
-		qInfo()
-			<< "[vtkWidgetDICOM] Rendering with size"
-			<< (resolvedSize ? resolvedSize[0] : 0)
-			<< (resolvedSize ? resolvedSize[1] : 0)
-			<< "offscreen"
-			<< m_renderWindow->GetOffScreenRendering();
-		m_renderWindow->Render();
-	}
+        UpdateDisplayExtent();
+        if (!m_renderWindow)
+        {
+                return;
+        }
+        const int* size = m_renderWindow->GetSize();
+        if (!size || size[0] <= 0 || size[1] <= 0)
+        {
+                m_renderWindow->SetSize(512, 512);
+        }
+        if (m_renderWindow->GetNeverRendered())
+        {
+                m_renderWindow->Start();
+        }
+        const int* resolvedSize = m_renderWindow->GetSize();
+        double viewport[4] = {0.0, 0.0, 0.0, 0.0};
+        if (const double* rendererViewport = m_renderer ? m_renderer->GetViewport() : nullptr)
+        {
+                viewport[0] = rendererViewport[0];
+                viewport[1] = rendererViewport[1];
+                viewport[2] = rendererViewport[2];
+                viewport[3] = rendererViewport[3];
+        }
+        double clippingRange[2] = {0.0, 0.0};
+        if (auto* const camera = m_renderer ? m_renderer->GetActiveCamera() : nullptr)
+        {
+                camera->GetClippingRange(clippingRange);
+        }
+        auto* const openGlWindow = vtkOpenGLRenderWindow::SafeDownCast(m_renderWindow);
+        const unsigned int frameBufferObject = openGlWindow ? openGlWindow->GetFrameBufferObject() : 0U;
+        const unsigned int defaultFrameBufferId = openGlWindow ? openGlWindow->GetDefaultFrameBufferId() : 0U;
+        qCInfo(lcWidgetDicom) << "Render() state"
+                              << "size" << (resolvedSize ? resolvedSize[0] : 0) << (resolvedSize ? resolvedSize[1] : 0)
+                              << "viewport" << viewport[0] << viewport[1] << viewport[2] << viewport[3]
+                              << "clipRange" << clippingRange[0] << clippingRange[1]
+                              << "offscreen" << m_renderWindow->GetOffScreenRendering()
+                              << "fbo" << frameBufferObject
+                              << "defaultFbo" << defaultFrameBufferId
+                              << "sliceMapper" << m_useSliceMapper;
+        m_renderWindow->Render();
 }
 
 void asclepios::gui::vtkWidgetDICOM::setVolume(const std::shared_ptr<core::DicomVolume>& t_volume)
@@ -204,12 +248,16 @@ void asclepios::gui::vtkWidgetDICOM::setVolume(const std::shared_ptr<core::Dicom
 			m_inputProducer->SetOutput(nullptr);
 			m_inputProducer->Modified();
 		}
-		if (m_imageActor)
-		{
-			m_imageActor->SetInputData(nullptr);
-			m_imageActor->SetVisibility(0);
-			m_imageActor->Modified();
-		}
+                if (auto* mapper = getImageMapper())
+                {
+                        mapper->SetInputData(nullptr);
+                        mapper->Modified();
+                }
+                if (m_imageActor)
+                {
+                        m_imageActor->SetVisibility(0);
+                        m_imageActor->Modified();
+                }
 		updateSliceRange();
 		return;
 	}
@@ -291,99 +339,95 @@ void asclepios::gui::vtkWidgetDICOM::setVolume(const std::shared_ptr<core::Dicom
 		                             : nullptr;
 	const int scalarType = activeScalars ? activeScalars->GetDataType() : VTK_DOUBLE;
 	const int scalarComponents = activeScalars ? activeScalars->GetNumberOfComponents() : 1;
-	if (m_volume && m_volume->ImageData)
-	{
-		if (vtkInformation* dataInfo = m_volume->ImageData->GetInformation())
-		{
-			vtkDataObject::SetPointDataActiveScalarInfo(
-				dataInfo,
-				scalarType,
-				scalarComponents);
-			vtkDataObject::SetActiveAttribute(
-				dataInfo,
-				vtkDataObject::FIELD_ASSOCIATION_POINTS,
-				scalarName,
-				vtkDataSetAttributes::SCALARS);
-		}
-	}
-	if (m_inputProducer)
-	{
-		m_inputProducer->SetOutput(m_volume->ImageData);
-		vtkInformation* producerInfo = m_inputProducer->GetOutputInformation(0);
-		if (producerInfo)
-		{
-			vtkDataObject::SetPointDataActiveScalarInfo(
-				producerInfo,
-				scalarType,
-				scalarComponents);
-			vtkDataObject::SetActiveAttribute(
-				producerInfo,
-				vtkDataObject::FIELD_ASSOCIATION_POINTS,
-				scalarName,
-				vtkDataSetAttributes::SCALARS);
-		}
-		m_inputProducer->Modified();
-		m_inputProducer->UpdateInformation();
-	}
-	if (m_windowLevelColors)
-	{
-		m_windowLevelColors->SetInputArrayToProcess(
-			0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, scalarName);
-		if (vtkInformation* inputInfo = m_windowLevelColors->GetInputInformation())
-		{
-			vtkDataObject::SetPointDataActiveScalarInfo(
-				inputInfo,
-				scalarType,
-				scalarComponents);
-			vtkDataObject::SetActiveAttribute(
-				inputInfo,
-				vtkDataObject::FIELD_ASSOCIATION_POINTS,
-				scalarName,
-				vtkDataSetAttributes::SCALARS);
-		}
-		m_windowLevelColors->UpdateInformation();
-		m_windowLevelColors->Update();
-		if (auto* output = m_windowLevelColors->GetOutput())
-		{
-			int dims[3] = {0, 0, 0};
-			output->GetDimensions(dims);
-			double range[2] = {0.0, 0.0};
-			output->GetScalarRange(range);
-			qCInfo(lcWidgetDicom)
-				<< "Window-level output dimensions"
-				<< dims[0]
-				<< dims[1]
-				<< dims[2]
-				<< "range"
-				<< range[0]
-				<< range[1];
-		}
-		else
-		{
-			qCWarning(lcWidgetDicom) << "Window-level filter produced null output.";
-		}
-	}
-	if (m_imageActor)
-	{
-		if (m_windowLevelColors)
-		{
-			if (auto* mapper = m_imageActor->GetMapper())
-			{
-				mapper->SetInputConnection(m_windowLevelColors->GetOutputPort());
-			}
-			else
-			{
-				m_imageActor->SetInputData(m_windowLevelColors->GetOutput());
-			}
-		}
-		else
-		{
-			m_imageActor->SetInputData(nullptr);
-		}
-		m_imageActor->SetVisibility(1);
-		m_imageActor->Modified();
-	}
-	m_imageActor->SetVisibility(1);
+        if (m_volume && m_volume->ImageData)
+        {
+                if (vtkInformation* dataInfo = m_volume->ImageData->GetInformation())
+                {
+                        vtkDataObject::SetPointDataActiveScalarInfo(
+                                dataInfo,
+                                scalarType,
+                                scalarComponents);
+                        vtkDataObject::SetActiveAttribute(
+                                dataInfo,
+                                vtkDataObject::FIELD_ASSOCIATION_POINTS,
+                                scalarName,
+                                vtkDataSetAttributes::SCALARS);
+                }
+        }
+        if (m_inputProducer)
+        {
+                m_inputProducer->SetOutput(m_volume->ImageData);
+                vtkInformation* producerInfo = m_inputProducer->GetOutputInformation(0);
+                if (producerInfo)
+                {
+                        vtkDataObject::SetPointDataActiveScalarInfo(
+                                producerInfo,
+                                scalarType,
+                                scalarComponents);
+                        vtkDataObject::SetActiveAttribute(
+                                producerInfo,
+                                vtkDataObject::FIELD_ASSOCIATION_POINTS,
+                                scalarName,
+                                vtkDataSetAttributes::SCALARS);
+                }
+                m_inputProducer->Modified();
+                m_inputProducer->UpdateInformation();
+        }
+        if (m_windowLevelColors)
+        {
+                m_windowLevelColors->SetInputArrayToProcess(
+                        0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, scalarName);
+                if (vtkInformation* inputInfo = m_windowLevelColors->GetInputInformation())
+                {
+                        vtkDataObject::SetPointDataActiveScalarInfo(
+                                inputInfo,
+                                scalarType,
+                                scalarComponents);
+                        vtkDataObject::SetActiveAttribute(
+                                inputInfo,
+                                vtkDataObject::FIELD_ASSOCIATION_POINTS,
+                                scalarName,
+                                vtkDataSetAttributes::SCALARS);
+                }
+                m_windowLevelColors->UpdateInformation();
+                m_windowLevelColors->Update();
+                if (auto* output = m_windowLevelColors->GetOutput())
+                {
+                        int dims[3] = {0, 0, 0};
+                        output->GetDimensions(dims);
+                        double range[2] = {0.0, 0.0};
+                        output->GetScalarRange(range);
+                        qCInfo(lcWidgetDicom)
+                                << "Window-level output dimensions"
+                                << dims[0]
+                                << dims[1]
+                                << dims[2]
+                                << "range"
+                                << range[0]
+                                << range[1];
+                }
+                else
+                {
+                        qCWarning(lcWidgetDicom) << "Window-level filter produced null output.";
+                }
+        }
+        if (auto* mapper = getImageMapper())
+        {
+                if (m_windowLevelColors)
+                {
+                        mapper->SetInputConnection(m_windowLevelColors->GetOutputPort());
+                }
+                else
+                {
+                        mapper->SetInputData(nullptr);
+                }
+                mapper->Modified();
+        }
+        if (m_imageActor)
+        {
+                m_imageActor->SetVisibility(1);
+                m_imageActor->Modified();
+        }
 
 	setInitialWindowWidthCenter();
 	SetSliceOrientationToXY();
@@ -417,17 +461,22 @@ void asclepios::gui::vtkWidgetDICOM::applyDirectionMatrix()
 vtkMatrix4x4* asclepios::gui::vtkWidgetDICOM::getDirectionMatrix() const
 {
 #if VTK_MAJOR_VERSION >= 9
-	return (m_volume && m_volume->Direction) ? m_volume->Direction.GetPointer() : nullptr;
+        return (m_volume && m_volume->Direction) ? m_volume->Direction.GetPointer() : nullptr;
 #else
-	return nullptr;
+        return nullptr;
 #endif
+}
+
+vtkImageMapper3D* asclepios::gui::vtkWidgetDICOM::getImageMapper() const
+{
+        return m_imageActor ? m_imageActor->GetMapper() : nullptr;
 }
 
 void asclepios::gui::vtkWidgetDICOM::setInvertColors(bool t_flag)
 {
-	m_colorsInverted = t_flag;
-	if (m_windowLevelFilter)
-	{
+        m_colorsInverted = t_flag;
+        if (m_windowLevelFilter)
+        {
 		m_windowLevelFilter->setAreColorsInverted(m_colorsInverted);
 	}
 }
