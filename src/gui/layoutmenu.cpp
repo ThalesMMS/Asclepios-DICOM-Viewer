@@ -13,8 +13,16 @@ asclepios::gui::LayoutMenu::LayoutMenu(QWidget* parent)
 //-----------------------------------------------------------------------------
 void asclepios::gui::LayoutMenu::initView()
 {
-	m_ui.setupUi(this);
-	setTitle("Layouts");
+        m_ui.setupUi(this);
+        setTitle("Layouts");
+        if (m_ui.actionOne)
+        {
+                setActiveAction(m_ui.actionOne);
+                if (m_ui.actionOne->isCheckable())
+                {
+                        m_ui.actionOne->setChecked(true);
+                }
+        }
 }
 
 //-----------------------------------------------------------------------------

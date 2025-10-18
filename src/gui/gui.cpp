@@ -33,8 +33,8 @@ void asclepios::gui::GUI::initData()
 	//create widget controller
 	m_widgetsController =
 		std::make_unique<WidgetsController>();
-	m_widgetsController
-		->createWidgets(WidgetsContainer::layouts::twoRowOneBottom);
+        m_widgetsController
+                ->createWidgets(WidgetsContainer::layouts::one);
 	m_widgetsController
 		->setFilesImporter(m_filesImporter.get());
 	auto* const widgetsContainer
