@@ -25,9 +25,9 @@ Q_LOGGING_CATEGORY(lcVtkWidget2D, "asclepios.gui.vtkwidget2d")
 
 namespace
 {
-	class CodecRegistrationGuard
-	{
-	public:
+        class CodecRegistrationGuard
+        {
+        public:
 		CodecRegistrationGuard()
 		{
 			asclepios::core::SmartDJDecoderRegistration::registerCodecs();
@@ -40,23 +40,47 @@ namespace
 
 		CodecRegistrationGuard(const CodecRegistrationGuard&) = delete;
 		CodecRegistrationGuard& operator=(const CodecRegistrationGuard&) = delete;
-	};
+        };
 
-	std::string formatHuValue(double hu)
-	{
-		std::ostringstream stream;
-		stream.setf(std::ios::fixed);
-		stream.precision(1);
+        std::string toolDisplayName(asclepios::gui::InteractionTool t_tool)
+        {
+                using asclepios::gui::InteractionTool;
+                switch (t_tool)
+                {
+                case InteractionTool::scroll:
+                        return "Scroll";
+                case InteractionTool::window:
+                        return "Window";
+                case InteractionTool::zoom:
+                        return "Zoom";
+                case InteractionTool::pan:
+                        return "Pan";
+                default:
+                        return {};
+                }
+        }
+
+        std::string formatHuValue(double hu)
+        {
+                std::ostringstream stream;
+                stream.setf(std::ios::fixed);
+                stream.precision(1);
 		stream << hu;
 		return stream.str();
 	}
 }
 
 //-----------------------------------------------------------------------------
+asclepios::gui::vtkWidget2D::vtkWidget2D()
+        : m_activeTool(InteractionTool::scroll)
+{
+}
+
+//-----------------------------------------------------------------------------
 void asclepios::gui::vtkWidget2D::initImageReader()
 {
-	qCInfo(lcVtkWidget2D)
-		<< "Initializing image volume for series"
+        qCInfo(lcVtkWidget2D)
+                << "Initializing image volume for series"
 		<< (m_series ? QString::fromStdString(m_series->getUID()) : QStringLiteral("<null>"))
 		<< "image"
 		<< (m_image ? QString::fromStdString(m_image->getSOPInstanceUID()) : QStringLiteral("<null>"));
@@ -231,11 +255,12 @@ void asclepios::gui::vtkWidget2D::render()
 		interactorStyle->setImage(m_image);
 		interactorStyle->updateOvelayImageNumber(0);
 		qCInfo(lcVtkWidget2D) << "InteractorStyle configured.";
-	}
-	fitImage();
-	createvtkWidgetOverlay();
-	m_dcmWidget->GetRenderWindow()->Render();
-	updateOverlayZoomFactor();
+        }
+        fitImage();
+        createvtkWidgetOverlay();
+        updateOverlayTool(toolDisplayName(m_activeTool));
+        m_dcmWidget->GetRenderWindow()->Render();
+        updateOverlayZoomFactor();
 }
 
 //-----------------------------------------------------------------------------
@@ -339,15 +364,39 @@ void asclepios::gui::vtkWidget2D::updateOverlayWindowLevelApply(const int& t_win
 	level.append(" / WW: " + std::to_string(m_dcmWidget->getWindowWidth())).append("\n");
 	m_widgetOverlay->updateOverlayInCorner(2,
 		std::to_string(static_cast<int>(overlayKey::window)), window);
-	m_widgetOverlay->updateOverlayInCorner(2,
-		std::to_string(static_cast<int>(overlayKey::level)), level);
-	refreshOverlayInCorner(2);
+        m_widgetOverlay->updateOverlayInCorner(2,
+                std::to_string(static_cast<int>(overlayKey::level)), level);
+        refreshOverlayInCorner(2);
+}
+
+void asclepios::gui::vtkWidget2D::setActiveTool(const InteractionTool t_tool)
+{
+        if (m_activeTool == t_tool)
+        {
+                return;
+        }
+        m_activeTool = t_tool;
+        updateOverlayTool(toolDisplayName(m_activeTool));
+}
+
+void asclepios::gui::vtkWidget2D::updateOverlayTool(const std::string& t_toolLabel)
+{
+        if (!m_widgetOverlay)
+        {
+                return;
+        }
+
+        const std::string value = t_toolLabel.empty()
+                ? std::string()
+                : std::string("Tool: ") + t_toolLabel + '\n';
+        m_widgetOverlay->updateOverlayInCorner(2, "tool", value);
+        refreshOverlayInCorner(2);
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::vtkWidget2D::resetOverlay()
 {
-	if (m_widgetOverlay)
+        if (m_widgetOverlay)
 	{
 		m_widgetOverlay.release();
 		m_widgetOverlay = std::make_unique<vtkWidgetOverlay>();

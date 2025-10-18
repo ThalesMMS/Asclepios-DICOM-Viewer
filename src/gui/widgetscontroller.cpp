@@ -1,15 +1,18 @@
 #include "widgetscontroller.h"
 #include "filesimporter.h"
 #include "widget2d.h"
+#include "vtkwidget2d.h"
 
 #include <QLoggingCategory>
 #include <QString>
+#include <QtGlobal>
+#include <QVariant>
 
 Q_LOGGING_CATEGORY(lcWidgetsController, "asclepios.gui.widgetscontroller")
 
 asclepios::gui::WidgetsController::WidgetsController()
 {
-	initData();
+        initData();
 }
 
 //-----------------------------------------------------------------------------
@@ -109,9 +112,9 @@ void asclepios::gui::WidgetsController::setMaximize(TabWidget* t_widget) const
 }
 
 //-----------------------------------------------------------------------------
-void asclepios::gui::WidgetsController::populateWidget(core::Series* t_series, core::Image* t_image) const
+void asclepios::gui::WidgetsController::populateWidget(core::Series* t_series, core::Image* t_image)
 {
-	auto* const widget = findNextAvailableWidget();
+        auto* const widget = findNextAvailableWidget();
         if (widget)
         {
                 auto* const widget2d = dynamic_cast<Widget2D*>(widget->getActiveTabbedWidget());
@@ -144,6 +147,7 @@ void asclepios::gui::WidgetsController::populateWidget(core::Series* t_series, c
                         << "(index" << t_image->getIndex() << ")"
                         << "layout" << layoutToString(m_currentLayout);
                 widget2d->render();
+                connectVtkToolBridge(widget2d);
                 if (widget2d->wasRenderAbortedDueToMissingContext())
                 {
                         qCWarning(lcWidgetsController)
@@ -193,27 +197,37 @@ void asclepios::gui::WidgetsController::createRemoveWidgets(const std::size_t& t
 }
 
 //-----------------------------------------------------------------------------
-void asclepios::gui::WidgetsController::createConnections() const
+void asclepios::gui::WidgetsController::createConnections()
 {
-	const auto widgets = m_widgetsRepository->getWidgets();
-	for (const auto& widget : widgets)
-	{
-		Q_UNUSED(connect(widget, &TabWidget::focused, this,
-			&WidgetsController::setActiveWidget));
-		Q_UNUSED(connect(widget, &TabWidget::setMaximized, this,
-			&WidgetsController::setMaximize));
-	}
+        const auto widgets = m_widgetsRepository->getWidgets();
+        for (const auto& widget : widgets)
+        {
+                Q_UNUSED(connect(widget, &TabWidget::focused, this,
+                        &WidgetsController::setActiveWidget));
+                Q_UNUSED(connect(widget, &TabWidget::setMaximized, this,
+                        &WidgetsController::setMaximize));
+                if (auto* const widget2d = dynamic_cast<Widget2D*>(widget->getTabbedWidget()))
+                {
+                        connectVtkToolBridge(widget2d);
+                }
+        }
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::WidgetsController::resetConnections()
 {
-	m_activeWidget = nullptr;
-	const auto widgets = m_widgetsRepository->getWidgets();
-	for (const auto& widget : widgets)
-	{
-		widget->onFocus(false);
-		widget->setIsMaximized(false);
+        m_activeWidget = nullptr;
+        for (auto& binding : m_vtkToolConnections)
+        {
+                QObject::disconnect(binding.second.toolConnection);
+                QObject::disconnect(binding.second.destroyedConnection);
+        }
+        m_vtkToolConnections.clear();
+        const auto widgets = m_widgetsRepository->getWidgets();
+        for (const auto& widget : widgets)
+        {
+                widget->onFocus(false);
+                widget->setIsMaximized(false);
 		widget->setVisible(true);
 		disconnect(widget, &TabWidget::focused, this,
 		           &WidgetsController::setActiveWidget);
@@ -250,5 +264,78 @@ asclepios::gui::TabWidget* asclepios::gui::WidgetsController::findNextAvailableW
 //-----------------------------------------------------------------------------
 std::size_t asclepios::gui::WidgetsController::computeNumberWidgetsFromLayout(const WidgetsContainer::layouts& t_layout)
 {
-	return t_layout == WidgetsContainer::layouts::one ? 1 : static_cast<std::size_t>(t_layout) / 2 + 2ul;
+        return t_layout == WidgetsContainer::layouts::one ? 1 : static_cast<std::size_t>(t_layout) / 2 + 2ul;
+}
+
+void asclepios::gui::WidgetsController::connectVtkToolBridge(Widget2D* t_widget)
+{
+        if (!t_widget)
+        {
+                return;
+        }
+
+        const QVariant property = t_widget->property(Widget2D::vtkWidgetPropertyName);
+        const auto rawValue = property.isValid()
+                ? property.value<quintptr>()
+                : static_cast<quintptr>(0);
+        auto* const vtkWidget = rawValue != 0
+                ? reinterpret_cast<vtkWidget2D*>(rawValue)
+                : nullptr;
+
+        auto bindingIt = m_vtkToolConnections.find(t_widget);
+        const auto removeBinding = [this, &bindingIt]()
+        {
+                if (bindingIt != m_vtkToolConnections.end())
+                {
+                        QObject::disconnect(bindingIt->second.toolConnection);
+                        QObject::disconnect(bindingIt->second.destroyedConnection);
+                        m_vtkToolConnections.erase(bindingIt);
+                }
+        };
+
+        if (!vtkWidget)
+        {
+                removeBinding();
+                return;
+        }
+
+        if (bindingIt != m_vtkToolConnections.end())
+        {
+                if (bindingIt->second.target == vtkWidget)
+                {
+                        return;
+                }
+                removeBinding();
+                bindingIt = m_vtkToolConnections.end();
+        }
+
+        vtkWidget->setActiveTool(t_widget->activeTool());
+        const auto toolConnection = QObject::connect(t_widget, &Widget2D::activeToolChanged,
+                this, [vtkWidget](InteractionTool t_tool)
+                {
+                        vtkWidget->setActiveTool(t_tool);
+                });
+        if (!toolConnection)
+        {
+                return;
+        }
+
+        const auto destroyedConnection = QObject::connect(t_widget, &QObject::destroyed,
+                this, [this, t_widget]()
+                {
+                        auto it = m_vtkToolConnections.find(t_widget);
+                        if (it != m_vtkToolConnections.end())
+                        {
+                                QObject::disconnect(it->second.toolConnection);
+                                QObject::disconnect(it->second.destroyedConnection);
+                                m_vtkToolConnections.erase(it);
+                        }
+                });
+        if (!destroyedConnection)
+        {
+                QObject::disconnect(toolConnection);
+                return;
+        }
+
+        m_vtkToolConnections.emplace(t_widget, VtkToolBinding{toolConnection, destroyedConnection, vtkWidget});
 }

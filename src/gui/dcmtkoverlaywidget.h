@@ -19,6 +19,7 @@ namespace asclepios::gui
                 void setSeriesInformation(const QString& t_seriesNumber, int t_imageIndex, int t_imageCount);
                 void setZoom(double t_zoomFactor);
                 void setWindowLevel(double t_windowCenter, double t_windowWidth);
+                void setToolName(const QString& t_toolName);
                 void clear();
 
         protected:

@@ -6,22 +6,65 @@
 
 #include "dicomvolume.h"
 
+#include <algorithm>
 
 vtkStandardNewMacro(asclepios::gui::vtkWidget2DInteractorStyle);
 
 void asclepios::gui::vtkWidget2DInteractorStyle::OnMouseMove()
 {
-	switch (State)
-	{
-	case VTKIS_WINDOW_LEVEL:
-		updateOverlayWindowLevelApply();
-		return;
-	default:
-		updateOverlayHUValue();
-		Interactor->Render();
-		break;
-	}
-	vtkInteractorStyleImage::OnMouseMove();
+        if (m_leftScrolling && m_widget2D)
+        {
+                const int deltaY = Interactor->GetEventPosition()[1] - Interactor->GetLastEventPosition()[1];
+                m_scrollDragAccumulator += static_cast<double>(deltaY);
+                constexpr double pixelsPerStep = 5.0;
+                const int steps = static_cast<int>(m_scrollDragAccumulator / pixelsPerStep);
+                if (steps != 0)
+                {
+                        int targetIndex = m_currentImageIndex + steps;
+                        if (m_image && !m_image->getIsMultiFrame())
+                        {
+                                int total = 0;
+                                if (m_series)
+                                {
+                                        total = static_cast<int>(m_series->getSinlgeFrameImages().size());
+                                }
+                                if (total > 0)
+                                {
+                                        targetIndex = std::clamp(targetIndex, 0, total - 1);
+                                }
+                                else
+                                {
+                                        targetIndex = 0;
+                                }
+                        }
+                        else if (m_widget2D && m_widget2D->getDCMWidget())
+                        {
+                                const int minSlice = m_widget2D->getDCMWidget()->GetSliceMin();
+                                const int maxSlice = m_widget2D->getDCMWidget()->GetSliceMax();
+                                targetIndex = std::clamp(targetIndex, minSlice, maxSlice);
+                        }
+                        if (targetIndex != m_currentImageIndex)
+                        {
+                                changeImage(targetIndex);
+                        }
+                        m_scrollDragAccumulator -= static_cast<double>(steps) * pixelsPerStep;
+                }
+                updateOverlayHUValue();
+                Interactor->Render();
+                return;
+        }
+
+        switch (State)
+        {
+        case VTKIS_WINDOW_LEVEL:
+                updateOverlayWindowLevelApply();
+                return;
+        default:
+                updateOverlayHUValue();
+                Interactor->Render();
+                break;
+        }
+        vtkInteractorStyleImage::OnMouseMove();
 }
 
 //-----------------------------------------------------------------------------
@@ -122,13 +165,50 @@ void asclepios::gui::vtkWidget2DInteractorStyle::changeImage(int& t_index)
 //-----------------------------------------------------------------------------
 void asclepios::gui::vtkWidget2DInteractorStyle::OnLeftButtonDown()
 {
-	StartWindowLevel();
+        m_leftScrolling = false;
+        m_scrollDragAccumulator = 0.0;
+        if (!m_widget2D)
+        {
+                vtkInteractorStyleImage::OnLeftButtonDown();
+                return;
+        }
+
+        switch (m_widget2D->activeTool())
+        {
+        case InteractionTool::scroll:
+                if (m_image || (m_widget2D && m_widget2D->getDCMWidget()))
+                {
+                        m_leftScrolling = true;
+                        return;
+                }
+                break;
+        case InteractionTool::window:
+                StartWindowLevel();
+                return;
+        case InteractionTool::zoom:
+                StartDolly();
+                return;
+        case InteractionTool::pan:
+                StartPan();
+                return;
+        default:
+                break;
+        }
+        vtkInteractorStyleImage::OnLeftButtonDown();
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::vtkWidget2DInteractorStyle::OnLeftButtonUp()
 {
-	StopState();
+        if (m_leftScrolling)
+        {
+                m_leftScrolling = false;
+                m_scrollDragAccumulator = 0.0;
+                updateOverlayHUValue();
+                Interactor->Render();
+                return;
+        }
+        StopState();
 }
 
 //-----------------------------------------------------------------------------
