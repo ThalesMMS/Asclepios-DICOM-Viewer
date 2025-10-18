@@ -1,7 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
- Copyright (C) 2025 The Qt Company Ltd.
- SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only WITH Qt-GPL-exception-1.0
+/****************************************************************************
+**
+** Copyright (C) 2019 The Qt Company Ltd.
+** Contact: https://www.qt.io/licensing/
+**
+** This file is part of the Qt VS Tools.
+**
+** $QT_BEGIN_LICENSE:GPL-EXCEPT$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3 as published by the Free Software
+** Foundation with exceptions as appearing in the file LICENSE.GPL3-EXCEPT
+** included in the packaging of this file. Please review the following
+** information to ensure the GNU General Public License requirements will
+** be met: https://www.gnu.org/licenses/gpl-3.0.html.
+**
+** $QT_END_LICENSE$
+**
+****************************************************************************/
 -->
 
 <!--
@@ -53,7 +78,7 @@
       Description="Path to installation of Qt."/>
     <EnumProperty
       Name="InputFileType"
-      HelpUrl="https://doc.qt.io/qt-6/qtremoteobjects-repc.html"
+      HelpUrl="https://doc.qt.io/qt-5/qtremoteobjects-repc.html"
       DisplayName="Input File Type">
       <EnumValue
         Name="rep"
@@ -64,12 +89,12 @@
     </EnumProperty>
     <StringProperty
       Name="InputFile"
-      HelpUrl="https://doc.qt.io/qt-6/qtremoteobjects-repc.html"
+      HelpUrl="https://doc.qt.io/qt-5/qtremoteobjects-repc.html"
       DisplayName="Input File"
       Description="Input header/rep file to read from. ([header-file/rep-file])" />
     <EnumProperty
       Name="OutputFileType"
-      HelpUrl="https://doc.qt.io/qt-6/qtremoteobjects-repc.html"
+      HelpUrl="https://doc.qt.io/qt-5/qtremoteobjects-repc.html"
       DisplayName="Output File Type">
       <EnumValue
         Name="source"
@@ -86,24 +111,24 @@
     </EnumProperty>
     <StringProperty
       Name="OutputFile"
-      HelpUrl="https://doc.qt.io/qt-6/qtremoteobjects-repc.html"
+      HelpUrl="https://doc.qt.io/qt-5/qtremoteobjects-repc.html"
       DisplayName="Output File"
       Description="Output header/rep file to write to. ([rep-file/header-file])" />
     <StringListProperty
       Name="IncludePath"
-      HelpUrl="https://doc.qt.io/qt-6/qtremoteobjects-repc.html"
+      HelpUrl="https://doc.qt.io/qt-5/qtremoteobjects-repc.html"
       DisplayName="Include Path"
       Description=
 "Add &lt;dir&gt; to the include path for header files. This parameter is needed only if the input
 file type is src (.h file). Separate with semicolons if more than one. (-I&lt;dir&gt;)"/>
     <BoolProperty
       Name="AlwaysClass"
-      HelpUrl="https://doc.qt.io/qt-6/qtremoteobjects-repc.html"
+      HelpUrl="https://doc.qt.io/qt-5/qtremoteobjects-repc.html"
       DisplayName="Always Output Class Type"
       Description="Always output 'class' type for .rep files and never 'POD'. (-c)"/>
     <BoolProperty
       Name="PrintDebug"
-      HelpUrl="https://doc.qt.io/qt-6/qtremoteobjects-repc.html"
+      HelpUrl="https://doc.qt.io/qt-5/qtremoteobjects-repc.html"
       DisplayName="Print Debug Information"
       Description="Print out parsing debug information (for troubleshooting). (-d)"/>
     <StringProperty

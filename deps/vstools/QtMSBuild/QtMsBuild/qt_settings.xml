@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- Copyright (C) 2025 The Qt Company Ltd.
- SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only WITH Qt-GPL-exception-1.0
+/****************************************************************************
+**
+** Copyright (C) 2019 The Qt Company Ltd.
+** Contact: https://www.qt.io/licensing/
+**
+** This file is part of the Qt VS Tools.
+**
+** $QT_BEGIN_LICENSE:GPL-EXCEPT$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3 as published by the Free Software
+** Foundation with exceptions as appearing in the file LICENSE.GPL3-EXCEPT
+** included in the packaging of this file. Please review the following
+** information to ensure the GNU General Public License requirements will
+** be met: https://www.gnu.org/licenses/gpl-3.0.html.
+**
+** $QT_END_LICENSE$
+**
+****************************************************************************/
 -->
 <Rule
     Name="QtRule10_Settings"
@@ -15,13 +40,9 @@
   </Rule.DataSource>
   <Rule.Categories>
     <Category Name="QtSettings_01_General" DisplayName="General"/>
-    <Category Name="QtSettings_02_MOC" DisplayName="MOC"/>
-    <Category Name="QtSettings_03_Paths" DisplayName="Paths"/>
-    <Category Name="QtSettings_04_QMake" DisplayName="qmake"/>
-    <Category Name="QtSettings_05_QML" DisplayName="QML"/>
-    <Category Name="QtSettings_06_AdditionalOptions" DisplayName="Qt Additional Compiler Options"/>
-    <Category Name="QtSettings_07_AdditionalLinkOptions" DisplayName="Qt Additional Linker Options"/>
-    <Category Name="QtSettings_08_LateBindings" DisplayName="Qt Settings Late Bindings"/>
+    <Category Name="QtSettings_02_Paths" DisplayName="Paths"/>
+    <Category Name="QtSettings_03_QMake" DisplayName="qmake"/>
+    <Category Name="QtSettings_04_QML" DisplayName="QML"/>
   </Rule.Categories>
   <EnumProperty
     Name="Keyword"
@@ -40,8 +61,8 @@
     <EnumValue Name="QtVS_v304" DisplayName="Version 3.4"/>
   </EnumProperty>
   <StringProperty
-    Name="QtTouchProperty"
-    DisplayName="Touch Property"
+    Name="QtLastBackgroundBuild"
+    DisplayName="Last Background Build"
     Category="QtSettings_01_General"
     Visible="False">
     <StringProperty.DataSource>
@@ -64,12 +85,6 @@
       <ValueEditor EditorType="QtModulesEditor" DisplayName="&lt;Select Modules...&gt;" />
     </StringListProperty.ValueEditors>
   </StringListProperty>
-  <BoolProperty
-    Name="QtPlugin"
-    Category="QtSettings_01_General"
-    DisplayName="Qt Plugin"
-    Description="Select whether this project is used to generate a Qt plugin.">
-  </BoolProperty>
   <EnumProperty
     Name="QtBuildConfig"
     Category="QtSettings_01_General"
@@ -78,43 +93,34 @@
     <EnumValue Name="debug" DisplayName="Debug"/>
     <EnumValue Name="release" DisplayName="Release"/>
   </EnumProperty>
-  <EnumProperty
-    Name="QtToolsDesignTime"
+  <BoolProperty
+    Name="QtDeploy"
     Category="QtSettings_01_General"
-    DisplayName="Design Time Build"
-    Description="Run Qt tools during IntelliSense builds.">
-    <EnumValue Name="true" DisplayName="Run Qt Tools"/>
-    <EnumValue Name="false" DisplayName="Skip Qt Tools"/>
-  </EnumProperty>
-  <StringListProperty
-    Name="MocMacroNames"
-    Category="QtSettings_02_MOC"
-    DisplayName="MOC Macro Names"
-    Description=
-"A list of macro names to determine if a C++ file needs to be processed by MOC."/>
+    DisplayName="Run Deployment Tool"
+    Description="Select whether Qt for Windows Deployment Tool (windeployqt) should be called after build."/>
   <StringProperty
     Name="QtPathBinaries"
-    Category="QtSettings_03_Paths"
+    Category="QtSettings_02_Paths"
     DisplayName="Qt Binaries"
     Description=
 "Path to folder containing executables of Qt tools (qmake, moc, etc.) When a non-rooted path is specified, it will be considered relative to the Qt installation directory."/>
   <StringProperty
     Name="QtPathLibraryExecutables"
-    Category="QtSettings_03_Paths"
+    Category="QtSettings_02_Paths"
     DisplayName="Qt Library Executables"
     Description=
 "Path to folder containing executable files of Qt modules. When a non-rooted path is specified, it will be considered relative to the Qt installation directory."/>
   <StringListProperty
     Name="QtHeaderSearchPath"
-    Category="QtSettings_03_Paths"
+    Category="QtSettings_02_Paths"
     DisplayName="Additional Qt header search paths" />
   <StringListProperty
     Name="QtLibrarySearchPath"
-    Category="QtSettings_03_Paths"
+    Category="QtSettings_02_Paths"
     DisplayName="Additional Qt library search paths" />
   <EnumProperty
     Name="QtQMakeTemplate"
-    Category="QtSettings_04_QMake"
+    Category="QtSettings_03_QMake"
     DisplayName="Template"
     Description="Template of generated project files for extraction of Qt build settings.">
     <EnumValue Name="vcapp" DisplayName="MSBuild" />
@@ -122,47 +128,21 @@
   </EnumProperty>
   <StringListProperty
     Name="QtVars"
-    Category="QtSettings_04_QMake"
+    Category="QtSettings_03_QMake"
     DisplayName="Extract Variables"
     Visible="False" />
   <StringListProperty
     Name="QMakeExtraArgs"
-    Category="QtSettings_04_QMake"
+    Category="QtSettings_03_QMake"
     DisplayName="Additional Command Arguments" />
   <StringListProperty
     Name="QMakeCodeLines"
-    Category="QtSettings_04_QMake"
+    Category="QtSettings_03_QMake"
     DisplayName="Additional Project Settings" />
   <BoolProperty
     Name="QtQMLDebugEnable"
-    Category="QtSettings_05_QML"
+    Category="QtSettings_04_QML"
     DisplayName="Enable QML Debugging"
     Description="Select whether to launch a QML session when debugging.">
   </BoolProperty>
-  <StringProperty
-    Name="QtExcludedOptions"
-    Category="QtSettings_06_AdditionalOptions"
-    DisplayName="Excluded Options"
-    Description="
-Options to exclude from the above compiler options required by Qt.
-These options will NOT be passed to the compiler. Prefix options
-with '/' or '-', and separate them with spaces." />
-  <BoolProperty
-    Name="QtOptionsBuildLog"
-    Category="QtSettings_06_AdditionalOptions"
-    DisplayName="Show in Build Log"
-    Description="
-Print to the build log the list of additional options passed to the compiler." />
-  <EnumProperty
-    Name="QtLinkNatvisFile"
-    Category="QtSettings_07_AdditionalLinkOptions"
-    DisplayName="Embed .natvis file into PDB"
-    Description=
-"Embeds the debugger visualizations (.natvis file) into the PDB file
-generated by LINK. While setting this option, the embedded Natvis file
-will take precedence over user-specific Natvis files (for example the
-files located in %USERPROFILE%\\Documents\\Visual Studio 2022\\Visualizers).">
-    <EnumValue Name="false" DisplayName="No" />
-    <EnumValue Name="true" DisplayName="Yes" />
-  </EnumProperty>
 </Rule>

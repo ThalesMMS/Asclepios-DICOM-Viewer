@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- Copyright (C) 2025 The Qt Company Ltd.
- SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only WITH Qt-GPL-exception-1.0
+/****************************************************************************
+**
+** Copyright (C) 2021 The Qt Company Ltd.
+** Contact: https://www.qt.io/licensing/
+**
+** This file is part of the Qt VS Tools.
+**
+** $QT_BEGIN_LICENSE:GPL-EXCEPT$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3 as published by the Free Software
+** Foundation with exceptions as appearing in the file LICENSE.GPL3-EXCEPT
+** included in the packaging of this file. Please review the following
+** information to ensure the GNU General Public License requirements will
+** be met: https://www.gnu.org/licenses/gpl-3.0.html.
+**
+** $QT_END_LICENSE$
+**
+****************************************************************************/
 -->
 
 <!--
@@ -65,14 +90,10 @@
       <QtTranslation>
         <InputFiles
           >$(QtTranslationInput)</InputFiles>
-        <LUpdate Condition="'$(ApplicationType)' == 'Linux'"
+        <LUpdate
           >$(QtToolsPath)/lupdate</LUpdate>
-        <LRelease Condition="'$(ApplicationType)' == 'Linux'"
+        <LRelease
           >$(QtToolsPath)/lrelease</LRelease>
-        <LUpdate Condition="'$(ApplicationType)' != 'Linux'"
-          >$(QtToolsPath)/lupdate.exe</LUpdate>
-        <LRelease Condition="'$(ApplicationType)' != 'Linux'"
-          >$(QtToolsPath)/lrelease.exe</LRelease>
         <TsFile
           >%(Identity)</TsFile>
         <QmFile
@@ -374,7 +395,6 @@
       <Cmd>$(Cmd.Trim())</Cmd>
     </PropertyGroup>
     <HostExec
-      Condition="Exists(@(Options->'%(CmdExec)', ''))"
       Message="%(QtTranslationUpdate.UpdateDescription)"
       Command="$(Cmd)"
       Inputs="@(Options->'%(InputListFile)');@(Options->'%(InputFiles)')"
@@ -382,9 +402,6 @@
       RemoteTarget="$(ResolvedRemoteTarget)"
       RemoteProjectDir="$(_ResolvedRemoteProjectDir)">
     </HostExec>
-    <Warning
-      Condition="!Exists(@(Options->'%(CmdExec)', ''))"
-      File="%(QtTranslationUpdate.Identity)" Text="'lupdate' not found; skipping" />
 
     <!--
     ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -427,9 +444,8 @@
                 Compress;
                 NoUnfinished;
                 RemoveIdentical;
-                Project;
-                UntranslatedPrefix;
-                ReleaseSilent">
+                ReleaseSilent;
+                UntranslatedPrefix">
       <Output
         TaskParameter="Result" ItemName="LocalOptions" />
     </Flatten>
@@ -514,16 +530,12 @@
                    >-removeidentical</CmdOption>
       </Options>
       <Options>
-        <CmdOption Condition="'%(Name)' == 'Project'"
-                   >-project %(Value)</CmdOption>
+        <CmdOption Condition="'%(Name)' == 'ReleaseSilent' AND '%(Value)' == 'true'"
+                   >-silent</CmdOption>
       </Options>
       <Options>
         <CmdOption Condition="'%(Name)' == 'UntranslatedPrefix'"
                    >-markuntranslated %(Value)</CmdOption>
-      </Options>
-      <Options>
-        <CmdOption Condition="'%(Name)' == 'ReleaseSilent' AND '%(Value)' == 'true'"
-                   >-silent</CmdOption>
       </Options>
     </ItemGroup>
 
@@ -544,7 +556,6 @@
       <Cmd>$(Cmd.Trim())</Cmd>
     </PropertyGroup>
     <HostExec
-      Condition="Exists(@(Options->'%(CmdExec)', ''))"
       Message="%(QtTranslationRelease.ReleaseDescription)"
       Command="$(Cmd)"
       Inputs="@(Options->'%(InputFile)')"
@@ -552,9 +563,6 @@
       RemoteTarget="$(ResolvedRemoteTarget)"
       RemoteProjectDir="$(_ResolvedRemoteProjectDir)">
     </HostExec>
-    <Warning
-      Condition="!Exists(@(Options->'%(CmdExec)', ''))"
-      File="%(QtTranslationRelease.Identity)" Text="'lrelease' not found; skipping" />
 
     <!--
     ///////////////////////////////////////////////////////////////////////////////////////////////

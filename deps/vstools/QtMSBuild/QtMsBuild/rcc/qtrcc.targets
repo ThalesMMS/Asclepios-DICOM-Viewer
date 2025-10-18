@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- Copyright (C) 2025 The Qt Company Ltd.
- SPDX-License-Identifier: LicenseRef-Qt-Commercial OR GPL-3.0-only WITH Qt-GPL-exception-1.0
+/****************************************************************************
+**
+** Copyright (C) 2018 The Qt Company Ltd.
+** Contact: https://www.qt.io/licensing/
+**
+** This file is part of the Qt VS Tools.
+**
+** $QT_BEGIN_LICENSE:GPL-EXCEPT$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see https://www.qt.io/terms-conditions. For further
+** information use the contact form at https://www.qt.io/contact-us.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3 as published by the Free Software
+** Foundation with exceptions as appearing in the file LICENSE.GPL3-EXCEPT
+** included in the packaging of this file. Please review the following
+** information to ensure the GNU General Public License requirements will
+** be met: https://www.gnu.org/licenses/gpl-3.0.html.
+**
+** $QT_END_LICENSE$
+**
+****************************************************************************/
 -->
 
 <!--
@@ -46,7 +71,7 @@
   </Choose>
   <ItemGroup>
     <AvailableItemName Include="QtRcc">
-      <Targets>QtRcc;_ClCompile</Targets>
+      <Targets>Qt;_ClCompile</Targets>
     </AvailableItemName>
   </ItemGroup>
   <PropertyGroup>
@@ -196,7 +221,7 @@
   // -->
   <PropertyGroup>
     <QtRccDependsOn>
-      QtVarsLoad;
+      QtPrepare;
       QtRccPrepare;
       QtRccSetModified;
       QtRccOverrideCpp;
@@ -230,19 +255,14 @@
                 TempFile;
                 InitFuncName;
                 Root;
-                CompressionAlgorithm;
                 Compression;
                 NoCompression;
-                NoZstd;
                 CompressThreshold;
                 BinaryOutput;
-                Generator;
                 PassNumber;
                 NoNamespace;
                 Verbose;
                 List;
-                ListMapping;
-                DepFile;
                 Project;
                 FormatVersion">
       <Output
@@ -311,22 +331,17 @@
         <Value Condition="'%(Name)' == 'TempFile'">--temp %(Value)</Value>
       </options>
 
-      <!--//  -name <name>               Create an external initialization function with <name> -->
+      <!--//   -name <name>              Create an external initialization function with <name> -->
       <options>
         <Value Condition="'%(Name)' == 'InitFuncName'">--name %(Value)</Value>
       </options>
 
-      <!--//  -root <path>               Prefix resource access path with root path -->
+      <!--//   -root <path>              Prefix resource access path with root path -->
       <options>
         <Value Condition="'%(Name)' == 'Root'">--root %(Value)</Value>
       </options>
 
-      <!--//  -compress-algo <algo>      Compress input files using algorithm -->
-      <options>
-        <Value Condition="'%(Name)' == 'CompressionAlgorithm'">--compress-algo %(Value)</Value>
-      </options>
-
-      <!--//  -compress <level>          Compress input files by <level> -->
+      <!--//   -compress <level>         Compress input files by <level> -->
       <options>
         <Value
           Condition="'%(Name)' == 'Compression' AND '%(Value)' == 'level1'">--compress 1</Value>
@@ -369,7 +384,7 @@
           AND !$([System.String]::Copy('%(Value)').StartsWith('--compress'))"></Value>
       </options>
 
-      <!--//  -no-compress               Disable all compression -->
+      <!--//   -no-compress              Disable all compression -->
       <options>
         <Value
           Condition="'%(Name)' == 'NoCompression' AND '%(Value)' != 'true'"></Value>
@@ -379,20 +394,12 @@
           Condition="'%(Name)' == 'NoCompression' AND '%(Value)' == 'true'">--no-compress</Value>
       </options>
 
-      <!--//  -no-zstd                   Disable usage of zstd compression -->
-      <options>
-        <Value Condition="'%(Name)' == 'NoZstd' AND '%(Value)' != 'true'"></Value>
-      </options>
-      <options>
-        <Value Condition="'%(Name)' == 'NoZstd' AND '%(Value)' == 'true'">--no-zstd</Value>
-      </options>
-
-      <!--//  -threshold <level>         Threshold to consider compressing files -->
+      <!--//   -threshold <level>        Threshold to consider compressing files -->
       <options>
         <Value Condition="'%(Name)' == 'CompressThreshold'">--threshold %(Value)</Value>
       </options>
 
-      <!--//  -binary                    Output a binary file for use as a dynamic source -->
+      <!--//   -binary                   Output a binary file for use as a dynamic source -->
       <options>
         <Value Condition="'%(Name)' == 'BinaryOutput' AND '%(Value)' != 'true'"></Value>
       </options>
@@ -400,17 +407,12 @@
         <Value Condition="'%(Name)' == 'BinaryOutput' AND '%(Value)' == 'true'">--binary</Value>
       </options>
 
-      <!--//  -g,  -generator <cpp|python|python2>  Select generator -->
-      <options>
-        <Value Condition="'%(Name)' == 'Generator'">--generator %(Value)</Value>
-      </options>
-
-      <!--//  -pass <number>             Pass number for big resources -->
+      <!--//   -pass <number>            Pass number for big resources -->
       <options>
         <Value Condition="'%(Name)' == 'PassNumber'">--pass %(Value)</Value>
       </options>
 
-      <!--//  -namespace                 Turn off namespace macros -->
+      <!--//   -namespace                Turn off namespace macros -->
       <options>
         <Value Condition="'%(Name)' == 'NoNamespace' AND '%(Value)' != 'true'"></Value>
       </options>
@@ -418,7 +420,7 @@
         <Value Condition="'%(Name)' == 'NoNamespace' AND '%(Value)' == 'true'">--namespace</Value>
       </options>
 
-      <!--//  -verbose                   Enable verbose mode -->
+      <!--//   -verbose                  Enable verbose mode -->
       <options>
         <Value Condition="'%(Name)' == 'Verbose' AND '%(Value)' != 'true'"></Value>
       </options>
@@ -426,7 +428,7 @@
         <Value Condition="'%(Name)' == 'Verbose' AND '%(Value)' == 'true'">--verbose</Value>
       </options>
 
-      <!--//  -list                      Only list .qrc file entries, do not generate code -->
+      <!--//   -list                     Only list .qrc file entries, do not generate code -->
       <options>
         <Value Condition="'%(Name)' == 'List' AND '%(Value)' != 'true'"></Value>
       </options>
@@ -434,21 +436,7 @@
         <Value Condition="'%(Name)' == 'List' AND '%(Value)' == 'true'">--list</Value>
       </options>
 
-      <!--//  -list-mapping              Only output a mapping of resource paths to FS paths -->
-      <options>
-        <Value Condition="'%(Name)' == 'ListMapping' AND '%(Value)' != 'true'"></Value>
-      </options>
-      <options>
-        <Value Condition="'%(Name)' == 'ListMapping' AND '%(Value)' == 'true'"
-          >--list-mapping</Value>
-      </options>
-
-      <!--//  -d,  -depfile <file>       Write a depfile with the .qrc dependencies to <file> -->
-      <options>
-        <Value Condition="'%(Name)' == 'DepFile'">--depfile %(Value)</Value>
-      </options>
-
-      <!--//  -project                   Output a resource file containing all files from the
+      <!--//   -project                  Output a resource file containing all files from the
           //                             current directory -->
       <options>
         <Value Condition="'%(Name)' == 'Project' AND '%(Value)' != 'true'"></Value>
@@ -457,7 +445,7 @@
         <Value Condition="'%(Name)' == 'Project' AND '%(Value)' == 'true'">--project</Value>
       </options>
 
-      <!--//  -format-version <number>   The RCC format version to write -->
+      <!--//   -format-version <number>  The RCC format version to write -->
       <options>
         <Value Condition="'%(Name)' == 'FormatVersion'">--format-version %(Value)</Value>
       </options>
@@ -491,7 +479,7 @@
 
       <!--// Get relative path to output -->
       <output_relative
->$([MSBuild]::MakeRelative('$(ProjectDir)', '%(QtRcc.OutputFile)').TrimStart('\'))</output_relative>
+>$([MSBuild]::MakeRelative($(ProjectDir), %(QtRcc.OutputFile)).TrimStart('\'))</output_relative>
     </PropertyGroup>
 
     <!--
@@ -522,7 +510,6 @@
         ///////////////////////////////////////////////////////////////////////////////////////////
         // C++ dynamic source -->
         <ClCompile Condition="'%(QtRcc.DynamicSource)' == 'output'">$(output_relative)</ClCompile>
-        <ClCompile_DisableSpecificWarnings>4711</ClCompile_DisableSpecificWarnings>
       </QtWork>
     </ItemGroup>
 
@@ -596,10 +583,6 @@
       ;QtRccPass2_Lib;
     </ComputeLibInputsTargets>
   </PropertyGroup>
-
-  <Target Name="QtRccClean" BeforeTargets="QtClean">
-    <RemoveDir Directories="$(QtIntDir)rcc"/>
-  </Target>
 
   <!--
   /////////////////////////////////////////////////////////////////////////////////////////////////
