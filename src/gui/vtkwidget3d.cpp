@@ -163,13 +163,8 @@ void asclepios::gui::vtkWidget3D::applyWindowLevelToTransferFunction(const int w
         {
                 return;
         }
-        const auto currentWindow = m_transferFunction->getWindow();
-        const auto currentLevel = m_transferFunction->getLevel();
-        const auto windowDelta = static_cast<double>(window) - static_cast<double>(currentWindow);
-        const auto levelDelta = static_cast<double>(level) - static_cast<double>(currentLevel);
-        m_transferFunction->updateWindowLevel(windowDelta, levelDelta);
-        qCInfo(lcVtkWidget3D) << "applyWindowLevelToTransferFunction()" << "window" << window << "level" << level
-                              << "deltaWindow" << windowDelta << "deltaLevel" << levelDelta;
+        m_transferFunction->updateWindowLevel(window, level);
+        qCInfo(lcVtkWidget3D) << "applyWindowLevelToTransferFunction()" << "window" << window << "level" << level;
 }
 
 //-----------------------------------------------------------------------------
