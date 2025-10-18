@@ -100,13 +100,11 @@ void asclepios::gui::MPRMaker::createMPR()
 {
     if (!m_volume || !m_volume->ImageData)
     {
-        QString errorMessage = m_lastFailure;
-        if (errorMessage.isEmpty())
+        if (m_lastFailure.isEmpty())
         {
-            errorMessage = QStringLiteral("Multiplanar reconstruction unavailable: volume data missing or failed to load.");
+            m_lastFailure = QStringLiteral("Multiplanar reconstruction unavailable: volume data missing or failed to load.");
         }
-        qWarning() << "[MPRMaker]" << errorMessage;
-        m_lastFailure = errorMessage;
+        qWarning() << "[MPRMaker]" << m_lastFailure;
         return;
     }
 
