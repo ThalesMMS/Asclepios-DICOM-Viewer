@@ -3,6 +3,7 @@
 #include <qfuture.h>
 #include <qscrollbar.h>
 #include <QByteArray>
+#include <QElapsedTimer>
 #include <QFutureWatcher>
 #include <QImage>
 #include <QLabel>
@@ -89,6 +90,9 @@ namespace asclepios::gui
                 [[nodiscard]] int frameCount() const;
                 [[nodiscard]] PresentationState initialState() const { return m_initialState; }
                 [[nodiscard]] QImage renderFrame(int frameIndex, const PresentationState& state) const;
+                [[nodiscard]] std::size_t totalAllocatedFrameBytes() const { return m_totalFrameBytes; }
+                [[nodiscard]] qint64 decodingDurationMs() const { return m_decodingDurationMs; }
+                void setDecodingDurationMs(qint64 t_duration) { m_decodingDurationMs = t_duration; }
 
                 static std::shared_ptr<DcmtkImagePresenter> load(asclepios::core::Series* t_series, asclepios::core::Image* t_image);
 
@@ -97,6 +101,8 @@ namespace asclepios::gui
                 QVector<FrameBuffer> m_frames = {};
                 std::unique_ptr<DicomImage> m_multiFrameImage = {};
                 std::vector<std::unique_ptr<DicomImage>> m_singleFrameImages = {};
+                std::size_t m_totalFrameBytes = 0;
+                qint64 m_decodingDurationMs = 0;
 
                 static asclepios::core::DicomPixelInfo extractPixelInfo(const std::string& t_path, const asclepios::core::Image* t_fallbackImage);
                 void populateFromImage(asclepios::core::Image* t_image);
@@ -141,6 +147,9 @@ namespace asclepios::gui
                 QPoint m_lastMousePosition = {};
                 double m_initialWindowCenter = 0.0;
                 double m_initialWindowWidth = 1.0;
+                QElapsedTimer m_firstFrameTimer = {};
+                QElapsedTimer m_frameLoadTimer = {};
+                bool m_reportedFirstFrame = false;
 
                 void initView() override;
                 void initData() override;
