@@ -49,6 +49,7 @@ namespace asclepios::gui
         void setVolumeMapperBlend() const;
 		std::shared_ptr<core::DicomVolume> acquireVolume(QString* failureReason = nullptr) const;
 		[[nodiscard]] std::tuple<int, int> getWindowLevel(const std::shared_ptr<core::DicomVolume>& volume) const;
+		void applyWindowLevelToTransferFunction(int window, int level);
 		QString m_lastVolumeError = {};
 	};
 }
