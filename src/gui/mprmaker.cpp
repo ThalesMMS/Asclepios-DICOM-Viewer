@@ -230,7 +230,14 @@ void asclepios::gui::MPRMaker::renderPlaneOffScreen(const int t_plane)
     {
         m_colorMap = vtkSmartPointer<vtkScalarsToColors>::New();
     }
-    m_colorMap->SetRange(level - 0.5 * window, level + 0.5 * window);
+    static double lastWindow = -1.0;
+    static double lastLevel = -1.0;
+    if (window != lastWindow || level != lastLevel)
+    {
+        m_colorMap->SetRange(level - 0.5 * window, level + 0.5 * window);
+        lastWindow = window;
+        lastLevel = level;
+    }
     m_reslicer[t_plane]->SetInputData(m_volume->ImageData);
     m_reslicer[t_plane]->BypassOff();
     m_reslicer[t_plane]->SetInformationInput(m_volume->ImageData);
