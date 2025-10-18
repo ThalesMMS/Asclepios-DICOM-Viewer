@@ -82,7 +82,8 @@ namespace asclepios::gui
 		void setHasShade(const bool& t_shade) { m_shade = t_shade; }
 		void setMaximumIntensityProjectionFunction(const int& t_windowCenter, const int& t_windowWidth);
 
-		void updateWindowLevel(const double& t_window, const double& t_level);
+                void updateWindowLevel(const double& t_window, const double& t_level);
+                void updateWindowLevelDelta(const double& t_windowDelta, const double& t_levelDelta);
 		void loadFilterFromFile(const QString& t_fileName);
 		
 
@@ -100,8 +101,9 @@ namespace asclepios::gui
 		vtkSmartPointer<vtkPiecewiseFunction> m_opacityFunction = {};
 		
 
-		void extractColorFunctionInfo(const QJsonArray& t_array);
-		void extractOpacityFunctionInfo(const QJsonArray& t_array);
+                void extractColorFunctionInfo(const QJsonArray& t_array);
+                void extractOpacityFunctionInfo(const QJsonArray& t_array);
+                void rebuildTransferFunctions();
 		
 	};
 }
