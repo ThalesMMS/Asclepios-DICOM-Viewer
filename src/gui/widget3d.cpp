@@ -160,7 +160,9 @@ void asclepios::gui::Widget3D::onFinishedRenderAsync()
         installEventFilter(this);
         if (m_renderTimer.isValid())
         {
-                qCInfo(lcWidget3D) << "render() async task finished in" << m_renderTimer.elapsed() << "ms";
+                qCInfo(lcWidget3D)
+                        << "[Telemetry] Volume composition finished"
+                        << "elapsedMs" << m_renderTimer.elapsed();
         }
 }
 

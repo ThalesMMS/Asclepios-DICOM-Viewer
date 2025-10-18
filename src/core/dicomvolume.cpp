@@ -585,32 +585,30 @@ namespace
                 {
                         if constexpr (std::is_same_v<SourceT, TargetT>)
                         {
-                                std::copy(source, source + count, target);
+                                std::memcpy(target, source, count * sizeof(SourceT));
                         }
                         else
                         {
-                                std::transform(source, source + count, target,
-                                               [](const SourceT value)
-                                               {
-                                                       return static_cast<TargetT>(value);
-                                               });
+                                for (size_t index = 0; index < count; ++index)
+                                {
+                                        target[index] = static_cast<TargetT>(source[index]);
+                                }
                         }
                         return;
                 }
 
-                std::transform(source, source + count, target,
-                               [&](const SourceT value)
-                               {
-                                       const double transformed = slope * static_cast<double>(value) + intercept;
-                                       if constexpr (std::is_floating_point_v<TargetT>)
-                                       {
-                                               return static_cast<TargetT>(transformed);
-                                       }
-                                       else
-                                       {
-                                               return static_cast<TargetT>(std::round(transformed));
-                                       }
-                               });
+                for (size_t index = 0; index < count; ++index)
+                {
+                        const double transformed = slope * static_cast<double>(source[index]) + intercept;
+                        if constexpr (std::is_floating_point_v<TargetT>)
+                        {
+                                target[index] = static_cast<TargetT>(transformed);
+                        }
+                        else
+                        {
+                                target[index] = static_cast<TargetT>(std::round(transformed));
+                        }
+                }
         }
 
         template <typename SourceT>

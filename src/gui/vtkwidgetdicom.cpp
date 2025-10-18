@@ -27,7 +27,6 @@
 #include <vtkRendererCollection.h>
 #include <vtkStreamingDemandDrivenPipeline.h>
 
-#include <QDebug>
 #include <QLoggingCategory>
 #include <QByteArray>
 
@@ -43,6 +42,7 @@ namespace
         constexpr double epsilon = 1e-8;
         constexpr double spacingChangeThreshold = 5e-4;
         constexpr double cameraChangeThreshold = 1e-5;
+        constexpr double uniformRangeThreshold = 1e-5;
 
 	void copyDirectionToImage(vtkImageData* imageData, vtkMatrix4x4* direction)
 	{
@@ -87,12 +87,22 @@ namespace
 		imageData->Modified();
 	}
 
-	bool isMagnitudeValid(double value)
-	{
-		constexpr double spacingUpperBound = 1e4;
-		const double absValue = std::abs(value);
-		return std::isfinite(value) && absValue > epsilon && absValue < spacingUpperBound;
-	}
+        bool isMagnitudeValid(double value)
+        {
+                constexpr double spacingUpperBound = 1e4;
+                const double absValue = std::abs(value);
+                return std::isfinite(value) && absValue > epsilon && absValue < spacingUpperBound;
+        }
+
+        bool isUniformRange(const double* range)
+        {
+                if (!range)
+                {
+                        return true;
+                }
+                const double span = range[1] - range[0];
+                return !std::isfinite(range[0]) || !std::isfinite(range[1]) || std::abs(span) <= uniformRangeThreshold;
+        }
 }
 
 asclepios::gui::vtkWidgetDICOM::vtkWidgetDICOM()
@@ -228,6 +238,11 @@ void asclepios::gui::vtkWidgetDICOM::Render()
         auto* const openGlWindow = vtkOpenGLRenderWindow::SafeDownCast(m_renderWindow);
         const unsigned int frameBufferObject = openGlWindow ? openGlWindow->GetFrameBufferObject() : 0U;
         const unsigned int defaultFrameBufferId = openGlWindow ? openGlWindow->GetDefaultFrameBufferId() : 0U;
+        double actorBounds[6] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+        if (m_imageActor)
+        {
+                m_imageActor->GetBounds(actorBounds);
+        }
         qCInfo(lcWidgetDicom) << "Render() state"
                               << "size" << (resolvedSize ? resolvedSize[0] : 0) << (resolvedSize ? resolvedSize[1] : 0)
                               << "viewport" << viewport[0] << viewport[1] << viewport[2] << viewport[3]
@@ -235,7 +250,9 @@ void asclepios::gui::vtkWidgetDICOM::Render()
                               << "offscreen" << m_renderWindow->GetOffScreenRendering()
                               << "fbo" << frameBufferObject
                               << "defaultFbo" << defaultFrameBufferId
-                              << "sliceMapper" << m_useSliceMapper;
+                              << "sliceMapper" << m_useSliceMapper
+                              << "actorBounds" << actorBounds[0] << actorBounds[1] << actorBounds[2] << actorBounds[3]
+                              << actorBounds[4] << actorBounds[5];
         m_renderWindow->Render();
 }
 
@@ -301,23 +318,28 @@ void asclepios::gui::vtkWidgetDICOM::setVolume(const std::shared_ptr<core::Dicom
 	auto* scalarsAfter = m_volume->ImageData->GetPointData()
 		                      ? m_volume->ImageData->GetPointData()->GetScalars()
 		                      : nullptr;
-	if (scalarsAfter)
-	{
-		double range[2] = {0.0, 0.0};
-		scalarsAfter->GetRange(range);
-		if (!scalarsAfter->GetName())
-		{
-			scalarsAfter->SetName("Scalars");
-		}
-		if (m_volume && m_volume->ImageData && m_volume->ImageData->GetPointData())
-		{
-			m_volume->ImageData->GetPointData()->SetActiveScalars(scalarsAfter->GetName());
-		}
-		qCInfo(lcWidgetDicom)
-			<< "Scalar array confirmed after rescale. Range:"
-			<< range[0]
-			<< range[1];
-	}
+        if (scalarsAfter)
+        {
+                double range[2] = {0.0, 0.0};
+                scalarsAfter->GetRange(range);
+                if (!scalarsAfter->GetName())
+                {
+                        scalarsAfter->SetName("Scalars");
+                }
+                if (m_volume && m_volume->ImageData && m_volume->ImageData->GetPointData())
+                {
+                        m_volume->ImageData->GetPointData()->SetActiveScalars(scalarsAfter->GetName());
+                }
+                qCInfo(lcWidgetDicom)
+                        << "Scalar array confirmed after rescale. Range:"
+                        << range[0]
+                        << range[1];
+                if (isUniformRange(range))
+                {
+                        qCWarning(lcWidgetDicom)
+                                << "Volume scalars are uniform; the rendered slice will appear black.";
+                }
+        }
 	else
 	{
 		qCCritical(lcWidgetDicom) << "Scalar array missing after rescale.";
@@ -515,27 +537,43 @@ void asclepios::gui::vtkWidgetDICOM::updateScalarsForInversion()
 
 void asclepios::gui::vtkWidgetDICOM::setWindowWidthCenter(const int t_width, const int t_center)
 {
-	const int safeWidth = (t_width == 0) ? 1 : t_width;
-	if (m_windowLevelFilter)
-	{
-		m_windowLevelFilter->setWindowWidthCenter(safeWidth, t_center);
-	}
-	m_windowLevelColors->SetWindow(static_cast<double>(safeWidth));
-	m_windowLevelColors->SetLevel(static_cast<double>(t_center));
-	m_windowLevelColors->Update();
-	if (m_imageActor)
-	{
-		m_imageActor->Modified();
-	}
-	m_windowWidth = safeWidth;
-	m_windowCenter = t_center;
+        const int safeWidth = (t_width == 0) ? 1 : t_width;
+        if (m_windowLevelFilter)
+        {
+                m_windowLevelFilter->setWindowWidthCenter(safeWidth, t_center);
+        }
+        m_windowLevelColors->SetWindow(static_cast<double>(safeWidth));
+        m_windowLevelColors->SetLevel(static_cast<double>(t_center));
+        m_windowLevelColors->Update();
+        if (m_imageActor)
+        {
+                m_imageActor->Modified();
+        }
+        m_windowWidth = safeWidth;
+        m_windowCenter = t_center;
+        qCInfo(lcWidgetDicom)
+                << "setWindowWidthCenter() applied"
+                << "width"
+                << m_windowWidth
+                << "center"
+                << m_windowCenter;
 }
 
 void asclepios::gui::vtkWidgetDICOM::changeWindowWidthCenter(const int t_width, const int t_center)
 {
-	m_windowWidth += t_width;
-	m_windowCenter += t_center;
-	setWindowWidthCenter(m_windowWidth, m_windowCenter);
+        m_windowWidth += t_width;
+        m_windowCenter += t_center;
+        setWindowWidthCenter(m_windowWidth, m_windowCenter);
+        qCInfo(lcWidgetDicom)
+                << "changeWindowWidthCenter()"
+                << "deltaWidth"
+                << t_width
+                << "deltaCenter"
+                << t_center
+                << "newWidth"
+                << m_windowWidth
+                << "newCenter"
+                << m_windowCenter;
 }
 
 void asclepios::gui::vtkWidgetDICOM::setInitialWindowWidthCenter()
