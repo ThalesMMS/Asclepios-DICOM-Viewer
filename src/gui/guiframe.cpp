@@ -166,7 +166,7 @@ void asclepios::gui::GUIFrame::createMenuBar()
 	mainMenu->addMenu(m_fileMenu);
 	m_layoutMenu = new LayoutMenu(this);
 	mainMenu->addMenu(m_layoutMenu);
-	mainMenu->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+	mainMenu->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
 	m_ui.layoutMenu->addWidget(mainMenu);
 	mainMenu->setStyleSheet(menuBarStyle);
 }
