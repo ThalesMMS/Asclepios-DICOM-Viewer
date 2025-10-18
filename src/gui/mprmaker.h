@@ -42,6 +42,7 @@ namespace asclepios::gui
 		[[nodiscard]] std::shared_ptr<core::DicomVolume> getVolume() const { return m_volume; }
 		[[nodiscard]] double getCenterSliceZPosition(int t_plane) const;
 		[[nodiscard]] vtkSmartPointer<vtkScalarsToColors> getColorMapScalar() const { return m_colorMap; }
+		void updateColorMapWindowLevel(double t_window, double t_level);
 		[[nodiscard]] QString lastFailureMessage() const { return m_lastFailure; }
 
 

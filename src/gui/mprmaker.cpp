@@ -255,10 +255,7 @@ void asclepios::gui::MPRMaker::resetWindowLevel()
                 << range[0]
                 << range[1];
     }
-    auto* lookupTable = ensureGrayscaleLookupTable(m_colorMap);
-    lookupTable->SetTableRange(level - 0.5 * window, level + 0.5 * window);
-    lookupTable->Build();
-    lookupTable->Modified();
+    updateColorMapWindowLevel(window, level);
     qCInfo(lcMprMaker)
             << "resetWindowLevel() applied"
             << "window"
@@ -268,6 +265,15 @@ void asclepios::gui::MPRMaker::resetWindowLevel()
             << "range"
             << range[0]
             << range[1];
+}
+
+//-----------------------------------------------------------------------------
+void asclepios::gui::MPRMaker::updateColorMapWindowLevel(const double t_window, const double t_level)
+{
+    auto* lookupTable = ensureGrayscaleLookupTable(m_colorMap);
+    lookupTable->SetTableRange(t_level - 0.5 * t_window, t_level + 0.5 * t_window);
+    lookupTable->Build();
+    lookupTable->Modified();
 }
 
 //-----------------------------------------------------------------------------
@@ -350,14 +356,11 @@ void asclepios::gui::MPRMaker::renderPlaneOffScreen(const int t_plane)
         level = 0.5 * (range[1] + range[0]);
     }
     setMiddleSlice(t_plane);
-    auto* lookupTable = ensureGrayscaleLookupTable(m_colorMap);
     static double lastWindow = -1.0;
     static double lastLevel = -1.0;
     if (window != lastWindow || level != lastLevel)
     {
-        lookupTable->SetTableRange(level - 0.5 * window, level + 0.5 * window);
-        lookupTable->Build();
-        lookupTable->Modified();
+        updateColorMapWindowLevel(window, level);
         lastWindow = window;
         lastLevel = level;
     }
