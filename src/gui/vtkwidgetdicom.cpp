@@ -858,6 +858,8 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
                 }
         }
 
+        const bool spacingRequiresCameraReset = spacingChangedSignificantly || spacingSanitized;
+
         m_cachedSpacing = {sanitizedSpacing[0], sanitizedSpacing[1], sanitizedSpacing[2]};
         m_hasCachedSpacing = true;
 
@@ -899,18 +901,21 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
 		}
 	}
 
-        if (spacingChangedSignificantly || cameraInvalid || m_lastSliceOrientation != m_sliceOrientation)
+        if (spacingRequiresCameraReset || cameraInvalid || m_lastSliceOrientation != m_sliceOrientation)
         {
                 m_renderer->ResetCamera();
                 const double* resetPosition = camera->GetPosition();
                 const double* resetFocalPoint = camera->GetFocalPoint();
                 qCInfo(lcWidgetDicom)
                         << "Reset camera due to"
-                        << (spacingChangedSignificantly ? "spacing update" : (cameraInvalid ? "invalid camera" : "orientation change"))
+                        << (spacingChangedSignificantly
+                                        ? "spacing update"
+                                        : (spacingSanitized ? "sanitized spacing"
+                                                            : (cameraInvalid ? "invalid camera" : "orientation change")))
                         << "position"
                         << resetPosition[0]
                         << resetPosition[1]
-			<< resetPosition[2]
+                        << resetPosition[2]
 			<< "focal"
 			<< resetFocalPoint[0]
 			<< resetFocalPoint[1]
@@ -922,7 +927,7 @@ void asclepios::gui::vtkWidgetDICOM::UpdateDisplayExtent()
                 m_hasCachedCamera = true;
         }
 
-        if (!spacingChangedSignificantly && m_hasCachedCamera)
+        if (!spacingChangedSignificantly && !spacingSanitized && m_hasCachedCamera)
         {
                 bool cameraShifted = false;
                 for (int axis = 0; axis < 3; ++axis)
