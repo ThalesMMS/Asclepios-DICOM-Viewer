@@ -231,7 +231,8 @@ void asclepios::gui::WidgetMPR::positionLoadingAnimation()
         const QRect targetRect = rect();
         const QSize overlaySize = m_loadingAnimation->size();
         const QPoint topLeft = targetRect.center() - QPoint(overlaySize.width() / 2, overlaySize.height() / 2);
-        m_loadingAnimation->move(topLeft);
+        const QPoint globalTopLeft = mapToGlobal(topLeft);
+        m_loadingAnimation->move(globalTopLeft);
 }
 
 void asclepios::gui::WidgetMPR::resizeEvent(QResizeEvent* event)
