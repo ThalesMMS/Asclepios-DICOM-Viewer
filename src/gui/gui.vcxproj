@@ -46,6 +46,7 @@
   <PropertyGroup>
     <QtInstallDirRoot Condition="'$(QtInstallDirRoot)'=='' and '$(QT_INSTALL_DIR)'!=''">$([System.IO.Path]::GetFullPath('$(QT_INSTALL_DIR)'))</QtInstallDirRoot>
     <QtInstallDirRoot Condition="'$(QtInstallDirRoot)'==''">C:\Qt5\5.15.2\msvc2019_64</QtInstallDirRoot>
+    <QtInstallDirForward Condition="'$(QtInstallDirRoot)'!=''">$([System.String]::Copy('$(QtInstallDirRoot)').Replace('\\','/'))</QtInstallDirForward>
   </PropertyGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
     <Import Project="$(QtMsBuild)\qt_defaults.props" />
@@ -55,12 +56,12 @@
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <QtInstall>qt5</QtInstall>
     <QtModules>core;gui;opengl;openglextensions;qmltest;quick;quickcontrols2;quickwidgets;widgets;winextras</QtModules>
-    <QtInstallDir>$(QtInstallDirRoot)</QtInstallDir>
+    <QtInstallDir>$(QtInstallDirForward)</QtInstallDir>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <QtInstall>qt5</QtInstall>
     <QtModules>core;gui;quick;quickwidgets;widgets;winextras</QtModules>
-    <QtInstallDir>$(QtInstallDirRoot)</QtInstallDir>
+    <QtInstallDir>$(QtInstallDirForward)</QtInstallDir>
   </PropertyGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
     <Import Project="$(QtMsBuild)\qt.props" />
