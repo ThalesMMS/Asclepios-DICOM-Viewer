@@ -327,19 +327,21 @@ void asclepios::gui::vtkWidget3D::render()
         m_volume->GetBounds(bounds);
         initInteractorStyle();
         int dimensions[3] = {0, 0, 0};
+        int extent[6] = {0, 0, 0, 0, 0, 0};
         vtkIdType voxelCount = -1;
         if (m_volumeData->ImageData)
         {
                 m_volumeData->ImageData->GetDimensions(dimensions);
+                m_volumeData->ImageData->GetExtent(extent);
                 voxelCount = static_cast<vtkIdType>(dimensions[0]) * dimensions[1] * dimensions[2];
         }
         qCInfo(lcVtkWidget3D)
                 << "[Telemetry] Volume render completed"
                 << "durationMs" << renderDuration
-                << "extend" << extend[0] << extend[1] << extend[2] << extend[3] << extend[4] << extend[5]
+                << "extent" << extent[0] << extent[1] << extent[2] << extent[3] << extent[4] << extent[5]
                 << "bounds" << bounds[0] << bounds[1] << bounds[2] << bounds[3] << bounds[4] << bounds[5]
                 << "dimensions" << dimensions[0] << dimensions[1] << dimensions[2]
-                << "voxelCount" << voxelCount;
+                << "voxelCount" << voxelCount
                 << "scalarRange" << scalarRange[0] << scalarRange[1];
 }
 

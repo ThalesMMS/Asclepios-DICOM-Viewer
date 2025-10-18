@@ -1436,8 +1436,157 @@ namespace
                 volume->PixelInfo.RescaleSlope = 1.0;
                 volume->PixelInfo.RescaleIntercept = 0.0;
 
+        return volume;
+        }
+
+std::shared_ptr<DicomVolume> loadSeriesInternal(const std::vector<std::string>& slicePaths)
+{
+        CodecRegistrationGuard guard;
+        if (slicePaths.empty())
+        {
+                throw std::runtime_error("Cannot load DICOM series: no slice paths provided.");
+        }
+
+        if (auto volume = tryLoadUncompressedSeries(slicePaths))
+        {
                 return volume;
         }
+
+        auto sliceFuture = QtConcurrent::mapped(slicePaths, &loadSingleFile);
+        sliceFuture.waitForFinished();
+
+        std::vector<std::shared_ptr<DicomVolume>> slices;
+        slices.reserve(slicePaths.size());
+        for (int index = 0; index < sliceFuture.resultCount(); ++index)
+        {
+                slices.emplace_back(sliceFuture.resultAt(index));
+        }
+
+        const auto& reference = *slices.front();
+        const int width = reference.ImageData->GetDimensions()[0];
+        const int height = reference.ImageData->GetDimensions()[1];
+
+        std::vector<std::pair<double, std::shared_ptr<DicomVolume>>> sortedSlices;
+        sortedSlices.reserve(slices.size());
+        for (const auto& slice : slices)
+        {
+                const double position =
+                        slice->Geometry.Origin[0] * reference.Geometry.NormalDirection[0] +
+                        slice->Geometry.Origin[1] * reference.Geometry.NormalDirection[1] +
+                        slice->Geometry.Origin[2] * reference.Geometry.NormalDirection[2];
+                sortedSlices.emplace_back(position, slice);
+        }
+        std::sort(sortedSlices.begin(), sortedSlices.end(),
+                [](const auto& lhs, const auto& rhs) { return lhs.first < rhs.first; });
+
+        auto volume = std::make_shared<DicomVolume>();
+        volume->Geometry = reference.Geometry;
+        volume->PixelInfo = reference.PixelInfo;
+        volume->Metadata = reference.Metadata;
+        volume->NumberOfFrames = static_cast<int>(sortedSlices.size());
+        normalizeDirections(volume->Geometry);
+        populateDirectionMatrixInternal(*volume);
+
+        auto* referencePointData = reference.ImageData->GetPointData();
+        auto* referenceScalars = referencePointData ? referencePointData->GetScalars() : nullptr;
+        if (!referenceScalars)
+        {
+                throw std::runtime_error("Reference slice missing scalar data while assembling volume.");
+        }
+        const int referenceScalarType = referenceScalars->GetDataType();
+
+        if (sortedSlices.size() >= 2)
+        {
+                const double spacing =
+                        std::abs(sortedSlices[1].first - sortedSlices.front().first);
+                if (spacing > epsilon)
+                {
+                        volume->Geometry.Spacing[2] = spacing;
+                }
+        }
+        allocateImageData(*volume, width, height, volume->NumberOfFrames, referenceScalarType);
+
+        std::vector<int> assembledIndices(volume->NumberOfFrames);
+        std::iota(assembledIndices.begin(), assembledIndices.end(), 0);
+        QtConcurrent::blockingMap(assembledIndices,
+                [&](int& index)
+                {
+                        const auto& sliceVolume = *sortedSlices[index].second;
+                        auto* sliceScalars = sliceVolume.ImageData->GetPointData() ?
+                                sliceVolume.ImageData->GetPointData()->GetScalars() : nullptr;
+                        if (!sliceScalars)
+                        {
+                                throw std::runtime_error("Slice image data missing scalars while assembling volume.");
+                        }
+
+                        switch (sliceScalars->GetDataType())
+                        {
+                        case VTK_UNSIGNED_CHAR:
+                                copyFrameData(static_cast<const unsigned char*>(sliceVolume.ImageData->GetScalarPointer()),
+                                        volume->ImageData,
+                                        index,
+                                        volume->PixelInfo,
+                                        width,
+                                        height);
+                                break;
+                        case VTK_CHAR:
+                                copyFrameData(static_cast<const signed char*>(sliceVolume.ImageData->GetScalarPointer()),
+                                        volume->ImageData,
+                                        index,
+                                        volume->PixelInfo,
+                                        width,
+                                        height);
+                                break;
+                        case VTK_UNSIGNED_SHORT:
+                                copyFrameData(static_cast<const unsigned short*>(sliceVolume.ImageData->GetScalarPointer()),
+                                        volume->ImageData,
+                                        index,
+                                        volume->PixelInfo,
+                                        width,
+                                        height);
+                                break;
+                        case VTK_SHORT:
+                                copyFrameData(static_cast<const signed short*>(sliceVolume.ImageData->GetScalarPointer()),
+                                        volume->ImageData,
+                                        index,
+                                        volume->PixelInfo,
+                                        width,
+                                        height);
+                                break;
+                        case VTK_UNSIGNED_INT:
+                                copyFrameData(static_cast<const Uint32*>(sliceVolume.ImageData->GetScalarPointer()),
+                                        volume->ImageData,
+                                        index,
+                                        volume->PixelInfo,
+                                        width,
+                                        height);
+                                break;
+                        case VTK_INT:
+                                copyFrameData(static_cast<const Sint32*>(sliceVolume.ImageData->GetScalarPointer()),
+                                        volume->ImageData,
+                                        index,
+                                        volume->PixelInfo,
+                                        width,
+                                        height);
+                                break;
+                        case VTK_FLOAT:
+                                copyFrameData(static_cast<const float*>(sliceVolume.ImageData->GetScalarPointer()),
+                                        volume->ImageData,
+                                        index,
+                                        volume->PixelInfo,
+                                        width,
+                                        height);
+                                break;
+                        default:
+                                throw std::runtime_error("Unsupported scalar type while assembling DICOM volume.");
+                        }
+                });
+
+        volume->PixelInfo.RescaleSlope = 1.0;
+        volume->PixelInfo.RescaleIntercept = 0.0;
+
+        return volume;
+}
 }
 
 std::shared_ptr<DicomVolume> DicomVolumeLoader::loadSeries(
@@ -1583,158 +1732,6 @@ bool DicomVolumeLoader::diagnoseStudy(const std::string& path)
         }
 
         return false;
-}
-
-std::shared_ptr<DicomVolume> loadSeriesInternal(const std::vector<std::string>& slicePaths)
-{
-        CodecRegistrationGuard guard;
-        if (slicePaths.empty())
-        {
-                throw std::runtime_error("Cannot load DICOM series: no slice paths provided.");
-        }
-
-        if (auto volume = tryLoadUncompressedSeries(slicePaths))
-        {
-                return volume;
-        }
-
-        auto sliceFuture = QtConcurrent::mapped(slicePaths,
-                                                [](const std::string& path)
-                                                {
-                                                        return loadSingleFile(path);
-                                                });
-        sliceFuture.waitForFinished();
-
-        std::vector<std::shared_ptr<DicomVolume>> slices;
-        slices.reserve(slicePaths.size());
-        for (int index = 0; index < sliceFuture.resultCount(); ++index)
-        {
-                slices.emplace_back(sliceFuture.resultAt(index));
-        }
-
-	const auto& reference = *slices.front();
-	const int width = reference.ImageData->GetDimensions()[0];
-	const int height = reference.ImageData->GetDimensions()[1];
-
-	std::vector<std::pair<double, std::shared_ptr<DicomVolume>>> sortedSlices;
-	sortedSlices.reserve(slices.size());
-	for (const auto& slice : slices)
-	{
-		const double position = slice->Geometry.Origin[0] * reference.Geometry.NormalDirection[0] +
-			slice->Geometry.Origin[1] * reference.Geometry.NormalDirection[1] +
-			slice->Geometry.Origin[2] * reference.Geometry.NormalDirection[2];
-		sortedSlices.emplace_back(position, slice);
-	}
-	std::sort(sortedSlices.begin(), sortedSlices.end(),
-	          [](const auto& lhs, const auto& rhs) { return lhs.first < rhs.first; });
-
-        auto volume = std::make_shared<DicomVolume>();
-        volume->Geometry = reference.Geometry;
-        volume->PixelInfo = reference.PixelInfo;
-        volume->Metadata = reference.Metadata;
-        volume->NumberOfFrames = static_cast<int>(sortedSlices.size());
-        normalizeDirections(volume->Geometry);
-        populateDirectionMatrixInternal(*volume);
-
-        auto* referencePointData = reference.ImageData->GetPointData();
-        auto* referenceScalars = referencePointData ? referencePointData->GetScalars() : nullptr;
-        if (!referenceScalars)
-        {
-                throw std::runtime_error("Reference slice missing scalar data while assembling volume.");
-        }
-        const int referenceScalarType = referenceScalars->GetDataType();
-
-        if (sortedSlices.size() >= 2)
-        {
-                const double spacing =
-                        std::abs(sortedSlices[1].first - sortedSlices.front().first);
-                if (spacing > epsilon)
-                {
-                        volume->Geometry.Spacing[2] = spacing;
-                }
-        }
-        allocateImageData(*volume, width, height, volume->NumberOfFrames, referenceScalarType);
-
-        std::vector<int> assembledIndices(volume->NumberOfFrames);
-        std::iota(assembledIndices.begin(), assembledIndices.end(), 0);
-        QtConcurrent::blockingMap(assembledIndices,
-                                  [&](int& index)
-                                  {
-                                          const auto& sliceVolume = *sortedSlices[index].second;
-                                          auto* sliceScalars = sliceVolume.ImageData->GetPointData() ?
-                                                  sliceVolume.ImageData->GetPointData()->GetScalars() : nullptr;
-                                          if (!sliceScalars)
-                                          {
-                                                  throw std::runtime_error("Slice image data missing scalars while assembling volume.");
-                                          }
-
-                                          switch (sliceScalars->GetDataType())
-                                          {
-                                          case VTK_UNSIGNED_CHAR:
-                                                  copyFrameData(static_cast<const unsigned char*>(sliceVolume.ImageData->GetScalarPointer()),
-                                                                volume->ImageData,
-                                                                index,
-                                                                volume->PixelInfo,
-                                                                width,
-                                                                height);
-                                                  break;
-                                          case VTK_CHAR:
-                                                  copyFrameData(static_cast<const signed char*>(sliceVolume.ImageData->GetScalarPointer()),
-                                                                volume->ImageData,
-                                                                index,
-                                                                volume->PixelInfo,
-                                                                width,
-                                                                height);
-                                                  break;
-                                          case VTK_UNSIGNED_SHORT:
-                                                  copyFrameData(static_cast<const unsigned short*>(sliceVolume.ImageData->GetScalarPointer()),
-                                                                volume->ImageData,
-                                                                index,
-                                                                volume->PixelInfo,
-                                                                width,
-                                                                height);
-                                                  break;
-                                          case VTK_SHORT:
-                                                  copyFrameData(static_cast<const signed short*>(sliceVolume.ImageData->GetScalarPointer()),
-                                                                volume->ImageData,
-                                                                index,
-                                                                volume->PixelInfo,
-                                                                width,
-                                                                height);
-                                                  break;
-                                          case VTK_UNSIGNED_INT:
-                                                  copyFrameData(static_cast<const Uint32*>(sliceVolume.ImageData->GetScalarPointer()),
-                                                                volume->ImageData,
-                                                                index,
-                                                                volume->PixelInfo,
-                                                                width,
-                                                                height);
-                                                  break;
-                                          case VTK_INT:
-                                                  copyFrameData(static_cast<const Sint32*>(sliceVolume.ImageData->GetScalarPointer()),
-                                                                volume->ImageData,
-                                                                index,
-                                                                volume->PixelInfo,
-                                                                width,
-                                                                height);
-                                                  break;
-                                          case VTK_FLOAT:
-                                                  copyFrameData(static_cast<const float*>(sliceVolume.ImageData->GetScalarPointer()),
-                                                                volume->ImageData,
-                                                                index,
-                                                                volume->PixelInfo,
-                                                                width,
-                                                                height);
-                                                  break;
-                                          default:
-                                                  throw std::runtime_error("Unsupported scalar type while assembling DICOM volume.");
-                                          }
-                                  });
-
-        volume->PixelInfo.RescaleSlope = 1.0;
-	volume->PixelInfo.RescaleIntercept = 0.0;
-
-	return volume;
 }
 
 void asclepios::core::DicomVolumeLoader::populateDirectionMatrix(DicomVolume& volume)
