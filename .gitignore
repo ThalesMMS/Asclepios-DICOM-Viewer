@@ -398,6 +398,8 @@ FodyWeavers.xsd
 /KARLA
 /deps/vtk
 /deps/vtk-dicom
-/deps/vstools
+/deps/vstools/*
+!/deps/vstools/QtMSBuild/
+!/deps/vstools/QtMSBuild/QtMsBuild/**
 /deps/vstools-v3.4.0
 /deps/dcmtk
