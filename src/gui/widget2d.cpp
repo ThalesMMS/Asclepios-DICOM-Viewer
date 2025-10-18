@@ -779,7 +779,7 @@ void asclepios::gui::Widget2D::refreshDisplayedFrame(const bool t_updateOverlay)
                         const double fitScale = std::min(widthScale, heightScale);
                         if (fitScale > 0.0 && std::isfinite(fitScale))
                         {
-                                effectiveZoom *= fitScale;
+                                effectiveZoom = fitScale;
                         }
                 }
         }
