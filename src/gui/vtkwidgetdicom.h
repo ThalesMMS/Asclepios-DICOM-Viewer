@@ -1,5 +1,7 @@
 #pragma once
 
+#include <array>
+#include <limits>
 #include <memory>
 #include <tuple>
 
@@ -45,11 +47,14 @@ namespace asclepios::gui
 
 		void SetRenderWindow(vtkRenderWindow* renderWindow);
 		[[nodiscard]] vtkRenderWindow* GetRenderWindow() const { return m_renderWindow; }
-		[[nodiscard]] vtkRenderer* GetRenderer() const { return m_renderer; }
-		[[nodiscard]] vtkImageActor* GetImageActor() const { return m_imageActor; }
+                [[nodiscard]] vtkRenderer* GetRenderer() const { return m_renderer; }
+                [[nodiscard]] vtkImageActor* GetImageActor() const { return m_imageActor; }
+                [[nodiscard]] std::array<double, 3> getLastSanitizedSpacing() const { return m_cachedSpacing; }
+                [[nodiscard]] std::array<double, 3> getOriginalSpacing() const { return m_originalSpacing; }
+                [[nodiscard]] bool hasOriginalSpacing() const { return m_hasOriginalSpacing; }
 
-		void SetupInteractor(vtkRenderWindowInteractor* interactor);
-		[[nodiscard]] vtkRenderWindowInteractor* GetInteractor() const { return m_interactor; }
+                void SetupInteractor(vtkRenderWindowInteractor* interactor);
+                [[nodiscard]] vtkRenderWindowInteractor* GetInteractor() const { return m_interactor; }
 
 		void Render();
 
@@ -94,6 +99,17 @@ namespace asclepios::gui
                 double m_lastAvgSpacing = -1.0;
                 int m_lastSliceOrientation = -1;
                 bool m_useSliceMapper = false;
+                std::array<double, 3> m_cachedSpacing = {1.0, 1.0, 1.0};
+                std::array<double, 3> m_originalSpacing = {1.0, 1.0, 1.0};
+                std::array<double, 3> m_cachedCameraPosition = {std::numeric_limits<double>::quiet_NaN(),
+                        std::numeric_limits<double>::quiet_NaN(),
+                        std::numeric_limits<double>::quiet_NaN()};
+                std::array<double, 3> m_cachedCameraFocalPoint = {std::numeric_limits<double>::quiet_NaN(),
+                        std::numeric_limits<double>::quiet_NaN(),
+                        std::numeric_limits<double>::quiet_NaN()};
+                bool m_hasCachedSpacing = false;
+                bool m_hasOriginalSpacing = false;
+                bool m_hasCachedCamera = false;
 
                 void applyDirectionMatrix();
                 void updateScalarsForInversion();
