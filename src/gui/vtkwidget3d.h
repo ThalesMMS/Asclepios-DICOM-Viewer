@@ -26,6 +26,8 @@ namespace asclepios::gui
 
 		//setters
 		void setInteractor(const vtkSmartPointer<vtkRenderWindowInteractor>& t_interactor) override { m_interactor = t_interactor; }
+        bool composeAndRenderVolume(const std::shared_ptr<core::DicomVolume>& volume,
+                const QString& initialFailureReason = QString());
 		void setFilter(const QString& t_filePath);
 		void render() override;
 		void activateBoxWidget(const bool& t_flag);
