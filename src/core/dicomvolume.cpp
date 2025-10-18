@@ -5,9 +5,12 @@
 #include <cmath>
 #include <cstring>
 #include <limits>
+#include <memory>
+#include <numeric>
 #include <stdexcept>
 #include <type_traits>
 #include <utility>
+#include <vector>
 
 #include <dcmtk/dcmdata/dcdeftag.h>
 #include <dcmtk/dcmdata/dcdicent.h>
@@ -26,6 +29,7 @@
 
 #include <QLoggingCategory>
 #include <QString>
+#include <QtConcurrent/QtConcurrent>
 
 #include <vtkDataArray.h>
 #include <vtkDataObject.h>
@@ -453,13 +457,26 @@ namespace
 
         struct UncompressedSliceInfo
         {
-                std::unique_ptr<DcmFileFormat> File;
-                DcmPixelData* PixelData = nullptr;
+                std::shared_ptr<DcmFileFormat> File;
                 DicomGeometry Geometry{};
+                DicomPixelInfo PixelInfo{};
                 Uint16 Width = 0;
                 Uint16 Height = 0;
                 const void* PixelPointer = nullptr;
         };
+
+        struct UncompressedSliceLoadResult
+        {
+                bool Success = false;
+                UncompressedSliceInfo Slice;
+        };
+
+        template <typename T>
+        std::vector<T>& threadLocalBuffer()
+        {
+                thread_local std::vector<T> buffer;
+                return buffer;
+        }
 
         [[nodiscard]] bool pixelInfoMatches(const DicomPixelInfo& lhs, const DicomPixelInfo& rhs)
         {
@@ -499,8 +516,117 @@ namespace
                         return nullptr;
                 }
 
-                std::vector<UncompressedSliceInfo> slices;
-                slices.reserve(slicePaths.size());
+                std::vector<QFuture<UncompressedSliceLoadResult>> futures;
+                futures.reserve(slicePaths.size());
+
+                for (const auto& path : slicePaths)
+                {
+                        futures.emplace_back(QtConcurrent::run([path]() -> UncompressedSliceLoadResult
+                        {
+                                UncompressedSliceLoadResult result;
+
+                                auto file = std::make_shared<DcmFileFormat>();
+                                const OFCondition status = file->loadFile(path.c_str());
+                                if (status.bad())
+                                {
+                                        return result;
+                                }
+
+                                auto* dataset = file->getDataset();
+                                if (!dataset)
+                                {
+                                        return result;
+                                }
+                                dataset->loadAllDataIntoMemory();
+
+                                const DcmXfer originalXfer(dataset->getOriginalXfer());
+                                if (originalXfer.getXfer() != EXS_LittleEndianExplicit || originalXfer.isEncapsulated())
+                                {
+                                        return result;
+                                }
+
+                                DcmElement* pixelElement = nullptr;
+                                if (dataset->findAndGetElement(DCM_PixelData, pixelElement).bad() || !pixelElement)
+                                {
+                                        return result;
+                                }
+                                auto* pixelData = dynamic_cast<DcmPixelData*>(pixelElement);
+                                if (!pixelData)
+                                {
+                                        return result;
+                                }
+
+                                Uint16 width = 0;
+                                Uint16 height = 0;
+                                if (dataset->findAndGetUint16(DCM_Columns, width).bad() ||
+                                    dataset->findAndGetUint16(DCM_Rows, height).bad())
+                                {
+                                        return result;
+                                }
+
+                                Uint32 numberOfFrames = 1;
+                                if (dataset->findAndGetUint32(DCM_NumberOfFrames, numberOfFrames).good() && numberOfFrames != 1)
+                                {
+                                        return result;
+                                }
+
+                                DicomPixelInfo pixelInfo{};
+                                populatePixelInfo(*dataset, pixelInfo);
+                                if (pixelInfo.BitsAllocated > 16 || pixelInfo.IsPlanar)
+                                {
+                                        return result;
+                                }
+
+                                DicomGeometry geometry{};
+                                populateGeometry(*dataset, geometry);
+                                normalizeDirections(geometry);
+
+                                const size_t sliceElements = static_cast<size_t>(width) * height * pixelInfo.SamplesPerPixel;
+                                const size_t bytesPerSample = (pixelInfo.BitsAllocated <= 8) ? sizeof(Uint8) : sizeof(Uint16);
+                                const size_t expectedBytes = sliceElements * bytesPerSample;
+                                if (static_cast<size_t>(pixelData->getLength()) < expectedBytes)
+                                {
+                                        return result;
+                                }
+
+                                UncompressedSliceInfo slice{};
+                                slice.File = std::move(file);
+                                slice.Geometry = geometry;
+                                slice.PixelInfo = pixelInfo;
+                                slice.Width = width;
+                                slice.Height = height;
+
+                                if (pixelInfo.BitsAllocated <= 8)
+                                {
+                                        Uint8* buffer = nullptr;
+                                        if (pixelData->getUint8Array(buffer).bad() || buffer == nullptr)
+                                        {
+                                                return result;
+                                        }
+                                        slice.PixelPointer = buffer;
+                                }
+                                else
+                                {
+                                        Uint16* buffer = nullptr;
+                                        if (pixelData->getUint16Array(buffer).bad() || buffer == nullptr)
+                                        {
+                                                return result;
+                                        }
+                                        slice.PixelPointer = buffer;
+                                }
+
+                                result.Success = true;
+                                result.Slice = std::move(slice);
+                                return result;
+                        }));
+                }
+
+                for (auto& future : futures)
+                {
+                        future.waitForFinished();
+                }
+
+                std::vector<UncompressedSliceInfo> slices(slicePaths.size());
 
                 DicomPixelInfo referencePixelInfo{};
                 DicomMetadata referenceMetadata;
@@ -511,131 +637,56 @@ namespace
                 Uint16 referenceWidth = 0;
                 Uint16 referenceHeight = 0;
 
-                for (const auto& path : slicePaths)
+                for (size_t index = 0; index < futures.size(); ++index)
                 {
-                        auto file = std::make_unique<DcmFileFormat>();
-                        const OFCondition status = file->loadFile(path.c_str());
-                        if (status.bad())
+                        auto result = futures[index].result();
+                        if (!result.Success)
                         {
                                 return nullptr;
                         }
 
-                        auto* dataset = file->getDataset();
-                        if (!dataset)
-                        {
-                                return nullptr;
-                        }
-                        dataset->loadAllDataIntoMemory();
-
-                        const DcmXfer originalXfer(dataset->getOriginalXfer());
-                        if (originalXfer.getXfer() != EXS_LittleEndianExplicit || originalXfer.isEncapsulated())
-                        {
-                                return nullptr;
-                        }
-
-                        DcmElement* pixelElement = nullptr;
-                        if (dataset->findAndGetElement(DCM_PixelData, pixelElement).bad() || !pixelElement)
-                        {
-                                return nullptr;
-                        }
-                        auto* pixelData = dynamic_cast<DcmPixelData*>(pixelElement);
-                        if (!pixelData)
-                        {
-                                return nullptr;
-                        }
-
-                        Uint16 width = 0;
-                        Uint16 height = 0;
-                        if (dataset->findAndGetUint16(DCM_Columns, width).bad() ||
-                            dataset->findAndGetUint16(DCM_Rows, height).bad())
+                        auto slice = std::move(result.Slice);
+                        if (!slice.File)
                         {
                                 return nullptr;
                         }
 
                         if (referenceWidth == 0)
                         {
-                                referenceWidth = width;
-                                referenceHeight = height;
+                                referenceWidth = slice.Width;
+                                referenceHeight = slice.Height;
                         }
-                        else if (width != referenceWidth || height != referenceHeight)
-                        {
-                                return nullptr;
-                        }
-
-                        Uint32 numberOfFrames = 1;
-                        if (dataset->findAndGetUint32(DCM_NumberOfFrames, numberOfFrames).good() && numberOfFrames != 1)
-                        {
-                                return nullptr;
-                        }
-
-                        DicomPixelInfo pixelInfo{};
-                        populatePixelInfo(*dataset, pixelInfo);
-                        if (pixelInfo.BitsAllocated > 16 || pixelInfo.IsPlanar)
+                        else if (slice.Width != referenceWidth || slice.Height != referenceHeight)
                         {
                                 return nullptr;
                         }
 
                         if (!pixelInfoInitialized)
                         {
-                                referencePixelInfo = pixelInfo;
+                                referencePixelInfo = slice.PixelInfo;
                                 pixelInfoInitialized = true;
                         }
-                        else if (!pixelInfoMatches(pixelInfo, referencePixelInfo))
+                        else if (!pixelInfoMatches(slice.PixelInfo, referencePixelInfo))
                         {
                                 return nullptr;
                         }
 
-                        DicomGeometry geometry{};
-                        populateGeometry(*dataset, geometry);
-                        normalizeDirections(geometry);
-
                         if (!geometryInitialized)
                         {
-                                referenceGeometry = geometry;
+                                referenceGeometry = slice.Geometry;
                                 geometryInitialized = true;
                         }
 
                         if (!metadataInitialized)
                         {
-                                populateMetadata(*dataset, referenceMetadata);
-                                metadataInitialized = true;
-                        }
-
-                        const size_t sliceElements = static_cast<size_t>(width) * height * pixelInfo.SamplesPerPixel;
-                        const size_t bytesPerSample = (pixelInfo.BitsAllocated <= 8) ? sizeof(Uint8) : sizeof(Uint16);
-                        const size_t expectedBytes = sliceElements * bytesPerSample;
-                        if (static_cast<size_t>(pixelData->getLength()) < expectedBytes)
-                        {
-                                return nullptr;
-                        }
-
-                        UncompressedSliceInfo slice{};
-                        slice.File = std::move(file);
-                        slice.PixelData = pixelData;
-                        slice.Geometry = geometry;
-                        slice.Width = width;
-                        slice.Height = height;
-
-                        if (pixelInfo.BitsAllocated <= 8)
-                        {
-                                Uint8* buffer = nullptr;
-                                if (pixelData->getUint8Array(buffer).bad() || buffer == nullptr)
+                                if (auto* dataset = slice.File->getDataset())
                                 {
-                                        return nullptr;
+                                        populateMetadata(*dataset, referenceMetadata);
+                                        metadataInitialized = true;
                                 }
-                                slice.PixelPointer = buffer;
-                        }
-                        else
-                        {
-                                Uint16* buffer = nullptr;
-                                if (pixelData->getUint16Array(buffer).bad() || buffer == nullptr)
-                                {
-                                        return nullptr;
-                                }
-                                slice.PixelPointer = buffer;
                         }
 
-                        slices.emplace_back(std::move(slice));
+                        slices[index] = std::move(slice);
                 }
 
                 if (!pixelInfoInitialized || !geometryInitialized)
@@ -677,42 +728,45 @@ namespace
                 }
 
                 const auto pixelInfoForCopy = volume->PixelInfo;
-                for (int frameIndex = 0; frameIndex < volume->NumberOfFrames; ++frameIndex)
-                {
-                        const auto sliceIndex = sortedSlices[frameIndex].second;
-                        const auto& slice = slices[sliceIndex];
+                std::vector<int> frameIndices(volume->NumberOfFrames);
+                std::iota(frameIndices.begin(), frameIndices.end(), 0);
+                QtConcurrent::blockingMap(frameIndices,
+                                          [&](int& frameIndex)
+                                          {
+                                                  const auto sliceIndex = sortedSlices[frameIndex].second;
+                                                  const auto& slice = slices[sliceIndex];
 
-                        if (pixelInfoForCopy.BitsAllocated <= 8)
-                        {
-                                const auto* buffer = static_cast<const Uint8*>(slice.PixelPointer);
-                                copyFrameData(buffer,
-                                              volume->ImageData,
-                                              frameIndex,
-                                              pixelInfoForCopy,
-                                              static_cast<int>(slice.Width),
-                                              static_cast<int>(slice.Height));
-                        }
-                        else if (pixelInfoForCopy.IsSigned)
-                        {
-                                const auto* buffer = static_cast<const Sint16*>(slice.PixelPointer);
-                                copyFrameData(buffer,
-                                              volume->ImageData,
-                                              frameIndex,
-                                              pixelInfoForCopy,
-                                              static_cast<int>(slice.Width),
-                                              static_cast<int>(slice.Height));
-                        }
-                        else
-                        {
-                                const auto* buffer = static_cast<const Uint16*>(slice.PixelPointer);
-                                copyFrameData(buffer,
-                                              volume->ImageData,
-                                              frameIndex,
-                                              pixelInfoForCopy,
-                                              static_cast<int>(slice.Width),
-                                              static_cast<int>(slice.Height));
-                        }
-                }
+                                                  if (pixelInfoForCopy.BitsAllocated <= 8)
+                                                  {
+                                                          const auto* buffer = static_cast<const Uint8*>(slice.PixelPointer);
+                                                          copyFrameData(buffer,
+                                                                        volume->ImageData,
+                                                                        frameIndex,
+                                                                        pixelInfoForCopy,
+                                                                        static_cast<int>(slice.Width),
+                                                                        static_cast<int>(slice.Height));
+                                                  }
+                                                  else if (pixelInfoForCopy.IsSigned)
+                                                  {
+                                                          const auto* buffer = static_cast<const Sint16*>(slice.PixelPointer);
+                                                          copyFrameData(buffer,
+                                                                        volume->ImageData,
+                                                                        frameIndex,
+                                                                        pixelInfoForCopy,
+                                                                        static_cast<int>(slice.Width),
+                                                                        static_cast<int>(slice.Height));
+                                                  }
+                                                  else
+                                                  {
+                                                          const auto* buffer = static_cast<const Uint16*>(slice.PixelPointer);
+                                                          copyFrameData(buffer,
+                                                                        volume->ImageData,
+                                                                        frameIndex,
+                                                                        pixelInfoForCopy,
+                                                                        static_cast<int>(slice.Width),
+                                                                        static_cast<int>(slice.Height));
+                                                  }
+                                          });
 
                 volume->PixelInfo.RescaleSlope = 1.0;
                 volume->PixelInfo.RescaleIntercept = 0.0;
@@ -785,7 +839,8 @@ namespace
 
                 if (bits <= 8)
                 {
-                        std::vector<Uint8> frameBuffer(sliceSize);
+                        auto& frameBuffer = threadLocalBuffer<Uint8>();
+                        frameBuffer.resize(sliceSize);
                         Uint32 startFragment = 0;
                         OFString decompressedColorModel;
 
@@ -819,7 +874,8 @@ namespace
                 {
                         if (isSigned)
                         {
-                                std::vector<Sint16> frameBuffer(sliceSize);
+                                auto& frameBuffer = threadLocalBuffer<Sint16>();
+                                frameBuffer.resize(sliceSize);
                                 Uint32 startFragment = 0;
                                 OFString decompressedColorModel;
 
@@ -851,7 +907,8 @@ namespace
                         }
                         else
                         {
-                                std::vector<Uint16> frameBuffer(sliceSize);
+                                auto& frameBuffer = threadLocalBuffer<Uint16>();
+                                frameBuffer.resize(sliceSize);
                                 Uint32 startFragment = 0;
                                 OFString decompressedColorModel;
 
@@ -884,7 +941,8 @@ namespace
                 }
                 else if (isSigned)
                 {
-                        std::vector<Sint32> frameBuffer(sliceSize);
+                        auto& frameBuffer = threadLocalBuffer<Sint32>();
+                        frameBuffer.resize(sliceSize);
                         Uint32 startFragment = 0;
                         OFString decompressedColorModel;
 
@@ -916,7 +974,8 @@ namespace
                 }
                 else
                 {
-                        std::vector<Uint32> frameBuffer(sliceSize);
+                        auto& frameBuffer = threadLocalBuffer<Uint32>();
+                        frameBuffer.resize(sliceSize);
                         Uint32 startFragment = 0;
                         OFString decompressedColorModel;
 
@@ -1088,12 +1147,19 @@ std::shared_ptr<DicomVolume> DicomVolumeLoader::loadSeries(const std::vector<std
                 return volume;
         }
 
+        auto sliceFuture = QtConcurrent::mapped(slicePaths,
+                                                [this](const std::string& path)
+                                                {
+                                                        return this->loadSingleFile(path);
+                                                });
+        sliceFuture.waitForFinished();
+
         std::vector<std::shared_ptr<DicomVolume>> slices;
         slices.reserve(slicePaths.size());
-	for (const auto& path : slicePaths)
-	{
-		slices.emplace_back(loadSingleFile(path));
-	}
+        for (int index = 0; index < sliceFuture.resultCount(); ++index)
+        {
+                slices.emplace_back(sliceFuture.resultAt(index));
+        }
 
 	const auto& reference = *slices.front();
 	const int width = reference.ImageData->GetDimensions()[0];
@@ -1138,78 +1204,81 @@ std::shared_ptr<DicomVolume> DicomVolumeLoader::loadSeries(const std::vector<std
         }
         allocateImageData(*volume, width, height, volume->NumberOfFrames, referenceScalarType);
 
-        for (int index = 0; index < volume->NumberOfFrames; ++index)
-        {
-                const auto& sliceVolume = *sortedSlices[index].second;
-                auto* sliceScalars = sliceVolume.ImageData->GetPointData() ?
-                        sliceVolume.ImageData->GetPointData()->GetScalars() : nullptr;
-                if (!sliceScalars)
-                {
-                        throw std::runtime_error("Slice image data missing scalars while assembling volume.");
-                }
+        std::vector<int> assembledIndices(volume->NumberOfFrames);
+        std::iota(assembledIndices.begin(), assembledIndices.end(), 0);
+        QtConcurrent::blockingMap(assembledIndices,
+                                  [&](int& index)
+                                  {
+                                          const auto& sliceVolume = *sortedSlices[index].second;
+                                          auto* sliceScalars = sliceVolume.ImageData->GetPointData() ?
+                                                  sliceVolume.ImageData->GetPointData()->GetScalars() : nullptr;
+                                          if (!sliceScalars)
+                                          {
+                                                  throw std::runtime_error("Slice image data missing scalars while assembling volume.");
+                                          }
 
-                switch (sliceScalars->GetDataType())
-                {
-                case VTK_UNSIGNED_CHAR:
-                        copyFrameData(static_cast<const unsigned char*>(sliceVolume.ImageData->GetScalarPointer()),
-                                      volume->ImageData,
-                                      index,
-                                      volume->PixelInfo,
-                                      width,
-                                      height);
-                        break;
-                case VTK_CHAR:
-                        copyFrameData(static_cast<const signed char*>(sliceVolume.ImageData->GetScalarPointer()),
-                                      volume->ImageData,
-                                      index,
-                                      volume->PixelInfo,
-                                      width,
-                                      height);
-                        break;
-                case VTK_UNSIGNED_SHORT:
-                        copyFrameData(static_cast<const unsigned short*>(sliceVolume.ImageData->GetScalarPointer()),
-                                      volume->ImageData,
-                                      index,
-                                      volume->PixelInfo,
-                                      width,
-                                      height);
-                        break;
-                case VTK_SHORT:
-                        copyFrameData(static_cast<const signed short*>(sliceVolume.ImageData->GetScalarPointer()),
-                                      volume->ImageData,
-                                      index,
-                                      volume->PixelInfo,
-                                      width,
-                                      height);
-                        break;
-                case VTK_UNSIGNED_INT:
-                        copyFrameData(static_cast<const Uint32*>(sliceVolume.ImageData->GetScalarPointer()),
-                                      volume->ImageData,
-                                      index,
-                                      volume->PixelInfo,
-                                      width,
-                                      height);
-                        break;
-                case VTK_INT:
-                        copyFrameData(static_cast<const Sint32*>(sliceVolume.ImageData->GetScalarPointer()),
-                                      volume->ImageData,
-                                      index,
-                                      volume->PixelInfo,
-                                      width,
-                                      height);
-                        break;
-                case VTK_FLOAT:
-                        copyFrameData(static_cast<const float*>(sliceVolume.ImageData->GetScalarPointer()),
-                                      volume->ImageData,
-                                      index,
-                                      volume->PixelInfo,
-                                      width,
-                                      height);
-                        break;
-                default:
-                        throw std::runtime_error("Unsupported scalar type while assembling DICOM volume.");
-                }
-        }
+                                          switch (sliceScalars->GetDataType())
+                                          {
+                                          case VTK_UNSIGNED_CHAR:
+                                                  copyFrameData(static_cast<const unsigned char*>(sliceVolume.ImageData->GetScalarPointer()),
+                                                                volume->ImageData,
+                                                                index,
+                                                                volume->PixelInfo,
+                                                                width,
+                                                                height);
+                                                  break;
+                                          case VTK_CHAR:
+                                                  copyFrameData(static_cast<const signed char*>(sliceVolume.ImageData->GetScalarPointer()),
+                                                                volume->ImageData,
+                                                                index,
+                                                                volume->PixelInfo,
+                                                                width,
+                                                                height);
+                                                  break;
+                                          case VTK_UNSIGNED_SHORT:
+                                                  copyFrameData(static_cast<const unsigned short*>(sliceVolume.ImageData->GetScalarPointer()),
+                                                                volume->ImageData,
+                                                                index,
+                                                                volume->PixelInfo,
+                                                                width,
+                                                                height);
+                                                  break;
+                                          case VTK_SHORT:
+                                                  copyFrameData(static_cast<const signed short*>(sliceVolume.ImageData->GetScalarPointer()),
+                                                                volume->ImageData,
+                                                                index,
+                                                                volume->PixelInfo,
+                                                                width,
+                                                                height);
+                                                  break;
+                                          case VTK_UNSIGNED_INT:
+                                                  copyFrameData(static_cast<const Uint32*>(sliceVolume.ImageData->GetScalarPointer()),
+                                                                volume->ImageData,
+                                                                index,
+                                                                volume->PixelInfo,
+                                                                width,
+                                                                height);
+                                                  break;
+                                          case VTK_INT:
+                                                  copyFrameData(static_cast<const Sint32*>(sliceVolume.ImageData->GetScalarPointer()),
+                                                                volume->ImageData,
+                                                                index,
+                                                                volume->PixelInfo,
+                                                                width,
+                                                                height);
+                                                  break;
+                                          case VTK_FLOAT:
+                                                  copyFrameData(static_cast<const float*>(sliceVolume.ImageData->GetScalarPointer()),
+                                                                volume->ImageData,
+                                                                index,
+                                                                volume->PixelInfo,
+                                                                width,
+                                                                height);
+                                                  break;
+                                          default:
+                                                  throw std::runtime_error("Unsupported scalar type while assembling DICOM volume.");
+                                          }
+                                  });
 
         volume->PixelInfo.RescaleSlope = 1.0;
 	volume->PixelInfo.RescaleIntercept = 0.0;
