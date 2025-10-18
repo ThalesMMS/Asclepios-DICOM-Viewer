@@ -13,9 +13,9 @@ void asclepios::gui::vtkWidget3DInteractorStyle::OnMouseMove()
 		Interactor->GetLastEventPosition();
 	if (State == VTKIS_SPIN)
 	{
-		m_transferFunction->
-			updateWindowLevel(currentEventPosition[0] - lastEventPosition[0],
-				currentEventPosition[1] - lastEventPosition[1]);
+                m_transferFunction->
+                        updateWindowLevelDelta(currentEventPosition[0] - lastEventPosition[0],
+                                currentEventPosition[1] - lastEventPosition[1]);
 		m_widget3D->updateFilter();
 		Interactor->Render();
 		return;

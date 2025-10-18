@@ -20,32 +20,18 @@ void asclepios::gui::TransferFunction::setMaximumIntensityProjectionFunction(con
 //-----------------------------------------------------------------------------
 void asclepios::gui::TransferFunction::updateWindowLevel(const double& t_window, const double& t_level)
 {
-	m_window += t_window;
-	m_level += t_level;
-	if (m_colorFunction)
-	{
-		m_colorFunction->RemoveAllPoints();
-		for (const auto& colorPoint : m_colors)
-		{
-			m_colorFunction->AddRGBPoint(
-				m_level + m_window *
-				colorPoint->getValue() / 1000,
-				colorPoint->getRed(),
-				colorPoint->getGreen(),
-				colorPoint->getBlue());
-		}
-	}
-	if (m_opacityFunction)
-	{
-		m_opacityFunction->RemoveAllPoints();
-		for (const auto& opacityPoint : m_opacities)
-		{
-			m_opacityFunction->AddPoint(
-				m_level + m_window *
-				opacityPoint->getValue() / 1000,
-				opacityPoint->getAlpha());
-		}
-	}
+        m_window = static_cast<int>(t_window);
+        m_level = static_cast<int>(t_level);
+        rebuildTransferFunctions();
+}
+
+//-----------------------------------------------------------------------------
+void asclepios::gui::TransferFunction::updateWindowLevelDelta(const double& t_windowDelta,
+                                                              const double& t_levelDelta)
+{
+        m_window += static_cast<int>(t_windowDelta);
+        m_level += static_cast<int>(t_levelDelta);
+        rebuildTransferFunctions();
 }
 
 //-----------------------------------------------------------------------------
@@ -95,14 +81,43 @@ void asclepios::gui::TransferFunction::extractColorFunctionInfo(const QJsonArray
 //-----------------------------------------------------------------------------
 void asclepios::gui::TransferFunction::extractOpacityFunctionInfo(const QJsonArray& t_array)
 {
-	m_opacityFunction = vtkSmartPointer<vtkPiecewiseFunction>::New();
-	m_opacities.clear();
-	for (const auto& value : t_array)
+        m_opacityFunction = vtkSmartPointer<vtkPiecewiseFunction>::New();
+        m_opacities.clear();
+        for (const auto& value : t_array)
 	{
 		m_opacities.emplace_back(std::make_unique<Opacity>());
 		m_opacities.back()->setValue(value.toObject()["value"].toDouble());
 		m_opacities.back()->setAlpha(value.toObject()["alpha"].toDouble());
 		m_opacityFunction->AddPoint(m_opacities.back()->getValue(),
-		                            m_opacities.back()->getAlpha());
-	}
+                                            m_opacities.back()->getAlpha());
+        }
+}
+
+//-----------------------------------------------------------------------------
+void asclepios::gui::TransferFunction::rebuildTransferFunctions()
+{
+        if (m_colorFunction)
+        {
+                m_colorFunction->RemoveAllPoints();
+                for (const auto& colorPoint : m_colors)
+                {
+                        m_colorFunction->AddRGBPoint(
+                                m_level + m_window *
+                                colorPoint->getValue() / 1000,
+                                colorPoint->getRed(),
+                                colorPoint->getGreen(),
+                                colorPoint->getBlue());
+                }
+        }
+        if (m_opacityFunction)
+        {
+                m_opacityFunction->RemoveAllPoints();
+                for (const auto& opacityPoint : m_opacities)
+                {
+                        m_opacityFunction->AddPoint(
+                                m_level + m_window *
+                                opacityPoint->getValue() / 1000,
+                                opacityPoint->getAlpha());
+                }
+        }
 }
