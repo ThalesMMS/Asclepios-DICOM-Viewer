@@ -978,7 +978,8 @@ void asclepios::gui::Widget2D::positionLoadingAnimation()
                 : rect();
         const QSize overlaySize = m_loadingAnimation->size();
         const QPoint topLeft = targetRect.center() - QPoint(overlaySize.width() / 2, overlaySize.height() / 2);
-        m_loadingAnimation->move(topLeft);
+        const QPoint globalTopLeft = mapToGlobal(topLeft);
+        m_loadingAnimation->move(globalTopLeft);
 }
 
 void asclepios::gui::Widget2D::updateDcmtkOverlay(const QImage& t_frameImage, int t_frameIndex)
