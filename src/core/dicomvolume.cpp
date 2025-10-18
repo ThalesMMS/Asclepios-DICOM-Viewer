@@ -7,6 +7,7 @@
 #include <limits>
 #include <stdexcept>
 #include <type_traits>
+#include <utility>
 
 #include <dcmtk/dcmdata/dcdeftag.h>
 #include <dcmtk/dcmdata/dcdicent.h>
@@ -450,10 +451,279 @@ namespace
 		normalizeVector(geometry.NormalDirection);
 	}
 
-	std::shared_ptr<DicomVolume> loadSingleFile(const std::string& path)
-	{
-		DcmFileFormat file;
-		const OFCondition status = file.loadFile(path.c_str());
+        struct UncompressedSliceInfo
+        {
+                std::unique_ptr<DcmFileFormat> File;
+                DcmPixelData* PixelData = nullptr;
+                DicomGeometry Geometry{};
+                Uint16 Width = 0;
+                Uint16 Height = 0;
+                const void* PixelPointer = nullptr;
+        };
+
+        [[nodiscard]] bool pixelInfoMatches(const DicomPixelInfo& lhs, const DicomPixelInfo& rhs)
+        {
+                if (lhs.BitsAllocated != rhs.BitsAllocated)
+                {
+                        return false;
+                }
+                if (lhs.IsSigned != rhs.IsSigned || lhs.IsPlanar != rhs.IsPlanar)
+                {
+                        return false;
+                }
+                if (lhs.SamplesPerPixel != rhs.SamplesPerPixel)
+                {
+                        return false;
+                }
+                if (std::abs(lhs.RescaleSlope - rhs.RescaleSlope) > epsilon ||
+                    std::abs(lhs.RescaleIntercept - rhs.RescaleIntercept) > epsilon)
+                {
+                        return false;
+                }
+                if (std::abs(lhs.WindowCenter - rhs.WindowCenter) > epsilon ||
+                    std::abs(lhs.WindowWidth - rhs.WindowWidth) > epsilon)
+                {
+                        return false;
+                }
+                if (lhs.InvertMonochrome != rhs.InvertMonochrome)
+                {
+                        return false;
+                }
+                return true;
+        }
+
+        std::shared_ptr<DicomVolume> tryLoadUncompressedSeries(const std::vector<std::string>& slicePaths)
+        {
+                if (slicePaths.empty())
+                {
+                        return nullptr;
+                }
+
+                std::vector<UncompressedSliceInfo> slices;
+                slices.reserve(slicePaths.size());
+
+                DicomPixelInfo referencePixelInfo{};
+                DicomMetadata referenceMetadata;
+                DicomGeometry referenceGeometry{};
+                bool pixelInfoInitialized = false;
+                bool metadataInitialized = false;
+                bool geometryInitialized = false;
+                Uint16 referenceWidth = 0;
+                Uint16 referenceHeight = 0;
+
+                for (const auto& path : slicePaths)
+                {
+                        auto file = std::make_unique<DcmFileFormat>();
+                        const OFCondition status = file->loadFile(path.c_str());
+                        if (status.bad())
+                        {
+                                return nullptr;
+                        }
+
+                        auto* dataset = file->getDataset();
+                        if (!dataset)
+                        {
+                                return nullptr;
+                        }
+                        dataset->loadAllDataIntoMemory();
+
+                        const DcmXfer originalXfer(dataset->getOriginalXfer());
+                        if (originalXfer.getXfer() != EXS_LittleEndianExplicit || originalXfer.isEncapsulated())
+                        {
+                                return nullptr;
+                        }
+
+                        DcmElement* pixelElement = nullptr;
+                        if (dataset->findAndGetElement(DCM_PixelData, pixelElement).bad() || !pixelElement)
+                        {
+                                return nullptr;
+                        }
+                        auto* pixelData = dynamic_cast<DcmPixelData*>(pixelElement);
+                        if (!pixelData)
+                        {
+                                return nullptr;
+                        }
+
+                        Uint16 width = 0;
+                        Uint16 height = 0;
+                        if (dataset->findAndGetUint16(DCM_Columns, width).bad() ||
+                            dataset->findAndGetUint16(DCM_Rows, height).bad())
+                        {
+                                return nullptr;
+                        }
+
+                        if (referenceWidth == 0)
+                        {
+                                referenceWidth = width;
+                                referenceHeight = height;
+                        }
+                        else if (width != referenceWidth || height != referenceHeight)
+                        {
+                                return nullptr;
+                        }
+
+                        Uint32 numberOfFrames = 1;
+                        if (dataset->findAndGetUint32(DCM_NumberOfFrames, numberOfFrames).good() && numberOfFrames != 1)
+                        {
+                                return nullptr;
+                        }
+
+                        DicomPixelInfo pixelInfo{};
+                        populatePixelInfo(*dataset, pixelInfo);
+                        if (pixelInfo.BitsAllocated > 16 || pixelInfo.IsPlanar)
+                        {
+                                return nullptr;
+                        }
+
+                        if (!pixelInfoInitialized)
+                        {
+                                referencePixelInfo = pixelInfo;
+                                pixelInfoInitialized = true;
+                        }
+                        else if (!pixelInfoMatches(pixelInfo, referencePixelInfo))
+                        {
+                                return nullptr;
+                        }
+
+                        DicomGeometry geometry{};
+                        populateGeometry(*dataset, geometry);
+                        normalizeDirections(geometry);
+
+                        if (!geometryInitialized)
+                        {
+                                referenceGeometry = geometry;
+                                geometryInitialized = true;
+                        }
+
+                        if (!metadataInitialized)
+                        {
+                                populateMetadata(*dataset, referenceMetadata);
+                                metadataInitialized = true;
+                        }
+
+                        const size_t sliceElements = static_cast<size_t>(width) * height * pixelInfo.SamplesPerPixel;
+                        const size_t bytesPerSample = (pixelInfo.BitsAllocated <= 8) ? sizeof(Uint8) : sizeof(Uint16);
+                        const size_t expectedBytes = sliceElements * bytesPerSample;
+                        if (static_cast<size_t>(pixelData->getLength()) < expectedBytes)
+                        {
+                                return nullptr;
+                        }
+
+                        UncompressedSliceInfo slice{};
+                        slice.File = std::move(file);
+                        slice.PixelData = pixelData;
+                        slice.Geometry = geometry;
+                        slice.Width = width;
+                        slice.Height = height;
+
+                        if (pixelInfo.BitsAllocated <= 8)
+                        {
+                                Uint8* buffer = nullptr;
+                                if (pixelData->getUint8Array(buffer).bad() || buffer == nullptr)
+                                {
+                                        return nullptr;
+                                }
+                                slice.PixelPointer = buffer;
+                        }
+                        else
+                        {
+                                Uint16* buffer = nullptr;
+                                if (pixelData->getUint16Array(buffer).bad() || buffer == nullptr)
+                                {
+                                        return nullptr;
+                                }
+                                slice.PixelPointer = buffer;
+                        }
+
+                        slices.emplace_back(std::move(slice));
+                }
+
+                if (!pixelInfoInitialized || !geometryInitialized)
+                {
+                        return nullptr;
+                }
+
+                auto volume = std::make_shared<DicomVolume>();
+                volume->Geometry = referenceGeometry;
+                volume->PixelInfo = referencePixelInfo;
+                volume->Metadata = referenceMetadata;
+                volume->NumberOfFrames = static_cast<int>(slices.size());
+                normalizeDirections(volume->Geometry);
+                populateDirectionMatrixInternal(*volume);
+                allocateImageData(*volume, referenceWidth, referenceHeight, volume->NumberOfFrames);
+
+                std::vector<std::pair<double, size_t>> sortedSlices;
+                sortedSlices.reserve(slices.size());
+                for (size_t index = 0; index < slices.size(); ++index)
+                {
+                        const auto& geometry = slices[index].Geometry;
+                        const double position =
+                                geometry.Origin[0] * volume->Geometry.NormalDirection[0] +
+                                geometry.Origin[1] * volume->Geometry.NormalDirection[1] +
+                                geometry.Origin[2] * volume->Geometry.NormalDirection[2];
+                        sortedSlices.emplace_back(position, index);
+                }
+                std::sort(sortedSlices.begin(), sortedSlices.end(),
+                          [](const auto& lhs, const auto& rhs) { return lhs.first < rhs.first; });
+
+                if (sortedSlices.size() >= 2)
+                {
+                        const double spacing = std::abs(sortedSlices[1].first - sortedSlices.front().first);
+                        if (spacing > epsilon)
+                        {
+                                volume->Geometry.Spacing[2] = spacing;
+                                volume->ImageData->SetSpacing(volume->Geometry.Spacing);
+                        }
+                }
+
+                const auto pixelInfoForCopy = volume->PixelInfo;
+                for (int frameIndex = 0; frameIndex < volume->NumberOfFrames; ++frameIndex)
+                {
+                        const auto sliceIndex = sortedSlices[frameIndex].second;
+                        const auto& slice = slices[sliceIndex];
+
+                        if (pixelInfoForCopy.BitsAllocated <= 8)
+                        {
+                                const auto* buffer = static_cast<const Uint8*>(slice.PixelPointer);
+                                copyFrameData(buffer,
+                                              volume->ImageData,
+                                              frameIndex,
+                                              pixelInfoForCopy,
+                                              static_cast<int>(slice.Width),
+                                              static_cast<int>(slice.Height));
+                        }
+                        else if (pixelInfoForCopy.IsSigned)
+                        {
+                                const auto* buffer = static_cast<const Sint16*>(slice.PixelPointer);
+                                copyFrameData(buffer,
+                                              volume->ImageData,
+                                              frameIndex,
+                                              pixelInfoForCopy,
+                                              static_cast<int>(slice.Width),
+                                              static_cast<int>(slice.Height));
+                        }
+                        else
+                        {
+                                const auto* buffer = static_cast<const Uint16*>(slice.PixelPointer);
+                                copyFrameData(buffer,
+                                              volume->ImageData,
+                                              frameIndex,
+                                              pixelInfoForCopy,
+                                              static_cast<int>(slice.Width),
+                                              static_cast<int>(slice.Height));
+                        }
+                }
+
+                volume->PixelInfo.RescaleSlope = 1.0;
+                volume->PixelInfo.RescaleIntercept = 0.0;
+
+                return volume;
+        }
+
+        std::shared_ptr<DicomVolume> loadSingleFile(const std::string& path)
+        {
+                DcmFileFormat file;
+                const OFCondition status = file.loadFile(path.c_str());
 		if (status.bad())
 		{
 			throw std::runtime_error("Failed to load DICOM file: " + path);
@@ -811,10 +1081,15 @@ std::shared_ptr<DicomVolume> DicomVolumeLoader::loadSeries(const std::vector<std
         if (slicePaths.empty())
         {
                 throw std::runtime_error("Cannot load DICOM series: no slice paths provided.");
-	}
+        }
 
-	std::vector<std::shared_ptr<DicomVolume>> slices;
-	slices.reserve(slicePaths.size());
+        if (auto volume = tryLoadUncompressedSeries(slicePaths))
+        {
+                return volume;
+        }
+
+        std::vector<std::shared_ptr<DicomVolume>> slices;
+        slices.reserve(slicePaths.size());
 	for (const auto& path : slicePaths)
 	{
 		slices.emplace_back(loadSingleFile(path));
