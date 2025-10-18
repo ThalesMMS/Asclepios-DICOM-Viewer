@@ -66,8 +66,7 @@ namespace asclepios::core
 		std::string m_desctiption = {};
 		std::string m_date = {};
 		std::string m_number = {};
-		mutable std::shared_ptr<DicomVolume> m_cachedVolume = {};
-		std::set<std::unique_ptr<Image>, Image::imageCompare> m_singleFrameImages = {};
+                std::set<std::unique_ptr<Image>, Image::imageCompare> m_singleFrameImages = {};
 		std::set<std::unique_ptr<Image>, Image::imageCompare> m_multiFrameImages = {};
 
 		static bool isLess(Series* t_lhs, Series* t_rhs);

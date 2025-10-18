@@ -1,36 +1,12 @@
 #include "series.h"
+#include "study.h"
+
 #include <algorithm>
-#include <atomic>
-#include <cstdint>
 #include <QLoggingCategory>
 #include <QString>
+#include <stdexcept>
 
 Q_LOGGING_CATEGORY(lcSeries, "asclepios.core.series")
-
-namespace
-{
-        std::atomic<std::uint64_t> g_volumeCacheHits = 0;
-        std::atomic<std::uint64_t> g_volumeCacheMisses = 0;
-
-        void logVolumeCacheTelemetry(const char* t_event, const asclepios::core::Series* t_series)
-        {
-                const auto hits = g_volumeCacheHits.load(std::memory_order_relaxed);
-                const auto misses = g_volumeCacheMisses.load(std::memory_order_relaxed);
-                const auto total = hits + misses;
-                const double hitRate = (total > 0)
-                        ? (static_cast<double>(hits) * 100.0) / static_cast<double>(total)
-                        : 0.0;
-                const QString seriesUid = (t_series)
-                        ? QString::fromStdString(t_series->getUID())
-                        : QStringLiteral("n/a");
-                qCInfo(lcSeries)
-                        << "[Telemetry] Volume cache" << t_event
-                        << "seriesUid" << seriesUid
-                        << "hits" << static_cast<unsigned long long>(hits)
-                        << "misses" << static_cast<unsigned long long>(misses)
-                        << "hitRatePct" << hitRate;
-        }
-}
 
 asclepios::core::Image* asclepios::core::Series::getNextSingleFrameImage(Image* t_image)
 {
@@ -72,17 +48,11 @@ asclepios::core::Image* asclepios::core::Series::getSingleFrameImageByIndex(cons
 //-----------------------------------------------------------------------------
 std::shared_ptr<asclepios::core::DicomVolume> asclepios::core::Series::getVolumeForSingleFrameSeries()
 {
-        if (m_cachedVolume)
-        {
-                g_volumeCacheHits.fetch_add(1, std::memory_order_relaxed);
-                logVolumeCacheTelemetry("hit", this);
-                return m_cachedVolume;
-        }
         if (m_singleFrameImages.empty())
         {
                 qCWarning(lcSeries) << "Requested volume for series without single-frame images.";
                 return nullptr;
-	}
+        }
 	std::vector<std::string> paths;
 	paths.reserve(m_singleFrameImages.size());
 	for (const auto& image : m_singleFrameImages)
@@ -91,24 +61,29 @@ std::shared_ptr<asclepios::core::DicomVolume> asclepios::core::Series::getVolume
 		{
 			paths.emplace_back(image->getImagePath());
 		}
-	}
+        }
         if (paths.empty())
         {
                 qCWarning(lcSeries) << "No valid file paths were collected for the series volume.";
                 return nullptr;
         }
-        g_volumeCacheMisses.fetch_add(1, std::memory_order_relaxed);
+        const std::string studyUid = (m_parent) ? m_parent->getUID() : std::string();
+        const std::string& seriesUid = getUID();
         try
         {
-                m_cachedVolume = DicomVolumeLoader::loadSeries(paths);
+                return DicomVolumeLoader::loadSeries(studyUid, seriesUid, paths);
         }
         catch (const std::exception& ex)
         {
-                qCCritical(lcSeries) << "Failed to load series volume:" << ex.what();
-                m_cachedVolume.reset();
+                const auto uidLabel = seriesUid.empty()
+                        ? QStringLiteral("<empty>")
+                        : QString::fromStdString(seriesUid);
+                qCCritical(lcSeries)
+                        << "Failed to load series volume for"
+                        << uidLabel
+                        << ":" << ex.what();
         }
-        logVolumeCacheTelemetry("miss", this);
-        return m_cachedVolume;
+        return nullptr;
 }
 
 //-----------------------------------------------------------------------------
@@ -123,13 +98,14 @@ asclepios::core::Image* asclepios::core::Series::addSingleFrameImage(std::unique
 {
 	auto index = findImageIndex(m_singleFrameImages, t_image.get());
 	t_newImage = false;
-	if (index == m_singleFrameImages.size())
-	{
-		m_singleFrameImages.emplace(std::move(t_image));
-		index = m_singleFrameImages.size() - 1;
-		t_newImage = true;
-		m_cachedVolume.reset();
-	}
+        if (index == m_singleFrameImages.size())
+        {
+                m_singleFrameImages.emplace(std::move(t_image));
+                index = m_singleFrameImages.size() - 1;
+                t_newImage = true;
+                const std::string studyUid = (m_parent) ? m_parent->getUID() : std::string();
+                DicomVolumeLoader::invalidateSeriesCache(studyUid, getUID());
+        }
 	auto it = m_singleFrameImages.begin();
 	std::advance(it, index);
 	it->get()->setIndex(index);
@@ -141,13 +117,14 @@ asclepios::core::Image* asclepios::core::Series::addMultiFrameImage(std::unique_
 {
 	auto index = findImageIndex(m_multiFrameImages, t_image.get());
 	t_newImage = false;
-	if (index == m_multiFrameImages.size())
-	{
-		m_multiFrameImages.emplace(std::move(t_image));
-		index = m_multiFrameImages.size() - 1;
-		t_newImage = true;
-		m_cachedVolume.reset();
-	}
+        if (index == m_multiFrameImages.size())
+        {
+                m_multiFrameImages.emplace(std::move(t_image));
+                index = m_multiFrameImages.size() - 1;
+                t_newImage = true;
+                const std::string studyUid = (m_parent) ? m_parent->getUID() : std::string();
+                DicomVolumeLoader::invalidateSeriesCache(studyUid, getUID());
+        }
 	auto it = m_multiFrameImages.begin();
 	std::advance(it, index);
 	it->get()->setIndex(index);
