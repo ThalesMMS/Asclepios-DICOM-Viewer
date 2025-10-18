@@ -18,6 +18,8 @@
     <QtMsBuild Condition="'$(QtMsBuild)'=='' and '$(LOCALAPPDATA)'!=''">$(LOCALAPPDATA)\QtMsBuild</QtMsBuild>
     <QtMsBuild Condition="!Exists('$(QtMsBuild)\qt.targets') and '$(LOCALAPPDATA)'!='' and Exists('$(LOCALAPPDATA)\QtMsBuild\qt.targets')">$(LOCALAPPDATA)\QtMsBuild</QtMsBuild>
     <QtMsBuild Condition="!Exists('$(QtMsBuild)\qt.targets')">$(MSBuildThisFileDirectory)..\..\deps\vstools\QtMSBuild\QtMsBuild</QtMsBuild>
+    <!-- Explicit fallback path used for imports when $(QtMsBuild) is not available -->
+    <QtMsBuildFallback>$(MSBuildThisFileDirectory)..\..\deps\vstools\QtMSBuild\QtMsBuild</QtMsBuildFallback>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -31,7 +33,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="(!(Exists('$(QtMsBuild)\qt.targets') or Exists('$(QtMsBuildFallback)\qt.targets'))) or (!(Exists('$(QtMsBuild)\qt.props') or Exists('$(QtMsBuildFallback)\qt.props')))">
     <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
   </Target>
   <ImportGroup Label="ExtensionSettings" />
@@ -60,6 +62,10 @@
   </PropertyGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
     <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <!-- Fallback import when $(QtMsBuild) is not set or missing files -->
+  <ImportGroup Condition="!Exists('$(QtMsBuild)\qt.props') and Exists('$(QtMsBuildFallback)\qt.props')">
+    <Import Project="$(QtMsBuildFallback)\qt.props" />
   </ImportGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -234,6 +240,10 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
     <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <!-- Fallback import when $(QtMsBuild) is not set or missing files -->
+  <ImportGroup Condition="!Exists('$(QtMsBuild)\qt.targets') and Exists('$(QtMsBuildFallback)\qt.targets')">
+    <Import Project="$(QtMsBuildFallback)\qt.targets" />
   </ImportGroup>
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
