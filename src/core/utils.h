@@ -36,10 +36,11 @@ enum class transformationType
 
 enum class overlayKey
 {
-	zoom = 1001,
-	series = 1003,
-	window = 2625616,
-	level = 2625617
+        zoom = 1001,
+        series = 1003,
+        tool = 1005,
+        window = 2625616,
+        level = 2625617
 };
 
 enum vtkCustomEvents : unsigned long

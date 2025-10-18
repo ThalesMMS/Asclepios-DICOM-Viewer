@@ -38,15 +38,17 @@ namespace asclepios::gui
 		void Dolly() override;
 
 	private:
-		vtkWidget2D* m_widget2D = {};
-		core::Series* m_series = {};
-		core::Image* m_image = {};
-		int m_currentImageIndex = {};
+                vtkWidget2D* m_widget2D = {};
+                core::Series* m_series = {};
+                core::Image* m_image = {};
+                int m_currentImageIndex = {};
+                bool m_leftScrolling = false;
+                double m_scrollDragAccumulator = 0.0;
 
-		void refreshImage() const;
-		void updateOverlayWindowLevelApply() const;
-		void updateOverlayHUValue() const;
-		[[nodiscard]] core::Image* getNextImage() const;
+                void refreshImage() const;
+                void updateOverlayWindowLevelApply() const;
+                void updateOverlayHUValue() const;
+                [[nodiscard]] core::Image* getNextImage() const;
 		[[nodiscard]] core::Image* getPreviousImage() const;
 	};
 }

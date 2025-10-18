@@ -14,22 +14,82 @@
 
 #include <QLoggingCategory>
 #include <QString>
+#include <QVariant>
+#include <QtGlobal>
 
 #include <algorithm>
 #include <cmath>
 #include <memory>
 #include <sstream>
 #include <stdexcept>
+#include <mutex>
+#include <unordered_set>
 
 Q_LOGGING_CATEGORY(lcVtkWidget2D, "asclepios.gui.vtkwidget2d")
 
 namespace
 {
-	class CodecRegistrationGuard
-	{
-	public:
-		CodecRegistrationGuard()
-		{
+        using asclepios::gui::vtkWidget2D;
+
+        std::mutex& instanceMutex()
+        {
+                static std::mutex mutex;
+                return mutex;
+        }
+
+        std::unordered_set<vtkWidget2D*>& instances()
+        {
+                static std::unordered_set<vtkWidget2D*> widgets;
+                return widgets;
+        }
+
+        void registerInstance(vtkWidget2D* t_instance)
+        {
+                if (!t_instance)
+                {
+                        return;
+                }
+                std::lock_guard<std::mutex> lock(instanceMutex());
+                instances().insert(t_instance);
+        }
+
+        void unregisterInstance(vtkWidget2D* t_instance)
+        {
+                if (!t_instance)
+                {
+                        return;
+                }
+                std::lock_guard<std::mutex> lock(instanceMutex());
+                instances().erase(t_instance);
+        }
+
+        vtkWidget2D* findInstance(const asclepios::core::Series* t_series, const asclepios::core::Image* t_image)
+        {
+                std::lock_guard<std::mutex> lock(instanceMutex());
+                vtkWidget2D* seriesMatch = nullptr;
+                for (auto* candidate : instances())
+                {
+                        if (!candidate)
+                        {
+                                continue;
+                        }
+                        if (t_image && candidate->getImage() == t_image)
+                        {
+                                return candidate;
+                        }
+                        if (t_series && candidate->getSeries() == t_series)
+                        {
+                                seriesMatch = candidate;
+                        }
+                }
+                return seriesMatch;
+        }
+
+        class CodecRegistrationGuard
+        {
+        public:
+                CodecRegistrationGuard()
+                {
 			asclepios::core::SmartDJDecoderRegistration::registerCodecs();
 		}
 
@@ -40,24 +100,59 @@ namespace
 
 		CodecRegistrationGuard(const CodecRegistrationGuard&) = delete;
 		CodecRegistrationGuard& operator=(const CodecRegistrationGuard&) = delete;
-	};
+        };
 
-	std::string formatHuValue(double hu)
-	{
-		std::ostringstream stream;
-		stream.setf(std::ios::fixed);
-		stream.precision(1);
+        std::string toolDisplayName(asclepios::gui::InteractionTool t_tool)
+        {
+                using asclepios::gui::InteractionTool;
+                switch (t_tool)
+                {
+                case InteractionTool::scroll:
+                        return "Scroll";
+                case InteractionTool::window:
+                        return "Window";
+                case InteractionTool::zoom:
+                        return "Zoom";
+                case InteractionTool::pan:
+                        return "Pan";
+                default:
+                        return {};
+                }
+        }
+
+        std::string formatHuValue(double hu)
+        {
+                std::ostringstream stream;
+                stream.setf(std::ios::fixed);
+                stream.precision(1);
 		stream << hu;
 		return stream.str();
 	}
 }
 
 //-----------------------------------------------------------------------------
+asclepios::gui::vtkWidget2D::vtkWidget2D()
+        : m_activeTool(InteractionTool::scroll)
+{
+        registerInstance(this);
+}
+
+//-----------------------------------------------------------------------------
+asclepios::gui::vtkWidget2D::~vtkWidget2D()
+{
+        if (m_bridgeTarget)
+        {
+                m_bridgeTarget->setProperty(Widget2D::vtkWidgetPropertyName, QVariant());
+        }
+        unregisterInstance(this);
+}
+
+//-----------------------------------------------------------------------------
 void asclepios::gui::vtkWidget2D::initImageReader()
 {
-	qCInfo(lcVtkWidget2D)
-		<< "Initializing image volume for series"
-		<< (m_series ? QString::fromStdString(m_series->getUID()) : QStringLiteral("<null>"))
+        qCInfo(lcVtkWidget2D)
+                << "Initializing image volume for series"
+                << (m_series ? QString::fromStdString(m_series->getUID()) : QStringLiteral("<null>"))
 		<< "image"
 		<< (m_image ? QString::fromStdString(m_image->getSOPInstanceUID()) : QStringLiteral("<null>"));
 	resetOverlay();
@@ -231,11 +326,12 @@ void asclepios::gui::vtkWidget2D::render()
 		interactorStyle->setImage(m_image);
 		interactorStyle->updateOvelayImageNumber(0);
 		qCInfo(lcVtkWidget2D) << "InteractorStyle configured.";
-	}
-	fitImage();
-	createvtkWidgetOverlay();
-	m_dcmWidget->GetRenderWindow()->Render();
-	updateOverlayZoomFactor();
+        }
+        fitImage();
+        createvtkWidgetOverlay();
+        updateOverlayTool(toolDisplayName(m_activeTool));
+        m_dcmWidget->GetRenderWindow()->Render();
+        updateOverlayZoomFactor();
 }
 
 //-----------------------------------------------------------------------------
@@ -339,15 +435,72 @@ void asclepios::gui::vtkWidget2D::updateOverlayWindowLevelApply(const int& t_win
 	level.append(" / WW: " + std::to_string(m_dcmWidget->getWindowWidth())).append("\n");
 	m_widgetOverlay->updateOverlayInCorner(2,
 		std::to_string(static_cast<int>(overlayKey::window)), window);
-	m_widgetOverlay->updateOverlayInCorner(2,
-		std::to_string(static_cast<int>(overlayKey::level)), level);
-	refreshOverlayInCorner(2);
+        m_widgetOverlay->updateOverlayInCorner(2,
+                std::to_string(static_cast<int>(overlayKey::level)), level);
+        refreshOverlayInCorner(2);
+}
+
+void asclepios::gui::vtkWidget2D::setActiveTool(const InteractionTool t_tool)
+{
+        if (m_activeTool == t_tool)
+        {
+                return;
+        }
+        m_activeTool = t_tool;
+        updateOverlayTool(toolDisplayName(m_activeTool));
+}
+
+//-----------------------------------------------------------------------------
+void asclepios::gui::vtkWidget2D::publishBridgeProperty(Widget2D* t_widget)
+{
+        if (!t_widget)
+        {
+                return;
+        }
+
+        if (m_bridgeTarget && m_bridgeTarget != t_widget)
+        {
+                m_bridgeTarget->setProperty(Widget2D::vtkWidgetPropertyName, QVariant());
+        }
+
+        const auto rawPointer = reinterpret_cast<quintptr>(this);
+        const QVariant property = t_widget->property(Widget2D::vtkWidgetPropertyName);
+        const auto current = property.isValid()
+                ? property.value<quintptr>()
+                : static_cast<quintptr>(0);
+        if (current != rawPointer)
+        {
+                t_widget->setProperty(Widget2D::vtkWidgetPropertyName,
+                        QVariant::fromValue(rawPointer));
+        }
+        m_bridgeTarget = t_widget;
+}
+
+//-----------------------------------------------------------------------------
+asclepios::gui::vtkWidget2D* asclepios::gui::vtkWidget2D::findForContext(
+        const core::Series* t_series, const core::Image* t_image)
+{
+        return findInstance(t_series, t_image);
+}
+
+void asclepios::gui::vtkWidget2D::updateOverlayTool(const std::string& t_toolLabel)
+{
+        if (!m_widgetOverlay)
+        {
+                return;
+        }
+
+        const std::string value = t_toolLabel.empty()
+                ? std::string()
+                : std::string("Tool: ") + t_toolLabel + '\n';
+        m_widgetOverlay->updateOverlayInCorner(2, "tool", value);
+        refreshOverlayInCorner(2);
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::vtkWidget2D::resetOverlay()
 {
-	if (m_widgetOverlay)
+        if (m_widgetOverlay)
 	{
 		m_widgetOverlay.release();
 		m_widgetOverlay = std::make_unique<vtkWidgetOverlay>();

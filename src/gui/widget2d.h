@@ -10,6 +10,7 @@
 #include <QPointer>
 #include <QResizeEvent>
 #include <QPoint>
+#include <QPointF>
 #include <QString>
 #include <QSize>
 #include <QVector>
@@ -26,9 +27,18 @@
 
 
 class DicomImage;
+class QKeyEvent;
 
 namespace asclepios::gui
 {
+        enum class InteractionTool
+        {
+                scroll,
+                window,
+                zoom,
+                pan
+        };
+
         class Widget2D final : public WidgetBase
         {
         Q_OBJECT
@@ -36,8 +46,12 @@ namespace asclepios::gui
                 explicit Widget2D(QWidget* parent = Q_NULLPTR);
                 ~Widget2D() = default;
 
-		//getters
+                // Exposes a vtkWidget2D* via QObject::setProperty for optional VTK integrations.
+                static constexpr const char* vtkWidgetPropertyName = "vtkWidget2DPointer";
+
+                //getters
                 [[nodiscard]] QScrollBar* getScrollBar() const { return m_scroll; }
+                [[nodiscard]] InteractionTool activeTool() const { return m_activeTool; }
                 void waitForPendingTasks() const;
                 void setRenderRequestSource(const QString& t_source) { m_lastRenderRequestSource = t_source; }
                 [[nodiscard]] QString getRenderRequestSource() const { return m_lastRenderRequestSource; }
@@ -52,6 +66,8 @@ namespace asclepios::gui
                         m_renderAbortedDueToMissingContext = false;
                         m_lastRenderRequestSource.clear();
                 }
+
+                void setActiveTool(InteractionTool t_tool);
 
                 void render() override;
 
@@ -123,6 +139,9 @@ namespace asclepios::gui
                 void onSetMaximized() const;
                 void onImagesLoaded();
 
+        signals:
+                void activeToolChanged(InteractionTool t_tool);
+
         private slots :
                 void onChangeImage(int t_index);
                 void onFramePrefetchFinished();
@@ -150,7 +169,11 @@ namespace asclepios::gui
                 double m_manualZoomFactor = 1.0;
                 bool m_fitToWindowEnabled = false;
                 bool m_windowLevelDragging = false;
+                bool m_scrollDragging = false;
+                bool m_zoomDragging = false;
+                bool m_panDragging = false;
                 QPoint m_lastMousePosition = {};
+                QPointF m_panOffset = {};
                 double m_initialWindowCenter = 0.0;
                 double m_initialWindowWidth = 1.0;
                 QElapsedTimer m_firstFrameTimer = {};
@@ -158,6 +181,8 @@ namespace asclepios::gui
                 bool m_reportedFirstFrame = false;
                 QFuture<void> m_framePrefetchFuture = {};
                 std::unique_ptr<QFutureWatcher<void>> m_framePrefetchWatcher = {};
+                InteractionTool m_activeTool = InteractionTool::scroll;
+                double m_scrollDragAccumulator = 0.0;
 
                 void initView() override;
                 void initData() override;
@@ -185,5 +210,13 @@ namespace asclepios::gui
                 void adjustFrameByStep(int t_step);
                 void resetWindowLevel();
                 void positionLoadingAnimation();
+                void keyPressEvent(QKeyEvent* t_event) override;
+
+                void updateActiveToolUi();
+                void updateToolOverlay();
+                QString toolDisplayName(InteractionTool t_tool) const;
+                void resetPanOffset();
+                void clampPanOffset(const QSize& labelSize, const QSize& targetSize);
+                void setCursorForActiveTool(bool t_handClosed = false);
         };
 }

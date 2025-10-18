@@ -1,5 +1,7 @@
 #pragma once
+#include <QObject>
 #include <memory>
+#include <unordered_map>
 
 
 #include "widgetscontainer.h"
@@ -7,12 +9,14 @@
 
 namespace asclepios::gui
 {
-	class FilesImporter;
-	class WidgetsController final : public QObject
-	{
-	Q_OBJECT
-	public:
-		WidgetsController();
+        class FilesImporter;
+        class Widget2D;
+        class vtkWidget2D;
+        class WidgetsController final : public QObject
+        {
+        Q_OBJECT
+        public:
+                WidgetsController();
 		~WidgetsController() = default;
 
 
@@ -33,21 +37,30 @@ namespace asclepios::gui
 	public slots:
 		void setActiveWidget(TabWidget* t_widget);
 		void setMaximize(TabWidget* t_widget) const;
-		void populateWidget(core::Series* t_series, core::Image* t_image) const;
+                void populateWidget(core::Series* t_series, core::Image* t_image);
 
         private:
+                struct VtkToolBinding
+                {
+                        QMetaObject::Connection toolConnection = {};
+                        QMetaObject::Connection destroyedConnection = {};
+                        vtkWidget2D* target = nullptr;
+                };
+
                 std::unique_ptr<WidgetsRepository> m_widgetsRepository = {};
                 std::unique_ptr<WidgetsContainer> m_widgetsContainer = {};
                 TabWidget* m_activeWidget = {};
                 FilesImporter* m_filesImporter = {};
                 WidgetsContainer::layouts m_currentLayout = WidgetsContainer::layouts::none;
+                std::unordered_map<Widget2D*, VtkToolBinding> m_vtkToolConnections = {};
 
                 void initData();
                 void createRemoveWidgets(const std::size_t& t_nrWidgets) const;
-                void createConnections() const;
+                void createConnections();
                 void resetConnections();
                 [[nodiscard]] TabWidget* createNewWidget() const;
                 [[nodiscard]] TabWidget* findNextAvailableWidget() const;
+                void connectVtkToolBridge(Widget2D* t_widget);
                 [[nodiscard]] std::size_t computeNumberWidgetsFromLayout(const WidgetsContainer::layouts& t_layout);
                 [[nodiscard]] static const char* layoutToString(const WidgetsContainer::layouts& t_layout);
         };

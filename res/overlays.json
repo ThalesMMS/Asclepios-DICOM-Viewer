@@ -55,12 +55,18 @@
 			"TextAfter" : "\n",
 			"TextBefore" : "Zoom: "
 		},
-		{
-			"Corner" : 2,
-			"TagKey" : 1003,
-			"TextAfter" : "\n",
-			"TextBefore" : "Series: "
-		},
+                {
+                        "Corner" : 2,
+                        "TagKey" : 1005,
+                        "TextAfter" : "\n",
+                        "TextBefore" : "Tool: "
+                },
+                {
+                        "Corner" : 2,
+                        "TagKey" : 1003,
+                        "TextAfter" : "\n",
+                        "TextBefore" : "Series: "
+                },
 		{
 			"Corner" : 2,
 			"TagKey" : 2625617,

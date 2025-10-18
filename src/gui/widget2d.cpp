@@ -5,11 +5,14 @@
 #include <QHBoxLayout>
 #include <QLoggingCategory>
 #include <QMouseEvent>
+#include <QPainter>
 #include <QPixmap>
 #include <QSignalBlocker>
 #include <QSizePolicy>
 #include <QTransform>
 #include <QString>
+#include <QKeyEvent>
+#include <QCursor>
 #include <QWheelEvent>
 #include <QtConcurrent/QtConcurrent>
 #include <QMutexLocker>
@@ -807,6 +810,11 @@ bool asclepios::gui::Widget2D::startDcmtkRendering()
                 m_manualZoomFactor = 1.0;
                 m_fitToWindowEnabled = false;
                 m_windowLevelDragging = false;
+                m_scrollDragging = false;
+                m_zoomDragging = false;
+                m_panDragging = false;
+                m_scrollDragAccumulator = 0.0;
+                resetPanOffset();
                 m_initialWindowCenter = 0.0;
                 m_initialWindowWidth = 1.0;
                 m_reportedFirstFrame = false;
@@ -814,6 +822,7 @@ bool asclepios::gui::Widget2D::startDcmtkRendering()
                 m_frameLoadTimer.restart();
                 m_imageLoadFuture = QtConcurrent::run(loadFramesWithDcmtk, m_series, m_image);
                 m_imageLoadWatcher->setFuture(m_imageLoadFuture);
+                updateActiveToolUi();
                 qCInfo(lcWidget2D)
                         << "QtConcurrent::run dispatched for DCMTK pipeline. Running:" << m_imageLoadFuture.isRunning();
                 return true;
@@ -848,6 +857,7 @@ void asclepios::gui::Widget2D::ensureImageLabel()
                 m_imageLabel->installEventFilter(this);
         }
         ensureOverlayWidget();
+        setCursorForActiveTool();
 }
 
 void asclepios::gui::Widget2D::ensureOverlayWidget()
@@ -912,7 +922,39 @@ void asclepios::gui::Widget2D::refreshDisplayedFrame(const bool t_updateOverlay)
         {
                 pixmap = pixmap.scaled(targetSize, Qt::KeepAspectRatio, Qt::SmoothTransformation);
         }
-        m_imageLabel->setPixmap(pixmap);
+        if (m_imageLabel)
+        {
+                if (!m_fitToWindowEnabled)
+                {
+                        const QSize labelSize = m_imageLabel->size();
+                        if (labelSize.isValid())
+                        {
+                                clampPanOffset(labelSize, pixmap.size());
+                                QPixmap displayPixmap(labelSize);
+                                displayPixmap.fill(Qt::black);
+                                QPainter painter(&displayPixmap);
+                                const QPointF baseOffset(
+                                        static_cast<double>(labelSize.width() - pixmap.width()) / 2.0,
+                                        static_cast<double>(labelSize.height() - pixmap.height()) / 2.0);
+                                const QPointF topLeft = baseOffset + m_panOffset;
+                                painter.drawPixmap(topLeft, pixmap);
+                                painter.end();
+                                m_imageLabel->setPixmap(displayPixmap);
+                        }
+                        else
+                        {
+                                m_imageLabel->setPixmap(pixmap);
+                        }
+                }
+                else
+                {
+                        if (!m_panOffset.isNull())
+                        {
+                                resetPanOffset();
+                        }
+                        m_imageLabel->setPixmap(pixmap);
+                }
+        }
         if (!m_imageLabel->isVisible())
         {
                 m_imageLabel->show();
@@ -1019,6 +1061,7 @@ void asclepios::gui::Widget2D::updateDcmtkOverlay(const QImage& t_frameImage, in
                 ? m_displayZoomFactor
                 : m_manualZoomFactor;
         m_overlayWidget->setZoom(zoomFactor);
+        m_overlayWidget->setToolName(toolDisplayName(m_activeTool));
         m_overlayWidget->setGeometry(m_imageLabel->rect());
         m_overlayWidget->raise();
         m_overlayWidget->show();
@@ -1034,6 +1077,157 @@ void asclepios::gui::Widget2D::hideDcmtkOverlay()
         m_overlayWidget->clear();
         m_overlayWidget->hide();
         m_windowLevelDragging = false;
+}
+
+void asclepios::gui::Widget2D::keyPressEvent(QKeyEvent* t_event)
+{
+        if (!t_event)
+        {
+                QWidget::keyPressEvent(t_event);
+                return;
+        }
+
+        bool handled = false;
+        if (!t_event->modifiers())
+        {
+                switch (t_event->key())
+                {
+                case Qt::Key_B:
+                        setActiveTool(InteractionTool::scroll);
+                        handled = true;
+                        break;
+                case Qt::Key_W:
+                        setActiveTool(InteractionTool::window);
+                        handled = true;
+                        break;
+                case Qt::Key_Z:
+                        setActiveTool(InteractionTool::zoom);
+                        handled = true;
+                        break;
+                case Qt::Key_M:
+                        setActiveTool(InteractionTool::pan);
+                        handled = true;
+                        break;
+                default:
+                        break;
+                }
+        }
+
+        if (handled)
+        {
+                t_event->accept();
+                return;
+        }
+        QWidget::keyPressEvent(t_event);
+}
+
+void asclepios::gui::Widget2D::updateActiveToolUi()
+{
+        setCursorForActiveTool();
+        updateToolOverlay();
+}
+
+void asclepios::gui::Widget2D::updateToolOverlay()
+{
+        if (!m_dcmtkRenderingActive)
+        {
+                return;
+        }
+        ensureOverlayWidget();
+        if (!m_overlayWidget)
+        {
+                return;
+        }
+        m_overlayWidget->setToolName(toolDisplayName(m_activeTool));
+        m_overlayWidget->update();
+}
+
+QString asclepios::gui::Widget2D::toolDisplayName(const InteractionTool t_tool) const
+{
+        switch (t_tool)
+        {
+        case InteractionTool::scroll:
+                return tr("Scroll");
+        case InteractionTool::window:
+                return tr("Window");
+        case InteractionTool::zoom:
+                return tr("Zoom");
+        case InteractionTool::pan:
+                return tr("Pan");
+        default:
+                return {};
+        }
+}
+
+void asclepios::gui::Widget2D::resetPanOffset()
+{
+        m_panOffset = {};
+}
+
+void asclepios::gui::Widget2D::clampPanOffset(const QSize& labelSize, const QSize& targetSize)
+{
+        if (labelSize.isEmpty())
+        {
+                return;
+        }
+
+        const QPointF baseOffset(
+                static_cast<double>(labelSize.width() - targetSize.width()) / 2.0,
+                static_cast<double>(labelSize.height() - targetSize.height()) / 2.0);
+        QPointF desiredTopLeft = baseOffset + m_panOffset;
+
+        if (targetSize.width() <= labelSize.width())
+        {
+                desiredTopLeft.setX(baseOffset.x());
+        }
+        else
+        {
+                const double minX = static_cast<double>(labelSize.width() - targetSize.width());
+                const double maxX = 0.0;
+                desiredTopLeft.setX(std::clamp(desiredTopLeft.x(), minX, maxX));
+        }
+
+        if (targetSize.height() <= labelSize.height())
+        {
+                desiredTopLeft.setY(baseOffset.y());
+        }
+        else
+        {
+                const double minY = static_cast<double>(labelSize.height() - targetSize.height());
+                const double maxY = 0.0;
+                desiredTopLeft.setY(std::clamp(desiredTopLeft.y(), minY, maxY));
+        }
+
+        m_panOffset = desiredTopLeft - baseOffset;
+}
+
+void asclepios::gui::Widget2D::setCursorForActiveTool(const bool t_handClosed)
+{
+        Qt::CursorShape shape = Qt::ArrowCursor;
+        switch (m_activeTool)
+        {
+        case InteractionTool::scroll:
+                shape = Qt::ArrowCursor;
+                break;
+        case InteractionTool::window:
+                shape = Qt::CrossCursor;
+                break;
+        case InteractionTool::zoom:
+                shape = Qt::SizeVerCursor;
+                break;
+        case InteractionTool::pan:
+                shape = t_handClosed ? Qt::ClosedHandCursor : Qt::OpenHandCursor;
+                break;
+        default:
+                shape = Qt::ArrowCursor;
+                break;
+        }
+
+        setCursor(shape);
+        if (m_imageLabel)
+        {
+                m_imageLabel->setCursor(shape);
+        }
 }
 
 void asclepios::gui::Widget2D::adjustFrameByStep(const int t_step)
@@ -1348,23 +1542,48 @@ bool asclepios::gui::Widget2D::eventFilter(QObject* t_watched, QEvent* t_event)
                         auto* mouseEvent = static_cast<QMouseEvent*>(t_event);
                         if (mouseEvent->button() == Qt::LeftButton)
                         {
-                                m_windowLevelDragging = true;
                                 m_lastMousePosition = mouseEvent->pos();
-                                const auto initialState = m_dcmtkPresenter->initialState();
-                                if (m_presentationState.WindowWidth <= 0.0)
+                                switch (m_activeTool)
                                 {
-                                        m_presentationState.WindowWidth = initialState.WindowWidth;
-                                        m_presentationState.WindowCenter = initialState.WindowCenter;
+                                case InteractionTool::scroll:
+                                        m_scrollDragging = true;
+                                        m_scrollDragAccumulator = 0.0;
+                                        mouseEvent->accept();
+                                        return true;
+                                case InteractionTool::window:
+                                {
+                                        m_windowLevelDragging = true;
+                                        const auto initialState = m_dcmtkPresenter->initialState();
+                                        if (m_presentationState.WindowWidth <= 0.0)
+                                        {
+                                                m_presentationState.WindowWidth = initialState.WindowWidth;
+                                                m_presentationState.WindowCenter = initialState.WindowCenter;
+                                        }
+                                        m_initialWindowCenter = m_presentationState.WindowCenter;
+                                        m_initialWindowWidth = std::max(m_presentationState.WindowWidth, 1.0);
+                                        mouseEvent->accept();
+                                        return true;
                                 }
-                                m_initialWindowCenter = m_presentationState.WindowCenter;
-                                m_initialWindowWidth = std::max(m_presentationState.WindowWidth, 1.0);
-                                mouseEvent->accept();
-                                break;
+                                case InteractionTool::zoom:
+                                        m_zoomDragging = true;
+                                        m_fitToWindowEnabled = false;
+                                        mouseEvent->accept();
+                                        return true;
+                                case InteractionTool::pan:
+                                        m_panDragging = true;
+                                        m_fitToWindowEnabled = false;
+                                        setCursorForActiveTool(true);
+                                        mouseEvent->accept();
+                                        return true;
+                                default:
+                                        break;
+                                }
                         }
                         if (mouseEvent->button() == Qt::MiddleButton)
                         {
                                 m_fitToWindowEnabled = false;
                                 m_manualZoomFactor = 1.0;
+                                resetPanOffset();
                                 refreshDisplayedFrame(true);
                                 mouseEvent->accept();
                                 return true;
@@ -1373,30 +1592,107 @@ bool asclepios::gui::Widget2D::eventFilter(QObject* t_watched, QEvent* t_event)
                 }
                 case QEvent::MouseMove:
                 {
-                        if (!renderActive || !m_windowLevelDragging)
+                        auto* mouseEvent = static_cast<QMouseEvent*>(t_event);
+                        if (!renderActive)
                         {
                                 break;
                         }
-                        auto* mouseEvent = static_cast<QMouseEvent*>(t_event);
-                        const QPoint delta = mouseEvent->pos() - m_lastMousePosition;
-                        const double referenceWidth = std::max(m_initialWindowWidth, 1.0);
-                        const double widthChange = static_cast<double>(delta.x()) * (referenceWidth / 300.0);
-                        const double centerChange = static_cast<double>(-delta.y()) * (referenceWidth / 300.0);
-                        m_presentationState.WindowWidth = std::max(1.0, m_initialWindowWidth + widthChange);
-                        m_presentationState.WindowCenter = m_initialWindowCenter + centerChange;
-                        applyLoadedFrame(m_currentFrameIndex);
-                        mouseEvent->accept();
-                        return true;
+                        if (m_scrollDragging)
+                        {
+                                const QPoint delta = mouseEvent->pos() - m_lastMousePosition;
+                                m_scrollDragAccumulator += static_cast<double>(delta.y());
+                                constexpr double pixelsPerStep = 5.0;
+                                const int steps = static_cast<int>(m_scrollDragAccumulator / pixelsPerStep);
+                                if (steps != 0)
+                                {
+                                        adjustFrameByStep(steps);
+                                        m_scrollDragAccumulator -= static_cast<double>(steps) * pixelsPerStep;
+                                }
+                                m_lastMousePosition = mouseEvent->pos();
+                                mouseEvent->accept();
+                                return true;
+                        }
+                        if (m_windowLevelDragging && m_activeTool == InteractionTool::window)
+                        {
+                                const QPoint delta = mouseEvent->pos() - m_lastMousePosition;
+                                const double referenceWidth = std::max(m_initialWindowWidth, 1.0);
+                                const double widthChange = static_cast<double>(delta.x()) * (referenceWidth / 300.0);
+                                const double centerChange = static_cast<double>(-delta.y()) * (referenceWidth / 300.0);
+                                m_presentationState.WindowWidth = std::max(1.0, m_initialWindowWidth + widthChange);
+                                m_presentationState.WindowCenter = m_initialWindowCenter + centerChange;
+                                applyLoadedFrame(m_currentFrameIndex);
+                                m_lastMousePosition = mouseEvent->pos();
+                                mouseEvent->accept();
+                                return true;
+                        }
+                        if (m_zoomDragging)
+                        {
+                                const QPoint delta = mouseEvent->pos() - m_lastMousePosition;
+                                if (delta.y() != 0)
+                                {
+                                        const double sensitivity = 0.01;
+                                        const double factor = 1.0 - sensitivity * static_cast<double>(delta.y());
+                                        if (factor > 0.0)
+                                        {
+                                                m_manualZoomFactor = std::clamp(m_manualZoomFactor * factor, 0.1, 8.0);
+                                                refreshDisplayedFrame(true);
+                                        }
+                                }
+                                m_lastMousePosition = mouseEvent->pos();
+                                mouseEvent->accept();
+                                return true;
+                        }
+                        if (m_panDragging)
+                        {
+                                const QPoint delta = mouseEvent->pos() - m_lastMousePosition;
+                                m_panOffset += QPointF(delta);
+                                m_fitToWindowEnabled = false;
+                                refreshDisplayedFrame(true);
+                                m_lastMousePosition = mouseEvent->pos();
+                                mouseEvent->accept();
+                                return true;
+                        }
+                        break;
                 }
                 case QEvent::MouseButtonRelease:
                 {
-                        if (!m_windowLevelDragging)
+                        auto* mouseEvent = static_cast<QMouseEvent*>(t_event);
+                        if (!mouseEvent)
                         {
                                 break;
                         }
-                        m_windowLevelDragging = false;
-                        auto* mouseEvent = static_cast<QMouseEvent*>(t_event);
-                        mouseEvent->accept();
+                        if (mouseEvent->button() != Qt::LeftButton)
+                        {
+                                break;
+                        }
+                        bool handled = false;
+                        if (m_windowLevelDragging)
+                        {
+                                m_windowLevelDragging = false;
+                                handled = true;
+                        }
+                        if (m_scrollDragging)
+                        {
+                                m_scrollDragging = false;
+                                m_scrollDragAccumulator = 0.0;
+                                handled = true;
+                        }
+                        if (m_zoomDragging)
+                        {
+                                m_zoomDragging = false;
+                                handled = true;
+                        }
+                        if (m_panDragging)
+                        {
+                                m_panDragging = false;
+                                handled = true;
+                                setCursorForActiveTool();
+                        }
+                        if (handled)
+                        {
+                                mouseEvent->accept();
+                                return true;
+                        }
                         break;
                 }
                 case QEvent::MouseButtonDblClick:
@@ -1407,7 +1703,8 @@ bool asclepios::gui::Widget2D::eventFilter(QObject* t_watched, QEvent* t_event)
                         }
                         auto* mouseEvent = static_cast<QMouseEvent*>(t_event);
                         if (mouseEvent->button() == Qt::LeftButton
-                                && mouseEvent->modifiers().testFlag(Qt::ControlModifier))
+                                && mouseEvent->modifiers().testFlag(Qt::ControlModifier)
+                                && m_activeTool == InteractionTool::window)
                         {
                                 resetWindowLevel();
                                 mouseEvent->accept();
@@ -1416,6 +1713,7 @@ bool asclepios::gui::Widget2D::eventFilter(QObject* t_watched, QEvent* t_event)
                         if (mouseEvent->button() == Qt::MiddleButton)
                         {
                                 m_manualZoomFactor = 1.0;
+                                resetPanOffset();
                                 refreshDisplayedFrame(true);
                                 mouseEvent->accept();
                                 return true;
@@ -1431,12 +1729,13 @@ bool asclepios::gui::Widget2D::eventFilter(QObject* t_watched, QEvent* t_event)
 
 
 asclepios::gui::Widget2D::Widget2D(QWidget* parent)
-	: WidgetBase(parent)
+        : WidgetBase(parent)
 {
-	initData();
-	initView();
-	createConnections();
-	m_tabWidget = parent;
+        initData();
+        initView();
+        createConnections();
+        m_tabWidget = parent;
+        updateActiveToolUi();
 }
 
 //-----------------------------------------------------------------------------
@@ -1551,10 +1850,31 @@ void asclepios::gui::Widget2D::setFitToWindowEnabled(const bool t_enabled)
         }
 
         m_fitToWindowEnabled = t_enabled;
+        if (m_fitToWindowEnabled)
+        {
+                resetPanOffset();
+        }
         if (m_dcmtkRenderingActive && m_dcmtkPresenter && m_dcmtkPresenter->isValid())
         {
                 refreshDisplayedFrame(true);
         }
+}
+
+void asclepios::gui::Widget2D::setActiveTool(const InteractionTool t_tool)
+{
+        if (m_activeTool == t_tool)
+        {
+                return;
+        }
+
+        m_activeTool = t_tool;
+        m_windowLevelDragging = false;
+        m_scrollDragging = false;
+        m_zoomDragging = false;
+        m_panDragging = false;
+        m_scrollDragAccumulator = 0.0;
+        updateActiveToolUi();
+        emit activeToolChanged(m_activeTool);
 }
 
 //-----------------------------------------------------------------------------
@@ -1595,6 +1915,11 @@ void asclepios::gui::Widget2D::resetView()
         m_manualZoomFactor = 1.0;
         m_fitToWindowEnabled = false;
         m_windowLevelDragging = false;
+        m_scrollDragging = false;
+        m_zoomDragging = false;
+        m_panDragging = false;
+        m_scrollDragAccumulator = 0.0;
+        resetPanOffset();
         m_initialWindowCenter = 0.0;
         m_initialWindowWidth = 1.0;
         hideDcmtkOverlay();
@@ -1606,6 +1931,8 @@ void asclepios::gui::Widget2D::resetView()
         m_isImageLoaded = false;
         m_image = nullptr;
         m_series = nullptr;
+        m_activeTool = InteractionTool::scroll;
+        updateActiveToolUi();
         //todo reset title of tab
         disconnectScroll();
         createConnections();

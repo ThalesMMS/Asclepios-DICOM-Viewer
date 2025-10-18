@@ -296,6 +296,38 @@ void asclepios::gui::DcmtkOverlayWidget::populateStaticEntries(const DicomMetada
         }
 }
 
+void asclepios::gui::DcmtkOverlayWidget::setToolName(const QString& t_toolName)
+{
+        loadConfiguration();
+        const unsigned int toolKey = static_cast<unsigned int>(overlayKey::tool);
+        for (const auto& entry : m_entries)
+        {
+                if (entry.TagKey != toolKey)
+                {
+                        continue;
+                }
+
+                if (t_toolName.isEmpty())
+                {
+                        setEntryText(entry.TagKey, {});
+                        update();
+                        return;
+                }
+
+                QString prefix = entry.TextBefore;
+                if (prefix.isEmpty())
+                {
+                        prefix = QStringLiteral("Tool: ");
+                }
+                QString text = prefix;
+                text.append(t_toolName);
+                text.append(entry.TextAfter);
+                setEntryText(entry.TagKey, text);
+                update();
+                return;
+        }
+}
+
 void asclepios::gui::DcmtkOverlayWidget::setEntryText(unsigned int t_tagKey, const QString& t_text)
 {
         if (t_text.trimmed().isEmpty())
@@ -344,7 +376,7 @@ QString asclepios::gui::DcmtkOverlayWidget::composeStaticText(const OverlayEntry
         text.append(QString::fromStdString(value));
         text.append(t_entry.TextAfter);
         if (text.isEmpty() || text == QStringLiteral("\n") || text == QStringLiteral("Series: \n")
-                || text == QStringLiteral("Zoom: \n"))
+                || text == QStringLiteral("Zoom: \n") || text == QStringLiteral("Tool: \n"))
         {
                 return {};
         }
@@ -357,6 +389,7 @@ bool asclepios::gui::DcmtkOverlayWidget::isDynamicTag(unsigned int t_tagKey)
         {
         case overlayKey::zoom:
         case overlayKey::series:
+        case overlayKey::tool:
         case overlayKey::window:
         case overlayKey::level:
                 return true;
