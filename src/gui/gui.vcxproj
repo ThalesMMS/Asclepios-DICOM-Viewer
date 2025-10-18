@@ -17,6 +17,9 @@
     <QtMsBuild Condition="'$(QtMsBuild)'!=''">$([System.Environment]::ExpandEnvironmentVariables('$(QtMsBuild)'))</QtMsBuild>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' and '$(LOCALAPPDATA)'!=''">$(LOCALAPPDATA)\QtMsBuild</QtMsBuild>
     <QtMsBuild Condition="!Exists('$(QtMsBuild)\qt.targets') and '$(LOCALAPPDATA)'!='' and Exists('$(LOCALAPPDATA)\QtMsBuild\qt.targets')">$(LOCALAPPDATA)\QtMsBuild</QtMsBuild>
+    <QtMsBuild Condition="!Exists('$(QtMsBuild)\qt.targets') and '$(VCTargetsPath)'!='' and Exists('$(VCTargetsPath)QtMsBuild\qt.targets')">$(VCTargetsPath)QtMsBuild</QtMsBuild>
+    <QtMsBuild Condition="!Exists('$(QtMsBuild)\qt.targets') and '$(MSBuildExtensionsPath32)'!='' and Exists('$(MSBuildExtensionsPath32)\Microsoft\VC\QtMsBuild\qt.targets')">$(MSBuildExtensionsPath32)\Microsoft\VC\QtMsBuild</QtMsBuild>
+    <QtMsBuild Condition="!Exists('$(QtMsBuild)\qt.targets') and '$(MSBuildExtensionsPath32)'!='' and Exists('$(MSBuildExtensionsPath32)\Microsoft\Qt\QtMsBuild\qt.targets')">$(MSBuildExtensionsPath32)\Microsoft\Qt\QtMsBuild</QtMsBuild>
     <QtMsBuild Condition="!Exists('$(QtMsBuild)\qt.targets') and '$(MSBuildExtensionsPath32)'!='' and Exists('$(MSBuildExtensionsPath32)\QtMsBuild\qt.targets')">$(MSBuildExtensionsPath32)\QtMsBuild</QtMsBuild>
     <QtMsBuild Condition="!Exists('$(QtMsBuild)\qt.targets') and Exists('$(MSBuildThisFileDirectory)QtMsBuild\qt.targets')">$(MSBuildThisFileDirectory)QtMsBuild</QtMsBuild>
   </PropertyGroup>
