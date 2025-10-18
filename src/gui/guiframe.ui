@@ -201,9 +201,6 @@ QMenu::item:selected {
           <property name="spacing">
            <number>0</number>
           </property>
-          <property name="sizeConstraint">
-           <enum>QLayout::SetMinimumSize</enum>
-          </property>
           <property name="topMargin">
            <number>8</number>
           </property>
