@@ -805,6 +805,21 @@ void asclepios::gui::Widget2D::applyLoadedFrame(const int t_index)
         updateDcmtkOverlay(frameImage, clampedIndex);
 }
 
+void asclepios::gui::Widget2D::positionLoadingAnimation()
+{
+        if (!m_loadingAnimation)
+        {
+                return;
+        }
+
+        const QRect targetRect = (m_imageLabel && !m_imageLabel->geometry().isEmpty())
+                ? m_imageLabel->geometry()
+                : rect();
+        const QSize overlaySize = m_loadingAnimation->size();
+        const QPoint topLeft = targetRect.center() - QPoint(overlaySize.width() / 2, overlaySize.height() / 2);
+        m_loadingAnimation->move(topLeft);
+}
+
 void asclepios::gui::Widget2D::updateDcmtkOverlay(const QImage& t_frameImage, int t_frameIndex)
 {
         if (!m_dcmtkRenderingActive)
@@ -1480,10 +1495,17 @@ void asclepios::gui::Widget2D::connectScroll()
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::startLoadingAnimation()
 {
-	m_loadingAnimation = std::make_unique<LoadingAnimation>(this);
-	m_loadingAnimation->setWindowFlags(Qt::Widget);
-	layout()->addWidget(m_loadingAnimation.get());
-	m_loadingAnimation->show();
+        m_loadingAnimation = std::make_unique<LoadingAnimation>(this);
+        m_loadingAnimation->setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog | Qt::BypassWindowManagerHint);
+        m_loadingAnimation->setModal(false);
+        m_loadingAnimation->setAttribute(Qt::WA_TranslucentBackground, true);
+        m_loadingAnimation->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+        m_loadingAnimation->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        const QSize desiredSize(140, 140);
+        m_loadingAnimation->setFixedSize(desiredSize);
+        positionLoadingAnimation();
+        m_loadingAnimation->show();
+        m_loadingAnimation->raise();
 }
 
 //-----------------------------------------------------------------------------
@@ -1526,6 +1548,7 @@ void asclepios::gui::Widget2D::setScrollStyle() const
 void asclepios::gui::Widget2D::resizeEvent(QResizeEvent* t_event)
 {
         QWidget::resizeEvent(t_event);
+        positionLoadingAnimation();
         if (m_dcmtkRenderingActive)
         {
                 applyLoadedFrame(m_currentFrameIndex);

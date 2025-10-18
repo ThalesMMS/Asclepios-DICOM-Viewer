@@ -2,6 +2,7 @@
 
 #include <QFuture>
 #include <QVTKOpenGLNativeWidget.h>
+#include <QResizeEvent>
 #include "ui_widgetmpr.h"
 #include "vtkwidgetmpr.h"
 #include "toolbarwidgetmpr.h"
@@ -19,6 +20,7 @@ namespace asclepios::gui
 		[[nodiscard]] QFuture<void> getFuture() const { return m_future; }
 
 		void render() override;
+		void resizeEvent(QResizeEvent* event) override;
 
 	signals:
 		void finishedRenderAsync();
@@ -42,6 +44,7 @@ namespace asclepios::gui
 		void initView() override;
 		void createConnections() override;
 		void startLoadingAnimation() override;
+		void positionLoadingAnimation();
 		void static onRenderAsync(WidgetMPR* t_self);
 	};
 }

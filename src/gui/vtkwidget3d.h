@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include <QString>
 
 #include <vtkVolume.h>
 #include <vtkBoxWidget2.h>
@@ -18,9 +19,10 @@ namespace asclepios::gui
 	public:
 		vtkWidget3D() { initWidget(); };
 		~vtkWidget3D() = default;
-
 		//getters
 		[[nodiscard]] vtkSmartVolumeMapper* getvtkWidget3DSmartVolumeMapper() const { return m_mapper; }
+		[[nodiscard]] bool hasRenderableVolume() const { return m_volumeData && m_volumeData->ImageData; }
+		[[nodiscard]] QString lastVolumeError() const { return m_lastVolumeError; }
 
 		//setters
 		void setInteractor(const vtkSmartPointer<vtkRenderWindowInteractor>& t_interactor) override { m_interactor = t_interactor; }
@@ -45,7 +47,8 @@ namespace asclepios::gui
 		void initBoxWidgetCallback();
 		void initInteractorStyle();
         void setVolumeMapperBlend() const;
-        std::shared_ptr<core::DicomVolume> acquireVolume() const;
-        [[nodiscard]] std::tuple<int, int> getWindowLevel(const std::shared_ptr<core::DicomVolume>& volume) const;
+		std::shared_ptr<core::DicomVolume> acquireVolume(QString* failureReason = nullptr) const;
+		[[nodiscard]] std::tuple<int, int> getWindowLevel(const std::shared_ptr<core::DicomVolume>& volume) const;
+		QString m_lastVolumeError = {};
 	};
 }

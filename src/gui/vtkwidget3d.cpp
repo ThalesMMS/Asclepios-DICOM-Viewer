@@ -67,17 +67,48 @@ void asclepios::gui::vtkWidget3D::setVolumeMapperBlend() const
 }
 
 //-----------------------------------------------------------------------------
-std::shared_ptr<asclepios::core::DicomVolume> asclepios::gui::vtkWidget3D::acquireVolume() const
+std::shared_ptr<asclepios::core::DicomVolume> asclepios::gui::vtkWidget3D::acquireVolume(QString* failureReason) const
 {
+        QString localFailure;
+        std::shared_ptr<core::DicomVolume> volume;
+
         if (m_image && m_image->getIsMultiFrame())
         {
-                return m_image->getDicomVolume();
+                volume = m_image->getDicomVolume(&localFailure);
         }
-        if (m_series)
+        else if (m_series)
         {
-                return m_series->getVolumeForSingleFrameSeries();
+                try
+                {
+                        volume = m_series->getVolumeForSingleFrameSeries();
+                }
+                catch (const std::exception& ex)
+                {
+                        localFailure = QString::fromUtf8(ex.what());
+                }
+                catch (...)
+                {
+                        localFailure = QStringLiteral("Unexpected error while decoding series volume.");
+                }
         }
-        return nullptr;
+
+        if (!volume || !volume->ImageData)
+        {
+                if (localFailure.isEmpty())
+                {
+                        localFailure = QStringLiteral("Volume data unavailable for the selected dataset.");
+                }
+        }
+        else
+        {
+                localFailure.clear();
+        }
+
+        if (failureReason)
+        {
+                *failureReason = localFailure;
+        }
+        return volume;
 }
 
 std::tuple<int, int> asclepios::gui::vtkWidget3D::getWindowLevel(const std::shared_ptr<core::DicomVolume>& volume) const
@@ -111,13 +142,16 @@ void asclepios::gui::vtkWidget3D::setFilter(const QString& t_filePath)
         {
                 if (!m_volumeData)
                 {
-                        m_volumeData = acquireVolume();
+                        QString failure;
+                        m_volumeData = acquireVolume(&failure);
+                        m_lastVolumeError = failure;
                 }
                 if (!m_volumeData || !m_volumeData->ImageData)
                 {
-                        qCWarning(lcVtkWidget3D) << "setFilter() aborted - volume data unavailable.";
+                        qCWarning(lcVtkWidget3D) << "setFilter() aborted - volume data unavailable." << m_lastVolumeError;
                         return;
                 }
+                m_lastVolumeError.clear();
                 if (t_filePath == "MIP")
                 {
                         m_transferFunction.reset();
@@ -153,12 +187,15 @@ void asclepios::gui::vtkWidget3D::render()
 {
         m_renderWindows[0]->OffScreenRenderingOn();
         setVolumeMapperBlend();
-        m_volumeData = acquireVolume();
+        QString failureReason;
+        m_volumeData = acquireVolume(&failureReason);
+        m_lastVolumeError = failureReason;
         if (!m_volumeData || !m_volumeData->ImageData)
         {
-                qCCritical(lcVtkWidget3D) << "render() aborted - volume data unavailable.";
+                qCCritical(lcVtkWidget3D) << "render() aborted - volume data unavailable." << m_lastVolumeError;
                 return;
         }
+        m_lastVolumeError.clear();
         const auto [window, level] = getWindowLevel(m_volumeData);
         qCInfo(lcVtkWidget3D) << "render() configuring pipeline"
                               << "seriesUid" << (m_series ? QString::fromStdString(m_series->getUID()) : QStringLiteral("n/a"))

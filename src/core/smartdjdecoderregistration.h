@@ -1,6 +1,6 @@
 #pragma once
 
-#include <atomic>
+#include <mutex>
 #include "utils.h"
 
 namespace asclepios::core
@@ -15,6 +15,7 @@ namespace asclepios::core
 		static void cleanup();
 
 	private:
-		inline static std::atomic<int> m_referenceCount = 0;
+		inline static int m_referenceCount = 0;
+		inline static std::mutex m_mutex = {};
 	};
 }

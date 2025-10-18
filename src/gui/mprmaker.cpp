@@ -12,6 +12,7 @@
 #include <vtkMatrix4x4.h>
 #include <vtkImageResliceMapper.h>
 #include <vtkPointData.h>
+#include <QString>
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::MPRMaker::SetRenderWindows(const vtkSmartPointer<vtkRenderWindow>& t_sagittalWindow,
@@ -50,18 +51,47 @@ void asclepios::gui::MPRMaker::create3DMatrix()
 		m_series = m_image->getParentObject();
 	}
 
+    QString failureReason;
     if (m_image && m_image->getIsMultiFrame())
     {
-        m_volume = m_image->getDicomVolume();
+        m_volume = m_image->getDicomVolume(&failureReason);
     }
     else if (m_series)
     {
-        m_volume = m_series->getVolumeForSingleFrameSeries();
+        try
+        {
+            m_volume = m_series->getVolumeForSingleFrameSeries();
+        }
+        catch (const std::exception& ex)
+        {
+            failureReason = QString::fromUtf8(ex.what());
+            m_volume.reset();
+        }
+        catch (...)
+        {
+            failureReason = QStringLiteral("Unexpected error while decoding series volume.");
+            m_volume.reset();
+        }
     }
     else
     {
+        failureReason = QStringLiteral("Missing series context for multiplanar reconstruction.");
         m_volume.reset();
     }
+
+    if (!m_volume || !m_volume->ImageData)
+    {
+        if (failureReason.isEmpty())
+        {
+            failureReason = QStringLiteral("Volume data unavailable for multiplanar reconstruction.");
+        }
+    }
+    else
+    {
+        failureReason.clear();
+    }
+
+    m_lastFailure = failureReason;
 }
 
 //-----------------------------------------------------------------------------
@@ -219,3 +249,4 @@ void asclepios::gui::MPRMaker::renderPlaneOffScreen(const int t_plane)
 	m_renderWindow[t_plane]->AddRenderer(renderer);
 	m_renderWindow[t_plane]->Render();
 }
+

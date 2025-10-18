@@ -164,5 +164,6 @@ namespace asclepios::gui
                 void resizeEvent(QResizeEvent* t_event) override;
                 void adjustFrameByStep(int t_step);
                 void resetWindowLevel();
+                void positionLoadingAnimation();
         };
 }

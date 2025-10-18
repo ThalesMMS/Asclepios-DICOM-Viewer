@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vtkAxisActor2D.h>
+#include <QString>
 #include "vtkwidgetbase.h"
 #include "mprmaker.h"
 #include "vtkwidgetoverlay.h"
@@ -17,7 +18,8 @@ namespace asclepios::gui
 
 		//getters
 		[[nodiscard]] int getNumberOfRenderWindow(vtkRenderWindow* t_window) const;
-		
+		[[nodiscard]] bool hasValidVolume() const { return m_mprMaker && m_mprMaker->getVolume() && m_mprMaker->getVolume()->ImageData; }
+		[[nodiscard]] QString lastFailureMessage() const { return m_mprMaker ? m_mprMaker->lastFailureMessage() : QString(); }
 
 		//setters
 		void setInteractor([[maybe_unused]] const vtkSmartPointer<vtkRenderWindowInteractor>& t_interactor) override {}

@@ -2,6 +2,7 @@
 
 #include <qfuture.h>
 #include <QElapsedTimer>
+#include <QResizeEvent>
 #include <QVTKOpenGLNativeWidget.h>
 #include "vtkwidget3d.h"
 #include "widgetbase.h"
@@ -27,6 +28,7 @@ namespace asclepios::gui
 
 	protected:
 		bool eventFilter(QObject* watched, QEvent* event) override;
+        void resizeEvent(QResizeEvent* event) override;
 
 	private slots:
 		void onfilterChanged(const QString& t_filter) const;
@@ -47,6 +49,15 @@ namespace asclepios::gui
 		void initData() override;
 		void createConnections() override;
 		void startLoadingAnimation() override;
+		void positionLoadingAnimation();
 		void static onRenderAsync(Widget3D* t_self);
 	};
 }
+
+
+
+
+
+
+
+

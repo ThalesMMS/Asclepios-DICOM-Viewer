@@ -1,6 +1,7 @@
 #pragma once
 
 #include <memory>
+#include <QString>
 
 #include <vtkImageResliceToColors.h>
 #include <vtkRenderWindow.h>
@@ -41,6 +42,7 @@ namespace asclepios::gui
 		[[nodiscard]] std::shared_ptr<core::DicomVolume> getVolume() const { return m_volume; }
 		[[nodiscard]] double getCenterSliceZPosition(int t_plane) const;
 		[[nodiscard]] vtkSmartPointer<vtkScalarsToColors> getColorMapScalar() const { return m_colorMap; }
+		[[nodiscard]] QString lastFailureMessage() const { return m_lastFailure; }
 
 
 		void create3DMatrix();
@@ -58,6 +60,7 @@ namespace asclepios::gui
 		vtkSmartPointer<vtkImageReslice> m_originalValuesReslicer[3] = {};
 		vtkSmartPointer<vtkRenderWindow> m_renderWindow[3] = {};
 		vtkSmartPointer<vtkScalarsToColors> m_colorMap = {};
+		QString m_lastFailure = {};
 
 		double m_sagittalMatrix[16] = {
 			0, 0, 1, 0,

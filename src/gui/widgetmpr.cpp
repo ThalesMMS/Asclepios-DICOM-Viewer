@@ -1,6 +1,7 @@
 #include "widgetmpr.h"
 #include <QFocusEvent>
 #include <QLoggingCategory>
+#include <QMessageBox>
 #include <vtkEventQtSlotConnect.h>
 #include <vtkGenericOpenGLRenderWindow.h>
 #include <QtConcurrent/qtconcurrentrun.h>
@@ -108,7 +109,25 @@ void asclepios::gui::WidgetMPR::onActivateWidget(const bool& t_flag, QObject* t_
 void asclepios::gui::WidgetMPR::onFinishedRenderAsync()
 {
         qCInfo(lcWidgetMpr) << "Asynchronous render task completed.";
+        disconnect(this, &WidgetMPR::finishedRenderAsync,
+                this, &WidgetMPR::onFinishedRenderAsync);
         stopLoadingAnimation();
+
+        if (!m_widgetMPR->hasValidVolume())
+        {
+                const QString error = m_widgetMPR->lastFailureMessage();
+                qCWarning(lcWidgetMpr) << "MPR volume unavailable." << error;
+                if (!error.isEmpty())
+                {
+                        QMessageBox::warning(this, tr("MPR Rendering"), error);
+                }
+                else
+                {
+                        QMessageBox::warning(this, tr("MPR Rendering"), tr("Unable to reconstruct multiplanar views for this dataset."));
+                }
+                return;
+        }
+
         for (const auto& widget : m_qtvtkWidgets)
         {
                 widget->setVisible(true);
@@ -189,12 +208,37 @@ void asclepios::gui::WidgetMPR::createConnections()
 //-----------------------------------------------------------------------------
 void asclepios::gui::WidgetMPR::startLoadingAnimation()
 {
-	m_loadingAnimation = std::make_unique<LoadingAnimation>(this);
-	m_loadingAnimation->setWindowFlags(Qt::Widget);
-	layout()->addWidget(m_loadingAnimation.get());
-	m_loadingAnimation->show();
+        m_loadingAnimation = std::make_unique<LoadingAnimation>(this);
+        m_loadingAnimation->setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog | Qt::BypassWindowManagerHint);
+        m_loadingAnimation->setModal(false);
+        m_loadingAnimation->setAttribute(Qt::WA_TranslucentBackground, true);
+        m_loadingAnimation->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+        m_loadingAnimation->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        const QSize desiredSize(140, 140);
+        m_loadingAnimation->setFixedSize(desiredSize);
+        positionLoadingAnimation();
+        m_loadingAnimation->show();
+        m_loadingAnimation->raise();
 }
 
+void asclepios::gui::WidgetMPR::positionLoadingAnimation()
+{
+        if (!m_loadingAnimation)
+        {
+                return;
+        }
+
+        const QRect targetRect = rect();
+        const QSize overlaySize = m_loadingAnimation->size();
+        const QPoint topLeft = targetRect.center() - QPoint(overlaySize.width() / 2, overlaySize.height() / 2);
+        m_loadingAnimation->move(topLeft);
+}
+
+void asclepios::gui::WidgetMPR::resizeEvent(QResizeEvent* event)
+{
+        QWidget::resizeEvent(event);
+        positionLoadingAnimation();
+}
 //-----------------------------------------------------------------------------
 void asclepios::gui::WidgetMPR::onRenderAsync(WidgetMPR* t_self)
 {
@@ -210,3 +254,8 @@ void asclepios::gui::WidgetMPR::onRenderAsync(WidgetMPR* t_self)
                 qCWarning(lcWidgetMpr) << "Async render task invoked without vtkWidgetMPR instance.";
         }
 }
+
+
+
+
+

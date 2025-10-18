@@ -3,22 +3,24 @@
 
 void asclepios::core::SmartDJDecoderRegistration::registerCodecs()
 {
-	if (!m_referenceCount)
-	{
-		DJDecoderRegistration::registerCodecs();
-	}
-	++m_referenceCount;
+        std::lock_guard<std::mutex> lock(m_mutex);
+        if (m_referenceCount == 0)
+        {
+                DJDecoderRegistration::registerCodecs();
+        }
+        ++m_referenceCount;
 }
 
 //-----------------------------------------------------------------------------
 void asclepios::core::SmartDJDecoderRegistration::cleanup()
 {
-	if (m_referenceCount > 0)
-	{
-		--m_referenceCount;
-	}
-	if (!m_referenceCount)
-	{
-		DJDecoderRegistration::cleanup();
-	}
+        std::lock_guard<std::mutex> lock(m_mutex);
+        if (m_referenceCount > 0)
+        {
+                --m_referenceCount;
+        }
+        if (m_referenceCount == 0)
+        {
+                DJDecoderRegistration::cleanup();
+        }
 }

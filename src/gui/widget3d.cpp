@@ -5,6 +5,7 @@
 #include <QElapsedTimer>
 #include <QKeyEvent>
 #include <QLoggingCategory>
+#include <QMessageBox>
 #include <QString>
 #include <QtConcurrent/qtconcurrentrun.h>
 
@@ -132,17 +133,28 @@ void asclepios::gui::Widget3D::onSetMaximized() const
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget3D::onFinishedRenderAsync()
 {
-        auto* const renderWindow =
-                m_qtvtkWidget->GetRenderWindow();
-        renderWindow->AddRenderer(m_vtkWidget->
-                getRenderWindows()[0]->GetRenderers()->
-                GetFirstRenderer());
-        renderWindow->Render();
-        onfilterChanged(m_toolbar->getUI()
-                .comboBoxFilters->itemData(0).toString());
-        stopLoadingAnimation();
         disconnect(this, &Widget3D::finishedRenderAsync,
                 this, &Widget3D::onFinishedRenderAsync);
+        stopLoadingAnimation();
+
+        if (!m_vtkWidget->hasRenderableVolume())
+        {
+                const QString error = m_vtkWidget->lastVolumeError();
+                qCWarning(lcWidget3D) << "Volume rendering unavailable." << error;
+                if (!error.isEmpty())
+                {
+                        QMessageBox::warning(this, tr("Volume Rendering"), error);
+                }
+                else
+                {
+                        QMessageBox::warning(this, tr("Volume Rendering"), tr("Unable to decode a 3D volume for the selected dataset."));
+                }
+                return;
+        }
+
+        auto* const renderWindow = m_qtvtkWidget->GetRenderWindow();
+        renderWindow->Render();
+        onfilterChanged(m_toolbar->getUI().comboBoxFilters->itemData(0).toString());
         m_toolbar->getUI().toolButtonCrop->setVisible(true);
         m_toolbar->getUI().comboBoxFilters->setVisible(true);
         installEventFilter(this);
@@ -183,6 +195,7 @@ void asclepios::gui::Widget3D::initData()
 	m_qtvtkWidget->SetRenderWindow(vtkNew<vtkGenericOpenGLRenderWindow>());
 	m_qtvtkWidget->GetRenderWindow()->SetDoubleBuffer(true);
 	m_vtkWidget = std::make_unique<vtkWidget3D>();
+	m_vtkWidget->setRenderWindow(m_qtvtkWidget->GetRenderWindow());
 	m_toolbar = new ToolbarWidget3D(this);
 	m_vtkEvents = std::make_unique<vtkEventFilter>(this);
 	setWidgetType(WidgetType::widget3d);
@@ -212,8 +225,36 @@ void asclepios::gui::Widget3D::createConnections()
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget3D::startLoadingAnimation()
 {
-	m_loadingAnimation = std::make_unique<LoadingAnimation>(this);
-	m_loadingAnimation->setWindowFlags(Qt::Widget);
-	layout()->addWidget(m_loadingAnimation.get());
-	m_loadingAnimation->show();
+        m_loadingAnimation = std::make_unique<LoadingAnimation>(this);
+        m_loadingAnimation->setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog | Qt::BypassWindowManagerHint);
+        m_loadingAnimation->setModal(false);
+        m_loadingAnimation->setAttribute(Qt::WA_TranslucentBackground, true);
+        m_loadingAnimation->setAttribute(Qt::WA_TransparentForMouseEvents, true);
+        m_loadingAnimation->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        const QSize desiredSize(140, 140);
+        m_loadingAnimation->setFixedSize(desiredSize);
+        positionLoadingAnimation();
+        m_loadingAnimation->show();
+        m_loadingAnimation->raise();
+}
+
+void asclepios::gui::Widget3D::positionLoadingAnimation()
+{
+        if (!m_loadingAnimation)
+        {
+                return;
+        }
+
+        const QRect targetRect = (m_qtvtkWidget && !m_qtvtkWidget->geometry().isEmpty())
+                ? m_qtvtkWidget->geometry()
+                : rect();
+        const QSize overlaySize = m_loadingAnimation->size();
+        const QPoint topLeft = targetRect.center() - QPoint(overlaySize.width() / 2, overlaySize.height() / 2);
+        m_loadingAnimation->move(topLeft);
+}
+
+void asclepios::gui::Widget3D::resizeEvent(QResizeEvent* event)
+{
+        QWidget::resizeEvent(event);
+        positionLoadingAnimation();
 }
