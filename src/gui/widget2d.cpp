@@ -229,6 +229,14 @@ void asclepios::gui::Widget2D::DcmtkImagePresenter::appendFrame(DicomImage* t_so
         frame.SourceImage = t_sourceImage;
         frame.Data = QByteArray(rawData + static_cast<qint64>(offset),
                 static_cast<int>(frameByteCount));
+        const std::size_t frameBytes = static_cast<std::size_t>(frame.Data.size());
+        m_totalFrameBytes += frameBytes;
+        qCInfo(lcWidget2D)
+                << "[Telemetry] Frame allocation" << "frameIndex" << t_frameIndex
+                << "bytes" << static_cast<unsigned long long>(frameBytes)
+                << "accumulatedBytes" << static_cast<unsigned long long>(m_totalFrameBytes)
+                << "width" << frame.Width << "height" << frame.Height
+                << "samplesPerPixel" << frame.SamplesPerPixel;
 
         if (frame.SamplesPerPixel <= 1)
         {
@@ -344,6 +352,11 @@ void asclepios::gui::Widget2D::DcmtkImagePresenter::populateFromImage(asclepios:
         {
                 appendFrame(m_multiFrameImage.get(), pixelInfo, frameIndex);
         }
+        qCInfo(lcWidget2D)
+                << "[Telemetry] Multi-frame dataset decoded"
+                << "path" << QString::fromStdString(t_image->getImagePath())
+                << "frames" << availableFrames
+                << "allocatedBytes" << static_cast<unsigned long long>(m_totalFrameBytes);
 }
 
 void asclepios::gui::Widget2D::DcmtkImagePresenter::populateFromSeries(asclepios::core::Series* t_series)
@@ -379,6 +392,11 @@ void asclepios::gui::Widget2D::DcmtkImagePresenter::populateFromSeries(asclepios
                 appendFrame(dicomImage.get(), pixelInfo, 0);
                 m_singleFrameImages.push_back(std::move(dicomImage));
         }
+        qCInfo(lcWidget2D)
+                << "[Telemetry] Single-frame series decoded"
+                << "seriesUid" << (t_series ? QString::fromStdString(t_series->getUID()) : QStringLiteral("n/a"))
+                << "images" << singleFrameImages.size()
+                << "allocatedBytes" << static_cast<unsigned long long>(m_totalFrameBytes);
 }
 
 std::shared_ptr<asclepios::gui::Widget2D::DcmtkImagePresenter> asclepios::gui::Widget2D::DcmtkImagePresenter::load(
@@ -629,7 +647,16 @@ std::shared_ptr<asclepios::gui::Widget2D::DcmtkImagePresenter> asclepios::gui::W
                 }
         } cleanupGuard;
 
-        return DcmtkImagePresenter::load(t_series, t_image);
+        QElapsedTimer timer;
+        timer.start();
+        auto presenter = DcmtkImagePresenter::load(t_series, t_image);
+        const qint64 elapsed = timer.elapsed();
+        if (presenter)
+        {
+                presenter->setDecodingDurationMs(elapsed);
+        }
+        qCInfo(lcWidget2D) << "[Telemetry] DCMTK frame decoding finished" << "elapsedMs" << elapsed;
+        return presenter;
 }
 
 bool asclepios::gui::Widget2D::startDcmtkRendering()
@@ -694,6 +721,9 @@ bool asclepios::gui::Widget2D::startDcmtkRendering()
                 m_windowLevelDragging = false;
                 m_initialWindowCenter = 0.0;
                 m_initialWindowWidth = 1.0;
+                m_reportedFirstFrame = false;
+                m_firstFrameTimer.restart();
+                m_frameLoadTimer.restart();
                 m_imageLoadFuture = QtConcurrent::run(loadFramesWithDcmtk, m_series, m_image);
                 m_imageLoadWatcher->setFuture(m_imageLoadFuture);
                 qCInfo(lcWidget2D)
@@ -833,6 +863,19 @@ void asclepios::gui::Widget2D::applyLoadedFrame(const int t_index)
         m_cachedFrame = frameImage;
         refreshDisplayedFrame(false);
         updateDcmtkOverlay(frameImage, clampedIndex);
+        if (!m_reportedFirstFrame && m_firstFrameTimer.isValid())
+        {
+                const qint64 elapsedToFirstFrame = m_firstFrameTimer.elapsed();
+                const QString seriesUid = (m_series)
+                        ? QString::fromStdString(m_series->getUID())
+                        : QStringLiteral("n/a");
+                qCInfo(lcWidget2D)
+                        << "[Telemetry] Time to first frame"
+                        << "elapsedMs" << elapsedToFirstFrame
+                        << "seriesUid" << seriesUid
+                        << "frameIndex" << clampedIndex;
+                m_reportedFirstFrame = true;
+        }
 }
 
 void asclepios::gui::Widget2D::positionLoadingAnimation()
@@ -962,6 +1005,9 @@ void asclepios::gui::Widget2D::handleDcmtkFailure(const QString& t_reason)
         m_windowLevelDragging = false;
         m_initialWindowCenter = 0.0;
         m_initialWindowWidth = 1.0;
+        m_reportedFirstFrame = false;
+        m_firstFrameTimer.invalidate();
+        m_frameLoadTimer.invalidate();
         hideDcmtkOverlay();
         if (m_imageLabel)
         {
@@ -1025,6 +1071,18 @@ void asclepios::gui::Widget2D::onImagesLoaded()
         m_presentationState = m_dcmtkPresenter->initialState();
         m_dcmtkRenderingActive = true;
         m_isImageLoaded = true;
+        if (m_frameLoadTimer.isValid())
+        {
+                qCInfo(lcWidget2D)
+                        << "[Telemetry] QtConcurrent future completed"
+                        << "elapsedMs" << m_frameLoadTimer.elapsed();
+                m_frameLoadTimer.invalidate();
+        }
+        qCInfo(lcWidget2D)
+                << "[Telemetry] DCMTK presenter stats"
+                << "frames" << m_dcmtkPresenter->frameCount()
+                << "allocatedBytes" << static_cast<unsigned long long>(m_dcmtkPresenter->totalAllocatedFrameBytes())
+                << "decodingMs" << m_dcmtkPresenter->decodingDurationMs();
         if (m_tabWidget)
         {
                 m_tabWidget->setAcceptDrops(true);
