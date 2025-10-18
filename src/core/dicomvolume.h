@@ -77,7 +77,10 @@ namespace asclepios::core
         {
         public:
                 static std::shared_ptr<DicomVolume> loadImage(const std::string& path);
-                static std::shared_ptr<DicomVolume> loadSeries(const std::vector<std::string>& slicePaths);
+                static std::shared_ptr<DicomVolume> loadSeries(const std::vector<std::string>& slicePaths,
+                        const std::string& seriesInstanceUid,
+                        const std::string& studyInstanceUid = std::string());
+                static void evictSeries(const std::string& seriesInstanceUid);
                 static bool diagnoseStudy(const std::string& path);
 
         private:

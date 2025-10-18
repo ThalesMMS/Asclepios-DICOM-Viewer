@@ -1,4 +1,5 @@
 #include "series.h"
+#include "study.h"
 #include <algorithm>
 #include <QLoggingCategory>
 
@@ -44,15 +45,11 @@ asclepios::core::Image* asclepios::core::Series::getSingleFrameImageByIndex(cons
 //-----------------------------------------------------------------------------
 std::shared_ptr<asclepios::core::DicomVolume> asclepios::core::Series::getVolumeForSingleFrameSeries()
 {
-	if (m_cachedVolume)
-	{
-		return m_cachedVolume;
-	}
-	if (m_singleFrameImages.empty())
-	{
-		qCWarning(lcSeries) << "Requested volume for series without single-frame images.";
-		return nullptr;
-	}
+        if (m_singleFrameImages.empty())
+        {
+                qCWarning(lcSeries) << "Requested volume for series without single-frame images.";
+                return nullptr;
+        }
 	std::vector<std::string> paths;
 	paths.reserve(m_singleFrameImages.size());
 	for (const auto& image : m_singleFrameImages)
@@ -66,15 +63,17 @@ std::shared_ptr<asclepios::core::DicomVolume> asclepios::core::Series::getVolume
 	{
 		qCWarning(lcSeries) << "No valid file paths were collected for the series volume.";
 		return nullptr;
-	}
-	try
-	{
-		m_cachedVolume = DicomVolumeLoader::loadSeries(paths);
-	}
-	catch (const std::exception& ex)
-	{
-		qCCritical(lcSeries) << "Failed to load series volume:" << ex.what();
-		m_cachedVolume.reset();
+        }
+        try
+        {
+                const auto* study = getParentObject();
+                const std::string studyUid = study ? study->getUID() : std::string();
+                m_cachedVolume = DicomVolumeLoader::loadSeries(paths, m_uid, studyUid);
+        }
+        catch (const std::exception& ex)
+        {
+                qCCritical(lcSeries) << "Failed to load series volume:" << ex.what();
+                m_cachedVolume.reset();
 	}
 	return m_cachedVolume;
 }
@@ -89,19 +88,20 @@ const asclepios::core::DicomMetadata* asclepios::core::Series::getMetadataForSer
 //-----------------------------------------------------------------------------
 asclepios::core::Image* asclepios::core::Series::addSingleFrameImage(std::unique_ptr<Image> t_image, bool& t_newImage)
 {
-	auto index = findImageIndex(m_singleFrameImages, t_image.get());
-	t_newImage = false;
-	if (index == m_singleFrameImages.size())
-	{
-		m_singleFrameImages.emplace(std::move(t_image));
-		index = m_singleFrameImages.size() - 1;
-		t_newImage = true;
-		m_cachedVolume.reset();
-	}
-	auto it = m_singleFrameImages.begin();
-	std::advance(it, index);
-	it->get()->setIndex(index);
-	return it->get();
+        auto index = findImageIndex(m_singleFrameImages, t_image.get());
+        t_newImage = false;
+        if (index == m_singleFrameImages.size())
+        {
+                m_singleFrameImages.emplace(std::move(t_image));
+                index = m_singleFrameImages.size() - 1;
+                t_newImage = true;
+                m_cachedVolume.reset();
+                DicomVolumeLoader::evictSeries(m_uid);
+        }
+        auto it = m_singleFrameImages.begin();
+        std::advance(it, index);
+        it->get()->setIndex(index);
+        return it->get();
 }
 
 //-----------------------------------------------------------------------------
@@ -109,17 +109,18 @@ asclepios::core::Image* asclepios::core::Series::addMultiFrameImage(std::unique_
 {
 	auto index = findImageIndex(m_multiFrameImages, t_image.get());
 	t_newImage = false;
-	if (index == m_multiFrameImages.size())
-	{
-		m_multiFrameImages.emplace(std::move(t_image));
-		index = m_multiFrameImages.size() - 1;
-		t_newImage = true;
-		m_cachedVolume.reset();
-	}
-	auto it = m_multiFrameImages.begin();
-	std::advance(it, index);
-	it->get()->setIndex(index);
-	return it->get();
+        if (index == m_multiFrameImages.size())
+        {
+                m_multiFrameImages.emplace(std::move(t_image));
+                index = m_multiFrameImages.size() - 1;
+                t_newImage = true;
+                m_cachedVolume.reset();
+                DicomVolumeLoader::evictSeries(m_uid);
+        }
+        auto it = m_multiFrameImages.begin();
+        std::advance(it, index);
+        it->get()->setIndex(index);
+        return it->get();
 }
 
 //-----------------------------------------------------------------------------

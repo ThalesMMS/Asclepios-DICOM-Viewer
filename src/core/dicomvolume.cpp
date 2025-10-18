@@ -4,13 +4,19 @@
 #include <algorithm>
 #include <cmath>
 #include <cstring>
+#include <filesystem>
+#include <cstdint>
 #include <limits>
+#include <list>
 #include <memory>
+#include <mutex>
 #include <numeric>
 #include <stdexcept>
+#include <system_error>
 #include <type_traits>
 #include <utility>
 #include <vector>
+#include <unordered_map>
 
 #include <dcmtk/dcmdata/dcdeftag.h>
 #include <dcmtk/dcmdata/dcdicent.h>
@@ -48,7 +54,260 @@ Q_LOGGING_CATEGORY(lcDicomVolumeLoader, "asclepios.core.dicomvolume")
 
 namespace
 {
-	constexpr double epsilon = 1e-8;
+        constexpr double epsilon = 1e-8;
+        constexpr std::size_t defaultCacheLimitBytes = 512ULL * 1024ULL * 1024ULL;
+
+        struct FileState
+        {
+                std::string Path;
+                std::filesystem::file_time_type LastWriteTime = {};
+                std::uintmax_t Size = 0;
+                bool Valid = false;
+        };
+
+        class SeriesVolumeCache
+        {
+        public:
+                static SeriesVolumeCache& instance()
+                {
+                        static SeriesVolumeCache cache;
+                        return cache;
+                }
+
+                std::shared_ptr<DicomVolume> tryGet(const std::string& studyUid,
+                        const std::string& seriesUid,
+                        const std::vector<FileState>& fileStates)
+                {
+                        std::lock_guard<std::mutex> lock(m_mutex);
+                        ensureStudyLocked(studyUid);
+                        if (!areStatesValid(fileStates))
+                        {
+                                return nullptr;
+                        }
+
+                        const auto it = m_entries.find(seriesUid);
+                        if (it == m_entries.end())
+                        {
+                                return nullptr;
+                        }
+
+                        if (!statesMatch(it->second.Files, fileStates))
+                        {
+                                removeEntryLocked(it);
+                                return nullptr;
+                        }
+
+                        m_lru.splice(m_lru.begin(), m_lru, it->second.LruIterator);
+                        return it->second.Volume;
+                }
+
+                void insert(const std::string& studyUid,
+                        const std::string& seriesUid,
+                        std::vector<FileState> fileStates,
+                        const std::shared_ptr<DicomVolume>& volume)
+                {
+                        if (!volume || seriesUid.empty() || !areStatesValid(fileStates))
+                        {
+                                return;
+                        }
+
+                        std::lock_guard<std::mutex> lock(m_mutex);
+                        ensureStudyLocked(studyUid);
+
+                        const auto existing = m_entries.find(seriesUid);
+                        if (existing != m_entries.end())
+                        {
+                                removeEntryLocked(existing);
+                        }
+
+                        CacheEntry entry;
+                        entry.Volume = volume;
+                        entry.Files = std::move(fileStates);
+                        entry.MemoryBytes = estimateVolumeMemory(*volume);
+                        m_lru.push_front(seriesUid);
+                        entry.LruIterator = m_lru.begin();
+                        m_totalMemoryBytes += entry.MemoryBytes;
+                        m_entries.emplace(seriesUid, std::move(entry));
+                        enforceLimitLocked();
+                }
+
+                void evict(const std::string& seriesUid)
+                {
+                        std::lock_guard<std::mutex> lock(m_mutex);
+                        const auto it = m_entries.find(seriesUid);
+                        if (it != m_entries.end())
+                        {
+                                removeEntryLocked(it);
+                        }
+                }
+
+                static std::vector<FileState> collectFileStates(const std::vector<std::string>& paths)
+                {
+                        std::vector<FileState> states;
+                        states.reserve(paths.size());
+                        for (const auto& path : paths)
+                        {
+                                FileState state;
+                                state.Path = path;
+                                state.Valid = true;
+
+                                std::error_code ec;
+                                const auto timestamp = std::filesystem::last_write_time(path, ec);
+                                if (ec)
+                                {
+                                        state.Valid = false;
+                                }
+                                else
+                                {
+                                        state.LastWriteTime = timestamp;
+                                }
+
+                                ec.clear();
+                                const auto size = std::filesystem::file_size(path, ec);
+                                if (ec)
+                                {
+                                        state.Valid = false;
+                                }
+                                else
+                                {
+                                        state.Size = size;
+                                }
+
+                                states.emplace_back(std::move(state));
+                        }
+
+                        std::sort(states.begin(), states.end(),
+                                [](const FileState& lhs, const FileState& rhs)
+                                {
+                                        return lhs.Path < rhs.Path;
+                                });
+
+                        return states;
+                }
+
+        private:
+                struct CacheEntry
+                {
+                        std::shared_ptr<DicomVolume> Volume;
+                        std::vector<FileState> Files;
+                        std::size_t MemoryBytes = 0;
+                        std::list<std::string>::iterator LruIterator;
+                };
+
+                void ensureStudyLocked(const std::string& studyUid)
+                {
+                        if (studyUid.empty())
+                        {
+                                return;
+                        }
+
+                        if (m_activeStudyUid.empty())
+                        {
+                                m_activeStudyUid = studyUid;
+                                return;
+                        }
+
+                        if (m_activeStudyUid == studyUid)
+                        {
+                                return;
+                        }
+
+                        clearLocked();
+                        m_activeStudyUid = studyUid;
+                }
+
+                static bool areStatesValid(const std::vector<FileState>& states)
+                {
+                        return std::all_of(states.begin(), states.end(),
+                                [](const FileState& state)
+                                {
+                                        return state.Valid;
+                                });
+                }
+
+                static bool statesMatch(const std::vector<FileState>& cached,
+                        const std::vector<FileState>& incoming)
+                {
+                        if (cached.size() != incoming.size())
+                        {
+                                return false;
+                        }
+
+                        for (size_t index = 0; index < cached.size(); ++index)
+                        {
+                                const auto& lhs = cached[index];
+                                const auto& rhs = incoming[index];
+                                if (lhs.Path != rhs.Path)
+                                {
+                                        return false;
+                                }
+                                if (lhs.LastWriteTime != rhs.LastWriteTime)
+                                {
+                                        return false;
+                                }
+                                if (lhs.Size != rhs.Size)
+                                {
+                                        return false;
+                                }
+                        }
+
+                        return true;
+                }
+
+                static std::size_t estimateVolumeMemory(const DicomVolume& volume)
+                {
+                        std::size_t bytes = 0;
+                        if (volume.ImageData)
+                        {
+                                const auto kilobytes = static_cast<std::size_t>(volume.ImageData->GetActualMemorySize());
+                                bytes += kilobytes * 1024ULL;
+                        }
+
+                        if (volume.Direction)
+                        {
+                                bytes += sizeof(double) * 16;
+                        }
+
+                        return bytes;
+                }
+
+                void removeEntryLocked(typename std::unordered_map<std::string, CacheEntry>::iterator it)
+                {
+                        m_totalMemoryBytes -= it->second.MemoryBytes;
+                        m_lru.erase(it->second.LruIterator);
+                        m_entries.erase(it);
+                }
+
+                void enforceLimitLocked()
+                {
+                        while (m_totalMemoryBytes > m_memoryLimitBytes && !m_lru.empty())
+                        {
+                                const auto key = m_lru.back();
+                                const auto it = m_entries.find(key);
+                                if (it == m_entries.end())
+                                {
+                                        m_lru.pop_back();
+                                        continue;
+                                }
+
+                                removeEntryLocked(it);
+                        }
+                }
+
+                void clearLocked()
+                {
+                        m_entries.clear();
+                        m_lru.clear();
+                        m_totalMemoryBytes = 0;
+                }
+
+                std::mutex m_mutex;
+                std::unordered_map<std::string, CacheEntry> m_entries;
+                std::list<std::string> m_lru;
+                std::string m_activeStudyUid;
+                std::size_t m_totalMemoryBytes = 0;
+                const std::size_t m_memoryLimitBytes = defaultCacheLimitBytes;
+        };
 
         class CodecRegistrationGuard
         {
@@ -1134,7 +1393,9 @@ bool DicomVolumeLoader::diagnoseStudy(const std::string& path)
         return false;
 }
 
-std::shared_ptr<DicomVolume> DicomVolumeLoader::loadSeries(const std::vector<std::string>& slicePaths)
+std::shared_ptr<DicomVolume> DicomVolumeLoader::loadSeries(const std::vector<std::string>& slicePaths,
+        const std::string& seriesInstanceUid,
+        const std::string& studyInstanceUid)
 {
         CodecRegistrationGuard guard;
         if (slicePaths.empty())
@@ -1142,151 +1403,180 @@ std::shared_ptr<DicomVolume> DicomVolumeLoader::loadSeries(const std::vector<std
                 throw std::runtime_error("Cannot load DICOM series: no slice paths provided.");
         }
 
-        if (auto volume = tryLoadUncompressedSeries(slicePaths))
+        auto fileStates = SeriesVolumeCache::collectFileStates(slicePaths);
+        auto& cache = SeriesVolumeCache::instance();
+
+        if (!seriesInstanceUid.empty())
         {
-                return volume;
-        }
-
-        auto sliceFuture = QtConcurrent::mapped(slicePaths,
-                                                [this](const std::string& path)
-                                                {
-                                                        return this->loadSingleFile(path);
-                                                });
-        sliceFuture.waitForFinished();
-
-        std::vector<std::shared_ptr<DicomVolume>> slices;
-        slices.reserve(slicePaths.size());
-        for (int index = 0; index < sliceFuture.resultCount(); ++index)
-        {
-                slices.emplace_back(sliceFuture.resultAt(index));
-        }
-
-	const auto& reference = *slices.front();
-	const int width = reference.ImageData->GetDimensions()[0];
-	const int height = reference.ImageData->GetDimensions()[1];
-
-	std::vector<std::pair<double, std::shared_ptr<DicomVolume>>> sortedSlices;
-	sortedSlices.reserve(slices.size());
-	for (const auto& slice : slices)
-	{
-		const double position = slice->Geometry.Origin[0] * reference.Geometry.NormalDirection[0] +
-			slice->Geometry.Origin[1] * reference.Geometry.NormalDirection[1] +
-			slice->Geometry.Origin[2] * reference.Geometry.NormalDirection[2];
-		sortedSlices.emplace_back(position, slice);
-	}
-	std::sort(sortedSlices.begin(), sortedSlices.end(),
-	          [](const auto& lhs, const auto& rhs) { return lhs.first < rhs.first; });
-
-        auto volume = std::make_shared<DicomVolume>();
-        volume->Geometry = reference.Geometry;
-        volume->PixelInfo = reference.PixelInfo;
-        volume->Metadata = reference.Metadata;
-        volume->NumberOfFrames = static_cast<int>(sortedSlices.size());
-        normalizeDirections(volume->Geometry);
-        populateDirectionMatrixInternal(*volume);
-
-        auto* referencePointData = reference.ImageData->GetPointData();
-        auto* referenceScalars = referencePointData ? referencePointData->GetScalars() : nullptr;
-        if (!referenceScalars)
-        {
-                throw std::runtime_error("Reference slice missing scalar data while assembling volume.");
-        }
-        const int referenceScalarType = referenceScalars->GetDataType();
-
-        if (sortedSlices.size() >= 2)
-        {
-                const double spacing =
-                        std::abs(sortedSlices[1].first - sortedSlices.front().first);
-                if (spacing > epsilon)
+                if (auto cached = cache.tryGet(studyInstanceUid, seriesInstanceUid, fileStates))
                 {
-                        volume->Geometry.Spacing[2] = spacing;
+                        qCDebug(lcDicomVolumeLoader)
+                                << "Reusing cached volume for series"
+                                << QString::fromStdString(seriesInstanceUid);
+                        return cached;
                 }
         }
-        allocateImageData(*volume, width, height, volume->NumberOfFrames, referenceScalarType);
 
-        std::vector<int> assembledIndices(volume->NumberOfFrames);
-        std::iota(assembledIndices.begin(), assembledIndices.end(), 0);
-        QtConcurrent::blockingMap(assembledIndices,
-                                  [&](int& index)
-                                  {
-                                          const auto& sliceVolume = *sortedSlices[index].second;
-                                          auto* sliceScalars = sliceVolume.ImageData->GetPointData() ?
-                                                  sliceVolume.ImageData->GetPointData()->GetScalars() : nullptr;
-                                          if (!sliceScalars)
+        std::shared_ptr<DicomVolume> volume = tryLoadUncompressedSeries(slicePaths);
+
+        if (!volume)
+        {
+                auto sliceFuture = QtConcurrent::mapped(slicePaths,
+                                                        [this](const std::string& path)
+                                                        {
+                                                                return this->loadSingleFile(path);
+                                                        });
+                sliceFuture.waitForFinished();
+
+                std::vector<std::shared_ptr<DicomVolume>> slices;
+                slices.reserve(slicePaths.size());
+                for (int index = 0; index < sliceFuture.resultCount(); ++index)
+                {
+                        slices.emplace_back(sliceFuture.resultAt(index));
+                }
+
+                const auto& reference = *slices.front();
+                const int width = reference.ImageData->GetDimensions()[0];
+                const int height = reference.ImageData->GetDimensions()[1];
+
+                std::vector<std::pair<double, std::shared_ptr<DicomVolume>>> sortedSlices;
+                sortedSlices.reserve(slices.size());
+                for (const auto& slice : slices)
+                {
+                        const double position = slice->Geometry.Origin[0] * reference.Geometry.NormalDirection[0] +
+                                slice->Geometry.Origin[1] * reference.Geometry.NormalDirection[1] +
+                                slice->Geometry.Origin[2] * reference.Geometry.NormalDirection[2];
+                        sortedSlices.emplace_back(position, slice);
+                }
+                std::sort(sortedSlices.begin(), sortedSlices.end(),
+                          [](const auto& lhs, const auto& rhs) { return lhs.first < rhs.first; });
+
+                volume = std::make_shared<DicomVolume>();
+                volume->Geometry = reference.Geometry;
+                volume->PixelInfo = reference.PixelInfo;
+                volume->Metadata = reference.Metadata;
+                volume->NumberOfFrames = static_cast<int>(sortedSlices.size());
+                normalizeDirections(volume->Geometry);
+                populateDirectionMatrixInternal(*volume);
+
+                auto* referencePointData = reference.ImageData->GetPointData();
+                auto* referenceScalars = referencePointData ? referencePointData->GetScalars() : nullptr;
+                if (!referenceScalars)
+                {
+                        throw std::runtime_error("Reference slice missing scalar data while assembling volume.");
+                }
+                const int referenceScalarType = referenceScalars->GetDataType();
+
+                if (sortedSlices.size() >= 2)
+                {
+                        const double spacing =
+                                std::abs(sortedSlices[1].first - sortedSlices.front().first);
+                        if (spacing > epsilon)
+                        {
+                                volume->Geometry.Spacing[2] = spacing;
+                        }
+                }
+                allocateImageData(*volume, width, height, volume->NumberOfFrames, referenceScalarType);
+
+                std::vector<int> assembledIndices(volume->NumberOfFrames);
+                std::iota(assembledIndices.begin(), assembledIndices.end(), 0);
+                QtConcurrent::blockingMap(assembledIndices,
+                                          [&](int& index)
                                           {
-                                                  throw std::runtime_error("Slice image data missing scalars while assembling volume.");
-                                          }
+                                                  const auto& sliceVolume = *sortedSlices[index].second;
+                                                  auto* sliceScalars = sliceVolume.ImageData->GetPointData() ?
+                                                          sliceVolume.ImageData->GetPointData()->GetScalars() : nullptr;
+                                                  if (!sliceScalars)
+                                                  {
+                                                          throw std::runtime_error("Slice image data missing scalars while assembling volume.");
+                                                  }
 
-                                          switch (sliceScalars->GetDataType())
-                                          {
-                                          case VTK_UNSIGNED_CHAR:
-                                                  copyFrameData(static_cast<const unsigned char*>(sliceVolume.ImageData->GetScalarPointer()),
-                                                                volume->ImageData,
-                                                                index,
-                                                                volume->PixelInfo,
-                                                                width,
-                                                                height);
-                                                  break;
-                                          case VTK_CHAR:
-                                                  copyFrameData(static_cast<const signed char*>(sliceVolume.ImageData->GetScalarPointer()),
-                                                                volume->ImageData,
-                                                                index,
-                                                                volume->PixelInfo,
-                                                                width,
-                                                                height);
-                                                  break;
-                                          case VTK_UNSIGNED_SHORT:
-                                                  copyFrameData(static_cast<const unsigned short*>(sliceVolume.ImageData->GetScalarPointer()),
-                                                                volume->ImageData,
-                                                                index,
-                                                                volume->PixelInfo,
-                                                                width,
-                                                                height);
-                                                  break;
-                                          case VTK_SHORT:
-                                                  copyFrameData(static_cast<const signed short*>(sliceVolume.ImageData->GetScalarPointer()),
-                                                                volume->ImageData,
-                                                                index,
-                                                                volume->PixelInfo,
-                                                                width,
-                                                                height);
-                                                  break;
-                                          case VTK_UNSIGNED_INT:
-                                                  copyFrameData(static_cast<const Uint32*>(sliceVolume.ImageData->GetScalarPointer()),
-                                                                volume->ImageData,
-                                                                index,
-                                                                volume->PixelInfo,
-                                                                width,
-                                                                height);
-                                                  break;
-                                          case VTK_INT:
-                                                  copyFrameData(static_cast<const Sint32*>(sliceVolume.ImageData->GetScalarPointer()),
-                                                                volume->ImageData,
-                                                                index,
-                                                                volume->PixelInfo,
-                                                                width,
-                                                                height);
-                                                  break;
-                                          case VTK_FLOAT:
-                                                  copyFrameData(static_cast<const float*>(sliceVolume.ImageData->GetScalarPointer()),
-                                                                volume->ImageData,
-                                                                index,
-                                                                volume->PixelInfo,
-                                                                width,
-                                                                height);
-                                                  break;
-                                          default:
-                                                  throw std::runtime_error("Unsupported scalar type while assembling DICOM volume.");
-                                          }
-                                  });
+                                                  switch (sliceScalars->GetDataType())
+                                                  {
+                                                  case VTK_UNSIGNED_CHAR:
+                                                          copyFrameData(static_cast<const unsigned char*>(sliceVolume.ImageData->GetScalarPointer()),
+                                                                        volume->ImageData,
+                                                                        index,
+                                                                        volume->PixelInfo,
+                                                                        width,
+                                                                        height);
+                                                          break;
+                                                  case VTK_CHAR:
+                                                          copyFrameData(static_cast<const signed char*>(sliceVolume.ImageData->GetScalarPointer()),
+                                                                        volume->ImageData,
+                                                                        index,
+                                                                        volume->PixelInfo,
+                                                                        width,
+                                                                        height);
+                                                          break;
+                                                  case VTK_UNSIGNED_SHORT:
+                                                          copyFrameData(static_cast<const unsigned short*>(sliceVolume.ImageData->GetScalarPointer()),
+                                                                        volume->ImageData,
+                                                                        index,
+                                                                        volume->PixelInfo,
+                                                                        width,
+                                                                        height);
+                                                          break;
+                                                  case VTK_SHORT:
+                                                          copyFrameData(static_cast<const signed short*>(sliceVolume.ImageData->GetScalarPointer()),
+                                                                        volume->ImageData,
+                                                                        index,
+                                                                        volume->PixelInfo,
+                                                                        width,
+                                                                        height);
+                                                          break;
+                                                  case VTK_UNSIGNED_INT:
+                                                          copyFrameData(static_cast<const Uint32*>(sliceVolume.ImageData->GetScalarPointer()),
+                                                                        volume->ImageData,
+                                                                        index,
+                                                                        volume->PixelInfo,
+                                                                        width,
+                                                                        height);
+                                                          break;
+                                                  case VTK_INT:
+                                                          copyFrameData(static_cast<const Sint32*>(sliceVolume.ImageData->GetScalarPointer()),
+                                                                        volume->ImageData,
+                                                                        index,
+                                                                        volume->PixelInfo,
+                                                                        width,
+                                                                        height);
+                                                          break;
+                                                  case VTK_FLOAT:
+                                                          copyFrameData(static_cast<const float*>(sliceVolume.ImageData->GetScalarPointer()),
+                                                                        volume->ImageData,
+                                                                        index,
+                                                                        volume->PixelInfo,
+                                                                        width,
+                                                                        height);
+                                                          break;
+                                                  default:
+                                                          throw std::runtime_error("Unsupported scalar type while assembling DICOM volume.");
+                                                  }
+                                          });
 
-        volume->PixelInfo.RescaleSlope = 1.0;
-	volume->PixelInfo.RescaleIntercept = 0.0;
+                volume->PixelInfo.RescaleSlope = 1.0;
+                volume->PixelInfo.RescaleIntercept = 0.0;
+        }
 
-	return volume;
+        if (volume)
+        {
+                cache.insert(studyInstanceUid, seriesInstanceUid, std::move(fileStates), volume);
+        }
+
+        return volume;
+}
+
+void DicomVolumeLoader::evictSeries(const std::string& seriesInstanceUid)
+{
+        if (seriesInstanceUid.empty())
+        {
+                return;
+        }
+
+        SeriesVolumeCache::instance().evict(seriesInstanceUid);
 }
 
 void asclepios::core::DicomVolumeLoader::populateDirectionMatrix(DicomVolume& volume)
 {
-	populateDirectionMatrixInternal(volume);
+        populateDirectionMatrixInternal(volume);
 }
