@@ -12,6 +12,7 @@
 #include <vtkScalarsToColors.h>
 #include <vtkMatrix4x4.h>
 #include <vtkImageResliceMapper.h>
+#include <vtkLookupTable.h>
 #include <vtkPointData.h>
 #include <QString>
 #include <QLoggingCategory>
@@ -22,6 +23,25 @@ Q_LOGGING_CATEGORY(lcMprMaker, "asclepios.gui.mprmaker")
 namespace
 {
         constexpr double uniformRangeThreshold = 1e-5;
+
+        vtkLookupTable* ensureGrayscaleLookupTable(vtkSmartPointer<vtkScalarsToColors>& colorMap)
+        {
+                auto* lookupTable = vtkLookupTable::SafeDownCast(colorMap.GetPointer());
+                if (!lookupTable)
+                {
+                        auto table = vtkSmartPointer<vtkLookupTable>::New();
+                        table->SetNumberOfTableValues(256);
+                        table->SetRampToLinear();
+                        table->SetScaleToLinear();
+                        table->SetHueRange(0.0, 0.0);
+                        table->SetSaturationRange(0.0, 0.0);
+                        table->SetValueRange(0.0, 1.0);
+                        table->SetAlphaRange(1.0, 1.0);
+                        colorMap = table;
+                        lookupTable = table;
+                }
+                return lookupTable;
+        }
 
         bool isUniformRange(const double* range)
         {
@@ -235,11 +255,10 @@ void asclepios::gui::MPRMaker::resetWindowLevel()
                 << range[0]
                 << range[1];
     }
-    if (!m_colorMap)
-    {
-        m_colorMap = vtkSmartPointer<vtkScalarsToColors>::New();
-    }
-    m_colorMap->SetRange(level - 0.5 * window, level + 0.5 * window);
+    auto* lookupTable = ensureGrayscaleLookupTable(m_colorMap);
+    lookupTable->SetTableRange(level - 0.5 * window, level + 0.5 * window);
+    lookupTable->Build();
+    lookupTable->Modified();
     qCInfo(lcMprMaker)
             << "resetWindowLevel() applied"
             << "window"
@@ -331,15 +350,14 @@ void asclepios::gui::MPRMaker::renderPlaneOffScreen(const int t_plane)
         level = 0.5 * (range[1] + range[0]);
     }
     setMiddleSlice(t_plane);
-    if (!m_colorMap)
-    {
-        m_colorMap = vtkSmartPointer<vtkScalarsToColors>::New();
-    }
+    auto* lookupTable = ensureGrayscaleLookupTable(m_colorMap);
     static double lastWindow = -1.0;
     static double lastLevel = -1.0;
     if (window != lastWindow || level != lastLevel)
     {
-        m_colorMap->SetRange(level - 0.5 * window, level + 0.5 * window);
+        lookupTable->SetTableRange(level - 0.5 * window, level + 0.5 * window);
+        lookupTable->Build();
+        lookupTable->Modified();
         lastWindow = window;
         lastLevel = level;
     }
