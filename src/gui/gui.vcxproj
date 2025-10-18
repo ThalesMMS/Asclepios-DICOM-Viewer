@@ -17,7 +17,8 @@
     <QtMsBuild Condition="'$(QtMsBuild)'!=''">$([System.Environment]::ExpandEnvironmentVariables('$(QtMsBuild)'))</QtMsBuild>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' and '$(LOCALAPPDATA)'!=''">$(LOCALAPPDATA)\QtMsBuild</QtMsBuild>
     <QtMsBuild Condition="!Exists('$(QtMsBuild)\qt.targets') and '$(LOCALAPPDATA)'!='' and Exists('$(LOCALAPPDATA)\QtMsBuild\qt.targets')">$(LOCALAPPDATA)\QtMsBuild</QtMsBuild>
-    <QtMsBuild Condition="!Exists('$(QtMsBuild)\qt.targets')">$(MSBuildThisFileDirectory)QtMsBuild</QtMsBuild>
+    <QtMsBuild Condition="!Exists('$(QtMsBuild)\qt.targets') and '$(MSBuildExtensionsPath32)'!='' and Exists('$(MSBuildExtensionsPath32)\QtMsBuild\qt.targets')">$(MSBuildExtensionsPath32)\QtMsBuild</QtMsBuild>
+    <QtMsBuild Condition="!Exists('$(QtMsBuild)\qt.targets') and Exists('$(MSBuildThisFileDirectory)QtMsBuild\qt.targets')">$(MSBuildThisFileDirectory)QtMsBuild</QtMsBuild>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
