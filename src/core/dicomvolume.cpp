@@ -670,11 +670,11 @@ namespace
                 const auto samples = pixelInfo.SamplesPerPixel;
                 const vtkIdType sliceVoxelCount = static_cast<vtkIdType>(width) * height * samples;
                 const vtkIdType sliceOffset = sliceVoxelCount * frameIndex;
-		auto* scalars = imageData->GetPointData()->GetScalars();
-		if (!scalars)
-		{
-			throw std::runtime_error("vtkImageData is missing scalar data.");
-		}
+                auto* scalars = imageData->GetPointData()->GetScalars();
+                if (!scalars)
+                {
+                        throw std::runtime_error("vtkImageData is missing scalar data.");
+                }
                 switch (scalars->GetDataType())
                 {
                 case VTK_UNSIGNED_CHAR:
@@ -724,11 +724,116 @@ namespace
                 }
         }
 
-	void populateDirectionMatrixInternal(DicomVolume& volume)
-	{
-		if (!volume.Direction)
-		{
-			volume.Direction = vtkSmartPointer<vtkMatrix4x4>::New();
+        template <typename SourceT>
+        bool copyNativeFrameSequence(SourceT* buffer,
+                vtkImageData* imageData,
+                const DicomPixelInfo& pixelInfo,
+                int width,
+                int height,
+                int numberOfFrames)
+        {
+                if (!buffer || !imageData || numberOfFrames <= 0)
+                {
+                        return false;
+                }
+
+                const auto samplesPerPixel = pixelInfo.SamplesPerPixel;
+                if (samplesPerPixel <= 0)
+                {
+                        return false;
+                }
+
+                const std::size_t sliceElements = static_cast<std::size_t>(width) *
+                        static_cast<std::size_t>(height) *
+                        static_cast<std::size_t>(samplesPerPixel);
+                if (sliceElements == 0U)
+                {
+                        return false;
+                }
+
+                for (int frame = 0; frame < numberOfFrames; ++frame)
+                {
+                        const auto* frameSource = buffer + sliceElements * static_cast<std::size_t>(frame);
+                        copyFrameData(frameSource,
+                                      imageData,
+                                      frame,
+                                      pixelInfo,
+                                      width,
+                                      height);
+                }
+
+                return true;
+        }
+
+        // Attempts to take advantage of DCMTK's cached native representation for the
+        // pixel data (including the buffer exposed by getInterpretedFrame on newer
+        // releases) before falling back to manual frame-by-frame decoding.
+        bool tryCopyUsingNativePixelBuffer(DcmPixelData& pixelDataElement,
+                vtkImageData* imageData,
+                const DicomPixelInfo& pixelInfo,
+                int width,
+                int height,
+                int numberOfFrames)
+        {
+                if (!imageData || numberOfFrames <= 0)
+                {
+                        return false;
+                }
+
+                if (pixelInfo.SamplesPerPixel <= 0)
+                {
+                        return false;
+                }
+
+                if (pixelInfo.BitsAllocated <= 8)
+                {
+                        Uint8* data = nullptr;
+                        if (pixelDataElement.getUint8Array(data).good() && data)
+                        {
+                                return copyNativeFrameSequence(data,
+                                                               imageData,
+                                                               pixelInfo,
+                                                               width,
+                                                               height,
+                                                               numberOfFrames);
+                        }
+                        return false;
+                }
+
+                if (pixelInfo.IsSigned)
+                {
+                        Sint16* data = nullptr;
+                        if (pixelDataElement.getSint16Array(data).good() && data)
+                        {
+                                return copyNativeFrameSequence(data,
+                                                               imageData,
+                                                               pixelInfo,
+                                                               width,
+                                                               height,
+                                                               numberOfFrames);
+                        }
+                        return false;
+                }
+
+                Uint16* data = nullptr;
+                if (pixelDataElement.getUint16Array(data).good() && data)
+                {
+                        return copyNativeFrameSequence(data,
+                                                       imageData,
+                                                       pixelInfo,
+                                                       width,
+                                                       height,
+                                                       numberOfFrames);
+                }
+
+                return false;
+        }
+
+        void populateDirectionMatrixInternal(DicomVolume& volume)
+        {
+                if (!volume.Direction)
+                {
+                        volume.Direction = vtkSmartPointer<vtkMatrix4x4>::New();
 		}
 		auto* const matrix = volume.Direction.GetPointer();
 		for (int row = 0; row < 3; ++row)
@@ -1136,15 +1241,28 @@ namespace
 		{
 			throw std::runtime_error("Pixel data element missing in file: " + path);
 		}
-		auto* pixelDataElement = dynamic_cast<DcmPixelData*>(pixelElement);
-		if (!pixelDataElement)
-		{
-			throw std::runtime_error("Pixel data element has unexpected type in file: " + path);
-		}
+                auto* pixelDataElement = dynamic_cast<DcmPixelData*>(pixelElement);
+                if (!pixelDataElement)
+                {
+                        throw std::runtime_error("Pixel data element has unexpected type in file: " + path);
+                }
 
-		const auto bits = volume->PixelInfo.BitsAllocated;
-		const bool isSigned = volume->PixelInfo.IsSigned;
-		const size_t sliceSize = static_cast<size_t>(width) * height * volume->PixelInfo.SamplesPerPixel;
+                const auto bits = volume->PixelInfo.BitsAllocated;
+                const bool isSigned = volume->PixelInfo.IsSigned;
+                const size_t sliceSize = static_cast<size_t>(width) * height * volume->PixelInfo.SamplesPerPixel;
+                const int frameCount = static_cast<int>(numberOfFrames);
+
+                if (tryCopyUsingNativePixelBuffer(*pixelDataElement,
+                        volume->ImageData,
+                        volume->PixelInfo,
+                        static_cast<int>(width),
+                        static_cast<int>(height),
+                        frameCount))
+                {
+                        volume->PixelInfo.RescaleSlope = 1.0;
+                        volume->PixelInfo.RescaleIntercept = 0.0;
+                        return volume;
+                }
 
                 if (bits <= 8)
                 {
