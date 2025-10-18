@@ -688,8 +688,9 @@ bool asclepios::gui::Widget2D::startDcmtkRendering()
                 m_presentationState = {};
                 m_currentFrameIndex = 0;
                 m_cachedFrame = {};
-                m_lastDisplaySize = {};
+                m_displayZoomFactor = 1.0;
                 m_manualZoomFactor = 1.0;
+                m_fitToWindowEnabled = false;
                 m_windowLevelDragging = false;
                 m_initialWindowCenter = 0.0;
                 m_initialWindowWidth = 1.0;
@@ -755,15 +756,44 @@ void asclepios::gui::Widget2D::refreshDisplayedFrame(const bool t_updateOverlay)
                 return;
         }
 
+        const QSize frameSize = m_cachedFrame.size();
+        if (frameSize.isEmpty())
+        {
+                m_imageLabel->clear();
+                return;
+        }
+
         const double clampedZoom = std::clamp(m_manualZoomFactor, 0.1, 8.0);
         m_manualZoomFactor = clampedZoom;
-        const QSize baseSize = m_imageLabel->size();
-        const int targetWidth = std::max(1, static_cast<int>(std::lround(static_cast<double>(baseSize.width()) * clampedZoom)));
-        const int targetHeight = std::max(1, static_cast<int>(std::lround(static_cast<double>(baseSize.height()) * clampedZoom)));
+
+        double effectiveZoom = clampedZoom;
+        if (m_fitToWindowEnabled)
+        {
+                const QSize labelSize = m_imageLabel->size();
+                if (labelSize.width() > 0 && labelSize.height() > 0)
+                {
+                        const double widthScale = static_cast<double>(labelSize.width())
+                                / static_cast<double>(frameSize.width());
+                        const double heightScale = static_cast<double>(labelSize.height())
+                                / static_cast<double>(frameSize.height());
+                        const double fitScale = std::min(widthScale, heightScale);
+                        if (fitScale > 0.0 && std::isfinite(fitScale))
+                        {
+                                effectiveZoom = fitScale;
+                        }
+                }
+        }
+
+        m_displayZoomFactor = effectiveZoom;
 
         QPixmap pixmap = QPixmap::fromImage(m_cachedFrame);
-        pixmap = pixmap.scaled(QSize(targetWidth, targetHeight), Qt::KeepAspectRatio, Qt::SmoothTransformation);
-        m_lastDisplaySize = pixmap.size();
+        const int targetWidth = std::max(1, static_cast<int>(std::lround(static_cast<double>(frameSize.width()) * effectiveZoom)));
+        const int targetHeight = std::max(1, static_cast<int>(std::lround(static_cast<double>(frameSize.height()) * effectiveZoom)));
+        const QSize targetSize(targetWidth, targetHeight);
+        if (targetSize != pixmap.size())
+        {
+                pixmap = pixmap.scaled(targetSize, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        }
         m_imageLabel->setPixmap(pixmap);
         if (!m_imageLabel->isVisible())
         {
@@ -794,7 +824,7 @@ void asclepios::gui::Widget2D::applyLoadedFrame(const int t_index)
         if (frameImage.isNull())
         {
                 m_cachedFrame = {};
-                m_lastDisplaySize = {};
+                m_displayZoomFactor = 1.0;
                 m_imageLabel->clear();
                 hideDcmtkOverlay();
                 return;
@@ -853,13 +883,9 @@ void asclepios::gui::Widget2D::updateDcmtkOverlay(const QImage& t_frameImage, in
         }
         m_overlayWidget->setWindowLevel(windowCenter, windowWidth);
 
-        double zoomFactor = 1.0;
-        if (!t_frameImage.isNull() && t_frameImage.width() > 0 && t_frameImage.height() > 0
-                && m_lastDisplaySize.width() > 0 && m_lastDisplaySize.height() > 0)
-        {
-                zoomFactor = static_cast<double>(m_lastDisplaySize.width())
-                        / static_cast<double>(t_frameImage.width());
-        }
+        double zoomFactor = (m_displayZoomFactor > 0.0 && std::isfinite(m_displayZoomFactor))
+                ? m_displayZoomFactor
+                : m_manualZoomFactor;
         m_overlayWidget->setZoom(zoomFactor);
         m_overlayWidget->setGeometry(m_imageLabel->rect());
         m_overlayWidget->raise();
@@ -930,8 +956,9 @@ void asclepios::gui::Widget2D::handleDcmtkFailure(const QString& t_reason)
         m_dcmtkPresenter.reset();
         m_presentationState = {};
         m_cachedFrame = {};
-        m_lastDisplaySize = {};
+        m_displayZoomFactor = 1.0;
         m_manualZoomFactor = 1.0;
+        m_fitToWindowEnabled = false;
         m_windowLevelDragging = false;
         m_initialWindowCenter = 0.0;
         m_initialWindowWidth = 1.0;
@@ -1027,7 +1054,8 @@ void asclepios::gui::Widget2D::onImagesLoaded()
         }
         m_manualZoomFactor = 1.0;
         m_cachedFrame = {};
-        m_lastDisplaySize = {};
+        m_displayZoomFactor = 1.0;
+        m_fitToWindowEnabled = false;
         m_windowLevelDragging = false;
         m_initialWindowCenter = m_presentationState.WindowCenter;
         m_initialWindowWidth = std::max(m_presentationState.WindowWidth, 1.0);
@@ -1072,6 +1100,7 @@ bool asclepios::gui::Widget2D::eventFilter(QObject* t_watched, QEvent* t_event)
                                 if (relativeStep != 0.0)
                                 {
                                         const double scaleStep = 0.1;
+                                        m_fitToWindowEnabled = false;
                                         m_manualZoomFactor = std::clamp(
                                                 m_manualZoomFactor + scaleStep * relativeStep,
                                                 0.1,
@@ -1130,6 +1159,7 @@ bool asclepios::gui::Widget2D::eventFilter(QObject* t_watched, QEvent* t_event)
                         }
                         if (mouseEvent->button() == Qt::MiddleButton)
                         {
+                                m_fitToWindowEnabled = false;
                                 m_manualZoomFactor = 1.0;
                                 refreshDisplayedFrame(true);
                                 mouseEvent->accept();
@@ -1305,6 +1335,20 @@ void asclepios::gui::Widget2D::waitForPendingTasks() const
         }
 }
 
+void asclepios::gui::Widget2D::setFitToWindowEnabled(const bool t_enabled)
+{
+        if (m_fitToWindowEnabled == t_enabled)
+        {
+                return;
+        }
+
+        m_fitToWindowEnabled = t_enabled;
+        if (m_dcmtkRenderingActive && m_dcmtkPresenter && m_dcmtkPresenter->isValid())
+        {
+                refreshDisplayedFrame(true);
+        }
+}
+
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget2D::createConnections()
 {
@@ -1339,8 +1383,9 @@ void asclepios::gui::Widget2D::resetView()
         m_dcmtkRenderingActive = false;
         m_currentFrameIndex = 0;
         m_cachedFrame = {};
-        m_lastDisplaySize = {};
+        m_displayZoomFactor = 1.0;
         m_manualZoomFactor = 1.0;
+        m_fitToWindowEnabled = false;
         m_windowLevelDragging = false;
         m_initialWindowCenter = 0.0;
         m_initialWindowWidth = 1.0;

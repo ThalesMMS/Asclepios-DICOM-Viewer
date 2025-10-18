@@ -39,6 +39,8 @@ namespace asclepios::gui
                 void waitForPendingTasks() const;
                 void setRenderRequestSource(const QString& t_source) { m_lastRenderRequestSource = t_source; }
                 [[nodiscard]] QString getRenderRequestSource() const { return m_lastRenderRequestSource; }
+                void setFitToWindowEnabled(bool t_enabled);
+                [[nodiscard]] bool isFitToWindowEnabled() const { return m_fitToWindowEnabled; }
                 [[nodiscard]] bool wasRenderAbortedDueToMissingContext() const
                 {
                         return m_renderAbortedDueToMissingContext;
@@ -132,8 +134,9 @@ namespace asclepios::gui
                 int m_currentFrameIndex = 0;
                 PresentationState m_presentationState = {};
                 QImage m_cachedFrame = {};
-                QSize m_lastDisplaySize = {};
+                double m_displayZoomFactor = 1.0;
                 double m_manualZoomFactor = 1.0;
+                bool m_fitToWindowEnabled = false;
                 bool m_windowLevelDragging = false;
                 QPoint m_lastMousePosition = {};
                 double m_initialWindowCenter = 0.0;
