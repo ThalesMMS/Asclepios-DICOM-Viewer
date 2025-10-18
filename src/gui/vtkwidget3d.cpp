@@ -13,8 +13,20 @@
 #include <QLoggingCategory>
 #include <QByteArray>
 #include <QString>
+#include <cmath>
 
 Q_LOGGING_CATEGORY(lcVtkWidget3D, "asclepios.gui.vtkwidget3d")
+
+namespace
+{
+        constexpr double uniformRangeThreshold = 1e-5;
+
+        bool isUniformRange(double minValue, double maxValue)
+        {
+                const double span = maxValue - minValue;
+                return !std::isfinite(minValue) || !std::isfinite(maxValue) || std::abs(span) <= uniformRangeThreshold;
+        }
+}
 
 void asclepios::gui::vtkWidget3D::initWidget()
 {
@@ -123,19 +135,25 @@ std::tuple<int, int> asclepios::gui::vtkWidget3D::getWindowLevel(const std::shar
         }
         double window = volume->PixelInfo.WindowWidth;
         double level = volume->PixelInfo.WindowCenter;
+        double range[2] = {0.0, 0.0};
+        auto* const scalars = volume->ImageData->GetPointData()
+                ? volume->ImageData->GetPointData()->GetScalars()
+                : nullptr;
+        if (scalars)
+        {
+                scalars->GetRange(range);
+        }
         if (window <= 0.0 || level == 0.0)
         {
-                auto* const scalars = volume->ImageData->GetPointData()->GetScalars();
                 if (scalars)
                 {
-                        double range[2] = {0.0, 0.0};
-                        scalars->GetRange(range);
                         window = range[1] - range[0];
                         level = 0.5 * (range[1] + range[0]);
+                        qCInfo(lcVtkWidget3D) << "getWindowLevel() derived from scalar range" << range[0] << range[1];
                 }
         }
-        qCDebug(lcVtkWidget3D) << "getWindowLevel()" << "center" << level << "width" << window
-                               << "imageIdx" << (m_image ? m_image->getIndex() : -1);
+        qCInfo(lcVtkWidget3D) << "getWindowLevel()" << "center" << level << "width" << window << "range" << range[0]
+                              << range[1] << "imageIdx" << (m_image ? m_image->getIndex() : -1);
         return std::make_tuple(static_cast<int>(std::round(window)), static_cast<int>(std::round(level)));
 }
 
@@ -150,6 +168,8 @@ void asclepios::gui::vtkWidget3D::applyWindowLevelToTransferFunction(const int w
         const auto windowDelta = static_cast<double>(window) - static_cast<double>(currentWindow);
         const auto levelDelta = static_cast<double>(level) - static_cast<double>(currentLevel);
         m_transferFunction->updateWindowLevel(windowDelta, levelDelta);
+        qCInfo(lcVtkWidget3D) << "applyWindowLevelToTransferFunction()" << "window" << window << "level" << level
+                              << "deltaWindow" << windowDelta << "deltaLevel" << levelDelta;
 }
 
 //-----------------------------------------------------------------------------
@@ -228,6 +248,27 @@ void asclepios::gui::vtkWidget3D::render()
                 return;
         }
         m_lastVolumeError.clear();
+        vtkDataArray* scalars = m_volumeData->ImageData->GetPointData()
+                ? m_volumeData->ImageData->GetPointData()->GetScalars()
+                : nullptr;
+        if (!scalars)
+        {
+                m_lastVolumeError = QStringLiteral("Unable to access voxel intensities for 3D rendering.");
+                qCCritical(lcVtkWidget3D) << "render() aborted - missing scalar data.";
+                m_volumeData.reset();
+                return;
+        }
+        double scalarRange[2] = {0.0, 0.0};
+        scalars->GetRange(scalarRange);
+        if (isUniformRange(scalarRange[0], scalarRange[1]))
+        {
+                m_lastVolumeError = QStringLiteral(
+                        "Volume decoded but intensities are uniform; the 3D view would appear black.");
+                qCWarning(lcVtkWidget3D)
+                        << "render() aborted - uniform scalar range" << scalarRange[0] << scalarRange[1];
+                m_volumeData.reset();
+                return;
+        }
         const auto [window, level] = getWindowLevel(m_volumeData);
         qCInfo(lcVtkWidget3D) << "render() configuring pipeline"
                               << "seriesUid" << (m_series ? QString::fromStdString(m_series->getUID()) : QStringLiteral("n/a"))
@@ -282,7 +323,8 @@ void asclepios::gui::vtkWidget3D::render()
         {
                 m_renderWindows[0]->OffScreenRenderingOff();
         }
-        auto* const extend = m_volume->GetBounds();
+        double bounds[6] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+        m_volume->GetBounds(bounds);
         initInteractorStyle();
         int dimensions[3] = {0, 0, 0};
         vtkIdType voxelCount = -1;
@@ -294,9 +336,11 @@ void asclepios::gui::vtkWidget3D::render()
         qCInfo(lcVtkWidget3D)
                 << "[Telemetry] Volume render completed"
                 << "durationMs" << renderDuration
-                << "bounds" << extend[0] << extend[1] << extend[2] << extend[3] << extend[4] << extend[5]
+                << "extend" << extend[0] << extend[1] << extend[2] << extend[3] << extend[4] << extend[5]
+                << "bounds" << bounds[0] << bounds[1] << bounds[2] << bounds[3] << bounds[4] << bounds[5]
                 << "dimensions" << dimensions[0] << dimensions[1] << dimensions[2]
                 << "voxelCount" << voxelCount;
+                << "scalarRange" << scalarRange[0] << scalarRange[1];
 }
 
 //-----------------------------------------------------------------------------

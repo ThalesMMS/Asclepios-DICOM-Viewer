@@ -5,6 +5,7 @@
 #include <vtkImageProperty.h>
 #include <vtkCamera.h>
 #include <vtkInformation.h>
+#include <vtkOpenGLRenderWindow.h>
 #include "image.h"
 #include "series.h"
 #include <vtkImageActor.h>
@@ -13,7 +14,25 @@
 #include <vtkImageResliceMapper.h>
 #include <vtkPointData.h>
 #include <QString>
-#include <QDebug>
+#include <QLoggingCategory>
+#include <cmath>
+
+Q_LOGGING_CATEGORY(lcMprMaker, "asclepios.gui.mprmaker")
+
+namespace
+{
+        constexpr double uniformRangeThreshold = 1e-5;
+
+        bool isUniformRange(const double* range)
+        {
+                if (!range)
+                {
+                        return true;
+                }
+                const double span = range[1] - range[0];
+                return !std::isfinite(range[0]) || !std::isfinite(range[1]) || std::abs(span) <= uniformRangeThreshold;
+        }
+}
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::MPRMaker::SetRenderWindows(const vtkSmartPointer<vtkRenderWindow>& t_sagittalWindow,
@@ -53,6 +72,15 @@ void asclepios::gui::MPRMaker::create3DMatrix()
 	}
 
     QString failureReason;
+    qCInfo(lcMprMaker)
+            << "create3DMatrix() invoked"
+            << "seriesUid"
+            << (m_series ? QString::fromStdString(m_series->getUID()) : QStringLiteral("n/a"))
+            << "imageIdx"
+            << (m_image ? m_image->getIndex() : -1)
+            << "multiFrame"
+            << (m_image ? m_image->getIsMultiFrame() : false);
+
     if (m_image && m_image->getIsMultiFrame())
     {
         m_volume = m_image->getDicomVolume(&failureReason);
@@ -80,18 +108,75 @@ void asclepios::gui::MPRMaker::create3DMatrix()
         m_volume.reset();
     }
 
+    if (m_volume && m_volume->ImageData)
+    {
+        int dims[3] = {0, 0, 0};
+        double spacing[3] = {0.0, 0.0, 0.0};
+        double origin[3] = {0.0, 0.0, 0.0};
+        double bounds[6] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+        m_volume->ImageData->GetDimensions(dims);
+        m_volume->ImageData->GetSpacing(spacing);
+        m_volume->ImageData->GetOrigin(origin);
+        m_volume->ImageData->GetBounds(bounds);
+        vtkDataArray* scalars = m_volume->ImageData->GetPointData()
+                ? m_volume->ImageData->GetPointData()->GetScalars()
+                : nullptr;
+        double range[2] = {0.0, 0.0};
+        if (scalars)
+        {
+            scalars->GetRange(range);
+        }
+        qCInfo(lcMprMaker)
+                << "Volume ready"
+                << "dims"
+                << dims[0]
+                << dims[1]
+                << dims[2]
+                << "spacing"
+                << spacing[0]
+                << spacing[1]
+                << spacing[2]
+                << "origin"
+                << origin[0]
+                << origin[1]
+                << origin[2]
+                << "bounds"
+                << bounds[0]
+                << bounds[1]
+                << bounds[2]
+                << bounds[3]
+                << bounds[4]
+                << bounds[5]
+                << "range"
+                << range[0]
+                << range[1];
+        if (!scalars)
+        {
+            failureReason = QStringLiteral("Unable to access voxel intensities for multiplanar reconstruction.");
+            qCCritical(lcMprMaker) << "Scalar array missing for volume.";
+            m_volume.reset();
+        }
+        else if (isUniformRange(range))
+        {
+            failureReason = QStringLiteral(
+                    "Volume decoded but intensities are uniform; MPR would appear as a black image.");
+            qCWarning(lcMprMaker) << "Uniform intensity detected for volume" << range[0] << range[1];
+            m_volume.reset();
+        }
+        else
+        {
+            failureReason.clear();
+        }
+    }
+
     if (!m_volume || !m_volume->ImageData)
     {
         if (failureReason.isEmpty())
         {
             failureReason = QStringLiteral("Volume data unavailable for multiplanar reconstruction.");
         }
+        qCWarning(lcMprMaker) << "create3DMatrix() failed" << failureReason;
     }
-    else
-    {
-        failureReason.clear();
-    }
-
     m_lastFailure = failureReason;
 }
 
@@ -104,10 +189,11 @@ void asclepios::gui::MPRMaker::createMPR()
         {
             m_lastFailure = QStringLiteral("Multiplanar reconstruction unavailable: volume data missing or failed to load.");
         }
-        qWarning() << "[MPRMaker]" << m_lastFailure;
+        qCWarning(lcMprMaker) << "createMPR() aborted" << m_lastFailure;
         return;
     }
 
+    qCInfo(lcMprMaker) << "createMPR() starting";
     resetWindowLevel();
     createMprViews();
 }
@@ -127,26 +213,42 @@ void asclepios::gui::MPRMaker::resetWindowLevel()
 {
     if (!m_volume || !m_volume->ImageData)
     {
+        qCWarning(lcMprMaker) << "resetWindowLevel() skipped - volume missing.";
         return;
     }
     double level = m_volume->PixelInfo.WindowCenter;
     double window = m_volume->PixelInfo.WindowWidth;
-    if (window <= 0.0 || level == 0.0)
+    double range[2] = {0.0, 0.0};
+    auto* const scalars = m_volume->ImageData->GetPointData()
+            ? m_volume->ImageData->GetPointData()->GetScalars()
+            : nullptr;
+    if (scalars)
     {
-        auto* const scalars = m_volume->ImageData->GetPointData()->GetScalars();
-        if (scalars)
-        {
-            double range[2] = {0.0, 0.0};
-            scalars->GetRange(range);
-            window = range[1] - range[0];
-            level = 0.5 * (range[1] + range[0]);
-        }
+        scalars->GetRange(range);
+    }
+    if ((window <= 0.0 || level == 0.0) && scalars)
+    {
+        window = range[1] - range[0];
+        level = 0.5 * (range[1] + range[0]);
+        qCInfo(lcMprMaker)
+                << "resetWindowLevel() derived from range"
+                << range[0]
+                << range[1];
     }
     if (!m_colorMap)
     {
         m_colorMap = vtkSmartPointer<vtkScalarsToColors>::New();
     }
     m_colorMap->SetRange(level - 0.5 * window, level + 0.5 * window);
+    qCInfo(lcMprMaker)
+            << "resetWindowLevel() applied"
+            << "window"
+            << window
+            << "level"
+            << level
+            << "range"
+            << range[0]
+            << range[1];
 }
 
 //-----------------------------------------------------------------------------
@@ -210,20 +312,23 @@ void asclepios::gui::MPRMaker::renderPlaneOffScreen(const int t_plane)
 {
     if (!m_volume || !m_volume->ImageData)
     {
+        qCWarning(lcMprMaker) << "renderPlaneOffScreen() skipped - volume missing" << "plane" << t_plane;
         return;
     }
     double level = m_initialWindow == 0 ? m_volume->PixelInfo.WindowCenter : m_initialWindow;
     double window = m_initialLevel == 0 ? m_volume->PixelInfo.WindowWidth : m_initialLevel;
-    if (window <= 0.0 || level == 0.0)
+    double range[2] = {0.0, 0.0};
+    auto* const scalars = m_volume->ImageData->GetPointData()
+            ? m_volume->ImageData->GetPointData()->GetScalars()
+            : nullptr;
+    if (scalars)
     {
-        auto* const scalars = m_volume->ImageData->GetPointData()->GetScalars();
-        if (scalars)
-        {
-            double range[2] = {0.0, 0.0};
-            scalars->GetRange(range);
-            window = range[1] - range[0];
-            level = 0.5 * (range[1] + range[0]);
-        }
+        scalars->GetRange(range);
+    }
+    if ((window <= 0.0 || level == 0.0) && scalars)
+    {
+        window = range[1] - range[0];
+        level = 0.5 * (range[1] + range[0]);
     }
     setMiddleSlice(t_plane);
     if (!m_colorMap)
@@ -251,18 +356,51 @@ void asclepios::gui::MPRMaker::renderPlaneOffScreen(const int t_plane)
     m_originalValuesReslicer[t_plane]->SetOutputDimensionality(2);
     m_originalValuesReslicer[t_plane]->SetResliceAxes(m_reslicer[t_plane]->GetResliceAxes());
     m_originalValuesReslicer[t_plane]->Update();
-	vtkNew<vtkImageActor> actor;
-	vtkNew<vtkRenderer> renderer;
-	vtkNew<vtkImageResliceMapper> mapper;
-	mapper->SeparateWindowLevelOperationOff();
-	mapper->SetInputConnection(m_reslicer[t_plane]->GetOutputPort());
+        vtkNew<vtkImageActor> actor;
+        vtkNew<vtkRenderer> renderer;
+        vtkNew<vtkImageResliceMapper> mapper;
+        mapper->SeparateWindowLevelOperationOff();
+        mapper->SetInputConnection(m_reslicer[t_plane]->GetOutputPort());
 	actor->GetProperty()->SetInterpolationTypeToCubic();
 	actor->SetMapper(mapper);
 	renderer->AddActor(actor);
-	renderer->SetBackground(0, 0, 0);
-	renderer->GetActiveCamera()->SetParallelProjection(1);
-	renderer->ResetCamera();
-	m_renderWindow[t_plane]->AddRenderer(renderer);
-	m_renderWindow[t_plane]->Render();
+        renderer->SetBackground(0, 0, 0);
+        renderer->GetActiveCamera()->SetParallelProjection(1);
+        renderer->ResetCamera();
+        m_renderWindow[t_plane]->AddRenderer(renderer);
+        const int* size = m_renderWindow[t_plane]->GetSize();
+        auto* const openGlWindow = vtkOpenGLRenderWindow::SafeDownCast(m_renderWindow[t_plane]);
+        const unsigned int frameBufferObject = openGlWindow ? openGlWindow->GetFrameBufferObject() : 0U;
+        const unsigned int defaultFrameBufferId = openGlWindow ? openGlWindow->GetDefaultFrameBufferId() : 0U;
+        double actorBounds[6] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+        actor->GetBounds(actorBounds);
+        qCInfo(lcMprMaker)
+                << "renderPlaneOffScreen()"
+                << "plane"
+                << t_plane
+                << "window"
+                << window
+                << "level"
+                << level
+                << "range"
+                << range[0]
+                << range[1]
+                << "size"
+                << (size ? size[0] : 0)
+                << (size ? size[1] : 0)
+                << "offscreen"
+                << m_renderWindow[t_plane]->GetOffScreenRendering()
+                << "fbo"
+                << frameBufferObject
+                << "defaultFbo"
+                << defaultFrameBufferId
+                << "actorBounds"
+                << actorBounds[0]
+                << actorBounds[1]
+                << actorBounds[2]
+                << actorBounds[3]
+                << actorBounds[4]
+                << actorBounds[5];
+        m_renderWindow[t_plane]->Render();
 }
 
