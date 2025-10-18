@@ -150,7 +150,7 @@ void asclepios::gui::vtkWidgetMPR::changeWindowLevel(vtkRenderWindow* t_renderWi
 		window = t_window;
 		level = t_level;
 	}
-	m_mprMaker->getColorMapScalar()->SetRange(level - 0.5 * window, level + 0.5 * window);
+	m_mprMaker->updateColorMapWindowLevel(window, level);
 	auto const windowNumber =
 		getNumberOfRenderWindow(t_renderWindow);
         if (windowNumber == -1)
