@@ -59,17 +59,18 @@ namespace asclepios::core
 			}
 		};
 
-	private:
-		std::size_t m_index = -1;
-		Study* m_parent = {};
-		std::string m_uid = {};
-		std::string m_desctiption = {};
-		std::string m_date = {};
-		std::string m_number = {};
+        private:
+                std::size_t m_index = -1;
+                Study* m_parent = {};
+                std::string m_uid = {};
+                std::string m_desctiption = {};
+                std::string m_date = {};
+                std::string m_number = {};
                 std::set<std::unique_ptr<Image>, Image::imageCompare> m_singleFrameImages = {};
-		std::set<std::unique_ptr<Image>, Image::imageCompare> m_multiFrameImages = {};
+                std::set<std::unique_ptr<Image>, Image::imageCompare> m_multiFrameImages = {};
+                std::unique_ptr<DicomMetadata> m_cachedMetadata = {};
 
-		static bool isLess(Series* t_lhs, Series* t_rhs);
-		
-	};
+                static bool isLess(Series* t_lhs, Series* t_rhs);
+
+        };
 }

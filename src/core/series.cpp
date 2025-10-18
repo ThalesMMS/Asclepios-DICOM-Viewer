@@ -89,15 +89,27 @@ std::shared_ptr<asclepios::core::DicomVolume> asclepios::core::Series::getVolume
 //-----------------------------------------------------------------------------
 const asclepios::core::DicomMetadata* asclepios::core::Series::getMetadataForSeries()
 {
-	const auto volume = getVolumeForSingleFrameSeries();
-	return volume ? &volume->Metadata : nullptr;
+        if (m_cachedMetadata)
+        {
+                return m_cachedMetadata.get();
+        }
+
+        const auto volume = getVolumeForSingleFrameSeries();
+        if (!volume)
+        {
+                m_cachedMetadata.reset();
+                return nullptr;
+        }
+
+        m_cachedMetadata = std::make_unique<DicomMetadata>(volume->Metadata);
+        return m_cachedMetadata.get();
 }
 
 //-----------------------------------------------------------------------------
 asclepios::core::Image* asclepios::core::Series::addSingleFrameImage(std::unique_ptr<Image> t_image, bool& t_newImage)
 {
 	auto index = findImageIndex(m_singleFrameImages, t_image.get());
-	t_newImage = false;
+        t_newImage = false;
         if (index == m_singleFrameImages.size())
         {
                 m_singleFrameImages.emplace(std::move(t_image));
@@ -105,6 +117,7 @@ asclepios::core::Image* asclepios::core::Series::addSingleFrameImage(std::unique
                 t_newImage = true;
                 const std::string studyUid = (m_parent) ? m_parent->getUID() : std::string();
                 DicomVolumeLoader::invalidateSeriesCache(studyUid, getUID());
+                m_cachedMetadata.reset();
         }
 	auto it = m_singleFrameImages.begin();
 	std::advance(it, index);
@@ -116,7 +129,7 @@ asclepios::core::Image* asclepios::core::Series::addSingleFrameImage(std::unique
 asclepios::core::Image* asclepios::core::Series::addMultiFrameImage(std::unique_ptr<Image> t_image, bool& t_newImage)
 {
 	auto index = findImageIndex(m_multiFrameImages, t_image.get());
-	t_newImage = false;
+        t_newImage = false;
         if (index == m_multiFrameImages.size())
         {
                 m_multiFrameImages.emplace(std::move(t_image));
@@ -124,6 +137,7 @@ asclepios::core::Image* asclepios::core::Series::addMultiFrameImage(std::unique_
                 t_newImage = true;
                 const std::string studyUid = (m_parent) ? m_parent->getUID() : std::string();
                 DicomVolumeLoader::invalidateSeriesCache(studyUid, getUID());
+                m_cachedMetadata.reset();
         }
 	auto it = m_multiFrameImages.begin();
 	std::advance(it, index);
