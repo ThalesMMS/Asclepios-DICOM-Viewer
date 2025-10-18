@@ -94,10 +94,10 @@ std::size_t asclepios::gui::Widget2D::DcmtkImagePresenter::bytesPerSample(EP_Rep
         }
 }
 
-core::DicomPixelInfo asclepios::gui::Widget2D::DcmtkImagePresenter::extractPixelInfo(
-        const std::string& t_path, const core::Image* t_fallbackImage)
+asclepios::core::DicomPixelInfo asclepios::gui::Widget2D::DcmtkImagePresenter::extractPixelInfo(
+        const std::string& t_path, const asclepios::core::Image* t_fallbackImage)
 {
-        core::DicomPixelInfo info;
+        asclepios::core::DicomPixelInfo info;
         if (t_fallbackImage)
         {
                 info.WindowCenter = static_cast<double>(t_fallbackImage->getWindowCenter());
@@ -170,7 +170,7 @@ core::DicomPixelInfo asclepios::gui::Widget2D::DcmtkImagePresenter::extractPixel
 }
 
 void asclepios::gui::Widget2D::DcmtkImagePresenter::appendFrame(DicomImage* t_sourceImage,
-        const core::DicomPixelInfo& t_pixelInfo, const int t_frameIndex)
+        const asclepios::core::DicomPixelInfo& t_pixelInfo, const int t_frameIndex)
 {
         if (!t_sourceImage)
         {
@@ -313,7 +313,7 @@ void asclepios::gui::Widget2D::DcmtkImagePresenter::appendFrame(DicomImage* t_so
         m_frames.append(std::move(frame));
 }
 
-void asclepios::gui::Widget2D::DcmtkImagePresenter::populateFromImage(core::Image* t_image)
+void asclepios::gui::Widget2D::DcmtkImagePresenter::populateFromImage(asclepios::core::Image* t_image)
 {
         if (!t_image)
         {
@@ -343,7 +343,7 @@ void asclepios::gui::Widget2D::DcmtkImagePresenter::populateFromImage(core::Imag
         }
 }
 
-void asclepios::gui::Widget2D::DcmtkImagePresenter::populateFromSeries(core::Series* t_series)
+void asclepios::gui::Widget2D::DcmtkImagePresenter::populateFromSeries(asclepios::core::Series* t_series)
 {
         if (!t_series)
         {
@@ -379,7 +379,7 @@ void asclepios::gui::Widget2D::DcmtkImagePresenter::populateFromSeries(core::Ser
 }
 
 std::shared_ptr<asclepios::gui::Widget2D::DcmtkImagePresenter> asclepios::gui::Widget2D::DcmtkImagePresenter::load(
-        core::Series* t_series, core::Image* t_image)
+        asclepios::core::Series* t_series, asclepios::core::Image* t_image)
 {
         auto presenter = std::make_shared<DcmtkImagePresenter>();
         if (!t_image)
@@ -610,19 +610,19 @@ QImage asclepios::gui::Widget2D::DcmtkImagePresenter::renderFrame(const int fram
 }
 
 std::shared_ptr<asclepios::gui::Widget2D::DcmtkImagePresenter> asclepios::gui::Widget2D::loadFramesWithDcmtk(
-        core::Series* t_series, core::Image* t_image)
+        asclepios::core::Series* t_series, asclepios::core::Image* t_image)
 {
         if (!t_series || !t_image)
         {
                 return {};
         }
 
-        core::SmartDJDecoderRegistration::registerCodecs();
+        asclepios::core::SmartDJDecoderRegistration::registerCodecs();
         struct DcmtkCleanup
         {
                 ~DcmtkCleanup()
                 {
-                        core::SmartDJDecoderRegistration::cleanup();
+                        asclepios::core::SmartDJDecoderRegistration::cleanup();
                 }
         } cleanupGuard;
 
@@ -636,7 +636,7 @@ bool asclepios::gui::Widget2D::startDcmtkRendering()
         {
                 const auto expectedFrames = m_image->getIsMultiFrame()
                         ? m_image->getNumberOfFrames()
-                        : static_cast<int>(m_series->getSinlgeFrameImages().size());
+                        : static_cast<int>(m_series->getSingleFrameImages().size());
                 qCInfo(lcWidget2D)
                         << "Render requested. Multi-frame:" << m_image->getIsMultiFrame()
                         << "expected frames:" << expectedFrames
@@ -1153,7 +1153,7 @@ void asclepios::gui::Widget2D::onApplyTransformation(const transformationType& t
 }
 
 //-----------------------------------------------------------------------------
-void asclepios::gui::Widget2D::onRefreshScrollValues(core::Series* t_series, core::Image* t_image)
+void asclepios::gui::Widget2D::onRefreshScrollValues(asclepios::core::Series* t_series, asclepios::core::Image* t_image)
 {
         auto* const study = t_series->getParentObject();
         if (canScrollBeRefreshed(study->getParentObject()->getIndex(),
@@ -1161,7 +1161,7 @@ void asclepios::gui::Widget2D::onRefreshScrollValues(core::Series* t_series, cor
         {
                 if (!m_image->getIsMultiFrame())
                 {
-                        const auto size = static_cast<int>(t_series->getSinlgeFrameImages().size());
+                        const auto size = static_cast<int>(t_series->getSingleFrameImages().size());
                         const auto value =
                                 (t_image->getIndex() <= m_scroll->value()
                                 && size > 1 && t_image->getIndex() > 0)

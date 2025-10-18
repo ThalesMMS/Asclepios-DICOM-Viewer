@@ -65,7 +65,7 @@ void asclepios::gui::TabWidget::createWidgetMPR3D(const WidgetBase::WidgetType& 
 void asclepios::gui::TabWidget::resetWidget()
 {
 	auto* const widget = dynamic_cast<Widget2D*>(m_tabbedWidget);
-	widget->getFuture().waitForFinished();
+	widget->waitForPendingTasks();
 	delete m_tabbedWidget;
 	m_tabbedWidget = nullptr;
 	while (m_ui.tab->count())

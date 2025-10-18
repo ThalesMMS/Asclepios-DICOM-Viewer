@@ -28,6 +28,8 @@ namespace asclepios::core
 		[[nodiscard]] export Image* getPreviousSingleFrameImage(Image* t_image);
 		[[nodiscard]] export Image* getSingleFrameImageByIndex(const int& t_index);
 		[[nodiscard]] export std::set<std::unique_ptr<Image>, Image::imageCompare>& getSinlgeFrameImages() { return m_singleFrameImages; }
+		[[nodiscard]] export std::set<std::unique_ptr<Image>, Image::imageCompare>& getSingleFrameImages() { return m_singleFrameImages; }
+		[[nodiscard]] export const std::set<std::unique_ptr<Image>, Image::imageCompare>& getSingleFrameImages() const { return m_singleFrameImages; }
 		[[nodiscard]] export std::set<std::unique_ptr<Image>, Image::imageCompare>& getMultiFrameImages() { return m_multiFrameImages; }
 		[[nodiscard]] export int getIndex() const { return m_index; }
 		[[nodiscard]] export std::shared_ptr<DicomVolume> getVolumeForSingleFrameSeries();

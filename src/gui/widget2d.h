@@ -17,6 +17,7 @@
 #include "widgetbase.h"
 
 #include <memory>
+#include <vector>
 
 
 
@@ -64,7 +65,7 @@ namespace asclepios::gui
                 struct FrameBuffer
                 {
                         QByteArray Data = {};
-                        core::DicomPixelInfo PixelInfo = {};
+                        asclepios::core::DicomPixelInfo PixelInfo = {};
                         int Width = 0;
                         int Height = 0;
                         int SamplesPerPixel = 1;
@@ -85,25 +86,25 @@ namespace asclepios::gui
                 [[nodiscard]] PresentationState initialState() const { return m_initialState; }
                 [[nodiscard]] QImage renderFrame(int frameIndex, const PresentationState& state) const;
 
-                static std::shared_ptr<DcmtkImagePresenter> load(core::Series* t_series, core::Image* t_image);
+                static std::shared_ptr<DcmtkImagePresenter> load(asclepios::core::Series* t_series, asclepios::core::Image* t_image);
 
         private:
                 PresentationState m_initialState = {};
                 QVector<FrameBuffer> m_frames = {};
                 std::unique_ptr<DicomImage> m_multiFrameImage = {};
-                QVector<std::unique_ptr<DicomImage>> m_singleFrameImages = {};
+                std::vector<std::unique_ptr<DicomImage>> m_singleFrameImages = {};
 
-                static core::DicomPixelInfo extractPixelInfo(const std::string& t_path, const core::Image* t_fallbackImage);
-                void populateFromImage(core::Image* t_image);
-                void populateFromSeries(core::Series* t_series);
-                void appendFrame(DicomImage* t_sourceImage, const core::DicomPixelInfo& t_pixelInfo, int t_frameIndex);
+                static asclepios::core::DicomPixelInfo extractPixelInfo(const std::string& t_path, const asclepios::core::Image* t_fallbackImage);
+                void populateFromImage(asclepios::core::Image* t_image);
+                void populateFromSeries(asclepios::core::Series* t_series);
+                void appendFrame(DicomImage* t_sourceImage, const asclepios::core::DicomPixelInfo& t_pixelInfo, int t_frameIndex);
                 [[nodiscard]] static std::size_t bytesPerSample(EP_Representation t_representation);
         };
 
         public slots:
                 void onActivateWidget(const bool& t_flag);
                 void onApplyTransformation(const transformationType& t_type);
-                void onRefreshScrollValues(core::Series* t_series, core::Image* t_image);
+                void onRefreshScrollValues(asclepios::core::Series* t_series, asclepios::core::Image* t_image);
                 void onSetMaximized() const;
                 void onImagesLoaded();
 
@@ -144,7 +145,7 @@ namespace asclepios::gui
                 void ensureImageLabel();
                 void ensureOverlayWidget();
                 void applyLoadedFrame(const int t_index);
-                static std::shared_ptr<DcmtkImagePresenter> loadFramesWithDcmtk(core::Series* t_series, core::Image* t_image);
+                static std::shared_ptr<DcmtkImagePresenter> loadFramesWithDcmtk(asclepios::core::Series* t_series, asclepios::core::Image* t_image);
                 static const QVector<QRgb>& grayscaleColorTable();
                 void handleDcmtkFailure(const QString& t_reason);
                 void updateDcmtkOverlay(const QImage& t_frameImage, int t_frameIndex);

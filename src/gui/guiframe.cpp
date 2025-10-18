@@ -161,11 +161,12 @@ void asclepios::gui::GUIFrame::initView()
 void asclepios::gui::GUIFrame::createMenuBar()
 {
 	QMenuBar* mainMenu = new QMenuBar();
+	mainMenu->setNativeMenuBar(false);
 	m_fileMenu = new FileMenu(this);
 	mainMenu->addMenu(m_fileMenu);
 	m_layoutMenu = new LayoutMenu(this);
 	mainMenu->addMenu(m_layoutMenu);
-	mainMenu->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Preferred);
+	mainMenu->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 	m_ui.layoutMenu->addWidget(mainMenu);
 	mainMenu->setStyleSheet(menuBarStyle);
 }
