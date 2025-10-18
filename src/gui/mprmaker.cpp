@@ -13,6 +13,7 @@
 #include <vtkImageResliceMapper.h>
 #include <vtkPointData.h>
 #include <QString>
+#include <QDebug>
 
 //-----------------------------------------------------------------------------
 void asclepios::gui::MPRMaker::SetRenderWindows(const vtkSmartPointer<vtkRenderWindow>& t_sagittalWindow,
@@ -97,10 +98,20 @@ void asclepios::gui::MPRMaker::create3DMatrix()
 //-----------------------------------------------------------------------------
 void asclepios::gui::MPRMaker::createMPR()
 {
-    if (m_volume && m_volume->ImageData)
+    if (!m_volume || !m_volume->ImageData)
     {
-        createMprViews();
+        QString errorMessage = m_lastFailure;
+        if (errorMessage.isEmpty())
+        {
+            errorMessage = QStringLiteral("Multiplanar reconstruction unavailable: volume data missing or failed to load.");
+        }
+        qWarning() << "[MPRMaker]" << errorMessage;
+        m_lastFailure = errorMessage;
+        return;
     }
+
+    resetWindowLevel();
+    createMprViews();
 }
 
 //-----------------------------------------------------------------------------
@@ -220,8 +231,8 @@ void asclepios::gui::MPRMaker::renderPlaneOffScreen(const int t_plane)
     if (!m_colorMap)
     {
         m_colorMap = vtkSmartPointer<vtkScalarsToColors>::New();
-        m_colorMap->SetRange(level - 0.5 * window, level + 0.5 * window);
     }
+    m_colorMap->SetRange(level - 0.5 * window, level + 0.5 * window);
     m_reslicer[t_plane]->SetInputData(m_volume->ImageData);
     m_reslicer[t_plane]->BypassOff();
     m_reslicer[t_plane]->SetInformationInput(m_volume->ImageData);
