@@ -405,15 +405,42 @@ void asclepios::gui::vtkWidget2D::refreshOverlayInCorner(const int& t_corner)
 //-----------------------------------------------------------------------------
 double asclepios::gui::vtkWidget2D::computeScale() const
 {
-	if (!m_dcmWidget || !m_volume || !m_volume->ImageData)
-	{
-		return 1.0;
-	}
-	int extent[6] = {0};
-	m_volume->ImageData->GetExtent(extent);
-	const double spacingX = m_volume->Geometry.Spacing[0];
-	const double spacingY = m_volume->Geometry.Spacing[1];
-	const double sizeX = spacingX * (extent[1] - extent[0] + 1);
-	const double sizeY = spacingY * (extent[3] - extent[2] + 1);
-	return 0.5 * std::max(sizeX, sizeY);
+        if (!m_dcmWidget || !m_volume || !m_volume->ImageData)
+        {
+                return 1.0;
+        }
+        int extent[6] = {0};
+        m_volume->ImageData->GetExtent(extent);
+        const double widthPixels = static_cast<double>(extent[1] - extent[0] + 1);
+        const double heightPixels = static_cast<double>(extent[3] - extent[2] + 1);
+        if (widthPixels <= 0.0 || heightPixels <= 0.0)
+        {
+                return 1.0;
+        }
+
+        const auto sanitizedSpacing = m_dcmWidget->getLastSanitizedSpacing();
+        const auto originalSpacing = m_dcmWidget->getOriginalSpacing();
+        const bool hasOriginalSpacing = m_dcmWidget->hasOriginalSpacing();
+
+        auto selectSpacing = [&](int axis)
+        {
+                double spacing = sanitizedSpacing[axis];
+                if ((!std::isfinite(spacing) || spacing <= 0.0) && hasOriginalSpacing)
+                {
+                        spacing = originalSpacing[axis];
+                }
+                if (!std::isfinite(spacing) || spacing <= 0.0)
+                {
+                        spacing = 1.0;
+                }
+                constexpr double minSpacing = 0.25;
+                constexpr double maxSpacing = 1e4;
+                return std::clamp(spacing, minSpacing, maxSpacing);
+        };
+
+        const double spacingX = selectSpacing(0);
+        const double spacingY = selectSpacing(1);
+        const double sizeX = std::max(widthPixels, spacingX * widthPixels);
+        const double sizeY = std::max(heightPixels, spacingY * heightPixels);
+        return 0.5 * std::max(sizeX, sizeY);
 }
