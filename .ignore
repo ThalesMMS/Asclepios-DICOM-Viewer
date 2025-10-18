@@ -1,0 +1,66 @@
+# .ignore file - ripgrep ALWAYS respects this, even with -g"*"
+# This overrides any glob patterns
+# Using both absolute and wildcard patterns for maximum coverage
+
+# Build directories (all variants)
+build
+build/
+/build/
+**/build/**
+build-*
+build-*/
+/build-*/
+
+# vcpkg (nuclear option - block everything)
+.vcpkg
+.vcpkg/
+/.vcpkg/
+**/.vcpkg/**
+vcpkg_installed
+vcpkg_installed/
+/vcpkg_installed/
+**/vcpkg_installed/**
+vcpkg-dependencies
+vcpkg-dependencies/
+**/vcpkg-dependencies/**
+installed/
+/installed/
+
+# Output directories
+out
+out/
+/out/
+**/out/**
+
+# IDE directories
+.vs
+.vs/
+/.vs/
+**/.vs/**
+.vscode/
+.idea/
+
+# CMake generated
+CMakeFiles
+CMakeFiles/
+**/CMakeFiles/**
+Testing
+Testing/
+**/Testing/**
+
+# Compiled artifacts (prevents searching binary junk)
+*.obj
+*.o
+*.a
+*.lib
+*.exe
+*.dll
+*.so
+*.dylib
+*.pdb
+*.ilk
+*.tlog
+*.vcxproj
+*.sln
+*.ninja
+

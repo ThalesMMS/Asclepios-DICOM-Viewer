@@ -1,0 +1,41 @@
+# Ripgrep ignore file
+# This ensures rg/ripgrep skips these paths even if .gitignore fails
+
+# Build directories (CRITICAL for performance)
+build/
+out/
+build-*/
+
+# vcpkg dependencies (HUGE directories - major performance killer)
+.vcpkg/
+vcpkg_installed/
+vcpkg-dependencies/
+installed/
+
+# IDE caches
+.vs/
+.vscode/
+.idea/
+
+# Test outputs
+Testing/
+
+# Qt generated files
+ui_*.h
+moc_*.cpp
+qrc_*.cpp
+
+# Binary and compiled files
+*.exe
+*.dll
+*.so
+*.dylib
+*.obj
+*.o
+*.lib
+*.a
+*.pdb
+
+# Large sample data (if needed, comment out)
+# SampleDICOM/
+

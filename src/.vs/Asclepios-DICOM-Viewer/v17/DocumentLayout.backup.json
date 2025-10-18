@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Asclepios-DICOM-Viewer\\src\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Asclepios-DICOM-Viewer\\lib\\include\\vtk-8.2\\vtkRenderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Asclepios-DICOM-Viewer\\deps\\vtk\\Interaction\\Image\\vtkImageViewer2.cxx||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom\\Source\\vtkDICOMMetaData.cxx||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "vtkRenderer.h",
+              "DocumentMoniker": "D:\\Asclepios-DICOM-Viewer\\lib\\include\\vtk-8.2\\vtkRenderer.h",
+              "RelativeDocumentMoniker": "..\\lib\\include\\vtk-8.2\\vtkRenderer.h",
+              "ToolTip": "D:\\Asclepios-DICOM-Viewer\\lib\\include\\vtk-8.2\\vtkRenderer.h",
+              "RelativeToolTip": "..\\lib\\include\\vtk-8.2\\vtkRenderer.h",
+              "ViewState": "AgIAAJcBAAAAAAAAAAAqwJ0BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-10-17T00:54:59.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "vtkImageViewer2.cxx",
+              "DocumentMoniker": "D:\\Asclepios-DICOM-Viewer\\deps\\vtk\\Interaction\\Image\\vtkImageViewer2.cxx",
+              "RelativeDocumentMoniker": "..\\deps\\vtk\\Interaction\\Image\\vtkImageViewer2.cxx",
+              "ToolTip": "D:\\Asclepios-DICOM-Viewer\\deps\\vtk\\Interaction\\Image\\vtkImageViewer2.cxx",
+              "RelativeToolTip": "..\\deps\\vtk\\Interaction\\Image\\vtkImageViewer2.cxx",
+              "ViewState": "AgIAAI0BAAAAAAAAAAAcwJIBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-17T00:52:11.577Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "vtkDICOMMetaData.cxx",
+              "DocumentMoniker": "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom\\Source\\vtkDICOMMetaData.cxx",
+              "RelativeDocumentMoniker": "..\\deps\\vtk-dicom\\Source\\vtkDICOMMetaData.cxx",
+              "ToolTip": "D:\\Asclepios-DICOM-Viewer\\deps\\vtk-dicom\\Source\\vtkDICOMMetaData.cxx",
+              "RelativeToolTip": "..\\deps\\vtk-dicom\\Source\\vtkDICOMMetaData.cxx",
+              "ViewState": "AgIAALsAAAAAAAAAAIAwwMIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-16T16:14:09.95Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
