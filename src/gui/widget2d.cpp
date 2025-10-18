@@ -238,11 +238,6 @@ void asclepios::gui::Widget2D::DcmtkImagePresenter::initializeFrameBuffer(DicomI
 
 void asclepios::gui::Widget2D::DcmtkImagePresenter::ensureFrameCached(FrameBuffer& t_frame)
 {
-        if (t_frame.Cached)
-        {
-                return;
-        }
-
         QMutexLocker locker(&m_cacheMutex);
         if (t_frame.Cached)
         {
