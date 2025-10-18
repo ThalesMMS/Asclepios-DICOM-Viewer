@@ -222,127 +222,177 @@ void asclepios::gui::vtkWidget3D::setFilter(const QString& t_filePath)
 }
 
 //-----------------------------------------------------------------------------
+bool asclepios::gui::vtkWidget3D::composeAndRenderVolume(const std::shared_ptr<core::DicomVolume>& volume,
+	const QString& initialFailureReason)
+{
+	const QByteArray disableOffscreenEnv = qgetenv("ASCLEPIOS_3D_DISABLE_OFFSCREEN").trimmed().toLower();
+	const bool disableOffscreen =
+		disableOffscreenEnv == "1" || disableOffscreenEnv == "true" || disableOffscreenEnv == "yes" ||
+		disableOffscreenEnv == "on";
+
+	if (m_renderWindows[0])
+	{
+		if (disableOffscreen)
+		{
+			qCInfo(lcVtkWidget3D)
+				<< "render() forcing on-screen rendering due to ASCLEPIOS_3D_DISABLE_OFFSCREEN"
+				<< disableOffscreenEnv;
+			m_renderWindows[0]->OffScreenRenderingOff();
+		}
+		else
+		{
+			m_renderWindows[0]->OffScreenRenderingOn();
+		}
+	}
+
+	setVolumeMapperBlend();
+	m_volumeData = volume;
+	m_lastVolumeError = initialFailureReason;
+	if (!m_volumeData || !m_volumeData->ImageData)
+	{
+		if (m_lastVolumeError.isEmpty())
+		{
+			m_lastVolumeError = QStringLiteral("Volume data unavailable for the selected dataset.");
+		}
+		qCCritical(lcVtkWidget3D) << "render() aborted - volume data unavailable." << m_lastVolumeError;
+		return false;
+	}
+
+	m_lastVolumeError.clear();
+	vtkDataArray* scalars = m_volumeData->ImageData->GetPointData()
+		? m_volumeData->ImageData->GetPointData()->GetScalars()
+		: nullptr;
+	if (!scalars)
+	{
+		m_lastVolumeError = QStringLiteral("Unable to access voxel intensities for 3D rendering.");
+		qCCritical(lcVtkWidget3D) << "render() aborted - missing scalar data.";
+		m_volumeData.reset();
+		return false;
+	}
+
+	double scalarRange[2] = { 0.0, 0.0 };
+	scalars->GetRange(scalarRange);
+	if (isUniformRange(scalarRange[0], scalarRange[1]))
+	{
+		m_lastVolumeError = QStringLiteral(
+			"Volume decoded but intensities are uniform; the 3D view would appear black.");
+		qCWarning(lcVtkWidget3D)
+			<< "render() aborted - uniform scalar range" << scalarRange[0] << scalarRange[1];
+		m_volumeData.reset();
+		return false;
+	}
+
+	const auto [window, level] = getWindowLevel(m_volumeData);
+	qCInfo(lcVtkWidget3D) << "render() configuring pipeline"
+		<< "seriesUid" << (m_series ? QString::fromStdString(m_series->getUID()) : QStringLiteral("n/a"))
+		<< "imageIdx" << (m_image ? m_image->getIndex() : -1);
+	m_mapper->SetInputData(m_volumeData->ImageData);
+	applyWindowLevelToTransferFunction(window, level);
+	m_volume->SetMapper(m_mapper);
+	updateFilter();
+	if (m_volumeData->Direction)
+	{
+		m_volume->SetUserMatrix(m_volumeData->Direction);
+		m_volume->SetOrigin(0.0, 0.0, 0.0);
+	}
+	else
+	{
+		const auto& origin = m_volumeData->Geometry.Origin;
+		m_volume->SetOrigin(origin[0], origin[1], origin[2]);
+	}
+
+	if (m_renderer)
+	{
+		m_renderer->RemoveAllViewProps();
+		m_renderer->AddVolume(m_volume);
+		m_renderer->ResetCamera();
+	}
+	if (m_renderWindows[0])
+	{
+		m_renderWindows[0]->AddRenderer(m_renderer);
+	}
+
+	double viewport[4] = { 0.0, 0.0, 0.0, 0.0 };
+	if (m_renderer && m_renderer->GetViewport())
+	{
+		const double* rendererViewport = m_renderer->GetViewport();
+		viewport[0] = rendererViewport[0];
+		viewport[1] = rendererViewport[1];
+		viewport[2] = rendererViewport[2];
+		viewport[3] = rendererViewport[3];
+	}
+
+	double clippingRange[2] = { 0.0, 0.0 };
+	if (auto* const camera = m_renderer ? m_renderer->GetActiveCamera() : nullptr)
+	{
+		camera->GetClippingRange(clippingRange);
+	}
+
+	const int* size = m_renderWindows[0] ? m_renderWindows[0]->GetSize() : nullptr;
+	auto* const openGlWindow = m_renderWindows[0]
+		? vtkOpenGLRenderWindow::SafeDownCast(m_renderWindows[0])
+		: nullptr;
+	const unsigned int frameBufferObject = openGlWindow ? openGlWindow->GetFrameBufferObject() : 0U;
+	const unsigned int defaultFrameBufferId = openGlWindow ? openGlWindow->GetDefaultFrameBufferId() : 0U;
+	qCInfo(lcVtkWidget3D) << "render() OpenGL state"
+		<< "size" << (size ? size[0] : 0) << (size ? size[1] : 0)
+		<< "viewport" << viewport[0] << viewport[1] << viewport[2] << viewport[3]
+		<< "clipRange" << clippingRange[0] << clippingRange[1]
+		<< "offscreen" << (m_renderWindows[0] ? m_renderWindows[0]->GetOffScreenRendering() : 0)
+		<< "fbo" << frameBufferObject
+		<< "defaultFbo" << defaultFrameBufferId;
+
+	if (!m_renderWindows[0])
+	{
+		m_lastVolumeError = QStringLiteral("Render window unavailable for volume composition.");
+		qCCritical(lcVtkWidget3D) << "render() aborted - render window unavailable.";
+		return false;
+	}
+
+	QElapsedTimer timer;
+	timer.start();
+	m_renderWindows[0]->Render();
+	const auto renderDuration = timer.elapsed();
+	if (!disableOffscreen && m_renderWindows[0])
+	{
+		m_renderWindows[0]->OffScreenRenderingOff();
+	}
+
+	double bounds[6] = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
+	if (m_volume)
+	{
+		m_volume->GetBounds(bounds);
+	}
+	initInteractorStyle();
+
+	int dimensions[3] = { 0, 0, 0 };
+	int extent[6] = { 0, 0, 0, 0, 0, 0 };
+	vtkIdType voxelCount = -1;
+	if (m_volumeData && m_volumeData->ImageData)
+	{
+		m_volumeData->ImageData->GetDimensions(dimensions);
+		m_volumeData->ImageData->GetExtent(extent);
+		voxelCount = static_cast<vtkIdType>(dimensions[0]) * dimensions[1] * dimensions[2];
+	}
+
+	qCInfo(lcVtkWidget3D)
+		<< "[Telemetry] Volume render completed"
+		<< "durationMs" << renderDuration
+		<< "extent" << extent[0] << extent[1] << extent[2] << extent[3] << extent[4] << extent[5]
+		<< "bounds" << bounds[0] << bounds[1] << bounds[2] << bounds[3] << bounds[4] << bounds[5]
+		<< "dimensions" << dimensions[0] << dimensions[1] << dimensions[2]
+		<< "voxelCount" << voxelCount
+		<< "scalarRange" << scalarRange[0] << scalarRange[1];
+
+	return true;
+}
+
+//-----------------------------------------------------------------------------
 void asclepios::gui::vtkWidget3D::render()
 {
-        const QByteArray disableOffscreenEnv = qgetenv("ASCLEPIOS_3D_DISABLE_OFFSCREEN").trimmed().toLower();
-        const bool disableOffscreen =
-                disableOffscreenEnv == "1" || disableOffscreenEnv == "true" || disableOffscreenEnv == "yes" ||
-                disableOffscreenEnv == "on";
-        if (disableOffscreen)
-        {
-                qCInfo(lcVtkWidget3D) << "render() forcing on-screen rendering due to ASCLEPIOS_3D_DISABLE_OFFSCREEN"
-                                      << disableOffscreenEnv;
-                m_renderWindows[0]->OffScreenRenderingOff();
-        }
-        else
-        {
-                m_renderWindows[0]->OffScreenRenderingOn();
-        }
-        setVolumeMapperBlend();
-        QString failureReason;
-        m_volumeData = acquireVolume(&failureReason);
-        m_lastVolumeError = failureReason;
-        if (!m_volumeData || !m_volumeData->ImageData)
-        {
-                qCCritical(lcVtkWidget3D) << "render() aborted - volume data unavailable." << m_lastVolumeError;
-                return;
-        }
-        m_lastVolumeError.clear();
-        vtkDataArray* scalars = m_volumeData->ImageData->GetPointData()
-                ? m_volumeData->ImageData->GetPointData()->GetScalars()
-                : nullptr;
-        if (!scalars)
-        {
-                m_lastVolumeError = QStringLiteral("Unable to access voxel intensities for 3D rendering.");
-                qCCritical(lcVtkWidget3D) << "render() aborted - missing scalar data.";
-                m_volumeData.reset();
-                return;
-        }
-        double scalarRange[2] = {0.0, 0.0};
-        scalars->GetRange(scalarRange);
-        if (isUniformRange(scalarRange[0], scalarRange[1]))
-        {
-                m_lastVolumeError = QStringLiteral(
-                        "Volume decoded but intensities are uniform; the 3D view would appear black.");
-                qCWarning(lcVtkWidget3D)
-                        << "render() aborted - uniform scalar range" << scalarRange[0] << scalarRange[1];
-                m_volumeData.reset();
-                return;
-        }
-        const auto [window, level] = getWindowLevel(m_volumeData);
-        qCInfo(lcVtkWidget3D) << "render() configuring pipeline"
-                              << "seriesUid" << (m_series ? QString::fromStdString(m_series->getUID()) : QStringLiteral("n/a"))
-                              << "imageIdx" << (m_image ? m_image->getIndex() : -1);
-        m_mapper->SetInputData(m_volumeData->ImageData);
-        applyWindowLevelToTransferFunction(window, level);
-        m_volume->SetMapper(m_mapper);
-        updateFilter();
-        if (m_volumeData->Direction)
-        {
-                m_volume->SetUserMatrix(m_volumeData->Direction);
-                m_volume->SetOrigin(0.0, 0.0, 0.0);
-        }
-        else
-        {
-                const auto& origin = m_volumeData->Geometry.Origin;
-                m_volume->SetOrigin(origin[0], origin[1], origin[2]);
-        }
-        m_renderer->AddVolume(m_volume);
-        m_renderer->ResetCamera();
-        m_renderWindows[0]->AddRenderer(m_renderer);
-        double viewport[4] = {0.0, 0.0, 0.0, 0.0};
-        if (m_renderer && m_renderer->GetViewport())
-        {
-                const double* rendererViewport = m_renderer->GetViewport();
-                viewport[0] = rendererViewport[0];
-                viewport[1] = rendererViewport[1];
-                viewport[2] = rendererViewport[2];
-                viewport[3] = rendererViewport[3];
-        }
-        double clippingRange[2] = {0.0, 0.0};
-        if (auto* const camera = m_renderer ? m_renderer->GetActiveCamera() : nullptr)
-        {
-                camera->GetClippingRange(clippingRange);
-        }
-        const int* size = m_renderWindows[0]->GetSize();
-        auto* const openGlWindow = vtkOpenGLRenderWindow::SafeDownCast(m_renderWindows[0]);
-        const unsigned int frameBufferObject = openGlWindow ? openGlWindow->GetFrameBufferObject() : 0U;
-        const unsigned int defaultFrameBufferId = openGlWindow ? openGlWindow->GetDefaultFrameBufferId() : 0U;
-        qCInfo(lcVtkWidget3D) << "render() OpenGL state"
-                              << "size" << (size ? size[0] : 0) << (size ? size[1] : 0)
-                              << "viewport" << viewport[0] << viewport[1] << viewport[2] << viewport[3]
-                              << "clipRange" << clippingRange[0] << clippingRange[1]
-                              << "offscreen" << m_renderWindows[0]->GetOffScreenRendering()
-                              << "fbo" << frameBufferObject
-                              << "defaultFbo" << defaultFrameBufferId;
-        QElapsedTimer timer;
-        timer.start();
-        m_renderWindows[0]->Render();
-        const auto renderDuration = timer.elapsed();
-        if (!disableOffscreen)
-        {
-                m_renderWindows[0]->OffScreenRenderingOff();
-        }
-        double bounds[6] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
-        m_volume->GetBounds(bounds);
-        initInteractorStyle();
-        int dimensions[3] = {0, 0, 0};
-        int extent[6] = {0, 0, 0, 0, 0, 0};
-        vtkIdType voxelCount = -1;
-        if (m_volumeData->ImageData)
-        {
-                m_volumeData->ImageData->GetDimensions(dimensions);
-                m_volumeData->ImageData->GetExtent(extent);
-                voxelCount = static_cast<vtkIdType>(dimensions[0]) * dimensions[1] * dimensions[2];
-        }
-        qCInfo(lcVtkWidget3D)
-                << "[Telemetry] Volume render completed"
-                << "durationMs" << renderDuration
-                << "extent" << extent[0] << extent[1] << extent[2] << extent[3] << extent[4] << extent[5]
-                << "bounds" << bounds[0] << bounds[1] << bounds[2] << bounds[3] << bounds[4] << bounds[5]
-                << "dimensions" << dimensions[0] << dimensions[1] << dimensions[2]
-                << "voxelCount" << voxelCount
-                << "scalarRange" << scalarRange[0] << scalarRange[1];
+	QString failureReason;
+	const auto volume = acquireVolume(&failureReason);
+	composeAndRenderVolume(volume, failureReason);
 }
 
 //-----------------------------------------------------------------------------

@@ -7,6 +7,7 @@
 #include <QLoggingCategory>
 #include <QMessageBox>
 #include <QString>
+#include <QMetaObject>
 #include <QtConcurrent/qtconcurrentrun.h>
 
 Q_LOGGING_CATEGORY(lcWidget3D, "asclepios.gui.widget3d")
@@ -169,12 +170,41 @@ void asclepios::gui::Widget3D::onFinishedRenderAsync()
 //-----------------------------------------------------------------------------
 void asclepios::gui::Widget3D::onRenderAsync(Widget3D* t_self)
 {
-        QElapsedTimer timer;
-        timer.start();
-        t_self->m_vtkWidget->render();
-        qCInfo(lcWidget3D) << "vtkWidget3D::render completed" << "seriesIdx" << t_self->m_seriesIndex
-                           << "imageIdx" << t_self->m_imageIndex << "durationMs" << timer.elapsed();
-        emit t_self->finishedRenderAsync();
+        QElapsedTimer totalTimer;
+        totalTimer.start();
+        QString failureReason;
+        std::shared_ptr<core::DicomVolume> volume;
+        try
+        {
+                volume = t_self->m_vtkWidget->acquireVolume(&failureReason);
+        }
+        catch (const std::exception& ex)
+        {
+                failureReason = QString::fromUtf8(ex.what());
+        }
+        catch (...)
+        {
+                failureReason = QStringLiteral("Unexpected error while decoding series volume.");
+        }
+        const qint64 decodeDurationMs = totalTimer.elapsed();
+        QMetaObject::invokeMethod(
+                t_self,
+                [t_self, volume, failureReason, decodeDurationMs]() mutable
+                {
+                        QElapsedTimer composeTimer;
+                        composeTimer.start();
+                        const bool success = t_self->m_vtkWidget->composeAndRenderVolume(volume, failureReason);
+                        const qint64 composeDurationMs = composeTimer.elapsed();
+                        qCInfo(lcWidget3D) << "vtkWidget3D::render completed"
+                                           << "seriesIdx" << t_self->m_seriesIndex
+                                           << "imageIdx" << t_self->m_imageIndex
+                                           << "decodeMs" << decodeDurationMs
+                                           << "composeMs" << composeDurationMs
+                                           << "totalMs" << (decodeDurationMs + composeDurationMs)
+                                           << "success" << success;
+                        emit t_self->finishedRenderAsync();
+                },
+                Qt::QueuedConnection);
 }
 
 //-----------------------------------------------------------------------------

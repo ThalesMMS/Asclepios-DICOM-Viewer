@@ -14,9 +14,12 @@
 
 namespace asclepios::gui
 {
+	class Widget3D;
+
 	class vtkWidget3D final : public vtkWidgetBase
 	{
 	public:
+		friend class Widget3D;
 		vtkWidget3D() { initWidget(); };
 		~vtkWidget3D() = default;
 		//getters
