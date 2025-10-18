@@ -1,0 +1,373 @@
+﻿MSBuild version 17.14.23+b0019275e for .NET Framework
+Build started 10/18/2025 11:02:11 AM.
+
+     1>Project "D:\Asclepios-DICOM-Viewer\src\Asclepios-DICOM-Viewer.sln" on node 1 (default targets).
+     1>ValidateSolutionConfiguration:
+         Building solution configuration "Debug|x64".
+     1>Project "D:\Asclepios-DICOM-Viewer\src\Asclepios-DICOM-Viewer.sln" (1) is building "D:\Asclepios-DICOM-Viewer\src\core\core.vcxproj" (3) on node 2 (default targets).
+     3>PrepareForBuild:
+         Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+       InitializeBuildStatus:
+         Creating "x64\Debug\core.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "x64\Debug\core.tlog\unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX86\x64\CL.exe /c /IC:\Qt5\5.15.2\msvc2019_64\include /IC:\Qt5\5.15.2\msvc2019_64\include\QtCore /I..\..\lib\include /I..\..\lib\include\vtkdicom /I"..\..\lib\include\vtk-8.2" /I..\..\lib\include\dcmtk /ZI /JMC /nologo /W0 /WX- /diagnostics:column /sdl /Od /D _DEBUG /D CORE_EXPORTS /D _WINDOWS /D _USRDLL /D _WINDLL /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c++17 /permissive- /Fo"x64\Debug\\" /Fd"x64\Debug\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue corecontroller.cpp corerepository.cpp dicomreader.cpp dicomvolume.cpp image.cpp patient.cpp series.cpp smartdjdecoderregistration.cpp study.cpp utils.cpp
+         corecontroller.cpp
+         corerepository.cpp
+         dicomreader.cpp
+         dicomvolume.cpp
+         image.cpp
+         patient.cpp
+         series.cpp
+         smartdjdecoderregistration.cpp
+         study.cpp
+         utils.cpp
+         Generating Code...
+       Link:
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"D:\Asclepios-DICOM-Viewer\src\x64\Debug\core.dll" /INCREMENTAL /ILK:"x64\Debug\core.ilk" /NOLOGO /LIBPATH:..\x64\Debug /LIBPATH:..\..\lib\debug\vtkdicom /LIBPATH:..\..\lib\debug\vtk /LIBPATH:..\..\lib\debug\dcmtk /LIBPATH:C:\Qt5\5.15.2\msvc2019_64\lib Qt5Cored.lib Qt5Concurrentd.lib dcmtk.lib "vtkChartsCore-8.2.lib" "vtkCommonColor-8.2.lib" "vtkCommonComputationalGeometry-8.2.lib" "vtkCommonCore-8.2.lib" "vtkCommonDataModel-8.2.lib" "vtkCommonExecutionModel-8.2.lib" "vtkCommonMath-8.2.lib" "vtkCommonMisc-8.2.lib" "vtkCommonSystem-8.2.lib" "vtkCommonTransforms-8.2.lib" "vtkDICOMParser-8.2.lib" "vtkDomainsChemistry-8.2.lib" "vtkDomainsChemistryOpenGL2-8.2.lib" "vtkdoubleconversion-8.2.lib" "vtkexodusII-8.2.lib" "vtkexpat-8.2.lib" "vtkFiltersAMR-8.2.lib" "vtkFiltersCore-8.2.lib" "vtkFiltersExtraction-8.2.lib" "vtkFiltersFlowPaths-8.2.lib" "vtkFiltersGeneral-8.2.lib" "vtkFiltersGeneric-8.2.lib" "vtkFiltersGeometry-8.2.lib" "vtkFiltersHybrid-8.2.lib" "vtkFiltersHyperTree-8.2.lib" "vtkFiltersImaging-8.2.lib" "vtkFiltersModeling-8.2.lib" "vtkFiltersParallel-8.2.lib" "vtkFiltersParallelImaging-8.2.lib" "vtkFiltersPoints-8.2.lib" "vtkFiltersProgrammable-8.2.lib" "vtkFiltersSelection-8.2.lib" "vtkFiltersSMP-8.2.lib" "vtkFiltersSources-8.2.lib" "vtkFiltersStatistics-8.2.lib" "vtkFiltersTexture-8.2.lib" "vtkFiltersTopology-8.2.lib" "vtkFiltersVerdict-8.2.lib" "vtkfreetype-8.2.lib" "vtkGeovisCore-8.2.lib" "vtkgl2ps-8.2.lib" "vtkglew-8.2.lib" "vtkGUISupportQt-8.2.lib" "vtkGUISupportQtSQL-8.2.lib" "vtkhdf5_hl-8.2.lib" "vtkhdf5-8.2.lib" "vtkImagingColor-8.2.lib" "vtkImagingCore-8.2.lib" "vtkImagingFourier-8.2.lib" "vtkImagingGeneral-8.2.lib" "vtkImagingHybrid-8.2.lib" "vtkImagingMath-8.2.lib" "vtkImagingMorphological-8.2.lib" "vtkImagingSources-8.2.lib" "vtkImagingStatistics-8.2.lib" "vtkImagingStencil-8.2.lib" "vtkInfovisCore-8.2.lib" "vtkInfovisLayout-8.2.lib" "vtkInteractionImage-8.2.lib" "vtkInteractionStyle-8.2.lib" "vtkInteractionWidgets-8.2.lib" "vtkIOAMR-8.2.lib" "vtkIOAsynchronous-8.2.lib" "vtkIOCityGML-8.2.lib" "vtkIOCore-8.2.lib" "vtkIOEnSight-8.2.lib" "vtkIOExodus-8.2.lib" "vtkIOExport-8.2.lib" "vtkIOExportPDF-8.2.lib" "vtkIOGeometry-8.2.lib" "vtkIOImage-8.2.lib" "vtkIOImport-8.2.lib" "vtkIOInfovis-8.2.lib" "vtkIOLegacy-8.2.lib" "vtkIOLSDyna-8.2.lib" "vtkIOMINC-8.2.lib" "vtkIOMovie-8.2.lib" "vtkIONetCDF-8.2.lib" "vtkIOParallel-8.2.lib" "vtkIOParallelXML-8.2.lib" "vtkIOPLY-8.2.lib" "vtkIOSegY-8.2.lib" "vtkIOSQL-8.2.lib" "vtkIOTecplotTable-8.2.lib" "vtkIOVeraOut-8.2.lib" "vtkIOVideo-8.2.lib" "vtkIOXML-8.2.lib" "vtkIOXMLParser-8.2.lib" "vtkjpeg-8.2.lib" "vtkjsoncpp-8.2.lib" "vtklibharu-8.2.lib" "vtklibxml2-8.2.lib" "vtklz4-8.2.lib" "vtklzma-8.2.lib" "vtkmetaio-8.2.lib" "vtknetcdf-8.2.lib" "vtkogg-8.2.lib" "vtkParallelCore-8.2.lib" "vtkpng-8.2.lib" "vtkpugixml-8.2.lib" "vtkRenderingAnnotation-8.2.lib" "vtkRenderingContext2D-8.2.lib" "vtkRenderingContextOpenGL2-8.2.lib" "vtkRenderingCore-8.2.lib" "vtkRenderingFreeType-8.2.lib" "vtkRenderingGL2PSOpenGL2-8.2.lib" "vtkRenderingImage-8.2.lib" "vtkRenderingLabel-8.2.lib" "vtkRenderingLOD-8.2.lib" "vtkRenderingOpenGL2-8.2.lib" "vtkRenderingQt-8.2.lib" "vtkRenderingVolume-8.2.lib" "vtkRenderingVolumeOpenGL2-8.2.lib" "vtksqlite-8.2.lib" "vtksys-8.2.lib" "vtktheora-8.2.lib" "vtktiff-8.2.lib" "vtkverdict-8.2.lib" "vtkViewsContext2D-8.2.lib" "vtkViewsCore-8.2.lib" "vtkViewsInfovis-8.2.lib" "vtkViewsQt-8.2.lib" "vtkzlib-8.2.lib" ws2_32.lib netapi32.lib iphlpapi.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Asclepios-DICOM-Viewer\src\x64\Debug\core.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Asclepios-DICOM-Viewer\src\x64\Debug\core.lib" /MACHINE:X64 /DLL x64\Debug\corecontroller.obj
+         x64\Debug\corerepository.obj
+         x64\Debug\dicomreader.obj
+         x64\Debug\dicomvolume.obj
+         x64\Debug\image.obj
+         x64\Debug\patient.obj
+         x64\Debug\series.obj
+         x64\Debug\smartdjdecoderregistration.obj
+         x64\Debug\study.obj
+         x64\Debug\utils.obj
+            Creating library D:\Asclepios-DICOM-Viewer\src\x64\Debug\core.lib and object D:\Asclepios-DICOM-Viewer\src\x64\Debug\core.exp
+         core.vcxproj -> D:\Asclepios-DICOM-Viewer\src\x64\Debug\core.dll
+       FinalizeBuildStatus:
+         Deleting file "x64\Debug\core.tlog\unsuccessfulbuild".
+         Touching "x64\Debug\core.tlog\core.lastbuildstate".
+     3>Done Building Project "D:\Asclepios-DICOM-Viewer\src\core\core.vcxproj" (default targets).
+     1>Project "D:\Asclepios-DICOM-Viewer\src\Asclepios-DICOM-Viewer.sln" (1) is building "D:\Asclepios-DICOM-Viewer\src\gui\gui.vcxproj.metaproj" (2) on node 1 (default targets).
+     2>Project "D:\Asclepios-DICOM-Viewer\src\gui\gui.vcxproj.metaproj" (2) is building "D:\Asclepios-DICOM-Viewer\src\gui\gui.vcxproj" (4) on node 1 (default targets).
+     4>PrepareForBuild:
+         Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+       InitializeBuildStatus:
+         Touching "x64\Debug\gui.tlog\unsuccessfulbuild".
+       QtPrepare:
+          Qt/MSBuild: 3.4.1.0
+       QtVars:
+         WHERE /Q cl.exe
+         
+         ==== HostExec: Microsoft.Build.Tasks.Exec
+         WorkingDirectory: D:\Asclepios-DICOM-Viewer\src\gui\x64\Debug\qt\qmake
+         Command: ("C:/Qt5/5.15.2/msvc2019_64/bin/qmake" -query) 1> props.txt
+         ("C:/Qt5/5.15.2/msvc2019_64/bin/qmake" -query) 1> props.txt
+         == OK ExitCode: 0
+         
+         Reading Qt configuration (C:/Qt5/5.15.2/msvc2019_64/bin/qmake)
+         
+         ==== HostExec: Microsoft.Build.Tasks.Exec
+         WorkingDirectory: D:\Asclepios-DICOM-Viewer\src\gui\x64\Debug\qt\qmake
+         Command: ("C:/Qt5/5.15.2/msvc2019_64/bin/qmake"  -tp vc -early "CONFIG -= debug release debug_and_release" "CONFIG += debug warn_off"  qtvars.pro) 1> qtvars.log 2>&1
+         ("C:/Qt5/5.15.2/msvc2019_64/bin/qmake"  -tp vc -early "CONFIG -= debug release debug_and_release" "CONFIG += debug warn_off"  qtvars.pro) 1> qtvars.log 2>&1
+         == OK ExitCode: 0
+         
+         Copying file from "D:\Asclepios-DICOM-Viewer\src\gui\x64\Debug\qt\qmake\qtvars.xml" to "D:\Asclepios-DICOM-Viewer\src\gui\x64\Debug\qt\qtvars.xml".
+       QtVarsLoad:
+          Qt: 5.15.2
+       QtUicSetModified:
+       Skipping target "QtUicSetModified" because all output files are up-to-date with respect to the input files.
+       QtUicSetModified:
+       Skipping target "QtUicSetModified" because all output files are up-to-date with respect to the input files.
+       QtUicSetModified:
+       Skipping target "QtUicSetModified" because all output files are up-to-date with respect to the input files.
+       QtUicSetModified:
+       Skipping target "QtUicSetModified" because all output files are up-to-date with respect to the input files.
+       QtUicSetModified:
+       Skipping target "QtUicSetModified" because all output files are up-to-date with respect to the input files.
+       QtUicSetModified:
+       Skipping target "QtUicSetModified" because all output files are up-to-date with respect to the input files.
+       QtUicSetModified:
+       Skipping target "QtUicSetModified" because all output files are up-to-date with respect to the input files.
+       QtUicSetModified:
+       Skipping target "QtUicSetModified" because all output files are up-to-date with respect to the input files.
+       QtUicSetModified:
+       Skipping target "QtUicSetModified" because all output files are up-to-date with respect to the input files.
+       QtUicSetModified:
+       Skipping target "QtUicSetModified" because all output files are up-to-date with respect to the input files.
+       QtUicSetModified:
+       Skipping target "QtUicSetModified" because all output files are up-to-date with respect to the input files.
+       QtUicSetModified:
+       Skipping target "QtUicSetModified" because all output files are up-to-date with respect to the input files.
+       QtUicSetModified:
+       Skipping target "QtUicSetModified" because all output files are up-to-date with respect to the input files.
+       QtUicSetModified:
+       Skipping target "QtUicSetModified" because all output files are up-to-date with respect to the input files.
+       QtUicSetModified:
+       Skipping target "QtUicSetModified" because all output files are up-to-date with respect to the input files.
+       QtRccSetModified:
+       Skipping target "QtRccSetModified" because all output files are up-to-date with respect to the input files.
+       QtRccFilterSetModified:
+       Skipping target "QtRccFilterSetModified" because it has no outputs.
+       QtRccFilter:
+       Skipping target "QtRccFilter" because it has no outputs.
+       QtQmlSetModified:
+       Skipping target "QtQmlSetModified" because it has no outputs.
+       QtQmlCacheItem:
+       Skipping target "QtQmlCacheItem" because it has no outputs.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       QtMocSetModified:
+       Skipping target "QtMocSetModified" because all output files are up-to-date with respect to the input files.
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX86\x64\CL.exe /c /Ix64\Debug\qt\moc /Ix64\Debug\qt\uic /IC:\Qt5\5.15.2\msvc2019_64\include /IC:\Qt5\5.15.2\msvc2019_64\include\QtOpenGL /IC:\Qt5\5.15.2\msvc2019_64\include\QtQuickTest /IC:\Qt5\5.15.2\msvc2019_64\include\QtQuickWidgets /IC:\Qt5\5.15.2\msvc2019_64\include\QtWidgets /IC:\Qt5\5.15.2\msvc2019_64\include\QtOpenGLExtensions /IC:\Qt5\5.15.2\msvc2019_64\include\QtQuickControls2 /IC:\Qt5\5.15.2\msvc2019_64\include\QtQuick /IC:\Qt5\5.15.2\msvc2019_64\include\QtWinExtras /IC:\Qt5\5.15.2\msvc2019_64\include\QtGui /IC:\Qt5\5.15.2\msvc2019_64\include\QtANGLE /IC:\Qt5\5.15.2\msvc2019_64\include\QtTest /IC:\Qt5\5.15.2\msvc2019_64\include\QtQmlModels /IC:\Qt5\5.15.2\msvc2019_64\include\QtQml /IC:\Qt5\5.15.2\msvc2019_64\include\QtNetwork /IC:\Qt5\5.15.2\msvc2019_64\include\QtCore /I"C:\Qt5\5.15.2\msvc2019_64\mkspecs\win32-msvc" /I"D:\Asclepios-DICOM-Viewer\src\gui\\" /I.\GeneratedFiles\Debug /I.\GeneratedFiles /Ix64\Debug\qt\uic /Ix64\Debug\qt\moc /IC:\Qt5\5.15.2\msvc2019_64\include /IC:\Qt5\5.15.2\msvc2019_64\include\QtCore /IC:\Qt5\5.15.2\msvc2019_64\include\QtGui /IC:\Qt5\5.15.2\msvc2019_64\include\QtWidgets /IC:\Qt5\5.15.2\msvc2019_64\include\QtConcurrent /I..\..\lib\include /I..\..\lib\include\vtkdicom /I"..\..\lib\include\vtk-8.2" /I..\..\lib\include\dcmtk /I..\core /I.\ /Zi /nologo /W1 /WX- /diagnostics:column /MP /Od /D _CONSOLE /D WIN32 /D _ENABLE_EXTENDED_ALIGNED_STORAGE /D WIN64 /D QT_OPENGL_LIB /D QT_QMLTEST_LIB /D QT_QUICKWIDGETS_LIB /D QT_WIDGETS_LIB /D QT_OPENGLEXTENSIONS_LIB /D QT_QUICKCONTROLS2_LIB /D QT_QUICK_LIB /D QT_WINEXTRAS_LIB /D QT_GUI_LIB /D QT_TESTLIB_LIB /D QT_QMLMODELS_LIB /D QT_QML_LIB /D QT_NETWORK_LIB /D QT_CORE_LIB /D "QT_TESTCASE_BUILDDIR=\"D:/Asclepios-DICOM-Viewer/src/gui/x64/Debug/qt/qmake\"" /D _MBCS /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c++17 /Fo"x64\Debug\\" /Fd"x64\Debug\vc143.pdb" /external:W1 /Gd /TP /FC /errorReport:queue -Zc:rvalueCast -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus corneroverlay.cpp dcmtkoverlaywidget.cpp filemenu.cpp filesimporter.cpp framelesswindow.cpp gui.cpp guiframe.cpp layoutmenu.cpp loadinganimation.cpp main.cpp mprmaker.cpp overlayinfo.cpp patienttab.cpp studylist.cpp tabwidget.cpp thumbnailswidget.cpp toolbarwidget3d.cpp toolbarwidgetmpr.cpp transferfunction.cpp vtkboxwidget3dcallbackcpp.cpp vtkeventfilter.cpp vtkresliceactor.cpp vtkreslicecallback.cpp vtkresliceplanecursorwidget.cpp vtkreslicerotator.cpp vtkreslicetranslator.cpp vtkreslicewidget.cpp vtkreslicewidgetrepresentation.cpp vtkwidget2d.cpp vtkwidget2dinteractorstyle.cpp vtkwidget3d.cpp vtkwidget3dinteractorstyle.cpp vtkwidgetbase.cpp vtkwidgetdicom.cpp vtkwidgetmpr.cpp vtkwidgetmprcallback.cpp vtkwidgetmprinteractorstyle.cpp vtkwidgetoverlay.cpp vtkwidgetoverlaycallback.cpp widget2d.cpp widget3d.cpp widgetbase.cpp widgetmpr.cpp widgetscontainer.cpp widgetscontroller.cpp widgetsrepository.cpp windowlevelfilter.cpp
+         corneroverlay.cpp
+         dcmtkoverlaywidget.cpp
+         filemenu.cpp
+         filesimporter.cpp
+         framelesswindow.cpp
+         gui.cpp
+         guiframe.cpp
+         layoutmenu.cpp
+         loadinganimation.cpp
+         main.cpp
+         mprmaker.cpp
+         overlayinfo.cpp
+         patienttab.cpp
+         studylist.cpp
+         tabwidget.cpp
+         thumbnailswidget.cpp
+         toolbarwidget3d.cpp
+         toolbarwidgetmpr.cpp
+         transferfunction.cpp
+         vtkboxwidget3dcallbackcpp.cpp
+         vtkeventfilter.cpp
+         vtkresliceactor.cpp
+         vtkreslicecallback.cpp
+         vtkresliceplanecursorwidget.cpp
+         vtkreslicerotator.cpp
+         vtkreslicetranslator.cpp
+         vtkreslicewidget.cpp
+         vtkreslicewidgetrepresentation.cpp
+         vtkwidget2d.cpp
+         vtkwidget2dinteractorstyle.cpp
+         vtkwidget3d.cpp
+         vtkwidget3dinteractorstyle.cpp
+         vtkwidgetbase.cpp
+         vtkwidgetdicom.cpp
+         vtkwidgetmpr.cpp
+         vtkwidgetmprcallback.cpp
+         vtkwidgetmprinteractorstyle.cpp
+         vtkwidgetoverlay.cpp
+         vtkwidgetoverlaycallback.cpp
+         widget2d.cpp
+         widget3d.cpp
+         widgetbase.cpp
+         widgetmpr.cpp
+         widgetscontainer.cpp
+         widgetscontroller.cpp
+         widgetsrepository.cpp
+         windowlevelfilter.cpp
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX86\x64\CL.exe /c /Ix64\Debug\qt\moc /Ix64\Debug\qt\uic /IC:\Qt5\5.15.2\msvc2019_64\include /IC:\Qt5\5.15.2\msvc2019_64\include\QtOpenGL /IC:\Qt5\5.15.2\msvc2019_64\include\QtQuickTest /IC:\Qt5\5.15.2\msvc2019_64\include\QtQuickWidgets /IC:\Qt5\5.15.2\msvc2019_64\include\QtWidgets /IC:\Qt5\5.15.2\msvc2019_64\include\QtOpenGLExtensions /IC:\Qt5\5.15.2\msvc2019_64\include\QtQuickControls2 /IC:\Qt5\5.15.2\msvc2019_64\include\QtQuick /IC:\Qt5\5.15.2\msvc2019_64\include\QtWinExtras /IC:\Qt5\5.15.2\msvc2019_64\include\QtGui /IC:\Qt5\5.15.2\msvc2019_64\include\QtANGLE /IC:\Qt5\5.15.2\msvc2019_64\include\QtTest /IC:\Qt5\5.15.2\msvc2019_64\include\QtQmlModels /IC:\Qt5\5.15.2\msvc2019_64\include\QtQml /IC:\Qt5\5.15.2\msvc2019_64\include\QtNetwork /IC:\Qt5\5.15.2\msvc2019_64\include\QtCore /I"C:\Qt5\5.15.2\msvc2019_64\mkspecs\win32-msvc" /I"D:\Asclepios-DICOM-Viewer\src\gui\\" /I.\GeneratedFiles\Debug /I.\GeneratedFiles /Ix64\Debug\qt\uic /Ix64\Debug\qt\moc /IC:\Qt5\5.15.2\msvc2019_64\include /IC:\Qt5\5.15.2\msvc2019_64\include\QtCore /IC:\Qt5\5.15.2\msvc2019_64\include\QtGui /IC:\Qt5\5.15.2\msvc2019_64\include\QtWidgets /IC:\Qt5\5.15.2\msvc2019_64\include\QtConcurrent /I..\..\lib\include /I..\..\lib\include\vtkdicom /I"..\..\lib\include\vtk-8.2" /I..\..\lib\include\dcmtk /I..\core /I.\ /Zi /nologo /W1 /WX- /diagnostics:column /MP /Od /D _CONSOLE /D WIN32 /D _ENABLE_EXTENDED_ALIGNED_STORAGE /D WIN64 /D QT_OPENGL_LIB /D QT_QMLTEST_LIB /D QT_QUICKWIDGETS_LIB /D QT_WIDGETS_LIB /D QT_OPENGLEXTENSIONS_LIB /D QT_QUICKCONTROLS2_LIB /D QT_QUICK_LIB /D QT_WINEXTRAS_LIB /D QT_GUI_LIB /D QT_TESTLIB_LIB /D QT_QMLMODELS_LIB /D QT_QML_LIB /D QT_NETWORK_LIB /D QT_CORE_LIB /D "QT_TESTCASE_BUILDDIR=\"D:/Asclepios-DICOM-Viewer/src/gui/x64/Debug/qt/qmake\"" /D _MBCS /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c++17 /Fo"x64\Debug\\" /Fd"x64\Debug\vc143.pdb" /external:W1 /Gd /TP /wd4711 /FC /errorReport:queue -Zc:rvalueCast -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus x64\Debug\qt\rcc\qrc_gui.cpp
+         qrc_gui.cpp
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX86\x64\CL.exe /c /Ix64\Debug\qt\moc /Ix64\Debug\qt\uic /IC:\Qt5\5.15.2\msvc2019_64\include /IC:\Qt5\5.15.2\msvc2019_64\include\QtOpenGL /IC:\Qt5\5.15.2\msvc2019_64\include\QtQuickTest /IC:\Qt5\5.15.2\msvc2019_64\include\QtQuickWidgets /IC:\Qt5\5.15.2\msvc2019_64\include\QtWidgets /IC:\Qt5\5.15.2\msvc2019_64\include\QtOpenGLExtensions /IC:\Qt5\5.15.2\msvc2019_64\include\QtQuickControls2 /IC:\Qt5\5.15.2\msvc2019_64\include\QtQuick /IC:\Qt5\5.15.2\msvc2019_64\include\QtWinExtras /IC:\Qt5\5.15.2\msvc2019_64\include\QtGui /IC:\Qt5\5.15.2\msvc2019_64\include\QtANGLE /IC:\Qt5\5.15.2\msvc2019_64\include\QtTest /IC:\Qt5\5.15.2\msvc2019_64\include\QtQmlModels /IC:\Qt5\5.15.2\msvc2019_64\include\QtQml /IC:\Qt5\5.15.2\msvc2019_64\include\QtNetwork /IC:\Qt5\5.15.2\msvc2019_64\include\QtCore /I"C:\Qt5\5.15.2\msvc2019_64\mkspecs\win32-msvc" /I"D:\Asclepios-DICOM-Viewer\src\gui\\" /I.\GeneratedFiles\Debug /I.\GeneratedFiles /Ix64\Debug\qt\uic /Ix64\Debug\qt\moc /IC:\Qt5\5.15.2\msvc2019_64\include /IC:\Qt5\5.15.2\msvc2019_64\include\QtCore /IC:\Qt5\5.15.2\msvc2019_64\include\QtGui /IC:\Qt5\5.15.2\msvc2019_64\include\QtWidgets /IC:\Qt5\5.15.2\msvc2019_64\include\QtConcurrent /I..\..\lib\include /I..\..\lib\include\vtkdicom /I"..\..\lib\include\vtk-8.2" /I..\..\lib\include\dcmtk /I..\core /I.\ /Zi /nologo /W1 /WX- /diagnostics:column /MP /Od /D _CONSOLE /D WIN32 /D _ENABLE_EXTENDED_ALIGNED_STORAGE /D WIN64 /D QT_OPENGL_LIB /D QT_QMLTEST_LIB /D QT_QUICKWIDGETS_LIB /D QT_WIDGETS_LIB /D QT_OPENGLEXTENSIONS_LIB /D QT_QUICKCONTROLS2_LIB /D QT_QUICK_LIB /D QT_WINEXTRAS_LIB /D QT_GUI_LIB /D QT_TESTLIB_LIB /D QT_QMLMODELS_LIB /D QT_QML_LIB /D QT_NETWORK_LIB /D QT_CORE_LIB /D "QT_TESTCASE_BUILDDIR=\"D:/Asclepios-DICOM-Viewer/src/gui/x64/Debug/qt/qmake\"" /D _MBCS /Gm- /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c++17 /Fo"x64\Debug\\" /Fd"x64\Debug\vc143.pdb" /external:W1 /Gd /TP /FC /errorReport:queue -Zc:rvalueCast -Zc:strictStrings -Zc:throwingNew -Zc:referenceBinding -Zc:__cplusplus x64\Debug\qt\moc\moc_gui.cpp x64\Debug\qt\moc\moc_dcmtkoverlaywidget.cpp x64\Debug\qt\moc\moc_guiframe.cpp x64\Debug\qt\moc\moc_framelesswindow.cpp x64\Debug\qt\moc\moc_filemenu.cpp x64\Debug\qt\moc\moc_loadinganimation.cpp x64\Debug\qt\moc\moc_toolbarwidget3d.cpp x64\Debug\qt\moc\moc_toolbarwidgetmpr.cpp x64\Debug\qt\moc\moc_widget3d.cpp x64\Debug\qt\moc\moc_widgetmpr.cpp x64\Debug\qt\moc\moc_filesimporter.cpp x64\Debug\qt\moc\moc_layoutmenu.cpp x64\Debug\qt\moc\moc_thumbnailswidget.cpp x64\Debug\qt\moc\moc_patienttab.cpp x64\Debug\qt\moc\moc_studylist.cpp x64\Debug\qt\moc\moc_vtkeventfilter.cpp x64\Debug\qt\moc\moc_tabwidget.cpp x64\Debug\qt\moc\moc_widgetbase.cpp x64\Debug\qt\moc\moc_widget2d.cpp x64\Debug\qt\moc\moc_widgetscontainer.cpp x64\Debug\qt\moc\moc_widgetscontroller.cpp
+         moc_gui.cpp
+         moc_dcmtkoverlaywidget.cpp
+         moc_guiframe.cpp
+         moc_framelesswindow.cpp
+         moc_filemenu.cpp
+         moc_loadinganimation.cpp
+         moc_toolbarwidget3d.cpp
+         moc_toolbarwidgetmpr.cpp
+         moc_widget3d.cpp
+         moc_widgetmpr.cpp
+         moc_filesimporter.cpp
+         moc_layoutmenu.cpp
+         moc_thumbnailswidget.cpp
+         moc_patienttab.cpp
+         moc_studylist.cpp
+         moc_vtkeventfilter.cpp
+         moc_tabwidget.cpp
+         moc_widgetbase.cpp
+         moc_widget2d.cpp
+         moc_widgetscontainer.cpp
+         moc_widgetscontroller.cpp
+       Link:
+         C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"D:\Asclepios-DICOM-Viewer\src\x64\Debug\\gui.exe" /NOLOGO /LIBPATH:..\..\lib\debug\vtkdicom /LIBPATH:..\..\lib\debug\vtk /LIBPATH:..\x64\Debug /LIBPATH:..\..\lib\debug\dcmtk /LIBPATH:C:\Qt5\5.15.2\msvc2019_64\lib Qt5Cored.lib Qt5Guid.lib Qt5Widgetsd.lib Qt5Concurrentd.lib dcmtk.lib "vtkChartsCore-8.2.lib" "vtkCommonColor-8.2.lib" "vtkCommonComputationalGeometry-8.2.lib" "vtkCommonCore-8.2.lib" "vtkCommonDataModel-8.2.lib" "vtkCommonExecutionModel-8.2.lib" "vtkCommonMath-8.2.lib" "vtkCommonMisc-8.2.lib" "vtkCommonSystem-8.2.lib" "vtkCommonTransforms-8.2.lib" "vtkDICOMParser-8.2.lib" "vtkDomainsChemistry-8.2.lib" "vtkDomainsChemistryOpenGL2-8.2.lib" "vtkdoubleconversion-8.2.lib" "vtkexodusII-8.2.lib" "vtkexpat-8.2.lib" "vtkFiltersAMR-8.2.lib" "vtkFiltersCore-8.2.lib" "vtkFiltersExtraction-8.2.lib" "vtkFiltersFlowPaths-8.2.lib" "vtkFiltersGeneral-8.2.lib" "vtkFiltersGeneric-8.2.lib" "vtkFiltersGeometry-8.2.lib" "vtkFiltersHybrid-8.2.lib" "vtkFiltersHyperTree-8.2.lib" "vtkFiltersImaging-8.2.lib" "vtkFiltersModeling-8.2.lib" "vtkFiltersParallel-8.2.lib" "vtkFiltersParallelImaging-8.2.lib" "vtkFiltersPoints-8.2.lib" "vtkFiltersProgrammable-8.2.lib" "vtkFiltersSelection-8.2.lib" "vtkFiltersSMP-8.2.lib" "vtkFiltersSources-8.2.lib" "vtkFiltersStatistics-8.2.lib" "vtkFiltersTexture-8.2.lib" "vtkFiltersTopology-8.2.lib" "vtkFiltersVerdict-8.2.lib" "vtkfreetype-8.2.lib" "vtkGeovisCore-8.2.lib" "vtkgl2ps-8.2.lib" "vtkglew-8.2.lib" "vtkGUISupportQt-8.2.lib" "vtkGUISupportQtSQL-8.2.lib" "vtkhdf5_hl-8.2.lib" "vtkhdf5-8.2.lib" "vtkImagingColor-8.2.lib" "vtkImagingCore-8.2.lib" "vtkImagingFourier-8.2.lib" "vtkImagingGeneral-8.2.lib" "vtkImagingHybrid-8.2.lib" "vtkImagingMath-8.2.lib" "vtkImagingMorphological-8.2.lib" "vtkImagingSources-8.2.lib" "vtkImagingStatistics-8.2.lib" "vtkImagingStencil-8.2.lib" "vtkInfovisCore-8.2.lib" "vtkInfovisLayout-8.2.lib" "vtkInteractionImage-8.2.lib" "vtkInteractionStyle-8.2.lib" "vtkInteractionWidgets-8.2.lib" "vtkIOAMR-8.2.lib" "vtkIOAsynchronous-8.2.lib" "vtkIOCityGML-8.2.lib" "vtkIOCore-8.2.lib" "vtkIOEnSight-8.2.lib" "vtkIOExodus-8.2.lib" "vtkIOExport-8.2.lib" "vtkIOExportPDF-8.2.lib" "vtkIOGeometry-8.2.lib" "vtkIOImage-8.2.lib" "vtkIOImport-8.2.lib" "vtkIOInfovis-8.2.lib" "vtkIOLegacy-8.2.lib" "vtkIOLSDyna-8.2.lib" "vtkIOMINC-8.2.lib" "vtkIOMovie-8.2.lib" "vtkIONetCDF-8.2.lib" "vtkIOParallel-8.2.lib" "vtkIOParallelXML-8.2.lib" "vtkIOPLY-8.2.lib" "vtkIOSegY-8.2.lib" "vtkIOSQL-8.2.lib" "vtkIOTecplotTable-8.2.lib" "vtkIOVeraOut-8.2.lib" "vtkIOVideo-8.2.lib" "vtkIOXML-8.2.lib" "vtkIOXMLParser-8.2.lib" "vtkjpeg-8.2.lib" "vtkjsoncpp-8.2.lib" "vtklibharu-8.2.lib" "vtklibxml2-8.2.lib" "vtklz4-8.2.lib" "vtklzma-8.2.lib" "vtkmetaio-8.2.lib" "vtknetcdf-8.2.lib" "vtkogg-8.2.lib" "vtkParallelCore-8.2.lib" "vtkpng-8.2.lib" "vtkpugixml-8.2.lib" "vtkRenderingAnnotation-8.2.lib" "vtkRenderingContext2D-8.2.lib" "vtkRenderingContextOpenGL2-8.2.lib" "vtkRenderingCore-8.2.lib" "vtkRenderingFreeType-8.2.lib" "vtkRenderingGL2PSOpenGL2-8.2.lib" "vtkRenderingImage-8.2.lib" "vtkRenderingLabel-8.2.lib" "vtkRenderingLOD-8.2.lib" "vtkRenderingOpenGL2-8.2.lib" "vtkRenderingQt-8.2.lib" "vtkRenderingVolume-8.2.lib" "vtkRenderingVolumeOpenGL2-8.2.lib" "vtksqlite-8.2.lib" "vtksys-8.2.lib" "vtktheora-8.2.lib" "vtktiff-8.2.lib" "vtkverdict-8.2.lib" "vtkViewsContext2D-8.2.lib" "vtkViewsCore-8.2.lib" "vtkViewsInfovis-8.2.lib" "vtkViewsQt-8.2.lib" "vtkzlib-8.2.lib" opengl32.lib glu32.lib Dbghelp.lib ws2_32.lib netapi32.lib iphlpapi.lib core.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib C:\Qt5\5.15.2\msvc2019_64\lib\Qt5OpenGLd.lib C:\Qt5\5.15.2\msvc2019_64\lib\Qt5QuickTestd.lib C:\Qt5\5.15.2\msvc2019_64\lib\Qt5QuickWidgetsd.lib C:\Qt5\5.15.2\msvc2019_64\lib\Qt5Widgetsd.lib C:\Qt5\5.15.2\msvc2019_64\lib\Qt5OpenGLExtensionsd.lib C:\Qt5\5.15.2\msvc2019_64\lib\Qt5QuickControls2d.lib C:\Qt5\5.15.2\msvc2019_64\lib\Qt5Quickd.lib C:\Qt5\5.15.2\msvc2019_64\lib\Qt5WinExtrasd.lib C:\Qt5\5.15.2\msvc2019_64\lib\Qt5Guid.lib C:\Qt5\5.15.2\msvc2019_64\lib\Qt5Testd.lib C:\Qt5\5.15.2\msvc2019_64\lib\Qt5QmlModelsd.lib C:\Qt5\5.15.2\msvc2019_64\lib\Qt5Qmld.lib C:\Qt5\5.15.2\msvc2019_64\lib\Qt5Networkd.lib C:\Qt5\5.15.2\msvc2019_64\lib\Qt5Cored.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Asclepios-DICOM-Viewer\src\x64\Debug\gui.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Asclepios-DICOM-Viewer\src\x64\Debug\gui.lib" /MACHINE:X64 /NATVIS:"x64\Debug\qt.natvis" /NATVIS:"x64\Debug\\qt.natvis" x64\Debug\corneroverlay.obj
+         x64\Debug\dcmtkoverlaywidget.obj
+         x64\Debug\filemenu.obj
+         x64\Debug\filesimporter.obj
+         x64\Debug\framelesswindow.obj
+         x64\Debug\gui.obj
+         x64\Debug\guiframe.obj
+         x64\Debug\layoutmenu.obj
+         x64\Debug\loadinganimation.obj
+         x64\Debug\main.obj
+         x64\Debug\mprmaker.obj
+         x64\Debug\overlayinfo.obj
+         x64\Debug\patienttab.obj
+         x64\Debug\studylist.obj
+         x64\Debug\tabwidget.obj
+         x64\Debug\thumbnailswidget.obj
+         x64\Debug\toolbarwidget3d.obj
+         x64\Debug\toolbarwidgetmpr.obj
+         x64\Debug\transferfunction.obj
+         x64\Debug\vtkboxwidget3dcallbackcpp.obj
+         x64\Debug\vtkeventfilter.obj
+         x64\Debug\vtkresliceactor.obj
+         x64\Debug\vtkreslicecallback.obj
+         x64\Debug\vtkresliceplanecursorwidget.obj
+         x64\Debug\vtkreslicerotator.obj
+         x64\Debug\vtkreslicetranslator.obj
+         x64\Debug\vtkreslicewidget.obj
+         x64\Debug\vtkreslicewidgetrepresentation.obj
+         x64\Debug\vtkwidget2d.obj
+         x64\Debug\vtkwidget2dinteractorstyle.obj
+         x64\Debug\vtkwidget3d.obj
+         x64\Debug\vtkwidget3dinteractorstyle.obj
+         x64\Debug\vtkwidgetbase.obj
+         x64\Debug\vtkwidgetdicom.obj
+         x64\Debug\vtkwidgetmpr.obj
+         x64\Debug\vtkwidgetmprcallback.obj
+         x64\Debug\vtkwidgetmprinteractorstyle.obj
+         x64\Debug\vtkwidgetoverlay.obj
+         x64\Debug\vtkwidgetoverlaycallback.obj
+         x64\Debug\widget2d.obj
+         x64\Debug\widget3d.obj
+         x64\Debug\widgetbase.obj
+         x64\Debug\widgetmpr.obj
+         x64\Debug\widgetscontainer.obj
+         x64\Debug\widgetscontroller.obj
+         x64\Debug\widgetsrepository.obj
+         x64\Debug\windowlevelfilter.obj
+         x64\Debug\qrc_gui.obj
+         x64\Debug\moc_gui.obj
+         x64\Debug\moc_dcmtkoverlaywidget.obj
+         x64\Debug\moc_guiframe.obj
+         x64\Debug\moc_framelesswindow.obj
+         x64\Debug\moc_filemenu.obj
+         x64\Debug\moc_loadinganimation.obj
+         x64\Debug\moc_toolbarwidget3d.obj
+         x64\Debug\moc_toolbarwidgetmpr.obj
+         x64\Debug\moc_widget3d.obj
+         x64\Debug\moc_widgetmpr.obj
+         x64\Debug\moc_filesimporter.obj
+         x64\Debug\moc_layoutmenu.obj
+         x64\Debug\moc_thumbnailswidget.obj
+         x64\Debug\moc_patienttab.obj
+         x64\Debug\moc_studylist.obj
+         x64\Debug\moc_vtkeventfilter.obj
+         x64\Debug\moc_tabwidget.obj
+         x64\Debug\moc_widgetbase.obj
+         x64\Debug\moc_widget2d.obj
+         x64\Debug\moc_widgetscontainer.obj
+         x64\Debug\moc_widgetscontroller.obj
+            Creating library D:\Asclepios-DICOM-Viewer\src\x64\Debug\gui.lib and object D:\Asclepios-DICOM-Viewer\src\x64\Debug\gui.exp
+         gui.vcxproj -> D:\Asclepios-DICOM-Viewer\src\x64\Debug\gui.exe
+       PostBuildEvent:
+         "C:/Qt5/5.15.2/msvc2019_64\bin\windeployqt.exe" --debug "D:\Asclepios-DICOM-Viewer\src\x64\Debug\gui.exe"
+         :VCEnd
+         D:\Asclepios-DICOM-Viewer\src\x64\Debug\gui.exe 64 bit, debug executable
+         Adding Qt5Svg for qsvgicond.dll
+         Direct dependencies: Qt5Core Qt5Gui Qt5Widgets
+         All dependencies   : Qt5Core Qt5Gui Qt5Widgets
+         To be deployed     : Qt5Core Qt5Gui Qt5Svg Qt5Widgets
+     4>EXEC : warning : Cannot find Visual Studio installation directory, VCINSTALLDIR is not set. [D:\Asclepios-DICOM-Viewer\src\gui\gui.vcxproj]
+         Updating Qt5Cored.dll.
+         Updating Qt5Guid.dll.
+         Updating Qt5Svgd.dll.
+         Updating Qt5Widgetsd.dll.
+         Updating libGLESv2d.dll.
+         Updating libEGLd.dll.
+         Updating D3Dcompiler_47.dll.
+         Updating opengl32sw.dll.
+         Creating directory D:/Asclepios-DICOM-Viewer/src/x64/Debug/iconengines.
+         Updating qsvgicond.dll.
+         Creating directory D:/Asclepios-DICOM-Viewer/src/x64/Debug/imageformats.
+         Updating qgifd.dll.
+         Updating qicnsd.dll.
+         Updating qicod.dll.
+         Updating qjpegd.dll.
+         Updating qsvgd.dll.
+         Updating qtgad.dll.
+         Updating qtiffd.dll.
+         Updating qwbmpd.dll.
+         Updating qwebpd.dll.
+         Creating directory D:/Asclepios-DICOM-Viewer/src/x64/Debug/platforms.
+         Updating qwindowsd.dll.
+         Creating directory D:/Asclepios-DICOM-Viewer/src/x64/Debug/styles.
+         Updating qwindowsvistastyled.dll.
+         Creating D:\Asclepios-DICOM-Viewer\src\x64\Debug\translations...
+         Creating qt_ar.qm...
+         Creating qt_bg.qm...
+         Creating qt_ca.qm...
+         Creating qt_cs.qm...
+         Creating qt_da.qm...
+         Creating qt_de.qm...
+         Creating qt_en.qm...
+         Creating qt_es.qm...
+         Creating qt_fi.qm...
+         Creating qt_fr.qm...
+         Creating qt_gd.qm...
+         Creating qt_he.qm...
+         Creating qt_hu.qm...
+         Creating qt_it.qm...
+         Creating qt_ja.qm...
+         Creating qt_ko.qm...
+         Creating qt_lv.qm...
+         Creating qt_pl.qm...
+         Creating qt_ru.qm...
+         Creating qt_sk.qm...
+         Creating qt_tr.qm...
+         Creating qt_uk.qm...
+         Creating qt_zh_TW.qm...
+       FinalizeBuildStatus:
+         Deleting file "x64\Debug\gui.tlog\unsuccessfulbuild".
+         Touching "x64\Debug\gui.tlog\gui.lastbuildstate".
+     4>Done Building Project "D:\Asclepios-DICOM-Viewer\src\gui\gui.vcxproj" (default targets).
+     2>Done Building Project "D:\Asclepios-DICOM-Viewer\src\gui\gui.vcxproj.metaproj" (default targets).
+     1>Done Building Project "D:\Asclepios-DICOM-Viewer\src\Asclepios-DICOM-Viewer.sln" (default targets).
+
+Build succeeded.
+
+       "D:\Asclepios-DICOM-Viewer\src\Asclepios-DICOM-Viewer.sln" (default target) (1) ->
+       "D:\Asclepios-DICOM-Viewer\src\gui\gui.vcxproj.metaproj" (default target) (2) ->
+       "D:\Asclepios-DICOM-Viewer\src\gui\gui.vcxproj" (default target) (4) ->
+       (PostBuildEvent target) -> 
+         EXEC : warning : Cannot find Visual Studio installation directory, VCINSTALLDIR is not set. [D:\Asclepios-DICOM-Viewer\src\gui\gui.vcxproj]
+
+    1 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:39.32

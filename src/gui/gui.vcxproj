@@ -187,7 +187,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="corneroverlay.h" />
-    <ClInclude Include="dcmtkoverlaywidget.h" />
     <QtMoc Include="dcmtkoverlaywidget.h" />
     <QtMoc Include="guiframe.h" />
     <QtMoc Include="framelesswindow.h" />
@@ -210,6 +209,7 @@
     <ClInclude Include="vtkwidget2dinteractorstyle.h" />
     <ClInclude Include="vtkwidget3d.h" />
     <ClInclude Include="vtkwidget3dinteractorstyle.h" />
+    <ClInclude Include="vtkwidgetbase.h" />
     <ClInclude Include="vtkwidgetdicom.h" />
     <ClInclude Include="vtkwidgetmpr.h" />
     <ClInclude Include="vtkwidgetmprcallback.h" />
@@ -230,7 +230,6 @@
     <QtMoc Include="widgetbase.h" />
     <QtMoc Include="widget2d.h" />
     <QtMoc Include="widgetscontainer.h" />
-    <ClInclude Include="vtkwidgetbase.h" />
     <QtMoc Include="widgetscontroller.h" />
     <ClInclude Include="widgetsrepository.h" />
   </ItemGroup>
@@ -248,6 +247,3 @@
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>
-
-
-
