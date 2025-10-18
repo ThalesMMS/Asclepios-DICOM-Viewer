@@ -223,8 +223,15 @@ void asclepios::gui::vtkWidget3D::render()
         if (m_volumeData->Direction)
         {
                 m_volume->SetUserMatrix(m_volumeData->Direction);
+                m_volume->SetOrigin(0.0, 0.0, 0.0);
         }
-        m_renderer->AddActor(m_volume);
+        else
+        {
+                const auto& origin = m_volumeData->Geometry.Origin;
+                m_volume->SetOrigin(origin[0], origin[1], origin[2]);
+        }
+        m_renderer->AddVolume(m_volume);
+        m_renderer->ResetCamera();
         m_renderWindows[0]->AddRenderer(m_renderer);
         QElapsedTimer timer;
         timer.start();
@@ -232,8 +239,6 @@ void asclepios::gui::vtkWidget3D::render()
         const auto renderDuration = timer.elapsed();
         m_renderWindows[0]->OffScreenRenderingOff();
         auto* const extend = m_volume->GetBounds();
-        m_volume->SetOrigin(extend[0] + (extend[1] - extend[0]) / 2,
-                            extend[2] + (extend[3] - extend[2]) / 2, 0);
         initInteractorStyle();
         int dimensions[3] = {0, 0, 0};
         vtkIdType voxelCount = -1;
