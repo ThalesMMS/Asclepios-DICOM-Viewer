@@ -14,7 +14,10 @@
     <ProjectGuid>{3E032935-879A-4C6E-AC66-EE8D8969B79B}</ProjectGuid>
     <Keyword>QtVS_v303</Keyword>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(SolutionDir)..\deps\vstools\QtMSBuild\QtMsBuild</QtMsBuild>
+    <QtMsBuild Condition="'$(QtMsBuild)'!=''">$([System.Environment]::ExpandEnvironmentVariables('$(QtMsBuild)'))</QtMsBuild>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' and '$(LOCALAPPDATA)'!=''">$(LOCALAPPDATA)\QtMsBuild</QtMsBuild>
+    <QtMsBuild Condition="!Exists('$(QtMsBuild)\qt.targets') and '$(LOCALAPPDATA)'!='' and Exists('$(LOCALAPPDATA)\QtMsBuild\qt.targets')">$(LOCALAPPDATA)\QtMsBuild</QtMsBuild>
+    <QtMsBuild Condition="!Exists('$(QtMsBuild)\qt.targets')">$(MSBuildThisFileDirectory)..\..\deps\vstools\QtMSBuild\QtMsBuild</QtMsBuild>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -67,7 +70,7 @@
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <PrecompiledHeaderFile />
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;C:\Qt5\5.15.2\msvc2019_64\include;C:\Qt5\5.15.2\msvc2019_64\include\QtCore;C:\Qt5\5.15.2\msvc2019_64\include\QtGui;C:\Qt5\5.15.2\msvc2019_64\include\QtWidgets;C:\Qt5\5.15.2\msvc2019_64\include\QtConcurrent;..\..\lib\include;..\..\lib\include\vtkdicom;..\..\lib\include\vtk-8.2;..\..\lib\include\dcmtk;..\core;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;$(IntDir)qt\uic;$(IntDir)qt\moc;C:\Qt5\5.15.2\msvc2019_64\include;C:\Qt5\5.15.2\msvc2019_64\include\QtCore;C:\Qt5\5.15.2\msvc2019_64\include\QtGui;C:\Qt5\5.15.2\msvc2019_64\include\QtWidgets;C:\Qt5\5.15.2\msvc2019_64\include\QtConcurrent;..\..\lib\include;..\..\lib\include\vtkdicom;..\..\lib\include\vtk-8.2;..\..\lib\include\dcmtk;..\core;.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
@@ -89,7 +92,7 @@
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <PrecompiledHeaderFile />
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;C:\Qt5\5.15.2\msvc2019_64\include;C:\Qt5\5.15.2\msvc2019_64\include\QtCore;C:\Qt5\5.15.2\msvc2019_64\include\QtGui;C:\Qt5\5.15.2\msvc2019_64\include\QtWidgets;C:\Qt5\5.15.2\msvc2019_64\include\QtConcurrent;..\core;.\;..\..\lib\include;..\..\lib\include\vtkdicom;..\..\lib\include\vtk-8.2;..\..\lib\include\dcmtk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\GeneratedFiles\$(ConfigurationName);.\GeneratedFiles;$(IntDir)qt\uic;$(IntDir)qt\moc;C:\Qt5\5.15.2\msvc2019_64\include;C:\Qt5\5.15.2\msvc2019_64\include\QtCore;C:\Qt5\5.15.2\msvc2019_64\include\QtGui;C:\Qt5\5.15.2\msvc2019_64\include\QtWidgets;C:\Qt5\5.15.2\msvc2019_64\include\QtConcurrent;..\core;.\;..\..\lib\include;..\..\lib\include\vtkdicom;..\..\lib\include\vtk-8.2;..\..\lib\include\dcmtk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
